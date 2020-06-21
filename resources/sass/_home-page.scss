@@ -1,0 +1,334 @@
+/*---------------------
+  Services
+-----------------------*/
+.services {
+  padding-top: 80px;
+  padding-bottom: 70px;
+}
+
+.services__item {
+  text-align: center;
+  padding: 40px 15px 60px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 65px rgba(12, 26, 39, 0.05);
+  margin-bottom: 30px;
+  background: $white-color;
+
+  h5 {
+    font-size: 20px;
+    color: $heading-color;
+    margin-top: 35px;
+    margin-bottom: 12px;
+  }
+
+  p {
+    color: #6E7580;
+    margin-bottom: 0;
+  }
+}
+
+/*---------------------
+  Chooseus
+-----------------------*/
+.chooseus {
+  background: #f5f6fa;
+  padding-bottom: 20px;
+}
+
+.chooseus__text {
+  margin-bottom: 70px;
+
+  h2 {
+    font-size: 44px;
+    color: $heading-color;
+    margin-bottom: 6px;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.chooseus__item {
+  width: 50%;
+  float: left;
+  margin-bottom: 80px;
+}
+
+.chooseus__item__icon {
+  float: left;
+  margin-right: 30px;
+}
+
+.chooseus__item__text {
+  overflow: hidden;
+
+  h2 {
+    font-size: 48px;
+    color: $heading-color;
+    line-height: 45px;
+    margin-bottom: 5px;
+  }
+
+  p {
+    font-size: 18px;
+    margin-bottom: 0;
+    color: #9B9EA3;
+  }
+}
+
+.chooseus__pic {
+
+  img {
+    min-width: 100%;
+  }
+}
+
+/*---------------------
+  Gallery
+-----------------------*/
+.gallery__pic {
+
+  img {
+    min-width: 100%;
+  }
+}
+
+/*---------------------
+  Instructor
+-----------------------*/
+.instructor {
+  padding-top: 80px;
+  padding-bottom: 70px;
+}
+
+.instructor__item {
+  margin-bottom: 30px;
+}
+
+.instructor__item__pic {
+  margin-bottom: 20px;
+
+  img {
+    min-width: 100%;
+  }
+}
+
+.instructor__item__text {
+  text-align: center;
+
+  h5 {
+    clear: #001943;
+    margin-bottom: 5px;
+  }
+
+  span {
+    font-size: 14px;
+    color: #9B9EA3;
+  }
+}
+
+/*---------------------
+  Appoinment
+-----------------------*/
+.appointment {
+  position: relative;
+  z-index: 9;
+
+  .section-title {
+
+    h2 {
+      color: $white-color;
+    }
+  }
+}
+
+.appointment__text {
+  background: #5768AD;
+  padding: 60px 100px;
+}
+
+.appointment__form {
+
+  input {
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    color: $white-color;
+    padding-left: 28px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    margin-bottom: 20px;
+
+    &::placeholder {
+      color: $white-color;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    height: 100px;
+    font-size: 16px;
+    color: $white-color;
+    padding-left: 28px;
+    padding-top: 15px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    margin-bottom: 34px;
+
+    &::placeholder {
+      color: $white-color;
+    }
+  }
+
+  .nice-select {
+    width: 100%;
+    height: 50px;
+    padding-left: 28px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    line-height: 50px;
+    border: none;
+    margin-bottom: 20px;
+
+    &:after {
+      border-bottom: 3px solid #fff;
+      border-right: 3px solid #fff;
+      height: 10px;
+      width: 10px;
+      right: 20px;
+      top: 44%;
+    }
+
+    .list {
+      width: 100%;
+      border-radius: 0;
+      margin-top: 0;
+    }
+
+    span {
+      font-size: 16px;
+      color: $white-color;
+    }
+  }
+
+  button {
+    font-size: 14px;
+    color: $primary-color;
+    text-transform: uppercase;
+    display: inline-block;
+    background: $white-color;
+    padding: 14px 35px 12px;
+    border-radius: 2px;
+    border: none;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+}
+
+/*---------------------
+  Testimonial
+-----------------------*/
+.testimonial {
+  background: #f5f6fa;
+  padding-top: 415px;
+  margin-top: -315px;
+}
+
+.testimonial__slider {
+
+  &.owl-carousel {
+
+    .owl-item {
+
+      img {
+        width: auto;
+      }
+    }
+
+    .owl-dots {
+      text-align: center;
+      margin-top: 36px;
+
+      button {
+        height: 9px;
+        width: 9px;
+        background: #8a8e9e;
+        border-radius: 50%;
+        margin-right: 20px;
+        position: relative;
+
+        &:after {
+          position: absolute;
+          left: -7px;
+          top: -7px;
+          height: 23px;
+          width: 23px;
+          border: 2px solid #8a8e9e;
+          border-radius: 50%;
+          content: '';
+          opacity: 0;
+        }
+
+        &.active {
+          background: #5768AD;
+
+          &:after {
+            opacity: 1;
+          }
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.testimonial__text {
+  text-align: center;
+  position: relative;
+  padding-top: 70px;
+
+  &:before {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    content: '"';
+    color: #5768AD;
+    font-size: 160px;
+    line-height: 119px;
+    margin: 0 auto;
+  }
+
+  p {
+    font-size: 36px;
+    color: $heading-color;
+    line-height: 48px;
+    margin-bottom: 35px;
+  }
+
+  img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+
+  h5 {
+    font-size: 20px;
+    color: $heading-color;
+    font-weight: 700;
+    margin-top: 15px;
+
+    span {
+      font-size: 18px;
+      color: #9B9EA3;
+      font-weight: 400;
+    }
+  }
+}

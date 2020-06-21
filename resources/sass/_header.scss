@@ -1,0 +1,188 @@
+/*---------------------
+  Header
+-----------------------*/
+.header {}
+
+.header__logo {
+    padding: 25px 0 25px;
+}
+
+.header__top__widget {
+    text-align: right;
+    padding: 28px 0 24px;
+
+    ul {
+        display: inline-block;
+        margin-right: 65px;
+
+        li {
+            font-size: 12px;
+            color: #263246;
+            text-transform: uppercase;
+            list-style: none;
+            display: inline-block;
+            position: relative;
+            margin-right: 5px;
+
+            &:last-child {
+                margin-right: 0;
+
+                &:after {
+                    display: none;
+                }
+            }
+
+            &:after {
+                position: absolute;
+                right: -5px;
+                top: 8px;
+                height: 2px;
+                width: 2px;
+                background: $primary-color;
+                content: '';
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .primary-btn {
+        display: inline-block;
+    }
+}
+
+.header__nav {
+    position: relative;
+    z-index: 9;
+    padding-top: 15px;
+}
+
+.header__menu {
+    display: inline-block;
+
+    ul {
+
+        li {
+            list-style: none;
+            display: inline-block;
+            margin-right: 55px;
+            position: relative;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &:hover {
+
+                .dropdown {
+                    opacity: 1;
+                    top: 34px;
+                    visibility: visible;
+
+                    li {
+
+                        a {
+
+                            &:after {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+
+                a {
+
+                    &:after {
+                        opacity: 1;
+                        width: 100%;
+                    }
+                }
+            }
+
+            &.active {
+
+                a {
+
+                    &:after {
+                        opacity: 1;
+                        width: 100%;
+                    }
+                }
+            }
+
+            .dropdown {
+                position: absolute;
+                left: 0;
+                top: 50px;
+                width: 180px;
+                background: $white-color;
+                text-align: left;
+                @include transition(all, .3s);
+                opacity: 0;
+                visibility: hidden;
+                padding: 5px 0;
+                z-index: 9;
+
+                li {
+                    margin-right: 0;
+                    display: block;
+
+                    a {
+                        padding: 6px 15px;
+                        font-weight: 400;
+                        font-size: 15px;
+                        color: #222222;
+                        text-transform: capitalize;
+                        font-weight: 500;
+                    }
+                }
+            }
+
+            a {
+                font-size: 16px;
+                color: $white-color;
+                font-weight: 700;
+                padding: 5px 0;
+                display: block;
+                font-weight: 700;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                position: relative;
+
+                &:after {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    height: 2px;
+                    width: 0%;
+                    background: $white-color;
+                    content: '';
+                    opacity: 0;
+                    @include transition(all, .3s);
+                }
+            }
+        }
+    }
+}
+
+.header__social {
+    text-align: right;
+
+    a {
+        display: inline-block;
+        font-size: 14px;
+        color: $white-color;
+        margin-right: 25px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.canvas__open {
+    display: none;
+}
+
+.offcanvas-menu {
+    display: none;
+}

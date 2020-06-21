@@ -1,0 +1,45 @@
+/*---------------------
+  Breadcrumb
+-----------------------*/
+.breadcrumb-option {
+    padding-top: 215px;
+    padding-bottom: 170px;
+    margin-top: -50px;
+}
+
+.breadcrumb__text {
+    text-align: center;
+
+    h2 {
+        font-size: 44px;
+        color: $white-color;
+        margin-bottom: 6px;
+    }
+}
+
+.breadcrumb__widget {
+
+    a {
+        display: inline-block;
+        font-size: 16px;
+        color: $white-color;
+        font-weight: 700;
+        margin-right: 15px;
+        position: relative;
+
+        &:after {
+            position: absolute;
+            right: -14px;
+            top: 1px;
+            font-weight: 400;
+            content: '/';
+        }
+    }
+
+    span {
+        display: inline-block;
+        font-size: 16px;
+        color: $white-color;
+        font-weight: 400;
+    }
+}

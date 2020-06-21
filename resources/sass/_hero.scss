@@ -1,0 +1,108 @@
+/*---------------------
+  Hero
+-----------------------*/
+.hero {
+    margin-top: -50px;
+}
+
+.hero__sliders {
+
+    &.owl-carousel {
+
+        .owl-item {
+
+            &.active {
+
+                .hero__text {
+
+                    span {
+                        opacity: 1;
+                        top: 0;
+                    }
+
+                    h2 {
+                        opacity: 1;
+                        top: 0;
+                    }
+
+                    .primary-btn {
+                        opacity: 1;
+                        top: 0;
+                    }
+                }
+            }
+        }
+
+        .owl-nav {
+
+            button {
+                display: inline-block;
+                height: 46px;
+                width: 46px;
+                background: rgba(255, 255, 255, 0.3);
+                border-radius: 2px;
+                color: $white-color;
+                font-size: 20px;
+                line-height: 52px;
+                text-align: center;
+                position: absolute;
+                left: 40px;
+                top: 50%;
+                -webkit-transform: translateY(-23px);
+                transform: translateY(-23px);
+                @include transition(all, .3s);
+
+                &:hover {
+                    color: #111111;
+                    background: $white-color;
+                }
+
+                &.owl-next {
+                    left: auto;
+                    right: 40px;
+                }
+            }
+        }
+    }
+}
+
+.hero__items {
+    height: 873px;
+    display: flex;
+    align-items: center;
+}
+
+.hero__text {
+
+    span {
+        font-size: 16px;
+        color: $white-color;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        display: block;
+        margin-bottom: 30px;
+        position: relative;
+        top: 100px;
+        opacity: 0;
+        @include transition(all, .2s);
+    }
+
+    h2 {
+        font-size: 70px;
+        line-height: 80px;
+        color: $white-color;
+        margin-bottom: 50px;
+        position: relative;
+        top: 100px;
+        opacity: 0;
+        @include transition(all, .5s);
+    }
+
+    .primary-btn {
+        position: relative;
+        top: 100px;
+        opacity: 0;
+        @include transition(all, .8s);
+    }
+}

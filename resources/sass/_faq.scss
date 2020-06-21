@@ -1,0 +1,129 @@
+/*---------------------
+  Faq
+-----------------------*/
+.faq__accordion {
+
+    .card {
+        border: none;
+        border-radius: 0;
+
+        &:last-child {
+
+            .card-heading {
+                border-bottom: none;
+            }
+
+            .collapse.show {
+
+                .card-body {
+                    padding-bottom: 0;
+                    border-bottom: none;
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .card-heading {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding-bottom: 20px;
+            margin-bottom: 15px;
+
+            &.active {
+                border-bottom: 0;
+
+                a {
+
+                    span {
+                        color: $heading-color;
+
+                        &:before {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+
+            a {
+                font-size: 24px;
+                cursor: pointer;
+
+                span {
+                    font-weight: 700;
+                    position: relative;
+                    color: #9B9EA3;
+                    display: inline-block;
+                    transition: all 0.4s;
+
+                    &:before {
+                        position: absolute;
+                        left: 0;
+                        bottom: -4px;
+                        height: 2px;
+                        width: 100%;
+                        background: $primary-color;
+                        content: '';
+                        opacity: 0;
+                        transition: all 0.4s;
+                    }
+                }
+            }
+        }
+
+        .card-body {
+            padding: 0;
+            padding-bottom: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+            p {
+                margin-bottom: 0;
+                line-height: 24px;
+            }
+
+            h6 {
+                color: #6E7580;
+                margin-top: 35px;
+
+                a {
+                    color: #6E7580;
+                }
+            }
+        }
+    }
+}
+
+.faq__accordion .card-heading a:after,
+.faq__accordion .card-heading>a.active[aria-expanded=false]:after {
+    content: "+";
+    font-size: 32px;
+    font-weight: 400;
+    color: $heading-color;
+    position: absolute;
+    right: 0;
+    top: 0;
+    line-height: 20px;
+    top: 8px;
+}
+
+.faq__accordion .card-heading.active a:after {
+    content: "-";
+    font-size: 32px;
+    font-weight: 400;
+    color: $primary-color;
+    position: absolute;
+    right: 0;
+    top: 4px;
+    line-height: 20px;
+}
+
+.faq__accordion .card-heading a[aria-expanded=true]:after,
+.faq__accordion .card-heading>a.active:after {
+    content: "-";
+    font-size: 32px;
+    font-weight: 400;
+    color: $primary-color;
+    position: absolute;
+    right: 0;
+    top: 4px;
+    line-height: 20px;
+}
