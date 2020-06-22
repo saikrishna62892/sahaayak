@@ -13,14 +13,25 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/barfiller.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/css/barfiller.css" type="text/css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery.barfiller.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+
+
 </head>
 
 <body>
@@ -333,10 +344,16 @@
             <div class="row">
                 <div class="col-lg-7">
                     <div class="home__about__pic">
-                        <div class="home__about__pic__item large-item set-bg" data-setbg="img/about/about-1.jpg"></div>
+                        <div class="home__about__pic__item large-item set-bg">
+                            <img src="img/about/about-1.jpg" alt="">
+                        </div>
                         <div class="home__about__pic__item">
-                            <div class="home__about__pic__item__inner set-bg" data-setbg="img/about/about-2.jpg"></div>
-                            <div class="home__about__pic__item__inner set-bg" data-setbg="img/about/about-3.jpg"></div>
+                            <div class="home__about__pic__item__inner set-bg" data-setbg="img/about/about-2.jpg">
+                                <img src="img/about/about-2.jpg" alt="">
+                            </div>
+                            <div class="home__about__pic__item__inner set-bg" data-setbg="img/about/about-3.jpg">
+                                <img src="img/about/about-3.jpg" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -433,6 +450,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="classes__item">
                         <div class="classes__item__pic set-bg" data-setbg="img/classes/classes-1.jpg">
+                            <img src="img/classes/classes-1.jpg" alt="">
                             <span>20 Jun 2019</span>
                         </div>
                         <div class="classes__item__text">
@@ -446,6 +464,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="classes__item">
                         <div class="classes__item__pic set-bg" data-setbg="img/classes/classes-1.jpg">
+                            <img src="img/classes/classes-1.jpg" alt="">
                             <span>20 Jun 2019</span>
                         </div>
                         <div class="classes__item__text">
@@ -459,6 +478,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="classes__item">
                         <div class="classes__item__pic set-bg" data-setbg="img/classes/classes-1.jpg">
+                            <img src="img/classes/classes-1.jpg" alt="">
                             <span>20 Jun 2019</span>
                         </div>
                         <div class="classes__item__text">
@@ -773,13 +793,13 @@
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
+   <!-- <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.nice-select.min.js"></script>
     <script src="js/jquery.barfiller.js"></script>
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main.js"></script> -->
 
 </body>
 
