@@ -171,7 +171,7 @@
                                         <li><a href="./pricing.html">Healthy lifestyle test</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="./classes.html">Talk to Us</a></li>
+                                <li><a href="#talk_to_us">Talk to Us</a></li>
                                 <li><a href="#">Blog</a>
                                     <ul class="dropdown">
                                         <li><a href="./classes-details.html">Discover Stories</a></li>
@@ -291,14 +291,29 @@
     </section>
     <!-- Footer Section End -->
 
+
     <!-- Js Plugins -->
-   <!-- <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.nice-select.min.js"></script>
     <script src="js/jquery.barfiller.js"></script>
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script> -->
+    <script src="js/main.js"></script>
+    <script>
+            let anchorlinks = document.querySelectorAll('a[href^="#"]')
+            for (let item of anchorlinks) { // relitere 
+                item.addEventListener('click', (e)=> {
+                    let hashval = item.getAttribute('href')
+                    let target = document.querySelector(hashval)
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    })
+                    history.pushState(null, null, hashval)
+                    e.preventDefault()
+                })
+            }
+        </script>
 
 </body>
 

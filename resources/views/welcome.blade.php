@@ -416,7 +416,7 @@
     <!-- Team Section End -->
 
     <!-- Appoinment Section Begin -->
-    <section class="appointment">
+    <section class="appointment" id="talk_to_us">
         <div class="container">
             <div class="appointment__text">
                 <div class="row">
@@ -436,11 +436,11 @@
                             <input type="text" placeholder="Email">
                         </div>
                         <div class="col-lg-6">
-                            <input type="text" placeholder="Phone">
+                            <input type="text" placeholder="Reason">
                         </div>
                         <div class="col-lg-6">
-                            <select class="class-select">
-                                <option value="">Choose Your Class</option>
+                            <select class="nice-select">Timings
+                                <option value="">9:00am to 10:00am</option>
                             </select>
                         </div>
                         <div class="col-lg-12 text-center">
