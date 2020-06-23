@@ -143,10 +143,10 @@
                                 <li><a href="{{ url('about') }}">About</a></li>
                                 <li><a href="#">Learn</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('learn_depression') }}">Understanding Depression</a></li>
-                                        <li><a href="{{ url('learn_suicide') }}">Understanding Suicide</a></li>
-                                        <li><a href="{{ url('learn_stress') }}">Understanding Stress</a></li>
-                                        <li><a href="{{ url('learn_stigma') }}">Understanding Stigma</a></li>
+                                        <li><a href="{{ url('learn_depression') }}">Depression</a></li>
+                                        <li><a href="{{ url('learn_suicide') }}">Suicide</a></li>
+                                        <li><a href="{{ url('learn_stress') }}">Stress</a></li>
+                                        <li><a href="{{ url('learn_stigma') }}">Stigma</a></li>
                                         <li><a href="{{ url('learn_healthy_sleep') }}">Healthy Sleep</a></li>
                                         <li><a href="{{ url('learn_mental_illness') }}">Mental Illness</a></li>
                                         <li><a href="{{ url('learn_hopelessness') }}">Hopelessness</a></li>
@@ -171,15 +171,17 @@
                                         <li><a href="./pricing.html">Healthy lifestyle test</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#talk_to_us">Talk to Us</a></li>
+                                <li><a href="{{ url('/#talk_to_us') }}">Talk to Us</a></li>
                                 <li><a href="#">Blog</a>
                                     <ul class="dropdown">
                                         <li><a href="{{ url('shared_stories') }}">Discover Stories</a></li>
                                         <li><a href="{{ url('talks') }}">Expert Talks</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Media</a>
+                                <li><a href="{{ url('news') }}">News</a></li>
+                                <li><a href="#">Hope Box</a>
                                     <ul class="dropdown">
+                                        <li><a href="./classes-details.html">Inspire Me</a></li>
                                         <li><a href="./classes-details.html">Videos</a></li>
                                         <li><a href="./blog-details.html">Playlists</a></li>
                                     </ul>
@@ -313,7 +315,33 @@
                     e.preventDefault()
                 })
             }
-        </script>
+    </script>
+    <!-- Load Facebook SDK for JavaScript -->
+      <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v7.0'
+          });
+        };
+
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <!-- Your Chat Plugin code -->
+      <div class="fb-customerchat"
+        attribution=setup_tool
+        page_id="100529798384686"
+  theme_color="#5768ad"
+  logged_in_greeting="Hi buddy we are there to talk with you?"
+  logged_out_greeting="Hi buddy we are there to talk with you?">
+      </div>
 
 </body>
 
