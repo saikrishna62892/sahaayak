@@ -1,4 +1,4 @@
-@extends('reg_forms_layout')
+@extends('layouts.forms.reg_forms_layout')
 
 	@section('content')	
 	<div class="limiter">

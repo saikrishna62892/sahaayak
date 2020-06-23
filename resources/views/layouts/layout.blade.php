@@ -122,8 +122,8 @@
                                 <li>CALL US: + 1 800-567-8990</li>
                                 <li>WRITE US: OFFICE@EXAMPLE.COM</li>
                             </ul>
-                            <a href="login.html" class="primary-btn">Login</a>
-                            <a href="joinus.html" class="primary-btn">Join Us</a>
+                            <a href="{{ url('login') }}" class="primary-btn">Login</a>
+                            <a href="{{ url('joinus') }}" class="primary-btn">Join Us</a>
                         </div>
                         
                     </div>
@@ -139,19 +139,19 @@
                     <div class="col-lg-12 col-md-9">
                         <nav class="header__menu">
                             <ul>
-                                <li class="active"><a href="./index.html">Home</a></li>
-                                <li><a href="./about-us.html">About</a></li>
+                                <li class="active"><a href="{{ url('/') }}">Home</a></li>
+                                <li><a href="{{ url('about') }}">About</a></li>
                                 <li><a href="#">Learn</a>
                                     <ul class="dropdown">
-                                        <li><a href="./classes-details.html">Understanding Depression</a></li>
-                                        <li><a href="./pricing.html">Understanding Suicide</a></li>
-                                        <li><a href="./pricing.html">Understanding Stress</a></li>
-                                        <li><a href="./pricing.html">Understanding Stigma</a></li>
-                                        <li><a href="./pricing.html">Healthy Sleep</a></li>
-                                        <li><a href="./blog-details.html">Mental Illness</a></li>
-                                        <li><a href="./pricing.html">Hopelessness</a></li>
-                                        <li><a href="./pricing.html">Fear of Loss</a></li>
-                                        <li><a href="./pricing.html">Social Isolation</a></li>
+                                        <li><a href="{{ url('learn_depression') }}">Understanding Depression</a></li>
+                                        <li><a href="{{ url('learn_suicide') }}">Understanding Suicide</a></li>
+                                        <li><a href="{{ url('learn_stress') }}">Understanding Stress</a></li>
+                                        <li><a href="{{ url('learn_stigma') }}">Understanding Stigma</a></li>
+                                        <li><a href="{{ url('learn_healthy_sleep') }}">Healthy Sleep</a></li>
+                                        <li><a href="{{ url('learn_mental_illness') }}">Mental Illness</a></li>
+                                        <li><a href="{{ url('learn_hopelessness') }}">Hopelessness</a></li>
+                                        <li><a href="{{ url('learn_fear_of_loss') }}">Fear of Loss</a></li>
+                                        <li><a href="{{ url('learn_social_isolation') }}">Social Isolation</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#">Assessment</a>
@@ -174,8 +174,8 @@
                                 <li><a href="#talk_to_us">Talk to Us</a></li>
                                 <li><a href="#">Blog</a>
                                     <ul class="dropdown">
-                                        <li><a href="./classes-details.html">Discover Stories</a></li>
-                                        <li><a href="./blog-details.html">Expert Talks</a></li>
+                                        <li><a href="{{ url('shared_stories') }}">Discover Stories</a></li>
+                                        <li><a href="{{ url('talks') }}">Expert Talks</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#">Media</a>
