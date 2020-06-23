@@ -302,6 +302,8 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <!-- ManyChat -->
+<script src="//widget.manychat.com/101206188315883.js" async="async"></script>
     <script>
             let anchorlinks = document.querySelectorAll('a[href^="#"]')
             for (let item of anchorlinks) { // relitere 
@@ -332,7 +334,8 @@
         js = d.createElement(s); js.id = id;
         js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
         fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));</script>
+      }(document, 'script', 'facebook-jssdk'));
+        </script>
 
       <!-- Your Chat Plugin code -->
       <div class="fb-customerchat"
