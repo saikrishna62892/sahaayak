@@ -2,7 +2,7 @@
 
     @section('content')
 
-    
+
 
     <!-- Breadcrumb Begin -->
     <section class="breadcrumb-option set-bg" data-setbg="img/breadcrumb.jpg">
@@ -37,22 +37,9 @@
                             middle of text.Ipsum available but the that majority have that suffered is humour or
                             randomised words.</p>
                         <div class="classes__details__item">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-4">
-                                    <img src="img/classes-details/cd-item-1.jpg" alt="">
-                                </div>
-                                <div class="col-lg-8 col-md-8">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6">
-                                            <img src="img/classes-details/cd-item-2.jpg" alt="">
-                                        </div>
-                                        <div class="col-lg-6 col-md-6">
-                                            <img src="img/classes-details/cd-item-3.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <img src="img/classes-details/cd-item-4.jpg" alt="">
-                                </div>
-                            </div>
+                            <div class="embed-responsive embed-responsive-16by9">
+                          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+                        </div> 
                         </div>
                         <!--<div class="classes__details__desc">
                             <h6>Causes:</h6>

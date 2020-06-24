@@ -262,7 +262,12 @@
 
     <!-- About Section Begin -->
     <section class="home-about spad">
+        <div class="section-title">
+                <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
+                <h2>About Us</h2>
+            </div>
         <div class="container">
+            
             <div class="row">
                 <div class="col-lg-7">
                     <div class="home__about__pic">
@@ -281,10 +286,6 @@
                 </div>
                 <div class="col-lg-5">
                     <div class="home__about__text">
-                        <div class="section-title">
-                            <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
-                            <h2>About Us</h2>
-                        </div>
                         <span>“We Share coz We Care”</span>
                         <p>We are offering internationally certified 200 Hour Yoga Teacher Training in Rishikesh and 300
                             hour yoga teacher training in Rishikesh, India - Join us to have such life-transforming
