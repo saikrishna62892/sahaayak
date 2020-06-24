@@ -89,3 +89,7 @@ Route::get('volunteer_signup', function () {
 Route::get('team', function () {
     return view('team');
 });
+
+Route::get('inspire_me', function () {
+    return view('inspire_me');
+});
