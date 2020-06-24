@@ -23,7 +23,7 @@
                         <div class="col-lg-8">
                             <div class="hero__text">
                                 <span>We Share coz We Care</span>
-                                <h2>Dialy Quote #1</h2>
+                                <h2>Dialy Quote #2</h2>
                                 <a href="#" class="primary-btn">DISCOVER MORE</a>
                             </div>
                         </div>
@@ -94,42 +94,6 @@
                             hour yoga teacher training in Rishikesh, India - Join us to have such life-transforming
                             experience in The world capital of Yoga in Rishikesh.</p>
                     </div>
-                    <!--<div class="chooseus__item">
-                        <div class="chooseus__item__icon">
-                            <img src="img/chooseus/choose-1.png" alt="">
-                        </div>
-                        <div class="chooseus__item__text">
-                            <h2 class="choose-counter">2146</h2>
-                            <p>Students</p>
-                        </div>
-                    </div>
-                    <div class="chooseus__item">
-                        <div class="chooseus__item__icon">
-                            <img src="img/chooseus/choose-2.png" alt="">
-                        </div>
-                        <div class="chooseus__item__text">
-                            <h2 class="choose-counter">15</h2>
-                            <p>Years Of Experience</p>
-                        </div>
-                    </div>
-                    <div class="chooseus__item">
-                        <div class="chooseus__item__icon">
-                            <img src="img/chooseus/choose-3.png" alt="">
-                        </div>
-                        <div class="chooseus__item__text">
-                            <h2 class="choose-counter">48</h2>
-                            <p>Branches</p>
-                        </div>
-                    </div>
-                    <div class="chooseus__item">
-                        <div class="chooseus__item__icon">
-                            <img src="img/chooseus/choose-4.png" alt="">
-                        </div>
-                        <div class="chooseus__item__text">
-                            <h2 class="choose-counter">234</h2>
-                            <p>Expert Staffs</p>
-                        </div>
-                    </div>-->
                 </div>
                 </div>
             </div>
@@ -159,7 +123,7 @@
                 <div class="col-lg-5">
                     <div class="home__about__text">
                         <div class="section-title">
-                            <img src="img/icon.png" alt="">
+                            <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
                             <h2>About Us</h2>
                         </div>
                         <span>“We Share coz We Care”</span>
@@ -184,7 +148,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <img src="img/icon.png" alt="">
+                        <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
                         <h2>What can we do</h2>
                     </div>
                 </div>
@@ -238,11 +202,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="section-title normal-title">
+                    <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
                         <h2>Featured Topics</h2>
-                        <!--<p>The trainings are multi-style and you will learn and practice Hatha Vinyasa (flow)<br /> and
-                            Yin Yoga.</p>-->
                     </div>
+                </div>
+            </div
                 </div>
             </div>
             <div class="row">
@@ -293,128 +260,6 @@
     </section>
     <!-- Classes Section End -->
 
-    <!-- Gallery Section Begin -->
-    <!--<section class="gallery">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title normal-title">
-                        <h2>Our Gallery</h2>
-                        <p>This is the beautiful yogi and yoginis that have shared their journey and growth with<br />
-                            us. Take a look!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-3 col-md-4 col-6 p-0">
-                    <div class="gallery__pic">
-                        <img src="img/gallery/gallery-1.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 p-0">
-                    <div class="gallery__pic">
-                        <img src="img/gallery/gallery-2.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 p-0">
-                    <div class="gallery__pic">
-                        <img src="img/gallery/gallery-3.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 p-0">
-                    <div class="gallery__pic">
-                        <img src="img/gallery/gallery-4.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 p-0">
-                    <div class="gallery__pic">
-                        <img src="img/gallery/gallery-5.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 p-0">
-                    <div class="gallery__pic">
-                        <img src="img/gallery/gallery-6.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 p-0">
-                    <div class="gallery__pic">
-                        <img src="img/gallery/gallery-7.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 p-0">
-                    <div class="gallery__pic">
-                        <img src="img/gallery/gallery-8.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>-->
-    <!-- Gallery Section End -->
-
-    <!-- Team Section Begin -->
-    <!--<section class="instructor spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title normal-title">
-                        <h2>Meet Our Instructors</h2>
-                        <p>Our Indian and western teachers are highly qualified and will be happy to share this<br />
-                            spiritual journey with you.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="instructor__item">
-                        <div class="instructor__item__pic">
-                            <img src="img/instructor/instructor-1.jpg" alt="">
-                        </div>
-                        <div class="instructor__item__text">
-                            <h5>Emma Hale</h5>
-                            <span>Yoga Trainer</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="instructor__item">
-                        <div class="instructor__item__pic">
-                            <img src="img/instructor/instructor-2.jpg" alt="">
-                        </div>
-                        <div class="instructor__item__text">
-                            <h5>Rebecca James</h5>
-                            <span>Yoga Trainer</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="instructor__item">
-                        <div class="instructor__item__pic">
-                            <img src="img/instructor/instructor-3.jpg" alt="">
-                        </div>
-                        <div class="instructor__item__text">
-                            <h5>Melissa Smith</h5>
-                            <span>Yoga Trainer</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="instructor__item">
-                        <div class="instructor__item__pic">
-                            <img src="img/instructor/instructor-4.jpg" alt="">
-                        </div>
-                        <div class="instructor__item__text">
-                            <h5>Emily Walker</h5>
-                            <span>Yoga Trainer</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>-->
-    <!-- Team Section End -->
-
     <!-- Appoinment Section Begin -->
     <section class="appointment" id="talk_to_us">
         <div class="container">
@@ -422,7 +267,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title">
-                            <img src="img/icon-white.png" alt="">
+                            <img src="img/icon-white.png" alt="Sahaayak" width="58" height="38">
                             <h2>Make An Appointment</h2>
                         </div>
                     </div>
