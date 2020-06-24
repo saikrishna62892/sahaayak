@@ -1,0 +1,36 @@
+git pull
+
+
+After Modifying the files
+
+
+git add .
+git status
+git commit -m "Ur Message"
+git push
+Username & password
+
+
+
+git branching
+mkdir temp
+cd temp
+git clone link
+git branch
+cd sahaayak
+git branch --list
+git branch b_name
+git checkout temp
+touch abc.txt
+git pull
+git branch --set-upstream-to=origin/name b_name
+git pull
+
+
+Adding the files
+
+
+For pushing
+git push origin HEAD:name
+git push -u origin name
+
