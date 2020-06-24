@@ -2,6 +2,8 @@
 
     @section('content')
 
+    
+
     <!-- Breadcrumb Begin -->
     <section class="breadcrumb-option set-bg" data-setbg="img/breadcrumb.jpg">
         <div class="container">
@@ -26,8 +28,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <img src="img/icon.png" alt="">
-                        <h2>Meet Our Family</h2>
+                        <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
+                        <h2>Meet Our Volunteers</h2>
                         <p>We search the entire world to provide you with passionate, authentic Indian Yoga</p>
                     </div>
                 </div>
@@ -106,8 +108,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <img src="img/icon.png" alt="">
-                        <h2>Meet Our Volunteers</h2>
+                        <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
+                        <h2>Meet Our Therapists</h2>
                         <p>We search the entire world to provide you with passionate, authentic Indian Yoga</p>
                     </div>
                 </div>
@@ -186,8 +188,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <img src="img/icon.png" alt="">
-                        <h2>Meet Our Therapists</h2>
+                        <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
+                        <h2>Meet Our Family</h2>
                         <p>We search the entire world to provide you with passionate, authentic Indian Yoga</p>
                     </div>
                 </div>
@@ -312,7 +314,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="leave__comment__text">
+                        <div class="section-title">
+                        <img src="img/icon.png" alt="Sahaayak" width="58" height="38" align="center">
                         <h2>Any Faq's Please Write to Us</h2>
+                        </div>
                         <form action="#">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">

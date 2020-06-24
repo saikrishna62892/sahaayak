@@ -155,7 +155,7 @@
                     <div class="col-lg-12 col-md-9">
                         <nav class="header__menu">
                             <ul>
-                                <li class="active"><a href="{{ url('/') }}">Home</a></li>
+                                <li><a href="{{ url('/') }}">Home</a></li>
                                 <li><a href="{{ url('about') }}">About</a></li>
                                 <li><a href="#">Learn</a>
                                     <ul class="dropdown">
