@@ -36,6 +36,7 @@ body {
 	height: 100%;
 	font-family: "DM Sans", sans-serif;
 	-webkit-font-smoothing: antialiased;
+	background-color: #f5f6fa;
 }
 
 h1,
@@ -2521,6 +2522,7 @@ ol {
 .faq__accordion .card {
 	border: none;
 	border-radius: 0;
+	background-color: #f5f6fa;
 }
 
 .faq__accordion .card:last-child .card-heading {
@@ -2559,7 +2561,7 @@ ol {
 .faq__accordion .card .card-heading a span {
 	font-weight: 700;
 	position: relative;
-	color: #9B9EA3;
+	color: black;
 	display: inline-block;
 	transition: all 0.4s;
 }

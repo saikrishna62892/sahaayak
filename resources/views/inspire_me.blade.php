@@ -1,5 +1,8 @@
 @extends('layouts.layout')
     @section('content')
+
+    
+    
     <!-- Blog Hero Begin -->
     <section class="breadcrumb-option blog-hero set-bg" data-setbg="img/breadcrumb.jpg">
         <div class="container">

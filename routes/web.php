@@ -42,6 +42,10 @@ Route::get('learn_healthy_sleep', function () {
     return view('learn_healthy_sleep');
 });
 
+Route::get('learn_hopelessness', function () {
+    return view('learn_hopelessness');
+});
+
 Route::get('learn_mental_illness', function () {
     return view('learn_mental_illness');
 });

@@ -2,3 +2,4 @@ logo.png
 footer-logo.png
 icon.png
 icon-white.png
+icons/icon-google.png
