@@ -1,0 +1,268 @@
+[33mcommit 681c177a17ef1b89e613858092242ce2f4ebbcff[m[33m ([m[1;36mHEAD -> [m[1;32mtemp[m[33m)[m
+Author: saikrishna62892 <saikrishna62892@gmail.com>
+Date:   Wed Jun 24 11:24:40 2020 +0530
+
+    Git commands added
+
+[1mdiff --git a/ganesh demo.txt b/ganesh demo.txt[m
+[1mdeleted file mode 100644[m
+[1mindex 7f42211..0000000[m
+[1m--- a/ganesh demo.txt[m	
+[1m+++ /dev/null[m
+[36m@@ -1,11 +0,0 @@[m
+[31m-git pull[m
+[31m-[m
+[31m-[m
+[31m-After Modifying the files[m
+[31m-[m
+[31m-[m
+[31m-git add .[m
+[31m-git status[m
+[31m-git commit -m "Ur Message"[m
+[31m-git push[m
+[31m-Username & password[m
+\ No newline at end of file[m
+[1mdiff --git a/git commands.txt b/git commands.txt[m
+[1mnew file mode 100644[m
+[1mindex 0000000..2002c29[m
+[1m--- /dev/null[m
+[1m+++ b/git commands.txt[m	
+[36m@@ -0,0 +1,27 @@[m
+[32m+[m[32mgit pull[m
+[32m+[m
+[32m+[m
+[32m+[m[32mAfter Modifying the files[m
+[32m+[m
+[32m+[m
+[32m+[m[32mgit add .[m
+[32m+[m[32mgit status[m
+[32m+[m[32mgit commit -m "Ur Message"[m
+[32m+[m[32mgit push[m
+[32m+[m[32mUsername & password[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32mGit Branching[m
+[32m+[m[32m//Guys i already created remote branches with ur names so ur named branch is your working location[m
+[32m+[m
+[32m+[m[32mTo create a local branch to your project[m
+[32m+[m[32mgit branch <branch_name>[m
+[32m+[m
+[32m+[m[32mTo switch to ur branch[m[41m [m
+[32m+[m[32mgit checkout <branch_name>[m
+[32m+[m
+[32m+[m
+[32m+[m[32mAfter making changes push the files into ur branch repository[m
+[32m+[m[32mTo push to your branch[m
+[32m+[m[32mgit push -u origin <brnach_name>[m
+\ No newline at end of file[m
+[1mdiff --git a/public/img/footer-logo.png b/public/img/footer-logo.png[m
+[1mindex eb15120..6c9b3ce 100644[m
+Binary files a/public/img/footer-logo.png and b/public/img/footer-logo.png differ
+[1mdiff --git a/public/img/icon-white.png b/public/img/icon-white.png[m
+[1mindex 69be05d..849f24f 100644[m
+Binary files a/public/img/icon-white.png and b/public/img/icon-white.png differ
+[1mdiff --git a/public/img/icon.png b/public/img/icon.png[m
+[1mindex 3c89f9c..8bf13b2 100644[m
+Binary files a/public/img/icon.png and b/public/img/icon.png differ
+[1mdiff --git a/public/img/logo.png b/public/img/logo.png[m
+[1mindex ea8220d..2a20e1f 100644[m
+Binary files a/public/img/logo.png and b/public/img/logo.png differ
+[1mdiff --git a/resources/views/inspire_me.blade.php b/resources/views/inspire_me.blade.php[m
+[1mnew file mode 100644[m
+[1mindex 0000000..51bc600[m
+[1m--- /dev/null[m
+[1m+++ b/resources/views/inspire_me.blade.php[m
+[36m@@ -0,0 +1,12 @@[m
+[32m+[m[32m<div class="blog__details">[m
+[32m+[m[32m    <div class="blog__details__large">[m
+[32m+[m[32m        <img src="img/blog/details/blog-large.jpg" alt="">[m
+[32m+[m[32m        <span>Tag from user</span>[m
+[32m+[m[32m    </div>[m
+[32m+[m[32m    <div class="blog__details__text">[m
+[32m+[m[32m        <p>Story About the worry </p>[m
+[32m+[m[32m    </div>[m
+[32m+[m[32m    <div class="blog__details__quote">[m
+[32m+[m[32m        <p>This is the content to be highlighted</p>[m
+[32m+[m[32m    </div>[m
+[32m+[m[32m</div>[m
+\ No newline at end of file[m
+[1mdiff --git a/resources/views/layouts/layout.blade.php b/resources/views/layouts/layout.blade.php[m
+[1mindex 25332e1..7a2551d 100644[m
+[1m--- a/resources/views/layouts/layout.blade.php[m
+[1m+++ b/resources/views/layouts/layout.blade.php[m
+[36m@@ -43,7 +43,7 @@[m
+     <div class="offcanvas-menu-overlay"></div>[m
+     <div class="offcanvas-menu">[m
+         <div class="offcanvas__logo">[m
+[31m-            <a href="./index.html"><img src="img/logo.png" alt=""></a>[m
+[32m+[m[32m            <a href="{{ url('/') }}"><img src="img/logo.png" alt="Sahaayak" width="240" height="60"></a>[m
+         </div>[m
+         <div id="mobile-menu-wrap"></div>[m
+         <div class="offcanvas__widget">[m
+[36m@@ -57,51 +57,67 @@[m
+         [m
+         <nav class="header__menu">[m
+             <ul class="mobile-menu">[m
+[31m-                <li class="active"><a href="./index.html">Home</a></li>[m
+[31m-                                <li><a href="./about-us.html">About</a></li>[m
+[32m+[m[32m                <li class="active"><a href="{{ url('/') }}">Home</a></li>[m
+[32m+[m[32m                                <li><a href="{{ url('about') }}">About</a></li>[m
+                                 <li><a href="#">Learn</a>[m
+                                     <ul class="dropdown">[m
+[31m-                                        <li><a href="./classes-details.html">Topic1</a></li>[m
+[31m-                                        <li><a href="./blog-details.html">Topic2</a></li>[m
+[31m-                                        <li><a href="./pricing.html">Topic3</a></li>[m
+[31m-                                        <li><a href="./faq.html">Topic4</a></li>[m
+[32m+[m[32m                                        <li><a href="{{ url('learn_depression') }}">Depression</a></li>[m
+[32m+[m[32m                                        <li><a href="{{ url('learn_suicide') }}">Suicide</a></li>[m
+[32m+[m[32m                                        <li><a href="{{ url('learn_stress') }}">Stress</a></li>[m
+[32m+[m[32m                                        <li><a href="{{ url('learn_stigma') }}">Stigma</a></li>[m
+[32m+[m[32m                                        <li><a href="{{ url('learn_healthy_sleep') }}">Healthy Sleep</a></li>[m
+[32m+[m[32m                                        <li><a href="{{ url('learn_mental_illness') }}">Mental Illness</a></li>[m
+[32m+[m[32m                                        <li><a href="{{ url('learn_hopelessness') }}">Hopelessness</a></li>[m
+[32m+[m[32m                                        <li><a href="{{ url('learn_fear_of_loss') }}">Fear of Loss</a></li>[m
+[32m+[m[32m                                        <li><a href="{{ url('learn_social_isolation') }}">Social Isolation</a></li>[m
+                                     </ul>[m
+                                 </li>[m
+[31m-                                <li><a href="#">Assesments</a>[m
+[32m+[m[32m                                <li><a href="#">Assessment</a>[m
+                                     <ul class="dropdown">[m
+[31m-                                        <li><a href="./classes-details.html">Topic1</a></li>[m
+[31m-                                        <li><a href="./blog-details.html">Topic2</a></li>[m
+[31m-                                        <li><a href="./pricing.html">Topic3</a></li>[m
+[31m-                                        <li><a href="./faq.html">Topic4</a></li>[m
+[32m+[m[32m                                        <li><a href="./classes-details.html">Depression test</a></li>[m
+[32m+[m[32m                                        <li><a href="./pricing.html">Sleep hygiene test</a></li>[m
+[32m+[m[32m                                        <li><a href="./pricing.html">Happiness test</a></li>[m
+[32m+[m[32m                                        <li><a href="./pricing.html">Mental health test</a></li>[m
+[32m+[m[32m                                        <li><a href="./pricing.html">Anxiety test</a></li>[m
+[32m+[m[32m                                        <li><a href="./blog-details.html">Self esteem test</a></li>[m
+[32m+[m[32m                                        <li><a href="./pricing.html">Mental speed test</a></li>[m
+[32m+[m[32m                                        <li><a href="./pricing.html">Concentration test</a></li>[m
+[32m+[m[32m                                        <li><a href="./pricing.html">Emotional intelligence test</a></li>[m
+[32m+[m[32m                                        <li><a href="./blog-details.html">Social skills test</a></li>[m
+[32m+[m[32m                                        <li><a href="./pricing.html">Stress test</a></li>[m
+[32m+[m[32m                                        <li><a href="./pricing.html">Self disclosure test</a></li>[m
+[32m+[m[32m                                        <li><a href="./pricing.html">Healthy lifestyle test</a></li>[m
+                                     </ul>[m
+                                 </li>[m
+[31m-                                <li><a href="./classes.html">Talk to Us</a></li>[m
+[32m+[m[32m                                <li><a href="{{ url('/#talk_to_us') }}">Talk to Us</a></li>[m
+                                 <li><a href="#">Blog</a>[m
+                                     <ul class="dropdown">[m
+[31m-                                        <li><a href="./classes-details.html">Share Ur Story</a></li>[m
+[31m-                                        <li><a href="./blog-details.html">Talks</a></li>[m
+[32m+[m[32m                                        <li><a href="{{ url('shared_stories') }}">Discover Stories</a></li>[m
+[32m+[m[32m                                        <li><a href="{{ url('talks') }}">Expert Talks</a></li>[m
+                                     </ul>[m
+                                 </li>[m
+[31m-                                <li><a href="#">Media</a>[m
+[32m+[m[32m                                <li><a href="{{ url('news') }}">News</a></li>[m
+[32m+[m[32m                                <li><a href="#">Hope Box</a>[m
+                                     <ul class="dropdown">[m
+[31m-                                        <li><a href="./classes-details.html">Video</a></li>[m
+[31m-                                        <li><a href="./blog-details.html">Audio</a></li>[m
+[32m+[m[32m                                        <li><a href="{{ url('inspire_me') }}">Inspire Me</a></li>[m
+[32m+[m[32m                                        <li><a href="./classes-details.html">Videos</a></li>[m
+[32m+[m[32m                                        <li><a href="./blog-details.html">Playlists</a></li>[m
+                                     </ul>[m
+                                 </li>[m
+[31m-                                <li><a href="#">Team</a>[m
+[32m+[m[32m                                <li><a href="{{ url('team') }}">Team</a>[m
+                                     <ul class="dropdown">[m
+[31m-                                        <li><a href="./classes-details.html">Our Volunteers</a></li>[m
+[31m-                                        <li><a href="./blog-details.html">Our Therapists</a></li>[m
+[31m-                                        <li><a href="./blog-details.html">Our Family</a></li>[m
+[32m+[m[32m                                        <li><a href="{{ url('team#family') }}">Family</a></li>[m
+[32m+[m[32m                                        <li><a href="{{ url('team#volunteers') }}">Volunteers</a></li>[m
+[32m+[m[32m                                        <li><a href="{{ url('team#therapists') }}">Therapists</a></li>[m
+                                     </ul>[m
+                                 </li>[m
+             </ul>[m
+         </nav>[m
+         <div class="offcanvas__social">[m
+[31m-            <a href="#"><i class="fa fa-facebook"></i></a>[m
+[31m-            <a href="#"><i class="fa fa-twitter"></i></a>[m
+[31m-            <a href="#"><i class="fa fa-instagram"></i></a>[m
+[31m-            <a href="#"><i class="fa fa-linkedin"></i></a>[m
+[32m+[m[32m            <a href="#"><i class="fa fa-facebook"></i></a>&emsp;[m
+[32m+[m[32m            <a href="#"><i class="fa fa-twitter"></i></a>&emsp;[m
+[32m+[m[32m            <a href="#"><i class="fa fa-instagram"></i></a>&emsp;[m
+[32m+[m[32m            <a href="#"><i class="fa fa-linkedin"></i></a>&emsp;[m
+         </div>[m
+     </div>[m
+     <!-- Offcanvas Menu End -->[m
+[36m@@ -113,7 +129,7 @@[m
+                 <div class="row">[m
+                     <div class="col-lg-3 col-md-3">[m
+                         <div class="header__logo">[m
+[31m-                            <a href="./index.html"><img src="img/logo.png" alt=""></a>[m
+[32m+[m[32m                            <a href="{{ url('/') }}"><img src="img/logo.png" alt="Sahaayak" width="240" height="60"></a>[m
+                         </div>[m
+                     </div>[m
+                     <div class="col-lg-9 col-md-9">[m
+[36m@@ -181,7 +197,7 @@[m
+                                 <li><a href="{{ url('news') }}">News</a></li>[m
+                                 <li><a href="#">Hope Box</a>[m
+                                     <ul class="dropdown">[m
+[31m-                                        <li><a href="./classes-details.html">Inspire Me</a></li>[m
+[32m+[m[32m                                        <li><a href="{{ url('inspire_me') }}">Inspire Me</a></li>[m
+                                         <li><a href="./classes-details.html">Videos</a></li>[m
+                                         <li><a href="./blog-details.html">Playlists</a></li>[m
+                                     </ul>[m
+[36m@@ -215,7 +231,7 @@[m
+             <div class="row">[m
+                 <div class="col-lg-3 col-md-6 col-sm-6">[m
+                     <div class="footer__about">[m
+[31m-                        <img src="img/footer-logo.png" alt="">[m
+[32m+[m[32m                        <img src="img/footer-logo.png" alt="Sahaayak" width="240" height="60">[m
+                         <ul class="footer-address">[m
+                             <li><i class="fa fa-phone"></i> (01) 436 8888</li>[m
+                             <li><i class="fa fa-envelope"></i> hello@zogin.com</li>[m
+[1mdiff --git a/resources/views/welcome.blade.php b/resources/views/welcome.blade.php[m
+[1mindex 3a9dc07..26834ba 100644[m
+[1m--- a/resources/views/welcome.blade.php[m
+[1m+++ b/resources/views/welcome.blade.php[m
+[36m@@ -23,7 +23,7 @@[m
+                         <div class="col-lg-8">[m
+                             <div class="hero__text">[m
+                                 <span>We Share coz We Care</span>[m
+[31m-                                <h2>Dialy Quote #1</h2>[m
+[32m+[m[32m                                <h2>Dialy Quote #2</h2>[m
+                                 <a href="#" class="primary-btn">DISCOVER MORE</a>[m
+                             </div>[m
+                         </div>[m
+[36m@@ -94,42 +94,6 @@[m
+                             hour yoga teacher training in Rishikesh, India - Join us to have such life-transforming[m
+                             experience in The world capital of Yoga in Rishikesh.</p>[m
+                     </div>[m
+[31m-                    <!--<div class="chooseus__item">[m
+[31m-                        <div class="chooseus__item__icon">[m
+[31m-                            <img src="img/chooseus/choose-1.png" alt="">[m
+[31m-                        </div>[m
+[31m-                        <div class="chooseus__item__text">[m
+[31m-                            <h2 class="choose-counter">2146</h2>[m
+[31m-                            <p>Students</p>[m
+[31m-                        </div>[m
+[31m-                    </div>[m
+[31m-                    <div class="chooseus__item">[m
+[31m-                        <div class="chooseus__item__icon">[m
+[31m-                            <img src="img/chooseus/choose-2.png" alt="">[m
+[31m-                        </div>[m
+[31m-                        <div class="chooseus__item__text">[m
+[31m-                            <h2 class="choose-counter">15</h2>[m
+[31m-                            <p>Years Of Experience</p>[m
+[31m-                        </div>[m
+[31m-                    </div>[m
+[31m-                    <div class="chooseus__item">[m
+[31m-                        <div class="chooseus__item__icon">[m
+[31m-                            <img src="img/chooseus/choose-3.png" alt="">[m
+[31m-                        </div>[m
+[31m-                        <div class="chooseus__item__text">[m
+[31m-                            <h2 class="choose-counter">48</h2>[m
+[31m-                            <p>Branches</p>[m
+[31m-                        </div>[m
+[31m-                    </div>[m
+[31m-                    <div class="chooseus__item">[m
+[31m-                        <div class="chooseus__item__icon
