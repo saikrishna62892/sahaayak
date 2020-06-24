@@ -2260,7 +2260,7 @@ ol {
 	position: absolute;
 	left: 0;
 	top: 0;
-	height: 56px;
+	height: 106px;
 	width: 2px;
 	background: #5768AD;
 	content: "";
@@ -2552,7 +2552,7 @@ ol {
 }
 
 .faq__accordion .card .card-heading a {
-	font-size: 24px;
+	font-size: 18px;
 	cursor: pointer;
 }
 
@@ -3009,6 +3009,6 @@ ol {
 		padding-right: 0;
 	}
 	.faq__accordion .card .card-heading a {
-		font-size: 16px;
+		font-size: 18px;
 	}
 }

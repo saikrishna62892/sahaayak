@@ -100,8 +100,8 @@
                                 <li><a href="#">Hope Box</a>
                                     <ul class="dropdown">
                                         <li><a href="{{ url('inspire_me') }}">Inspire Me</a></li>
-                                        <li><a href="./classes-details.html">Videos</a></li>
-                                        <li><a href="./blog-details.html">Playlists</a></li>
+                                        <li><a href="{{ url('videos') }}">Videos</a></li>
+                                        <li><a href="{{ url('playlists') }}">Playlists</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="{{ url('team') }}">Team</a>
@@ -198,8 +198,8 @@
                                 <li><a href="#">Hope Box</a>
                                     <ul class="dropdown">
                                         <li><a href="{{ url('inspire_me') }}">Inspire Me</a></li>
-                                        <li><a href="./classes-details.html">Videos</a></li>
-                                        <li><a href="./blog-details.html">Playlists</a></li>
+                                        <li><a href="{{ url('videos') }}">Videos</a></li>
+                                        <li><a href="{{ url('playlists') }}">Playlists</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="{{ url('team') }}">Team</a>
