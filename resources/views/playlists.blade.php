@@ -6,10 +6,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__text">
-                        <h2>Inspire Me</h2>
+                        <h2>Playlists</h2>
                         <div class="breadcrumb__widget">
                             <a href="./index.html">Home</a>
-                            <span>Inspire Me</span>
+                            <span>Playlists</span>
                         </div>
                     </div>
                 </div>

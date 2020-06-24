@@ -93,3 +93,11 @@ Route::get('team', function () {
 Route::get('inspire_me', function () {
     return view('inspire_me');
 });
+
+Route::get('videos', function () {
+    return view('videos');
+});
+
+Route::get('playlists', function () {
+    return view('playlists');
+});
