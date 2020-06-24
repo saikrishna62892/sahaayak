@@ -186,11 +186,11 @@
                                         <li><a href="./blog-details.html">Playlists</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Team</a>
+                                <li><a href="{{ url('team') }}">Team</a>
                                     <ul class="dropdown">
-                                        <li><a href="./classes-details.html">Our Volunteers</a></li>
-                                        <li><a href="./blog-details.html">Our Therapists</a></li>
-                                        <li><a href="./blog-details.html">Our Family</a></li>
+                                        <li><a href="{{ url('team#family') }}">Family</a></li>
+                                        <li><a href="{{ url('team#volunteers') }}">Volunteers</a></li>
+                                        <li><a href="{{ url('team#therapists') }}">Therapists</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -252,7 +252,7 @@
                             <li><a href="#">What we offer</a></li>
                             <li><a href="#">Impact</a></li>
                             <li><a href="#">Gallery</a></li>
-                            <li><a href="#">Contributors</a></li>
+                            <li><a href="#">FAQ</a></li>
                         </ul>
                     </div>
                 </div>
@@ -302,8 +302,9 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
-    <!-- ManyChat -->
-<script src="//widget.manychat.com/101206188315883.js" async="async"></script>
+    <!-- ManyChat Plugin -->
+    <script src="//widget.manychat.com/101206188315883.js" async="async"></script>
+    <!-- Smooth Scrolling -->
     <script>
             let anchorlinks = document.querySelectorAll('a[href^="#"]')
             for (let item of anchorlinks) { // relitere 
@@ -319,8 +320,8 @@
             }
     </script>
     <!-- Load Facebook SDK for JavaScript -->
-      <div id="fb-root"></div>
-      <script>
+    <div id="fb-root"></div>
+    <script>
         window.fbAsyncInit = function() {
           FB.init({
             xfbml            : true,
@@ -335,16 +336,16 @@
         js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
-        </script>
+    </script>
 
-      <!-- Your Chat Plugin code -->
-      <div class="fb-customerchat"
+    <!-- Your Chat Plugin code -->
+    <div class="fb-customerchat"
         attribution=setup_tool
         page_id="100529798384686"
-  theme_color="#5768ad"
-  logged_in_greeting="Hi buddy we are there to talk with you?"
-  logged_out_greeting="Hi buddy we are there to talk with you?">
-      </div>
+        theme_color="#5768ad"
+        logged_in_greeting="Hi buddy we are there to talk with you?"
+        logged_out_greeting="Hi buddy we are there to talk with you?">
+    </div>
 
 </body>
 

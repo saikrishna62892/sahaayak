@@ -85,3 +85,7 @@ Route::get('talks', function () {
 Route::get('volunteer_signup', function () {
     return view('volunteer_signup');
 });
+
+Route::get('team', function () {
+    return view('team');
+});
