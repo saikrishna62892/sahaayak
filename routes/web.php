@@ -90,6 +90,30 @@ Route::get('volunteer_signup', function () {
     return view('volunteer_signup');
 });
 
+//dileep added routes
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+//admin page route
+Route::get('admin/home', 'HomeController@adminHome')->name('admin.home')->middleware('is_admin');
+
+//Questionnaire Routes
+Route::get('admin/home/questionnaires/create','QuestionnaireController@create');
+Route::post('admin/home/questionnaires','QuestionnaireController@store');
+Route::get('admin/home/questionnaires/{questionnaire}','QuestionnaireController@show');
+
+//Question Routes
+Route::get('admin/home/questionnaires/{questionnaire}/questions/create','QuestionController@create');
+Route::post('admin/home/questionnaires/{questionnaire}/questions','QuestionController@store');
+Route::get('home/questionnaires/{questionnaire}/questions','QuestionController@show');
+Route::post('home/questionnaires/{questionnaire}/getResult','QuestionController@getResult');
+
+//end of dileep added routes
+
 Route::get('team', function () {
     return view('team');
 });
