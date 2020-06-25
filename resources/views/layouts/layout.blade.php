@@ -21,10 +21,13 @@
     <link rel="stylesheet" href="/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link href="css/introjs.css" rel="stylesheet">
+    <link href="css/introjs-modern.css" rel="stylesheet">
+    
 
 
     <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.nice-select.min.js"></script>
     <script src="js/jquery.barfiller.js"></script>
     <script src="js/jquery.slicknav.js"></script>
@@ -36,9 +39,11 @@
 
 <body>
     <!-- Page Preloder -->
+    <!--
     <div id="preloder">
         <div class="loader"></div>
     </div>
+-->
     <!-- Offcanvas Menu Begin -->
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu">
@@ -100,8 +105,8 @@
                                 <li><a href="#">Hope Box</a>
                                     <ul class="dropdown">
                                         <li><a href="{{ url('inspire_me') }}">Inspire Me</a></li>
-                                        <li><a href="./classes-details.html">Videos</a></li>
-                                        <li><a href="./blog-details.html">Playlists</a></li>
+                                        <li><a href="{{ url('videos') }}">Videos</a></li>
+                                        <li><a href="{{ url('playlists') }}">Playlists</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="{{ url('team') }}">Team</a>
@@ -121,15 +126,16 @@
         </div>
     </div>
     <!-- Offcanvas Menu End -->
-
+    
     <!-- Header Section Begin -->
+    
     <header class="header">
         <div class="header__top">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-md-3">
                         <div class="header__logo">
-                            <a href="{{ url('/') }}"><img src="img/logo.png" alt="Sahaayak" width="240" height="60"></a>
+                            <a href="{{ url('/') }}"><img data-step="1" data-intro="logo" data-position="right" src="img/logo.png" alt="Sahaayak" width="240" height="60"></a>
                         </div>
                     </div>
                     <div class="col-lg-9 col-md-9">
@@ -137,25 +143,45 @@
                             <ul>
                                 <li>CALL US: + 1 800-567-8990</li>
                                 <li>WRITE US: OFFICE@EXAMPLE.COM</li>
+                            @guest
+            <a href="{{ route('login') }}" class="primary-btn">Login</a>
+            @if (Route::has('register'))
+                <a href="{{ route('register') }}" class="primary-btn">Join us</a>
+            @endif
+
+            @else
+                            <li class="dropdown">
+                                <a id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                                        @csrf
+                                    </form>
+                            </li>
                             </ul>
-                            <a href="{{ url('login') }}" class="primary-btn">Login</a>
-                            <a href="{{ url('joinus') }}" class="primary-btn">Join Us</a>
+                            <a href="{{ url('login') }}" class="primary-btn" data-step="3" data-intro="login" data-position="bottom">Login</a>
+                            <a href="{{ url('joinus') }}" class="primary-btn" data-step="2" data-intro="joinus" data-position="bottom">Join Us</a>
                         </div>
-                        
                     </div>
-                </div>
-                <div class="canvas__open">
-                    <i class="fa fa-bars"></i>
+
                 </div>
             </div>
         </div>
+
         <div class="header__nav">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-md-9">
                         <nav class="header__menu">
                             <ul>
-                                <li class="active"><a href="{{ url('/') }}">Home</a></li>
+                                <li><a href="{{ url('/') }}">Home</a></li>
                                 <li><a href="{{ url('about') }}">About</a></li>
                                 <li><a href="#">Learn</a>
                                     <ul class="dropdown">
@@ -172,19 +198,24 @@
                                 </li>
                                 <li><a href="#">Assessment</a>
                                     <ul class="dropdown">
-                                        <li><a href="./classes-details.html">Depression test</a></li>
-                                        <li><a href="./pricing.html">Sleep hygiene test</a></li>
-                                        <li><a href="./pricing.html">Happiness test</a></li>
-                                        <li><a href="./pricing.html">Mental health test</a></li>
-                                        <li><a href="./pricing.html">Anxiety test</a></li>
-                                        <li><a href="./blog-details.html">Self esteem test</a></li>
-                                        <li><a href="./pricing.html">Mental speed test</a></li>
-                                        <li><a href="./pricing.html">Concentration test</a></li>
-                                        <li><a href="./pricing.html">Emotional intelligence test</a></li>
-                                        <li><a href="./blog-details.html">Social skills test</a></li>
-                                        <li><a href="./pricing.html">Stress test</a></li>
-                                        <li><a href="./pricing.html">Self disclosure test</a></li>
-                                        <li><a href="./pricing.html">Healthy lifestyle test</a></li>
+                                    @foreach($questionnaires as $questionnaire)
+<li><a href="/home/questionnaires/{{$questionnaire->id}}/questions">{{$questionnaire->questionnaireTitle}}</a></li>
+@endforeach
+                                    
+                                    <!--
+                                    <li><a href="/home/questionnaires/2/questions">Sleep hygiene test</a></li>
+                                    <li><a href="/home/questionnaires/3/questions">Happiness test</a></li>
+                                    <li><a href="/home/questionnaires/4/questions">Mental health test</a></li>
+                                    <li><a href="/home/questionnaires/5/questions">Anxiety test</a></li>
+                                    <li><a href="/home/questionnaires/6/questions">Self esteem test</a></li>
+                                    <li><a href="/home/questionnaires/7/questions">Mental speed test</a></li>
+                                    <li><a href="/home/questionnaires/8/questions">Concentration test</a></li>
+                            <li><a href="/home/questionnaires/9/questions">Emotional intelligence test</a></li>
+                                    <li><a href="/home/questionnaires/10/questions">Social skills test</a></li>
+                                    <li><a href="/home/questionnaires/11/questions">Stress test</a></li>
+                                <li><a href="/home/questionnaires/12/questions">Self disclosure test</a></li>
+                                <li><a href="/home/questionnaires/13/questions">Healthy lifestyle test</a></li>
+                            -->
                                     </ul>
                                 </li>
                                 <li><a href="{{ url('/#talk_to_us') }}">Talk to Us</a></li>
@@ -198,8 +229,8 @@
                                 <li><a href="#">Hope Box</a>
                                     <ul class="dropdown">
                                         <li><a href="{{ url('inspire_me') }}">Inspire Me</a></li>
-                                        <li><a href="./classes-details.html">Videos</a></li>
-                                        <li><a href="./blog-details.html">Playlists</a></li>
+                                        <li><a href="{{ url('videos') }}">Videos</a></li>
+                                        <li><a href="{{ url('playlists') }}">Playlists</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="{{ url('team') }}">Team</a>
@@ -238,8 +269,7 @@
                             <li><i class="fa fa-location-arrow"></i> 828 Granville Lights Suite 466</li>
                         </ul>
                         <h5 style="color:white;">Subscribe</h5><br>
-                        <form action="/subscriber_controller" method="get" class="subscribe-form">
-                        @csrf
+                        <form action="#" class="subscribe-form">
                             <input type="text" placeholder="Your Email" name="email">
                             <button type="submit"><i class="fa fa-send"></i></button>
                         </form>
@@ -320,6 +350,8 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <script type="text/javascript" src="js/intro.js"></script>
+
     <!-- ManyChat Plugin -->
     <script src="//widget.manychat.com/101206188315883.js" async="async"></script>
     <!-- Smooth Scrolling -->

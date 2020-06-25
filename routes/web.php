@@ -42,6 +42,10 @@ Route::get('learn_healthy_sleep', function () {
     return view('learn_healthy_sleep');
 });
 
+Route::get('learn_hopelessness', function () {
+    return view('learn_hopelessness');
+});
+
 Route::get('learn_mental_illness', function () {
     return view('learn_mental_illness');
 });
@@ -86,6 +90,30 @@ Route::get('volunteer_signup', function () {
     return view('volunteer_signup');
 });
 
+//dileep added routes
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+//admin page route
+Route::get('admin/home', 'HomeController@adminHome')->name('admin.home')->middleware('is_admin');
+
+//Questionnaire Routes
+Route::get('admin/home/questionnaires/create','QuestionnaireController@create');
+Route::post('admin/home/questionnaires','QuestionnaireController@store');
+Route::get('admin/home/questionnaires/{questionnaire}','QuestionnaireController@show');
+
+//Question Routes
+Route::get('admin/home/questionnaires/{questionnaire}/questions/create','QuestionController@create');
+Route::post('admin/home/questionnaires/{questionnaire}/questions','QuestionController@store');
+Route::get('home/questionnaires/{questionnaire}/questions','QuestionController@show');
+Route::post('home/questionnaires/{questionnaire}/getResult','QuestionController@getResult');
+
+//end of dileep added routes
+
 Route::get('team', function () {
     return view('team');
 });
@@ -93,7 +121,14 @@ Route::get('team', function () {
 Route::get('inspire_me', function () {
     return view('inspire_me');
 });
-Route::post('joinus/user_controller','user_controller@save');
+
 Route::post('/appointment_controller','appointment_controller@save');
-Route::get('/subscriber_controller','subscriber_controller@save');
 Route::get('/suggestion_controller','suggestion_controller@save');
+
+Route::get('videos', function () {
+    return view('videos');
+});
+
+Route::get('playlists', function () {
+    return view('playlists');
+});

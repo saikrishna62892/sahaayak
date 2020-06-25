@@ -1,6 +1,7 @@
 @extends('layouts.layout')
 
     @section('content')
+    
 
     <!-- Breadcrumb Begin -->
     <section class="breadcrumb-option set-bg" data-setbg="img/breadcrumb.jpg">
@@ -25,6 +26,7 @@
         <div class="container">
             <div class="about__services">
                 <div class="section-title">
+                    <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
                     <h2>Our Mission</h2>
                     <p>To be invited to the nearest Cali center and get free physical advice to learn more about
                                 the program.</p>
@@ -71,7 +73,7 @@
                 <div class="col-lg-5 p-0">
                     <div class="about__text">
                         <div class="section-title">
-                            <img src="img/icon.png" alt="">
+                            <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
                             <h2>Our Vision</h2>
                             <p>To be invited to the nearest Cali center and get free physical advice to learn more about
                                 the program.</p>
@@ -116,6 +118,7 @@
     <section class="chooseus spad">
         <div class="container">
             <div  class="section-title">
+                <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
                 <h2>Statistics</h2>
                 <p>We are offering internationally certified 200 Hour Yoga Teacher Training in Rishikesh and 300
                             hour yoga teacher training in Rishikesh, India - Join us to have such life-transforming
@@ -202,12 +205,14 @@
         </div>
     </section>
     <!-- Statistics End -->
+
     <!-- Classes Section Begin -->
     <section class="upcoming-classes spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="section-title normal-title">
+                    <div class="section-title">
+                        <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
                         <h2>What We Offer</h2>
                         <p>The trainings are multi-style and you will learn and practice Hatha Vinyasa<br /> (flow) and
                             Yin Yoga.</p>
@@ -258,6 +263,7 @@
         </div>
     </section>
     <!-- Classes Section End -->
+
     <!-- Counter Begin -->
     <div class="counter spad">
         <div class="container">
@@ -307,7 +313,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="section-title normal-title">
+                    <div class="section-title">
+                        <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
                         <h2>Our Gallery</h2>
                         <p>This is the beautiful yogi and yoginis that have shared their journey and growth with<br />
                             us. Take a look!</p>
@@ -361,12 +368,14 @@
         </div>
     </section>
     <!-- Gallery Section End -->
+    
     <!-- Faq Begin -->
     <div class="faq spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="section-title normal-title">
+                    <div class="section-title">
+                        <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
                         <h2>FAQ</h2>
                         <p>Frequently Asked Questions</p>
                     </div>

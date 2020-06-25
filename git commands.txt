@@ -7,7 +7,7 @@ After Modifying the files
 git add .
 git status
 git commit -m "Ur Message"
-git push
+git push origin HEAD:name
 Username & password
 
 

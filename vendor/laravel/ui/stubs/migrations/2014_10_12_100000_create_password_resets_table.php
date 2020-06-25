@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSubscriberTable extends Migration
+class CreatePasswordResetsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateSubscriberTable extends Migration
      */
     public function up()
     {
-        Schema::create('subscriber', function (Blueprint $table) {
-            $table->string('email',100);
-            $table->dateTime('timestamp');
+        Schema::create('password_resets', function (Blueprint $table) {
+            $table->string('email')->index();
+            $table->string('token');
+            $table->timestamp('created_at')->nullable();
         });
     }
 
@@ -26,6 +27,6 @@ class CreateSubscriberTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('subscriber');
+        Schema::dropIfExists('password_resets');
     }
 }
