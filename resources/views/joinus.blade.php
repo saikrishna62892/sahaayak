@@ -4,12 +4,13 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-45 p-b-30">
-				<form class="login100-form validate-form">
+				<form  action ="joinus/user_controller" class="login100-form validate-form" method="POST">
 					<span class="login100-form-title p-b-25">
 						SignUp : Step 1
 					</span>
 					<div class="wrap-input100 validate-input m-b-16">
 						<input class="input100" type="text" name="username" placeholder="Username">
+						@csrf
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<span class="lnr lnr-user"></span>

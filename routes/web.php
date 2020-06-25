@@ -93,3 +93,7 @@ Route::get('team', function () {
 Route::get('inspire_me', function () {
     return view('inspire_me');
 });
+Route::post('joinus/user_controller','user_controller@save');
+Route::post('/appointment_controller','appointment_controller@save');
+Route::get('/subscriber_controller','subscriber_controller@save');
+Route::get('/suggestion_controller','suggestion_controller@save');

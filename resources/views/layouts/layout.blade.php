@@ -238,8 +238,9 @@
                             <li><i class="fa fa-location-arrow"></i> 828 Granville Lights Suite 466</li>
                         </ul>
                         <h5 style="color:white;">Subscribe</h5><br>
-                        <form action="#" class="subscribe-form">
-                            <input type="text" placeholder="Your Email">
+                        <form action="/subscriber_controller" method="get" class="subscribe-form">
+                        @csrf
+                            <input type="text" placeholder="Your Email" name="email">
                             <button type="submit"><i class="fa fa-send"></i></button>
                         </form>
                     </div>
@@ -286,16 +287,17 @@
                         <h5>Write to Us</h5>
                         <!-- Leave Comment Begin -->
                         <div class="leave__comment__text">
-                            <form action="#">
+                            <form action="/suggestion_controller" method="get">
+                            @csrf
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
-                                        <input type="text" placeholder="Name*">
+                                        <input type="text" placeholder="Name*" name="name">
                                     </div>
                                     <div class="col-lg-6 col-md-6">
-                                        <input type="text" placeholder="Email*">
+                                        <input type="text" placeholder="Email*" name="email">
                                     </div>
                                     <div class="col-lg-12 text-center">
-                                        <textarea placeholder="Your Comment"></textarea>
+                                    <input type="text" placeholder="Comment" name="comment">
                                         <button type="submit" class="site-btn">Submit</button>
                                     </div>
                                 </div>
