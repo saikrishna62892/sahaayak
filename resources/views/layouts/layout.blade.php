@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link href="css/introjs.css" rel="stylesheet">
+    <link href="css/introjs-modern.css" rel="stylesheet">
+    
 
 
     <script src="js/jquery-3.3.1.min.js"></script>
@@ -129,7 +132,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-3">
                         <div class="header__logo">
-                            <a href="{{ url('/') }}"><img src="img/logo.png" alt="Sahaayak" width="240" height="60"></a>
+                            <a href="{{ url('/') }}"><img data-step="1" data-intro="logo" data-position="right" src="img/logo.png" alt="Sahaayak" width="240" height="60"></a>
                         </div>
                     </div>
                     <div class="col-lg-9 col-md-9">
@@ -138,8 +141,8 @@
                                 <li>CALL US: + 1 800-567-8990</li>
                                 <li>WRITE US: OFFICE@EXAMPLE.COM</li>
                             </ul>
-                            <a href="{{ url('login') }}" class="primary-btn">Login</a>
-                            <a href="{{ url('joinus') }}" class="primary-btn">Join Us</a>
+                            <a href="{{ url('login') }}" class="primary-btn" data-step="3" data-intro="login" data-position="bottom">Login</a>
+                            <a href="{{ url('joinus') }}" class="primary-btn" data-step="2" data-intro="joinus" data-position="bottom">Join Us</a>
                         </div>
                         
                     </div>
@@ -318,6 +321,8 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <script type="text/javascript" src="js/intro.js"></script>
+
     <!-- ManyChat Plugin -->
     <script src="//widget.manychat.com/101206188315883.js" async="async"></script>
     <!-- Smooth Scrolling -->
