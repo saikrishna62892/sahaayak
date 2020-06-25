@@ -361,76 +361,129 @@
         </div>
     </section>
     <!-- Gallery Section End -->
-    <!-- Team Section Begin -->
-    <section class="team spad">
+    <!-- Faq Begin -->
+    <div class="faq spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="section-title">
-                        <img src="img/icon.png" alt="">
-                        <h2>Meet Our Contributors</h2>
-                        <p>We search the entire world to provide you with passionate, authentic Indian Yoga</p>
+                    <div class="section-title normal-title">
+                        <h2>FAQ</h2>
+                        <p>Frequently Asked Questions</p>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="team__slider owl-carousel">
-                    <div class="col-lg-6">
-                        <div class="team__item">
-                            <div class="team__item__pic">
-                                <img src="img/team/team-1.png" alt="">
-                            </div>
-                            <div class="team__item__text">
-                                <div class="team__item__title">
-                                    <h4>Christina Lauren</h4>
-                                    <span>Yoga Teacher</span>
+        </div>
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-10">
+                    <div class="faq__accordion">
+                        <div class="accordion" id="accordionExample">
+                            <div class="card">
+                                <div class="card-heading">
+                                    <a data-toggle="collapse" data-target="#collapseOne">
+                                        <span>How to join the community?</span>
+                                    </a>
                                 </div>
-                                <p>Yoga & Therapy Certificate of<br /> Uttarakhand University Sanskirt</p>
-                                <div class="team__item__social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="team__item">
-                            <div class="team__item__pic">
-                                <img src="img/team/team-2.png" alt="">
-                            </div>
-                            <div class="team__item__text">
-                                <div class="team__item__title">
-                                    <h4>Tracy Maclaren</h4>
-                                    <span>Yoga Teacher</span>
-                                </div>
-                                <p>Yoga & Therapy Certificate of<br /> Uttarakhand University Sanskirt</p>
-                                <div class="team__item__social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                                <div id="collapseOne" class="collapse" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
+                                            you’re interested in gifting ClassPass to someone, you can purchase a gift
+                                            card here.</p>
+                                        <p>Please allow 1 day for tracking information to update on your order. If you
+                                            are unable to track your order, please let us know and we'll be happy to
+                                            assist.</p>
+                                        <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="team__item">
-                            <div class="team__item__pic">
-                                <img src="img/team/team-2.png" alt="">
-                            </div>
-                            <div class="team__item__text">
-                                <div class="team__item__title">
-                                    <h4>Tracy Maclaren</h4>
-                                    <span>Yoga Teacher</span>
+                            <div class="card">
+                                <div class="card-heading active">
+                                    <a data-toggle="collapse" data-target="#collapseTwo">
+                                        <span>Can I give my credits to someone else?</span>
+                                    </a>
                                 </div>
-                                <p>Yoga & Therapy Certificate of<br /> Uttarakhand University Sanskirt</p>
-                                <div class="team__item__social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                                <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
+                                            you’re interested in gifting ClassPass to someone, you can purchase a gift
+                                            card here.</p>
+                                        <p>Please allow 1 day for tracking information to update on your order. If you
+                                            are unable to track your order, please let us know and we'll be happy to
+                                            assist.</p>
+                                        <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-heading">
+                                    <a data-toggle="collapse" data-target="#collapseThree">
+                                        <span>How to watch video workouts?</span>
+                                    </a>
+                                </div>
+                                <div id="collapseThree" class="collapse" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
+                                            you’re interested in gifting ClassPass to someone, you can purchase a gift
+                                            card here.</p>
+                                        <p>Please allow 1 day for tracking information to update on your order. If you
+                                            are unable to track your order, please let us know and we'll be happy to
+                                            assist.</p>
+                                        <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-heading">
+                                    <a data-toggle="collapse" data-target="#collapseFour">
+                                        <span>What is Zogin?</span>
+                                    </a>
+                                </div>
+                                <div id="collapseFour" class="collapse" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
+                                            you’re interested in gifting ClassPass to someone, you can purchase a gift
+                                            card here.</p>
+                                        <p>Please allow 1 day for tracking information to update on your order. If you
+                                            are unable to track your order, please let us know and we'll be happy to
+                                            assist.</p>
+                                        <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-heading">
+                                    <a data-toggle="collapse" data-target="#collapseFive">
+                                        <span>How many times can I visit a studio each cycle?</span>
+                                    </a>
+                                </div>
+                                <div id="collapseFive" class="collapse" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
+                                            you’re interested in gifting ClassPass to someone, you can purchase a gift
+                                            card here.</p>
+                                        <p>Please allow 1 day for tracking information to update on your order. If you
+                                            are unable to track your order, please let us know and we'll be happy to
+                                            assist.</p>
+                                        <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-heading">
+                                    <a data-toggle="collapse" data-target="#collapseSix">
+                                        <span>What is the class cancellation policy?</span>
+                                    </a>
+                                </div>
+                                <div id="collapseSix" class="collapse" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
+                                            you’re interested in gifting ClassPass to someone, you can purchase a gift
+                                            card here.</p>
+                                        <p>Please allow 1 day for tracking information to update on your order. If you
+                                            are unable to track your order, please let us know and we'll be happy to
+                                            assist.</p>
+                                        <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -438,7 +491,7 @@
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Team Section End -->
+    </div>
+    <!-- Faq End -->
 
     @endsection

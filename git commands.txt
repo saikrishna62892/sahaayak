@@ -1,0 +1,51 @@
+git pull
+
+
+After Modifying the files
+
+
+git add .
+git status
+git commit -m "Ur Message"
+git push
+Username & password
+
+
+
+Git Branching
+//Guys i already created remote branches with ur names so ur named branch is your working location
+
+To create a local branch to your project
+git branch <branch_name>
+
+To switch to ur branch 
+git checkout <branch_name>
+
+
+After making changes push the files into ur branch repository
+To push to your branch
+git push -u origin <brnach_name>
+
+
+git branching
+mkdir temp
+cd temp
+git clone link
+git branch
+cd sahaayak
+git branch --list
+git branch b_name
+git checkout temp
+touch abc.txt
+git pull
+git branch --set-upstream-to=origin/name b_name
+git pull
+
+
+Adding the files
+
+
+For pushing
+git push origin HEAD:name
+git push -u origin name
+

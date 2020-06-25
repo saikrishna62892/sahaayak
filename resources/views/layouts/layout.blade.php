@@ -45,7 +45,7 @@
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu">
         <div class="offcanvas__logo">
-            <a href="./index.html"><img src="img/logo.png" alt=""></a>
+            <a href="{{ url('/') }}"><img src="img/logo.png" alt="Sahaayak" width="240" height="60"></a>
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__widget">
@@ -59,51 +59,67 @@
         
         <nav class="header__menu">
             <ul class="mobile-menu">
-                <li class="active"><a href="./index.html">Home</a></li>
-                                <li><a href="./about-us.html">About</a></li>
+                <li class="active"><a href="{{ url('/') }}">Home</a></li>
+                                <li><a href="{{ url('about') }}">About</a></li>
                                 <li><a href="#">Learn</a>
                                     <ul class="dropdown">
-                                        <li><a href="./classes-details.html">Topic1</a></li>
-                                        <li><a href="./blog-details.html">Topic2</a></li>
-                                        <li><a href="./pricing.html">Topic3</a></li>
-                                        <li><a href="./faq.html">Topic4</a></li>
+                                        <li><a href="{{ url('learn_depression') }}">Depression</a></li>
+                                        <li><a href="{{ url('learn_suicide') }}">Suicide</a></li>
+                                        <li><a href="{{ url('learn_stress') }}">Stress</a></li>
+                                        <li><a href="{{ url('learn_stigma') }}">Stigma</a></li>
+                                        <li><a href="{{ url('learn_healthy_sleep') }}">Healthy Sleep</a></li>
+                                        <li><a href="{{ url('learn_mental_illness') }}">Mental Illness</a></li>
+                                        <li><a href="{{ url('learn_hopelessness') }}">Hopelessness</a></li>
+                                        <li><a href="{{ url('learn_fear_of_loss') }}">Fear of Loss</a></li>
+                                        <li><a href="{{ url('learn_social_isolation') }}">Social Isolation</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Assesments</a>
+                                <li><a href="#">Assessment</a>
                                     <ul class="dropdown">
-                                        <li><a href="./classes-details.html">Topic1</a></li>
-                                        <li><a href="./blog-details.html">Topic2</a></li>
-                                        <li><a href="./pricing.html">Topic3</a></li>
-                                        <li><a href="./faq.html">Topic4</a></li>
+                                        <li><a href="./classes-details.html">Depression test</a></li>
+                                        <li><a href="./pricing.html">Sleep hygiene test</a></li>
+                                        <li><a href="./pricing.html">Happiness test</a></li>
+                                        <li><a href="./pricing.html">Mental health test</a></li>
+                                        <li><a href="./pricing.html">Anxiety test</a></li>
+                                        <li><a href="./blog-details.html">Self esteem test</a></li>
+                                        <li><a href="./pricing.html">Mental speed test</a></li>
+                                        <li><a href="./pricing.html">Concentration test</a></li>
+                                        <li><a href="./pricing.html">Emotional intelligence test</a></li>
+                                        <li><a href="./blog-details.html">Social skills test</a></li>
+                                        <li><a href="./pricing.html">Stress test</a></li>
+                                        <li><a href="./pricing.html">Self disclosure test</a></li>
+                                        <li><a href="./pricing.html">Healthy lifestyle test</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="./classes.html">Talk to Us</a></li>
+                                <li><a href="{{ url('/#talk_to_us') }}">Talk to Us</a></li>
                                 <li><a href="#">Blog</a>
                                     <ul class="dropdown">
-                                        <li><a href="./classes-details.html">Share Ur Story</a></li>
-                                        <li><a href="./blog-details.html">Talks</a></li>
+                                        <li><a href="{{ url('shared_stories') }}">Discover Stories</a></li>
+                                        <li><a href="{{ url('talks') }}">Expert Talks</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Media</a>
+                                <li><a href="{{ url('news') }}">News</a></li>
+                                <li><a href="#">Hope Box</a>
                                     <ul class="dropdown">
-                                        <li><a href="./classes-details.html">Video</a></li>
-                                        <li><a href="./blog-details.html">Audio</a></li>
+                                        <li><a href="{{ url('inspire_me') }}">Inspire Me</a></li>
+                                        <li><a href="./classes-details.html">Videos</a></li>
+                                        <li><a href="./blog-details.html">Playlists</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Team</a>
+                                <li><a href="{{ url('team') }}">Team</a>
                                     <ul class="dropdown">
-                                        <li><a href="./classes-details.html">Our Volunteers</a></li>
-                                        <li><a href="./blog-details.html">Our Therapists</a></li>
-                                        <li><a href="./blog-details.html">Our Family</a></li>
+                                        <li><a href="{{ url('team#family') }}">Family</a></li>
+                                        <li><a href="{{ url('team#volunteers') }}">Volunteers</a></li>
+                                        <li><a href="{{ url('team#therapists') }}">Therapists</a></li>
                                     </ul>
                                 </li>
             </ul>
         </nav>
         <div class="offcanvas__social">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-instagram"></i></a>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-facebook"></i></a>&emsp;
+            <a href="#"><i class="fa fa-twitter"></i></a>&emsp;
+            <a href="#"><i class="fa fa-instagram"></i></a>&emsp;
+            <a href="#"><i class="fa fa-linkedin"></i></a>&emsp;
         </div>
     </div>
     <!-- Offcanvas Menu End -->
@@ -116,7 +132,8 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-3">
                         <div class="header__logo">
-                            <a href="./index.html"><img src="/img/logo.png" alt=""></a>
+
+                            <a href="{{ url('/') }}"><img src="img/logo.png" alt="Sahaayak" width="240" height="60"></a>
                         </div>
                     </div>
                     <div class="col-lg-9 col-md-9">
@@ -207,16 +224,16 @@
                                 <li><a href="{{ url('news') }}">News</a></li>
                                 <li><a href="#">Hope Box</a>
                                     <ul class="dropdown">
-                                        <li><a href="./classes-details.html">Inspire Me</a></li>
+                                        <li><a href="{{ url('inspire_me') }}">Inspire Me</a></li>
                                         <li><a href="./classes-details.html">Videos</a></li>
                                         <li><a href="./blog-details.html">Playlists</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Team</a>
+                                <li><a href="{{ url('team') }}">Team</a>
                                     <ul class="dropdown">
-                                        <li><a href="./classes-details.html">Our Volunteers</a></li>
-                                        <li><a href="./blog-details.html">Our Therapists</a></li>
-                                        <li><a href="./blog-details.html">Our Family</a></li>
+                                        <li><a href="{{ url('team#family') }}">Family</a></li>
+                                        <li><a href="{{ url('team#volunteers') }}">Volunteers</a></li>
+                                        <li><a href="{{ url('team#therapists') }}">Therapists</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -241,7 +258,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__about">
-                        <img src="img/footer-logo.png" alt="">
+                        <img src="img/footer-logo.png" alt="Sahaayak" width="240" height="60">
                         <ul class="footer-address">
                             <li><i class="fa fa-phone"></i> (01) 436 8888</li>
                             <li><i class="fa fa-envelope"></i> hello@zogin.com</li>
@@ -278,7 +295,7 @@
                             <li><a href="#">What we offer</a></li>
                             <li><a href="#">Impact</a></li>
                             <li><a href="#">Gallery</a></li>
-                            <li><a href="#">Contributors</a></li>
+                            <li><a href="#">FAQ</a></li>
                         </ul>
                     </div>
                 </div>
@@ -328,8 +345,9 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
-    <!-- ManyChat -->
-<script src="//widget.manychat.com/101206188315883.js" async="async"></script>
+    <!-- ManyChat Plugin -->
+    <script src="//widget.manychat.com/101206188315883.js" async="async"></script>
+    <!-- Smooth Scrolling -->
     <script>
             let anchorlinks = document.querySelectorAll('a[href^="#"]')
             for (let item of anchorlinks) { // relitere 
@@ -345,8 +363,8 @@
             }
     </script>
     <!-- Load Facebook SDK for JavaScript -->
-      <div id="fb-root"></div>
-      <script>
+    <div id="fb-root"></div>
+    <script>
         window.fbAsyncInit = function() {
           FB.init({
             xfbml            : true,
@@ -361,16 +379,16 @@
         js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
-        </script>
+    </script>
 
-      <!-- Your Chat Plugin code -->
-      <div class="fb-customerchat"
+    <!-- Your Chat Plugin code -->
+    <div class="fb-customerchat"
         attribution=setup_tool
         page_id="100529798384686"
-  theme_color="#5768ad"
-  logged_in_greeting="Hi buddy we are there to talk with you?"
-  logged_out_greeting="Hi buddy we are there to talk with you?">
-      </div>
+        theme_color="#5768ad"
+        logged_in_greeting="Hi buddy we are there to talk with you?"
+        logged_out_greeting="Hi buddy we are there to talk with you?">
+    </div>
 
 </body>
 

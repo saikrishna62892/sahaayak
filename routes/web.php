@@ -110,3 +110,10 @@ Route::post('home/questionnaires/{questionnaire}/getResult','QuestionController@
 
 //end of dileep added routes
 
+Route::get('team', function () {
+    return view('team');
+});
+
+Route::get('inspire_me', function () {
+    return view('inspire_me');
+});
