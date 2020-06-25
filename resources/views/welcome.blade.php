@@ -14,19 +14,7 @@
                             <div class="hero__text">
                                 <span>We Share coz We Care</span>
                                 <h2>Dialy Quote #1</h2>
-                                <a href="#" class="primary-btn">DISCOVER MORE</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero__items set-bg" data-setbg="img/hero/hero-1.jpg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <div class="hero__text">
-                                <span>We Share coz We Care</span>
-                                <h2>Dialy Quote #2</h2>
+                                <a style="color: white;" href="javascript:void(0);" onclick="javascript:introJs().setOption('showProgress',true).start();"><u><span>Take a Tour</span></u></a>
                                 <a href="#" class="primary-btn">DISCOVER MORE</a>
                             </div>
                         </div>
@@ -42,7 +30,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="chooseus__text">
-                        <h2>Stats</h2>
+                        <h2 data-step="4" data-intro="Statistics about mental health" data-position="bottom">Stats</h2>
                         <!--<p>We are offering internationally certified 200 Hour Yoga Teacher Training in Rishikesh and 300
                             hour yoga teacher training in Rishikesh, India - Join us to have such life-transforming
                             experience in The world capital of Yoga in Rishikesh.</p>-->
@@ -86,7 +74,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="chooseus__text">
-                        <h2>Myths & Facts</h2>
+                        <h2 data-step="5" data-intro="Myths & Facts" data-position="left">Myths & Facts</h2>
                         <p>We are offering internationally certified 200 Hour Yoga Teacher Training in Rishikesh and 300
                             hour yoga teacher training in Rishikesh, India - Join us to have such life-transforming
                             experience in The world capital of Yoga in Rishikesh.</p>
@@ -111,7 +99,7 @@
                 <div class="col-lg-12">
                     <div class="section-title">
                         <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
-                        <h2>What we can do</h2>
+                        <h2 data-step="6" data-intro="purposes" data-position="bottom-middle-aligned">What we can do</h2>
                     </div>
                 </div>
             </div>
@@ -166,7 +154,7 @@
                     <div class="col-lg-12">
                         <div class="section-title">
                             <img src="img/icon-white.png" alt="Sahaayak" width="58" height="38">
-                            <h2>Make An Appointment</h2>
+                            <h2 data-step="7" data-intro="Talk to Us" data-position="bottom-middle-aligned">Make An Appointment</h2>
                         </div>
                     </div>
                 </div>
@@ -204,7 +192,7 @@
                     <div class="col-lg-12">
                         <div class="section-title">
                             <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
-                            <h2>Featured Topics</h2>
+                            <h2 data-step="8" data-intro="Featured Topics" data-position="bottom">Featured Topics</h2>
                         </div>
                     </div>
                 </div>
@@ -266,7 +254,7 @@
                 <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
                 <h2>About Us</h2>
             </div>
-        <div class="container">
+        <div class="container" data-step="9" data-intro="Introduction to Sahaayak" data-position="bottom-middle-aligned">
             
             <div class="row">
                 <div class="col-lg-7">
@@ -304,7 +292,7 @@
 
     <!-- Testimonial Section Begin -->
     <section class="testimonial spad">
-        <div class="container">
+        <div class="container" data-step="10" data-intro="Testimonials" data-position="bottom-middle-aligned">
             <div class="testimonial__slider owl-carousel">
                 <div class="testimonial__item">
                     <div class="row d-flex justify-content-center">
