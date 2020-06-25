@@ -9,10 +9,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__text">
-                        <h2>Inspire Me</h2>
+                        <h2>Playlists</h2>
                         <div class="breadcrumb__widget">
                             <a href="./index.html">Home</a>
-                            <span>Inspire Me</span>
+                            <span>Playlists</span>
                         </div>
                     </div>
                 </div>
@@ -37,10 +37,7 @@
                                 <p><span>Tags:</span> All, Trending, Fuel, Cardio, Life Style</p>
                             </div>
                         </div>
-                        <div class="blog__details__quote">
-                            <p style="font-size: 25px;font-weight: bold;font-style: italic;font-family: Futura;"><i class="fa fa-quote-left" aria-hidden="true"></i>&nbsp;Manam Poradalsindhi <br>&emsp;&emsp;&emsp;Vyadhi tho Rogi tho kadhu&nbsp;<i class="fa fa-quote-right" aria-hidden="true"></i></p>
-                            <p><a href="" style="color:#5768ad;">Read More</a></p>
-                        </div>
+                        <div class="powr-music-player" id="1565bdc2_1592992071"></div><script src="https://www.powr.io/powr.js?platform=bootstrap"></script>
                     </div>
                 </div>
                 <div class="col-lg-6 order-lg-2 order-1">
@@ -57,8 +54,8 @@
                             </div>
                         </div>
                         <div class="blog__details__quote">
-                            <p style="font-size: 25px;font-weight: bold;font-style: italic;font-family: Futura;"><i class="fa fa-quote-left" aria-hidden="true"></i>&nbsp;Manam Poradalsindhi <br>&emsp;&emsp;&emsp;Vyadhi tho Rogi tho kadhu&nbsp;<i class="fa fa-quote-right" aria-hidden="true"></i></p>
-                            <p><a href="" style="color:#5768ad;">Read More</a></p>
+                            <p>link to the pocast/playlist and a short description about that</p>
+                            <p><a href="" style="color:#5768ad;">Open Playlist</a></p>
                         </div>
                     </div>
                 </div>
@@ -78,8 +75,8 @@
                             </div>
                         </div>
                         <div class="blog__details__quote">
-                            <p style="font-size: 25px;font-weight: bold;font-style: italic;font-family: Futura;"><i class="fa fa-quote-left" aria-hidden="true"></i>&nbsp;Manam Poradalsindhi <br>&emsp;&emsp;&emsp;Vyadhi tho Rogi tho kadhu&nbsp;<i class="fa fa-quote-right" aria-hidden="true"></i></p>
-                            <p><a href="" style="color:#5768ad;">Read More</a></p>
+                            <p>link to the pocast/playlist and a short description about that</p>
+                            <p><a href="" style="color:#5768ad;">Open Playlist</a></p>
                         </div>
                     </div>
                 </div>
@@ -97,8 +94,8 @@
                             </div>
                         </div>
                         <div class="blog__details__quote">
-                            <p style="font-size: 25px;font-weight: bold;font-style: italic;font-family: Futura;"><i class="fa fa-quote-left" aria-hidden="true"></i>&nbsp;Manam Poradalsindhi <br>&emsp;&emsp;&emsp;Vyadhi tho Rogi tho kadhu&nbsp;<i class="fa fa-quote-right" aria-hidden="true"></i></p>
-                            <p><a href="" style="color:#5768ad;">Read More</a></p>
+                            <p>link to the pocast/playlist and a short description about that</p>
+                            <p><a href="" style="color:#5768ad;">Open Playlist</a></p>
                         </div>
                     </div>
                 </div>

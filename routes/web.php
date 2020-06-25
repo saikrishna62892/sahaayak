@@ -42,6 +42,10 @@ Route::get('learn_healthy_sleep', function () {
     return view('learn_healthy_sleep');
 });
 
+Route::get('learn_hopelessness', function () {
+    return view('learn_hopelessness');
+});
+
 Route::get('learn_mental_illness', function () {
     return view('learn_mental_illness');
 });
@@ -116,4 +120,12 @@ Route::get('team', function () {
 
 Route::get('inspire_me', function () {
     return view('inspire_me');
+});
+
+Route::get('videos', function () {
+    return view('videos');
+});
+
+Route::get('playlists', function () {
+    return view('playlists');
 });

@@ -2,6 +2,8 @@
 
     @section('content')
 
+    
+    
     <!-- Breadcrumb Begin -->
     <section class="breadcrumb-option set-bg" data-setbg="img/breadcrumb.jpg">
         <div class="container">
@@ -24,8 +26,9 @@
     <section class="classes spad">
         <div class="container">
             <div class="col-lg-12">
-                    <div class="section-title normal-title">
-                        <h2>Top Classes</h2>
+                    <div class="section-title">
+                        <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
+                        <h2>Top News</h2>
                         <p>The trainings are multi-style and you will learn and practice Hatha Vinyasa (flow)<br /> and
                             Yin Yoga.</p>
                     </div>

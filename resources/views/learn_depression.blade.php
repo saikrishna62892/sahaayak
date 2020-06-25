@@ -2,6 +2,8 @@
 
     @section('content')
 
+
+
     <!-- Breadcrumb Begin -->
     <section class="breadcrumb-option set-bg" data-setbg="img/breadcrumb.jpg">
         <div class="container">
@@ -35,24 +37,11 @@
                             middle of text.Ipsum available but the that majority have that suffered is humour or
                             randomised words.</p>
                         <div class="classes__details__item">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-4">
-                                    <img src="img/classes-details/cd-item-1.jpg" alt="">
-                                </div>
-                                <div class="col-lg-8 col-md-8">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6">
-                                            <img src="img/classes-details/cd-item-2.jpg" alt="">
-                                        </div>
-                                        <div class="col-lg-6 col-md-6">
-                                            <img src="img/classes-details/cd-item-3.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <img src="img/classes-details/cd-item-4.jpg" alt="">
-                                </div>
-                            </div>
+                            <div class="embed-responsive embed-responsive-16by9">
+                          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+                        </div> 
                         </div>
-                        <div class="classes__details__desc">
+                        <!--<div class="classes__details__desc">
                             <h6>Causes:</h6>
                             <ul>
                                 <li><span class="icon_check"></span> All their equipment and instruments are alive.</li>
@@ -87,7 +76,129 @@
                                 <li><span class="icon_check"></span> If you are going to use a passage of you need to be
                                     sure.</li>
                             </ul>
-                        </div>
+                        </div>-->
+                        <!-- Faq Begin -->
+                            
+                                <div class="container">
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-lg-12">
+                                            <div class="faq__accordion">
+                                                <div class="accordion" id="accordionExample">
+                                                    <div class="card">
+                                                        <div class="card-heading">
+                                                            <a data-toggle="collapse" data-target="#collapseOne">
+                                                                <span>How to join the community?</span>
+                                                            </a>
+                                                        </div>
+                                                        <div id="collapseOne" class="collapse" data-parent="#accordionExample">
+                                                            <div class="card-body">
+                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
+                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
+                                                                    card here.</p>
+                                                                <p>Please allow 1 day for tracking information to update on your order. If you
+                                                                    are unable to track your order, please let us know and we'll be happy to
+                                                                    assist.</p>
+                                                                <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <div class="card-heading active">
+                                                            <a data-toggle="collapse" data-target="#collapseTwo">
+                                                                <span>Can I give my credits to someone else?</span>
+                                                            </a>
+                                                        </div>
+                                                        <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
+                                                            <div class="card-body">
+                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
+                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
+                                                                    card here.</p>
+                                                                <p>Please allow 1 day for tracking information to update on your order. If you
+                                                                    are unable to track your order, please let us know and we'll be happy to
+                                                                    assist.</p>
+                                                                <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <div class="card-heading">
+                                                            <a data-toggle="collapse" data-target="#collapseThree">
+                                                                <span>How to watch video workouts?</span>
+                                                            </a>
+                                                        </div>
+                                                        <div id="collapseThree" class="collapse" data-parent="#accordionExample">
+                                                            <div class="card-body">
+                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
+                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
+                                                                    card here.</p>
+                                                                <p>Please allow 1 day for tracking information to update on your order. If you
+                                                                    are unable to track your order, please let us know and we'll be happy to
+                                                                    assist.</p>
+                                                                <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <div class="card-heading">
+                                                            <a data-toggle="collapse" data-target="#collapseFour">
+                                                                <span>What is Zogin?</span>
+                                                            </a>
+                                                        </div>
+                                                        <div id="collapseFour" class="collapse" data-parent="#accordionExample">
+                                                            <div class="card-body">
+                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
+                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
+                                                                    card here.</p>
+                                                                <p>Please allow 1 day for tracking information to update on your order. If you
+                                                                    are unable to track your order, please let us know and we'll be happy to
+                                                                    assist.</p>
+                                                                <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <div class="card-heading">
+                                                            <a data-toggle="collapse" data-target="#collapseFive">
+                                                                <span>How many times can I visit a studio each cycle?</span>
+                                                            </a>
+                                                        </div>
+                                                        <div id="collapseFive" class="collapse" data-parent="#accordionExample">
+                                                            <div class="card-body">
+                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
+                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
+                                                                    card here.</p>
+                                                                <p>Please allow 1 day for tracking information to update on your order. If you
+                                                                    are unable to track your order, please let us know and we'll be happy to
+                                                                    assist.</p>
+                                                                <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <div class="card-heading">
+                                                            <a data-toggle="collapse" data-target="#collapseSix">
+                                                                <span>What is the class cancellation policy?</span>
+                                                            </a>
+                                                        </div>
+                                                        <div id="collapseSix" class="collapse" data-parent="#accordionExample">
+                                                            <div class="card-body">
+                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
+                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
+                                                                    card here.</p>
+                                                                <p>Please allow 1 day for tracking information to update on your order. If you
+                                                                    are unable to track your order, please let us know and we'll be happy to
+                                                                    assist.</p>
+                                                                <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                            <!-- Faq End -->
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -174,7 +285,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="leave__comment__text">
-                        <h2>Leave A Comment</h2>
+                        <div class="section-title">
+                        <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
+                        <h2>Leave a Comment</h2>
+                        </div>
                         <form action="#">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">

@@ -9,10 +9,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__text">
-                        <h2>Inspire Me</h2>
+                        <h2>Motivational Videos</h2>
                         <div class="breadcrumb__widget">
                             <a href="./index.html">Home</a>
-                            <span>Inspire Me</span>
+                            <span>Videos</span>
                         </div>
                     </div>
                 </div>
@@ -37,10 +37,9 @@
                                 <p><span>Tags:</span> All, Trending, Fuel, Cardio, Life Style</p>
                             </div>
                         </div>
-                        <div class="blog__details__quote">
-                            <p style="font-size: 25px;font-weight: bold;font-style: italic;font-family: Futura;"><i class="fa fa-quote-left" aria-hidden="true"></i>&nbsp;Manam Poradalsindhi <br>&emsp;&emsp;&emsp;Vyadhi tho Rogi tho kadhu&nbsp;<i class="fa fa-quote-right" aria-hidden="true"></i></p>
-                            <p><a href="" style="color:#5768ad;">Read More</a></p>
-                        </div>
+                        <div class="embed-responsive embed-responsive-16by9">
+                          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+                        </div>      
                     </div>
                 </div>
                 <div class="col-lg-6 order-lg-2 order-1">
@@ -56,13 +55,13 @@
                                 <p><span>Tags:</span> All, Trending, Fuel, Cardio, Life Style</p>
                             </div>
                         </div>
-                        <div class="blog__details__quote">
-                            <p style="font-size: 25px;font-weight: bold;font-style: italic;font-family: Futura;"><i class="fa fa-quote-left" aria-hidden="true"></i>&nbsp;Manam Poradalsindhi <br>&emsp;&emsp;&emsp;Vyadhi tho Rogi tho kadhu&nbsp;<i class="fa fa-quote-right" aria-hidden="true"></i></p>
-                            <p><a href="" style="color:#5768ad;">Read More</a></p>
-                        </div>
+                        <div class="embed-responsive embed-responsive-16by9">
+                          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+                        </div>  
                     </div>
                 </div>
             </div>
+            <br>
             <div class="row">
                 <div class="col-lg-6 order-lg-2 order-1">
                     <h2>#3</h2>
@@ -77,10 +76,9 @@
                                 <p><span>Tags:</span> All, Trending, Fuel, Cardio, Life Style</p>
                             </div>
                         </div>
-                        <div class="blog__details__quote">
-                            <p style="font-size: 25px;font-weight: bold;font-style: italic;font-family: Futura;"><i class="fa fa-quote-left" aria-hidden="true"></i>&nbsp;Manam Poradalsindhi <br>&emsp;&emsp;&emsp;Vyadhi tho Rogi tho kadhu&nbsp;<i class="fa fa-quote-right" aria-hidden="true"></i></p>
-                            <p><a href="" style="color:#5768ad;">Read More</a></p>
-                        </div>
+                        <div class="embed-responsive embed-responsive-16by9">
+                          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+                        </div>  
                     </div>
                 </div>
                 <div class="col-lg-6 order-lg-2 order-1">
@@ -96,10 +94,9 @@
                                 <p><span>Tags:</span> All, Trending, Fuel, Cardio, Life Style</p>
                             </div>
                         </div>
-                        <div class="blog__details__quote">
-                            <p style="font-size: 25px;font-weight: bold;font-style: italic;font-family: Futura;"><i class="fa fa-quote-left" aria-hidden="true"></i>&nbsp;Manam Poradalsindhi <br>&emsp;&emsp;&emsp;Vyadhi tho Rogi tho kadhu&nbsp;<i class="fa fa-quote-right" aria-hidden="true"></i></p>
-                            <p><a href="" style="color:#5768ad;">Read More</a></p>
-                        </div>
+                        <div class="embed-responsive embed-responsive-16by9">
+                          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+                        </div>  
                     </div>
                 </div>
             </div>
@@ -114,4 +111,5 @@
             </div>
         </div>
     </section>
+
     @endsection
