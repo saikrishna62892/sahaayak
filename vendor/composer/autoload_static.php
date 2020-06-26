@@ -485,9 +485,13 @@ class ComposerStaticInit4cb398da79ce39bdb4e4610405d81ed7
     );
 
     public static $classMap = array (
+        'App\\Appointment' => __DIR__ . '/../..' . '/app/Appointment.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\appointment_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/appointment_controller.php',
+        'App\\Http\\Controllers\\subscriber_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/subscriber_controller.php',
+        'App\\Http\\Controllers\\user_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/user_controller.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -502,6 +506,8 @@ class ComposerStaticInit4cb398da79ce39bdb4e4610405d81ed7
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Subscriber' => __DIR__ . '/../..' . '/app/Subscriber.php',
+        'App\\Suggestion' => __DIR__ . '/../..' . '/app/Suggestion.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'Asm89\\Stack\\Cors' => __DIR__ . '/..' . '/asm89/stack-cors/src/Cors.php',
         'Asm89\\Stack\\CorsService' => __DIR__ . '/..' . '/asm89/stack-cors/src/CorsService.php',

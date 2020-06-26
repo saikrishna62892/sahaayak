@@ -122,6 +122,9 @@ Route::get('inspire_me', function () {
     return view('inspire_me');
 });
 
+Route::post('/appointment_controller','appointment_controller@save');
+Route::get('/suggestion_controller','suggestion_controller@save');
+
 Route::get('videos', function () {
     return view('videos');
 });
