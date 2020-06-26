@@ -39,11 +39,10 @@
 
 <body>
     <!-- Page Preloder -->
-    <!--
     <div id="preloder">
         <div class="loader"></div>
     </div>
--->
+
     <!-- Offcanvas Menu Begin -->
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu">
@@ -56,8 +55,28 @@
                 <li>CALL US: + 1 800-567-8990</li>
                 <li>WRITE US: OFFICE@EXAMPLE.COM</li>
             </ul>
-            <a href="login.html" class="primary-btn">Login</a>
-            <a href="joinus.html" class="primary-btn">Join us</a>
+                                @guest
+                                <a href="{{ route('login') }}" class="primary-btn">Login</a>
+                                @if (Route::has('register'))
+                                    <a href="{{ route('register') }}" class="primary-btn">Join us</a>
+                                @endif
+                                @else
+                                <li class="dropdown">
+                                    <a id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-expanded="false" v-pre>
+                                        {{ Auth::user()->name }} <span class="caret"></span>
+                                    </a>
+
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                                            @csrf
+                                        </form>
+                                </li>
+                                @endguest
         </div>
         
         <nav class="header__menu">
@@ -143,34 +162,35 @@
                             <ul>
                                 <li>CALL US: + 1 800-567-8990</li>
                                 <li>WRITE US: OFFICE@EXAMPLE.COM</li>
+                            </ul>
                             @guest
-            <a href="{{ route('login') }}" class="primary-btn">Login</a>
-            @if (Route::has('register'))
-                <a href="{{ route('register') }}" class="primary-btn">Join us</a>
-            @endif
-
-            @else
-                            <li class="dropdown">
-                                <a id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                <a href="{{ route('login') }}" class="primary-btn">Login</a>
+                                @if (Route::has('register'))
+                                    <a href="{{ route('register') }}" class="primary-btn">Join us</a>
+                                @endif
+                                @else
+                                <li class="dropdown">
+                                    <a id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-expanded="false" v-pre>
+                                        {{ Auth::user()->name }} <span class="caret"></span>
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" >
-                                        @csrf
-                                    </form>
-                            </li>
-                            </ul>
-                            <a href="{{ url('login') }}" class="primary-btn" data-step="3" data-intro="login" data-position="bottom">Login</a>
-                            <a href="{{ url('joinus') }}" class="primary-btn" data-step="2" data-intro="joinus" data-position="bottom">Join Us</a>
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                                            @csrf
+                                        </form>
+                                </li>
+                                @endguest
                         </div>
                     </div>
 
+                </div>
+                <div class="canvas__open">
+                    <i class="fa fa-bars"></i>
                 </div>
             </div>
         </div>
@@ -199,8 +219,8 @@
                                 <li><a href="#">Assessment</a>
                                     <ul class="dropdown">
                                     @foreach($questionnaires as $questionnaire)
-<li><a href="/home/questionnaires/{{$questionnaire->id}}/questions">{{$questionnaire->questionnaireTitle}}</a></li>
-@endforeach
+                                        <li><a href="/home/questionnaires/{{$questionnaire->id}}/questions">{{$questionnaire->questionnaireTitle}}</a></li>
+                                    @endforeach
                                     
                                     <!--
                                     <li><a href="/home/questionnaires/2/questions">Sleep hygiene test</a></li>
