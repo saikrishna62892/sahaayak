@@ -6,7 +6,15 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+//m1 begin
     'App\\Answer' => $baseDir . '/app/Answer.php',
+
+    'App\\Appointment' => $baseDir . '/app/Appointment.php',
+//m1 end
+    
+
+
+
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Customer' => $baseDir . '/app/Customer.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
@@ -18,10 +26,20 @@ return array(
     'App\\Http\\Controllers\\Auth\\ResetPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ResetPasswordController.php',
     'App\\Http\\Controllers\\Auth\\VerificationController' => $baseDir . '/app/Http/Controllers/Auth/VerificationController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
+
+
+//m2 begin
     'App\\Http\\Controllers\\CustomerController' => $baseDir . '/app/Http/Controllers/CustomerController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\QuestionController' => $baseDir . '/app/Http/Controllers/QuestionController.php',
     'App\\Http\\Controllers\\QuestionnaireController' => $baseDir . '/app/Http/Controllers/QuestionnaireController.php',
+
+    'App\\Http\\Controllers\\appointment_controller' => $baseDir . '/app/Http/Controllers/appointment_controller.php',
+    'App\\Http\\Controllers\\subscriber_controller' => $baseDir . '/app/Http/Controllers/subscriber_controller.php',
+    'App\\Http\\Controllers\\user_controller' => $baseDir . '/app/Http/Controllers/user_controller.php',
+//m2 end
+
+
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\CheckForMaintenanceMode' => $baseDir . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -38,9 +56,16 @@ return array(
     'App\\Providers\\ComposerServiceProvider' => $baseDir . '/app/Providers/ComposerServiceProvider.php',
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
+
+//m3 begin
     'App\\Question' => $baseDir . '/app/Question.php',
     'App\\Questionnaire' => $baseDir . '/app/Questionnaire.php',
     'App\\Survey' => $baseDir . '/app/Survey.php',
+
+    'App\\Subscriber' => $baseDir . '/app/Subscriber.php',
+    'App\\Suggestion' => $baseDir . '/app/Suggestion.php',
+//m3 end
+    
     'App\\User' => $baseDir . '/app/User.php',
     'Asm89\\Stack\\Cors' => $vendorDir . '/asm89/stack-cors/src/Cors.php',
     'Asm89\\Stack\\CorsService' => $vendorDir . '/asm89/stack-cors/src/CorsService.php',

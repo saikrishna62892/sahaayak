@@ -1,6 +1,6 @@
-@extends('layouts.reg_forms_layout')
 
-	@section('content')	
+
+	<?php $__env->startSection('content'); ?>	
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-45 p-b-30">
@@ -10,7 +10,7 @@
 					</span>
 					<div class="wrap-input100 validate-input m-b-16">
 						<input class="input100" type="text" name="username" placeholder="Username">
-						@csrf
+						<?php echo csrf_field(); ?>
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<span class="lnr lnr-user"></span>
@@ -86,8 +86,10 @@
 			</div>
 		</div>
 	</div>
-	@endsection
+	<?php $__env->stopSection(); ?>
 	
 	
 
 	
+
+<?php echo $__env->make('layouts.reg_forms_layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Benyen\Desktop\sahaayak\resources\views/joinus.blade.php ENDPATH**/ ?>

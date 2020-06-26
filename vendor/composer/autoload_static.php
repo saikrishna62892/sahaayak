@@ -500,7 +500,11 @@ class ComposerStaticInit4cb398da79ce39bdb4e4610405d81ed7
     );
 
     public static $classMap = array (
+
         'App\\Answer' => __DIR__ . '/../..' . '/app/Answer.php',
+
+        'App\\Appointment' => __DIR__ . '/../..' . '/app/Appointment.php',
+
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Customer' => __DIR__ . '/../..' . '/app/Customer.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
@@ -512,10 +516,16 @@ class ComposerStaticInit4cb398da79ce39bdb4e4610405d81ed7
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+
         'App\\Http\\Controllers\\CustomerController' => __DIR__ . '/../..' . '/app/Http/Controllers/CustomerController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\QuestionController' => __DIR__ . '/../..' . '/app/Http/Controllers/QuestionController.php',
         'App\\Http\\Controllers\\QuestionnaireController' => __DIR__ . '/../..' . '/app/Http/Controllers/QuestionnaireController.php',
+
+        'App\\Http\\Controllers\\appointment_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/appointment_controller.php',
+        'App\\Http\\Controllers\\subscriber_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/subscriber_controller.php',
+        'App\\Http\\Controllers\\user_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/user_controller.php',
+
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -532,9 +542,14 @@ class ComposerStaticInit4cb398da79ce39bdb4e4610405d81ed7
         'App\\Providers\\ComposerServiceProvider' => __DIR__ . '/../..' . '/app/Providers/ComposerServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+
         'App\\Question' => __DIR__ . '/../..' . '/app/Question.php',
         'App\\Questionnaire' => __DIR__ . '/../..' . '/app/Questionnaire.php',
         'App\\Survey' => __DIR__ . '/../..' . '/app/Survey.php',
+
+        'App\\Subscriber' => __DIR__ . '/../..' . '/app/Subscriber.php',
+        'App\\Suggestion' => __DIR__ . '/../..' . '/app/Suggestion.php',
+
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'Asm89\\Stack\\Cors' => __DIR__ . '/..' . '/asm89/stack-cors/src/Cors.php',
         'Asm89\\Stack\\CorsService' => __DIR__ . '/..' . '/asm89/stack-cors/src/CorsService.php',
