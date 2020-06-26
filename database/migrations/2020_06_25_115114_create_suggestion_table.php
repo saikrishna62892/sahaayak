@@ -4,7 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnsToQuestionnairesTable extends Migration
+
+class CreateSuggestionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +14,11 @@ class AddColumnsToQuestionnairesTable extends Migration
      */
     public function up()
     {
-        Schema::table('questionnaires', function (Blueprint $table) {
-            $table->string('title');
-            $table->string('purpose');
+        Schema::create('suggestion', function (Blueprint $table) {
+            $table->string('name',100);
+            $table->string('email',100);
+            $table->string('comment',100);
+            $table->dateTime('timestamp');
         });
     }
 
@@ -26,8 +29,6 @@ class AddColumnsToQuestionnairesTable extends Migration
      */
     public function down()
     {
-        Schema::table('questionnaires', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('suggestion');
     }
 }
