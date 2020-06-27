@@ -58,9 +58,8 @@ class QuestionnaireNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            'refrence'=>'this is reference',
-            'data'=>'new questionnaire'.$this->dileep
-            
+            'data'=>'new questionnaire'.$this->dileep,
+            'refrence'=>'this is reference'          
         ];
     }
 }

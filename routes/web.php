@@ -69,9 +69,9 @@ Route::get('learn_suicide', function () {
     return view('learn_suicide');
 });
 
-Route::get('login', function () {
-    return view('login');
-});
+#Route::get('login', function () {
+ #   return view('login');
+#});
 
 Route::get('news', function () {
     return view('news');
@@ -97,12 +97,12 @@ Route::get('volunteer_signup', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('home', 'HomeController@index')->name('home');
 
 
 
 //admin page route
-Route::get('admin/home', 'HomeController@adminHome')->name('admin.adminHome')->middleware('is_admin');
+Route::get('admin/home', 'HomeController@adminHome')->name('adminDashboard')->middleware('is_admin');
 
 //Questionnaire Routes
 Route::get('admin/home/questionnaires/create','QuestionnaireController@create');
@@ -151,11 +151,11 @@ Route::get('markAsRead',function(){
 
 })->name('markRead');
 
-Route::get('/home',function(){
+Route::get('/home/abc',function(){
 
     #auth()->user()->unreadNotifications->markAsRead();
     #return redirect()->back();
-    return view('home');
+   return redirect()->back();
 
 })->name('gotonewsarticle');
 
