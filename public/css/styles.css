@@ -144,10 +144,11 @@
 }
 .sidebar-menu .logo{
     text-align: center;
+
 }
 .logo a {
     display: inline-block;
-    max-width: 120px;
+    max-width: 250px;
 }
 
 .metismenu >li >a {
@@ -530,7 +531,7 @@
 .notify-box {
     width: 350px;
     overflow: hidden;
-    padding: 10;
+    padding: 0;
     margin: 0;
 }
 
@@ -758,7 +759,7 @@ ul.breadcrumbs {
 
 .notification-area .dropdown-menu,
 .user-profile .dropdown-menu {
-    background: #f5f6fa;
+    background: #fff;
     border: none;
     -webkit-transform: none!important;
             transform: none!important;

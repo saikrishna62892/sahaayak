@@ -1,6 +1,6 @@
-@extends('layouts.dashboard')
 
-@section('content')
+
+<?php $__env->startSection('content'); ?>
 	
 	<!--<div class="container">
     <div class="row justify-content-center">
@@ -9,17 +9,18 @@
                 <div class="card-header">Available Questionnaires</div>
 
                 <div class="card-body">
-                    @if (session('status'))
+                    <?php if(session('status')): ?>
                         <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+                            <?php echo e(session('status')); ?>
+
                         </div>
-                    @endif
+                    <?php endif; ?>
                     
-                    @foreach($questionnaires as $questionnaire)
+                    <?php $__currentLoopData = $questionnaires; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $questionnaire): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div>
-                    <a href="/admin/home/questionnaires/{{$questionnaire->id}}/questions/create">{{$questionnaire->questionnaireTitle}}</a>
+                    <a href="/admin/home/questionnaires/<?php echo e($questionnaire->id); ?>/questions/create"><?php echo e($questionnaire->questionnaireTitle); ?></a>
                     </div>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     
                     <div>
                         <a href="/admin/home/questionnaires/create" class="btn btn-dark">create new questionnaire</a>
@@ -48,7 +49,7 @@
 					<h5 class="card-title">Visitors</h5>
 					<h1 align="center">2000</h1>
 					<p class="card-text">Number of unique website visitors.</p>
-					<a href="https://analytics.google.com/analytics/web/#/report-home/a171070217w237922628p222495327" class="btn btn-primary">See Analytics</a>
+					<a href="#" class="btn btn-primary">See Analytics</a>
 				</div>
 			</div>
 		</div>
@@ -58,7 +59,7 @@
 			        <h5 class="card-title">Users</h5>
 			        <h1 align="center">300</h1>
 			        <p class="card-text">Active Users who used our service</p>
-			        <a href="https://analytics.google.com/analytics/web/#/report-home/a171070217w237922628p222495327" class="btn btn-primary">See Analytics</a>
+			        <a href="#" class="btn btn-primary">See Analytics</a>
 		        </div>
 		    </div>
 		</div>
@@ -68,7 +69,7 @@
 			        <h5 class="card-title">Volunteers</h5>
 			        <h1 align="center">100</h1>
 			        <p class="card-text">Users who applied as volunteers.</p>
-			        <a href="https://analytics.google.com/analytics/web/#/report-home/a171070217w237922628p222495327" class="btn btn-primary">See Analytics</a>
+			        <a href="#" class="btn btn-primary">See Analytics</a>
 		        </div>
 			</div>
 		</div>
@@ -78,7 +79,7 @@
 			        <h5 class="card-title">Badges</h5>
 			        <h1 align="center">50</h1>
 			        <p class="card-text">Given to recognized volunteers after verification</p>
-			        <a href="https://analytics.google.com/analytics/web/#/report-home/a171070217w237922628p222495327" class="btn btn-primary">See Analytics</a>
+			        <a href="#" class="btn btn-primary">See Analytics</a>
 			    </div>
 			</div>
 		</div>
@@ -661,4 +662,5 @@
 
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.dashboard', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/dashboard_admin.blade.php ENDPATH**/ ?>

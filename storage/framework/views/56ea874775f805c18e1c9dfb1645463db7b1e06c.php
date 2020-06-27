@@ -27,16 +27,6 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.jqueryui.min.css">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171070217-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-171070217-1');
-</script>
-
 </head>
 
 <body>
@@ -232,7 +222,7 @@
             <!-- header area end -->
 
 
-            @yield('content')
+            <?php echo $__env->yieldContent('content'); ?>
 
         </div>
 
@@ -275,3 +265,4 @@
 </body>
 
 </html>
+<?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/layouts/dashboard.blade.php ENDPATH**/ ?>

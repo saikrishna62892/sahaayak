@@ -102,7 +102,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 //admin page route
-Route::get('admin/home', 'HomeController@adminHome')->name('admin.adminHome')->middleware('is_admin');
+Route::get('admin/home', 'HomeController@adminHome')->name('adminDashboard')->middleware('is_admin');
 
 //Questionnaire Routes
 Route::get('admin/home/questionnaires/create','QuestionnaireController@create');
