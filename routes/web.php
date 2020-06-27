@@ -99,7 +99,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 //admin page route
-Route::get('admin/home', 'HomeController@adminHome')->name('admin.home')->middleware('is_admin');
+Route::get('admin/home', 'HomeController@adminHome')->name('admin.adminHome')->middleware('is_admin');
 
 //Questionnaire Routes
 Route::get('admin/home/questionnaires/create','QuestionnaireController@create');
@@ -112,6 +112,12 @@ Route::post('admin/home/questionnaires/{questionnaire}/questions','QuestionContr
 Route::get('home/questionnaires/{questionnaire}/questions','QuestionController@show');
 Route::post('home/questionnaires/{questionnaire}/getResult','QuestionController@getResult');
 
+//Video Route
+Route::get('admin/home/videos/create','VideoController@create');
+Route::post('admin/home/videos','VideoController@store');
+
+//Subscription Routes
+Route::post('/home/subscribe','SubscriptionController@store');
 //end of dileep added routes
 
 Route::get('team', function () {
