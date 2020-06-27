@@ -132,3 +132,15 @@ Route::get('videos', function () {
 Route::get('playlists', function () {
     return view('playlists');
 });
+
+Route::get('dashboard_user', function () {
+    return view('dashboard_user');
+});
+
+Route::get('dashboard_admin', function () {
+    return view('dashboard_admin');
+});
+
+Route::get('dashboard_volunteer', function () {
+    return view('dashboard_volunteer');
+});

@@ -39,9 +39,9 @@
 
 <body>
     <!-- Page Preloder -->
-    <!--<div id="preloder">
+    <div id="preloder">
         <div class="loader"></div>
-    </div>-->
+    </div>
 
     <!-- Offcanvas Menu Begin -->
     <div class="offcanvas-menu-overlay"></div>
@@ -131,9 +131,9 @@
                                 </li>
                                 <li><a href="<?php echo e(url('team')); ?>">Team</a>
                                     <ul class="dropdown">
-                                        <li><a href="<?php echo e(url('team#family')); ?>">Family</a></li>
                                         <li><a href="<?php echo e(url('team#volunteers')); ?>">Volunteers</a></li>
                                         <li><a href="<?php echo e(url('team#therapists')); ?>">Therapists</a></li>
+                                        <li><a href="<?php echo e(url('team#family')); ?>">Family</a></li>
                                     </ul>
                                 </li>
             </ul>
@@ -257,9 +257,9 @@
                                 </li>
                                 <li><a href="<?php echo e(url('team')); ?>">Team</a>
                                     <ul class="dropdown">
-                                        <li><a href="<?php echo e(url('team#family')); ?>">Family</a></li>
                                         <li><a href="<?php echo e(url('team#volunteers')); ?>">Volunteers</a></li>
                                         <li><a href="<?php echo e(url('team#therapists')); ?>">Therapists</a></li>
+                                        <li><a href="<?php echo e(url('team#family')); ?>">Family</a></li>
                                     </ul>
                                 </li>
                             </ul>
