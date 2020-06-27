@@ -6,7 +6,6 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Sahaayak</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="shortcut icon" type="image/png" href="/img/icon/favicon.ico">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
@@ -22,21 +21,6 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/responsive.css">
     <!-- modernizr css -->
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-    <!-- Start datatable css -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.jqueryui.min.css">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171070217-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-171070217-1');
-</script>
     <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
@@ -53,8 +37,7 @@
         <div class="sidebar-menu">
             <div class="sidebar-header">
                 <div class="logo">
-<<<<<<< HEAD
-                    <a href="index.html"><img src="/img/logo-dashboard.png" alt="logo"></a>
+                    <a href="index.html"><img src="/img/logo.png" alt="logo"></a>
                 </div>
             </div>
             <div class="main-menu">
@@ -64,7 +47,7 @@
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="false"><i class="ti-dashboard"></i><span>Dashboard</span></a>
                                 <ul class="collapse">
-                                    <li class="active"><a href="#">D opt1</a></li>
+                                    <li class="active"><a href="index.html">D opt1</a></li>
                                     <li><a href="index2.html">D opt2</a></li>
                                     <li><a href="index3.html">D opt3</a></i>
                                 </ul>
@@ -163,35 +146,35 @@
                         <ul class="notification-area pull-right">
                                 <li class="dropdown">
                                     <i class="ti-bell dropdown-toggle" data-toggle="dropdown">
-                                        @if(auth::user()->unreadnotifications->count())
-                                    <span class="badge badge-light">{{auth::user()->unreadnotifications->count()}}</span>
-                                    @endif
+                                        <?php if(auth::user()->unreadnotifications->count()): ?>
+                                    <span class="badge badge-light"><?php echo e(auth::user()->unreadnotifications->count()); ?></span>
+                                    <?php endif; ?>
                                     </i>
                                     <div class="dropdown-menu bell-notify-box notify-box">
-                                        <span class="notify-title">You have {{auth::user()->unreadnotifications->count()}} new notifications</span>
+                                        <span class="notify-title">You have <?php echo e(auth::user()->unreadnotifications->count()); ?> new notifications</span>
 
-                                        <a style="color: red" class="dropdown-item" href="{{route('markRead')}}">Mark all as read</a>
+                                        <a style="color: red" class="dropdown-item" href="<?php echo e(route('markRead')); ?>">Mark all as read</a>
 
                                         <div class="nofity-list">
-                                             @foreach (auth()->user()->unreadnotifications as $notification)
-                                            <a href="{{route('gotonewsarticle')}}" class="notify-item">
+                                             <?php $__currentLoopData = auth()->user()->unreadnotifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $notification): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <a href="<?php echo e(route('gotonewsarticle')); ?>" class="notify-item">
                                                 <div class="notify-thumb"><i class="ti-key btn-danger"></i></div>
                                                 <div class="notify-text">
-                                                    <p>{{$notification->data['data']}}</p>
+                                                    <p><?php echo e($notification->data['data']); ?></p>
                                                     </div>
                                             </a>
-                                            @endforeach
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
-                                            @foreach (auth()->user()->readnotifications as $notification)
-                                            <a href="{{route('gotonewsarticle')}}" class="notify-item">
+                                            <?php $__currentLoopData = auth()->user()->readnotifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $notification): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <a href="<?php echo e(route('gotonewsarticle')); ?>" class="notify-item">
                                                 <div class="notify-thumb"><i class="ti-key btn-danger"></i></div>
                                                 <div class="notify-text">
-                                                    <p>{{$notification->data['data']}}</p>
+                                                    <p><?php echo e($notification->data['data']); ?></p>
                                                     </div>
                                             </a>
-                                            @endforeach
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
-                                            <a href="{{route('gotonewsarticle')}}" class="notify-item">
+                                            <a href="<?php echo e(route('gotonewsarticle')); ?>" class="notify-item">
                                                 <div class="notify-thumb"><i class="ti-comments-smiley btn-info"></i></div>
                                                 <div class="notify-text">
                                                     <p>New Commetns On Post</p>
@@ -219,18 +202,19 @@
 
 
                                 <li>
-                                    <h4 style="color: #5768ad;" class="user-name dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->name }} <i class="fa fa-angle-down"></i></h4>
+                                    <h4 style="color: #5768ad;" class="user-name dropdown-toggle" data-toggle="dropdown"><?php echo e(Auth::user()->name); ?> <i class="fa fa-angle-down"></i></h4>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="#">Message</a>
                                         <a class="dropdown-item" href="#">Settings</a>
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                        <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
                                            onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
+                                            <?php echo e(__('Logout')); ?>
+
                                         </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
-                                            @csrf
+                                        <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" >
+                                            <?php echo csrf_field(); ?>
                                         </form>
                                     </div>
                                 </li>
@@ -241,7 +225,7 @@
             <!-- header area end -->
 
 
-            @yield('content')
+            <?php echo $__env->yieldContent('content'); ?>
 
         </div>
 
@@ -273,14 +257,7 @@
     <!-- others plugins -->
     <script src="/js/plugins.js"></script>
     <script src="/js/scripts.js"></script>
-
-    <!-- Start datatable js -->
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
-    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
-
 </body>
 
 </html>
+<?php /**PATH G:\sahayak1\sahaayak\resources\views/layouts/dashboard.blade.php ENDPATH**/ ?>

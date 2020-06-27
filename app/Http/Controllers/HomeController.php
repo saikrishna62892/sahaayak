@@ -30,8 +30,13 @@ class HomeController extends Controller
 
     public function adminHome()
     {
+<<<<<<< HEAD
         $questionnaires = Questionnaire::all(); 
         #return view('admin.adminHome',compact('questionnaires'));
         return view('dashboard_admin');
+=======
+       $questionnaires = Questionnaire::all();
+        return view('dashboard_admin',compact('questionnaires'));
+>>>>>>> 3e40f3d7d74913f1a18d9239da1c12a866c2e3e1
     }
 }
