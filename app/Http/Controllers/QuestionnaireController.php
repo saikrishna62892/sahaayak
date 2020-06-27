@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Questionnaire;
+use App\Notifications\QuestionnaireNotification;
+use App\User;
+use Carbon\Carbon;
 class QuestionnaireController extends Controller
 {
 
@@ -25,6 +28,11 @@ class QuestionnaireController extends Controller
                 'questionnairePurpose'=>'required',
             ]);
         $questionnaire = Questionnaire::create($data);
+        $users=User::all();
+    foreach ($users as $user) {
+
+        $user->notify(new QuestionnaireNotification($questionnaire->questionnaireTitle));
+    }
         return redirect('admin/home/questionnaires/'.$questionnaire->id);
     }
 

@@ -61,6 +61,7 @@
                                     <a href="{{ route('register') }}" class="primary-btn">Join us</a>
                                 @endif
                                 @else
+
                                 <li class="dropdown">
                                     <a id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-expanded="false" v-pre>
                                         {{ Auth::user()->name }} <span class="caret"></span>

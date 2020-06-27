@@ -39,11 +39,10 @@
 
 <body>
     <!-- Page Preloder -->
-    <!--
-    <div id="preloder">
+    <!--<div id="preloder">
         <div class="loader"></div>
-    </div>
--->
+    </div>-->
+
     <!-- Offcanvas Menu Begin -->
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu">
@@ -56,8 +55,30 @@
                 <li>CALL US: + 1 800-567-8990</li>
                 <li>WRITE US: OFFICE@EXAMPLE.COM</li>
             </ul>
-            <a href="login.html" class="primary-btn">Login</a>
-            <a href="joinus.html" class="primary-btn">Join us</a>
+                                <?php if(auth()->guard()->guest()): ?>
+                                <a href="<?php echo e(route('login')); ?>" class="primary-btn">Login</a>
+                                <?php if(Route::has('register')): ?>
+                                    <a href="<?php echo e(route('register')); ?>" class="primary-btn">Join us</a>
+                                <?php endif; ?>
+                                <?php else: ?>
+
+                                <li class="dropdown">
+                                    <a id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-expanded="false" v-pre>
+                                        <?php echo e(Auth::user()->name); ?> <span class="caret"></span>
+                                    </a>
+
+                                        <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
+                                           onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                            <?php echo e(__('Logout')); ?>
+
+                                        </a>
+
+                                        <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" >
+                                            <?php echo csrf_field(); ?>
+                                        </form>
+                                </li>
+                                <?php endif; ?>
         </div>
         
         <nav class="header__menu">
@@ -143,35 +164,36 @@
                             <ul>
                                 <li>CALL US: + 1 800-567-8990</li>
                                 <li>WRITE US: OFFICE@EXAMPLE.COM</li>
+                            </ul>
                             <?php if(auth()->guard()->guest()): ?>
-            <a href="<?php echo e(route('login')); ?>" class="primary-btn">Login</a>
-            <?php if(Route::has('register')): ?>
-                <a href="<?php echo e(route('register')); ?>" class="primary-btn">Join us</a>
-            <?php endif; ?>
-
-            <?php else: ?>
-                            <li class="dropdown">
-                                <a id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-expanded="false" v-pre>
-                                    <?php echo e(Auth::user()->name); ?> <span class="caret"></span>
-                                </a>
-
-                                    <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        <?php echo e(__('Logout')); ?>
-
+                                <a href="<?php echo e(route('login')); ?>" class="primary-btn">Login</a>
+                                <?php if(Route::has('register')): ?>
+                                    <a href="<?php echo e(route('register')); ?>" class="primary-btn">Join us</a>
+                                <?php endif; ?>
+                                <?php else: ?>
+                                <li class="dropdown">
+                                    <a id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-expanded="false" v-pre>
+                                        <?php echo e(Auth::user()->name); ?> <span class="caret"></span>
                                     </a>
 
-                                    <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" >
-                                        <?php echo csrf_field(); ?>
-                                    </form>
-                            </li>
-                            </ul>
-                            <a href="<?php echo e(url('login')); ?>" class="primary-btn" data-step="3" data-intro="login" data-position="bottom">Login</a>
-                            <a href="<?php echo e(url('joinus')); ?>" class="primary-btn" data-step="2" data-intro="joinus" data-position="bottom">Join Us</a>
+                                        <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
+                                           onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                            <?php echo e(__('Logout')); ?>
+
+                                        </a>
+
+                                        <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" >
+                                            <?php echo csrf_field(); ?>
+                                        </form>
+                                </li>
+                                <?php endif; ?>
                         </div>
                     </div>
 
+                </div>
+                <div class="canvas__open">
+                    <i class="fa fa-bars"></i>
                 </div>
             </div>
         </div>
@@ -200,8 +222,8 @@
                                 <li><a href="#">Assessment</a>
                                     <ul class="dropdown">
                                     <?php $__currentLoopData = $questionnaires; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $questionnaire): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-<li><a href="/home/questionnaires/<?php echo e($questionnaire->id); ?>/questions"><?php echo e($questionnaire->questionnaireTitle); ?></a></li>
-<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        <li><a href="/home/questionnaires/<?php echo e($questionnaire->id); ?>/questions"><?php echo e($questionnaire->questionnaireTitle); ?></a></li>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     
                                     <!--
                                     <li><a href="/home/questionnaires/2/questions">Sleep hygiene test</a></li>
@@ -271,7 +293,7 @@
                         </ul>
                         <h5 style="color:white;">Subscribe</h5><br>
                         <form action="#" class="subscribe-form">
-                            <input type="text" placeholder="Your Email">
+                            <input type="text" placeholder="Your Email" name="email">
                             <button type="submit"><i class="fa fa-send"></i></button>
                         </form>
                     </div>
@@ -318,16 +340,17 @@
                         <h5>Write to Us</h5>
                         <!-- Leave Comment Begin -->
                         <div class="leave__comment__text">
-                            <form action="#">
+                            <form action="/suggestion_controller" method="get">
+                            <?php echo csrf_field(); ?>
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
-                                        <input type="text" placeholder="Name*">
+                                        <input type="text" placeholder="Name*" name="name">
                                     </div>
                                     <div class="col-lg-6 col-md-6">
-                                        <input type="text" placeholder="Email*">
+                                        <input type="text" placeholder="Email*" name="email">
                                     </div>
                                     <div class="col-lg-12 text-center">
-                                        <textarea placeholder="Your Comment"></textarea>
+                                    <input type="text" placeholder="Comment" name="comment">
                                         <button type="submit" class="site-btn">Submit</button>
                                     </div>
                                 </div>

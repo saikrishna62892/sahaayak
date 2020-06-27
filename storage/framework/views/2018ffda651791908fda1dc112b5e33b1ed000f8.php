@@ -158,24 +158,23 @@
                         </div>
                     </div>
                 </div>
-                <form action="#" class="appointment__form">
+                <form action="/appointment_controller" method="post" class="appointment__form">
+                <?php echo csrf_field(); ?>
                     <div class="row">
                         <div class="col-lg-6">
-                            <input type="text" placeholder="Name">
+                            <input type="text" placeholder="Name" name="name">
                         </div>
                         <div class="col-lg-6">
-                            <input type="text" placeholder="Email">
+                            <input type="text" placeholder="Email" name="email">
                         </div>
                         <div class="col-lg-6">
-                            <input type="text" placeholder="Reason">
+                            <input type="text" placeholder="Phone" name="phone">
                         </div>
                         <div class="col-lg-6">
-                            <select class="nice-select">Timings
-                                <option value="">9:00am to 10:00am</option>
-                            </select>
+                            <input type="text" placeholder="Time" name="timings">
                         </div>
                         <div class="col-lg-12 text-center">
-                            <textarea placeholder="Message"></textarea>
+                            <textarea placeholder="Message" name="message"></textarea>
                             <button type="submit">Submit</button>
                         </div>
                     </div>

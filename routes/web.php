@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Notifications\QuestionnaireNotification;
+use App\User;
+use Carbon\Carbon;
 
 /*
 |--------------------------------------------------------------------------
@@ -132,3 +135,23 @@ Route::get('videos', function () {
 Route::get('playlists', function () {
     return view('playlists');
 });
+
+
+# bell icon routes start
+
+Route::get('markAsRead',function(){
+
+    auth()->user()->unreadNotifications->markAsRead();
+    return redirect()->back();
+
+})->name('markRead');
+
+Route::get('/home',function(){
+
+    #auth()->user()->unreadNotifications->markAsRead();
+    #return redirect()->back();
+    return view('home');
+
+})->name('gotonewsarticle');
+
+#bell icon routes end
