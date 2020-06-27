@@ -39,9 +39,9 @@
 
 <body>
     <!-- Page Preloder -->
-    <!--<div id="preloder">
+    <div id="preloder">
         <div class="loader"></div>
-    </div>-->
+    </div>
 
     <!-- Offcanvas Menu Begin -->
     <div class="offcanvas-menu-overlay"></div>
@@ -131,9 +131,9 @@
                                 </li>
                                 <li><a href="{{ url('team') }}">Team</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('team#family') }}">Family</a></li>
                                         <li><a href="{{ url('team#volunteers') }}">Volunteers</a></li>
                                         <li><a href="{{ url('team#therapists') }}">Therapists</a></li>
+                                        <li><a href="{{ url('team#family') }}">Family</a></li>
                                     </ul>
                                 </li>
             </ul>
@@ -222,21 +222,6 @@
                                     @foreach($questionnaires as $questionnaire)
                                         <li><a href="/home/questionnaires/{{$questionnaire->id}}/questions">{{$questionnaire->questionnaireTitle}}</a></li>
                                     @endforeach
-                                    
-                                    <!--
-                                    <li><a href="/home/questionnaires/2/questions">Sleep hygiene test</a></li>
-                                    <li><a href="/home/questionnaires/3/questions">Happiness test</a></li>
-                                    <li><a href="/home/questionnaires/4/questions">Mental health test</a></li>
-                                    <li><a href="/home/questionnaires/5/questions">Anxiety test</a></li>
-                                    <li><a href="/home/questionnaires/6/questions">Self esteem test</a></li>
-                                    <li><a href="/home/questionnaires/7/questions">Mental speed test</a></li>
-                                    <li><a href="/home/questionnaires/8/questions">Concentration test</a></li>
-                            <li><a href="/home/questionnaires/9/questions">Emotional intelligence test</a></li>
-                                    <li><a href="/home/questionnaires/10/questions">Social skills test</a></li>
-                                    <li><a href="/home/questionnaires/11/questions">Stress test</a></li>
-                                <li><a href="/home/questionnaires/12/questions">Self disclosure test</a></li>
-                                <li><a href="/home/questionnaires/13/questions">Healthy lifestyle test</a></li>
-                            -->
                                     </ul>
                                 </li>
                                 <li><a href="{{ url('/#talk_to_us') }}">Talk to Us</a></li>
@@ -256,9 +241,9 @@
                                 </li>
                                 <li><a href="{{ url('team') }}">Team</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('team#family') }}">Family</a></li>
                                         <li><a href="{{ url('team#volunteers') }}">Volunteers</a></li>
                                         <li><a href="{{ url('team#therapists') }}">Therapists</a></li>
+                                        <li><a href="{{ url('team#family') }}">Family</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -290,8 +275,12 @@
                             <li><i class="fa fa-location-arrow"></i> 828 Granville Lights Suite 466</li>
                         </ul>
                         <h5 style="color:white;">Subscribe</h5><br>
-                        <form action="#" class="subscribe-form">
-                            <input type="text" placeholder="Your Email" name="email">
+                        <form action="/home/subscribe" method="post" class="subscribe-form">
+                            @csrf
+                            <input type="email" placeholder="Your Email" name="subscriberEmail">
+                            @error('subscriberEmail')
+                            {{$messsage}}
+                            @enderror
                             <button type="submit"><i class="fa fa-send"></i></button>
                         </form>
                     </div>
