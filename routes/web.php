@@ -73,9 +73,7 @@ Route::get('learn_suicide', function () {
  #   return view('login');
 #});
 
-Route::get('news', function () {
-    return view('news');
-});
+Route::get('news', "NewsController@index"); #changed on 28/06
 
 Route::get('shared_stories', function () {
     return view('shared_stories');
