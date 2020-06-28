@@ -21,19 +21,28 @@
     <link rel="stylesheet" href="/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="/css/style.css" type="text/css">
-    <link href="css/introjs.css" rel="stylesheet">
-    <link href="css/introjs-modern.css" rel="stylesheet">
+    <link href="/css/introjs.css" rel="stylesheet">
+    <link href="/css/introjs-modern.css" rel="stylesheet">
     
 
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/jquery.barfiller.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.nice-select.min.js"></script>
+    <script src="/js/jquery.barfiller.js"></script>
+    <script src="/js/jquery.slicknav.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/main.js"></script>
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171070217-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-171070217-1');
+    </script>
 
 </head>
 
@@ -42,11 +51,12 @@
     <div id="preloder">
         <div class="loader"></div>
     </div>
+
     <!-- Offcanvas Menu Begin -->
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu">
         <div class="offcanvas__logo">
-            <a href="{{ url('/') }}"><img src="img/logo.png" alt="Sahaayak" width="240" height="60"></a>
+            <a href="{{ url('/') }}"><img src="/img/logo.png" alt="Sahaayak" width="240" height="60"></a>
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__widget">
@@ -54,8 +64,29 @@
                 <li>CALL US: + 1 800-567-8990</li>
                 <li>WRITE US: OFFICE@EXAMPLE.COM</li>
             </ul>
-            <a href="login.html" class="primary-btn">Login</a>
-            <a href="joinus.html" class="primary-btn">Join us</a>
+                                @guest
+                                <a href="{{ route('login') }}" class="primary-btn">Login</a>
+                                @if (Route::has('register'))
+                                    <a href="{{ route('register') }}" class="primary-btn">Join us</a>
+                                @endif
+                                @else
+
+                                <li class="dropdown">
+                                    <a id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-expanded="false" v-pre>
+                                        {{ Auth::user()->name }} <span class="caret"></span>
+                                    </a>
+
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                                            @csrf
+                                        </form>
+                                </li>
+                                @endguest
         </div>
         
         <nav class="header__menu">
@@ -109,9 +140,9 @@
                                 </li>
                                 <li><a href="{{ url('team') }}">Team</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('team#family') }}">Family</a></li>
                                         <li><a href="{{ url('team#volunteers') }}">Volunteers</a></li>
                                         <li><a href="{{ url('team#therapists') }}">Therapists</a></li>
+                                        <li><a href="{{ url('team#family') }}">Family</a></li>
                                     </ul>
                                 </li>
             </ul>
@@ -124,8 +155,9 @@
         </div>
     </div>
     <!-- Offcanvas Menu End -->
-
+    
     <!-- Header Section Begin -->
+    
     <header class="header">
         <div class="header__top">
             <div class="container">
@@ -141,17 +173,38 @@
                                 <li>CALL US: + 1 800-567-8990</li>
                                 <li>WRITE US: OFFICE@EXAMPLE.COM</li>
                             </ul>
-                            <a href="{{ url('login') }}" class="primary-btn" data-step="3" data-intro="login" data-position="bottom">Login</a>
-                            <a href="{{ url('joinus') }}" class="primary-btn" data-step="2" data-intro="joinus" data-position="bottom">Join Us</a>
+                            @guest
+                                <a href="{{ route('login') }}" class="primary-btn">Login</a>
+                                @if (Route::has('register'))
+                                    <a href="{{ route('register') }}" class="primary-btn">Join us</a>
+                                @endif
+                                @else
+                                <li class="dropdown">
+                                    <a id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-expanded="false" v-pre>
+                                        {{ Auth::user()->name }} <span class="caret"></span>
+                                    </a>
+
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                                            @csrf
+                                        </form>
+                                </li>
+                                @endguest
                         </div>
-                        
                     </div>
+
                 </div>
                 <div class="canvas__open">
                     <i class="fa fa-bars"></i>
                 </div>
             </div>
         </div>
+
         <div class="header__nav">
             <div class="container">
                 <div class="row">
@@ -175,19 +228,9 @@
                                 </li>
                                 <li><a href="#">Assessment</a>
                                     <ul class="dropdown">
-                                        <li><a href="./classes-details.html">Depression test</a></li>
-                                        <li><a href="./pricing.html">Sleep hygiene test</a></li>
-                                        <li><a href="./pricing.html">Happiness test</a></li>
-                                        <li><a href="./pricing.html">Mental health test</a></li>
-                                        <li><a href="./pricing.html">Anxiety test</a></li>
-                                        <li><a href="./blog-details.html">Self esteem test</a></li>
-                                        <li><a href="./pricing.html">Mental speed test</a></li>
-                                        <li><a href="./pricing.html">Concentration test</a></li>
-                                        <li><a href="./pricing.html">Emotional intelligence test</a></li>
-                                        <li><a href="./blog-details.html">Social skills test</a></li>
-                                        <li><a href="./pricing.html">Stress test</a></li>
-                                        <li><a href="./pricing.html">Self disclosure test</a></li>
-                                        <li><a href="./pricing.html">Healthy lifestyle test</a></li>
+                                    @foreach($questionnaires as $questionnaire)
+                                        <li><a href="/home/questionnaires/{{$questionnaire->id}}/questions">{{$questionnaire->questionnaireTitle}}</a></li>
+                                    @endforeach
                                     </ul>
                                 </li>
                                 <li><a href="{{ url('/#talk_to_us') }}">Talk to Us</a></li>
@@ -207,9 +250,9 @@
                                 </li>
                                 <li><a href="{{ url('team') }}">Team</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('team#family') }}">Family</a></li>
                                         <li><a href="{{ url('team#volunteers') }}">Volunteers</a></li>
                                         <li><a href="{{ url('team#therapists') }}">Therapists</a></li>
+                                        <li><a href="{{ url('team#family') }}">Family</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -234,15 +277,19 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__about">
-                        <img src="img/footer-logo.png" alt="Sahaayak" width="240" height="60">
+                        <img src="//img/footer-logo.png" alt="Sahaayak" width="240" height="60">
                         <ul class="footer-address">
                             <li><i class="fa fa-phone"></i> (01) 436 8888</li>
                             <li><i class="fa fa-envelope"></i> hello@zogin.com</li>
                             <li><i class="fa fa-location-arrow"></i> 828 Granville Lights Suite 466</li>
                         </ul>
                         <h5 style="color:white;">Subscribe</h5><br>
-                        <form action="#" class="subscribe-form">
-                            <input type="text" placeholder="Your Email">
+                        <form action="/home/subscribe" method="post" class="subscribe-form">
+                            @csrf
+                            <input type="email" placeholder="Your Email" name="subscriberEmail">
+                            @error('subscriberEmail')
+                            {{$messsage}}
+                            @enderror
                             <button type="submit"><i class="fa fa-send"></i></button>
                         </form>
                     </div>
@@ -289,16 +336,17 @@
                         <h5>Write to Us</h5>
                         <!-- Leave Comment Begin -->
                         <div class="leave__comment__text">
-                            <form action="#">
+                            <form action="/suggestion_controller" method="get">
+                            @csrf
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
-                                        <input type="text" placeholder="Name*">
+                                        <input type="text" placeholder="Name*" name="name">
                                     </div>
                                     <div class="col-lg-6 col-md-6">
-                                        <input type="text" placeholder="Email*">
+                                        <input type="text" placeholder="Email*" name="email">
                                     </div>
                                     <div class="col-lg-12 text-center">
-                                        <textarea placeholder="Your Comment"></textarea>
+                                    <input type="text" placeholder="Comment" name="comment">
                                         <button type="submit" class="site-btn">Submit</button>
                                     </div>
                                 </div>
@@ -314,14 +362,14 @@
 
 
     <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/jquery.barfiller.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
-    <script type="text/javascript" src="js/intro.js"></script>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.nice-select.min.js"></script>
+    <script src="/js/jquery.barfiller.js"></script>
+    <script src="/js/jquery.slicknav.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script type="text/javascript" src="/js/intro.js"></script>
 
     <!-- ManyChat Plugin -->
     <script src="//widget.manychat.com/101206188315883.js" async="async"></script>

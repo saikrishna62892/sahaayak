@@ -4,13 +4,19 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-45 p-b-30">
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" method="POST" action="{{ route('login') }}">
+					@csrf
 					<span class="login100-form-title p-b-25">
 						Login
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Email">
+						<input class="input100" type="email" name="email" id="email" placeholder="Email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+						@error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<span class="lnr lnr-envelope"></span>
@@ -18,7 +24,12 @@
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<input class="input100"  type="password" name="password" id="password" placeholder="Password" required autocomplete="current-password">
+						@error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<span class="lnr lnr-lock"></span>
@@ -26,16 +37,21 @@
 					</div>
 
 					<div class="contact100-form-checkbox m-l-4">
-						<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+						<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me" {{ old('remember') ? 'checked' : '' }}>
 						<label class="label-checkbox100" for="ckb1">
 							Remember me
 						</label>
 					</div>
 					
 					<div class="container-login100-form-btn p-t-12">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" type="submit">
 							Login
 						</button>
+						@if (Route::has('password.request'))
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{ __('Forgot Your Password?') }}
+                                    </a>
+                        @endif
 					</div>
 
 					<div class="text-center w-full p-t-12 p-b-12">
