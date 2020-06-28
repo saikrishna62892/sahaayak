@@ -6,6 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Sahaayak</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="shortcut icon" type="image/png" href="/img/icon/favicon.ico">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
@@ -21,6 +22,21 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/responsive.css">
     <!-- modernizr css -->
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- Start datatable css -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.jqueryui.min.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171070217-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-171070217-1');
+</script>
     <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
@@ -37,7 +53,8 @@
         <div class="sidebar-menu">
             <div class="sidebar-header">
                 <div class="logo">
-                    <a href="index.html"><img src="/img/logo.png" alt="logo"></a>
+<<<<<<< HEAD
+                    <a href="index.html"><img src="/img/logo-dashboard.png" alt="logo"></a>
                 </div>
             </div>
             <div class="main-menu">
@@ -47,7 +64,7 @@
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="false"><i class="ti-dashboard"></i><span>Dashboard</span></a>
                                 <ul class="collapse">
-                                    <li class="active"><a href="index.html">D opt1</a></li>
+                                    <li class="active"><a href="#">D opt1</a></li>
                                     <li><a href="index2.html">D opt2</a></li>
                                     <li><a href="index3.html">D opt3</a></i>
                                 </ul>
@@ -257,7 +274,15 @@
     <!-- others plugins -->
     <script src="/js/plugins.js"></script>
     <script src="/js/scripts.js"></script>
+
+    <!-- Start datatable js -->
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
+
 </body>
 
 </html>
-<?php /**PATH G:\sahayak1\sahaayak\resources\views/layouts/dashboard.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\Users\Ganesh\Desktop\temp\sahaayak\resources\views/layouts/dashboard.blade.php ENDPATH**/ ?>

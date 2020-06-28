@@ -49,7 +49,7 @@
 					<h5 class="card-title">Visitors</h5>
 					<h1 align="center">2000</h1>
 					<p class="card-text">Number of unique website visitors.</p>
-					<a href="#" class="btn btn-primary">See Analytics</a>
+					<a href="https://analytics.google.com/analytics/web/#/report-home/a171070217w237922628p222495327" class="btn btn-primary">See Analytics</a>
 				</div>
 			</div>
 		</div>
@@ -59,7 +59,7 @@
 			        <h5 class="card-title">Users</h5>
 			        <h1 align="center">300</h1>
 			        <p class="card-text">Active Users who used our service</p>
-			        <a href="#" class="btn btn-primary">See Analytics</a>
+			        <a href="https://analytics.google.com/analytics/web/#/report-home/a171070217w237922628p222495327" class="btn btn-primary">See Analytics</a>
 		        </div>
 		    </div>
 		</div>
@@ -69,7 +69,7 @@
 			        <h5 class="card-title">Volunteers</h5>
 			        <h1 align="center">100</h1>
 			        <p class="card-text">Users who applied as volunteers.</p>
-			        <a href="#" class="btn btn-primary">See Analytics</a>
+			        <a href="https://analytics.google.com/analytics/web/#/report-home/a171070217w237922628p222495327" class="btn btn-primary">See Analytics</a>
 		        </div>
 			</div>
 		</div>
@@ -79,7 +79,7 @@
 			        <h5 class="card-title">Badges</h5>
 			        <h1 align="center">50</h1>
 			        <p class="card-text">Given to recognized volunteers after verification</p>
-			        <a href="#" class="btn btn-primary">See Analytics</a>
+			        <a href="https://analytics.google.com/analytics/web/#/report-home/a171070217w237922628p222495327" class="btn btn-primary">See Analytics</a>
 			    </div>
 			</div>
 		</div>
@@ -331,11 +331,72 @@
                             </div>
                             <!-- inspire_me form end -->
 
-                            <!-- videos form begin -->
+
+
+
+<!-- videos form begin -->
                             <div class="tab-pane fade" id="videos" role="tabpanel">
-                                <form>
+                                <!--
+                                <div class="card">
+                <div class="card-header">New Video</div>
+
+                <div class="card-body">
+                   <form action="/admin/home/videos" method="post">
+                    <?php echo csrf_field(); ?>
+                    <div class="form-group">
+                        <label for="videoSource">VideoSource</label>
+                        <input type="text" class="form-control" name="videoSource" id="videoSource" aria-describedby="videoSourceHelp" placeholder="Enter Video Source">
+                        <small id="videoSourceHelp" class="form-text text-muted">enter source of video.</small>
+                        <?php $__errorArgs = ['videoSource'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <small class="text-danger"><?php echo e($message); ?></small>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                    </div>
+                    <div class="form-group">
+                        <label for="videoTag">Video Tag</label>
+                        <input type="text" class="form-control" name="videoTag" id="videoTag" aria-describedby="videoTagHelp" placeholder="Enter Video Tag">
+                        <small id="videoTagHelp" class="form-text text-muted">enter video tag.</small>
+                        <?php $__errorArgs = ['videoTag'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <small class="text-danger"><?php echo e($message); ?></small>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                    </div>
+                    <div class="form-group">
+                        <label for="videoURL">Video URL</label>
+                        <input type="text" class="form-control" name="videoURL" id="videoURL" aria-describedby="videoURLHelp" placeholder="Enter Video URL">
+                        <small id="videoURLHelp" class="form-text text-muted">enter video url.</small>
+                        <?php $__errorArgs = ['videoURL'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <small class="text-danger"><?php echo e($message); ?></small>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                    </div>
+
+                        <button  type="submit" class="btn btn-primary">Add Video</button>
+                   </form>
+                </div>
+            </div>-->
+                                <!--
+                                <form>-->
                                 	<!-- Checkboxes start -->
-                <div class="col-12 mt-5">
+                <!--<div class="col-12 mt-5">
                     <div class="card">
                         <div class="card-body">
                             <h4 class="header-title">Checkboxes</h4>
@@ -380,9 +441,10 @@
                             </form>
                         </div>
                     </div>
-                </div>
+                </div>-->
                 <!-- Checkboxes end -->
                 <!-- button with dropdown start -->
+                <!--
                 <div class="col-12 mt-5">
                     <div class="card">
                         <div class="card-body">
@@ -444,11 +506,15 @@
                             </form>
                         </div>
                     </div>
-                </div>
+                </div>-->
                 <!-- button with dropdown end -->
-								</form>
+								<!--</form>-->
+                                <?php echo $__env->make('video.create', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                             </div>
-                            <!-- videos form end -->
+<!-- videos form end -->
+
+
+
 
                             <!-- playlists form begin -->
                             <div class="tab-pane fade" id="playlists" role="tabpanel">
@@ -499,8 +565,12 @@
                             </div>
                             <!-- playlists form end -->
 
-                            <!-- assessments form begin -->
+
+
+<!-- assessments form begin -->
+
                             <div class="tab-pane fade" id="assessments" role="tabpanel">
+                                <!--
                                 <form>
                                 	<label>Assessments</label>
 								   	<div class="form-group">
@@ -545,7 +615,30 @@
 									</div>
 									<center><button type="submit" class="btn btn-primary">Submit</button></center>
 								</form>
-                            </div>
+                            </div>-->
+                            <div class="card">
+                <div class="card-header">Available Questionnaires</div>
+
+                <div class="card-body">
+                    <?php if(session('status')): ?>
+                        <div class="alert alert-success" role="alert">
+                            <?php echo e(session('status')); ?>
+
+                        </div>
+                    <?php endif; ?>
+                    
+                    <?php $__currentLoopData = $questionnaires; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $questionnaire): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <div>
+                    <a href="/admin/home/questionnaires/<?php echo e($questionnaire->id); ?>/questions/create"><?php echo e($questionnaire->questionnaireTitle); ?></a>
+                    </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    
+                    <div>
+                        <a href="/admin/home/questionnaires/create" class="btn btn-dark">create new questionnaire</a>
+                    </div>
+                </div>
+            </div>
+                            
                             <!-- assessments form end -->
 
                         </div>
@@ -663,4 +756,4 @@
 
 
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.dashboard', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/dashboard_admin.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.dashboard', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Ganesh\Desktop\temp\sahaayak\resources\views/dashboard_admin.blade.php ENDPATH**/ ?>

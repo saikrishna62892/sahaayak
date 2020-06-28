@@ -33,6 +33,9 @@ trait RegistersUsers
 
         event(new Registered($user = $this->create($request->all())));
 
+        if($user->is_Volunteer == 1)
+        return redirect('/register/step2/'.$user->id);
+
         $this->guard()->login($user);
 
         if ($response = $this->registered($request, $user)) {

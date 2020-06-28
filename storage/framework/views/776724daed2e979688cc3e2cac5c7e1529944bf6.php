@@ -1,33 +1,46 @@
-@extends('layouts.reg_forms_layout')
-    @section('content') 
+    <?php $__env->startSection('content'); ?> 
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100 p-l-50 p-r-50 p-t-45 p-b-30">
-                <form class="login100-form validate-form" method="POST" action="{{ route('register') }}">
-                    @csrf
+                <form class="login100-form validate-form" method="POST" action="<?php echo e(route('register')); ?>">
+                    <?php echo csrf_field(); ?>
                     <span class="login100-form-title p-b-25">
                         SignUp : Step 1
                     </span>
                     <div class="wrap-input100 validate-input m-b-16">
-                        <input class="input100" type="text" id="name" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Username">
-                        @error('name')
+                        <input class="input100" type="text" id="name" name="name" value="<?php echo e(old('name')); ?>" required autocomplete="name" autofocus placeholder="Username">
+                        <?php $__errorArgs = ['name'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong><?php echo e($message); ?></strong>
                                     </span>
-                        @enderror
-                        @csrf
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                        <?php echo csrf_field(); ?>
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <span class="lnr lnr-user"></span>
                         </span>
                     </div>
                     <div class="wrap-input100 validate-input m-b-16" data-validate = "Valid email is required: ex@abc.xyz">
-                        <input class="input100" id="email" type="email" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
-                        @error('email')
+                        <input class="input100" id="email" type="email" name="email" value="<?php echo e(old('email')); ?>" required autocomplete="email" placeholder="Email">
+                        <?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong><?php echo e($message); ?></strong>
                                     </span>
-                        @enderror
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <span class="lnr lnr-envelope"></span>
@@ -36,11 +49,18 @@
 
                     <div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
                         <input class="input100" id="password" type="password" name="password" required autocomplete="new-password" placeholder="Password">
-                        @error('password')
+                        <?php $__errorArgs = ['password'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong><?php echo e($message); ?></strong>
                                     </span>
-                        @enderror
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <span class="lnr lnr-lock"></span>
@@ -101,4 +121,5 @@
             </div>
         </div>
     </div>
-    @endsection
+    <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.reg_forms_layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Ganesh\Desktop\temp\sahaayak\resources\views/auth/register.blade.php ENDPATH**/ ?>
