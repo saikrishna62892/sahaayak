@@ -5,7 +5,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="/images/icons/favicon.ico"/>
+
+	<link rel="icon" type="image/png" href="/img/icons/favicon.ico"/>
+
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -16,7 +18,8 @@
 	<link rel="stylesheet" type="text/css" href="/vendor/animate/animate.css">
 <!--===============================================================================================-->	
 	<link rel="stylesheet" type="text/css" href="/vendor/css-hamburgers/hamburgers.min.css">
-<!--==============================================================================================-->
+
+<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="/vendor/select2/select2.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="/css/util.css">
@@ -53,4 +56,4 @@
 	<script src="/js/main.js"></script>
 
 </body>
-</html><?php /**PATH C:\Users\Ganesh\Desktop\temp\sahaayak\resources\views/layouts/reg_forms_layout.blade.php ENDPATH**/ ?>
+</html><?php /**PATH G:\sahayak1\sahaayak\resources\views/layouts/reg_forms_layout.blade.php ENDPATH**/ ?>

@@ -1,6 +1,6 @@
-@extends('layouts/layout')
 
-    @section('content')
+
+    <?php $__env->startSection('content'); ?>
 
     
     
@@ -115,10 +115,10 @@
 
                 <!-- pagination code starts-->
 
-                @foreach($newsdata as $item)
-                <li>{{$item->name}}</li>
-                @endforeach
-                <span>{{$newsdata->links()}}</span>
+                <?php $__currentLoopData = $newsdata; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <li><?php echo e($item->name); ?></li>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <span><?php echo e($newsdata->links()); ?></span>
                 <!-- pagination ends -->
                 <div class="col-lg-12">
                     <div class="classes__pagination">
@@ -132,4 +132,5 @@
     </section>
     <!-- Classes Section End -->
 
-    @endsection
+    <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts/layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH G:\sahayak1\sahaayak\resources\views/news.blade.php ENDPATH**/ ?>

@@ -53,7 +53,7 @@
         <div class="sidebar-menu">
             <div class="sidebar-header">
                 <div class="logo">
-<<<<<<< HEAD
+<!--<<<<<<< HEAD -->
                     <a href="index.html"><img src="/img/logo-dashboard.png" alt="logo"></a>
                 </div>
             </div>
@@ -111,7 +111,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>News</span></a>
+                                <a href="<?php echo e(url('news')); ?>" aria-expanded="true"><i class="ti-dashboard"></i><span>News</span></a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-thought"></i><span>Hope Box</span></a>
@@ -285,4 +285,4 @@
 </body>
 
 </html>
-<?php /**PATH C:\Users\Ganesh\Desktop\temp\sahaayak\resources\views/layouts/dashboard.blade.php ENDPATH**/ ?>
+<?php /**PATH G:\sahayak1\sahaayak\resources\views/layouts/dashboard.blade.php ENDPATH**/ ?>
