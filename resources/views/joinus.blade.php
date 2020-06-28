@@ -5,11 +5,17 @@
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-45 p-b-30">
 				<form  action ="joinus/user_controller" class="login100-form validate-form" method="POST">
+					@csrf
 					<span class="login100-form-title p-b-25">
 						SignUp : Step 1
 					</span>
 					<div class="wrap-input100 validate-input m-b-16">
-						<input class="input100" type="text" name="username" placeholder="Username">
+						<input class="input100" type="text" id="name" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Username">
+						@error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
 						@csrf
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
@@ -17,7 +23,12 @@
 						</span>
 					</div>
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Email">
+						<input class="input100" id="email" type="email" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
+						@error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<span class="lnr lnr-envelope"></span>
@@ -25,14 +36,19 @@
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<input class="input100" id="password" type="password" name="password" required autocomplete="new-password" placeholder="Password">
+						@error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<span class="lnr lnr-lock"></span>
 						</span>
 					</div>
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Confirm Password">
+						<input class="input100" id="password-confirm" type="password" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<span class="lnr lnr-lock"></span>
@@ -42,11 +58,11 @@
 					<div>
 						Role&emsp;
                                 <label class="radio-container m-r-20">
-                                    <input type="radio" checked="checked" name="exist">
+                                    <input type="radio" checked="checked" name="is_Volunteer" value="0">
                                     <span class="checkmark"></span>User
                                 </label>
                                 <label class="radio-container">
-                                    <input type="radio" name="exist">
+                                    <input type="radio" name="is_Volunteer" value="1">
                                     <span class="checkmark"></span>Volunteer
                                 </label>
 					</div>
@@ -78,7 +94,7 @@
 							Already Signed?
 						</span>
 
-						<a class="txt1 bo1 hov1" href="#">
+						<a class="txt1 bo1 hov1" href="/login">
 							Login now							
 						</a>
 					</div>

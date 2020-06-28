@@ -1,4 +1,3 @@
-
     <?php $__env->startSection('content'); ?>
     <div class="limiter">
         <div class="container-login100">
@@ -212,4 +211,4 @@ unset($__errorArgs, $__bag); ?>
 -->
 
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-<?php echo $__env->make('layouts.reg_forms_layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/auth/login.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.reg_forms_layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Ganesh\Desktop\temp\sahaayak\resources\views/auth/login.blade.php ENDPATH**/ ?>

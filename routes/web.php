@@ -121,6 +121,11 @@ Route::post('admin/home/videos','VideoController@store');
 
 //Subscription Routes
 Route::post('/home/subscribe','SubscriptionController@store');
+
+//Registration Routes
+Route::get('/register/step2/{user}','VolunteerController@step2');
+Route::post('/register/step2/{user}','VolunteerController@store');
+
 //end of dileep added routes
 
 Route::get('team', function () {

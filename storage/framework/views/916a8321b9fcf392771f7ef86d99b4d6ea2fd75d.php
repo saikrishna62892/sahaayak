@@ -21,19 +21,28 @@
     <link rel="stylesheet" href="/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="/css/style.css" type="text/css">
-    <link href="css/introjs.css" rel="stylesheet">
-    <link href="css/introjs-modern.css" rel="stylesheet">
+    <link href="/css/introjs.css" rel="stylesheet">
+    <link href="/css/introjs-modern.css" rel="stylesheet">
     
 
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/jquery.barfiller.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.nice-select.min.js"></script>
+    <script src="/js/jquery.barfiller.js"></script>
+    <script src="/js/jquery.slicknav.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/main.js"></script>
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171070217-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-171070217-1');
+    </script>
 
 </head>
 
@@ -47,7 +56,7 @@
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu">
         <div class="offcanvas__logo">
-            <a href="<?php echo e(url('/')); ?>"><img src="img/logo.png" alt="Sahaayak" width="240" height="60"></a>
+            <a href="<?php echo e(url('/')); ?>"><img src="/img/logo.png" alt="Sahaayak" width="240" height="60"></a>
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__widget">
@@ -270,7 +279,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__about">
-                        <img src="img/footer-logo.png" alt="Sahaayak" width="240" height="60">
+                        <img src="//img/footer-logo.png" alt="Sahaayak" width="240" height="60">
                         <ul class="footer-address">
                             <li><i class="fa fa-phone"></i> (01) 436 8888</li>
                             <li><i class="fa fa-envelope"></i> hello@zogin.com</li>
@@ -363,14 +372,14 @@ unset($__errorArgs, $__bag); ?>
 
 
     <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/jquery.barfiller.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
-    <script type="text/javascript" src="js/intro.js"></script>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.nice-select.min.js"></script>
+    <script src="/js/jquery.barfiller.js"></script>
+    <script src="/js/jquery.slicknav.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script type="text/javascript" src="/js/intro.js"></script>
 
     <!-- ManyChat Plugin -->
     <script src="//widget.manychat.com/101206188315883.js" async="async"></script>
@@ -419,4 +428,4 @@ unset($__errorArgs, $__bag); ?>
 
 </body>
 
-</html><?php /**PATH G:\sahayak1\sahaayak\resources\views/layouts/layout.blade.php ENDPATH**/ ?>
+</html><?php /**PATH C:\Users\Ganesh\Desktop\temp\sahaayak\resources\views/layouts/layout.blade.php ENDPATH**/ ?>
