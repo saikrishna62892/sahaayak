@@ -2,42 +2,84 @@
 
 <?php $__env->startSection('content'); ?>
 	
+	<!--<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Available Questionnaires</div>
+
+                <div class="card-body">
+                    <?php if(session('status')): ?>
+                        <div class="alert alert-success" role="alert">
+                            <?php echo e(session('status')); ?>
+
+                        </div>
+                    <?php endif; ?>
+                    
+                    <?php $__currentLoopData = $questionnaires; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $questionnaire): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <div>
+                    <a href="/admin/home/questionnaires/<?php echo e($questionnaire->id); ?>/questions/create"><?php echo e($questionnaire->questionnaireTitle); ?></a>
+                    </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    
+                    <div>
+                        <a href="/admin/home/questionnaires/create" class="btn btn-dark">create new questionnaire</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Add Videos</div>
+
+                <div class="card-body">
+                    <div>
+                        <a href="/admin/home/videos/create" class="btn btn-dark">Add New Video</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->		
 <br>	
 <div class="container" id="stats">
 	<div class="row">
 		<div class="col-sm-3">
 			<div class="card">
 				<div class="card-body">
-					<h5 class="card-title">Checkins</h5>
+					<h5 class="card-title">Visitors</h5>
 					<h1 align="center">2000</h1>
-					<p class="card-text">Number of times logged into sahaayak.</p>
+					<p class="card-text">Number of unique website visitors.</p>
+					<a href="https://analytics.google.com/analytics/web/#/report-home/a171070217w237922628p222495327" class="btn btn-primary">See Analytics</a>
 				</div>
 			</div>
 		</div>
 		<div class="col-sm-3">
 		    <div class="card">
 		        <div class="card-body">
-			        <h5 class="card-title">Posts</h5>
+			        <h5 class="card-title">Users</h5>
 			        <h1 align="center">300</h1>
-			        <p class="card-text">Num of posts posted in the website</p>
+			        <p class="card-text">Active Users who used our service</p>
+			        <a href="https://analytics.google.com/analytics/web/#/report-home/a171070217w237922628p222495327" class="btn btn-primary">See Analytics</a>
 		        </div>
 		    </div>
 		</div>
 		<div class="col-sm-3">
 		    <div class="card">
 		        <div class="card-body">
-			        <h5 class="card-title">Diary</h5>
+			        <h5 class="card-title">Volunteers</h5>
 			        <h1 align="center">100</h1>
-			        <p class="card-text">Number of times events added in the diary</p>
+			        <p class="card-text">Users who applied as volunteers.</p>
+			        <a href="https://analytics.google.com/analytics/web/#/report-home/a171070217w237922628p222495327" class="btn btn-primary">See Analytics</a>
 		        </div>
 			</div>
 		</div>
 		<div class="col-sm-3">
 			<div class="card">
 			    <div class="card-body">
-			        <h5 class="card-title">ToDo List</h5>
+			        <h5 class="card-title">Badges</h5>
 			        <h1 align="center">50</h1>
-			        <p class="card-text">Number of items in the todo List</p>
+			        <p class="card-text">Given to recognized volunteers after verification</p>
+			        <a href="https://analytics.google.com/analytics/web/#/report-home/a171070217w237922628p222495327" class="btn btn-primary">See Analytics</a>
 			    </div>
 			</div>
 		</div>
@@ -50,26 +92,26 @@
     <div class="card">
         <div class="card-body">
             <div class="d-sm-flex justify-content-between align-items-center">
-                <h4 class="header-title">Handles</h4>
+                <h4 class="header-title">Form Handles</h4>
                 <div class="trd-history-tabs">
                     <ul class="nav" role="tablist">
                         <li>
-                            <a class="active" data-toggle="tab" href="#diary" role="tab">Cognitive Diary</a>
+                            <a class="active" data-toggle="tab" href="#expert_talks" role="tab">Expert Talks</a>
                         </li>
                         <li>
                             <a data-toggle="tab" href="#news" role="tab">News</a>
                         </li>
                         <li>
-                            <a data-toggle="tab" href="#habits" role="tab">Habits</a>
+                            <a data-toggle="tab" href="#inspire_me" role="tab">Inspire_me</a>
                         </li>
                         <li>
-                            <a data-toggle="tab" href="#stories" role="tab">Shared Stories</a>
+                            <a data-toggle="tab" href="#videos" role="tab">Videos</a>
                         </li>
                         <li>
-                            <a data-toggle="tab" href="#weavesilk" role="tab">Weave Silk</a>
+                            <a data-toggle="tab" href="#playlists" role="tab">Playlists</a>
                         </li>
                         <li>
-                            <a data-toggle="tab" href="#worrytree" role="tab">Worry Tree</a>
+                            <a data-toggle="tab" href="#assessments" role="tab">Assessments</a>
                         </li>
                     </ul>
                 </div>
@@ -77,7 +119,7 @@
         <div class="trad-history mt-4">
             <div class="tab-content" id="myTabContent">
                 <!-- Expert_talks form begin -->
-                <div class="tab-pane fade show active" id="diary" role="tabpanel">
+                <div class="tab-pane fade show active" id="expert_talks" role="tabpanel">
                     <form>
 
                     	<label for="author">Author</label>
@@ -245,7 +287,7 @@
 
 
                             <!-- inspire_me form begin -->
-                            <div class="tab-pane fade" id="habits" role="tabpanel">
+                            <div class="tab-pane fade" id="inspire_me" role="tabpanel">
                                 <form>
                                 	<!-- Radios start -->
                 <div class="col-12 mt-5">
@@ -289,11 +331,72 @@
                             </div>
                             <!-- inspire_me form end -->
 
-                            <!-- videos form begin -->
-                            <div class="tab-pane fade" id="stories" role="tabpanel">
-                                <form>
+
+
+
+<!-- videos form begin -->
+                            <div class="tab-pane fade" id="videos" role="tabpanel">
+                                <!--
+                                <div class="card">
+                <div class="card-header">New Video</div>
+
+                <div class="card-body">
+                   <form action="/admin/home/videos" method="post">
+                    <?php echo csrf_field(); ?>
+                    <div class="form-group">
+                        <label for="videoSource">VideoSource</label>
+                        <input type="text" class="form-control" name="videoSource" id="videoSource" aria-describedby="videoSourceHelp" placeholder="Enter Video Source">
+                        <small id="videoSourceHelp" class="form-text text-muted">enter source of video.</small>
+                        <?php $__errorArgs = ['videoSource'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <small class="text-danger"><?php echo e($message); ?></small>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                    </div>
+                    <div class="form-group">
+                        <label for="videoTag">Video Tag</label>
+                        <input type="text" class="form-control" name="videoTag" id="videoTag" aria-describedby="videoTagHelp" placeholder="Enter Video Tag">
+                        <small id="videoTagHelp" class="form-text text-muted">enter video tag.</small>
+                        <?php $__errorArgs = ['videoTag'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <small class="text-danger"><?php echo e($message); ?></small>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                    </div>
+                    <div class="form-group">
+                        <label for="videoURL">Video URL</label>
+                        <input type="text" class="form-control" name="videoURL" id="videoURL" aria-describedby="videoURLHelp" placeholder="Enter Video URL">
+                        <small id="videoURLHelp" class="form-text text-muted">enter video url.</small>
+                        <?php $__errorArgs = ['videoURL'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <small class="text-danger"><?php echo e($message); ?></small>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                    </div>
+
+                        <button  type="submit" class="btn btn-primary">Add Video</button>
+                   </form>
+                </div>
+            </div>-->
+                                <!--
+                                <form>-->
                                 	<!-- Checkboxes start -->
-                <div class="col-12 mt-5">
+                <!--<div class="col-12 mt-5">
                     <div class="card">
                         <div class="card-body">
                             <h4 class="header-title">Checkboxes</h4>
@@ -338,9 +441,10 @@
                             </form>
                         </div>
                     </div>
-                </div>
+                </div>-->
                 <!-- Checkboxes end -->
                 <!-- button with dropdown start -->
+                <!--
                 <div class="col-12 mt-5">
                     <div class="card">
                         <div class="card-body">
@@ -402,14 +506,18 @@
                             </form>
                         </div>
                     </div>
-                </div>
+                </div>-->
                 <!-- button with dropdown end -->
-								</form>
+								<!--</form>-->
+                                <?php echo $__env->make('video.create', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                             </div>
-                            <!-- videos form end -->
+<!-- videos form end -->
+
+
+
 
                             <!-- playlists form begin -->
-                            <div class="tab-pane fade" id="weavesilk" role="tabpanel">
+                            <div class="tab-pane fade" id="playlists" role="tabpanel">
                                 <form>
                                 	<label>Playlists</label>
 								   	<div class="form-group">
@@ -457,8 +565,12 @@
                             </div>
                             <!-- playlists form end -->
 
-                            <!-- assessments form begin -->
-                            <div class="tab-pane fade" id="worrytree" role="tabpanel">
+
+
+<!-- assessments form begin -->
+
+                            <div class="tab-pane fade" id="assessments" role="tabpanel">
+                                <!--
                                 <form>
                                 	<label>Assessments</label>
 								   	<div class="form-group">
@@ -503,7 +615,30 @@
 									</div>
 									<center><button type="submit" class="btn btn-primary">Submit</button></center>
 								</form>
-                            </div>
+                            </div>-->
+                            <div class="card">
+                <div class="card-header">Available Questionnaires</div>
+
+                <div class="card-body">
+                    <?php if(session('status')): ?>
+                        <div class="alert alert-success" role="alert">
+                            <?php echo e(session('status')); ?>
+
+                        </div>
+                    <?php endif; ?>
+                    
+                    <?php $__currentLoopData = $questionnaires; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $questionnaire): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <div>
+                    <a href="/admin/home/questionnaires/<?php echo e($questionnaire->id); ?>/questions/create"><?php echo e($questionnaire->questionnaireTitle); ?></a>
+                    </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    
+                    <div>
+                        <a href="/admin/home/questionnaires/create" class="btn btn-dark">create new questionnaire</a>
+                    </div>
+                </div>
+            </div>
+                            
                             <!-- assessments form end -->
 
                         </div>
@@ -514,5 +649,111 @@
         <!-- trading history area end -->
 
 
+    <div class="main-content-inner" id="table">
+    	<div class="row">
+        <!-- Progress Table start -->
+        <div class="col-12 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title">Progress Table</h4>
+                    <div class="single-table">
+                        <div class="table-responsive">
+                            <table class="table table-hover progress-table text-center">
+                                <thead class="text-uppercase">
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">task</th>
+                                        <th scope="col">Deadline</th>
+                                        <th scope="col">Progress</th>
+                                        <th scope="col">status</th>
+                                        <th scope="col">action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>
+                                            <div class="progress" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="status-p bg-primary">pending</span></td>
+                                        <td>
+                                            <ul class="d-flex justify-content-center">
+                                                <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Mark</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>
+                                            <div class="progress" style="height: 8px;">
+                                                <div class="progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="status-p bg-warning">pending</span></td>
+                                        <td>
+                                            <ul class="d-flex justify-content-center">
+                                                <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Mark</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>
+                                            <div class="progress" style="height: 8px;">
+                                                <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="status-p bg-success">complate</span></td>
+                                        <td>
+                                            <ul class="d-flex justify-content-center">
+                                                <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">4</th>
+                                        <td>Mark</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>
+                                            <div class="progress" style="height: 8px;">
+                                                <div class="progress-bar bg-warning" role="progressbar" style="width: 85%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="status-p bg-warning">panding</span></td>
+                                        <td>
+                                            <ul class="d-flex justify-content-center">
+                                                <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Progress Table end -->
+    </div>
+</div>
+
+
+
+
+
+
+
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.dashboard', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/dashboard_user.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.dashboard', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Ganesh\Desktop\temp\sahaayak\resources\views/dashboard_admin.blade.php ENDPATH**/ ?>

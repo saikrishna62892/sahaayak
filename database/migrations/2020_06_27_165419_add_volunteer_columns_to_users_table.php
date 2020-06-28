@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVideosTable extends Migration
+class AddVolunteerColumnsToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateVideosTable extends Migration
      */
     public function up()
     {
-        Schema::create('videos', function (Blueprint $table) {
-            $table->id();
-            $table->string('videoSource');
-            $table->string('videoTag');
-            $table->string('videoURL');
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->boolean('is_Volunteer');
+            $table->boolean('is_Approved');
         });
     }
 
@@ -29,6 +26,8 @@ class CreateVideosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('videos');
+        Schema::table('users', function (Blueprint $table) {
+            //
+        });
     }
 }

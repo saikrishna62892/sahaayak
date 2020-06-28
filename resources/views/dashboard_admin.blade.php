@@ -330,11 +330,17 @@
                             </div>
                             <!-- inspire_me form end -->
 
-                            <!-- videos form begin -->
+
+
+
+
+<!-- videos form begin -->
                             <div class="tab-pane fade" id="videos" role="tabpanel">
-                                <form>
+                                
+                                <!--
+                                <form>-->
                                 	<!-- Checkboxes start -->
-                <div class="col-12 mt-5">
+                <!--<div class="col-12 mt-5">
                     <div class="card">
                         <div class="card-body">
                             <h4 class="header-title">Checkboxes</h4>
@@ -379,9 +385,12 @@
                             </form>
                         </div>
                     </div>
-                </div>
+
+                </div>-->
                 <!-- Checkboxes end -->
                 <!-- button with dropdown start -->
+                <!--
+
                 <div class="col-12 mt-5">
                     <div class="card">
                         <div class="card-body">
@@ -443,11 +452,15 @@
                             </form>
                         </div>
                     </div>
-                </div>
+
+                </div>-->
                 <!-- button with dropdown end -->
-								</form>
+								<!--</form>-->
+                                @include('video.create')
                             </div>
-                            <!-- videos form end -->
+<!-- videos form end -->
+
+
 
                             <!-- playlists form begin -->
                             <div class="tab-pane fade" id="playlists" role="tabpanel">
@@ -498,8 +511,14 @@
                             </div>
                             <!-- playlists form end -->
 
-                            <!-- assessments form begin -->
+
+
+
+<!-- assessments form begin -->
+
                             <div class="tab-pane fade" id="assessments" role="tabpanel">
+                                <!--
+
                                 <form>
                                 	<label>Assessments</label>
 								   	<div class="form-group">
@@ -544,7 +563,29 @@
 									</div>
 									<center><button type="submit" class="btn btn-primary">Submit</button></center>
 								</form>
-                            </div>
+                            </div>-->
+                            <div class="card">
+                <div class="card-header">Available Questionnaires</div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    
+                    @foreach($questionnaires as $questionnaire)
+                    <div>
+                    <a href="/admin/home/questionnaires/{{$questionnaire->id}}/questions/create">{{$questionnaire->questionnaireTitle}}</a>
+                    </div>
+                    @endforeach
+                    
+                    <div>
+                        <a href="/admin/home/questionnaires/create" class="btn btn-dark">create new questionnaire</a>
+                    </div>
+                </div>
+            </div>
+                            
                             <!-- assessments form end -->
 
                         </div>

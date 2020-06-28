@@ -56,7 +56,7 @@
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu">
         <div class="offcanvas__logo">
-            <a href="<?php echo e(url('/')); ?>"><img src="img/logo.png" alt="Sahaayak" width="240" height="60"></a>
+            <a href="<?php echo e(url('/')); ?>"><img src="/img/logo.png" alt="Sahaayak" width="240" height="60"></a>
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__widget">
@@ -279,7 +279,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__about">
-                        <img src="img/footer-logo.png" alt="Sahaayak" width="240" height="60">
+                        <img src="//img/footer-logo.png" alt="Sahaayak" width="240" height="60">
                         <ul class="footer-address">
                             <li><i class="fa fa-phone"></i> (01) 436 8888</li>
                             <li><i class="fa fa-envelope"></i> hello@zogin.com</li>
