@@ -333,6 +333,7 @@
 
 
 
+
 <!-- videos form begin -->
                             <div class="tab-pane fade" id="videos" role="tabpanel">
                                 
@@ -384,10 +385,12 @@
                             </form>
                         </div>
                     </div>
+
                 </div>-->
                 <!-- Checkboxes end -->
                 <!-- button with dropdown start -->
                 <!--
+
                 <div class="col-12 mt-5">
                     <div class="card">
                         <div class="card-body">
@@ -449,13 +452,13 @@
                             </form>
                         </div>
                     </div>
+
                 </div>-->
                 <!-- button with dropdown end -->
 								<!--</form>-->
                                 @include('video.create')
                             </div>
 <!-- videos form end -->
-
 
 
 
@@ -510,10 +513,12 @@
 
 
 
+
 <!-- assessments form begin -->
 
                             <div class="tab-pane fade" id="assessments" role="tabpanel">
                                 <!--
+
                                 <form>
                                 	<label>Assessments</label>
 								   	<div class="form-group">

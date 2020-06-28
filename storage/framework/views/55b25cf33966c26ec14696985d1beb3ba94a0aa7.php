@@ -43,7 +43,7 @@
 </head>
 <body>
 
-	@yield('content');
+	<?php echo $__env->yieldContent('content'); ?>;
 
 <!--===============================================================================================-->	
 	<script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -56,4 +56,4 @@
 	<script src="/js/main.js"></script>
 
 </body>
-</html>
+</html><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/layouts/reg_forms_layout.blade.php ENDPATH**/ ?>
