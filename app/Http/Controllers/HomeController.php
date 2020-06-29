@@ -23,20 +23,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        /*$questionnaires = Questionnaire::all(); 
-        return view('home',compact('questionnaires'));*/
         return view('dashboard_user');
     }
 
     public function adminHome()
     {
-
-        #$questionnaires = Questionnaire::all(); 
-        #return view('dashboard_admin',compact('questionnaires'));
-
-        $questionnaires = Questionnaire::all(); 
-        #return view('admin.adminHome',compact('questionnaires'));
-
-        return view('dashboard_admin');
+        return view('admin.dashboard_admin');
     }
 }

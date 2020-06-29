@@ -73,7 +73,9 @@ Route::get('learn_suicide', function () {
  #   return view('login');
 #});
 
-Route::get('news', "NewsController@index"); #changed on 28/06
+Route::get('news', function () {
+    return view('news');
+});
 
 Route::get('shared_stories', function () {
     return view('shared_stories');
@@ -113,7 +115,7 @@ Route::post('admin/home/questionnaires/{questionnaire}/questions','QuestionContr
 Route::get('home/questionnaires/{questionnaire}/questions','QuestionController@show');
 Route::post('home/questionnaires/{questionnaire}/getResult','QuestionController@getResult');
 
-//Video Route
+//Admin Video Route
 Route::get('admin/home/videos/create','VideoController@create');
 Route::post('admin/home/videos','VideoController@store');
 
@@ -123,6 +125,9 @@ Route::post('/home/subscribe','SubscriptionController@store');
 //Registration Routes
 Route::get('/register/step2/{user}','VolunteerController@step2');
 Route::post('/register/step2/{user}','VolunteerController@store');
+
+//User HopeBox Video Routes
+Route::get('/home/hopebox/videos','HopeBoxController@displayVideos');
 
 //end of dileep added routes
 
@@ -138,7 +143,7 @@ Route::post('/appointment_controller','appointment_controller@save');
 Route::get('/suggestion_controller','suggestion_controller@save');
 
 Route::get('videos', function () {
-    return view('videos');
+    return view('video.show');
 });
 
 Route::get('playlists', function () {

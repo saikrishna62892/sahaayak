@@ -164,7 +164,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-3">
                         <div class="header__logo">
-                            <a href="{{ url('/') }}"><img data-step="1" data-intro="logo" data-position="right" src="img/logo.png" alt="Sahaayak" width="240" height="60"></a>
+                            <a href="{{ url('/') }}"><img data-step="1" data-intro="logo" data-position="right" src="/img/logo.png" alt="Sahaayak" width="240" height="60"></a>
                         </div>
                     </div>
                     <div class="col-lg-9 col-md-9">
@@ -277,7 +277,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__about">
-                        <img src="//img/footer-logo.png" alt="Sahaayak" width="240" height="60">
+                        <img src="/img/footer-logo.png" alt="Sahaayak" width="240" height="60">
                         <ul class="footer-address">
                             <li><i class="fa fa-phone"></i> (01) 436 8888</li>
                             <li><i class="fa fa-envelope"></i> hello@zogin.com</li>

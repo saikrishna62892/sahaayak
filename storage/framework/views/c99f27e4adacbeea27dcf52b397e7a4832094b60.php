@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title', __('Page Expired')); ?>
 <?php $__env->startSection('code', '419'); ?>
 <?php $__env->startSection('message', __('Page Expired')); ?>

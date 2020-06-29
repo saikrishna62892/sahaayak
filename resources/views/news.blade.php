@@ -113,20 +113,13 @@
                     </div>
                 </div>
 
-                <!-- pagination code starts-->
-
-                @foreach($newsdata as $item)
-                <li>{{$item->name}}</li>
-                @endforeach
-                <span>{{$newsdata->links()}}</span>
-                <!-- pagination ends -->
                 <div class="col-lg-12">
                     <div class="classes__pagination">
                         <a href="#">1</a>
                         <a href="#">2</a>
                         <a href="#"><span class="arrow_carrot-right"></span></a>
                     </div>
-                </div>                
+                </div>
             </div>
         </div>
     </section>
