@@ -1,5 +1,5 @@
-@extends('layouts.layout')
-    @section('content')
+
+    <?php $__env->startSection('content'); ?>
     
     <!-- Blog Hero Begin -->
     <section class="breadcrumb-option blog-hero set-bg" data-setbg="/img/breadcrumb.jpg">
@@ -22,12 +22,13 @@
 <!-- Blog Details Section Begin -->
     <section class="blog-details spad">
         <div class="container">
-            {{ $count=1}}
-            @foreach($embedURLs as $key1 => $embedURL2)
+            <?php echo e($count=1); ?>
+
+            <?php $__currentLoopData = $embedURLs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key1 => $embedURL2): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="row">
-                @foreach($embedURL2 as $key => $embedURL)
+                <?php $__currentLoopData = $embedURL2; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $embedURL): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="col-lg-6 order-lg-2 order-1">
-                    <h2>#{{ $count++ }}</h2>
+                    <h2>#<?php echo e($count++); ?></h2>
                     <div class="blog__details">
                         <div class="blog__details__author">
                             <div class="blog__details__author__pic">
@@ -40,15 +41,16 @@
                             </div>
                         </div>
                         <div class="embed-responsive embed-responsive-16by9">
-                            {!! $embedURL !!}
+                            <?php echo $embedURL; ?>
+
                             
                         </div>      
                     </div>
                 </div>
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
             <br>
-            @endforeach
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="classes__pagination">
@@ -61,4 +63,5 @@
         
         </div>
     </section>
-    @endsection
+    <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Ganesh\Desktop\dileep\sahaayak\resources\views/video/show.blade.php ENDPATH**/ ?>
