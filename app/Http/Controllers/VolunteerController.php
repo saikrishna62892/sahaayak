@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
+use App\Volunteer;
+
 class VolunteerController extends Controller
 {
     public function step2(User $user)
@@ -31,5 +33,16 @@ class VolunteerController extends Controller
             'file2' => $data['file2']->store('uploads/volunteer','public')
         ]);
     	return 'Your Application has been submitted. please wait for approval';
+    }
+
+    public function getDetails(Volunteer $unapprovedVolunteer)
+    {
+        return view('volunteer.getDetails',compact('unapprovedVolunteer'));
+    }
+
+    public function approveVolunteer(Volunteer $unapprovedVolunteer)
+    {
+        $unapprovedVolunteer->update(['is_Approved' => 1]);
+        return 'This volunteer is approved';
     }
 }

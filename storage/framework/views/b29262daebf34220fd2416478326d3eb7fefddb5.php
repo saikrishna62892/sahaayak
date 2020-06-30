@@ -1,6 +1,6 @@
-@extends('layouts.dashboard')
 
-@section('content')
+
+<?php $__env->startSection('content'); ?>
 		
 <br>	
 <div class="container" id="stats">
@@ -415,7 +415,7 @@
                 </div>-->
                 <!-- button with dropdown end -->
 								<!--</form>-->
-                                @include('video.create')
+                                <?php echo $__env->make('video.create', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                             </div>
 <!-- videos form end -->
 
@@ -526,17 +526,18 @@
                 <div class="card-header">Available Questionnaires</div>
 
                 <div class="card-body">
-                    @if (session('status'))
+                    <?php if(session('status')): ?>
                         <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+                            <?php echo e(session('status')); ?>
+
                         </div>
-                    @endif
+                    <?php endif; ?>
                     
-                    @foreach($questionnaires as $questionnaire)
+                    <?php $__currentLoopData = $questionnaires; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $questionnaire): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div>
-                    <a href="/admin/home/questionnaires/{{$questionnaire->id}}/questions/create">{{$questionnaire->questionnaireTitle}}</a>
+                    <a href="/admin/home/questionnaires/<?php echo e($questionnaire->id); ?>/questions/create"><?php echo e($questionnaire->questionnaireTitle); ?></a>
                     </div>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     
                     <div>
                         <a href="/admin/home/questionnaires/create" class="btn btn-dark">create new questionnaire</a>
@@ -575,14 +576,16 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{ $count=1 }}
-                                    @foreach($unapprovedVolunteers as $unapprovedVolunteer)
+                                    <?php echo e($count=1); ?>
+
+                                    <?php $__currentLoopData = $unapprovedVolunteers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $unapprovedVolunteer): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <tr>
-                                        <th scope="row">{{ $count++ }}</th>
-                                        <td>{{ $unapprovedVolunteer->name }}</td>
-                                        <td>{{ $unapprovedVolunteer->phone}}</td>
+                                        <th scope="row"><?php echo e($count++); ?></th>
+                                        <td><?php echo e($unapprovedVolunteer->name); ?></td>
+                                        <td><?php echo e($unapprovedVolunteer->phone); ?></td>
                                         <td>
-                                            {{ $unapprovedVolunteer->user->email }}
+                                            <?php echo e($unapprovedVolunteer->user->email); ?>
+
                                             <!--
                                             <div class="progress" style="height: 8px;">
                                                 <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -590,13 +593,13 @@
                                             -->
                                         </td>
                                         <td>
-                        <a href="/admin/home/volunteer/{{$unapprovedVolunteer->id}}/getDetails">get details</a>
+                        <a href="/admin/home/volunteer/<?php echo e($unapprovedVolunteer->id); ?>/getDetails">get details</a>
                                             <!--
                                             <span class="status-p bg-primary">pending</span>
                                             -->
                                             </td>
                                         <td>
-<a class="btn btn-info" href="/admin/home/volunteer/{{$unapprovedVolunteer->id}}/approveVolunteer">Approve</a>
+<a class="btn btn-info" href="/admin/home/volunteer/<?php echo e($unapprovedVolunteer->id); ?>/approveVolunteer">Approve</a>
                                             <!--
                                             <ul class="d-flex justify-content-center">
                                                 <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
@@ -605,7 +608,7 @@
                                             -->
                                         </td>
                                     </tr>
-                                    @endforeach
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     <!--
                                     <tr>
                                         <th scope="row">2</th>
@@ -676,4 +679,5 @@
 
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.dashboard', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Ganesh\Desktop\dileep\sahaayak\resources\views/admin/dashboard_admin.blade.php ENDPATH**/ ?>
