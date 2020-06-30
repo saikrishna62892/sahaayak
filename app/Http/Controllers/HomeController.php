@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Questionnaire;
+use App\Volunteer;
 class HomeController extends Controller
 {
     /**
@@ -28,6 +29,8 @@ class HomeController extends Controller
 
     public function adminHome()
     {
-        return view('admin.dashboard_admin');
+        $unapprovedVolunteers = Volunteer::where('is_Approved',0)->get();
+        //dd($unapprovedVolunteers);
+        return view('admin.dashboard_admin',compact('unapprovedVolunteers'));
     }
 }
