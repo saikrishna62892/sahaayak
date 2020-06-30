@@ -1,7 +1,45 @@
-@extends('layouts.dashboard')
 
-@section('content')
-		
+
+<?php $__env->startSection('content'); ?>
+	
+	<!--<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Available Questionnaires</div>
+
+                <div class="card-body">
+                    <?php if(session('status')): ?>
+                        <div class="alert alert-success" role="alert">
+                            <?php echo e(session('status')); ?>
+
+                        </div>
+                    <?php endif; ?>
+                    
+                    <?php $__currentLoopData = $questionnaires; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $questionnaire): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <div>
+                    <a href="/admin/home/questionnaires/<?php echo e($questionnaire->id); ?>/questions/create"><?php echo e($questionnaire->questionnaireTitle); ?></a>
+                    </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    
+                    <div>
+                        <a href="/admin/home/questionnaires/create" class="btn btn-dark">create new questionnaire</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Add Videos</div>
+
+                <div class="card-body">
+                    <div>
+                        <a href="/admin/home/videos/create" class="btn btn-dark">Add New Video</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->		
 <br>	
 <div class="container" id="stats">
 	<div class="row">
@@ -141,7 +179,109 @@
 
 	<!-- news form begin -->
      <div class="tab-pane fade" id="news" role="tabpanel">
-            @include('news.create')
+        <form>
+            <!-- Textual inputs start -->
+                <div class="col-12 mt-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="header-title">Textual inputs</h4>
+                            <p class="text-muted font-14 mb-4">Here are examples of <code>.form-control</code> applied to each textual HTML5 <code>&lt;input&gt;</code> <code>type</code>.</p>
+                            <div class="form-group">
+                                <label for="example-text-input" class="col-form-label">Text</label>
+                                <input class="form-control" type="text" value="Carlos Rath" id="example-text-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="example-search-input" class="col-form-label">Search</label>
+                                <input class="form-control" type="search" value="Where is google office" id="example-search-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="example-email-input" class="col-form-label">Email</label>
+                                <input class="form-control" type="email" value="name@example.com" id="example-email-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="example-url-input" class="col-form-label">URL</label>
+                                <input class="form-control" type="url" value="https://getbootstrap.com" id="example-url-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="example-tel-input" class="col-form-label">Telephone</label>
+                                <input class="form-control" type="tel" value="+880-1233456789" id="example-tel-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword" class="">Password</label>
+                                <input type="password" class="form-control" id="inputPassword" value="inputPassword" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <label for="example-number-input" class="col-form-label">Number</label>
+                                <input class="form-control" type="number" value="42" id="example-number-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="example-datetime-local-input" class="col-form-label">Date and time</label>
+                                <input class="form-control" type="datetime-local" value="2018-07-19T15:30:00" id="example-datetime-local-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="example-date-input" class="col-form-label">Date</label>
+                                <input class="form-control" type="date" value="2018-03-05" id="example-date-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="example-month-input" class="col-form-label">Month</label>
+                                <input class="form-control" type="month" value="2018-05" id="example-month-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="example-week-input" class="col-form-label">Week</label>
+                                <input class="form-control" type="week" value="2018-W32" id="example-week-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="example-time-input" class="col-form-label">Time</label>
+                                <input class="form-control" type="time" value="13:45:00" id="example-time-input">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">Select</label>
+                                <select class="form-control">
+                                    <option>Select</option>
+                                    <option>Large select</option>
+                                    <option>Small select</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">Custom Select</label>
+                                <select class="custom-select">
+                                    <option selected="selected">Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="example-text-input-lg" class="col-form-label">Large</label>
+                                <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" id="example-text-input-lg">
+                            </div>
+                            <div class="form-group">
+                                <label for="example-text-input-sm" class="col-form-label">Small</label>
+                                <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" id="example-text-input-sm">
+                            </div>
+                            <div class="form-group has-primary">
+                                <label for="inputHorizontalPrimary" class="col-form-label">Email</label>
+                                <input type="email" class="form-control form-control-primary" id="inputHorizontalPrimary" placeholder="name@example.com">
+                                <div class="form-control-feedback">Primary! You've done it.</div>
+                                <small class="form-text text-muted">Example help text that remains unchanged.</small>
+                            </div>
+                            <div class="form-group has-warning">
+                                <label for="inputHorizontalWarning" class="col-form-label">Email</label>
+                                <input type="email" class="form-control form-control-warning" id="inputHorizontalWarning" placeholder="name@example.com">
+                                <div class="form-control-feedback">Shucks, check the formatting of that and try again.
+                                </div><small class="form-text text-muted">Example help text that remains unchanged.
+                                </small>
+                            </div>
+                            <div class="form-group mb-0 has-danger">
+                                <label for="inputHorizontalDnger" class="col-form-label">Email</label>
+                                <input type="email" class="form-control form-control-danger" id="inputHorizontalDnger" placeholder="name@example.com">
+                                <div class="form-control-feedback">Sorry, that username's taken. Try another?</div><small class="form-text text-muted">Example help text that remains unchanged.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Textual inputs end -->
+								</form>
                             </div>
                             <!-- news form end -->
 
@@ -190,6 +330,7 @@
 								</form>
                             </div>
                             <!-- inspire_me form end -->
+
 
 
 
@@ -245,10 +386,12 @@
                             </form>
                         </div>
                     </div>
+
                 </div>-->
                 <!-- Checkboxes end -->
                 <!-- button with dropdown start -->
                 <!--
+
                 <div class="col-12 mt-5">
                     <div class="card">
                         <div class="card-body">
@@ -310,13 +453,13 @@
                             </form>
                         </div>
                     </div>
+
                 </div>-->
                 <!-- button with dropdown end -->
 								<!--</form>-->
-                                @include('video.create')
+                                <?php echo $__env->make('video.create', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                             </div>
 <!-- videos form end -->
-
 
 
 
@@ -371,10 +514,12 @@
 
 
 
+
 <!-- assessments form begin -->
 
                             <div class="tab-pane fade" id="assessments" role="tabpanel">
                                 <!--
+
                                 <form>
                                 	<label>Assessments</label>
 								   	<div class="form-group">
@@ -424,17 +569,18 @@
                 <div class="card-header">Available Questionnaires</div>
 
                 <div class="card-body">
-                    @if (session('status'))
+                    <?php if(session('status')): ?>
                         <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+                            <?php echo e(session('status')); ?>
+
                         </div>
-                    @endif
+                    <?php endif; ?>
                     
-                    @foreach($questionnaires as $questionnaire)
+                    <?php $__currentLoopData = $questionnaires; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $questionnaire): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div>
-                    <a href="/admin/home/questionnaires/{{$questionnaire->id}}/questions/create">{{$questionnaire->questionnaireTitle}}</a>
+                    <a href="/admin/home/questionnaires/<?php echo e($questionnaire->id); ?>/questions/create"><?php echo e($questionnaire->questionnaireTitle); ?></a>
                     </div>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     
                     <div>
                         <a href="/admin/home/questionnaires/create" class="btn btn-dark">create new questionnaire</a>
@@ -458,53 +604,38 @@
         <div class="col-12 mt-5">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="header-title">UnApproved Volunteers Table</h4>
+                    <h4 class="header-title">Progress Table</h4>
                     <div class="single-table">
                         <div class="table-responsive">
                             <table class="table table-hover progress-table text-center">
                                 <thead class="text-uppercase">
                                     <tr>
                                         <th scope="col">ID</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Phone No</th>
-                                        <th scope="col">Email</th>
-                                        <th scope="col">Details</th>
-                                        <th scope="col">Verification</th>
+                                        <th scope="col">task</th>
+                                        <th scope="col">Deadline</th>
+                                        <th scope="col">Progress</th>
+                                        <th scope="col">status</th>
+                                        <th scope="col">action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{ $count=1 }}
-                                    @foreach($unapprovedVolunteers as $unapprovedVolunteer)
                                     <tr>
-                                        <th scope="row">{{ $count++ }}</th>
-                                        <td>{{ $unapprovedVolunteer->name }}</td>
-                                        <td>{{ $unapprovedVolunteer->phone}}</td>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>09 / 07 / 2018</td>
                                         <td>
-                                            {{ $unapprovedVolunteer->user->email }}
-                                            <!--
                                             <div class="progress" style="height: 8px;">
                                                 <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
-                                            -->
                                         </td>
+                                        <td><span class="status-p bg-primary">pending</span></td>
                                         <td>
-                        <a href="/admin/home/volunteer/{{$unapprovedVolunteer->id}}/getDetails">get details</a>
-                                            <!--
-                                            <span class="status-p bg-primary">pending</span>
-                                            -->
-                                            </td>
-                                        <td>
-<a class="btn btn-info" href="/admin/home/volunteer/{{$unapprovedVolunteer->id}}/approveVolunteer">Approve</a>
-                                            <!--
                                             <ul class="d-flex justify-content-center">
                                                 <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
                                                 <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
                                             </ul>
-                                            -->
                                         </td>
                                     </tr>
-                                    @endforeach
-                                    <!--
                                     <tr>
                                         <th scope="row">2</th>
                                         <td>Mark</td>
@@ -556,7 +687,6 @@
                                             </ul>
                                         </td>
                                     </tr>
-                                -->
                                 </tbody>
                             </table>
                         </div>
@@ -574,4 +704,5 @@
 
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.dashboard', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH G:\sahayak1\sahaayak\resources\views/dashboard_admin.blade.php ENDPATH**/ ?>

@@ -28,12 +28,12 @@ class QuestionnaireController extends Controller
                 'questionnairePurpose'=>'required',
             ]);
         $questionnaire = Questionnaire::create($data);
-        /*
+        
         $users=User::all();
     foreach ($users as $user) {
 
         $user->notify(new QuestionnaireNotification($questionnaire->questionnaireTitle));
-    }*/
+    }
         return redirect('admin/home/questionnaires/'.$questionnaire->id);
     }
 

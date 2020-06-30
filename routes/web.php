@@ -72,11 +72,12 @@ Route::get('learn_suicide', function () {
 #Route::get('login', function () {
  #   return view('login');
 #});
+//admin news routes
+Route::get('news','NewsController@index')->name('news');
+Route::get('news/create','NewsController@create');
+Route::post('admin/news','NewsController@store')->name('storenews');
 
-Route::get('news', function () {
-    return view('news');
-});
-
+//admin news routes end
 Route::get('shared_stories', function () {
     return view('shared_stories');
 });
