@@ -1,6 +1,6 @@
-@extends('layouts.dashboard')
 
-@section('content')
+
+<?php $__env->startSection('content'); ?>
 	
 	<!--<div class="container">
     <div class="row justify-content-center">
@@ -9,17 +9,18 @@
                 <div class="card-header">Available Questionnaires</div>
 
                 <div class="card-body">
-                    @if (session('status'))
+                    <?php if(session('status')): ?>
                         <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+                            <?php echo e(session('status')); ?>
+
                         </div>
-                    @endif
+                    <?php endif; ?>
                     
-                    @foreach($questionnaires as $questionnaire)
+                    <?php $__currentLoopData = $questionnaires; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $questionnaire): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div>
-                    <a href="/admin/home/questionnaires/{{$questionnaire->id}}/questions/create">{{$questionnaire->questionnaireTitle}}</a>
+                    <a href="/admin/home/questionnaires/<?php echo e($questionnaire->id); ?>/questions/create"><?php echo e($questionnaire->questionnaireTitle); ?></a>
                     </div>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     
                     <div>
                         <a href="/admin/home/questionnaires/create" class="btn btn-dark">create new questionnaire</a>
@@ -333,7 +334,6 @@
 
 
 
-
 <!-- videos form begin -->
                             <div class="tab-pane fade" id="videos" role="tabpanel">
                                 
@@ -385,12 +385,10 @@
                             </form>
                         </div>
                     </div>
-
                 </div>-->
                 <!-- Checkboxes end -->
                 <!-- button with dropdown start -->
                 <!--
-
                 <div class="col-12 mt-5">
                     <div class="card">
                         <div class="card-body">
@@ -452,13 +450,13 @@
                             </form>
                         </div>
                     </div>
-
                 </div>-->
                 <!-- button with dropdown end -->
 								<!--</form>-->
-                                @include('video.create')
+                                <?php echo $__env->make('video.create', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                             </div>
 <!-- videos form end -->
+
 
 
 
@@ -513,12 +511,10 @@
 
 
 
-
 <!-- assessments form begin -->
 
                             <div class="tab-pane fade" id="assessments" role="tabpanel">
                                 <!--
-
                                 <form>
                                 	<label>Assessments</label>
 								   	<div class="form-group">
@@ -568,17 +564,18 @@
                 <div class="card-header">Available Questionnaires</div>
 
                 <div class="card-body">
-                    @if (session('status'))
+                    <?php if(session('status')): ?>
                         <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+                            <?php echo e(session('status')); ?>
+
                         </div>
-                    @endif
+                    <?php endif; ?>
                     
-                    @foreach($questionnaires as $questionnaire)
+                    <?php $__currentLoopData = $questionnaires; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $questionnaire): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div>
-                    <a href="/admin/home/questionnaires/{{$questionnaire->id}}/questions/create">{{$questionnaire->questionnaireTitle}}</a>
+                    <a href="/admin/home/questionnaires/<?php echo e($questionnaire->id); ?>/questions/create"><?php echo e($questionnaire->questionnaireTitle); ?></a>
                     </div>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     
                     <div>
                         <a href="/admin/home/questionnaires/create" class="btn btn-dark">create new questionnaire</a>
@@ -702,4 +699,5 @@
 
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.dashboard', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/admin/dashboard_admin.blade.php ENDPATH**/ ?>

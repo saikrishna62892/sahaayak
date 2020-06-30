@@ -1,6 +1,6 @@
-@extends('layouts.layout')
 
-    @section('content')
+
+    <?php $__env->startSection('content'); ?>
 
     
 
@@ -31,7 +31,7 @@
                     <div class="row">
                         <h4>Stories</h4>
                         
-                        
+                        <?php echo $__env->make('stories.show', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                         
                         <div class="col-lg-12">
                             <div class="classes__pagination blog__pagination">
@@ -137,4 +137,5 @@
 </section>
     <!-- Blog Section End -->
 
-    @endsection
+    <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts/layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/shared_stories.blade.php ENDPATH**/ ?>
