@@ -112,6 +112,12 @@
                         </div>
                     </div>
                 </div>
+                <!--pagination starts-->
+                <?php $__currentLoopData = $newsdata; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <li><?php echo e($item->name); ?></li>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <span><?php echo e($newsdata->links()); ?>                </span>
+                <!--pagination ends-->
 
                 <div class="col-lg-12">
                     <div class="classes__pagination">

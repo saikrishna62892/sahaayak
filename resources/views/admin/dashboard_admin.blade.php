@@ -141,9 +141,7 @@
 
 	<!-- news form begin -->
      <div class="tab-pane fade" id="news" role="tabpanel">
-        <form>
             @include('news.create')
-            					</form>
                             </div>
                             <!-- news form end -->
 
