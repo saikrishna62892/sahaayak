@@ -82,9 +82,10 @@ Route::get('shared_stories', function () {
     return view('shared_stories');
 });
 
-Route::get('story', function () {
-    return view('story');
-});
+
+#Route::get('story', function () {
+ #   return view('story');
+#});
 
 Route::get('talks', function () {
     return view('talks');
@@ -185,3 +186,8 @@ Route::get('dashboard_admin', function () {
 Route::get('dashboard_volunteer', function () {
     return view('dashboard_volunteer');
 });
+
+//User Dashboard post a story form
+Route::post('/postStory','StoryController@store')->name('addFields');
+Route::get('/displayStories','StoryController@display');
+Route::get('/incrementLike/{story}', 'StoryController@incrementLike')->name('increment');
