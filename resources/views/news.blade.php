@@ -112,6 +112,12 @@
                         </div>
                     </div>
                 </div>
+                <!--pagination starts-->
+                @foreach($newsdata as $item)
+                <li>{{$item->name}}</li>
+                @endforeach
+                <span>{{$newsdata->links()}}                </span>
+                <!--pagination ends-->
 
                 <div class="col-lg-12">
                     <div class="classes__pagination">
