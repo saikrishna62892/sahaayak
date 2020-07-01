@@ -185,7 +185,18 @@ Route::get('dashboard_volunteer', function () {
 });
 
 //User Dashboard post a story form
+
+Route::post('/postStory','StoryController@store')->name('addStoryFields');
+Route::get('/displayStories','StoryController@display');
+Route::get('/incrementLike/{story}', 'StoryController@incrementLike')->name('increment');
+
+//Admin expert talks routes
+Route::post('/postTalks','TalkController@store')->name('addTalksFields');
+Route::get('/displayTalks','TalkController@display');
+
+//Diary routes by john & ganesh
 Route::post('home/displaydiary','diary_controller@save')->name('addFields');
 Route::get('/displayStories','StoryController@display');
 Route::get('/incrementLike/{story}', 'StoryController@incrementLike')->name('increment');
+
 

@@ -1,6 +1,6 @@
-@extends('layouts.dashboard')
 
-@section('content')
+
+<?php $__env->startSection('content'); ?>
 <br>    
 <div class="container" id="stats">
     <div class="row">
@@ -77,13 +77,13 @@
                 <div class="tab-content" id="myTabContent">
                     <!-- Post a story form begin -->
                     <div class="tab-pane fade show active" id="post" role="tabpanel">
-                        @include('stories.create')
+                        <?php echo $__env->make('stories.create', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     </div>
                     <!-- Post a story form end -->
 
                     <!-- Cognitive Diary -->
                     <div class="tab-pane fade show active" id="diary" role="tabpanel">
-                        @include('diary.create')
+
                     </div>
                     <!-- Cognitive diary end -->
 
@@ -95,7 +95,7 @@
                     
                     <!-- Shared stories form begin -->
                     <div class="tab-pane fade" id="stories" role="tabpanel">
-                        @include('stories.shared_stories')   
+                        <?php echo $__env->make('stories.shared_stories', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>   
                     </div>
                     <!-- Shared stories form end -->
 
@@ -118,4 +118,5 @@
 <!-- trading history area end -->
 
 
-@endsection 
+<?php $__env->stopSection(); ?> 
+<?php echo $__env->make('layouts.dashboard', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/dashboard_user.blade.php ENDPATH**/ ?>

@@ -1,17 +1,17 @@
-@extends('layouts.layout')
 
-    @section('content')
+
+    <?php $__env->startSection('content'); ?>
     <!-- Breadcrumb Begin -->
     <section class="breadcrumb-option set-bg" data-setbg="img/breadcrumb.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__text">
-                        <h2>Discover Stories</h2>
+                        <h2>Expert Talks</h2>
                         <h5>Some text.................</h5>
                         <div class="breadcrumb__widget">
                             <a href="./index.html">Home</a>
-                            <span>Stories</span>
+                            <span>Talks</span>
                         </div>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
             <div class="row">
                 <div class="col-lg-8 order-lg-1 order-1">
                     <div class="row">
-                        <h4>Stories</h4>
+                        <h4>Expert Talks</h4>
                         <?php $count=0; ?>
                         <!-- Faq Begin -->
                         <div class="faq spad">
@@ -35,45 +35,45 @@
                                     <div class="col-lg-11">
                                         <div class="faq__accordion">
                                             <div class="accordion" id="accordionExample">
-                                                @foreach($stories as $story)
+                                                <?php $__currentLoopData = $talks; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $talk): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <div class="card">
-                                                        @if($count==0)
+                                                        <?php if($count==0): ?>
                                                             <div class="card-heading active">
-                                                        @else
+                                                        <?php else: ?>
                                                             <div class="card-heading">
-                                                        @endif
-                                                            <a data-toggle="collapse" data-target="#collapse{{ $story->id }}">
-                                                                <span>{{ $story->title }}</span>
+                                                        <?php endif; ?>
+                                                            <a data-toggle="collapse" data-target="#collapse<?php echo e($talk->id); ?>">
+                                                                <span><?php echo e($talk->title); ?></span>
                                                             </a>
                                                         </div>
-                                                        @if($count==0)
-                                                            <div id="collapse{{ $story->id }}" class="collapse show" data-parent="#accordionExample">
-                                                        @else
-                                                            <div id="collapse{{ $story->id }}" class="collapse" data-parent="#accordionExample">
-                                                        @endif
+                                                        <?php if($count==0): ?>
+                                                            <div id="collapse<?php echo e($talk->id); ?>" class="collapse show" data-parent="#accordionExample">
+                                                        <?php else: ?>
+                                                            <div id="collapse<?php echo e($talk->id); ?>" class="collapse" data-parent="#accordionExample">
+                                                        <?php endif; ?>
                                                         <?php $count++; ?>
 
                                                             <div class="card-body">
                                                                 <div class="blog__details__large">
-                                                                    @if(is_null($story->image))
-                                                                        <img src="{{ asset('/img/stories/default.PNG') }}" alt="" width="700" height="350">
-                                                                    @else
-                                                                        <img src="{{ asset('/img/stories/'.$story->image) }}" alt="" width="700" height="350">
-                                                                    @endif
-                                                                    <span>{{ $story->category }}</span>
+                                                                    <?php if(is_null($talk->image)): ?>
+                                                                        <img src="<?php echo e(asset('/img/talks/default.PNG')); ?>" alt="" width="700" height="350">
+                                                                    <?php else: ?>
+                                                                        <img src="<?php echo e(asset('/img/talks/'.$talk->image)); ?>" alt="" width="700" height="350">
+                                                                    <?php endif; ?>
+                                                                    <span><?php echo e($talk->category); ?></span>
                                                                 </div>
                                                                 <div class="blog__details__text blog__item__text">
                                                                     <ul>
-                                                                        <li><i class="fa fa-calendar-o"></i>{{ $story->created_at }}</li>
-                                                                        <li><a href="{{ route('increment', $story) }}" class="fa fa-thumbs-up" style="color: black"></a>{{ $story->likes }}</li>
+                                                                        <li><i class="fa fa-calendar-o"></i><?php echo e($talk->created_at); ?></li>
+                                                                        <li><a href="<?php echo e(route('increment', $talk)); ?>" class="fa fa-thumbs-up" style="color: black"></a><?php echo e($talk->likes); ?></li>
                                                                     </ul>
-                                                                    <p>{{ $story->content }}</p>
+                                                                    <p><?php echo e($talk->content); ?></p>
                                                                     <h6>Post yor stories anonymously <a href="#" style="color: #5768ad;">Register here.</a></h6>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                @endforeach
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                             </div>
                                         </div>
                                     </div>
@@ -97,22 +97,22 @@
                             <div class="blog__sidebar__categories">
                                 <h4>Categories</h4>
                                 <ul>
-                                    <li><a href="#">All({{ $count }})</a></li>
-                                    <li><a href="#">Depression({{ count($category_count[0]) }})</a></li>
-                                    <li><a href="#">Suicide({{ count($category_count[1]) }})</a></li>
-                                    <li><a href="#">Stress({{ count($category_count[2]) }})</a></li>
-                                    <li><a href="#">Stigma({{ count($category_count[3]) }})</a></li>
+                                    <li><a href="#">All(<?php echo e($count); ?>)</a></li>
+                                    <li><a href="#">Depression(<?php echo e(count($category_count[0])); ?>)</a></li>
+                                    <li><a href="#">Suicide(<?php echo e(count($category_count[1])); ?>)</a></li>
+                                    <li><a href="#">Stress(<?php echo e(count($category_count[2])); ?>)</a></li>
+                                    <li><a href="#">Stigma(<?php echo e(count($category_count[3])); ?>)</a></li>
                                 </ul>
                             </div>
                             <br>
                             <div class="blog__sidebar__categories">
                                 <h4>.</h4>
                                 <ul>
-                                    <li><a href="#">&emsp;Healthy Sleep({{ count($category_count[4]) }})</a></li>
-                                    <li><a href="#">&emsp;Mental Illness({{ count($category_count[5]) }})</a></li>
-                                    <li><a href="#">&emsp;Hopelessness({{ count($category_count[6]) }})</a></li>
-                                    <li><a href="#">&emsp;Fear of Loss({{ count($category_count[7]) }})</a></li>
-                                    <li><a href="#">&emsp;Social Isolation({{ count($category_count[8]) }})</a></li>
+                                    <li><a href="#">&emsp;Healthy Sleep(<?php echo e(count($category_count[4])); ?>)</a></li>
+                                    <li><a href="#">&emsp;Mental Illness(<?php echo e(count($category_count[5])); ?>)</a></li>
+                                    <li><a href="#">&emsp;Hopelessness(<?php echo e(count($category_count[6])); ?>)</a></li>
+                                    <li><a href="#">&emsp;Fear of Loss(<?php echo e(count($category_count[7])); ?>)</a></li>
+                                    <li><a href="#">&emsp;Social Isolation(<?php echo e(count($category_count[8])); ?>)</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -186,7 +186,7 @@
     </section>
     <!-- Blog Section End -->
 
-@endsection
+<?php $__env->stopSection(); ?>
 
 
 
@@ -205,3 +205,5 @@
 
 
 
+
+<?php echo $__env->make('layouts.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views//talks/show.blade.php ENDPATH**/ ?>

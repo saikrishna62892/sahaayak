@@ -1,6 +1,6 @@
-    @extends('layouts.layout')
+    
 
-    @section('content')
+    <?php $__env->startSection('content'); ?>
 
 
 
@@ -156,7 +156,7 @@
                     </div>
                 </div>
                 <form action="/appointment_controller" method="post" class="appointment__form">
-                @csrf
+                <?php echo csrf_field(); ?>
                     <div class="row">
                         <div class="col-lg-6">
                             <input type="text" placeholder="Name" name="name">
@@ -338,4 +338,5 @@
         </div>
     </section>
     <!-- Testimonial Section End -->
-    @endsection
+    <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/welcome.blade.php ENDPATH**/ ?>

@@ -7,11 +7,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__text">
-                        <h2>Discover Stories</h2>
+                        <h2>Expert Talks</h2>
                         <h5>Some text.................</h5>
                         <div class="breadcrumb__widget">
                             <a href="./index.html">Home</a>
-                            <span>Stories</span>
+                            <span>Talks</span>
                         </div>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
             <div class="row">
                 <div class="col-lg-8 order-lg-1 order-1">
                     <div class="row">
-                        <h4>Stories</h4>
+                        <h4>Expert Talks</h4>
                         <?php $count=0; ?>
                         <!-- Faq Begin -->
                         <div class="faq spad">
@@ -35,40 +35,39 @@
                                     <div class="col-lg-11">
                                         <div class="faq__accordion">
                                             <div class="accordion" id="accordionExample">
-                                                @foreach($stories as $story)
+                                                @foreach($talks as $talk)
                                                     <div class="card">
                                                         @if($count==0)
                                                             <div class="card-heading active">
                                                         @else
                                                             <div class="card-heading">
                                                         @endif
-                                                            <a data-toggle="collapse" data-target="#collapse{{ $story->id }}">
-                                                                <span>{{ $story->title }}</span>
+                                                            <a data-toggle="collapse" data-target="#collapse{{ $talk->id }}">
+                                                                <span>{{ $talk->title }}</span>
                                                             </a>
                                                         </div>
                                                         @if($count==0)
-                                                            <div id="collapse{{ $story->id }}" class="collapse show" data-parent="#accordionExample">
+                                                            <div id="collapse{{ $talk->id }}" class="collapse show" data-parent="#accordionExample">
                                                         @else
-                                                            <div id="collapse{{ $story->id }}" class="collapse" data-parent="#accordionExample">
+                                                            <div id="collapse{{ $talk->id }}" class="collapse" data-parent="#accordionExample">
                                                         @endif
                                                         <?php $count++; ?>
 
                                                             <div class="card-body">
                                                                 <div class="blog__details__large">
-                                                                    @if(is_null($story->image))
-                                                                        <img src="{{ asset('/img/stories/default.PNG') }}" alt="" width="700" height="350">
+                                                                    @if(is_null($talk->image))
+                                                                        <img src="{{ asset('/img/talks/default.PNG') }}" alt="" width="700" height="350">
                                                                     @else
-                                                                        <img src="{{ asset('/img/stories/'.$story->image) }}" alt="" width="700" height="350">
+                                                                        <img src="{{ asset('/img/talks/'.$talk->image) }}" alt="" width="700" height="350">
                                                                     @endif
-                                                                    <span>{{ $story->category }}</span>
+                                                                    <span>{{ $talk->category }}</span>
                                                                 </div>
                                                                 <div class="blog__details__text blog__item__text">
                                                                     <ul>
-                                                                        <li><i class="fa fa-calendar-o"></i>{{ $story->created_at }}</li>
-                                                                        <li><a href="{{ route('increment', $story) }}" class="fa fa-thumbs-up" style="color: black"></a>{{ $story->likes }}</li>
+                                                                        <li><i class="fa fa-calendar-o"></i>{{ $talk->created_at }}</li>
+                                                                        <li><a href="{{ route('increment', $talk) }}" class="fa fa-thumbs-up" style="color: black"></a>{{ $talk->likes }}</li>
                                                                     </ul>
-                                                                    <p>{{ $story->content }}</p>
-                                                                    <h6>Post yor stories anonymously <a href="#" style="color: #5768ad;">Register here.</a></h6>
+                                                                    <p>{{ $talk->content }}</p>
                                                                 </div>
                                                             </div>
                                                         </div>
