@@ -72,18 +72,20 @@ Route::get('learn_suicide', function () {
 #Route::get('login', function () {
  #   return view('login');
 #});
+//admin news routes
+Route::get('news','NewsController@index')->name('news');
+Route::get('news/create','NewsController@create');
+Route::post('admin/news','NewsController@store')->name('storenews');
 
-Route::get('news', function () {
-    return view('news');
-});
-
+//admin news routes end
 Route::get('shared_stories', function () {
     return view('shared_stories');
 });
 
-Route::get('story', function () {
-    return view('story');
-});
+
+#Route::get('story', function () {
+ #   return view('story');
+#});
 
 Route::get('talks', function () {
     return view('talks');
@@ -184,3 +186,9 @@ Route::get('dashboard_admin', function () {
 Route::get('dashboard_volunteer', function () {
     return view('dashboard_volunteer');
 });
+
+//User Dashboard post a story form
+Route::post('home/displaydiary','diary_controller@save')->name('addFields');
+Route::get('/displayStories','StoryController@display');
+Route::get('/incrementLike/{story}', 'StoryController@incrementLike')->name('increment');
+

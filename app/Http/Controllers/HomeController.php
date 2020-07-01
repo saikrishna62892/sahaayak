@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Questionnaire;
 use App\Volunteer;
+use App\Diary;
+use Auth;
+use DB;
+
 class HomeController extends Controller
 {
     /**
@@ -24,7 +28,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard_user');
+        $user=Auth::user();
+        $diary=DB::table('diary')->where('user_id', $user->id)->get();
+        return view('dashboard_user')->with(compact('diary'));
     }
 
     public function adminHome()
