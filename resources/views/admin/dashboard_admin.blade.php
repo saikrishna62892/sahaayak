@@ -197,7 +197,7 @@
                     <!-- shared_videos form begin -->
                     <div class="tab-pane fade" id="shared_videos" role="tabpanel">
                         <h4 align="center">Shared Videos</h4>
-                        
+                        @include('video.shared_videos')
                     </div>
                     <!-- shared_videos form end -->
 

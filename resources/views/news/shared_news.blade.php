@@ -15,6 +15,6 @@
 	</div>
 	<br>
 	@empty
-	<h5>No Stories Available</h5>
+	<h5>No News Available</h5>
 @endforelse
 	</div>

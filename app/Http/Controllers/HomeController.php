@@ -12,6 +12,7 @@ use DB;
 use App\Diary;
 use Auth;
 use App\News;
+use App\Video;
 
 
 
@@ -61,9 +62,9 @@ class HomeController extends Controller
         $badges = $volunteers_count-$unapprovedVolunteers->count();
         $talks=Talk::all();
         $shared_news = News::all();
-        
+        $shared_videos=Video::all();
 
-        return view('admin.dashboard_admin',compact('unapprovedVolunteers','talks','users_count','volunteers_count','badges','shared_news'));
+        return view('admin.dashboard_admin',compact('unapprovedVolunteers','talks','users_count','volunteers_count','badges','shared_news','shared_videos'));
     }
 
     public function volunteerHome()
