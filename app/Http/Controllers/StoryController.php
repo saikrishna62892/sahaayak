@@ -22,7 +22,7 @@ class StoryController extends Controller
     	$temp++;
 
     	$data = request()->validate([
-    		'title' => 'required|min:20',
+    		'title' => 'required',
     		'content' => 'required',
     		'category' => 'required',
             'image' => 'file|image|max:3000',

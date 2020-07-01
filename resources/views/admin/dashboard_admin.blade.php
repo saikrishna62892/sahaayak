@@ -49,6 +49,13 @@
 </div>
 <br>
 
+<!-- flash messages section -->
+<div class="container">
+    @if(session()->has('message'))
+    <center><div class="alert alert-success">{{ session()->get('message')}}</div></center>
+    @endif
+</div>
+
 <!-- trading history area start -->
 <div class="col-lg-12 mt-sm-30 mt-xs-30" id="forms">
     <div class="card">
@@ -168,6 +175,9 @@
                         <li>
                             <a data-toggle="tab" href="#shared_playlists" role="tab">Shared Playlists</a>
                         </li>
+                        <li>
+                            <a data-toggle="tab" href="#all_assessments" role="tab">Assessments</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -179,110 +189,7 @@
                         @include('news.shared_news')
                     </div>
                     <!-- shared_news form end -->
-
-                            <!-- playlists form begin -->
-                            <div class="tab-pane fade" id="playlists" role="tabpanel">
-                                <form>
-                                	<label>Playlists</label>
-								   	<div class="form-group">
-								    	<label for="formGroupExampleInput">Heading</label>
-								    	<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Heading of the Post">
-								   	</div>
-								   	<div class="form-group">
-									    <label for="exampleFormControlTextarea1">Textarea</label>
-									    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Message"></textarea>
-								   	</div>
-									<div class="custom-control custom-checkbox mb-3">
-										<input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
-									    <label class="custom-control-label" for="customControlValidation1">Check this custom checkbox</label>
-									    <div class="invalid-feedback">Example invalid feedback text</div>
-									</div>
-									<div class="custom-control custom-radio">
-									    <input type="radio" class="custom-control-input" id="customControlValidation2" name="radio-stacked" required>
-									    <label class="custom-control-label" for="customControlValidation2">Toggle this custom radio</label>
-									</div>
-									<div class="custom-control custom-radio mb-3">
-									    <input type="radio" class="custom-control-input" id="customControlValidation3" name="radio-stacked" required>
-									    <label class="custom-control-label" for="customControlValidation3">Or toggle this other custom radio</label>
-									    <div class="invalid-feedback">More example invalid feedback text</div>
-									</div>
-									<div class="form-group">
-									    <select class="custom-select" required>
-									      	<option value="">Please select the category</option>
-									      	<option value="1">Depression</option>
-									      	<option value="2">Suicide</option>
-									      	<option value="3">Stress</option>
-									      	<option value="4">Stigma</option>
-									      	<option value="5">Healthy Sleep</option>
-									      	<option value="6">Mental Illness</option>
-									     	<option value="7">Hopelessness</option>
-									     	<option value="8">Fear of Loss</option>
-									     	<option value="9">Social Isolation</option>
-									    </select>
-									</div>
-									<div class="custom-file">
-									    <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-									    <label class="custom-file-label" for="validatedCustomFile">Choose Image for the Post...</label>
-									</div>
-									<center><button type="submit" class="btn btn-primary">Submit</button></center>
-								</form>
-                            </div>
-                            <!-- playlists form end -->
-
-
-
-<!-- assessments form begin -->
-
-                            <div class="tab-pane fade" id="assessments" role="tabpanel">
-                                <!--
-                                <form>
-                                	<label>Assessments</label>
-								   	<div class="form-group">
-								    	<label for="formGroupExampleInput">Heading</label>
-								    	<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Heading of the Post">
-								   	</div>
-								   	<div class="form-group">
-									    <label for="exampleFormControlTextarea1">Textarea</label>
-									    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Message"></textarea>
-								   	</div>
-									<div class="custom-control custom-checkbox mb-3">
-										<input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
-									    <label class="custom-control-label" for="customControlValidation1">Check this custom checkbox</label>
-									    <div class="invalid-feedback">Example invalid feedback text</div>
-									</div>
-									<div class="custom-control custom-radio">
-									    <input type="radio" class="custom-control-input" id="customControlValidation2" name="radio-stacked" required>
-									    <label class="custom-control-label" for="customControlValidation2">Toggle this custom radio</label>
-									</div>
-									<div class="custom-control custom-radio mb-3">
-									    <input type="radio" class="custom-control-input" id="customControlValidation3" name="radio-stacked" required>
-									    <label class="custom-control-label" for="customControlValidation3">Or toggle this other custom radio</label>
-									    <div class="invalid-feedback">More example invalid feedback text</div>
-									</div>
-									<div class="form-group">
-									    <select class="custom-select" required>
-									      	<option value="">Please select the category</option>
-									      	<option value="1">Depression</option>
-									      	<option value="2">Suicide</option>
-									      	<option value="3">Stress</option>
-									      	<option value="4">Stigma</option>
-									      	<option value="5">Healthy Sleep</option>
-									      	<option value="6">Mental Illness</option>
-									     	<option value="7">Hopelessness</option>
-									     	<option value="8">Fear of Loss</option>
-									     	<option value="9">Social Isolation</option>
-									    </select>
-									</div>
-									<div class="custom-file">
-									    <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-									    <label class="custom-file-label" for="validatedCustomFile">Choose Image for the Post...</label>
-									</div>
-									<center><button type="submit" class="btn btn-primary">Submit</button></center>
-								</form>
-                            </div>-->
-                            @include('questionnaire.allquestionnaires')
-                            
-                            <!-- assessments form end -->
+                    
                     <!-- shared_talks form begin -->
                     <div class="tab-pane fade" id="shared_talks" role="tabpanel">
                         <h4 align="center">Shared Talks</h4>
@@ -300,7 +207,7 @@
                     <!-- shared_videos form begin -->
                     <div class="tab-pane fade" id="shared_videos" role="tabpanel">
                         <h4 align="center">Shared Videos</h4>
-                        
+                        @include('video.shared_videos')
                     </div>
                     <!-- shared_videos form end -->
 
@@ -309,7 +216,14 @@
                         <h4 align="center">Shared Playlists</h4>
                                     
                     </div>
-                    <!-- shared_playlists form end -->                    
+                    <!-- shared_playlists form end -->   
+
+                     <!-- assessments form begin -->
+                    <div class="tab-pane fade" id="all_assessments" role="tabpanel">
+                        <h4 align="center">All Assessments</h4>
+                        @include('questionnaire.allquestionnaires')
+                    <!-- assessments form end -->
+
                 </div>
             </div>
         </div>
