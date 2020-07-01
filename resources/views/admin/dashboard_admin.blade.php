@@ -420,27 +420,7 @@
 									<center><button type="submit" class="btn btn-primary">Submit</button></center>
 								</form>
                             </div>-->
-                            <div class="card">
-                <div class="card-header">Available Questionnaires</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                    
-                    @foreach($questionnaires as $questionnaire)
-                    <div>
-                    <a href="/admin/home/questionnaires/{{$questionnaire->id}}/questions/create">{{$questionnaire->questionnaireTitle}}</a>
-                    </div>
-                    @endforeach
-                    
-                    <div>
-                        <a href="/admin/home/questionnaires/create" class="btn btn-dark">create new questionnaire</a>
-                    </div>
-                </div>
-            </div>
+                            @include('questionnaire.allquestionnaires')
                             
                             <!-- assessments form end -->
 

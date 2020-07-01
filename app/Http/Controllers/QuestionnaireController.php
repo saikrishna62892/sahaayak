@@ -22,18 +22,13 @@ class QuestionnaireController extends Controller
 
     public function store()
     {
-        $data=request()->validate(
-            [
-                'questionnaireTitle'=>'required',
-                'questionnairePurpose'=>'required',
-            ]);
+        $data = $this->getValidatedQuestionnaire();
         $questionnaire = Questionnaire::create($data);
         
         $users=User::all();
-    foreach ($users as $user) {
-
+        foreach ($users as $user) {
         $user->notify(new QuestionnaireNotification($questionnaire->questionnaireTitle));
-    }
+        }
         return redirect('admin/home/questionnaires/'.$questionnaire->id);
     }
 
@@ -41,21 +36,31 @@ class QuestionnaireController extends Controller
     {
         return view('questionnaire.show',compact('questionnaire'));
     }
-    public function edit()
+    public function edit(Questionnaire $questionnaire)
     {
-
+        return view('questionnaire.edit',compact('questionnaire'));
     }
 
-    public function update()
+    public function update(Questionnaire $questionnaire)
     {
-
+        $data = $this->getValidatedData();
+        $questionnaire->update($data);
+        return redirect('admin/home/questionnaires/'.$questionnaire->id);
     }
 
-    
-
-    public function destroy()
+    public function destroy(Questionnaire $questionnaire)
     {
+        $questionnaire->delete();
+        return redirect('admin/home');
+    }
 
+    public function getValidatedQuestionnaire()
+    {
+        return request()->validate(
+            [
+                'questionnaireTitle'=>'required',
+                'questionnairePurpose'=>'required',
+            ]);
     }
 
 }

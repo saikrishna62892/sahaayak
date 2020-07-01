@@ -107,12 +107,19 @@ Route::get('volunteer/home', 'HomeController@volunteerHome')->name('volunteerDas
 Route::get('admin/home/questionnaires/create','QuestionnaireController@create');
 Route::post('admin/home/questionnaires','QuestionnaireController@store');
 Route::get('admin/home/questionnaires/{questionnaire}','QuestionnaireController@show');
+Route::get('admin/home/questionnaires/{questionnaire}/edit','QuestionnaireController@edit');
+Route::patch('admin/home/questionnaires/{questionnaire}','QuestionnaireController@update');
+Route::delete('admin/home/questionnaires/{questionnaire}','QuestionnaireController@destroy');
 
 //Question Routes
 Route::get('admin/home/questionnaires/{questionnaire}/questions/create','QuestionController@create');
 Route::post('admin/home/questionnaires/{questionnaire}/questions','QuestionController@store');
 Route::get('home/questionnaires/{questionnaire}/questions','QuestionController@show');
 Route::post('home/questionnaires/{questionnaire}/getResult','QuestionController@getResult');
+Route::get('admin/home/questionnaires/{questionnaire}/editQuestions','QuestionController@editQuestions');
+Route::get('admin/home/questionnaires/{questionnaire}/questions/{question}/edit','QuestionController@edit');
+Route::patch('admin/home/questionnaires/{questionnaire}/questions/{question}','QuestionController@update');
+Route::delete('admin/home/questionnaires/{questionnaire}/questions/{question}','QuestionController@destroy');
 
 //Admin Video Route
 Route::get('admin/home/videos/create','VideoController@create');
@@ -144,10 +151,6 @@ Route::get('inspire_me', function () {
 
 Route::post('/appointment_controller','appointment_controller@save');
 Route::get('/suggestion_controller','suggestion_controller@save');
-
-Route::get('videos', function () {
-    return view('video.show');
-});
 
 Route::get('playlists', function () {
     return view('playlists');
