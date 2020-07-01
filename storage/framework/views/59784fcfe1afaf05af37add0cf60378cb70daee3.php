@@ -49,6 +49,11 @@
 </div>
 <br>
 
+<!-- flash messages section -->
+<?php if(session()->has('message')): ?>
+<div class="alert alert-success"><?php echo e(session()->get('message')); ?></div>
+<?php endif; ?>
+
 <!-- trading history area start -->
 <div class="col-lg-12 mt-sm-30 mt-xs-30" id="forms">
     <div class="card">
@@ -169,6 +174,9 @@
                         <li>
                             <a data-toggle="tab" href="#shared_playlists" role="tab">Shared Playlists</a>
                         </li>
+                        <li>
+                            <a data-toggle="tab" href="#all_assessments" role="tab">Assessments</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -180,7 +188,7 @@
                         <?php echo $__env->make('news.shared_news', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     </div>
                     <!-- shared_news form end -->
-
+                    
                     <!-- shared_talks form begin -->
                     <div class="tab-pane fade" id="shared_talks" role="tabpanel">
                         <h4 align="center">Shared Talks</h4>
@@ -207,7 +215,14 @@
                         <h4 align="center">Shared Playlists</h4>
                                     
                     </div>
-                    <!-- shared_playlists form end -->                    
+                    <!-- shared_playlists form end -->   
+
+                     <!-- assessments form begin -->
+                    <div class="tab-pane fade" id="all_assessments" role="tabpanel">
+                        <h4 align="center">All Assessments</h4>
+                        <?php echo $__env->make('questionnaire.allquestionnaires', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                    <!-- assessments form end -->
+
                 </div>
             </div>
         </div>

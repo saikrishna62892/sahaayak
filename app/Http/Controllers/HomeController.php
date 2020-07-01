@@ -48,21 +48,25 @@ class HomeController extends Controller
             else
             {
                 Auth::logout();
-                return "Your Application is under verification process";
+                return view('/')->with('message','Your Application is under verification process');
             }
         }
+        session()->put('message','Welcome '.$user->name.' to the Dashboard');
         return view('dashboard_user')->with(compact('user','user_stories','diary'));
     }
 
     public function adminHome()
     {
+        //stats
         $users_count = User::all()->count();
         $volunteers_count = Volunteer::all()->count();
         $unapprovedVolunteers = Volunteer::where('is_Approved',0)->get();
         $badges = $volunteers_count-$unapprovedVolunteers->count();
-        $talks=Talk::all();
-        $shared_news = News::all();
-        $shared_videos=Video::all();
+        
+        //no-refresh loaders
+        $talks = DB::table('talks')->orderBy("created_at","desc")->get();
+        $shared_news = DB::table('news')->orderBy("created_at","desc")->get();
+        $shared_videos = DB::table('videos')->orderBy("created_at","desc")->get();
 
         return view('admin.dashboard_admin',compact('unapprovedVolunteers','talks','users_count','volunteers_count','badges','shared_news','shared_videos'));
     }
