@@ -53,7 +53,6 @@
         <div class="sidebar-menu">
             <div class="sidebar-header">
                 <div class="logo">
-<!--<<<<<<< HEAD -->
                     <a href="index.html"><img src="/img/logo-dashboard.png" alt="logo"></a>
                 </div>
             </div>
@@ -111,13 +110,13 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="<?php echo e(url('news')); ?>" aria-expanded="true"><i class="ti-dashboard"></i><span>News</span></a>
+                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>News</span></a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-thought"></i><span>Hope Box</span></a>
                                 <ul class="collapse">
                                     <li><a href="index.html">Inspire_me</a></li>
-                                    <li><a href="index3-horizontalmenu.html">Videos</a></li>
+                                    <li><a href="/home/hopebox/videos">Videos</a></li>
                                     <li><a href="index.html">Playlists</a></li>
                                 </ul>
                             </li>
