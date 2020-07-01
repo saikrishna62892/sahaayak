@@ -110,7 +110,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>News</span></a>
+                                <a href="<?php echo e(url('news')); ?>" aria-expanded="true"><i class="ti-dashboard"></i><span>News</span></a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-thought"></i><span>Hope Box</span></a>
