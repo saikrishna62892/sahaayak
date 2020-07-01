@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Questionnaire;
 use App\Answer;
 use App\Survey;
+use App\Question;
 class QuestionController extends Controller
 {
     public function __construct()
@@ -20,11 +21,7 @@ class QuestionController extends Controller
 
     public function store(Questionnaire $questionnaire)
     {
-        $data=request()->validate([
-        		'question.question' => 'required',
-        		'answers.*.answer' => 'required',
-                'answers.*.point' => 'required'
-        	]);
+        $data = $this->getValidatedQuestion();
         $question = $questionnaire->questions()->create($data['question']);
         $question->answers()->createMany($data['answers']);
         return redirect('admin/home/questionnaires/'.$questionnaire->id);
@@ -33,7 +30,7 @@ class QuestionController extends Controller
     public function show(Questionnaire $questionnaire)
     {
         $questionnaire->load('questions.answers');
-        return view('question.show',compact('questionnaire'));
+        return view('survey.show',compact('questionnaire'));
     }
 
     public function getResult(Questionnaire $questionnaire)
@@ -43,7 +40,6 @@ class QuestionController extends Controller
             'response.*.answer_id' => 'required'
         ]);
 
-        //dd($data['response']);
         foreach($data['response'] as $a)
         {
             $score=$score+ Answer::find($a['answer_id'])->point;
@@ -51,29 +47,44 @@ class QuestionController extends Controller
         $survey= Survey :: create(['awarded_point'=>$score,'user_id'=>auth()->user()->id,'questionnaire_id'=>$questionnaire->id]);
         $survey->save();
         return 'Thank you';
-        //dd($score);
-/*      
-        $users = DB::table('answers')->select('point')->where()->get();
-
-        $data['user_id'] = auth()->user()->id;
-        $data['questionnaire_id'] = $questionnaire->id;
-        dd($data);*/
     }
 
-    public function edit()
+    public function editQuestions(Questionnaire $questionnaire)
     {
-
+        $questionnaire->load('questions');
+        return view('question.allquestions',compact('questionnaire'));
     }
 
-    public function update()
+    public function edit(Questionnaire $questionnaire,Question $question)
     {
-
+        $answers = $question->answers;
+        return view('question.edit',compact('questionnaire','question','answers'));
     }
 
-    
-
-    public function destroy()
+    public function update(Questionnaire $questionnaire,Question $question)
     {
+        $data = $this->getValidatedQuestion();
+        $question->update($data['question']);
+        $answers=$question->answers;        
+        $i=0;
+        foreach($answers as $answer)
+        {
+            $answer->update($data['answers'][$i++]);
+        }
+        return redirect('admin/home/questionnaires/'.$questionnaire->id.'/editQuestions');
+    }
 
+    public function destroy(Questionnaire $questionnaire,Question $question)
+    {
+        $question->delete();
+        return redirect('admin/home/questionnaires/'.$questionnaire->id.'/editQuestions');
+    }
+    public function getValidatedQuestion()
+    {
+        return request()->validate([
+                'question.question' => 'required',
+                'answers.*.answer' => 'required',
+                'answers.*.point' => 'required'
+            ]);
     }
 }

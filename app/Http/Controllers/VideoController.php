@@ -21,6 +21,6 @@ class VideoController extends Controller
                 'videoURL'=>'required',
             ]);
         $video = Video::create($data);
-        return redirect('/admin/home/videos/create');
+        return redirect('/admin/home');
     }
 }
