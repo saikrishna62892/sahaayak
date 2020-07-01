@@ -62,4 +62,10 @@ class NewsController extends Controller
         return redirect()->back();
     
     }
+    public function display(){
+        $news=News::orderBy('created_at','desc')->paginate(6);
+
+        
+        return view('/news/show')->with(compact('news'));
+    }
 }

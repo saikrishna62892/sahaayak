@@ -15,7 +15,7 @@ class appointment_controller extends Controller
         $appointment=new Appointment();
         $user = Auth::user();
         $temp= DB::table('appointment');
-      $temp++;
+        $temp++;
       $data = request()->validate([
          'name' => 'required',
          'email' => 'required|email',

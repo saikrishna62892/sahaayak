@@ -28,8 +28,19 @@ class HomeController extends Controller
      */
     public function index()
     {
+
         $user=Auth::user();
         $diary=DB::table('diary')->where('user_id', $user->id)->get();
+        if(auth()->user()->is_Volunteer == 1)
+            {
+                if(auth()->user()->volunteer->is_Approved == 1)
+                    return redirect()->route('volunteerDashboard');
+                else
+                {
+                    Auth::logout();
+                    return "Your Application is under verification process";
+                }
+            }
         return view('dashboard_user')->with(compact('diary'));
     }
 
@@ -38,5 +49,10 @@ class HomeController extends Controller
         $unapprovedVolunteers = Volunteer::where('is_Approved',0)->get();
         //dd($unapprovedVolunteers);
         return view('admin.dashboard_admin',compact('unapprovedVolunteers'));
+    }
+
+    public function volunteerHome()
+    {
+        return view('volunteer.dashboard_volunteer');
     }
 }
