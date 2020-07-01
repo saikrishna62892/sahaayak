@@ -29,10 +29,6 @@ Route::get('expert_story', function () {
     return view('expert_story');
 });
 
-Route::get('joinus', function () {
-    return view('joinus');
-});
-
 Route::get('learn_depression', function () {
     return view('learn_depression');
 });
@@ -89,9 +85,6 @@ Route::get('talks', function () {
     return view('talks');
 });
 
-Route::get('volunteer_signup', function () {
-    return view('volunteer_signup');
-});
 
 //dileep added routes
 
@@ -103,6 +96,9 @@ Route::get('home', 'HomeController@index')->name('home');
 
 //admin page route
 Route::get('admin/home', 'HomeController@adminHome')->name('adminDashboard')->middleware('is_admin');
+
+//volunteer dashboard route
+Route::get('volunteer/home', 'HomeController@volunteerHome')->name('volunteerDashboard');
 
 //Questionnaire Routes
 Route::get('admin/home/questionnaires/create','QuestionnaireController@create');

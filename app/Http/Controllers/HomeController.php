@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Questionnaire;
 use App\Volunteer;
+use Illuminate\Support\Facades\Auth;
+
+
 class HomeController extends Controller
 {
     /**
@@ -24,6 +27,16 @@ class HomeController extends Controller
      */
     public function index()
     {
+            if(auth()->user()->is_Volunteer == 1)
+            {
+                if(auth()->user()->volunteer->is_Approved == 1)
+                    return redirect()->route('volunteerDashboard');
+                else
+                {
+                    Auth::logout();
+                    return "Your Application is under verification process";
+                }
+            }
         return view('dashboard_user');
     }
 
@@ -32,5 +45,10 @@ class HomeController extends Controller
         $unapprovedVolunteers = Volunteer::where('is_Approved',0)->get();
         //dd($unapprovedVolunteers);
         return view('admin.dashboard_admin',compact('unapprovedVolunteers'));
+    }
+
+    public function volunteerHome()
+    {
+        return view('volunteer.dashboard_volunteer');
     }
 }
