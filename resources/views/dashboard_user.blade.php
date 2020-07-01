@@ -83,7 +83,7 @@
 
                     <!-- Cognitive Diary -->
                     <div class="tab-pane fade show active" id="diary" role="tabpanel">
-
+                        @include('diary.create')
                     </div>
                     <!-- Cognitive diary end -->
 

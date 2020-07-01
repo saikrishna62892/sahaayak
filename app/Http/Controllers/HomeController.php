@@ -9,7 +9,9 @@ use App\User;
 use App\Talk;
 use App\Story;
 use DB;
-use Illuminate\Support\Facades\Auth;
+use App\Diary;
+use Auth;
+use DB;
 
 
 
@@ -33,8 +35,10 @@ class HomeController extends Controller
     public function index()
     {
 
+
         $user = Auth::user();
         $user_stories=DB::table('stories')->where('user_id', $user->id)->get();
+        $diary=DB::table('diary')->where('user_id', $user->id)->get();
 
         if(auth()->user()->is_Volunteer == 1)
         {
@@ -46,8 +50,7 @@ class HomeController extends Controller
                 return "Your Application is under verification process";
             }
         }
-
-        return view('dashboard_user')->with(compact('user','user_stories'));
+        return view('dashboard_user')->with(compact('user','user_stories','diary'));
     }
 
     public function adminHome()

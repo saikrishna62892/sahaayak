@@ -8,6 +8,7 @@ use Illuminate\Notifications\Notifiable;
 use App\Questionnaire;
 use App\Survey;
 use App\Volunteer;
+use App\Diary;
 class User extends Authenticatable
 {
     use Notifiable;
@@ -52,8 +53,14 @@ class User extends Authenticatable
         return $this->hasMany(Story::class);
     }
 
+
     public function talks()
     {
         return $this->hasMany(Talk::class);
+
+    public function diary()
+    {
+        return $this->hasMany(Diary::class);
+
     }
 }
