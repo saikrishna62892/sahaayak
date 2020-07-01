@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Questionnaire;
 use App\Volunteer;
+use Auth;
+use DB;
+
 class HomeController extends Controller
 {
     /**
@@ -24,7 +27,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard_user');
+        $user = Auth::user();
+        $user_stories=DB::table('stories')->where('user_id', $user->id)->get();
+        return view('dashboard_user')->with(compact('user','user_stories'));
     }
 
     public function adminHome()

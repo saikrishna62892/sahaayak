@@ -191,3 +191,6 @@ Route::get('dashboard_volunteer', function () {
 Route::post('/postStory','StoryController@store')->name('addFields');
 Route::get('/displayStories','StoryController@display');
 Route::get('/incrementLike/{story}', 'StoryController@incrementLike')->name('increment');
+Route::get('/sharedStories/{user}','StoryController@userStories')->name('userStories');
+
+
