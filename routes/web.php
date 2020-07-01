@@ -68,18 +68,21 @@ Route::get('learn_suicide', function () {
 #Route::get('login', function () {
  #   return view('login');
 #});
+//venkat news routes
+Route::get('news','NewsController@index')->name('news');
+Route::get('news/create','NewsController@create');
+Route::post('admin/news','NewsController@store')->name('storenews');
+Route::get('displayNews','NewsController@display')->name('displayNews');
 
-Route::get('news', function () {
-    return view('news');
-});
-
+//venkat news routes end
 Route::get('shared_stories', function () {
     return view('shared_stories');
 });
 
-Route::get('story', function () {
-    return view('story');
-});
+
+#Route::get('story', function () {
+ #   return view('story');
+#});
 
 Route::get('talks', function () {
     return view('talks');
@@ -180,3 +183,8 @@ Route::get('dashboard_admin', function () {
 Route::get('dashboard_volunteer', function () {
     return view('dashboard_volunteer');
 });
+
+//User Dashboard post a story form
+Route::post('/postStory','StoryController@store')->name('addFields');
+Route::get('/displayStories','StoryController@display');
+Route::get('/incrementLike/{story}', 'StoryController@incrementLike')->name('increment');

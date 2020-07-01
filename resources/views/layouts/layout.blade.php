@@ -126,7 +126,7 @@
                                 <li><a href="{{ url('/#talk_to_us') }}">Talk to Us</a></li>
                                 <li><a href="#">Blog</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('shared_stories') }}">Discover Stories</a></li>
+                                        <li><a href="{{ url('stories.show') }}">Discover Stories</a></li>
                                         <li><a href="{{ url('talks') }}">Expert Talks</a></li>
                                     </ul>
                                 </li>
@@ -236,11 +236,11 @@
                                 <li><a href="{{ url('/#talk_to_us') }}">Talk to Us</a></li>
                                 <li><a href="#">Blog</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('shared_stories') }}">Discover Stories</a></li>
+                                        <li><a href="{{ url('displayStories') }}">Discover Stories</a></li>
                                         <li><a href="{{ url('talks') }}">Expert Talks</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="{{ url('news') }}">News</a></li>
+                                <li><a href="{{ route('displayNews') }}">News</a></li>
                                 <li><a href="#">Hope Box</a>
                                     <ul class="dropdown">
                                         <li><a href="{{ url('inspire_me') }}">Inspire Me</a></li>
@@ -372,7 +372,7 @@
     <script type="text/javascript" src="/js/intro.js"></script>
 
     <!-- ManyChat Plugin -->
-    <script src="//widget.manychat.com/101206188315883.js" async="async"></script>
+    <!--<script src="//widget.manychat.com/101206188315883.js" async="async"></script>-->
     <!-- Smooth Scrolling -->
     <script>
             let anchorlinks = document.querySelectorAll('a[href^="#"]')
