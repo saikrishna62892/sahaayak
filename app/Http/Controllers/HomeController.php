@@ -11,7 +11,7 @@ use App\Story;
 use DB;
 use App\Diary;
 use Auth;
-use DB;
+use App\News;
 
 
 
@@ -60,10 +60,10 @@ class HomeController extends Controller
         $unapprovedVolunteers = Volunteer::where('is_Approved',0)->get();
         $badges = $volunteers_count-$unapprovedVolunteers->count();
         $talks=Talk::all();
-        $news = News::all();
+        $shared_news = News::all();
         
 
-        return view('admin.dashboard_admin',compact('unapprovedVolunteers','talks','users_count','volunteers_count','badges'));
+        return view('admin.dashboard_admin',compact('unapprovedVolunteers','talks','users_count','volunteers_count','badges','shared_news'));
     }
 
     public function volunteerHome()
