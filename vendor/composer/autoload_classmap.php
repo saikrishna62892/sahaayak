@@ -10,6 +10,7 @@ return array(
     'App\\Appointment' => $baseDir . '/app/Appointment.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Customer' => $baseDir . '/app/Customer.php',
+    'App\\Diary' => $baseDir . '/app/Diary.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\AnswerController' => $baseDir . '/app/Http/Controllers/AnswerController.php',
     'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
@@ -29,6 +30,9 @@ return array(
     'App\\Http\\Controllers\\SubscriptionController' => $baseDir . '/app/Http/Controllers/SubscriptionController.php',
     'App\\Http\\Controllers\\VideoController' => $baseDir . '/app/Http/Controllers/VideoController.php',
     'App\\Http\\Controllers\\VolunteerController' => $baseDir . '/app/Http/Controllers/VolunteerController.php',
+
+    'App\\Http\\Controllers\\appointment_controller' => $baseDir . '/app/Http/Controllers/appointment_controller.php',
+    'App\\Http\\Controllers\\diary_controller' => $baseDir . '/app/Http/Controllers/diary_controller.php',
     'App\\Http\\Controllers\\suggestion_controller' => $baseDir . '/app/Http/Controllers/suggestion_controller.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',

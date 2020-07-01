@@ -49,6 +49,7 @@ class StoryController extends Controller
 	{
 		$stories=Story::orderBy('created_at','desc')->get();
 
+		//counts will happen here
 		$category=['Depression','Suicide','Stress','Stigma','Healthy Sleep','Mental Illness','Hopelessness','Fear of Loss','Social Isolation'];
 		$category_count=[];
 		for($i = 0;$i < 9;$i++)

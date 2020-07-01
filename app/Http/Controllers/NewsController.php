@@ -28,7 +28,7 @@ class NewsController extends Controller
 
     	$data=request()->validate(
             [
-            	'image'=>'required',
+            	'image' => 'file|image|max:3000',
                'source'=>'required',
                 'headline'=>'required',
                 'content'=>'required',

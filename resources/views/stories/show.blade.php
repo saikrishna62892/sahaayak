@@ -109,7 +109,7 @@
                                 <h4>.</h4>
                                 <ul>
                                     <li><a href="#">&emsp;Healthy Sleep({{ count($category_count[4]) }})</a></li>
-                                    <li><a href="#">&emsp;Mental Illness{{ count($category_count[5]) }})</a></li>
+                                    <li><a href="#">&emsp;Mental Illness({{ count($category_count[5]) }})</a></li>
                                     <li><a href="#">&emsp;Hopelessness({{ count($category_count[6]) }})</a></li>
                                     <li><a href="#">&emsp;Fear of Loss({{ count($category_count[7]) }})</a></li>
                                     <li><a href="#">&emsp;Social Isolation({{ count($category_count[8]) }})</a></li>

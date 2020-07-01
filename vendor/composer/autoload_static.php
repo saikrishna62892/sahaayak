@@ -521,6 +521,7 @@ class ComposerStaticInit4cb398da79ce39bdb4e4610405d81ed7
         'App\\Appointment' => __DIR__ . '/../..' . '/app/Appointment.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Customer' => __DIR__ . '/../..' . '/app/Customer.php',
+        'App\\Diary' => __DIR__ . '/../..' . '/app/Diary.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\AnswerController' => __DIR__ . '/../..' . '/app/Http/Controllers/AnswerController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
@@ -540,6 +541,9 @@ class ComposerStaticInit4cb398da79ce39bdb4e4610405d81ed7
         'App\\Http\\Controllers\\SubscriptionController' => __DIR__ . '/../..' . '/app/Http/Controllers/SubscriptionController.php',
         'App\\Http\\Controllers\\VideoController' => __DIR__ . '/../..' . '/app/Http/Controllers/VideoController.php',
         'App\\Http\\Controllers\\VolunteerController' => __DIR__ . '/../..' . '/app/Http/Controllers/VolunteerController.php',
+
+        'App\\Http\\Controllers\\appointment_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/appointment_controller.php',
+        'App\\Http\\Controllers\\diary_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/diary_controller.php',
         'App\\Http\\Controllers\\suggestion_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/suggestion_controller.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddForeignkeyToStories extends Migration
+class AddForeignKeyToDiary extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class AddForeignkeyToStories extends Migration
      */
     public function up()
     {
-        Schema::table('stories', function (Blueprint $table) {
+        Schema::table('diary', function (Blueprint $table) {
             $table->unsignedBigInteger('user_id');
+            $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
@@ -26,7 +27,7 @@ class AddForeignkeyToStories extends Migration
      */
     public function down()
     {
-        Schema::table('stories', function (Blueprint $table) {
+        Schema::table('diary', function (Blueprint $table) {
             //
         });
     }
