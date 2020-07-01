@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Questionnaire;
+use App\Volunteer;
+use App\Diary;
+use Auth;
+use DB;
+
 class HomeController extends Controller
 {
     /**
@@ -23,15 +28,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        /*$questionnaires = Questionnaire::all(); 
-        return view('home',compact('questionnaires'));*/
-        return view('dashboard_user');
+        $user=Auth::user();
+        $diary=DB::table('diary')->where('user_id', $user->id)->get();
+        return view('dashboard_user')->with(compact('diary'));
     }
 
     public function adminHome()
     {
-        $questionnaires = Questionnaire::all(); 
-        #return view('admin.adminHome',compact('questionnaires'));
-        return view('dashboard_admin');
+        $unapprovedVolunteers = Volunteer::where('is_Approved',0)->get();
+        //dd($unapprovedVolunteers);
+        return view('admin.dashboard_admin',compact('unapprovedVolunteers'));
     }
 }

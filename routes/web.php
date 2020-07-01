@@ -72,18 +72,20 @@ Route::get('learn_suicide', function () {
 #Route::get('login', function () {
  #   return view('login');
 #});
+//admin news routes
+Route::get('news','NewsController@index')->name('news');
+Route::get('news/create','NewsController@create');
+Route::post('admin/news','NewsController@store')->name('storenews');
 
-Route::get('news', function () {
-    return view('news');
-});
-
+//admin news routes end
 Route::get('shared_stories', function () {
     return view('shared_stories');
 });
 
-Route::get('story', function () {
-    return view('story');
-});
+
+#Route::get('story', function () {
+ #   return view('story');
+#});
 
 Route::get('talks', function () {
     return view('talks');
@@ -115,12 +117,24 @@ Route::post('admin/home/questionnaires/{questionnaire}/questions','QuestionContr
 Route::get('home/questionnaires/{questionnaire}/questions','QuestionController@show');
 Route::post('home/questionnaires/{questionnaire}/getResult','QuestionController@getResult');
 
-//Video Route
+//Admin Video Route
 Route::get('admin/home/videos/create','VideoController@create');
 Route::post('admin/home/videos','VideoController@store');
 
 //Subscription Routes
 Route::post('/home/subscribe','SubscriptionController@store');
+
+//Registration Routes
+Route::get('/register/step2/{user}','VolunteerController@step2');
+Route::post('/register/step2/{user}','VolunteerController@store');
+
+//User HopeBox Video Routes
+Route::get('/home/hopebox/videos','HopeBoxController@displayVideos');
+
+//Admin Volunteer list Routes
+Route::get('/admin/home/volunteer/{unapprovedVolunteer}/getDetails','VolunteerController@getDetails');
+Route::get('/admin/home/volunteer/{unapprovedVolunteer}/approveVolunteer','VolunteerController@approveVolunteer');
+
 //end of dileep added routes
 
 Route::get('team', function () {
@@ -135,7 +149,7 @@ Route::post('/appointment_controller','appointment_controller@save');
 Route::get('/suggestion_controller','suggestion_controller@save');
 
 Route::get('videos', function () {
-    return view('videos');
+    return view('video.show');
 });
 
 Route::get('playlists', function () {
@@ -172,3 +186,9 @@ Route::get('dashboard_admin', function () {
 Route::get('dashboard_volunteer', function () {
     return view('dashboard_volunteer');
 });
+
+//User Dashboard post a story form
+Route::post('home/displaydiary','diary_controller@save')->name('addFields');
+Route::get('/displayStories','StoryController@display');
+Route::get('/incrementLike/{story}', 'StoryController@incrementLike')->name('increment');
+

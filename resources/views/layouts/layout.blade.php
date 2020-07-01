@@ -56,7 +56,7 @@
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu">
         <div class="offcanvas__logo">
-            <a href="{{ url('/') }}"><img src="img/logo.png" alt="Sahaayak" width="240" height="60"></a>
+            <a href="{{ url('/') }}"><img src="/img/logo.png" alt="Sahaayak" width="240" height="60"></a>
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__widget">
@@ -126,7 +126,7 @@
                                 <li><a href="{{ url('/#talk_to_us') }}">Talk to Us</a></li>
                                 <li><a href="#">Blog</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('shared_stories') }}">Discover Stories</a></li>
+                                        <li><a href="{{ url('stories.show') }}">Discover Stories</a></li>
                                         <li><a href="{{ url('talks') }}">Expert Talks</a></li>
                                     </ul>
                                 </li>
@@ -164,7 +164,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-3">
                         <div class="header__logo">
-                            <a href="{{ url('/') }}"><img data-step="1" data-intro="logo" data-position="right" src="img/logo.png" alt="Sahaayak" width="240" height="60"></a>
+                            <a href="{{ url('/') }}"><img data-step="1" data-intro="logo" data-position="right" src="/img/logo.png" alt="Sahaayak" width="240" height="60"></a>
                         </div>
                     </div>
                     <div class="col-lg-9 col-md-9">
@@ -236,7 +236,7 @@
                                 <li><a href="{{ url('/#talk_to_us') }}">Talk to Us</a></li>
                                 <li><a href="#">Blog</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('shared_stories') }}">Discover Stories</a></li>
+                                        <li><a href="{{ url('displayStories') }}">Discover Stories</a></li>
                                         <li><a href="{{ url('talks') }}">Expert Talks</a></li>
                                     </ul>
                                 </li>
@@ -277,7 +277,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__about">
-                        <img src="img/footer-logo.png" alt="Sahaayak" width="240" height="60">
+                        <img src="/img/footer-logo.png" alt="Sahaayak" width="240" height="60">
                         <ul class="footer-address">
                             <li><i class="fa fa-phone"></i> (01) 436 8888</li>
                             <li><i class="fa fa-envelope"></i> hello@zogin.com</li>
@@ -372,7 +372,7 @@
     <script type="text/javascript" src="/js/intro.js"></script>
 
     <!-- ManyChat Plugin -->
-    <script src="//widget.manychat.com/101206188315883.js" async="async"></script>
+    <!--<script src="//widget.manychat.com/101206188315883.js" async="async"></script>-->
     <!-- Smooth Scrolling -->
     <script>
             let anchorlinks = document.querySelectorAll('a[href^="#"]')

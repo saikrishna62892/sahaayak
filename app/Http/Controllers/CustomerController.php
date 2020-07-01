@@ -19,14 +19,6 @@ class CustomerController extends Controller
 
     public function sendMail()
     {
-    	/*$customer = new \App\Customer();
-    	$customer->name="jkl";
-    	$customer->phone=10;
-    	$customer->save();
-    	Mail::to('abc@abc.com')->send(new WelcomeMail());
-    	return new WelcomeMail();*/
-
-    	//$embed = Embed::make($this->video)->parseUrl();
     	$embedurl=$this->getEmbedHtml("https://www.youtube.com/watch?v=bULHYPjbdZU");
         
 

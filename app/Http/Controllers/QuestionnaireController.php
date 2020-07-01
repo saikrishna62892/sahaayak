@@ -28,6 +28,7 @@ class QuestionnaireController extends Controller
                 'questionnairePurpose'=>'required',
             ]);
         $questionnaire = Questionnaire::create($data);
+        
         $users=User::all();
     foreach ($users as $user) {
 
@@ -38,7 +39,6 @@ class QuestionnaireController extends Controller
 
     public function show(Questionnaire $questionnaire)
     {
-        //dd($questionnaire->questions);
         return view('questionnaire.show',compact('questionnaire'));
     }
     public function edit()

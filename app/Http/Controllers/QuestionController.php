@@ -20,17 +20,14 @@ class QuestionController extends Controller
 
     public function store(Questionnaire $questionnaire)
     {
-        //dd(request()->all());
         $data=request()->validate([
         		'question.question' => 'required',
         		'answers.*.answer' => 'required',
                 'answers.*.point' => 'required'
         	]);
-        //dd($data);
         $question = $questionnaire->questions()->create($data['question']);
         $question->answers()->createMany($data['answers']);
-        $questionnaires = Questionnaire::all(); 
-        return view('admin.adminHome',compact('questionnaires'));
+        return redirect('admin/home/questionnaires/'.$questionnaire->id);
     }
 
     public function show(Questionnaire $questionnaire)
