@@ -1,4 +1,4 @@
-<form action="{{ route('addFields') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('addStoryFields') }}" method="POST" enctype="multipart/form-data">
 	@csrf
    	<div class="form-group">
     	<label for="formGroupExampleInput">Title of the Story</label>

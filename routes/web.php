@@ -29,10 +29,6 @@ Route::get('expert_story', function () {
     return view('expert_story');
 });
 
-Route::get('joinus', function () {
-    return view('joinus');
-});
-
 Route::get('learn_depression', function () {
     return view('learn_depression');
 });
@@ -72,12 +68,13 @@ Route::get('learn_suicide', function () {
 #Route::get('login', function () {
  #   return view('login');
 #});
-//admin news routes
+//venkat news routes
 Route::get('news','NewsController@index')->name('news');
 Route::get('news/create','NewsController@create');
 Route::post('admin/news','NewsController@store')->name('storenews');
+Route::get('displayNews','NewsController@display')->name('displayNews');
 
-//admin news routes end
+//venkat news routes end
 Route::get('shared_stories', function () {
     return view('shared_stories');
 });
@@ -91,9 +88,6 @@ Route::get('talks', function () {
     return view('talks');
 });
 
-Route::get('volunteer_signup', function () {
-    return view('volunteer_signup');
-});
 
 //dileep added routes
 
@@ -105,6 +99,9 @@ Route::get('home', 'HomeController@index')->name('home');
 
 //admin page route
 Route::get('admin/home', 'HomeController@adminHome')->name('adminDashboard')->middleware('is_admin');
+
+//volunteer dashboard route
+Route::get('volunteer/home', 'HomeController@volunteerHome')->name('volunteerDashboard');
 
 //Questionnaire Routes
 Route::get('admin/home/questionnaires/create','QuestionnaireController@create');
@@ -188,9 +185,10 @@ Route::get('dashboard_volunteer', function () {
 });
 
 //User Dashboard post a story form
-Route::post('/postStory','StoryController@store')->name('addFields');
+Route::post('/postStory','StoryController@store')->name('addStoryFields');
 Route::get('/displayStories','StoryController@display');
 Route::get('/incrementLike/{story}', 'StoryController@incrementLike')->name('increment');
-Route::get('/sharedStories/{user}','StoryController@userStories')->name('userStories');
 
-
+//Admin expert talks routes
+Route::post('/postTalks','TalkController@store')->name('addTalksFields');
+Route::get('/displayTalks','TalkController@display');

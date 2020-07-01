@@ -28,7 +28,7 @@ class NewsController extends Controller
 
     	$data=request()->validate(
             [
-            	'image'=>'required',
+            	'image' => 'file|image|max:3000',
                'source'=>'required',
                 'headline'=>'required',
                 'content'=>'required',
@@ -61,5 +61,11 @@ class NewsController extends Controller
         //return redirect('admin/news/create');
         return redirect()->back();
     
+    }
+    public function display(){
+        $news=News::orderBy('created_at','desc')->paginate(6);
+
+        
+        return view('/news/show')->with(compact('news'));
     }
 }

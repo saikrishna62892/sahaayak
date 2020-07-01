@@ -31,9 +31,6 @@
                 <div class="col-lg-6">
                     <div class="chooseus__text">
                         <h2 data-step="4" data-intro="Statistics about mental health" data-position="bottom">Stats</h2>
-                        <!--<p>We are offering internationally certified 200 Hour Yoga Teacher Training in Rishikesh and 300
-                            hour yoga teacher training in Rishikesh, India - Join us to have such life-transforming
-                            experience in The world capital of Yoga in Rishikesh.</p>-->
                     </div>
                     <div class="chooseus__item">
                         <div class="chooseus__item__icon">

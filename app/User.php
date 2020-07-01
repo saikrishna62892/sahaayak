@@ -51,4 +51,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Story::class);
     }
+
+    public function talks()
+    {
+        return $this->hasMany(Talk::class);
+    }
 }
