@@ -105,7 +105,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="{{ url('news') }}" aria-expanded="true"><i class="ti-dashboard"></i><span>News</span></a>
+                                <a href="<?php echo e(url('news')); ?>" aria-expanded="true"><i class="ti-dashboard"></i><span>News</span></a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-thought"></i><span>Hope Box</span></a>
@@ -157,35 +157,35 @@
                         <ul class="notification-area pull-right">
                                 <li class="dropdown">
                                     <i class="ti-bell dropdown-toggle" data-toggle="dropdown">
-                                        @if(auth::user()->unreadnotifications->count())
-                                    <span class="badge badge-light">{{auth::user()->unreadnotifications->count()}}</span>
-                                    @endif
+                                        <?php if(auth::user()->unreadnotifications->count()): ?>
+                                    <span class="badge badge-light"><?php echo e(auth::user()->unreadnotifications->count()); ?></span>
+                                    <?php endif; ?>
                                     </i>
                                     <div class="dropdown-menu bell-notify-box notify-box">
-                                        <span class="notify-title">You have {{auth::user()->unreadnotifications->count()}} new notifications</span>
+                                        <span class="notify-title">You have <?php echo e(auth::user()->unreadnotifications->count()); ?> new notifications</span>
 
-                                        <a style="color: red" class="dropdown-item" href="{{route('markRead')}}">Mark all as read</a>
+                                        <a style="color: red" class="dropdown-item" href="<?php echo e(route('markRead')); ?>">Mark all as read</a>
 
                                         <div class="nofity-list">
-                                             @foreach (auth()->user()->unreadnotifications as $notification)
-                                            <a href="{{route('gotonewsarticle')}}" class="notify-item">
+                                             <?php $__currentLoopData = auth()->user()->unreadnotifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $notification): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <a href="<?php echo e(route('gotonewsarticle')); ?>" class="notify-item">
                                                 <div class="notify-thumb"><i class="ti-key btn-danger"></i></div>
                                                 <div class="notify-text">
-                                                    <p>{{$notification->data['data']}}</p>
+                                                    <p><?php echo e($notification->data['data']); ?></p>
                                                     </div>
                                             </a>
-                                            @endforeach
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
-                                            @foreach (auth()->user()->readnotifications as $notification)
-                                            <a href="{{route('gotonewsarticle')}}" class="notify-item">
+                                            <?php $__currentLoopData = auth()->user()->readnotifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $notification): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <a href="<?php echo e(route('gotonewsarticle')); ?>" class="notify-item">
                                                 <div class="notify-thumb"><i class="ti-key btn-danger"></i></div>
                                                 <div class="notify-text">
-                                                    <p>{{$notification->data['data']}}</p>
+                                                    <p><?php echo e($notification->data['data']); ?></p>
                                                     </div>
                                             </a>
-                                            @endforeach
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
-                                            <a href="{{route('gotonewsarticle')}}" class="notify-item">
+                                            <a href="<?php echo e(route('gotonewsarticle')); ?>" class="notify-item">
                                                 <div class="notify-thumb"><i class="ti-comments-smiley btn-info"></i></div>
                                                 <div class="notify-text">
                                                     <p>New Commetns On Post</p>
@@ -213,18 +213,19 @@
 
 
                                 <li>
-                                    <h4 style="color: #5768ad;" class="user-name dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->name }} <i class="fa fa-angle-down"></i></h4>
+                                    <h4 style="color: #5768ad;" class="user-name dropdown-toggle" data-toggle="dropdown"><?php echo e(Auth::user()->name); ?> <i class="fa fa-angle-down"></i></h4>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="#">Message</a>
                                         <a class="dropdown-item" href="#">Settings</a>
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                        <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
                                            onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
+                                            <?php echo e(__('Logout')); ?>
+
                                         </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
-                                            @csrf
+                                        <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" >
+                                            <?php echo csrf_field(); ?>
                                         </form>
                                     </div>
                                 </li>
@@ -235,7 +236,7 @@
             <!-- header area end -->
 
 
-            @yield('content')
+            <?php echo $__env->yieldContent('content'); ?>
 
         </div>
 
@@ -275,3 +276,4 @@
 </body>
 
 </html>
+<?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/layouts/dashboard.blade.php ENDPATH**/ ?>

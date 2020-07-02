@@ -47,7 +47,7 @@
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu">
         <div class="offcanvas__logo">
-            <a href="{{ url('/') }}"><img src="/img/logo.png" alt="Sahaayak" width="240" height="60"></a>
+            <a href="<?php echo e(url('/')); ?>"><img src="/img/logo.png" alt="Sahaayak" width="240" height="60"></a>
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__widget">
@@ -55,42 +55,43 @@
                 <li>CALL US: + 1 800-567-8990</li>
                 <li>WRITE US: OFFICE@EXAMPLE.COM</li>
             </ul>
-            @guest
-            <a href="{{ route('login') }}" class="primary-btn">Login</a>
-            @if (Route::has('register'))
-                <a href="{{ route('register') }}" class="primary-btn">Join us</a>
-            @endif
-            @else
+            <?php if(auth()->guard()->guest()): ?>
+            <a href="<?php echo e(route('login')); ?>" class="primary-btn">Login</a>
+            <?php if(Route::has('register')): ?>
+                <a href="<?php echo e(route('register')); ?>" class="primary-btn">Join us</a>
+            <?php endif; ?>
+            <?php else: ?>
             <div class="dropdown">
-                <button class="btn primary-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</button>
+                <button class="btn primary-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo e(Auth::user()->name); ?></button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="#">Return to Dashboard</a>
                     <a class="dropdown-item" href="#">Messages</a>
-                    <a class="dropdown-item" href="{{ route('logout') }}"
+                    <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
                            onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
+                            <?php echo e(__('Logout')); ?>
+
                         </a>
                 </div>
             </div>
-            @endguest
+            <?php endif; ?>
         </div>
         
         <nav class="header__menu">
             <ul class="mobile-menu">
-                <li class="active"><a href="{{ url('/') }}">Home</a></li>
-                                <li><a href="{{ url('about') }}">About</a></li>
+                <li class="active"><a href="<?php echo e(url('/')); ?>">Home</a></li>
+                                <li><a href="<?php echo e(url('about')); ?>">About</a></li>
                                 <li><a href="#">Learn</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('learn_depression') }}">Depression</a></li>
-                                        <li><a href="{{ url('learn_suicide') }}">Suicide</a></li>
-                                        <li><a href="{{ url('learn_stress') }}">Stress</a></li>
-                                        <li><a href="{{ url('learn_stigma') }}">Stigma</a></li>
-                                        <li><a href="{{ url('learn_healthy_sleep') }}">Healthy Sleep</a></li>
-                                        <li><a href="{{ url('learn_mental_illness') }}">Mental Illness</a></li>
-                                        <li><a href="{{ url('learn_hopelessness') }}">Hopelessness</a></li>
-                                        <li><a href="{{ url('learn_fear_of_loss') }}">Fear of Loss</a></li>
-                                        <li><a href="{{ url('learn_social_isolation') }}">Social Isolation</a></li>
+                                        <li><a href="<?php echo e(url('learn_depression')); ?>">Depression</a></li>
+                                        <li><a href="<?php echo e(url('learn_suicide')); ?>">Suicide</a></li>
+                                        <li><a href="<?php echo e(url('learn_stress')); ?>">Stress</a></li>
+                                        <li><a href="<?php echo e(url('learn_stigma')); ?>">Stigma</a></li>
+                                        <li><a href="<?php echo e(url('learn_healthy_sleep')); ?>">Healthy Sleep</a></li>
+                                        <li><a href="<?php echo e(url('learn_mental_illness')); ?>">Mental Illness</a></li>
+                                        <li><a href="<?php echo e(url('learn_hopelessness')); ?>">Hopelessness</a></li>
+                                        <li><a href="<?php echo e(url('learn_fear_of_loss')); ?>">Fear of Loss</a></li>
+                                        <li><a href="<?php echo e(url('learn_social_isolation')); ?>">Social Isolation</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#">Assessment</a>
@@ -110,27 +111,27 @@
                                         <li><a href="./pricing.html">Healthy lifestyle test</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="{{ url('/#talk_to_us') }}">Talk to Us</a></li>
+                                <li><a href="<?php echo e(url('/#talk_to_us')); ?>">Talk to Us</a></li>
                                 <li><a href="#">Blog</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('displayStories') }}">Discover Stories</a></li>
-                                        <li><a href="{{ url('displayTalks') }}">Expert Talks</a></li>
+                                        <li><a href="<?php echo e(url('displayStories')); ?>">Discover Stories</a></li>
+                                        <li><a href="<?php echo e(url('displayTalks')); ?>">Expert Talks</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="{{ url('news') }}">News</a></li>
+                                <li><a href="<?php echo e(url('news')); ?>">News</a></li>
                                 <li><a href="#">Hope Box</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('weavesilk') }}">Interactive Drawing</a></li>
-                                        <li><a href="{{ url('inspire_me') }}">Inspire Me</a></li>
-                                        <li><a href="{{ url('videos') }}">Videos</a></li>
-                                        <li><a href="{{ url('playlists') }}">Playlists</a></li>
+                                        <li><a href="<?php echo e(url('weavesilk')); ?>">Interactive Drawing</a></li>
+                                        <li><a href="<?php echo e(url('inspire_me')); ?>">Inspire Me</a></li>
+                                        <li><a href="<?php echo e(url('videos')); ?>">Videos</a></li>
+                                        <li><a href="<?php echo e(url('playlists')); ?>">Playlists</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="{{ url('team') }}">Team</a>
+                                <li><a href="<?php echo e(url('team')); ?>">Team</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('team#volunteers') }}">Volunteers</a></li>
-                                        <li><a href="{{ url('team#therapists') }}">Therapists</a></li>
-                                        <li><a href="{{ url('team#family') }}">Family</a></li>
+                                        <li><a href="<?php echo e(url('team#volunteers')); ?>">Volunteers</a></li>
+                                        <li><a href="<?php echo e(url('team#therapists')); ?>">Therapists</a></li>
+                                        <li><a href="<?php echo e(url('team#family')); ?>">Family</a></li>
                                     </ul>
                                 </li>
             </ul>
@@ -152,34 +153,35 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-3">
                         <div class="header__logo">
-                            <a href="{{ url('/') }}"><img data-step="1" data-intro="logo" data-position="right" src="/img/logo.png" alt="Sahaayak" width="240" height="60"></a>
+                            <a href="<?php echo e(url('/')); ?>"><img data-step="1" data-intro="logo" data-position="right" src="/img/logo.png" alt="Sahaayak" width="240" height="60"></a>
                         </div>
                     </div>
                     <div class="col-lg-9 col-md-9">
                         <div class="header__top__widget">
-                            @guest
+                            <?php if(auth()->guard()->guest()): ?>
                                 <ul>
                                     <li>CALL US: + 1 800-567-8990</li>
                                     <li>WRITE US: OFFICE@EXAMPLE.COM</li>
                                 </ul>
-                                <a href="{{ route('login') }}" class="primary-btn">Login</a>
-                                @if (Route::has('register'))
-                                    <a href="{{ route('register') }}" class="primary-btn">Join us</a>
-                                @endif
-                                @else
+                                <a href="<?php echo e(route('login')); ?>" class="primary-btn">Login</a>
+                                <?php if(Route::has('register')): ?>
+                                    <a href="<?php echo e(route('register')); ?>" class="primary-btn">Join us</a>
+                                <?php endif; ?>
+                                <?php else: ?>
                                 <div class="dropdown">
-                                  <button class="btn primary-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</button>
+                                  <button class="btn primary-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo e(Auth::user()->name); ?></button>
                                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item" href="#">Return to Dashboard</a>
                                     <a class="dropdown-item" href="#">Messages</a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
                                            onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
+                                            <?php echo e(__('Logout')); ?>
+
                                         </a>
                                   </div>
                                 </div>
-                            @endguest
+                            <?php endif; ?>
                         </div>
                     </div>
 
@@ -196,8 +198,8 @@
                     <div class="col-lg-12 col-md-9">
                         <nav class="header__menu">
                             <ul>
-                                <li><a href="{{ url('/') }}">Home</a></li>
-                                <li><a href="{{ url('about') }}">About</a></li>
+                                <li><a href="<?php echo e(url('/')); ?>">Home</a></li>
+                                <li><a href="<?php echo e(url('about')); ?>">About</a></li>
                                 <li><a href="#">Learn</a>
                                     <ul class="dropdown">
                                         <li><a href="/home/learn/depression/1">Depression</a></li>
@@ -213,32 +215,32 @@
                                 </li>
                                 <li><a href="#">Assessment</a>
                                     <ul class="dropdown">
-                                    @foreach($questionnaires as $questionnaire)
-                                        <li><a href="/home/questionnaires/{{$questionnaire->id}}/questions">{{$questionnaire->questionnaireTitle}}</a></li>
-                                    @endforeach
+                                    <?php $__currentLoopData = $questionnaires; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $questionnaire): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <li><a href="/home/questionnaires/<?php echo e($questionnaire->id); ?>/questions"><?php echo e($questionnaire->questionnaireTitle); ?></a></li>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </ul>
                                 </li>
-                                <li><a href="{{ url('/#talk_to_us') }}">Talk to Us</a></li>
+                                <li><a href="<?php echo e(url('/#talk_to_us')); ?>">Talk to Us</a></li>
                                 <li><a href="#">Blog</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('displayStories') }}">Discover Stories</a></li>
-                                        <li><a href="{{ url('displayTalks') }}">Expert Talks</a></li>
+                                        <li><a href="<?php echo e(url('displayStories')); ?>">Discover Stories</a></li>
+                                        <li><a href="<?php echo e(url('displayTalks')); ?>">Expert Talks</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="{{ route('displayNews') }}">News</a></li>
+                                <li><a href="<?php echo e(route('displayNews')); ?>">News</a></li>
                                 <li><a href="#">Hope Box</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('weavesilk') }}">Interactive Drawing</a></li>
-                                        <li><a href="{{ url('inspire_me') }}">Inspire Me</a></li>
-                                        <li><a href="{{ url('videos') }}">Videos</a></li>
-                                        <li><a href="{{ url('playlists') }}">Playlists</a></li>
+                                        <li><a href="<?php echo e(url('weavesilk')); ?>">Interactive Drawing</a></li>
+                                        <li><a href="<?php echo e(url('inspire_me')); ?>">Inspire Me</a></li>
+                                        <li><a href="<?php echo e(url('videos')); ?>">Videos</a></li>
+                                        <li><a href="<?php echo e(url('playlists')); ?>">Playlists</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="{{ url('team') }}">Team</a>
+                                <li><a href="<?php echo e(url('team')); ?>">Team</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('team#volunteers') }}">Volunteers</a></li>
-                                        <li><a href="{{ url('team#therapists') }}">Therapists</a></li>
-                                        <li><a href="{{ url('team#family') }}">Family</a></li>
+                                        <li><a href="<?php echo e(url('team#volunteers')); ?>">Volunteers</a></li>
+                                        <li><a href="<?php echo e(url('team#therapists')); ?>">Therapists</a></li>
+                                        <li><a href="<?php echo e(url('team#family')); ?>">Family</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -253,7 +255,7 @@
 
 
 
-    @yield('content');
+    <?php echo $__env->yieldContent('content'); ?>;
 
 
 
@@ -271,11 +273,19 @@
                         </ul>
                         <h5 style="color:white;">Subscribe</h5><br>
                         <form action="/home/subscribe" method="post" class="subscribe-form">
-                            @csrf
+                            <?php echo csrf_field(); ?>
                             <input type="email" placeholder="Your Email" name="subscriberEmail">
-                            @error('subscriberEmail')
-                            {{$messsage}}
-                            @enderror
+                            <?php $__errorArgs = ['subscriberEmail'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                            <?php echo e($messsage); ?>
+
+                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                             <button type="submit"><i class="fa fa-send"></i></button>
                         </form>
                     </div>
@@ -323,7 +333,7 @@
                         <!-- Leave Comment Begin -->
                         <div class="leave__comment__text">
                             <form action="/suggestion_controller" method="get">
-                            @csrf
+                            <?php echo csrf_field(); ?>
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
                                         <input type="text" placeholder="Name*" name="name">
@@ -414,4 +424,4 @@
 
 </body>
 
-</html>
+</html><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/layouts/layout.blade.php ENDPATH**/ ?>
