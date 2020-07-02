@@ -104,8 +104,6 @@
                     </div>
                     <!-- Shared stories form end -->
 
-                    <!-- weave silk form end -->
-
                     <!-- Worry tree form begin -->
                     <div class="tab-pane fade" id="worrytree" role="tabpanel">
                                 

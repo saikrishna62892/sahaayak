@@ -1,18 +1,15 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta charset="utf-8">
-	<!-- affiliate-data=myAffiliateData, app-argument=myURL -->
-	<!-- <meta name="apple-itunes-app" content="app-id=436590129"> -->
-	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width">
 
 	
 
 	<meta property="og:description" content="Create beautiful flowing art with Silk.">
-
-	<link rel="shortcut icon" href="http://weavesilk.com/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/img/icon.png" type="image/gif" sizes="16x16">
 	<link rel="stylesheet" href="/css/normalize.css">
 	<link rel="stylesheet" href="/css/font-awesome.css">
 	<link rel="stylesheet" href="/css/ss-social.css">
@@ -31,7 +28,7 @@
 	<script src="/js/detect.js"></script>
 	<script src="/js/site.js"></script>
 
-	<title>Silk – Interactive Generative Art</title>
+	<title>Sahaayak | Hopebox | Interactive Drawing</title>s
 </head>
 
 <body data-bind="css: { 'iphone': isIPhone, 'right-side-up': isRightSideUp, 'silk-active': silkActive, 'mouse-over-previewable-controls': mouseOverControls, 'mouse-down-on-slider': mouseDownOnSlider }" class="">
