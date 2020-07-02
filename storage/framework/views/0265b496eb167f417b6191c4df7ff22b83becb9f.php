@@ -68,7 +68,6 @@
                                                                         <li><a href="<?php echo e(route('increment', $talk)); ?>" class="fa fa-thumbs-up" style="color: black"></a><?php echo e($talk->likes); ?></li>
                                                                     </ul>
                                                                     <p><?php echo e($talk->content); ?></p>
-                                                                    <h6>Post yor stories anonymously <a href="#" style="color: #5768ad;">Register here.</a></h6>
                                                                 </div>
                                                             </div>
                                                         </div>

@@ -3005,3 +3005,110 @@ ol {
 		font-size: 18px;
 	}
 }
+
+
+
+/*Username area */
+.user-profile {
+    margin-right: -30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    background: -webkit-linear-gradient(left, #8914fe 0%, #8063f5 100%);
+    background: linear-gradient(to right, #8914fe 0%, #8063f5 100%);
+    padding: 17px 38px;
+    position: relative;
+}
+
+.user-profile img.avatar {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.user-name {
+    font-size: 17px;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 0;
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+.user-name i {
+    margin-left: 10px;
+    font-size: 21px;
+    vertical-align: middle;
+    position: relative;
+}
+
+.notification-area .dropdown-toggle,
+.user-name.dropdown-toggle {
+    position: relative;
+}
+
+.notification-area .dropdown-toggle:after,
+.user-name.dropdown-toggle:after {
+    display: none;
+}
+
+.notification-area .dropdown-menu,
+.user-profile .dropdown-menu {
+    background: #fff;
+    border: none;
+    -webkit-transform: none!important;
+            transform: none!important;
+    top: 130%!important;
+    right: 30px!important;
+    left: auto!important;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    display: block!important;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.notification-area .dropdown-menu.show,
+.user-profile .dropdown-menu.show {
+    top: 100%!important;
+}
+
+.notification-area .dropdown-menu.show,
+.user-profile .dropdown-menu.show {
+    top: 100%!important;
+    visibility: visible;
+    opacity: 1;
+    box-shadow: 0 0 45px 0 rgba(131, 23, 254, 0.06);
+}
+
+.user-profile .dropdown-menu a {
+    font-size: 14px;
+    color: #8a8a8a;
+    letter-spacing: 0;
+    font-weight: 500;
+    padding: 4px 120px;
+    padding-left: 25px;
+}
+
+.user-profile .dropdown-menu a:hover {
+    background: #f8f9fa;
+    color: #2942fa;
+}
+
+.drop-buttons .btn {
+    margin-bottom: 1.3em;
+}
+
+.dropdown-item {
+    font-size: 14px;
+}
+/*end*/
