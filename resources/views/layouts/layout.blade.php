@@ -216,15 +216,15 @@
                                 <li><a href="{{ url('about') }}">About</a></li>
                                 <li><a href="#">Learn</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('learn_depression') }}">Depression</a></li>
-                                        <li><a href="{{ url('learn_suicide') }}">Suicide</a></li>
-                                        <li><a href="{{ url('learn_stress') }}">Stress</a></li>
-                                        <li><a href="{{ url('learn_stigma') }}">Stigma</a></li>
-                                        <li><a href="{{ url('learn_healthy_sleep') }}">Healthy Sleep</a></li>
-                                        <li><a href="{{ url('learn_mental_illness') }}">Mental Illness</a></li>
-                                        <li><a href="{{ url('learn_hopelessness') }}">Hopelessness</a></li>
-                                        <li><a href="{{ url('learn_fear_of_loss') }}">Fear of Loss</a></li>
-                                        <li><a href="{{ url('learn_social_isolation') }}">Social Isolation</a></li>
+                                        <li><a href="/home/learn/depression/1">Depression</a></li>
+                                        <li><a href="/home/learn/suicide/2">Suicide</a></li>
+                                        <li><a href="/home/learn/stress/3">Stress</a></li>
+                                        <li><a href="/home/learn/stigma/4">Stigma</a></li>
+                                        <li><a href="/home/learn/healthy-sleep/5">Healthy Sleep</a></li>
+                                        <li><a href="/home/learn/mental-illness/6">Mental Illness</a></li>
+                                        <li><a href="/home/learn/hopelessness/7">Hopelessness</a></li>
+                                        <li><a href="/home/learn/fear-of-loss/8">Fear of Loss</a></li>
+                                        <li><a href="/home/learn/social-isolation/9">Social Isolation</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#">Assessment</a>
