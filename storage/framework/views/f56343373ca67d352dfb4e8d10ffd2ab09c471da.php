@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sahaayak</title>
-
+    <link rel="icon" href="/img/icon.png" type="image/gif">
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
@@ -64,30 +64,30 @@
                 <li>CALL US: + 1 800-567-8990</li>
                 <li>WRITE US: OFFICE@EXAMPLE.COM</li>
             </ul>
-                                <?php if(auth()->guard()->guest()): ?>
-                                <a href="<?php echo e(route('login')); ?>" class="primary-btn">Login</a>
-                                <?php if(Route::has('register')): ?>
-                                    <a href="<?php echo e(route('register')); ?>" class="primary-btn">Join us</a>
-                                <?php endif; ?>
-                                <?php else: ?>
+            <?php if(auth()->guard()->guest()): ?>
+            <a href="<?php echo e(route('login')); ?>" class="primary-btn">Login</a>
+            <?php if(Route::has('register')): ?>
+                <a href="<?php echo e(route('register')); ?>" class="primary-btn">Join us</a>
+            <?php endif; ?>
+            <?php else: ?>
 
-                                <li class="dropdown">
-                                    <a id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-expanded="false" v-pre>
-                                        <?php echo e(Auth::user()->name); ?> <span class="caret"></span>
-                                    </a>
+            <li class="dropdown">
+                <a class="primary-btn"> 
+                    <?php echo e(Auth::user()->name); ?> <span class="caret"></span>
+                </a>
 
-                                        <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
-                                           onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
-                                            <?php echo e(__('Logout')); ?>
+                    <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
+                       onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();">
+                        <?php echo e(__('Logout')); ?>
 
-                                        </a>
+                    </a>
 
-                                        <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" >
-                                            <?php echo csrf_field(); ?>
-                                        </form>
-                                </li>
-                                <?php endif; ?>
+                    <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" >
+                        <?php echo csrf_field(); ?>
+                    </form>
+            </li>
+            <?php endif; ?>
         </div>
         
         <nav class="header__menu">
@@ -181,11 +181,26 @@
                                     <a href="<?php echo e(route('register')); ?>" class="primary-btn">Join us</a>
                                 <?php endif; ?>
                                 <?php else: ?>
-                                <li class="dropdown">
-                                    <a id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-expanded="false" v-pre>
-                                        <?php echo e(Auth::user()->name); ?> <span class="caret"></span>
-                                    </a>
+                                <!--<a class="primary-btn"><?php echo e(Auth::user()->name); ?></a>-->
+                                <ul class="notification-area pull-right">
+                                <li>
+                                    <h4 style="color: #5768ad;" class="user-name dropdown-toggle" data-toggle="dropdown"><?php echo e(Auth::user()->name); ?> <i class="fa fa-angle-down"></i></h4>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Message</a>
+                                        <a class="dropdown-item" href="#">Settings</a>
+                                        <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
+                                           onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                            <?php echo e(__('Logout')); ?>
 
+                                        </a>
+
+                                        <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" >
+                                            <?php echo csrf_field(); ?>
+                                        </form>
+                                    </div>
+                                </li>
+                            </ul>
                                         <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
                                            onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
@@ -197,7 +212,7 @@
                                             <?php echo csrf_field(); ?>
                                         </form>
                                 </li>
-                                <?php endif; ?>
+                            <?php endif; ?>
                         </div>
                     </div>
 
@@ -218,15 +233,15 @@
                                 <li><a href="<?php echo e(url('about')); ?>">About</a></li>
                                 <li><a href="#">Learn</a>
                                     <ul class="dropdown">
-                                        <li><a href="/home/learn/depression/1">Depression</a></li>
-                                        <li><a href="/home/learn/suicide/2">Suicide</a></li>
-                                        <li><a href="/home/learn/stress/3">Stress</a></li>
-                                        <li><a href="/home/learn/stigma/4">Stigma</a></li>
-                                        <li><a href="/home/learn/healthy-sleep/5">Healthy Sleep</a></li>
-                                        <li><a href="/home/learn/mental-illness/6">Mental Illness</a></li>
-                                        <li><a href="/home/learn/hopelessness/7">Hopelessness</a></li>
-                                        <li><a href="/home/learn/fear-of-loss/8">Fear of Loss</a></li>
-                                        <li><a href="/home/learn/social-isolation/9">Social Isolation</a></li>
+                                        <li><a href="<?php echo e(url('learn_depression')); ?>">Depression</a></li>
+                                        <li><a href="<?php echo e(url('learn_suicide')); ?>">Suicide</a></li>
+                                        <li><a href="<?php echo e(url('learn_stress')); ?>">Stress</a></li>
+                                        <li><a href="<?php echo e(url('learn_stigma')); ?>">Stigma</a></li>
+                                        <li><a href="<?php echo e(url('learn_healthy_sleep')); ?>">Healthy Sleep</a></li>
+                                        <li><a href="<?php echo e(url('learn_mental_illness')); ?>">Mental Illness</a></li>
+                                        <li><a href="<?php echo e(url('learn_hopelessness')); ?>">Hopelessness</a></li>
+                                        <li><a href="<?php echo e(url('learn_fear_of_loss')); ?>">Fear of Loss</a></li>
+                                        <li><a href="<?php echo e(url('learn_social_isolation')); ?>">Social Isolation</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#">Assessment</a>
@@ -430,4 +445,4 @@ unset($__errorArgs, $__bag); ?>
 
 </body>
 
-</html><?php /**PATH C:\Users\Ganesh\Desktop\dileep\sahaayak\resources\views/layouts/layout.blade.php ENDPATH**/ ?>
+</html><?php /**PATH C:\sahaayak\resources\views/layouts/layout.blade.php ENDPATH**/ ?>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDiaryTable extends Migration
+class AddColumnToCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateDiaryTable extends Migration
      */
     public function up()
     {
-        Schema::create('diary', function (Blueprint $table) {
-            $table->text('title');
-            $table->text('content');
-            $table->dateTime('date');
-            
+        Schema::table('comments', function (Blueprint $table) {
+            $table->string('comment');
         });
     }
 
@@ -28,6 +25,8 @@ class CreateDiaryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('diary');
+        Schema::table('comments', function (Blueprint $table) {
+            //
+        });
     }
 }
