@@ -202,6 +202,10 @@ Route::post('home/displaydiary','diary_controller@save')->name('addFields');
 Route::get('/displayStories','StoryController@display');
 Route::get('/incrementLike/{story}', 'StoryController@incrementLike')->name('increment');
 
+//Inspireme routes by john&ganesh
+Route::post('/admin/home','QuoteController@save')->name('addFields');
+Route::get('/inspire_me','QuotesViewController@index');
+
 Route::get('/weavesilk', function () {
     return view('weavesilk');
 });

@@ -16,6 +16,7 @@ use App\Video;
 
 
 
+
 class HomeController extends Controller
 {
     /**
@@ -67,8 +68,9 @@ class HomeController extends Controller
         $talks = DB::table('talks')->orderBy("created_at","desc")->get();
         $shared_news = DB::table('news')->orderBy("created_at","desc")->get();
         $shared_videos = DB::table('videos')->orderBy("created_at","desc")->get();
+        $shared_quotes = DB::table('quotes')->orderBy("id","desc")->get();
 
-        return view('admin.dashboard_admin',compact('unapprovedVolunteers','talks','users_count','volunteers_count','badges','shared_news','shared_videos'));
+        return view('admin.dashboard_admin',compact('unapprovedVolunteers','talks','users_count','volunteers_count','badges','shared_news','shared_videos','shared_quotes'));
     }
 
     public function volunteerHome()

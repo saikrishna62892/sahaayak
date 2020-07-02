@@ -134,6 +134,7 @@
                                 <li><a href="<?php echo e(url('news')); ?>">News</a></li>
                                 <li><a href="#">Hope Box</a>
                                     <ul class="dropdown">
+                                        <li><a href="<?php echo e(url('weavesilk')); ?>">Interactive Drawing</a></li>
                                         <li><a href="<?php echo e(url('inspire_me')); ?>">Inspire Me</a></li>
                                         <li><a href="<?php echo e(url('videos')); ?>">Videos</a></li>
                                         <li><a href="<?php echo e(url('playlists')); ?>">Playlists</a></li>
@@ -245,6 +246,7 @@
                                 <li><a href="<?php echo e(route('displayNews')); ?>">News</a></li>
                                 <li><a href="#">Hope Box</a>
                                     <ul class="dropdown">
+                                        <li><a href="<?php echo e(url('weavesilk')); ?>">Interactive Drawing</a></li>
                                         <li><a href="<?php echo e(url('inspire_me')); ?>">Inspire Me</a></li>
                                         <li><a href="<?php echo e(url('videos')); ?>">Videos</a></li>
                                         <li><a href="<?php echo e(url('playlists')); ?>">Playlists</a></li>
