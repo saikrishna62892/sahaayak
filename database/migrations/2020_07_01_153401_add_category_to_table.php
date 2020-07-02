@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddForeignKeyToDiary extends Migration
+class AddCategoryToTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,9 +14,7 @@ class AddForeignKeyToDiary extends Migration
     public function up()
     {
         Schema::table('diary', function (Blueprint $table) {
-            $table->unsignedBigInteger('user_id');
-            $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('category');
         });
     }
 
@@ -28,7 +26,7 @@ class AddForeignKeyToDiary extends Migration
     public function down()
     {
         Schema::table('diary', function (Blueprint $table) {
-            //
+    
         });
     }
 }

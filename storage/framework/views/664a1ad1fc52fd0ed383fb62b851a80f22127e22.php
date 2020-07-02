@@ -62,7 +62,7 @@
                             <a data-toggle="tab" href="#habits" role="tab">Habits</a>
                         </li>
                         <li>
-                            <a data-toggle="tab" href="#stories" role="tab">Shared Stories</a>
+                            <a  href="#stories" data-toggle="tab" role="tab">Shared Stories</a>
                         </li>
                         <li>
                             <a data-toggle="tab" href="#weavesilk" role="tab">Weave Silk</a>
@@ -95,7 +95,7 @@
                     
                     <!-- Shared stories form begin -->
                     <div class="tab-pane fade" id="stories" role="tabpanel">
-                                
+                        <?php echo $__env->make('stories.shared_stories', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>   
                     </div>
                     <!-- Shared stories form end -->
 
