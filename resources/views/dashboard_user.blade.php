@@ -73,9 +73,6 @@
                             <a  href="#stories" data-toggle="tab" role="tab">Shared Stories</a>
                         </li>
                         <li>
-                            <a data-toggle="tab" href="#weavesilk" role="tab">Weave Silk</a>
-                        </li>
-                        <li>
                             <a data-toggle="tab" href="#worrytree" role="tab">Worry Tree</a>
                         </li>
                     </ul>
@@ -107,10 +104,6 @@
                     </div>
                     <!-- Shared stories form end -->
 
-                    <!-- Weavesilk form begin -->
-                    <div class="tab-pane fade" id="weavesilk" role="tabpanel">
-                                
-                    </div>
                     <!-- weave silk form end -->
 
                     <!-- Worry tree form begin -->

@@ -109,7 +109,7 @@
 
                     <!-- Weavesilk form begin -->
                     <div class="tab-pane fade" id="weavesilk" role="tabpanel">
-                                
+                        <?php echo $__env->make('weavesilk', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?> 
                     </div>
                     <!-- weave silk form end -->
 
