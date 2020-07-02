@@ -17,7 +17,8 @@ class QuestionnaireController extends Controller
 
     public function create()
     {
-        return view('questionnaire.create');
+        $questionnaire = new Questionnaire();
+        return view('questionnaire.create',compact('questionnaire'));
     }
 
     public function store()
@@ -25,10 +26,10 @@ class QuestionnaireController extends Controller
         $data = $this->getValidatedQuestionnaire();
         $questionnaire = Questionnaire::create($data);
         
-        $users=User::all();
+        /*$users=User::all();
         foreach ($users as $user) {
         $user->notify(new QuestionnaireNotification($questionnaire->questionnaireTitle));
-        }
+        }*/
         return redirect('admin/home/questionnaires/'.$questionnaire->id);
     }
 

@@ -14,7 +14,7 @@ class AddDefaultToIsApprovedVolunteersTable extends Migration
     public function up()
     {
         Schema::table('volunteers', function (Blueprint $table) {
-            $table->string('queries')->default(0)->change();
+            $table->string('is_Approved')->default(0)->change();
         });
     }
 

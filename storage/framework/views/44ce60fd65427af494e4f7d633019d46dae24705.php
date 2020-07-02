@@ -44,6 +44,14 @@
 </div>
 <br>
 
+
+
+<!-- flash messages section -->
+<?php if(session()->has('message')): ?>
+<div class="alert alert-success"><?php echo e(session()->get('message')); ?></div>
+<?php endif; ?>
+
+
 <!-- trading history area start -->
 <div class="col-lg-12 mt-sm-30 mt-xs-30" id="forms">
     <div class="card">
@@ -82,8 +90,8 @@
                     <!-- Post a story form end -->
 
                     <!-- Cognitive Diary -->
-                    <div class="tab-pane fade show active" id="diary" role="tabpanel">
-
+                    <div class="tab-pane fade" id="diary" role="tabpanel">
+                        <?php echo $__env->make('diary.create', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     </div>
                     <!-- Cognitive diary end -->
 
@@ -101,7 +109,7 @@
 
                     <!-- Weavesilk form begin -->
                     <div class="tab-pane fade" id="weavesilk" role="tabpanel">
-                                
+                        <?php echo $__env->make('weavesilk', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?> 
                     </div>
                     <!-- weave silk form end -->
 

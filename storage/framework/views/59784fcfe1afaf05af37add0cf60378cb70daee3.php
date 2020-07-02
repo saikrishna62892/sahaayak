@@ -49,6 +49,13 @@
 </div>
 <br>
 
+<!-- flash messages section -->
+<div class="container">
+    <?php if(session()->has('message')): ?>
+    <center><div class="alert alert-success"><?php echo e(session()->get('message')); ?></div></center>
+    <?php endif; ?>
+</div>
+
 <!-- trading history area start -->
 <div class="col-lg-12 mt-sm-30 mt-xs-30" id="forms">
     <div class="card">
@@ -116,27 +123,7 @@
 
                     <!-- assessments form begin -->
                     <div class="tab-pane fade" id="assessments" role="tabpanel">
-                        <h4 align="center">Assessments Form</h4>
-                        <div class="card">
-                            <div class="card-header">Available Questionnaires</div>
-                            <div class="card-body">
-                                <?php if(session('status')): ?>
-                                    <div class="alert alert-success" role="alert">
-                                        <?php echo e(session('status')); ?>
-
-                                    </div>
-                                <?php endif; ?>
-                                
-                                <?php $__currentLoopData = $questionnaires; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $questionnaire): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <div>
-                                <a href="/admin/home/questionnaires/<?php echo e($questionnaire->id); ?>/questions/create"><?php echo e($questionnaire->questionnaireTitle); ?></a>
-                                </div>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                <div>
-                                    <a href="/admin/home/questionnaires/create" class="btn btn-dark">create new questionnaire</a>
-                                </div>
-                            </div>
-                        </div>
+                        <?php echo $__env->make('questionnaire.allquestionnaires', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     </div>
                     <!-- assessments form end -->
                 </div>
@@ -146,6 +133,9 @@
 </div>
 <!-- trading history area end -->
 <br>
+
+
+
 <!-- trading history area start -->
 <div class="col-lg-12 mt-sm-30 mt-xs-30" id="forms">
     <div class="card">
@@ -180,7 +170,7 @@
                         <?php echo $__env->make('news.shared_news', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     </div>
                     <!-- shared_news form end -->
-
+                            
                     <!-- shared_talks form begin -->
                     <div class="tab-pane fade" id="shared_talks" role="tabpanel">
                         <h4 align="center">Shared Talks</h4>
@@ -198,7 +188,7 @@
                     <!-- shared_videos form begin -->
                     <div class="tab-pane fade" id="shared_videos" role="tabpanel">
                         <h4 align="center">Shared Videos</h4>
-                        
+                        <?php echo $__env->make('video.shared_videos', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     </div>
                     <!-- shared_videos form end -->
 
@@ -207,7 +197,14 @@
                         <h4 align="center">Shared Playlists</h4>
                                     
                     </div>
-                    <!-- shared_playlists form end -->                    
+                    <!-- shared_playlists form end -->   
+
+                     <!-- assessments form begin -->
+                    <div class="tab-pane fade" id="all_assessments" role="tabpanel">
+                        <h4 align="center">All Assessments</h4>
+                        <?php echo $__env->make('questionnaire.allquestionnaires', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                    <!-- assessments form end -->
+
                 </div>
             </div>
         </div>

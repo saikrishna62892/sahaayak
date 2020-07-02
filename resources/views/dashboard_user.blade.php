@@ -44,6 +44,14 @@
 </div>
 <br>
 
+
+
+<!-- flash messages section -->
+@if(session()->has('message'))
+<div class="alert alert-success">{{ session()->get('message')}}</div>
+@endif
+
+
 <!-- trading history area start -->
 <div class="col-lg-12 mt-sm-30 mt-xs-30" id="forms">
     <div class="card">
@@ -65,9 +73,6 @@
                             <a  href="#stories" data-toggle="tab" role="tab">Shared Stories</a>
                         </li>
                         <li>
-                            <a data-toggle="tab" href="#weavesilk" role="tab">Weave Silk</a>
-                        </li>
-                        <li>
                             <a data-toggle="tab" href="#worrytree" role="tab">Worry Tree</a>
                         </li>
                     </ul>
@@ -82,7 +87,7 @@
                     <!-- Post a story form end -->
 
                     <!-- Cognitive Diary -->
-                    <div class="tab-pane fade show active" id="diary" role="tabpanel">
+                    <div class="tab-pane fade" id="diary" role="tabpanel">
                         @include('diary.create')
                     </div>
                     <!-- Cognitive diary end -->
@@ -99,10 +104,6 @@
                     </div>
                     <!-- Shared stories form end -->
 
-                    <!-- Weavesilk form begin -->
-                    <div class="tab-pane fade" id="weavesilk" role="tabpanel">
-                                
-                    </div>
                     <!-- weave silk form end -->
 
                     <!-- Worry tree form begin -->
