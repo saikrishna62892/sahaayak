@@ -9,8 +9,7 @@ class LearnController extends Controller
 {
     public function show($learn , $learnID)
     {
-    	$comments = Comment::where('learn_id',$learnID)->get();
-    	//dd($comments);
+    	$comments = Comment::where('learn_id',$learnID)->take(5)->get();
     	return view('learn.'.$learn ,compact('learn','learnID','comments'));
     }
 }
