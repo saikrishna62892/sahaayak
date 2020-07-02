@@ -32,7 +32,7 @@ class VolunteerController extends Controller
             'file1' => $data['file1']->store('uploads/volunteer','public'),
             'file2' => $data['file2']->store('uploads/volunteer','public')
         ]);
-    	return 'Your Application has been submitted. please wait for approval';
+    	return view('/')->with('message','Your Application has been submitted. please wait for approval');
     }
 
     public function getDetails(Volunteer $unapprovedVolunteer)
@@ -43,6 +43,6 @@ class VolunteerController extends Controller
     public function approveVolunteer(Volunteer $unapprovedVolunteer)
     {
         $unapprovedVolunteer->update(['is_Approved' => 1]);
-        return 'This volunteer is approved';
+        return redirect()->back()->with('message','This volunteer is approved');
     }
 }

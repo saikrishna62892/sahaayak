@@ -49,6 +49,13 @@
 </div>
 <br>
 
+<!-- flash messages section -->
+<div class="container">
+    @if(session()->has('message'))
+    <center><div class="alert alert-success">{{ session()->get('message')}}</div></center>
+    @endif
+</div>
+
 <!-- trading history area start -->
 <div class="col-lg-12 mt-sm-30 mt-xs-30" id="forms">
     <div class="card">
@@ -152,6 +159,9 @@
                         <li>
                             <a data-toggle="tab" href="#shared_playlists" role="tab">Shared Playlists</a>
                         </li>
+                        <li>
+                            <a data-toggle="tab" href="#all_assessments" role="tab">Assessments</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -163,7 +173,6 @@
                         @include('news.shared_news')
                     </div>
                     <!-- shared_news form end -->
-
                             <!-- playlists form begin -->
                             <div class="tab-pane fade" id="playlists" role="tabpanel">
                                 <form>
@@ -230,7 +239,7 @@
                     <!-- shared_videos form begin -->
                     <div class="tab-pane fade" id="shared_videos" role="tabpanel">
                         <h4 align="center">Shared Videos</h4>
-                        
+                        @include('video.shared_videos')
                     </div>
                     <!-- shared_videos form end -->
 
@@ -239,7 +248,14 @@
                         <h4 align="center">Shared Playlists</h4>
                                     
                     </div>
-                    <!-- shared_playlists form end -->                    
+                    <!-- shared_playlists form end -->   
+
+                     <!-- assessments form begin -->
+                    <div class="tab-pane fade" id="all_assessments" role="tabpanel">
+                        <h4 align="center">All Assessments</h4>
+                        @include('questionnaire.allquestionnaires')
+                    <!-- assessments form end -->
+
                 </div>
             </div>
         </div>
