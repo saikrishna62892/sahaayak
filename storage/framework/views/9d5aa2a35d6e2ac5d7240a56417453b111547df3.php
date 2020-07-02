@@ -127,8 +127,8 @@
                                 <li><a href="<?php echo e(url('/#talk_to_us')); ?>">Talk to Us</a></li>
                                 <li><a href="#">Blog</a>
                                     <ul class="dropdown">
-                                        <li><a href="<?php echo e(url('stories.show')); ?>">Discover Stories</a></li>
-                                        <li><a href="<?php echo e(url('talks')); ?>">Expert Talks</a></li>
+                                        <li><a href="<?php echo e(url('displayStories')); ?>">Discover Stories</a></li>
+                                        <li><a href="<?php echo e(url('displayTalks')); ?>">Expert Talks</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="<?php echo e(url('news')); ?>">News</a></li>
@@ -239,7 +239,7 @@
                                 <li><a href="#">Blog</a>
                                     <ul class="dropdown">
                                         <li><a href="<?php echo e(url('displayStories')); ?>">Discover Stories</a></li>
-                                        <li><a href="<?php echo e(url('talks')); ?>">Expert Talks</a></li>
+                                        <li><a href="<?php echo e(url('displayTalks')); ?>">Expert Talks</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="<?php echo e(route('displayNews')); ?>">News</a></li>

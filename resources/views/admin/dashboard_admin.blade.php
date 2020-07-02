@@ -116,26 +116,7 @@
 
                     <!-- assessments form begin -->
                     <div class="tab-pane fade" id="assessments" role="tabpanel">
-                        <h4 align="center">Assessments Form</h4>
-                        <div class="card">
-                            <div class="card-header">Available Questionnaires</div>
-                            <div class="card-body">
-                                @if (session('status'))
-                                    <div class="alert alert-success" role="alert">
-                                        {{ session('status') }}
-                                    </div>
-                                @endif
-                                
-                                @foreach($questionnaires as $questionnaire)
-                                <div>
-                                <a href="/admin/home/questionnaires/{{$questionnaire->id}}/questions/create">{{$questionnaire->questionnaireTitle}}</a>
-                                </div>
-                                @endforeach
-                                <div>
-                                    <a href="/admin/home/questionnaires/create" class="btn btn-dark">create new questionnaire</a>
-                                </div>
-                            </div>
-                        </div>
+                        @include('questionnaire.allquestionnaires')
                     </div>
                     <!-- assessments form end -->
                 </div>
@@ -145,6 +126,9 @@
 </div>
 <!-- trading history area end -->
 <br>
+
+
+
 <!-- trading history area start -->
 <div class="col-lg-12 mt-sm-30 mt-xs-30" id="forms">
     <div class="card">
@@ -228,61 +212,7 @@
 								</form>
                             </div>
                             <!-- playlists form end -->
-
-
-
-<!-- assessments form begin -->
-
-                            <div class="tab-pane fade" id="assessments" role="tabpanel">
-                                <!--
-                                <form>
-                                	<label>Assessments</label>
-								   	<div class="form-group">
-								    	<label for="formGroupExampleInput">Heading</label>
-								    	<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Heading of the Post">
-								   	</div>
-								   	<div class="form-group">
-									    <label for="exampleFormControlTextarea1">Textarea</label>
-									    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Message"></textarea>
-								   	</div>
-									<div class="custom-control custom-checkbox mb-3">
-										<input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
-									    <label class="custom-control-label" for="customControlValidation1">Check this custom checkbox</label>
-									    <div class="invalid-feedback">Example invalid feedback text</div>
-									</div>
-									<div class="custom-control custom-radio">
-									    <input type="radio" class="custom-control-input" id="customControlValidation2" name="radio-stacked" required>
-									    <label class="custom-control-label" for="customControlValidation2">Toggle this custom radio</label>
-									</div>
-									<div class="custom-control custom-radio mb-3">
-									    <input type="radio" class="custom-control-input" id="customControlValidation3" name="radio-stacked" required>
-									    <label class="custom-control-label" for="customControlValidation3">Or toggle this other custom radio</label>
-									    <div class="invalid-feedback">More example invalid feedback text</div>
-									</div>
-									<div class="form-group">
-									    <select class="custom-select" required>
-									      	<option value="">Please select the category</option>
-									      	<option value="1">Depression</option>
-									      	<option value="2">Suicide</option>
-									      	<option value="3">Stress</option>
-									      	<option value="4">Stigma</option>
-									      	<option value="5">Healthy Sleep</option>
-									      	<option value="6">Mental Illness</option>
-									     	<option value="7">Hopelessness</option>
-									     	<option value="8">Fear of Loss</option>
-									     	<option value="9">Social Isolation</option>
-									    </select>
-									</div>
-									<div class="custom-file">
-									    <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-									    <label class="custom-file-label" for="validatedCustomFile">Choose Image for the Post...</label>
-									</div>
-									<center><button type="submit" class="btn btn-primary">Submit</button></center>
-								</form>
-                            </div>-->
-                            @include('questionnaire.allquestionnaires')
-                            
-                            <!-- assessments form end -->
+ 
                     <!-- shared_talks form begin -->
                     <div class="tab-pane fade" id="shared_talks" role="tabpanel">
                         <h4 align="center">Shared Talks</h4>
