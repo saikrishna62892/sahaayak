@@ -18,7 +18,7 @@ class QuestionnaireController extends Controller
     public function create()
     {
         $questionnaire = new Questionnaire();
-        return view('questionnaire.create')->with(compact('questionnaire'));
+        return view('questionnaire.create',compact('questionnaire'));
     }
 
     public function store()

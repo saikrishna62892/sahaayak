@@ -16,8 +16,13 @@ class QuestionController extends Controller
 
     public function create(Questionnaire $questionnaire)
     {
-        $question=new Question();
-        return view('question.create',compact('questionnaire','question'));
+        $question = new Question();
+        $answers = [];
+        $answers[0] = new Answer();
+        $answers[1] = new Answer();
+        $answers[2] = new Answer();
+        $answers[3] = new Answer();
+        return view('question.create',compact('questionnaire','answers'));
     }
 
     public function store(Questionnaire $questionnaire)
