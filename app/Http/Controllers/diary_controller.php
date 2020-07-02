@@ -13,7 +13,8 @@ class diary_controller extends Controller
 {
     function save(Request $req)
     {
-        switch($req->input('action')){
+        switch($req->input('action'))
+        {
             $user = Auth::user();
             case 'add_to_diary':
                 $diary=new Diary();
