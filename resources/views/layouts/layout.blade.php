@@ -133,6 +133,7 @@
                                 <li><a href="{{ url('news') }}">News</a></li>
                                 <li><a href="#">Hope Box</a>
                                     <ul class="dropdown">
+                                        <li><a href="{{ url('weavesilk') }}">Interactive Drawing</a></li>
                                         <li><a href="{{ url('inspire_me') }}">Inspire Me</a></li>
                                         <li><a href="{{ url('videos') }}">Videos</a></li>
                                         <li><a href="{{ url('playlists') }}">Playlists</a></li>
@@ -243,6 +244,7 @@
                                 <li><a href="{{ route('displayNews') }}">News</a></li>
                                 <li><a href="#">Hope Box</a>
                                     <ul class="dropdown">
+                                        <li><a href="{{ url('weavesilk') }}">Interactive Drawing</a></li>
                                         <li><a href="{{ url('inspire_me') }}">Inspire Me</a></li>
                                         <li><a href="{{ url('videos') }}">Videos</a></li>
                                         <li><a href="{{ url('playlists') }}">Playlists</a></li>

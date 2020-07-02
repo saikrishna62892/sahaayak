@@ -151,43 +151,4 @@
 Suicide
 <?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('comments'); ?>
-    <div class="classes__sidebar__comment">
-                                    <div class="classes__sidebar__comment__pic">
-                                        <img src="/img/classes-details/comment-1.png" alt="">
-                                        <div class="classes__sidebar__comment__rating">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
-                                        </div>
-                                    </div>
-                                    <div class="classes__sidebar__comment__text">
-                                        <span>04 Mar 2018</span>
-                                        <h6>Brandon Kelley</h6>
-                                        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
-                                            adipisci velit,</p>
-                                    </div>
-                                </div>
-                                <div class="classes__sidebar__comment">
-                                    <div class="classes__sidebar__comment__pic">
-                                        <img src="/img/classes-details/comment-2.png" alt="">
-                                        <div class="classes__sidebar__comment__rating">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
-                                        </div>
-                                    </div>
-                                    <div class="classes__sidebar__comment__text">
-                                        <span>04 Mar 2018</span>
-                                        <h6>Christina Kelley</h6>
-                                        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,</p>
-                                    </div>
-                                </div>
-
-<?php $__env->stopSection(); ?>
-
 <?php echo $__env->make('layouts.learn', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Ganesh\Desktop\dileep\sahaayak\resources\views/learn/depression.blade.php ENDPATH**/ ?>

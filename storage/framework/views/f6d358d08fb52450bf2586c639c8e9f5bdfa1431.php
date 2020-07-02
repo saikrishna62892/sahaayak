@@ -1,13 +1,13 @@
-@extends('layouts.learn')
 
-@section('breadcrumb')
+
+<?php $__env->startSection('breadcrumb'); ?>
 
 <h2>Understanding Suicide</h2>
 <h5>Quote about Suicide</h5>
 
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('learncontent')
+<?php $__env->startSection('learncontent'); ?>
 
 <div class="classes__details__large">
     <img src="/img/classes-details/cd-large.jpg" alt="">
@@ -24,9 +24,9 @@
     </div>
 </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('faq')
+<?php $__env->startSection('faq'); ?>
                       <div class="container">
                                     <div class="row d-flex justify-content-center">
                                         <div class="col-lg-12">
@@ -145,8 +145,48 @@
                                         </div>
                                     </div>
                                 </div>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('learnname')
+<?php $__env->startSection('learnname'); ?>
 Suicide
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('comments'); ?>
+    <div class="classes__sidebar__comment">
+                                    <div class="classes__sidebar__comment__pic">
+                                        <img src="/img/classes-details/comment-1.png" alt="">
+                                        <div class="classes__sidebar__comment__rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
+                                    </div>
+                                    <div class="classes__sidebar__comment__text">
+                                        <span>04 Mar 2018</span>
+                                        <h6>Brandon Kelley</h6>
+                                        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
+                                            adipisci velit,</p>
+                                    </div>
+    </div>
+                                <div class="classes__sidebar__comment">
+                                    <div class="classes__sidebar__comment__pic">
+                                        <img src="/img/classes-details/comment-2.png" alt="">
+                                        <div class="classes__sidebar__comment__rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
+                                    </div>
+                                    <div class="classes__sidebar__comment__text">
+                                        <span>04 Mar 2018</span>
+                                        <h6>Christina Kelley</h6>
+                                        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,</p>
+                                    </div>
+                                </div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.learn', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Ganesh\Desktop\dileep\sahaayak\resources\views/learn/suicide.blade.php ENDPATH**/ ?>

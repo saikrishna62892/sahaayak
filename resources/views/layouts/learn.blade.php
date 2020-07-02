@@ -101,7 +101,27 @@
                         <div class="classes__sidebar__item">
                             <h4>Review & Comment</h4>
                             <div class="classes__sidebar__comment__list">
-                                @yield('comments')
+                                @forelse($comments as $comment)
+                                <div class="classes__sidebar__comment">
+                                    <div class="classes__sidebar__comment__pic">
+                                        <img src="/img/classes-details/comment-1.png" alt="">
+                                        <div class="classes__sidebar__comment__rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
+                                    </div>
+                                    <div class="classes__sidebar__comment__text">
+                                        <span>{{$comment->created_at}}</span>
+                                        <h6>{{$comment->user->name}}</h6>
+                                        <p>{{$comment->comment}}</p>
+                                    </div>
+                                </div>
+                                @empty
+                                <p>No Reviews Yet.</p>
+                                @endforelse
                             </div>
                         </div>
                     </div>

@@ -170,4 +170,6 @@ Route::post('home/displaydiary','diary_controller@save')->name('addFields');
 Route::get('/displayStories','StoryController@display');
 Route::get('/incrementLike/{story}', 'StoryController@incrementLike')->name('increment');
 
-
+Route::get('/weavesilk', function () {
+    return view('weavesilk');
+});
