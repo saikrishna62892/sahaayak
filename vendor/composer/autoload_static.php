@@ -539,9 +539,9 @@ class ComposerStaticInit4cb398da79ce39bdb4e4610405d81ed7
         'App\\Http\\Controllers\\QuestionnaireController' => __DIR__ . '/../..' . '/app/Http/Controllers/QuestionnaireController.php',
         'App\\Http\\Controllers\\StoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/StoryController.php',
         'App\\Http\\Controllers\\SubscriptionController' => __DIR__ . '/../..' . '/app/Http/Controllers/SubscriptionController.php',
+        'App\\Http\\Controllers\\TalkController' => __DIR__ . '/../..' . '/app/Http/Controllers/TalkController.php',
         'App\\Http\\Controllers\\VideoController' => __DIR__ . '/../..' . '/app/Http/Controllers/VideoController.php',
         'App\\Http\\Controllers\\VolunteerController' => __DIR__ . '/../..' . '/app/Http/Controllers/VolunteerController.php',
-
         'App\\Http\\Controllers\\appointment_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/appointment_controller.php',
         'App\\Http\\Controllers\\diary_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/diary_controller.php',
         'App\\Http\\Controllers\\suggestion_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/suggestion_controller.php',
@@ -569,6 +569,7 @@ class ComposerStaticInit4cb398da79ce39bdb4e4610405d81ed7
         'App\\Subscription' => __DIR__ . '/../..' . '/app/Subscription.php',
         'App\\Suggestion' => __DIR__ . '/../..' . '/app/Suggestion.php',
         'App\\Survey' => __DIR__ . '/../..' . '/app/Survey.php',
+        'App\\Talk' => __DIR__ . '/../..' . '/app/Talk.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'App\\Video' => __DIR__ . '/../..' . '/app/Video.php',
         'App\\Volunteer' => __DIR__ . '/../..' . '/app/Volunteer.php',

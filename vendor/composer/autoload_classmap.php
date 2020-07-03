@@ -28,9 +28,9 @@ return array(
     'App\\Http\\Controllers\\QuestionnaireController' => $baseDir . '/app/Http/Controllers/QuestionnaireController.php',
     'App\\Http\\Controllers\\StoryController' => $baseDir . '/app/Http/Controllers/StoryController.php',
     'App\\Http\\Controllers\\SubscriptionController' => $baseDir . '/app/Http/Controllers/SubscriptionController.php',
+    'App\\Http\\Controllers\\TalkController' => $baseDir . '/app/Http/Controllers/TalkController.php',
     'App\\Http\\Controllers\\VideoController' => $baseDir . '/app/Http/Controllers/VideoController.php',
     'App\\Http\\Controllers\\VolunteerController' => $baseDir . '/app/Http/Controllers/VolunteerController.php',
-
     'App\\Http\\Controllers\\appointment_controller' => $baseDir . '/app/Http/Controllers/appointment_controller.php',
     'App\\Http\\Controllers\\diary_controller' => $baseDir . '/app/Http/Controllers/diary_controller.php',
     'App\\Http\\Controllers\\suggestion_controller' => $baseDir . '/app/Http/Controllers/suggestion_controller.php',
@@ -58,6 +58,7 @@ return array(
     'App\\Subscription' => $baseDir . '/app/Subscription.php',
     'App\\Suggestion' => $baseDir . '/app/Suggestion.php',
     'App\\Survey' => $baseDir . '/app/Survey.php',
+    'App\\Talk' => $baseDir . '/app/Talk.php',
     'App\\User' => $baseDir . '/app/User.php',
     'App\\Video' => $baseDir . '/app/Video.php',
     'App\\Volunteer' => $baseDir . '/app/Volunteer.php',

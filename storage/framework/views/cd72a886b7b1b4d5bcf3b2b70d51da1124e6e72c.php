@@ -1,5 +1,5 @@
-@extends('layouts.dashboard')
-	@section('content')
+
+	<?php $__env->startSection('content'); ?>
 	<br>	
 	<div class="container" id="stats">
 		<div class="row">
@@ -83,20 +83,20 @@
 								</thead>
 
 								<tbody>
-								  @foreach($appointments as $item)
+								  <?php $__currentLoopData = $appointments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 								  <tr>
 								    <th scope="row">3</th>
-								    <td>{{$item->name}}</td>
-								    <td>{{$item->email}}</td>
-								    <td>{{$item->phone}}</td>
-								    <td>{{$item->timings}}</td>
-								    <td>{{$item->message}}</td>
+								    <td><?php echo e($item->name); ?></td>
+								    <td><?php echo e($item->email); ?></td>
+								    <td><?php echo e($item->phone); ?></td>
+								    <td><?php echo e($item->timings); ?></td>
+								    <td><?php echo e($item->message); ?></td>
 								    <td>
 								     <!-- <button type="button" onclick="" class="btn btn-primary" style="background-color: #5768ad; ">Accept Request</button> -->
-								      <a href="/volunteer/appointment/{{$item->id}}/acceptAppointment" class="btn btn-dark">Accept Request</a>
+								      <a href="/volunteer/appointment/<?php echo e($item->id); ?>/acceptAppointment" class="btn btn-dark">Accept Request</a>
 								    </td>
 								  </tr>
-								  @endforeach
+								  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 								</tbody>
 
 								</table>
@@ -115,24 +115,25 @@
 								    <th>Phone</th>
 								    <th>Timing</th>
 								    <th>Message</th>
+								    <th>Session Completed</th>
 								  </tr>
 								</thead>
 
 								<tbody>
-								  @foreach($completedappointments as $item)
+								  <?php $__currentLoopData = $completedappointments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 								  <tr>
 								    <th scope="row">3</th>
-								    <td>{{$item->name}}</td>
-								    <td>{{$item->email}}</td>
-								    <td>{{$item->phone}}</td>
-								    <td>{{$item->timings}}</td>
-								    <td>{{$item->message}}</td>
+								    <td><?php echo e($item->name); ?></td>
+								    <td><?php echo e($item->email); ?></td>
+								    <td><?php echo e($item->phone); ?></td>
+								    <td><?php echo e($item->timings); ?></td>
+								    <td><?php echo e($item->message); ?></td>
 								    <td>
 								     <!-- <button type="button" onclick="" class="btn btn-primary" style="background-color: #5768ad; ">Accept Request</button> -->
 								      <a href="#" class="btn btn-dark">Appointment attended</a>
 								    </td>
 								  </tr>
-								  @endforeach
+								  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 								</tbody>
 
 								</table>
@@ -151,4 +152,6 @@
 	</div>
 	<!-- trading history area end -->
 
-@endsection 
+<?php $__env->stopSection(); ?> 
+
+<?php echo $__env->make('layouts.dashboard', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH G:\sahayak1\sahaayak\resources\views/volunteer/dashboard_volunteer.blade.php ENDPATH**/ ?>
