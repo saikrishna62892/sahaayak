@@ -117,7 +117,7 @@
                     <!-- playlists form begin -->
                     <div class="tab-pane fade" id="playlists" role="tabpanel">
                         <h4 align="center">Playlists Form</h4>
-                                    
+                         <?php echo $__env->make('playlists.create', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>           
                     </div>
                     <!-- playlists form end -->
 
@@ -196,6 +196,7 @@
                     <!-- shared_playlists form begin -->
                     <div class="tab-pane fade" id="shared_playlists" role="tabpanel">
                         <h4 align="center">Shared Playlists</h4>
+                        <?php echo $__env->make('playlists.shared_playlists', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                     
                     </div>
                     <!-- shared_playlists form end -->   

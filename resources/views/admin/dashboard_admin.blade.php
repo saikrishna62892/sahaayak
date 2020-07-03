@@ -117,7 +117,7 @@
                     <!-- playlists form begin -->
                     <div class="tab-pane fade" id="playlists" role="tabpanel">
                         <h4 align="center">Playlists Form</h4>
-                                    
+                         @include('playlists.create')           
                     </div>
                     <!-- playlists form end -->
 
@@ -196,6 +196,7 @@
                     <!-- shared_playlists form begin -->
                     <div class="tab-pane fade" id="shared_playlists" role="tabpanel">
                         <h4 align="center">Shared Playlists</h4>
+                        @include('playlists.shared_playlists')
                                     
                     </div>
                     <!-- shared_playlists form end -->   

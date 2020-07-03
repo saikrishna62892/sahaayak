@@ -82,12 +82,13 @@ class HomeController extends Controller
         $shared_news = DB::table('news')->orderBy("created_at","desc")->get();
         $shared_videos = DB::table('videos')->orderBy("created_at","desc")->get();
         $shared_quotes = DB::table('quotes')->orderBy("id","desc")->get();
+        $shared_playlists = DB::table('playlists')->orderBy("id","desc")->get();
 
         //dd($analyticsData);
         //dd($analyticsData[0]);
         //dd($analyticsData[0]['pageViews']);
 
-        return view('admin.dashboard_admin',compact('unapprovedVolunteers','talks','users_count','volunteers_count','badges','shared_news','shared_videos','shared_quotes','analyticsData'));
+        return view('admin.dashboard_admin',compact('unapprovedVolunteers','talks','users_count','volunteers_count','badges','shared_news','shared_videos','shared_quotes','analyticsData','shared_playlists'));
     }
 
     public function volunteerHome()

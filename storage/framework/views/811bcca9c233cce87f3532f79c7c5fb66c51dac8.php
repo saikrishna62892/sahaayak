@@ -1,5 +1,5 @@
-@extends('layouts.layout')
-    @section('content')
+
+    <?php $__env->startSection('content'); ?>
 
     
     
@@ -26,30 +26,30 @@
             <div class="row">
                 <div class="col-lg-6 order-lg-2 order-1">
                 <?php $count=1; ?>
-                @foreach($playlist as $i)
-                    <h2> {{$count++}}</h2>
+                <?php $__currentLoopData = $playlist; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $i): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <h2> <?php echo e($count++); ?></h2>
                     <div class="blog__details">
                         <div class="blog__details__author">
                             <div class="blog__details__author__pic">
                             </div>
                             <div class="blog__details__author__text">
-                            @if(is_null($i->image))
-                                    <img src="{{ asset('/img/playlists/default.png') }}" alt="">
-                                @else
-                                    <img src="{{ asset('/img/playlists/'.$i->image) }}" alt="">
-                                @endif
+                            <?php if(is_null($i->image)): ?>
+                                    <img src="<?php echo e(asset('/img/playlists/default.png')); ?>" alt="">
+                                <?php else: ?>
+                                    <img src="<?php echo e(asset('/img/playlists/'.$i->image)); ?>" alt="">
+                                <?php endif; ?>
                             </div>
                     
-                                <h4>Source: {{$i->playlistSource}} </h4>
-                                 <p>Tag : {{$i->playlistTag}}</p>
+                                <h4>Source: <?php echo e($i->playlistSource); ?> </h4>
+                                 <p>Tag : <?php echo e($i->playlistTag); ?></p>
                                 
                                 <p> URL: <?php $link="https://$i->playlistURL" ?>
-                            <p><a href="{{ $link }}" style="color:#5768ad;" target="_blank">Click Here</a></p></p>
+                            <p><a href="<?php echo e($link); ?>" style="color:#5768ad;" target="_blank">Click Here</a></p></p>
                                 
                             </div>
                         </div>
         
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             
                         <div class="blog__details__quote">
                             <p>link to the pocast/playlist and a short description about that</p>
@@ -69,4 +69,5 @@
             </div>
         </div>
     </section>
-    @endsection
+    <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\sahaayak\resources\views/playlists.blade.php ENDPATH**/ ?>
