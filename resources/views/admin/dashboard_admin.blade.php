@@ -140,26 +140,26 @@
 
 <!-- trading history area start -->
 <div class="col-lg-12 mt-sm-30 mt-xs-30" id="forms">
-    <div class="card">
+    <div class="card shadow p-4 mb-5 bg-white rounded">
         <div class="card-body">
             <div class="d-sm-flex justify-content-between align-items-center">
                 <h4 class="header-title">Shared Handles</h4>
                 <div class="trd-history-tabs">
                     <ul class="nav" role="tablist">
                         <li>
-                            <a class="active" data-toggle="tab" href="#shared_news" role="tab">Shared News</a>
+                            <a class="active" data-toggle="tab" href="#shared_news" role="tab">News</a>
                         </li>
                         <li>
-                            <a data-toggle="tab" href="#shared_talks" role="tab">Shared Talks</a>
+                            <a data-toggle="tab" href="#shared_talks" role="tab">Talks</a>
                         </li>
                         <li>
-                            <a data-toggle="tab" href="#shared_inspire_me" role="tab">Shared Quotes</a>
+                            <a data-toggle="tab" href="#shared_inspire_me" role="tab">Quotes</a>
                         </li>
                         <li>
-                            <a data-toggle="tab" href="#shared_videos" role="tab">Shared Videos</a>
+                            <a data-toggle="tab" href="#shared_videos" role="tab">Videos</a>
                         </li>
                         <li>
-                            <a data-toggle="tab" href="#shared_playlists" role="tab">Shared Playlists</a>
+                            <a data-toggle="tab" href="#shared_playlists" role="tab">Playlists</a>
                         </li>
                     </ul>
                 </div>
@@ -221,9 +221,9 @@
     	<div class="row">
         <!-- Progress Table start -->
         <div class="col-12 mt-5">
-            <div class="card">
+            <div class="card shadow p-4 mb-5 bg-white rounded">
                 <div class="card-body">
-                    <h4 class="header-title">UnApproved Volunteers Table</h4>
+                    <h4 class="header-title" align="center">Pending Volunteers List</h4>
                     <div class="single-table">
                         <div class="table-responsive">
                             <table class="table table-hover progress-table text-center">
@@ -238,10 +238,10 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{ $count=1 }}
+                                    <?php $count=1 ?>
                                     @foreach($unapprovedVolunteers as $unapprovedVolunteer)
                                     <tr>
-                                        <th scope="row">{{ $count++ }}</th>
+                                        <td scope="row">{{ $count++ }}</td>
                                         <td>{{ $unapprovedVolunteer->name }}</td>
                                         <td>{{ $unapprovedVolunteer->phone}}</td>
                                         <td>
