@@ -1,10 +1,11 @@
 <div class="card">
     <div class="card-body">
-        @if (session('status'))
+        <?php if(session('status')): ?>
         <div class="alert alert-success" role="alert">
-        {{ session('status') }}
+        <?php echo e(session('status')); ?>
+
         </div>
-        @endif
+        <?php endif; ?>
         <div align="right">
             <a href="/admin/home/questionnaires/create" class="btn btn-primary" style="background-color: #5768ad;">create new questionnaire</a>
         </div>
@@ -24,23 +25,23 @@
                         </thead>
                         <tbody>
                             <?php $count=1 ?>
-                            @foreach($questionnaires as $questionnaire)
+                            <?php $__currentLoopData = $questionnaires; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $questionnaire): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <tr>
-                                <th scope="row">{{ $count++ }}</th>
-                                <td><a href="/admin/home/questionnaires/{{$questionnaire->id}}/questions/create" style="color: #5768ad;">{{$questionnaire->questionnaireTitle}}</td>
-                                <td><a href="/admin/home/questionnaires/{{$questionnaire->id}}/edit" style="color: #5768ad;">Edit Questionnaire </a></td>
-                                <td><a href="/admin/home/questionnaires/{{$questionnaire->id}}/editQuestions" style="color: #5768ad;">Edit Questions</a></td>
-                                <td><form action="/admin/home/questionnaires/{{$questionnaire->id}}" method="post">
-                                        @method('DELETE')
-                                        @csrf
+                                <th scope="row"><?php echo e($count++); ?></th>
+                                <td><a href="/admin/home/questionnaires/<?php echo e($questionnaire->id); ?>/questions/create" style="color: #5768ad;"><?php echo e($questionnaire->questionnaireTitle); ?></td>
+                                <td><a href="/admin/home/questionnaires/<?php echo e($questionnaire->id); ?>/edit" style="color: #5768ad;">Edit Questionnaire </a></td>
+                                <td><a href="/admin/home/questionnaires/<?php echo e($questionnaire->id); ?>/editQuestions" style="color: #5768ad;">Edit Questions</a></td>
+                                <td><form action="/admin/home/questionnaires/<?php echo e($questionnaire->id); ?>" method="post">
+                                        <?php echo method_field('DELETE'); ?>
+                                        <?php echo csrf_field(); ?>
                                         <button style="color: #5768ad;background:none!important;border:none;">Delete Quesionnaire</button>
                                     </form></td>
                             </tr>
-                            @endforeach
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</div><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/questionnaire/allquestionnaires.blade.php ENDPATH**/ ?>
