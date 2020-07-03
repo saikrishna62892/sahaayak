@@ -133,14 +133,15 @@ Route::get('/register/step2/{user}','VolunteerController@step2');
 Route::post('/register/step2/{user}','VolunteerController@store');
 
 //User HopeBox Video Routes
-Route::get('/home/hopebox/videos','HopeBoxController@displayVideos');
+Route::get('/videos','HopeBoxController@displayVideos');
+
 
 //Admin Volunteer list Routes
 Route::get('/admin/home/volunteer/{unapprovedVolunteer}/getDetails','VolunteerController@getDetails');
 Route::get('/admin/home/volunteer/{unapprovedVolunteer}/approveVolunteer','VolunteerController@approveVolunteer');
 
-//end of dileep added routes
 
+//end of dileep added routes
 Route::get('team', function () {
     return view('team');
 });

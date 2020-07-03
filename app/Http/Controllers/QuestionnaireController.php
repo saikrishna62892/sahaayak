@@ -44,7 +44,7 @@ class QuestionnaireController extends Controller
 
     public function update(Questionnaire $questionnaire)
     {
-        $data = $this->getValidatedData();
+        $data = $this->getValidatedQuestionnaire();
         $questionnaire->update($data);
         return redirect('admin/home/questionnaires/'.$questionnaire->id);
     }

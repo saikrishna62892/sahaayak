@@ -14,24 +14,25 @@
                 </thead>
                 <tbody>
                     <?php $count=1 ?>
-                    @forelse($shared_playlists as $playlists)
+                    <?php $__empty_1 = true; $__currentLoopData = $shared_playlists; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $playlists): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
                     <tr>
-                        <td scope="row">{{ $count++ }}</td>
-                        <td>{{ $playlists->playlistSource }}</td>
-                        <td>{{ $playlists->playlistTag }}</td>
+                        <td scope="row"><?php echo e($count++); ?></td>
+                        <td><?php echo e($playlists->playlistSource); ?></td>
+                        <td><?php echo e($playlists->playlistTag); ?></td>
                         <td>
                         	<?php $link="https://".$playlists->playlistURL ?>
-                            <a href="{{ $link }}" style="color:#5768ad;" target="_blank">Click here</a>
+                            <a href="<?php echo e($link); ?>" style="color:#5768ad;" target="_blank">Click here</a>
                         </td>
                         <td><a href="#" style="color: #5768ad;">Edit</a></td>
                         <td><a href="#" style="color: #5768ad;">Delete</a></td>
-                        <td>{{ Carbon\Carbon::parse($playlists->created_at)->format('d-M-Y g:h:i:s A') }}</td>
+                        <td><?php echo e(Carbon\Carbon::parse($playlists->created_at)->format('d-M-Y g:h:i:s A')); ?></td>
                     </tr>
-                  	@empty
+                  	<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
 						<h5>No Playlistss Available</h5>
-					@endforelse
+					<?php endif; ?>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
+<?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/playlists/shared_playlists.blade.php ENDPATH**/ ?>

@@ -14,21 +14,22 @@
                 </thead>
                 <tbody>
                     <?php $count=1 ?>
-                    @forelse($shared_videos as $video)
+                    <?php $__empty_1 = true; $__currentLoopData = $shared_videos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $video): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
                     <tr>
-                        <td scope="row">{{ $count++ }}</td>
-                        <td>{{ $video->videoSource }}</td>
-                        <td colspan="2">{{ $video->videoTag }}</td>
-                        <td><a href="{{ $video->videoURL }}" target="_blank" style="color: #5768ad;">Click here</a></td>
+                        <td scope="row"><?php echo e($count++); ?></td>
+                        <td><?php echo e($video->videoSource); ?></td>
+                        <td colspan="2"><?php echo e($video->videoTag); ?></td>
+                        <td><a href="<?php echo e($video->videoURL); ?>" target="_blank" style="color: #5768ad;">Click here</a></td>
                         <td><a href="#" style="color: #5768ad;">Edit</a></td>
                         <td><a href="#" style="color: #5768ad;">Delete</a></td>
-                        <td>{{ Carbon\Carbon::parse($video->created_at)->format('d-M-Y g:h:i:s A') }}</td>
+                        <td><?php echo e(Carbon\Carbon::parse($video->created_at)->format('d-M-Y g:h:i:s A')); ?></td>
                     </tr>
-                  	@empty
+                  	<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
 						<h5>No Videos Available</h5>
-					@endforelse
+					<?php endif; ?>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
+<?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/video/shared_videos.blade.php ENDPATH**/ ?>

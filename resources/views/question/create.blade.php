@@ -1,13 +1,13 @@
 @extends('layouts.dashboard')
 @section('content')
-
-            <div class="card">
-                <div class="card-header">New Question</div>
-
-                <div class="card-body">
-                   <form action="/admin/home/questionnaires/{{ $questionnaire->id }}/questions" method="post">
-                    @include('question.question')
-                   </form>
-                </div>
-            </div>
+	<br>
+	<div class="container">
+	    <div class="card">
+	        <div class="card-body">
+	        	<?php $question_count = App\Question::where('questionnaire_id',$questionnaire->id)->get() ?>
+	        	<h4>Question #{{ $question_count->count()+1 }}</h4>
+	            @include('question.question')
+	        </div>
+	    </div>
+	</div>
 @endsection
