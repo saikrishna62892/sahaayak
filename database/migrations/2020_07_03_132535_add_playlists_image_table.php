@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnToCommentsTable extends Migration
+class AddPlaylistsImageTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddColumnToCommentsTable extends Migration
      */
     public function up()
     {
-        Schema::table('comments', function (Blueprint $table) {
-            $table->string('comment');
+        Schema::table('playlists', function (Blueprint $table) {
+            $table->mediumText('image')->nullable();
         });
     }
 
@@ -25,7 +25,7 @@ class AddColumnToCommentsTable extends Migration
      */
     public function down()
     {
-        Schema::table('comments', function (Blueprint $table) {
+        Schema::table('playlists', function (Blueprint $table) {
             //
         });
     }

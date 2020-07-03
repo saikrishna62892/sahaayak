@@ -4,7 +4,7 @@
        <div class="form-group">
     	<label for="formGroupExampleInput">Author</label>
     	<input type="text" class="form-control" name="Author" id="formGroupExampleInput" placeholder="author">
-    	<?php $__errorArgs = ['author'];
+    	<?php $__errorArgs = ['Author'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -18,7 +18,7 @@ unset($__errorArgs, $__bag); ?>
        <div class="form-group">
     	<label for="formGroupExampleInput">Quote</label>
     	<input type="text" class="form-control" name="Quote" id="formGroupExampleInput" placeholder="quote">
-    	<?php $__errorArgs = ['quote'];
+    	<?php $__errorArgs = ['Quote'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -32,7 +32,7 @@ unset($__errorArgs, $__bag); ?>
    	<div class="form-group">
 	    <label for="formGroupExampleInput">Inspired_from</label>
 	    <input type="text" class="form-control" name="Inspired_from" id="formGroupExampleInput" placeholder="inspired_from">
-	    <?php $__errorArgs = ['inspired_from'];
+	    <?php $__errorArgs = ['Inspired_from'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -46,7 +46,7 @@ unset($__errorArgs, $__bag); ?>
        <div class="form-group">
     	<label for="formGroupExampleInput">Tags</label>
     	<input type="text" class="form-control" name="Tag" id="formGroupExampleInput" placeholder="tags">
-    	<?php $__errorArgs = ['tags'];
+    	<?php $__errorArgs = ['Tags'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -60,7 +60,7 @@ unset($__errorArgs, $__bag); ?>
        <div class="form-group">
     	<label for="formGroupExampleInput">Link</label>
     	<input type="text" class="form-control" name="Link" id="formGroupExampleInput" placeholder="link">
-    	<?php $__errorArgs = ['link'];
+    	<?php $__errorArgs = ['Link'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -75,7 +75,7 @@ unset($__errorArgs, $__bag); ?>
 	    <input type="file" class="custom-file-input" name="Image" id="file-upload">
 	    <label class="custom-file-label" for="validatedCustomFile">Choose Image for the Post...</label>
 	    <div id="file-upload-filename"></div>
-	    <?php $__errorArgs = ['image'];
+	    <?php $__errorArgs = ['Image'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }

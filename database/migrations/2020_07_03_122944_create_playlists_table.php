@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddForeignKeyToStoriesTable extends Migration
+class CreatePlaylistsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class AddForeignKeyToStoriesTable extends Migration
      */
     public function up()
     {
-        Schema::table('stories', function (Blueprint $table) {
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        Schema::create('playlists', function (Blueprint $table) {
+            $table->id();
+            $table->string('playlistSource');
+            $table->string('playlistTag');
+            $table->string('playlistURL');
+            $table->timestamps();
         });
     }
 
@@ -26,8 +29,6 @@ class AddForeignKeyToStoriesTable extends Migration
      */
     public function down()
     {
-        Schema::table('stories', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('playlists');
     }
 }
