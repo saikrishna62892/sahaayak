@@ -14,7 +14,7 @@ class appointment_controller extends Controller
     {
         $appointment=new Appointment();
         $user = Auth::user();
-        $temp= DB::table('appointment');
+        $temp= DB::table('appointments');
         $temp++;
       $data = request()->validate([
          'name' => 'required',
@@ -26,8 +26,15 @@ class appointment_controller extends Controller
         $appointment->phone=$req->phone;
         $appointment->timings=$req->timings;
         $appointment->message=$req->message;
-        $appointment->timestamp=now();
+        $appointment->timestamps=now();
+        $appointment->user_id=$user->id;
         $appointment->save();
         return redirect()->back()->with('message', 'Posted Succcesfully'); 
+    }
+    public function appointmentAccepted(Appointment $appointment)
+    {
+        $appointment->update(['volunteer_id' => auth()->user()->volunteer->id]);
+        return redirect()->back();
+
     }
 }

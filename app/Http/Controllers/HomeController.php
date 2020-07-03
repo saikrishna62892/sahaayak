@@ -13,10 +13,9 @@ use App\Diary;
 use Auth;
 use App\News;
 use App\Video;
+use App\Appointment;
 use Analytics;
 use Spatie\Analytics\Period;
-
-
 
 
 class HomeController extends Controller
@@ -49,7 +48,7 @@ class HomeController extends Controller
             else
             {
                 Auth::logout();
-                return view('/')->with('message','Your Application is under verification process');
+                return view('welcome')->with('message','Your Application is under verification process');
             }
         }
         session()->put('message','Welcome '.$user->name.' to the Dashboard');
@@ -93,6 +92,9 @@ class HomeController extends Controller
 
     public function volunteerHome()
     {
-        return view('volunteer.dashboard_volunteer');
+        $appointments=Appointment::where('volunteer_id',null)->get();
+        $completedappointments=Appointment::where('volunteer_id',auth()->user()->volunteer->id)->get();
+       return view('volunteer.dashboard_volunteer')->with(compact('appointments','completedappointments'));
+
     }
 }

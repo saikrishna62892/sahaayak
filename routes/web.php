@@ -150,6 +150,11 @@ Route::get('inspire_me', function () {
 });
 
 Route::post('/appointment_controller','appointment_controller@save');
+
+
+Route::get('volunteer/appointment/{appointment}/acceptAppointment','appointment_controller@appointmentAccepted');
+
+
 Route::get('/suggestion_controller','suggestion_controller@save');
 
 
