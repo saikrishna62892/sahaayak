@@ -25,11 +25,6 @@ class QuestionnaireController extends Controller
     {
         $data = $this->getValidatedQuestionnaire();
         $questionnaire = Questionnaire::create($data);
-        
-        /*$users=User::all();
-        foreach ($users as $user) {
-        $user->notify(new QuestionnaireNotification($questionnaire->questionnaireTitle));
-        }*/
         return redirect('admin/home/questionnaires/'.$questionnaire->id);
     }
 
@@ -53,6 +48,15 @@ class QuestionnaireController extends Controller
     {
         $questionnaire->delete();
         return redirect('admin/home');
+    }
+
+    public function complete(Questionnaire $questionnaire)
+    {
+        /*$users=User::all();
+        foreach ($users as $user) {
+        $user->notify(new QuestionnaireNotification($questionnaire->questionnaireTitle));
+        }*/
+        return redirect('/admin/home');
     }
 
     public function getValidatedQuestionnaire()

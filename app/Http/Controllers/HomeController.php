@@ -46,7 +46,7 @@ class HomeController extends Controller
             else
             {
                 Auth::logout();
-                return view('/')->with('message','Your Application is under verification process');
+                return 'Your Application is under verification process';
             }
         }
         session()->put('message','Welcome '.$user->name.' to the Dashboard');

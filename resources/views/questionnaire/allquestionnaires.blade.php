@@ -12,6 +12,7 @@
                         <th>Title</th>
                         <th>Edit</th>
                         <th>Delete</th>
+                        <th>Complete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -29,6 +30,9 @@
                         </td>
                         <td>
                             <a href="/admin/home/questionnaires/{{$questionnaire->id}}/editQuestions" class="btn btn-dark">Edit Questions</a>
+                        </td>
+                        <td>
+                            <a href="/admin/home/questionnaires/{{$questionnaire->id}}/complete" class="btn btn-dark">complete</a>
                         </td>
                     </tr>
                     @endforeach

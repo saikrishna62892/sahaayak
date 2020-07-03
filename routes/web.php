@@ -74,6 +74,7 @@ Route::get('admin/home/questionnaires/{questionnaire}','QuestionnaireController@
 Route::get('admin/home/questionnaires/{questionnaire}/edit','QuestionnaireController@edit');
 Route::patch('admin/home/questionnaires/{questionnaire}','QuestionnaireController@update');
 Route::delete('admin/home/questionnaires/{questionnaire}','QuestionnaireController@destroy');
+Route::get('admin/home/questionnaires/{questionnaire}/complete','QuestionnaireController@complete');
 
 //Question Routes
 Route::get('admin/home/questionnaires/{questionnaire}/questions/create','QuestionController@create');
