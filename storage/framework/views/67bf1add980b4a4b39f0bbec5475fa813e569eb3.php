@@ -104,7 +104,7 @@
                     <!-- inspire_me form begin -->
                     <div class="tab-pane fade" id="inspire_me" role="tabpanel">
                         <h4 align="center">Inspire Me Form</h4>
-                        <?php echo $__env->make('quotes.create', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                    
                     </div>
 
                     <!-- videos form begin -->
@@ -117,7 +117,7 @@
                     <!-- playlists form begin -->
                     <div class="tab-pane fade" id="playlists" role="tabpanel">
                         <h4 align="center">Playlists Form</h4>
-                         <?php echo $__env->make('playlists.create', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>           
+                                    
                     </div>
                     <!-- playlists form end -->
 
@@ -181,7 +181,6 @@
                     <!-- shared_inspire_me form begin -->
                     <div class="tab-pane fade" id="shared_inspire_me" role="tabpanel">
                         <h4 align="center">Shared Quotes</h4>
-                        <?php echo $__env->make('quotes.shared_quotes', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                     
                     </div>
                     <!-- shared_inspire_me form end -->
@@ -196,7 +195,6 @@
                     <!-- shared_playlists form begin -->
                     <div class="tab-pane fade" id="shared_playlists" role="tabpanel">
                         <h4 align="center">Shared Playlists</h4>
-                        <?php echo $__env->make('playlists.shared_playlists', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                     
                     </div>
                     <!-- shared_playlists form end -->   
@@ -267,4 +265,4 @@
 </div>
 
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.dashboard', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\sahaayak\resources\views/admin/dashboard_admin.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.dashboard', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH G:\sahayak1\sahaayak\resources\views/admin/dashboard_admin.blade.php ENDPATH**/ ?>

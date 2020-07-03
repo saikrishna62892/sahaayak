@@ -29,6 +29,42 @@ Route::get('expert_story', function () {
     return view('expert_story');
 });
 
+Route::get('learn_depression', function () {
+    return view('learn_depression');
+});
+
+Route::get('learn_fear_of_loss', function () {
+    return view('learn_fear_of_loss');
+});
+
+Route::get('learn_healthy_sleep', function () {
+    return view('learn_healthy_sleep');
+});
+
+Route::get('learn_hopelessness', function () {
+    return view('learn_hopelessness');
+});
+
+Route::get('learn_mental_illness', function () {
+    return view('learn_mental_illness');
+});
+
+Route::get('learn_social_isolation', function () {
+    return view('learn_social_isolation');
+});
+
+Route::get('learn_stigma', function () {
+    return view('learn_stigma');
+});
+
+Route::get('learn_stress', function () {
+    return view('learn_stress');
+});
+
+Route::get('learn_suicide', function () {
+    return view('learn_suicide');
+});
+
 #Route::get('login', function () {
  #   return view('login');
 #});
@@ -90,22 +126,22 @@ Route::get('admin/home/videos/create','VideoController@create');
 Route::post('admin/home/videos','VideoController@store');
 
 //Subscription Routes
-Route::post('home/subscribe','SubscriptionController@store');
+Route::post('/home/subscribe','SubscriptionController@store');
 
 //Registration Routes
-Route::get('register/step2/{user}','VolunteerController@step2');
-Route::post('register/step2/{user}','VolunteerController@store');
+Route::get('/register/step2/{user}','VolunteerController@step2');
+Route::post('/register/step2/{user}','VolunteerController@store');
 
 //User HopeBox Video Routes
+<<<<<<< HEAD
 Route::get('/videos','HopeBoxController@displayVideos');
+=======
+Route::get('/home/hopebox/videos','HopeBoxController@displayVideos');
+>>>>>>> 91db71d52502cc5ff24f0b7594252dc6e2601e98
 
 //Admin Volunteer list Routes
-Route::get('admin/home/volunteer/{unapprovedVolunteer}/getDetails','VolunteerController@getDetails');
-Route::get('admin/home/volunteer/{unapprovedVolunteer}/approveVolunteer','VolunteerController@approveVolunteer');
-
-//Learn Routes
-Route::get('home/learn/{learn}/{learnID}','LearnController@show');
-Route::post('home/learn/{learn}/comment/{learnID}','CommentController@store');
+Route::get('/admin/home/volunteer/{unapprovedVolunteer}/getDetails','VolunteerController@getDetails');
+Route::get('/admin/home/volunteer/{unapprovedVolunteer}/approveVolunteer','VolunteerController@approveVolunteer');
 
 //end of dileep added routes
 
@@ -118,11 +154,14 @@ Route::get('inspire_me', function () {
 });
 
 Route::post('/appointment_controller','appointment_controller@save');
+
+
+Route::get('volunteer/appointment/{appointment}/acceptAppointment','appointment_controller@appointmentAccepted');
+
+
 Route::get('/suggestion_controller','suggestion_controller@save');
 
-Route::get('playlists', function () {
-    return view('playlists');
-});
+
 
 # bell icon routes start
 
@@ -173,6 +212,10 @@ Route::get('/incrementLike/{story}', 'StoryController@incrementLike')->name('inc
 //Inspireme routes by john&ganesh
 Route::post('/admin/home','QuoteController@save')->name('addFields');
 Route::get('/inspire_me','QuotesViewController@index');
+
+//Playlists routes by john&ganesh
+Route::post('/createPlaylist','PlaylistController@save')->name('createPlaylist');
+Route::get('/playlists','PlaylistController@index');
 
 Route::get('/weavesilk', function () {
     return view('weavesilk');
