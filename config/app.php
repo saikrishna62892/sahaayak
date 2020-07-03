@@ -230,7 +230,6 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Embed' => Cohensive\Embed\Facades\Embed::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
-
     ],
 
 ];

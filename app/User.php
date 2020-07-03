@@ -9,7 +9,9 @@ use App\Questionnaire;
 use App\Survey;
 use App\Volunteer;
 use App\Diary;
+use App\Appointment;
 use App\Comment;
+
 class User extends Authenticatable
 {
     use Notifiable;
@@ -65,6 +67,13 @@ class User extends Authenticatable
         return $this->hasMany(Diary::class);
 
     }
+
+    public function appointments()
+    {
+        return $this->hasMany(Appointment::class);
+    }
+
+
 
     public function comments()
     {
