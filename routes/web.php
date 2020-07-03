@@ -157,9 +157,7 @@ Route::get('volunteer/appointment/{appointment}/acceptAppointment','appointment_
 
 Route::get('/suggestion_controller','suggestion_controller@save');
 
-Route::get('playlists', function () {
-    return view('playlists');
-});
+
 
 # bell icon routes start
 
@@ -206,6 +204,14 @@ Route::get('/displayTalks','TalkController@display');
 Route::post('home/displaydiary','diary_controller@save')->name('addFields');
 Route::get('/displayStories','StoryController@display');
 Route::get('/incrementLike/{story}', 'StoryController@incrementLike')->name('increment');
+
+//Inspireme routes by john&ganesh
+Route::post('/admin/home','QuoteController@save')->name('addFields');
+Route::get('/inspire_me','QuotesViewController@index');
+
+//Playlists routes by john&ganesh
+Route::post('/createPlaylist','PlaylistController@save')->name('createPlaylist');
+Route::get('/playlists','PlaylistController@index');
 
 Route::get('/weavesilk', function () {
     return view('weavesilk');

@@ -25,74 +25,32 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 order-lg-2 order-1">
-                    <h2>#1</h2>
+                <?php $count=1; ?>
+                <?php $__currentLoopData = $playlist; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $i): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <h2> <?php echo e($count++); ?></h2>
                     <div class="blog__details">
                         <div class="blog__details__author">
                             <div class="blog__details__author__pic">
-                                <img src="img/blog/details/blog-posted.png" alt="">
                             </div>
                             <div class="blog__details__author__text">
-                                <h4>Author: </h4>
-                                <p>Inspired from :</p>
-                                <p><span>Tags:</span> All, Trending, Fuel, Cardio, Life Style</p>
+                            <?php if(is_null($i->image)): ?>
+                                    <img src="<?php echo e(asset('/img/playlists/default.png')); ?>" alt="">
+                                <?php else: ?>
+                                    <img src="<?php echo e(asset('/img/playlists/'.$i->image)); ?>" alt="">
+                                <?php endif; ?>
+                            </div>
+                    
+                                <h4>Source: <?php echo e($i->playlistSource); ?> </h4>
+                                 <p>Tag : <?php echo e($i->playlistTag); ?></p>
+                                
+                                <p> URL: <?php $link="https://$i->playlistURL" ?>
+                            <p><a href="<?php echo e($link); ?>" style="color:#5768ad;" target="_blank">Click Here</a></p></p>
+                                
                             </div>
                         </div>
-                        <div class="powr-music-player" id="1565bdc2_1592992071"></div><script src="https://www.powr.io/powr.js?platform=bootstrap"></script>
-                    </div>
-                </div>
-                <div class="col-lg-6 order-lg-2 order-1">
-                    <h2>#2</h2>
-                    <div class="blog__details">
-                        <div class="blog__details__author">
-                            <div class="blog__details__author__pic">
-                                <img src="img/blog/details/blog-posted.png" alt="">
-                            </div>
-                            <div class="blog__details__author__text">
-                                <h4>Author: </h4>
-                                <p>Inspired from :</p>
-                                <p><span>Tags:</span> All, Trending, Fuel, Cardio, Life Style</p>
-                            </div>
-                        </div>
-                        <div class="blog__details__quote">
-                            <p>link to the pocast/playlist and a short description about that</p>
-                            <p><a href="" style="color:#5768ad;">Open Playlist</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 order-lg-2 order-1">
-                    <h2>#3</h2>
-                    <div class="blog__details">
-                        <div class="blog__details__author">
-                            <div class="blog__details__author__pic">
-                                <img src="img/blog/details/blog-posted.png" alt="">
-                            </div>
-                            <div class="blog__details__author__text">
-                                <h4>Author: </h4>
-                                <p>Inspired from :</p>
-                                <p><span>Tags:</span> All, Trending, Fuel, Cardio, Life Style</p>
-                            </div>
-                        </div>
-                        <div class="blog__details__quote">
-                            <p>link to the pocast/playlist and a short description about that</p>
-                            <p><a href="" style="color:#5768ad;">Open Playlist</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 order-lg-2 order-1">
-                    <h2>#4</h2>
-                    <div class="blog__details">
-                        <div class="blog__details__author">
-                            <div class="blog__details__author__pic">
-                                <img src="img/blog/details/blog-posted.png" alt="">
-                            </div>
-                            <div class="blog__details__author__text">
-                                <h4>Author: </h4>
-                                <p>Inspired from :</p>
-                                <p><span>Tags:</span> All, Trending, Fuel, Cardio, Life Style</p>
-                            </div>
-                        </div>
+        
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            
                         <div class="blog__details__quote">
                             <p>link to the pocast/playlist and a short description about that</p>
                             <p><a href="" style="color:#5768ad;">Open Playlist</a></p>

@@ -104,7 +104,7 @@
                     <!-- inspire_me form begin -->
                     <div class="tab-pane fade" id="inspire_me" role="tabpanel">
                         <h4 align="center">Inspire Me Form</h4>
-                                    
+                        @include('quotes.create')
                     </div>
 
                     <!-- videos form begin -->
@@ -117,7 +117,7 @@
                     <!-- playlists form begin -->
                     <div class="tab-pane fade" id="playlists" role="tabpanel">
                         <h4 align="center">Playlists Form</h4>
-                                    
+                         @include('playlists.create')           
                     </div>
                     <!-- playlists form end -->
 
@@ -181,6 +181,7 @@
                     <!-- shared_inspire_me form begin -->
                     <div class="tab-pane fade" id="shared_inspire_me" role="tabpanel">
                         <h4 align="center">Shared Quotes</h4>
+                        @include('quotes.shared_quotes')
                                     
                     </div>
                     <!-- shared_inspire_me form end -->
@@ -195,6 +196,7 @@
                     <!-- shared_playlists form begin -->
                     <div class="tab-pane fade" id="shared_playlists" role="tabpanel">
                         <h4 align="center">Shared Playlists</h4>
+                        @include('playlists.shared_playlists')
                                     
                     </div>
                     <!-- shared_playlists form end -->   

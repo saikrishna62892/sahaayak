@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sahaayak</title>
-
+    <link rel="icon" href="/img/icon.png" type="image/gif">
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
@@ -24,15 +24,6 @@
     <link href="/css/introjs.css" rel="stylesheet">
     <link href="/css/introjs-modern.css" rel="stylesheet">
     
-
-
-    <script src="/js/jquery-3.3.1.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/jquery.nice-select.min.js"></script>
-    <script src="/js/jquery.barfiller.js"></script>
-    <script src="/js/jquery.slicknav.js"></script>
-    <script src="/js/owl.carousel.min.js"></script>
-    <script src="/js/main.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171070217-1"></script>
@@ -64,29 +55,25 @@
                 <li>CALL US: + 1 800-567-8990</li>
                 <li>WRITE US: OFFICE@EXAMPLE.COM</li>
             </ul>
-                                @guest
-                                <a href="{{ route('login') }}" class="primary-btn">Login</a>
-                                @if (Route::has('register'))
-                                    <a href="{{ route('register') }}" class="primary-btn">Join us</a>
-                                @endif
-                                @else
-
-                                <li class="dropdown">
-                                    <a id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-expanded="false" v-pre>
-                                        {{ Auth::user()->name }} <span class="caret"></span>
-                                    </a>
-
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                           onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
-                                            @csrf
-                                        </form>
-                                </li>
-                                @endguest
+            @guest
+            <a href="{{ route('login') }}" class="primary-btn">Login</a>
+            @if (Route::has('register'))
+                <a href="{{ route('register') }}" class="primary-btn">Join us</a>
+            @endif
+            @else
+            <div class="dropdown">
+                <button class="btn primary-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Return to Dashboard</a>
+                    <a class="dropdown-item" href="#">Messages</a>
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+                </div>
+            </div>
+            @endguest
         </div>
         
         <nav class="header__menu">
@@ -170,32 +157,29 @@
                     </div>
                     <div class="col-lg-9 col-md-9">
                         <div class="header__top__widget">
-                            <ul>
-                                <li>CALL US: + 1 800-567-8990</li>
-                                <li>WRITE US: OFFICE@EXAMPLE.COM</li>
-                            </ul>
                             @guest
+                                <ul>
+                                    <li>CALL US: + 1 800-567-8990</li>
+                                    <li>WRITE US: OFFICE@EXAMPLE.COM</li>
+                                </ul>
                                 <a href="{{ route('login') }}" class="primary-btn">Login</a>
                                 @if (Route::has('register'))
                                     <a href="{{ route('register') }}" class="primary-btn">Join us</a>
                                 @endif
                                 @else
-                                <li class="dropdown">
-                                    <a id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-expanded="false" v-pre>
-                                        {{ Auth::user()->name }} <span class="caret"></span>
-                                    </a>
-
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                <div class="dropdown">
+                                  <button class="btn primary-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</button>
+                                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">Return to Dashboard</a>
+                                    <a class="dropdown-item" href="#">Messages</a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
                                         </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
-                                            @csrf
-                                        </form>
-                                </li>
-                                @endguest
+                                  </div>
+                                </div>
+                            @endguest
                         </div>
                     </div>
 
@@ -216,15 +200,15 @@
                                 <li><a href="{{ url('about') }}">About</a></li>
                                 <li><a href="#">Learn</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('learn_depression') }}">Depression</a></li>
-                                        <li><a href="{{ url('learn_suicide') }}">Suicide</a></li>
-                                        <li><a href="{{ url('learn_stress') }}">Stress</a></li>
-                                        <li><a href="{{ url('learn_stigma') }}">Stigma</a></li>
-                                        <li><a href="{{ url('learn_healthy_sleep') }}">Healthy Sleep</a></li>
-                                        <li><a href="{{ url('learn_mental_illness') }}">Mental Illness</a></li>
-                                        <li><a href="{{ url('learn_hopelessness') }}">Hopelessness</a></li>
-                                        <li><a href="{{ url('learn_fear_of_loss') }}">Fear of Loss</a></li>
-                                        <li><a href="{{ url('learn_social_isolation') }}">Social Isolation</a></li>
+                                        <li><a href="/home/learn/depression/1">Depression</a></li>
+                                        <li><a href="/home/learn/suicide/2">Suicide</a></li>
+                                        <li><a href="/home/learn/stress/3">Stress</a></li>
+                                        <li><a href="/home/learn/stigma/4">Stigma</a></li>
+                                        <li><a href="/home/learn/healthy-sleep/5">Healthy Sleep</a></li>
+                                        <li><a href="/home/learn/mental-illness/6">Mental Illness</a></li>
+                                        <li><a href="/home/learn/hopelessness/7">Hopelessness</a></li>
+                                        <li><a href="/home/learn/fear-of-loss/8">Fear of Loss</a></li>
+                                        <li><a href="/home/learn/social-isolation/9">Social Isolation</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#">Assessment</a>
@@ -372,6 +356,16 @@
     <script src="/js/owl.carousel.min.js"></script>
     <script src="/js/main.js"></script>
     <script type="text/javascript" src="/js/intro.js"></script>
+    <!-- jquery latest version -->
+    <script src="/js/vendor/jquery-2.2.4.min.js"></script>
+    <!-- bootstrap 4 js -->
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/metisMenu.min.js"></script>
+    <script src="/js/jquery.slimscroll.min.js"></script>
+    <script src="/js/jquery.slicknav.min.js"></script>
+
 
     <!-- ManyChat Plugin -->
     <!--<script src="//widget.manychat.com/101206188315883.js" async="async"></script>-->

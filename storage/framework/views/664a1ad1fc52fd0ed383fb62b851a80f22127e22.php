@@ -44,6 +44,14 @@
 </div>
 <br>
 
+
+
+<!-- flash messages section -->
+<?php if(session()->has('message')): ?>
+<div class="alert alert-success"><?php echo e(session()->get('message')); ?></div>
+<?php endif; ?>
+
+
 <!-- trading history area start -->
 <div class="col-lg-12 mt-sm-30 mt-xs-30" id="forms">
     <div class="card">
@@ -62,10 +70,7 @@
                             <a data-toggle="tab" href="#habits" role="tab">Habits</a>
                         </li>
                         <li>
-                            <a data-toggle="tab" href="#stories" role="tab">Shared Stories</a>
-                        </li>
-                        <li>
-                            <a data-toggle="tab" href="#weavesilk" role="tab">Weave Silk</a>
+                            <a  href="#stories" data-toggle="tab" role="tab">Shared Stories</a>
                         </li>
                         <li>
                             <a data-toggle="tab" href="#worrytree" role="tab">Worry Tree</a>
@@ -82,7 +87,7 @@
                     <!-- Post a story form end -->
 
                     <!-- Cognitive Diary -->
-                    <div class="tab-pane fade show active" id="diary" role="tabpanel">
+                    <div class="tab-pane fade" id="diary" role="tabpanel">
                         <?php echo $__env->make('diary.create', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     </div>
                     <!-- Cognitive diary end -->
@@ -95,14 +100,10 @@
                     
                     <!-- Shared stories form begin -->
                     <div class="tab-pane fade" id="stories" role="tabpanel">
-                                
+                        <?php echo $__env->make('stories.shared_stories', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>   
                     </div>
                     <!-- Shared stories form end -->
 
-                    <!-- Weavesilk form begin -->
-                    <div class="tab-pane fade" id="weavesilk" role="tabpanel">
-                                
-                    </div>
                     <!-- weave silk form end -->
 
                     <!-- Worry tree form begin -->

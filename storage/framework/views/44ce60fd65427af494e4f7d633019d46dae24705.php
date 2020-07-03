@@ -73,9 +73,6 @@
                             <a  href="#stories" data-toggle="tab" role="tab">Shared Stories</a>
                         </li>
                         <li>
-                            <a data-toggle="tab" href="#weavesilk" role="tab">Weave Silk</a>
-                        </li>
-                        <li>
                             <a data-toggle="tab" href="#worrytree" role="tab">Worry Tree</a>
                         </li>
                     </ul>
@@ -106,12 +103,6 @@
                         <?php echo $__env->make('stories.shared_stories', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>   
                     </div>
                     <!-- Shared stories form end -->
-
-                    <!-- Weavesilk form begin -->
-                    <div class="tab-pane fade" id="weavesilk" role="tabpanel">
-                        <?php echo $__env->make('weavesilk', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?> 
-                    </div>
-                    <!-- weave silk form end -->
 
                     <!-- Worry tree form begin -->
                     <div class="tab-pane fade" id="worrytree" role="tabpanel">

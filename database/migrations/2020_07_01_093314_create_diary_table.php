@@ -16,7 +16,7 @@ class CreateDiaryTable extends Migration
         Schema::create('diary', function (Blueprint $table) {
             $table->text('title');
             $table->text('content');
-            $table->date('date');
+            $table->dateTime('date');
             
         });
     }

@@ -25,74 +25,32 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 order-lg-2 order-1">
-                    <h2>#1</h2>
+                <?php $count=1; ?>
+                @foreach($playlist as $i)
+                    <h2> {{$count++}}</h2>
                     <div class="blog__details">
                         <div class="blog__details__author">
                             <div class="blog__details__author__pic">
-                                <img src="img/blog/details/blog-posted.png" alt="">
                             </div>
                             <div class="blog__details__author__text">
-                                <h4>Author: </h4>
-                                <p>Inspired from :</p>
-                                <p><span>Tags:</span> All, Trending, Fuel, Cardio, Life Style</p>
+                            @if(is_null($i->image))
+                                    <img src="{{ asset('/img/playlists/default.png') }}" alt="">
+                                @else
+                                    <img src="{{ asset('/img/playlists/'.$i->image) }}" alt="">
+                                @endif
+                            </div>
+                    
+                                <h4>Source: {{$i->playlistSource}} </h4>
+                                 <p>Tag : {{$i->playlistTag}}</p>
+                                
+                                <p> URL: <?php $link="https://$i->playlistURL" ?>
+                            <p><a href="{{ $link }}" style="color:#5768ad;" target="_blank">Click Here</a></p></p>
+                                
                             </div>
                         </div>
-                        <div class="powr-music-player" id="1565bdc2_1592992071"></div><script src="https://www.powr.io/powr.js?platform=bootstrap"></script>
-                    </div>
-                </div>
-                <div class="col-lg-6 order-lg-2 order-1">
-                    <h2>#2</h2>
-                    <div class="blog__details">
-                        <div class="blog__details__author">
-                            <div class="blog__details__author__pic">
-                                <img src="img/blog/details/blog-posted.png" alt="">
-                            </div>
-                            <div class="blog__details__author__text">
-                                <h4>Author: </h4>
-                                <p>Inspired from :</p>
-                                <p><span>Tags:</span> All, Trending, Fuel, Cardio, Life Style</p>
-                            </div>
-                        </div>
-                        <div class="blog__details__quote">
-                            <p>link to the pocast/playlist and a short description about that</p>
-                            <p><a href="" style="color:#5768ad;">Open Playlist</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 order-lg-2 order-1">
-                    <h2>#3</h2>
-                    <div class="blog__details">
-                        <div class="blog__details__author">
-                            <div class="blog__details__author__pic">
-                                <img src="img/blog/details/blog-posted.png" alt="">
-                            </div>
-                            <div class="blog__details__author__text">
-                                <h4>Author: </h4>
-                                <p>Inspired from :</p>
-                                <p><span>Tags:</span> All, Trending, Fuel, Cardio, Life Style</p>
-                            </div>
-                        </div>
-                        <div class="blog__details__quote">
-                            <p>link to the pocast/playlist and a short description about that</p>
-                            <p><a href="" style="color:#5768ad;">Open Playlist</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 order-lg-2 order-1">
-                    <h2>#4</h2>
-                    <div class="blog__details">
-                        <div class="blog__details__author">
-                            <div class="blog__details__author__pic">
-                                <img src="img/blog/details/blog-posted.png" alt="">
-                            </div>
-                            <div class="blog__details__author__text">
-                                <h4>Author: </h4>
-                                <p>Inspired from :</p>
-                                <p><span>Tags:</span> All, Trending, Fuel, Cardio, Life Style</p>
-                            </div>
-                        </div>
+        
+                @endforeach
+            
                         <div class="blog__details__quote">
                             <p>link to the pocast/playlist and a short description about that</p>
                             <p><a href="" style="color:#5768ad;">Open Playlist</a></p>
