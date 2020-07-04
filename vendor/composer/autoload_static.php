@@ -1956,7 +1956,6 @@ class ComposerStaticInitf4ae8ae2835ae9d4188de33563386321
         'Google_Http_REST' => __DIR__ . '/..' . '/google/apiclient/src/Google/Http/REST.php',
         'Google_Model' => __DIR__ . '/..' . '/google/apiclient/src/Google/Model.php',
         'Google_Service' => __DIR__ . '/..' . '/google/apiclient/src/Google/Service.php',
-<<<<<<< HEAD
         'Google_Service_AbusiveExperienceReport' => __DIR__ . '/..' . '/google/apiclient-services/src/Google/Service/AbusiveExperienceReport.php',
         'Google_Service_AbusiveExperienceReport_Resource_Sites' => __DIR__ . '/..' . '/google/apiclient-services/src/Google/Service/AbusiveExperienceReport/Resource/Sites.php',
         'Google_Service_AbusiveExperienceReport_Resource_ViolatingSites' => __DIR__ . '/..' . '/google/apiclient-services/src/Google/Service/AbusiveExperienceReport/Resource/ViolatingSites.php',
@@ -8575,8 +8574,6 @@ class ComposerStaticInitf4ae8ae2835ae9d4188de33563386321
         'Google_Service_Drive_TeamDriveList' => __DIR__ . '/..' . '/google/apiclient-services/src/Google/Service/Drive/TeamDriveList.php',
         'Google_Service_Drive_TeamDriveRestrictions' => __DIR__ . '/..' . '/google/apiclient-services/src/Google/Service/Drive/TeamDriveRestrictions.php',
         'Google_Service_Drive_User' => __DIR__ . '/..' . '/google/apiclient-services/src/Google/Service/Drive/User.php',
-=======
->>>>>>> 7af3e6ceb649784d891587f3172a1a97d61ece8d
         'Google_Service_Exception' => __DIR__ . '/..' . '/google/apiclient/src/Google/Service/Exception.php',
         'Google_Service_Resource' => __DIR__ . '/..' . '/google/apiclient/src/Google/Service/Resource.php',
         'Google_Task_Exception' => __DIR__ . '/..' . '/google/apiclient/src/Google/Task/Exception.php',
