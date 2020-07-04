@@ -208,6 +208,24 @@ Route::get('/inspire_me','QuotesViewController@index');
 Route::post('/createPlaylist','PlaylistController@save')->name('createPlaylist');
 Route::get('/playlists','PlaylistController@index');
 
+//Googlesignup routes by john&ganesh
+Route::get('google', function () {
+    return view('auth/register');
+});
+    
+Route::get('/auth/google', 'Auth\LoginController@redirectToGoogle');
+Route::get('/auth/google/callback', 'Auth\LoginController@handleGoogleCallback');
+
+//Facebooksignup routes by john&ganesh
+Route::get('facebook', function () {
+    return view('auth/register');
+});
+    
+Route::get('/auth/facebook', 'Auth\LoginController@redirectToFacebook');
+Route::get('/auth/facebook/callback', 'Auth\LoginController@handleFacebookCallback');
+
+
+
 Route::get('/weavesilk', function () {
     return view('weavesilk');
 });

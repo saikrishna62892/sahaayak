@@ -99,12 +99,12 @@ unset($__errorArgs, $__bag); ?>
                         </span>
                     </div>
 
-                    <a href="#" class="btn-face m-b-10">
+                    <a href="<?php echo e(url('auth/facebook')); ?>" class="btn-face m-b-10">
                         <i class="fa fa-facebook-official"></i>
                         Facebook
                     </a>
 
-                    <a href="#" class="btn-google m-b-10">
+                    <a href="<?php echo e(url('auth/google')); ?>" class="btn-google m-b-10">
                         <img src="img/icons/icon-google.png" alt="GOOGLE">
                         Google
                     </a>
