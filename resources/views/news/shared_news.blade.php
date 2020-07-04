@@ -5,11 +5,11 @@
 				  <div class="card-body">
 				  	<div align="right"><a href="#" style="color: #5768ad;">Edit</a>&emsp;
                     <a href="#" style="color: #5768ad;">Delete</a></div>
-				    <h5 class="card-title">{{ $news->headline }}</h5><br>
+				    <h5 class="card-title" align="justify">{{ $news->headline }}</h5><br>
 				    <h6 class="card-subtitle mb-2 text-muted">Source: {{ $news->source }}</h6><br>
 				    <h6 class="card-subtitle mb-2 text-muted">Details: {{ Carbon\Carbon::parse($news->created_at)->format('d-M-Y g:h:i:s A') }}</h6><br>
 				    <h6 class="card-subtitle mb-2 text-muted">Content:</h6>
-				    <p class="card-text">{{ $news->content }}</p>
+				    <p class="card-text" align="justify">{{ $news->content }}</p>
 				    <?php $link="https://".$news->newsurl ?>
 				    <a href="{{ $link }}" target="_blank" style="color: #5768ad;">Read more</a>
 				  </div>

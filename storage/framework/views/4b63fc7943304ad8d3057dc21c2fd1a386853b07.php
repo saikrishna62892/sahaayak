@@ -1,5 +1,5 @@
-@extends('layouts.dashboard')
-	@section('content')
+
+	<?php $__env->startSection('content'); ?>
 	<br>	
 	<div class="container" id="stats">
 		<div class="row">
@@ -84,19 +84,19 @@
                                 </thead>
                                 <tbody>
                                     <?php $count=1 ?>
-                                    @forelse($appointments as $item)
+                                    <?php $__empty_1 = true; $__currentLoopData = $appointments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
                                     <tr>
-                                        <td scope="row">{{ $count++ }}</td>
-                                        <td>{{$item->name}}</td>
-									    <td>{{$item->email}}</td>
-									    <td>{{$item->phone}}</td>
-									    <td>{{$item->timings}}</td>
-									    <td colspan="3">{{$item->message}}</td>
-									    <td><a href="/volunteer/appointment/{{$item->id}}/acceptAppointment" style="color: #5768ad;">Accept</a></td>
+                                        <td scope="row"><?php echo e($count++); ?></td>
+                                        <td><?php echo e($item->name); ?></td>
+									    <td><?php echo e($item->email); ?></td>
+									    <td><?php echo e($item->phone); ?></td>
+									    <td><?php echo e($item->timings); ?></td>
+									    <td colspan="3"><?php echo e($item->message); ?></td>
+									    <td><a href="/volunteer/appointment/<?php echo e($item->id); ?>/acceptAppointment" style="color: #5768ad;">Accept</a></td>
                                     </tr>
-                                    @empty
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
                                     <h5>No Requests Made still..</h5>
-                                    @endforelse
+                                    <?php endif; ?>
                                 </tbody>
                             </table>
                         </div>
@@ -120,23 +120,23 @@
 								</thead>
 
 								<tbody>
-								  @foreach($completedappointments->appointments as $key => $item)
+								  <?php $__currentLoopData = $completedappointments->appointments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 								  <tr>
-								    <th scope="row">{{ $key+1 }}</th>
-								    <td>{{$item->name}}</td>
-								    <td>{{$item->email}}</td>
-								    <td>{{$item->phone}}</td>
-								    <td>{{$item->timings}}</td>
-								    <td>{{$item->message}}</td>
+								    <th scope="row"><?php echo e($key+1); ?></th>
+								    <td><?php echo e($item->name); ?></td>
+								    <td><?php echo e($item->email); ?></td>
+								    <td><?php echo e($item->phone); ?></td>
+								    <td><?php echo e($item->timings); ?></td>
+								    <td><?php echo e($item->message); ?></td>
 								    <td>
 								     <!-- <button type="button" onclick="" class="btn btn-primary" style="background-color: #5768ad; ">Accept Request</button> -->
 								     <!--
-								      <a href="/volunteer/appointment/{{$item->id}}/report" class="btn btn-dark">Make Report</a>
+								      <a href="/volunteer/appointment/<?php echo e($item->id); ?>/report" class="btn btn-dark">Make Report</a>
 								  	-->
-								  <button id="{{$item->id}}" data-toggle="tab" href="#makeReport" role="tab" onClick="reply_click(this.id)" class="btn btn-primary">Make Report</button>
+								  <button id="<?php echo e($item->id); ?>" data-toggle="tab" href="#makeReport" role="tab" onClick="reply_click(this.id)" class="btn btn-primary">Make Report</button>
 								    </td>
 								  </tr>
-								  @endforeach
+								  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 								</tbody>
 
 								</table>
@@ -157,19 +157,19 @@
 	                                </thead>
 	                                <tbody>
 	                                    <?php $count=1 ?>
-	                                     @forelse($completedappointments->appointments as $key => $item)
+	                                     <?php $__empty_1 = true; $__currentLoopData = $completedappointments->appointments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
 	                                    <tr>
-	                                        <td scope="row">{{ $count++ }}</td>
-	                                        <td>{{$item->name}}</td>
-										    <td>{{$item->email}}</td>
-										    <td>{{$item->phone}}</td>
-										    <td>{{$item->timings}}</td>
-										    <td colspan="3">{{$item->message}}</td>
-										    <td><button id="{{$item->id}}" data-toggle="tab" href="#makeReport" role="tab" onClick="reply_click(this.id)" class="btn btn-primary" style="background-color: #5768ad;">Make Report</button></td>
+	                                        <td scope="row"><?php echo e($count++); ?></td>
+	                                        <td><?php echo e($item->name); ?></td>
+										    <td><?php echo e($item->email); ?></td>
+										    <td><?php echo e($item->phone); ?></td>
+										    <td><?php echo e($item->timings); ?></td>
+										    <td colspan="3"><?php echo e($item->message); ?></td>
+										    <td><button id="<?php echo e($item->id); ?>" data-toggle="tab" href="#makeReport" role="tab" onClick="reply_click(this.id)" class="btn btn-primary" style="background-color: #5768ad;">Make Report</button></td>
 	                                    </tr>
-	                                    @empty
+	                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
 	                                    <h5>No Reports to make..</h5>
-	                                    @endforelse
+	                                    <?php endif; ?>
 	                                </tbody>
 	                            </table>
 	                        </div>
@@ -194,7 +194,7 @@
 		</div>
 		<!--reportForm Begin-->
 	                    <div class="tab-pane fade" id="makeReport" role="tabpanel">
-	                    	@include('appointment.reportForm')
+	                    	<?php echo $__env->make('appointment.reportForm', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 	                    </div>
 	                    <!--reportForm end-->
 	</div>
@@ -216,4 +216,6 @@ function myFunction() {
 } 
 </script>
 
-@endsection 
+<?php $__env->stopSection(); ?> 
+
+<?php echo $__env->make('layouts.dashboard', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/volunteer/dashboard_volunteer.blade.php ENDPATH**/ ?>
