@@ -122,7 +122,7 @@
                                     <ul class="dropdown">
                                         <li><a href="{{ url('weavesilk') }}">Interactive Drawing</a></li>
                                         <li><a href="{{ url('inspire_me') }}">Inspire Me</a></li>
-                                        <li><a href="{{ url('videos') }}">Videos</a></li>
+                                        <li><a href="{{ url('video.show') }}">Videos</a></li>
                                         <li><a href="{{ url('playlists') }}">Playlists</a></li>
                                     </ul>
                                 </li>
@@ -177,6 +177,9 @@
                                                          document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
                                         </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                                            @csrf
+                                        </form>
                                   </div>
                                 </div>
                             @endguest
@@ -230,7 +233,7 @@
                                     <ul class="dropdown">
                                         <li><a href="{{ url('weavesilk') }}">Interactive Drawing</a></li>
                                         <li><a href="{{ url('inspire_me') }}">Inspire Me</a></li>
-                                        <li><a href="{{ url('videos') }}">Videos</a></li>
+                                        <li><a href="/videos">Videos</a></li>
                                         <li><a href="{{ url('playlists') }}">Playlists</a></li>
                                     </ul>
                                 </li>

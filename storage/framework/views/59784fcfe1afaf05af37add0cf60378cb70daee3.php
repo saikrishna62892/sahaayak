@@ -1,6 +1,6 @@
-@extends('layouts.dashboard')
 
-@section('content')
+
+<?php $__env->startSection('content'); ?>
 		
 <br>	
 <div class="container" id="stats">
@@ -21,7 +21,7 @@
 		    <div class="card shadow p-4 mb-5 bg-white rounded">
 		        <div class="card-body">
 			        <h5 class="card-title" align="center">Users</h5>
-			        <h1 align="center">{{ $users_count }}</h1>
+			        <h1 align="center"><?php echo e($users_count); ?></h1>
 			        <p class="card-text" align="center">Active Users</p>
 			        <center><a href="https://analytics.google.com/analytics/web/#/report-home/a171070217w237922628p222495327" class="btn btn-primary" target="_blank" style="background-color: #5768ad;">See Analytics</a></center>
 		        </div>
@@ -31,7 +31,7 @@
 		    <div class="card shadow p-4 mb-5 bg-white rounded">
 		        <div class="card-body">
 			        <h5 class="card-title" align="center">Volunteers</h5>
-			        <h1 align="center">{{ $volunteers_count }}</h1>
+			        <h1 align="center"><?php echo e($volunteers_count); ?></h1>
 			        <p class="card-text" align="center">Applied Volunteers</p>
 			        <center><a href="https://analytics.google.com/analytics/web/#/report-home/a171070217w237922628p222495327" class="btn btn-primary" target="_blank" style="background-color: #5768ad;">See Analytics</a></center>
 		        </div>
@@ -41,7 +41,7 @@
 			<div class="card shadow p-4 mb-5 bg-white rounded">
 			    <div class="card-body">
 			        <h5 class="card-title" align="center">Badges</h5>
-			        <h1 align="center">{{ $badges }}</h1>
+			        <h1 align="center"><?php echo e($badges); ?></h1>
 			        <p class="card-text" align="center">Active Volunteers</p>
 			        <center><a href="https://analytics.google.com/analytics/web/#/report-home/a171070217w237922628p222495327" class="btn btn-primary" target="_blank" style="background-color: #5768ad;">See Analytics</a></center>
 			    </div>
@@ -53,9 +53,9 @@
 
 <!-- flash messages section -->
 <div class="container">
-    @if(session()->has('message'))
-    <center><div class="alert alert-success">{{ session()->get('message')}}</div></center>
-    @endif
+    <?php if(session()->has('message')): ?>
+    <center><div class="alert alert-success"><?php echo e(session()->get('message')); ?></div></center>
+    <?php endif; ?>
 </div>
 
 <!-- trading history area start -->
@@ -92,40 +92,40 @@
                     <!-- Expert_talks form begin -->
                     <div class="tab-pane fade show active" id="expert_talks" role="tabpanel">
                         <h4 align="center">Expert Talks Form</h4>
-                        @include('talks.create')
+                        <?php echo $__env->make('talks.create', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     </div>
                     <!-- Expert_talks form end -->
 
                     <!-- news form begin -->
                      <div class="tab-pane fade" id="news" role="tabpanel">
                         <h4 align="center">News Form</h4>
-                        @include('news.create')
+                        <?php echo $__env->make('news.create', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     </div>
                     <!-- news form end -->
 
                     <!-- inspire_me form begin -->
                     <div class="tab-pane fade" id="inspire_me" role="tabpanel">
                         <h4 align="center">Inspire Me Form</h4>
-                        @include('quotes.create')
+                        <?php echo $__env->make('quotes.create', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     </div>
 
                     <!-- videos form begin -->
                     <div class="tab-pane fade" id="videos" role="tabpanel">
                         <h4 align="center">Videos Form</h4>
-                        @include('video.create')
+                        <?php echo $__env->make('video.create', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     </div>
                     <!-- videos form end -->
 
                     <!-- playlists form begin -->
                     <div class="tab-pane fade" id="playlists" role="tabpanel">
                         <h4 align="center">Playlists Form</h4>
-                         @include('playlists.create')           
+                         <?php echo $__env->make('playlists.create', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>           
                     </div>
                     <!-- playlists form end -->
 
                     <!-- assessments form begin -->
                     <div class="tab-pane fade" id="assessments" role="tabpanel">
-                        @include('questionnaire.allquestionnaires')
+                        <?php echo $__env->make('questionnaire.allquestionnaires', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     </div>
                     <!-- assessments form end -->
                 </div>
@@ -169,21 +169,21 @@
                     <!-- shared_news form begin -->
                     <div class="tab-pane fade show active" id="shared_news" role="tabpanel">
                         <h4 align="center">Shared News</h4>
-                        @include('news.shared_news')
+                        <?php echo $__env->make('news.shared_news', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     </div>
                     <!-- shared_news form end -->
                             
                     <!-- shared_talks form begin -->
                     <div class="tab-pane fade" id="shared_talks" role="tabpanel">
                         <h4 align="center">Shared Talks</h4>
-                        @include('talks.shared_talks')
+                        <?php echo $__env->make('talks.shared_talks', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     </div>
                     <!-- shared_talks form end -->
 
                     <!-- shared_inspire_me form begin -->
                     <div class="tab-pane fade" id="shared_inspire_me" role="tabpanel">
                         <h4 align="center">Shared Quotes</h4>
-                        @include('quotes.shared_quotes')
+                        <?php echo $__env->make('quotes.shared_quotes', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                     
                     </div>
                     <!-- shared_inspire_me form end -->
@@ -191,14 +191,14 @@
                     <!-- shared_videos form begin -->
                     <div class="tab-pane fade" id="shared_videos" role="tabpanel">
                         <h4 align="center">Shared Videos</h4>
-                        @include('video.shared_videos')
+                        <?php echo $__env->make('video.shared_videos', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     </div>
                     <!-- shared_videos form end -->
 
                     <!-- shared_playlists form begin -->
                     <div class="tab-pane fade" id="shared_playlists" role="tabpanel">
                         <h4 align="center">Shared Playlists</h4>
-                        @include('playlists.shared_playlists')
+                        <?php echo $__env->make('playlists.shared_playlists', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                     
                     </div>
                     <!-- shared_playlists form end -->   
@@ -206,7 +206,7 @@
                      <!-- assessments form begin -->
                     <div class="tab-pane fade" id="all_assessments" role="tabpanel">
                         <h4 align="center">All Assessments</h4>
-                        @include('questionnaire.allquestionnaires')
+                        <?php echo $__env->make('questionnaire.allquestionnaires', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     <!-- assessments form end -->
 
                 </div>
@@ -239,22 +239,23 @@
                                 </thead>
                                 <tbody>
                                     <?php $count=1 ?>
-                                    @foreach($unapprovedVolunteers as $unapprovedVolunteer)
+                                    <?php $__currentLoopData = $unapprovedVolunteers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $unapprovedVolunteer): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <tr>
-                                        <td scope="row">{{ $count++ }}</td>
-                                        <td>{{ $unapprovedVolunteer->name }}</td>
-                                        <td>{{ $unapprovedVolunteer->phone}}</td>
+                                        <td scope="row"><?php echo e($count++); ?></td>
+                                        <td><?php echo e($unapprovedVolunteer->name); ?></td>
+                                        <td><?php echo e($unapprovedVolunteer->phone); ?></td>
                                         <td>
-                                            {{ $unapprovedVolunteer->user->email }}
+                                            <?php echo e($unapprovedVolunteer->user->email); ?>
+
                                         </td>
                                         <td>
-                                            <a href="/admin/home/volunteer/{{$unapprovedVolunteer->id}}/getDetails">get details</a>
+                                            <a href="/admin/home/volunteer/<?php echo e($unapprovedVolunteer->id); ?>/getDetails">get details</a>
                                         </td>
                                         <td>
-                                            <a class="btn btn-info" href="/admin/home/volunteer/{{$unapprovedVolunteer->id}}/approveVolunteer">Approve</a>
+                                            <a class="btn btn-info" href="/admin/home/volunteer/<?php echo e($unapprovedVolunteer->id); ?>/approveVolunteer">Approve</a>
                                         </td>
                                     </tr>
-                                    @endforeach
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </tbody>
                             </table>
                         </div>
@@ -266,4 +267,5 @@
     </div>
 </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.dashboard', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/admin/dashboard_admin.blade.php ENDPATH**/ ?>

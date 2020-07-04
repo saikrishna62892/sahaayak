@@ -15,26 +15,26 @@
                 </thead>
                 <tbody>
                     <?php $count=1 ?>
-                    @forelse($shared_quotes as $quotes)
+                    <?php $__empty_1 = true; $__currentLoopData = $shared_quotes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $quotes): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
                     <tr>
-                        <td scope="row">{{ $count++ }}</td>
-                        <td colspan="3">{{ $quotes->Quote }}</td>
-                        <td>{{ $quotes->Author }}</td>
-                        <td>{{ $quotes->Inspired_from }}</td>
+                        <td scope="row"><?php echo e($count++); ?></td>
+                        <td colspan="3"><?php echo e($quotes->Quote); ?></td>
+                        <td><?php echo e($quotes->Author); ?></td>
+                        <td><?php echo e($quotes->Inspired_from); ?></td>
                         <td>
                         	<?php $link="https://".$quotes->Link ?>
-                        	<a href="{{ $link }}" style="color: #5768ad;" target="_blank">Click here</a>
+                        	<a href="<?php echo e($link); ?>" style="color: #5768ad;" target="_blank">Click here</a>
                         </td>
                         <td><a href="#" style="color: #5768ad;">Edit</a></td>
                         <td><a href="#" style="color: #5768ad;">Delete</a></td>
-                        <td>{{ Carbon\Carbon::parse($quotes->created_at)->format('d-M-Y g:h:i:s A') }}</td>
+                        <td><?php echo e(Carbon\Carbon::parse($quotes->created_at)->format('d-M-Y g:h:i:s A')); ?></td>
                     </tr>
-                  	@empty
+                  	<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
 						<h5>No Quotes Available</h5>
-					@endforelse
+					<?php endif; ?>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
-          
+          <?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/quotes/shared_quotes.blade.php ENDPATH**/ ?>

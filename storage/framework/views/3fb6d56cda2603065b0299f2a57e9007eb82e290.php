@@ -123,7 +123,7 @@
                                     <ul class="dropdown">
                                         <li><a href="<?php echo e(url('weavesilk')); ?>">Interactive Drawing</a></li>
                                         <li><a href="<?php echo e(url('inspire_me')); ?>">Inspire Me</a></li>
-                                        <li><a href="<?php echo e(url('videos')); ?>">Videos</a></li>
+                                        <li><a href="<?php echo e(url('video.show')); ?>">Videos</a></li>
                                         <li><a href="<?php echo e(url('playlists')); ?>">Playlists</a></li>
                                     </ul>
                                 </li>
@@ -179,6 +179,9 @@
                                             <?php echo e(__('Logout')); ?>
 
                                         </a>
+                                        <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" >
+                                            <?php echo csrf_field(); ?>
+                                        </form>
                                   </div>
                                 </div>
                             <?php endif; ?>
@@ -232,7 +235,7 @@
                                     <ul class="dropdown">
                                         <li><a href="<?php echo e(url('weavesilk')); ?>">Interactive Drawing</a></li>
                                         <li><a href="<?php echo e(url('inspire_me')); ?>">Inspire Me</a></li>
-                                        <li><a href="<?php echo e(url('videos')); ?>">Videos</a></li>
+                                        <li><a href="/videos">Videos</a></li>
                                         <li><a href="<?php echo e(url('playlists')); ?>">Playlists</a></li>
                                     </ul>
                                 </li>

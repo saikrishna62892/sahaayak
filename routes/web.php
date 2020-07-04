@@ -134,17 +134,22 @@ Route::get('/register/step2/{user}','VolunteerController@step2');
 Route::post('/register/step2/{user}','VolunteerController@store');
 
 //User HopeBox Video Routes
-Route::get('/home/hopebox/videos','HopeBoxController@displayVideos');
+Route::get('/videos','HopeBoxController@displayVideos');
+
 
 //Admin Volunteer list Routes
 Route::get('/admin/home/volunteer/{unapprovedVolunteer}/getDetails','VolunteerController@getDetails');
 Route::get('/admin/home/volunteer/{unapprovedVolunteer}/approveVolunteer','VolunteerController@approveVolunteer');
 
+<<<<<<< HEAD
 //Report Routes
 Route::get('/volunteer/appointment/{appointment}/report','appointment_controller@reportForm');
 Route::post('/admin/report/{appointment}/generateReport','appointment_controller@generateReport');
 //end of dileep added routes
+=======
+>>>>>>> 99606f65edbf28c1c41ee298c939666d06c962f7
 
+//end of dileep added routes
 Route::get('team', function () {
     return view('team');
 });
