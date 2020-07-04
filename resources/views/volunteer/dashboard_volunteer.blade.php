@@ -83,9 +83,9 @@
 								</thead>
 
 								<tbody>
-								  @foreach($appointments as $item)
+								  @foreach($appointments as $key => $item)
 								  <tr>
-								    <th scope="row">3</th>
+								    <th scope="row">{{ $key+1 }}</th>
 								    <td>{{$item->name}}</td>
 								    <td>{{$item->email}}</td>
 								    <td>{{$item->phone}}</td>
@@ -115,13 +115,14 @@
 								    <th>Phone</th>
 								    <th>Timing</th>
 								    <th>Message</th>
+								    <th>Make Report</th>
 								  </tr>
 								</thead>
 
 								<tbody>
-								  @foreach($completedappointments->appointments as $item)
+								  @foreach($completedappointments->appointments as $key => $item)
 								  <tr>
-								    <th scope="row">3</th>
+								    <th scope="row">{{ $key+1 }}</th>
 								    <td>{{$item->name}}</td>
 								    <td>{{$item->email}}</td>
 								    <td>{{$item->phone}}</td>
@@ -129,7 +130,10 @@
 								    <td>{{$item->message}}</td>
 								    <td>
 								     <!-- <button type="button" onclick="" class="btn btn-primary" style="background-color: #5768ad; ">Accept Request</button> -->
+								     <!--
 								      <a href="/volunteer/appointment/{{$item->id}}/report" class="btn btn-dark">Make Report</a>
+								  	-->
+								  <button id="{{$item->id}}" data-toggle="tab" href="#makeReport" role="tab" onClick="reply_click(this.id)" class="btn btn-primary">Make Report</button>
 								    </td>
 								  </tr>
 								  @endforeach
@@ -144,10 +148,16 @@
 		                                
 	                    </div>
 	                    <!-- refer form end -->
+	                    
 		            </div>
 		        </div>
 		    </div>
 		</div>
+		<!--reportForm Begin-->
+	                    <div class="tab-pane fade" id="makeReport" role="tabpanel">
+	                    	@include('appointment.reportForm')
+	                    </div>
+	                    <!--reportForm end-->
 	</div>
 	<!-- trading history area end -->
 

@@ -1,15 +1,20 @@
-@extends('layouts.dashboard')
-@section('content')
-            <div class="card">
-                <div class="card-header">New Questionnaire</div>
+                            <div class="card">
+                <div class="card-header">Fill Report Details</div>
 
                 <div class="card-body">
-                   <form action="/admin/report/{{$appointment->id}}/generateReport" method="post">
+                   <form action="/volunteer/report/generateReport" method="post">
                     @csrf
-                    
+                    <div class="form-group">
+                        <label for="appointment_id">appointment_id</label>
+                        <input type="number" class="form-control" name="appointment_id" id="appointment_id" aria-describedby="appointment_idHelp" placeholder="Enter appointment_id" value="" readonly>
+                        <small id="appointment_idHelp" class="form-text text-muted">appointment_id</small>
+                        @error('appointment_id')
+                        <small class="text-danger">{{$message}}</small>
+                        @enderror
+                    </div>
                     <div class="form-group">
                         <label for="speed">Speed of talk</label>
-                        <input type="number" class="form-control" name="speed" id="speed" aria-describedby="speedHelp" placeholder="Enter title" value="{{ old('speed') }}">
+                        <input type="number" class="form-control" name="speed" id="speed" aria-describedby="speedHelp" placeholder="enter speed of talk" value="{{ old('speed') }}">
                         <small id="speedHelp" class="form-text text-muted">enter speed of talk</small>
                         @error('speed')
                         <small class="text-danger">{{$message}}</small>
@@ -63,4 +68,3 @@
                    </form>
                 </div>
             </div>
-@endsection

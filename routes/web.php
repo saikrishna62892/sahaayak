@@ -29,41 +29,6 @@ Route::get('expert_story', function () {
     return view('expert_story');
 });
 
-Route::get('learn_depression', function () {
-    return view('learn_depression');
-});
-
-Route::get('learn_fear_of_loss', function () {
-    return view('learn_fear_of_loss');
-});
-
-Route::get('learn_healthy_sleep', function () {
-    return view('learn_healthy_sleep');
-});
-
-Route::get('learn_hopelessness', function () {
-    return view('learn_hopelessness');
-});
-
-Route::get('learn_mental_illness', function () {
-    return view('learn_mental_illness');
-});
-
-Route::get('learn_social_isolation', function () {
-    return view('learn_social_isolation');
-});
-
-Route::get('learn_stigma', function () {
-    return view('learn_stigma');
-});
-
-Route::get('learn_stress', function () {
-    return view('learn_stress');
-});
-
-Route::get('learn_suicide', function () {
-    return view('learn_suicide');
-});
 
 #Route::get('login', function () {
  #   return view('login');
@@ -73,6 +38,16 @@ Route::get('news','NewsController@index')->name('news');
 Route::get('news/create','NewsController@create');
 Route::post('admin/news','NewsController@store')->name('storenews');
 Route::get('displayNews','NewsController@display')->name('displayNews');
+
+
+Route::post('/appointment_controller','appointment_controller@save');
+
+
+Route::get('volunteer/appointment/{appointment}/acceptAppointment','appointment_controller@appointmentAccepted');
+
+
+Route::get('/suggestion_controller','suggestion_controller@save');
+
 
 //venkat news routes end
 Route::get('shared_stories', function () {
@@ -143,12 +118,21 @@ Route::get('/admin/home/volunteer/{unapprovedVolunteer}/approveVolunteer','Volun
 
 
 //Report Routes
+
+Route::post('/volunteer/report/generateReport','appointment_controller@generateReport');
 Route::get('/volunteer/appointment/{appointment}/report','appointment_controller@reportForm');
 Route::post('/admin/report/{appointment}/generateReport','appointment_controller@generateReport');
+
 //end of dileep added routes
 
 
+//learn section routes
+Route::get('home/learn/{learn}/{learnID}','LearnController@show');
+
+
+
 //end of dileep added routes
+
 Route::get('team', function () {
     return view('team');
 });
@@ -156,14 +140,6 @@ Route::get('team', function () {
 Route::get('inspire_me', function () {
     return view('inspire_me');
 });
-
-Route::post('/appointment_controller','appointment_controller@save');
-
-
-Route::get('volunteer/appointment/{appointment}/acceptAppointment','appointment_controller@appointmentAccepted');
-
-
-Route::get('/suggestion_controller','suggestion_controller@save');
 
 
 
@@ -220,6 +196,24 @@ Route::get('/inspire_me','QuotesViewController@index');
 //Playlists routes by john&ganesh
 Route::post('/createPlaylist','PlaylistController@save')->name('createPlaylist');
 Route::get('/playlists','PlaylistController@index');
+
+//Googlesignup routes by john&ganesh
+Route::get('google', function () {
+    return view('auth/register');
+});
+    
+Route::get('/auth/google', 'Auth\LoginController@redirectToGoogle');
+Route::get('/auth/google/callback', 'Auth\LoginController@handleGoogleCallback');
+
+//Facebooksignup routes by john&ganesh
+Route::get('facebook', function () {
+    return view('auth/register');
+});
+    
+Route::get('/auth/facebook', 'Auth\LoginController@redirectToFacebook');
+Route::get('/auth/facebook/callback', 'Auth\LoginController@handleFacebookCallback');
+
+
 
 Route::get('/weavesilk', function () {
     return view('weavesilk');

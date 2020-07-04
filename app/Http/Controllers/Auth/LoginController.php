@@ -6,6 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Socialite;
+use App\User;
+use Auth;
+use DB;
 
 class LoginController extends Controller
 {
@@ -57,9 +61,87 @@ class LoginController extends Controller
                 return redirect()->route('home');
             }
         }else{
-            return redirect()->route('login')
-                ->with('error','Email-Address And Password Are Wrong.');
+            return redirect()->route('login')->with('error','Email-Address And Password Are Wrong.');
         }
           
     }
+
+
+
+    public function redirectToGoogle()
+    {
+        return Socialite::driver('google')->redirect(); 
+    }
+   
+    public function handleGoogleCallback()
+    {
+        try {
+  
+            $user = Socialite::driver('google')->stateless()->user();
+   
+            $finduser = User::where('googleid', $user->id)->first();
+   
+            if($finduser){
+   
+                Auth::login($finduser);
+  
+                return redirect('/home');
+   
+            }else{
+                $newUser = User::create([
+                    'name' => $user->name,
+                    'email' => $user->email,
+                    'googleid'=> $user->id
+                    
+                ]);
+  
+                Auth::login($newUser);
+   
+                return redirect()->back();
+            }
+  
+        } catch (Exception $e) {
+            return redirect('auth/google');
+        }
+    }
+
+    //Facebooksignup
+
+    public function redirectToFacebook()
+    {
+        return Socialite::driver('facebook')->redirect(); 
+    }
+
+    public function handleFacebookCallback()
+    {
+        try {
+
+            $user = Socialite::driver('facebook')->stateless()->user();
+
+            $finduser = User::where('facebookid', $user->id)->first();
+
+            if($finduser){
+
+                Auth::login($finduser);
+
+                return redirect('/home');
+
+            }else{
+                $newUser = User::create([
+                    'name' => $user->name,
+                    'email' => $user->email,
+                    'facebookid'=> $user->id
+                    
+                ]);
+
+                Auth::login($newUser);
+
+                return redirect()->back();
+            }
+
+        } catch (Exception $e) {
+            return redirect('auth/facebook');
+        }
+    }
+
 }
