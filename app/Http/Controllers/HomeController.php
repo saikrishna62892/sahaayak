@@ -16,6 +16,7 @@ use App\Video;
 use App\Appointment;
 use Analytics;
 use Spatie\Analytics\Period;
+//use Spatie\Analytics\Analytics;
 
 
 class HomeController extends Controller
@@ -73,7 +74,7 @@ class HomeController extends Controller
         //$analyticsData=Analytics::fetchVisitorsAndPageViews(Period::days(7));
 
         //retrieve visitors and pageview data for the current day and the last seven days
-        $analyticsData = Analytics::fetchVisitorsAndPageViews(Period::days(7));
+       // $analyticsData = Analytics::fetchVisitorsAndPageViews(Period::days(7));
 
 
         //no-refresh loaders
@@ -87,7 +88,7 @@ class HomeController extends Controller
         //dd($analyticsData[0]);
         //dd($analyticsData[0]['pageViews']);
 
-        return view('admin.dashboard_admin',compact('unapprovedVolunteers','talks','users_count','volunteers_count','badges','shared_news','shared_videos','shared_quotes','analyticsData','shared_playlists'));
+        return view('admin.dashboard_admin',compact('unapprovedVolunteers','talks','users_count','volunteers_count','badges','shared_news','shared_videos','shared_quotes','shared_playlists'));
     }
 
     public function volunteerHome()
