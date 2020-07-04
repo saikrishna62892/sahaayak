@@ -34,7 +34,14 @@
 </script>
     <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-
+<!--reportForm script begin-->
+<script type="text/javascript">
+    function reply_click(clicked_id)
+    {
+        document.getElementById('appointment_id').value = clicked_id;
+    }
+</script>
+<!--reportForm script end-->
 <body>
     <!-- preloader area start -->
     <div id="preloader">
