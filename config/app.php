@@ -230,14 +230,11 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Embed' => Cohensive\Embed\Facades\Embed::class,
-<<<<<<< HEAD
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     
         
 
-=======
         'PDF' => Barryvdh\DomPDF\Facade::class,
->>>>>>> 7af3e6ceb649784d891587f3172a1a97d61ece8d
     ],
 
 ];
