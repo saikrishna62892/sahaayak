@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Appointment;
 use Auth;
 use DB;
-
+use PDF;
 class appointment_controller extends Controller
 {
     function save(Request $req)
@@ -36,5 +36,20 @@ class appointment_controller extends Controller
         $appointment->update(['volunteer_id' => auth()->user()->volunteer->id]);
         return redirect()->back();
 
+    }
+
+    public function reportForm(Appointment $appointment)
+    {
+        return view('appointment.reportForm',compact('appointment'));
+    }
+
+    public function generateReport(Appointment $appointment)
+    {
+        $data = request()->all();
+        $data['appointment_id'] = $appointment->id;
+        $data['user_id'] = $appointment->user_id;
+        $data['volunteer_id'] = $appointment->volunteer_id;
+        $pdf = PDF::loadView('appointment.generateReport',compact('data'));
+        return $pdf->download('report.pdf');
     }
 }

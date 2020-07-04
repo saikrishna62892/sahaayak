@@ -67,18 +67,80 @@
 		            <div class="tab-content" id="myTabContent">
 		                <!-- Appointments form begin -->
 		                <div class="tab-pane fade show active" id="list" role="tabpanel">
-		                    
+		                    <table class="table table-striped table-responsive-md btn-table">
+
+								<thead>
+								  <tr>
+								    <th>Sno.</th>
+								    <th>Name</th>
+								    <th>Email</th>
+								    <th>Phone</th>
+								    <th>Timing</th>
+								    <th>Message</th>
+								    <th>Accept Request</th>
+								    <th>Session Completed</th>
+								  </tr>
+								</thead>
+
+								<tbody>
+								  <?php $__currentLoopData = $appointments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+								  <tr>
+								    <th scope="row">3</th>
+								    <td><?php echo e($item->name); ?></td>
+								    <td><?php echo e($item->email); ?></td>
+								    <td><?php echo e($item->phone); ?></td>
+								    <td><?php echo e($item->timings); ?></td>
+								    <td><?php echo e($item->message); ?></td>
+								    <td>
+								     <!-- <button type="button" onclick="" class="btn btn-primary" style="background-color: #5768ad; ">Accept Request</button> -->
+								      <a href="/volunteer/appointment/<?php echo e($item->id); ?>/acceptAppointment" class="btn btn-dark">Accept Request</a>
+								    </td>
+								  </tr>
+								  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+								</tbody>
+
+								</table>
 		                </div>
 		                <!-- Appointments form end -->
 
 		                <!-- report form begin -->
-		     			<div class="tab-pane fade" id="article" role="tabpanel">
-		        
+		     			<div class="tab-pane fade" id="report" role="tabpanel">
+		        			<table class="table table-striped table-responsive-md btn-table">
+
+								<thead>
+								  <tr>
+								    <th>Sno.</th>
+								    <th>Name</th>
+								    <th>Email</th>
+								    <th>Phone</th>
+								    <th>Timing</th>
+								    <th>Message</th>
+								  </tr>
+								</thead>
+
+								<tbody>
+								  <?php $__currentLoopData = $completedappointments->appointments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+								  <tr>
+								    <th scope="row">3</th>
+								    <td><?php echo e($item->name); ?></td>
+								    <td><?php echo e($item->email); ?></td>
+								    <td><?php echo e($item->phone); ?></td>
+								    <td><?php echo e($item->timings); ?></td>
+								    <td><?php echo e($item->message); ?></td>
+								    <td>
+								     <!-- <button type="button" onclick="" class="btn btn-primary" style="background-color: #5768ad; ">Accept Request</button> -->
+								      <a href="/volunteer/appointment/<?php echo e($item->id); ?>/report" class="btn btn-dark">Make Report</a>
+								    </td>
+								  </tr>
+								  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+								</tbody>
+
+								</table>
 		                </div>
 		                <!-- report form end -->
 						
 						<!-- refer form begin -->
-		                <div class="tab-pane fade" id="news" role="tabpanel">
+		                <div class="tab-pane fade" id="refer" role="tabpanel">
 		                                
 	                    </div>
 	                    <!-- refer form end -->

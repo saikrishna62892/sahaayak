@@ -1,0 +1,9 @@
+{{$data['appointment_id']}}
+{{$data['user_id']}}
+{{$data['volunteer_id']}}
+{{$data['speed']}}
+{{$data['longPause']}}
+{{$data['loudness']}}
+{{$data['keywords']}}
+{{$data['suggestions']}}
+{{$data['remarks']}}

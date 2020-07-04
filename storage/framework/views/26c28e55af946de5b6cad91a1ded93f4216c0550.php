@@ -23,11 +23,6 @@
     <link rel="stylesheet" href="/css/responsive.css">
     <!-- modernizr css -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-    <!-- Start datatable css -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.jqueryui.min.css">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171070217-1"></script>
 <script>
@@ -42,9 +37,9 @@
 
 <body>
     <!-- preloader area start -->
-    <!--<div id="preloader">
+    <div id="preloader">
         <div class="loader"></div>
-    </div>-->
+    </div>
     <!-- preloader area end -->
 
     <!-- page container area start -->
@@ -255,31 +250,10 @@
     <script src="/js/metisMenu.min.js"></script>
     <script src="/js/jquery.slimscroll.min.js"></script>
     <script src="/js/jquery.slicknav.min.js"></script>
-
-    <!-- start chart js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
-    <!-- start highcharts js -->
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <!-- start zingchart js -->
-    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
-    <script>
-    zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
-    ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "ee6b7db5b51705a13dc2339db3edaf6d"];
-    </script>
-    <!-- all line chart activation -->
-    <script src="/js/line-chart.js"></script>
-    <!-- all pie chart -->
-    <script src="/js/pie-chart.js"></script>
-    <!-- others plugins -->
+    
     <script src="/js/plugins.js"></script>
     <script src="/js/scripts.js"></script>
 
-    <!-- Start datatable js -->
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
-    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
     <script>
         var input = document.getElementById( 'file-upload' );
         var infoArea = document.getElementById( 'file-upload-filename' );

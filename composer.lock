@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b3806cdb71a65d36683c2742893f9abc",
+    "content-hash": "92102a5fd27a4a72d8c7c4cd43629013",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3060,7 +3060,6 @@
             "time": "2020-03-29T20:13:32+00:00"
         },
         {
-<<<<<<< HEAD
             "name": "sabberworm/php-css-parser",
             "version": "8.3.1",
             "source": {
@@ -3085,7 +3084,27 @@
             "autoload": {
                 "psr-0": {
                     "Sabberworm\\CSS": "lib/"
-=======
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Raphael Schweikert"
+                }
+            ],
+            "description": "Parser for CSS Files written in PHP",
+            "homepage": "http://www.sabberworm.com/blog/2010/6/10/php-css-parser",
+            "keywords": [
+                "css",
+                "parser",
+                "stylesheet"
+            ],
+            "time": "2020-06-01T09:10:00+00:00"
+        },
+        {
             "name": "spatie/laravel-analytics",
             "version": "3.10.0",
             "source": {
@@ -3126,7 +3145,6 @@
             "autoload": {
                 "psr-4": {
                     "Spatie\\Analytics\\": "src"
->>>>>>> 91db71d52502cc5ff24f0b7594252dc6e2601e98
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3135,19 +3153,6 @@
             ],
             "authors": [
                 {
-<<<<<<< HEAD
-                    "name": "Raphael Schweikert"
-                }
-            ],
-            "description": "Parser for CSS Files written in PHP",
-            "homepage": "http://www.sabberworm.com/blog/2010/6/10/php-css-parser",
-            "keywords": [
-                "css",
-                "parser",
-                "stylesheet"
-            ],
-            "time": "2020-06-01T09:10:00+00:00"
-=======
                     "name": "Freek Van der Herten",
                     "email": "freek@spatie.be",
                     "homepage": "https://murze.be",
@@ -3171,7 +3176,6 @@
                 }
             ],
             "time": "2020-06-26T07:32:16+00:00"
->>>>>>> 91db71d52502cc5ff24f0b7594252dc6e2601e98
         },
         {
             "name": "swiftmailer/swiftmailer",

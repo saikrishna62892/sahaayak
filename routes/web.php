@@ -140,6 +140,9 @@ Route::get('/home/hopebox/videos','HopeBoxController@displayVideos');
 Route::get('/admin/home/volunteer/{unapprovedVolunteer}/getDetails','VolunteerController@getDetails');
 Route::get('/admin/home/volunteer/{unapprovedVolunteer}/approveVolunteer','VolunteerController@approveVolunteer');
 
+//Report Routes
+Route::get('/volunteer/appointment/{appointment}/report','appointment_controller@reportForm');
+Route::post('/admin/report/{appointment}/generateReport','appointment_controller@generateReport');
 //end of dileep added routes
 
 Route::get('team', function () {

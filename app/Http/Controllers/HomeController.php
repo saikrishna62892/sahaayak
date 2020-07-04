@@ -93,7 +93,8 @@ class HomeController extends Controller
     public function volunteerHome()
     {
         $appointments=Appointment::where('volunteer_id',null)->get();
-        $completedappointments=Appointment::where('volunteer_id',auth()->user()->volunteer->id)->get();
+        $volunteer = auth()->user()->volunteer;
+        $completedappointments= $volunteer->load('appointments');
        return view('volunteer.dashboard_volunteer')->with(compact('appointments','completedappointments'));
 
     }
