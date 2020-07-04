@@ -5,38 +5,38 @@
 <div class="container" id="stats">
     <div class="row">
         <div class="col-sm-3">
-            <div class="card">
+            <div class="card shadow p-4 mb-5 bg-white rounded">
                 <div class="card-body">
-                    <h5 class="card-title">Checkins</h5>
-                    <h1 align="center">2000</h1>
-                    <p class="card-text">Number of times logged into sahaayak.</p>
+                    <h5 class="card-title" align="center">Checkins</h5>
+                    <p align="center">#Logins</p>
+                    <h1 align="center" align="center">2000</h1>
                 </div>
             </div>
         </div>
         <div class="col-sm-3">
-            <div class="card">
+            <div class="card shadow p-4 mb-5 bg-white rounded">
                 <div class="card-body">
-                    <h5 class="card-title">Posts</h5>
-                    <h1 align="center">300</h1>
-                    <p class="card-text">Num of posts posted in the website</p>
+                    <h5 class="card-title" align="center">Posts</h5>
+                    <p align="center">#shared Stories</p>
+                    <h1 align="center" align="center">300</h1>
                 </div>
             </div>
         </div>
         <div class="col-sm-3">
-            <div class="card">
+            <div class="card shadow p-4 mb-5 bg-white rounded">
                 <div class="card-body">
-                    <h5 class="card-title">Diary</h5>
-                    <h1 align="center">100</h1>
-                    <p class="card-text">Number of times events added in the diary</p>
+                    <h5 class="card-title" align="center">Diary</h5>
+                    <p align="center">#events in Diary</p>
+                    <h1 align="center" align="center">100</h1>
                 </div>
             </div>
         </div>
         <div class="col-sm-3">
-            <div class="card">
+            <div class="card shadow p-4 mb-5 bg-white rounded">
                 <div class="card-body">
-                    <h5 class="card-title">ToDo List</h5>
-                    <h1 align="center">50</h1>
-                    <p class="card-text">Number of items in the todo List</p>
+                    <h5 class="card-title" align="center">ToDo List</h5>
+                    <p align="center">#Items in the list</p>
+                    <h1 align="center" align="center">50</h1>
                 </div>
             </div>
         </div>
@@ -54,7 +54,7 @@
 
 <!-- trading history area start -->
 <div class="col-lg-12 mt-sm-30 mt-xs-30" id="forms">
-    <div class="card">
+    <div class="card shadow p-4 mb-5 bg-white rounded">
         <div class="card-body">
             <div class="d-sm-flex justify-content-between align-items-center">
                 <h4 class="header-title">Handles</h4>
@@ -67,7 +67,7 @@
                             <a data-toggle="tab" href="#diary" role="tab">Cognitive Diary</a>
                         </li>
                         <li>
-                            <a data-toggle="tab" href="#habits" role="tab">Habits</a>
+                            <a data-toggle="tab" href="#list" role="tab">ToDo</a>
                         </li>
                         <li>
                             <a  href="#stories" data-toggle="tab" role="tab">Shared Stories</a>
@@ -93,7 +93,7 @@
                     <!-- Cognitive diary end -->
 
                     <!-- Habits form begin -->
-                    <div class="tab-pane fade" id="habits" role="tabpanel">
+                    <div class="tab-pane fade" id="list" role="tabpanel">
                                 
                     </div>
                     <!-- Habits form end -->

@@ -141,13 +141,12 @@ Route::get('/videos','HopeBoxController@displayVideos');
 Route::get('/admin/home/volunteer/{unapprovedVolunteer}/getDetails','VolunteerController@getDetails');
 Route::get('/admin/home/volunteer/{unapprovedVolunteer}/approveVolunteer','VolunteerController@approveVolunteer');
 
-<<<<<<< HEAD
+
 //Report Routes
 Route::get('/volunteer/appointment/{appointment}/report','appointment_controller@reportForm');
 Route::post('/admin/report/{appointment}/generateReport','appointment_controller@generateReport');
 //end of dileep added routes
-=======
->>>>>>> 99606f65edbf28c1c41ee298c939666d06c962f7
+
 
 //end of dileep added routes
 Route::get('team', function () {
