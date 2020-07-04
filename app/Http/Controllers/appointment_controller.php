@@ -43,10 +43,10 @@ class appointment_controller extends Controller
         return view('appointment.reportForm',compact('appointment'));
     }
 
-    public function generateReport(Appointment $appointment)
+    public function generateReport()
     {
         $data = request()->all();
-        $data['appointment_id'] = $appointment->id;
+        $appointment = Appointment::find($data['appointment_id']);
         $data['user_id'] = $appointment->user_id;
         $data['volunteer_id'] = $appointment->volunteer_id;
         $pdf = PDF::loadView('appointment.generateReport',compact('data'));

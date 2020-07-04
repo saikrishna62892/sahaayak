@@ -1,15 +1,27 @@
-
-<?php $__env->startSection('content'); ?>
-            <div class="card">
-                <div class="card-header">New Questionnaire</div>
+                            <div class="card">
+                <div class="card-header">Fill Report Details</div>
 
                 <div class="card-body">
-                   <form action="/admin/report/<?php echo e($appointment->id); ?>/generateReport" method="post">
+                   <form action="/volunteer/report/generateReport" method="post">
                     <?php echo csrf_field(); ?>
-                    
+                    <div class="form-group">
+                        <label for="appointment_id">appointment_id</label>
+                        <input type="number" class="form-control" name="appointment_id" id="appointment_id" aria-describedby="appointment_idHelp" placeholder="Enter appointment_id" value="" readonly>
+                        <small id="appointment_idHelp" class="form-text text-muted">appointment_id</small>
+                        <?php $__errorArgs = ['appointment_id'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <small class="text-danger"><?php echo e($message); ?></small>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                    </div>
                     <div class="form-group">
                         <label for="speed">Speed of talk</label>
-                        <input type="number" class="form-control" name="speed" id="speed" aria-describedby="speedHelp" placeholder="Enter title" value="<?php echo e(old('speed')); ?>">
+                        <input type="number" class="form-control" name="speed" id="speed" aria-describedby="speedHelp" placeholder="enter speed of talk" value="<?php echo e(old('speed')); ?>">
                         <small id="speedHelp" class="form-text text-muted">enter speed of talk</small>
                         <?php $__errorArgs = ['speed'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -104,6 +116,4 @@ unset($__errorArgs, $__bag); ?>
                         <button  type="submit" class="btn btn-primary">generate report</button>
                    </form>
                 </div>
-            </div>
-<?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.dashboard', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Ganesh\Desktop\dileep\sahaayak\resources\views/appointment/reportForm.blade.php ENDPATH**/ ?>
+            </div><?php /**PATH C:\Users\Ganesh\Desktop\dileep\sahaayak\resources\views/appointment/reportForm.blade.php ENDPATH**/ ?>

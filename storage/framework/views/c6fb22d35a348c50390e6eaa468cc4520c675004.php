@@ -83,9 +83,9 @@
 								</thead>
 
 								<tbody>
-								  <?php $__currentLoopData = $appointments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+								  <?php $__currentLoopData = $appointments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 								  <tr>
-								    <th scope="row">3</th>
+								    <th scope="row"><?php echo e($key+1); ?></th>
 								    <td><?php echo e($item->name); ?></td>
 								    <td><?php echo e($item->email); ?></td>
 								    <td><?php echo e($item->phone); ?></td>
@@ -115,13 +115,14 @@
 								    <th>Phone</th>
 								    <th>Timing</th>
 								    <th>Message</th>
+								    <th>Make Report</th>
 								  </tr>
 								</thead>
 
 								<tbody>
-								  <?php $__currentLoopData = $completedappointments->appointments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+								  <?php $__currentLoopData = $completedappointments->appointments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 								  <tr>
-								    <th scope="row">3</th>
+								    <th scope="row"><?php echo e($key+1); ?></th>
 								    <td><?php echo e($item->name); ?></td>
 								    <td><?php echo e($item->email); ?></td>
 								    <td><?php echo e($item->phone); ?></td>
@@ -129,7 +130,10 @@
 								    <td><?php echo e($item->message); ?></td>
 								    <td>
 								     <!-- <button type="button" onclick="" class="btn btn-primary" style="background-color: #5768ad; ">Accept Request</button> -->
+								     <!--
 								      <a href="/volunteer/appointment/<?php echo e($item->id); ?>/report" class="btn btn-dark">Make Report</a>
+								  	-->
+								  <button id="<?php echo e($item->id); ?>" data-toggle="tab" href="#makeReport" role="tab" onClick="reply_click(this.id)" class="btn btn-primary">Make Report</button>
 								    </td>
 								  </tr>
 								  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -144,10 +148,16 @@
 		                                
 	                    </div>
 	                    <!-- refer form end -->
+	                    
 		            </div>
 		        </div>
 		    </div>
 		</div>
+		<!--reportForm Begin-->
+	                    <div class="tab-pane fade" id="makeReport" role="tabpanel">
+	                    	<?php echo $__env->make('appointment.reportForm', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+	                    </div>
+	                    <!--reportForm end-->
 	</div>
 	<!-- trading history area end -->
 
