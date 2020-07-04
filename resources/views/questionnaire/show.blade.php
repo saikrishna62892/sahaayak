@@ -34,8 +34,13 @@
 		    </div>
 		</div>
         <div class="card-body">
+<<<<<<< HEAD
+           <a href="/admin/home/questionnaires/{{$questionnaire->id}}/questions/create" class="btn btn-dark">Add new Question</a>
+          <a href="/admin/home/questionnaires/{{$questionnaire->id}}/complete" class="btn btn-dark">complete</a>
+=======
            <center><a href="/admin/home/questionnaires/{{$questionnaire->id}}/questions/create" class="btn primary-btn" style="background-color: #5768ad;color: #fff;">Add new Question</a>&emsp;
            <a href="/admin/home" class="btn primary-btn" style="background-color: #5768ad;color: #fff;">Complete Questionnaire</a></center>
+>>>>>>> 99606f65edbf28c1c41ee298c939666d06c962f7
         </div>
     </div>
 </div>

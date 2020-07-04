@@ -119,7 +119,7 @@
 								</thead>
 
 								<tbody>
-								  @foreach($completedappointments as $item)
+								  @foreach($completedappointments->appointments as $item)
 								  <tr>
 								    <th scope="row">3</th>
 								    <td>{{$item->name}}</td>
@@ -129,7 +129,7 @@
 								    <td>{{$item->message}}</td>
 								    <td>
 								     <!-- <button type="button" onclick="" class="btn btn-primary" style="background-color: #5768ad; ">Accept Request</button> -->
-								      <a href="#" class="btn btn-dark">Appointment attended</a>
+								      <a href="/volunteer/appointment/{{$item->id}}/report" class="btn btn-dark">Make Report</a>
 								    </td>
 								  </tr>
 								  @endforeach
