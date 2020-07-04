@@ -67,18 +67,80 @@
 		            <div class="tab-content" id="myTabContent">
 		                <!-- Appointments form begin -->
 		                <div class="tab-pane fade show active" id="list" role="tabpanel">
-		                    
+		                    <table class="table table-striped table-responsive-md btn-table">
+
+								<thead>
+								  <tr>
+								    <th>Sno.</th>
+								    <th>Name</th>
+								    <th>Email</th>
+								    <th>Phone</th>
+								    <th>Timing</th>
+								    <th>Message</th>
+								    <th>Accept Request</th>
+								    <th>Session Completed</th>
+								  </tr>
+								</thead>
+
+								<tbody>
+								  @foreach($appointments as $item)
+								  <tr>
+								    <th scope="row">3</th>
+								    <td>{{$item->name}}</td>
+								    <td>{{$item->email}}</td>
+								    <td>{{$item->phone}}</td>
+								    <td>{{$item->timings}}</td>
+								    <td>{{$item->message}}</td>
+								    <td>
+								     <!-- <button type="button" onclick="" class="btn btn-primary" style="background-color: #5768ad; ">Accept Request</button> -->
+								      <a href="/volunteer/appointment/{{$item->id}}/acceptAppointment" class="btn btn-dark">Accept Request</a>
+								    </td>
+								  </tr>
+								  @endforeach
+								</tbody>
+
+								</table>
 		                </div>
 		                <!-- Appointments form end -->
 
 		                <!-- report form begin -->
-		     			<div class="tab-pane fade" id="article" role="tabpanel">
-		        
+		     			<div class="tab-pane fade" id="report" role="tabpanel">
+		        			<table class="table table-striped table-responsive-md btn-table">
+
+								<thead>
+								  <tr>
+								    <th>Sno.</th>
+								    <th>Name</th>
+								    <th>Email</th>
+								    <th>Phone</th>
+								    <th>Timing</th>
+								    <th>Message</th>
+								  </tr>
+								</thead>
+
+								<tbody>
+								  @foreach($completedappointments->appointments as $item)
+								  <tr>
+								    <th scope="row">3</th>
+								    <td>{{$item->name}}</td>
+								    <td>{{$item->email}}</td>
+								    <td>{{$item->phone}}</td>
+								    <td>{{$item->timings}}</td>
+								    <td>{{$item->message}}</td>
+								    <td>
+								     <!-- <button type="button" onclick="" class="btn btn-primary" style="background-color: #5768ad; ">Accept Request</button> -->
+								      <a href="/volunteer/appointment/{{$item->id}}/report" class="btn btn-dark">Make Report</a>
+								    </td>
+								  </tr>
+								  @endforeach
+								</tbody>
+
+								</table>
 		                </div>
 		                <!-- report form end -->
 						
 						<!-- refer form begin -->
-		                <div class="tab-pane fade" id="news" role="tabpanel">
+		                <div class="tab-pane fade" id="refer" role="tabpanel">
 		                                
 	                    </div>
 	                    <!-- refer form end -->

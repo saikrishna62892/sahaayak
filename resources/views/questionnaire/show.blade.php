@@ -1,10 +1,47 @@
 @extends('layouts.dashboard')
 @section('content')
-    <div class="card">
-        <div class="card-header">{{$questionnaire->questionnaireTitle}}</div>
-
+<br>
+<div class="container">
+    <div class="card shadow p-4 mb-5 bg-white rounded">
+    	&emsp;
+        <h4 align="center">{{$questionnaire->questionnaireTitle}}</h4>
+        <?php $questions=App\Question::where('questionnaire_id',$questionnaire->id)->get() ?>
+        <div class="main-content-inner" id="table">
+		    <div class="single-table">
+		        <div class="table-responsive">
+		            <table class="table table-hover progress-table text-center">
+		                <thead class="text-uppercase">
+		                    <tr>
+		                        <th scope="col">S.No</th>
+		                        <th scope="col">Question</th>
+		                        <th scope="col">Created_at</th>
+		                    </tr>
+		                </thead>
+		                <tbody>
+		                    <?php $count=1 ?>
+		                    @forelse($questions as $question)
+		                    <tr>
+		                        <td scope="row">{{ $count++ }}</td>
+		                        <td>{{$question->question}}</td>
+		                        <td>{{$question->created_at}}</td>
+		                    </tr>
+		        			@empty
+					        <h5>No Questions available..</h5>
+					        @endforelse
+		                </tbody>
+		            </table>
+		        </div>
+		    </div>
+		</div>
         <div class="card-body">
+<<<<<<< HEAD
            <a href="/admin/home/questionnaires/{{$questionnaire->id}}/questions/create" class="btn btn-dark">Add new Question</a>
+          <a href="/admin/home/questionnaires/{{$questionnaire->id}}/complete" class="btn btn-dark">complete</a>
+=======
+           <center><a href="/admin/home/questionnaires/{{$questionnaire->id}}/questions/create" class="btn primary-btn" style="background-color: #5768ad;color: #fff;">Add new Question</a>&emsp;
+           <a href="/admin/home" class="btn primary-btn" style="background-color: #5768ad;color: #fff;">Complete Questionnaire</a></center>
+>>>>>>> 99606f65edbf28c1c41ee298c939666d06c962f7
         </div>
     </div>
+</div>
 @endsection
