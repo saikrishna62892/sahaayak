@@ -10,6 +10,10 @@ use DB;
 use PDF;
 class appointment_controller extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     function save(Request $req)
     {
         $appointment=new Appointment();

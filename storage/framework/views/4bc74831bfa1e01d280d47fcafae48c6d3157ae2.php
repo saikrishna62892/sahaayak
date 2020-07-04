@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sahaayak</title>
-
+    <link rel="icon" href="/img/icon.png" type="image/gif">
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
@@ -24,15 +24,6 @@
     <link href="/css/introjs.css" rel="stylesheet">
     <link href="/css/introjs-modern.css" rel="stylesheet">
     
-
-
-    <script src="/js/jquery-3.3.1.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/jquery.nice-select.min.js"></script>
-    <script src="/js/jquery.barfiller.js"></script>
-    <script src="/js/jquery.slicknav.js"></script>
-    <script src="/js/owl.carousel.min.js"></script>
-    <script src="/js/main.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171070217-1"></script>
@@ -64,30 +55,28 @@
                 <li>CALL US: + 1 800-567-8990</li>
                 <li>WRITE US: OFFICE@EXAMPLE.COM</li>
             </ul>
-                                <?php if(auth()->guard()->guest()): ?>
-                                <a href="<?php echo e(route('login')); ?>" class="primary-btn">Login</a>
-                                <?php if(Route::has('register')): ?>
-                                    <a href="<?php echo e(route('register')); ?>" class="primary-btn">Join us</a>
-                                <?php endif; ?>
-                                <?php else: ?>
+            <?php if(auth()->guard()->guest()): ?>
+            <a href="<?php echo e(route('login')); ?>" class="primary-btn">Login</a>
+            <?php if(Route::has('register')): ?>
+                <a href="<?php echo e(route('register')); ?>" class="primary-btn">Join us</a>
+            <?php endif; ?>
+            <?php else: ?>
+            <div class="dropdown">
+                <button class="btn primary-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo e(Auth::user()->name); ?></button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <?php if(auth()->user()->is_Volunteer == 1): ?>
+                    <!--<a class="dropdown-item" href="#">Return to Dashboard</a>-->
+                    <?php endif; ?>
+                    <a class="dropdown-item" href="#">Messages</a>
+                    <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
+                           onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                            <?php echo e(__('Logout')); ?>
 
-                                <li class="dropdown">
-                                    <a id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-expanded="false" v-pre>
-                                        <?php echo e(Auth::user()->name); ?> <span class="caret"></span>
-                                    </a>
-
-                                        <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
-                                           onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
-                                            <?php echo e(__('Logout')); ?>
-
-                                        </a>
-
-                                        <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" >
-                                            <?php echo csrf_field(); ?>
-                                        </form>
-                                </li>
-                                <?php endif; ?>
+                        </a>
+                </div>
+            </div>
+            <?php endif; ?>
         </div>
         
         <nav class="header__menu">
@@ -96,32 +85,22 @@
                                 <li><a href="<?php echo e(url('about')); ?>">About</a></li>
                                 <li><a href="#">Learn</a>
                                     <ul class="dropdown">
-                                        <li><a href="<?php echo e(url('learn_depression')); ?>">Depression</a></li>
-                                        <li><a href="<?php echo e(url('learn_suicide')); ?>">Suicide</a></li>
-                                        <li><a href="<?php echo e(url('learn_stress')); ?>">Stress</a></li>
-                                        <li><a href="<?php echo e(url('learn_stigma')); ?>">Stigma</a></li>
-                                        <li><a href="<?php echo e(url('learn_healthy_sleep')); ?>">Healthy Sleep</a></li>
-                                        <li><a href="<?php echo e(url('learn_mental_illness')); ?>">Mental Illness</a></li>
-                                        <li><a href="<?php echo e(url('learn_hopelessness')); ?>">Hopelessness</a></li>
-                                        <li><a href="<?php echo e(url('learn_fear_of_loss')); ?>">Fear of Loss</a></li>
-                                        <li><a href="<?php echo e(url('learn_social_isolation')); ?>">Social Isolation</a></li>
+                                         <li><a href="/home/learn/depression/1">Depression</a></li>
+                                        <li><a href="/home/learn/suicide/2">Suicide</a></li>
+                                        <li><a href="/home/learn/stress/3">Stress</a></li>
+                                        <li><a href="/home/learn/stigma/4">Stigma</a></li>
+                                        <li><a href="/home/learn/healthy-sleep/5">Healthy Sleep</a></li>
+                                        <li><a href="/home/learn/mental-illness/6">Mental Illness</a></li>
+                                        <li><a href="/home/learn/hopelessness/7">Hopelessness</a></li>
+                                        <li><a href="/home/learn/fear-of-loss/8">Fear of Loss</a></li>
+                                        <li><a href="/home/learn/social-isolation/9">Social Isolation</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#">Assessment</a>
                                     <ul class="dropdown">
-                                        <li><a href="./classes-details.html">Depression test</a></li>
-                                        <li><a href="./pricing.html">Sleep hygiene test</a></li>
-                                        <li><a href="./pricing.html">Happiness test</a></li>
-                                        <li><a href="./pricing.html">Mental health test</a></li>
-                                        <li><a href="./pricing.html">Anxiety test</a></li>
-                                        <li><a href="./blog-details.html">Self esteem test</a></li>
-                                        <li><a href="./pricing.html">Mental speed test</a></li>
-                                        <li><a href="./pricing.html">Concentration test</a></li>
-                                        <li><a href="./pricing.html">Emotional intelligence test</a></li>
-                                        <li><a href="./blog-details.html">Social skills test</a></li>
-                                        <li><a href="./pricing.html">Stress test</a></li>
-                                        <li><a href="./pricing.html">Self disclosure test</a></li>
-                                        <li><a href="./pricing.html">Healthy lifestyle test</a></li>
+                                    <?php $__currentLoopData = $questionnaires; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $questionnaire): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <li><a href="/home/questionnaires/<?php echo e($questionnaire->id); ?>/questions"><?php echo e($questionnaire->questionnaireTitle); ?></a></li>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </ul>
                                 </li>
                                 <li><a href="<?php echo e(url('/#talk_to_us')); ?>">Talk to Us</a></li>
@@ -136,7 +115,7 @@
                                     <ul class="dropdown">
                                         <li><a href="<?php echo e(url('weavesilk')); ?>">Interactive Drawing</a></li>
                                         <li><a href="<?php echo e(url('inspire_me')); ?>">Inspire Me</a></li>
-                                        <li><a href="<?php echo e(url('videos')); ?>">Videos</a></li>
+                                        <li><a href="<?php echo e(url('video.show')); ?>">Videos</a></li>
                                         <li><a href="<?php echo e(url('playlists')); ?>">Playlists</a></li>
                                     </ul>
                                 </li>
@@ -171,33 +150,39 @@
                     </div>
                     <div class="col-lg-9 col-md-9">
                         <div class="header__top__widget">
-                            <ul>
-                                <li>CALL US: + 1 800-567-8990</li>
-                                <li>WRITE US: OFFICE@EXAMPLE.COM</li>
-                            </ul>
                             <?php if(auth()->guard()->guest()): ?>
+                                <ul>
+                                    <li>CALL US: + 1 800-567-8990</li>
+                                    <li>WRITE US: OFFICE@EXAMPLE.COM</li>
+                                </ul>
                                 <a href="<?php echo e(route('login')); ?>" class="primary-btn">Login</a>
                                 <?php if(Route::has('register')): ?>
                                     <a href="<?php echo e(route('register')); ?>" class="primary-btn">Join us</a>
                                 <?php endif; ?>
                                 <?php else: ?>
-                                <li class="dropdown">
-                                    <a id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-expanded="false" v-pre>
-                                        <?php echo e(Auth::user()->name); ?> <span class="caret"></span>
-                                    </a>
-
-                                        <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
+                                <div class="dropdown">
+                                  <button class="btn primary-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo e(Auth::user()->name); ?></button>
+                                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <?php if(auth()->user()->is_Volunteer == 1): ?>
+                                    <a class="dropdown-item" href="/home">Return to Dashboard</a>
+                                    <?php elseif(auth()->user()->is_admin == 1): ?>
+                                    <a class="dropdown-item" href="admin/home">Return to Dashboard</a>
+                                    <?php else: ?>
+                                    <a class="dropdown-item" href="/home">Return to Dashboard</a>
+                                    <?php endif; ?>
+                                    <a class="dropdown-item" href="#">Messages</a>
+                                    <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
                                            onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
                                             <?php echo e(__('Logout')); ?>
 
                                         </a>
-
                                         <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" >
                                             <?php echo csrf_field(); ?>
                                         </form>
-                                </li>
-                                <?php endif; ?>
+                                  </div>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     </div>
 
@@ -218,15 +203,15 @@
                                 <li><a href="<?php echo e(url('about')); ?>">About</a></li>
                                 <li><a href="#">Learn</a>
                                     <ul class="dropdown">
-                                        <li><a href="<?php echo e(url('learn_depression')); ?>">Depression</a></li>
-                                        <li><a href="<?php echo e(url('learn_suicide')); ?>">Suicide</a></li>
-                                        <li><a href="<?php echo e(url('learn_stress')); ?>">Stress</a></li>
-                                        <li><a href="<?php echo e(url('learn_stigma')); ?>">Stigma</a></li>
-                                        <li><a href="<?php echo e(url('learn_healthy_sleep')); ?>">Healthy Sleep</a></li>
-                                        <li><a href="<?php echo e(url('learn_mental_illness')); ?>">Mental Illness</a></li>
-                                        <li><a href="<?php echo e(url('learn_hopelessness')); ?>">Hopelessness</a></li>
-                                        <li><a href="<?php echo e(url('learn_fear_of_loss')); ?>">Fear of Loss</a></li>
-                                        <li><a href="<?php echo e(url('learn_social_isolation')); ?>">Social Isolation</a></li>
+                                        <li><a href="/home/learn/depression/1">Depression</a></li>
+                                        <li><a href="/home/learn/suicide/2">Suicide</a></li>
+                                        <li><a href="/home/learn/stress/3">Stress</a></li>
+                                        <li><a href="/home/learn/stigma/4">Stigma</a></li>
+                                        <li><a href="/home/learn/healthy-sleep/5">Healthy Sleep</a></li>
+                                        <li><a href="/home/learn/mental-illness/6">Mental Illness</a></li>
+                                        <li><a href="/home/learn/hopelessness/7">Hopelessness</a></li>
+                                        <li><a href="/home/learn/fear-of-loss/8">Fear of Loss</a></li>
+                                        <li><a href="/home/learn/social-isolation/9">Social Isolation</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#">Assessment</a>
@@ -248,7 +233,7 @@
                                     <ul class="dropdown">
                                         <li><a href="<?php echo e(url('weavesilk')); ?>">Interactive Drawing</a></li>
                                         <li><a href="<?php echo e(url('inspire_me')); ?>">Inspire Me</a></li>
-                                        <li><a href="<?php echo e(url('videos')); ?>">Videos</a></li>
+                                        <li><a href="/videos">Videos</a></li>
                                         <li><a href="<?php echo e(url('playlists')); ?>">Playlists</a></li>
                                     </ul>
                                 </li>
@@ -382,6 +367,16 @@ unset($__errorArgs, $__bag); ?>
     <script src="/js/owl.carousel.min.js"></script>
     <script src="/js/main.js"></script>
     <script type="text/javascript" src="/js/intro.js"></script>
+    <!-- jquery latest version -->
+    <script src="/js/vendor/jquery-2.2.4.min.js"></script>
+    <!-- bootstrap 4 js -->
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/metisMenu.min.js"></script>
+    <script src="/js/jquery.slimscroll.min.js"></script>
+    <script src="/js/jquery.slicknav.min.js"></script>
+
 
     <!-- ManyChat Plugin -->
     <!--<script src="//widget.manychat.com/101206188315883.js" async="async"></script>-->

@@ -115,12 +115,11 @@
 								    <th>Phone</th>
 								    <th>Timing</th>
 								    <th>Message</th>
-								    <th>Session Completed</th>
 								  </tr>
 								</thead>
 
 								<tbody>
-								  <?php $__currentLoopData = $completedappointments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+								  <?php $__currentLoopData = $completedappointments->appointments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 								  <tr>
 								    <th scope="row">3</th>
 								    <td><?php echo e($item->name); ?></td>
@@ -130,7 +129,7 @@
 								    <td><?php echo e($item->message); ?></td>
 								    <td>
 								     <!-- <button type="button" onclick="" class="btn btn-primary" style="background-color: #5768ad; ">Accept Request</button> -->
-								      <a href="#" class="btn btn-dark">Appointment attended</a>
+								      <a href="/volunteer/appointment/<?php echo e($item->id); ?>/report" class="btn btn-dark">Make Report</a>
 								    </td>
 								  </tr>
 								  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
