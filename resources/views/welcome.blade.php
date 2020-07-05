@@ -13,9 +13,9 @@
                         <div class="col-lg-8">
                             <div class="hero__text">
                                 <span>We Share coz We Care</span>
-                                <h2>Dialy Quote #1</h2>
+                                <h2>{{ $dialyquote }}</h2>
                                 <a style="color: white;" href="javascript:void(0);" onclick="javascript:introJs().setOption('showProgress',true).start();"><u><span>Take a Tour</span></u></a>
-                                <a href="#" class="primary-btn">DISCOVER MORE</a>
+                                <a href="{{ url('about') }}" class="primary-btn">DISCOVER MORE</a>
                             </div>
                         </div>
                     </div>
@@ -194,50 +194,27 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="classes__item">
-                            <div class="classes__item__pic set-bg" data-setbg="img/classes/classes-1.jpg">
-                                <img src="img/classes/classes-1.jpg" alt="">
-                                <span>20 Jun 2019</span>
-                            </div>
-                            <div class="classes__item__text">
-                                <p>Source1: </p>
-                                <h4>abcdefghijklmnopqrst<br>max 20 chars</h4>
-                                <h6>Part of the news</span></h6>
-                                <a href="#" class="class-btn">Know More</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="classes__item">
-                            <div class="classes__item__pic set-bg" data-setbg="img/classes/classes-1.jpg">
-                                <img src="img/classes/classes-1.jpg" alt="">
-                                <span>20 Jun 2019</span>
-                            </div>
-                            <div class="classes__item__text">
-                                <p>Source1: </p>
-                                <h4>abcdefghijklmnopqrst<br>max 20 chars</h4>
-                                <h6>Part of the news</span></h6>
-                                <a href="#" class="class-btn">Know More</a>
+                    @foreach($featurednews as $news)
+                        <div class="col-lg-4 col-md-6">
+                            <div class="classes__item">
+                                @if(is_null($news->image))
+                                <div class="classes__item__pic set-bg" data-setbg="{{ asset('/img/news/default.jpg') }}">
+                                    <img src="{{ asset('/img/news/default.jpg') }} alt="">
+                                @else
+                                <div class="classes__item__pic set-bg" data-setbg="{{ asset('/img/news/'.$news->image) }}">
+                                    <img src="{{ asset('/img/news/'.$news->image) }}" alt="">
+                                @endif
+                                    <span>{{ Carbon\Carbon::parse($news->created_at)->format('d-M-Y') }}</span>
+                                </div>
+                                <div class="classes__item__text">
+                                    <p>{{ $news->source }} </p>
+                                    <h4>{{ $news->headline }}</h4>
+                                    <h6>{{ $news->content }}</span></h6>
+                                    <a href="{{ $news->link }}" class="class-btn">Know More</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="classes__item">
-                            <div class="classes__item__pic set-bg" data-setbg="img/classes/classes-1.jpg">
-                                <img src="img/classes/classes-1.jpg" alt="">
-                                <span>20 Jun 2019</span>
-                            </div>
-                            <div class="classes__item__text">
-                                <p>Source1: </p>
-                                <h4>abcdefghijklmnopqrst<br>max 20 chars</h4>
-                                <h6>Part of the news</span></h6>
-                                <a href="#" class="class-btn">Know More</a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
 
                 </div>
             </div>
@@ -279,7 +256,7 @@
                             true essence of yoga, meditation, health, peace and learning the art of creating a class to
                             teach safely. We are passionate about adjustments and mainly focus on the alignment of the
                             asanas.</p>
-                        <a href="#" class="primary-btn">MORE ABOUT US</a>
+                        <a href="{{ url('about') }}" class="primary-btn">MORE ABOUT US</a>
                     </div>
                 </div>
             </div>

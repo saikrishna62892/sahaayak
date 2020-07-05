@@ -28,6 +28,8 @@ body {
 	font-family: "DM Sans", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	background-color: #f5f6fa;
+  	scroll-behavior: smooth;
+
 }
 
 h1,

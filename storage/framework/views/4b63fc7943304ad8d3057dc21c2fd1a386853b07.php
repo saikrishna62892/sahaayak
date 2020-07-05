@@ -150,7 +150,7 @@
 						
 						<!-- refer form begin -->
 		                <div class="tab-pane fade" id="refer" role="tabpanel">
-		                    <p align="center">Please refer us if u know any volunteers or users so that your share will help the required one<br></p>
+		                    <p align="center">For goodness sake... don't make make us beg, spread the word!<br></p>
 		                     <!-- The text field -->
 							<p align="center"><input  align="center" type="text" class="form-control" value="www.sahaayak.co.in" id="myInput" style="width: 16%;pointer-events:none;" disabled="disabled">
 

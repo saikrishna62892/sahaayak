@@ -15,6 +15,9 @@ use App\News;
 use App\Video;
 use App\Appointment;
 use Analytics;
+use App\Quote;
+use Carbon\Carbon;
+use App\dialyquotes;
 use Spatie\Analytics\Period;
 //use Spatie\Analytics\Analytics;
 
@@ -25,7 +28,7 @@ class HomeController extends Controller
      * Create a new controller instance.
      *
      * @return void
-     */
+     */ 
     public function __construct()
     {
         $this->middleware('auth');
@@ -36,6 +39,18 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    public function dialyQuote(Request $request){
+        $quote= new dialyquotes();
+        $quote->quote=$request->quote;
+        $quote->save();
+        $dialyquote=$request->quote;
+    }
+    public function welcome(){
+        $dialyquote=dialyquotes::all()->last()->quote;
+        $featurednews=News::orderBy('created_at','desc')->get();
+        #dd($featurednews);
+        return view('welcome')->with(compact('dialyquote','featurednews'));
+    }
     public function index()
     {
         $user = Auth::user();
