@@ -13,6 +13,10 @@
                         <div class="col-lg-8">
                             <div class="hero__text">
                                 <span>We Share coz We Care</span>
+                                <?php
+                                    $datetime = new DateTime('tomorrow');
+                                    dd($datetime)
+                                ?>
                                 <h2>Dialy Quote #1</h2>
                                 <a style="color: white;" href="javascript:void(0);" onclick="javascript:introJs().setOption('showProgress',true).start();"><u><span>Take a Tour</span></u></a>
                                 <a href="#" class="primary-btn">DISCOVER MORE</a>
@@ -169,7 +173,7 @@
                             <input type="text" placeholder="Phone" name="phone">
                         </div>
                         <div class="col-lg-6">
-                            <input placeholder="Date & Time" type="datetime-local" name="timings" min="2020-07-10T00:00">
+                            <input placeholder="Date & Time" type="datetime-local" name="timings" min="2020-05-10T00:00">
                         </div>
                         <div class="col-lg-12 text-center">
                             <textarea placeholder="What do you want to talk about ?" name="message"></textarea>
