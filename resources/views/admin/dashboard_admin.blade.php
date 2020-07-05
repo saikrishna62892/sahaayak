@@ -67,7 +67,10 @@
                 <div class="trd-history-tabs">
                     <ul class="nav" role="tablist">
                         <li>
-                            <a class="active" data-toggle="tab" href="#expert_talks" role="tab">Expert Talks</a>
+                            <a class="active" data-toggle="tab" href="#dialyquote" role="tab">Dialy Quote</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#expert_talks" role="tab">Expert Talks</a>
                         </li>
                         <li>
                             <a data-toggle="tab" href="#news" role="tab">News</a>
@@ -89,8 +92,14 @@
             </div>
             <div class="trad-history mt-4">
                 <div class="tab-content" id="myTabContent">
+                    <!-- Dialy Quote Form begin  -->
+                    <div class="tab-pane fade show active" id="dialyquote" role="tabpanel">
+                        @include('quotes.dialyquote')
+                    </div>
+                    <!-- Dialy Quote Form end -->
+
                     <!-- Expert_talks form begin -->
-                    <div class="tab-pane fade show active" id="expert_talks" role="tabpanel">
+                    <div class="tab-pane fade" id="expert_talks" role="tabpanel">
                         <h4 align="center">Expert Talks Form</h4>
                         @include('talks.create')
                     </div>

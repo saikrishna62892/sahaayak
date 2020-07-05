@@ -10,7 +10,6 @@ class Appointment extends Model
 {
     protected $guarded = [];
     protected $table='appointments';
-    public $timestamps = false;
 
     public function user()
     {
