@@ -1,32 +1,32 @@
-@extends('layouts.learn')
 
-@section('breadcrumb')
 
-<h2>Understanding Mental-illness</h2>
-<h5>Having a mental disorder isn't easy, and it's even harder when people assume you can just get over it</h5>
+<?php $__env->startSection('breadcrumb'); ?>
 
-@endsection
+<h2>Understanding Healthy-sleep</h2>
+<h5>Your future depends on your dreams, so go to sleep.</h5>
 
-@section('learncontent')
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('learncontent'); ?>
 
 <div class="classes__details__large">
-    <img src="/img/classes-details/cd-mentalillness.jpg" alt="">
-        <span>Understanding Mental-illness</span>
+    <img src="/img/classes-details/cd-sleep.jpg" alt="">
+        <span>Understanding Healthy-sleep</span>
 </div>
 
-<h2>What is Mental-illness?</h2>
+<h2>What is Healthy-sleep?</h2>
 
 <p>There are many variations of passages of Lorem Ipsum avaihave suffered that the alteration in some form by injected humour or the an randomised words which don’t look even evry is and slightly believable. If you are going to use a passage of Lorem Ipsum you need to be sure there isn’t is the anything aembarrassing hidden in the middle of text.Ipsum available but the that majority have that suffered is humour or randomised words.</p>
 
 <div class="classes__details__item">
     <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cqQgiwsrt4U" allowfullscreen></iframe>
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/eact_OBCWv8" allowfullscreen></iframe>
     </div>
 </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('faq')
+<?php $__env->startSection('faq'); ?>
                       <div class="container">
                                     <div class="row d-flex justify-content-center">
                                         <div class="col-lg-12">
@@ -46,7 +46,7 @@
                                                                 <p>Please allow 1 day for tracking information to update on your order. If you
                                                                     are unable to track your order, please let us know and we'll be happy to
                                                                     assist.</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -64,7 +64,7 @@
                                                                 <p>Please allow 1 day for tracking information to update on your order. If you
                                                                     are unable to track your order, please let us know and we'll be happy to
                                                                     assist.</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -82,7 +82,7 @@
                                                                 <p>Please allow 1 day for tracking information to update on your order. If you
                                                                     are unable to track your order, please let us know and we'll be happy to
                                                                     assist.</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -100,7 +100,7 @@
                                                                 <p>Please allow 1 day for tracking information to update on your order. If you
                                                                     are unable to track your order, please let us know and we'll be happy to
                                                                     assist.</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -118,7 +118,7 @@
                                                                 <p>Please allow 1 day for tracking information to update on your order. If you
                                                                     are unable to track your order, please let us know and we'll be happy to
                                                                     assist.</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -132,7 +132,7 @@
                                                             <div class="card-body">
                                                                 <p>You can chat through virtual chat box.</p>
                                                                 <p>You can get a volunteer appointment by clicking below</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -141,13 +141,13 @@
                                         </div>
                                     </div>
                                 </div>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('learnname')
-Mental-illness
-@endsection
+<?php $__env->startSection('learnname'); ?>
+Healthy-sleep
+<?php $__env->stopSection(); ?>
 
-@section('comments')
+<?php $__env->startSection('comments'); ?>
     <div class="classes__sidebar__comment">
                                     <div class="classes__sidebar__comment__pic">
                                         <img src="/img/classes-details/comment-1.png" alt="">
@@ -184,4 +184,6 @@ Mental-illness
                                     </div>
                                 </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.learn', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\sahaayak\resources\views/learn/healthy-sleep.blade.php ENDPATH**/ ?>
