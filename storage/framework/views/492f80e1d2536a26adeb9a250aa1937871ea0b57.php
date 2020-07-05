@@ -1,15 +1,15 @@
-@extends('layouts.learn')
 
-@section('breadcrumb')
+
+<?php $__env->startSection('breadcrumb'); ?>
 
 <h2>Understanding Depression</h2>
 <h5>Worst part about</h5>
 <h4>DEPRESSION</h4>
 <h5>People don't have it. They just don't get it</h5>
 
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('learncontent')
+<?php $__env->startSection('learncontent'); ?>
 
 <div class="classes__details__large">
     <img src="/img/classes-details/cd-large.jpg" alt="">
@@ -26,9 +26,9 @@
     </div>
 </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('faq')
+<?php $__env->startSection('faq'); ?>
                       <div class="container">
                                     <div class="row d-flex justify-content-center">
                                         <div class="col-lg-12">
@@ -44,7 +44,7 @@
                                                             <div class="card-body">                                                               
                                                                 <p>Depression is a disease. It is a problem with your brain chemistry, not your character.
                                                                  You can't force yourself to get over it any more than you can make asthma or a heart attack go away.</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -62,7 +62,7 @@
                                                                 <p>Depression can develop in any age group, ethnic group, economic group, and gender.
                                                                  A few people get over depression on their own, but most people need treatment.
                                                                  Most people with depression can be treated, and they return to their work and home routines.</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -94,7 +94,7 @@
                                                                   up their thoughts to us, offering us a chance to help them get over these thoughts.  </p>
                                                                 <p>Many people with depression are helped by medicine.
                                                                  Medicine can improve or get rid of the symptoms of depression.</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -109,7 +109,7 @@
                                                                 <p> Adolescents should seek treatments because it will definitely help them heal. 
                                                                 However, awareness should be increased on all social levels to enlighten people who suffer from depression. 
                                                                 Depression is a severe problem that should be immediately addressed.</p>                                                                
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -123,7 +123,7 @@
                                                             <div class="card-body">
                                                                 <p>You can chat through virtual chat box.</p>
                                                                 <p>You can get a volunteer appointment by clicking below</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -132,8 +132,10 @@
                                         </div>
                                     </div>
                                 </div>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('learnname')
+<?php $__env->startSection('learnname'); ?>
 Depression
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.learn', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\sahaayak\resources\views/learn/depression.blade.php ENDPATH**/ ?>
