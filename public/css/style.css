@@ -3007,4 +3007,12 @@ ol {
 }
 
 
+input[type="datetime-local"] {
+  text-align: right;
+}
 
+input[type="datetime-local"]:before {
+  color: #fff;
+  content: attr(placeholder) !important;
+  margin-right: 0.5em;
+}
