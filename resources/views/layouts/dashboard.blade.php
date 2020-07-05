@@ -34,14 +34,20 @@
 </script>
     <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
+
 <!--reportForm script begin-->
 <script type="text/javascript">
     function reply_click(clicked_id)
     {
-        document.getElementById('appointment_id').value = clicked_id;
+        var res = clicked_id.split("#");
+        document.getElementById("demo").innerHTML = "Make Report for "+res[1];
+        document.getElementById('appointment_id').value = res[0];
+        document.getElementById('appointment_name').value = res[1];
+        document.getElementById('appointment_email').value = res[2];
     }
 </script>
 <!--reportForm script end-->
+
 <body>
     <!-- preloader area start -->
     <div id="preloader">

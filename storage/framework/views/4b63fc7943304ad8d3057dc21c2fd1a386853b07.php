@@ -79,7 +79,6 @@
                                         <th scope="col">Timings</th>
                                         <th scope="col" colspan="3">Message</th>
                                         <th scope="col">Options</th>
-								    	<!--<th scope="col">Session Completed</th>-->
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -92,7 +91,7 @@
 									    <td><?php echo e($item->phone); ?></td>
 									    <td><?php echo e($item->timings); ?></td>
 									    <td colspan="3"><?php echo e($item->message); ?></td>
-									    <td><a href="/volunteer/appointment/<?php echo e($item->id); ?>/acceptAppointment" style="color: #5768ad;">Accept</a></td>
+									    <td><a href="/volunteer/appointment/<?php echo e($item->id); ?>/acceptAppointment" style="color: #5768ad;">Accept?</a></td>
                                     </tr>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
                                     <h5>No Requests Made still..</h5>
@@ -105,43 +104,7 @@
 
 		                <!-- report form begin -->
 		     			<div class="tab-pane fade" id="report" role="tabpanel">
-		        			<table class="table table-striped table-responsive-md btn-table">
-
-								<thead>
-								  <tr>
-								    <th>Sno.</th>
-								    <th>Name</th>
-								    <th>Email</th>
-								    <th>Phone</th>
-								    <th>Timing</th>
-								    <th>Message</th>
-								    <th>Make Report</th>
-								  </tr>
-								</thead>
-
-								<tbody>
-								  <?php $__currentLoopData = $completedappointments->appointments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-								  <tr>
-								    <th scope="row"><?php echo e($key+1); ?></th>
-								    <td><?php echo e($item->name); ?></td>
-								    <td><?php echo e($item->email); ?></td>
-								    <td><?php echo e($item->phone); ?></td>
-								    <td><?php echo e($item->timings); ?></td>
-								    <td><?php echo e($item->message); ?></td>
-								    <td>
-								     <!-- <button type="button" onclick="" class="btn btn-primary" style="background-color: #5768ad; ">Accept Request</button> -->
-								     <!--
-								      <a href="/volunteer/appointment/<?php echo e($item->id); ?>/report" class="btn btn-dark">Make Report</a>
-								  	-->
-								  <button id="<?php echo e($item->id); ?>" data-toggle="tab" href="#makeReport" role="tab" onClick="reply_click(this.id)" class="btn btn-primary">Make Report</button>
-								    </td>
-								  </tr>
-								  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-								</tbody>
-
-								</table>
-
-								<div class="table-responsive">
+		     				<div class="table-responsive">
 	                            <table class="table table-hover progress-table text-center">
 	                                <thead class="text-uppercase">
 	                                    <tr>
@@ -152,7 +115,6 @@
 	                                        <th scope="col">Timings</th>
 	                                        <th scope="col" colspan="3">Message</th>
 	                                        <th scope="col">Options</th>
-									    	<!--<th scope="col">Session Completed</th>-->
 	                                    </tr>
 	                                </thead>
 	                                <tbody>
@@ -165,7 +127,16 @@
 										    <td><?php echo e($item->phone); ?></td>
 										    <td><?php echo e($item->timings); ?></td>
 										    <td colspan="3"><?php echo e($item->message); ?></td>
-										    <td><button id="<?php echo e($item->id); ?>" data-toggle="tab" href="#makeReport" role="tab" onClick="reply_click(this.id)" class="btn btn-primary" style="background-color: #5768ad;">Make Report</button></td>
+										    <?php
+										    	$dtA = new DateTime();
+												$dtB = new DateTime($item->timings);
+											?>
+										    <?php if($dtA > $dtB): ?>
+										    <td><button id="<?php echo e($item->id); ?>#<?php echo e($item->name); ?>#<?php echo e($item->email); ?>" data-toggle="tab" href="#makeReport" role="tab" onClick="reply_click(this.id,)" class="btn btn-primary" style="background-color: #5768ad;">Make Report</button></td>
+										    <?php else: ?>
+										    <td style="color: lightgrey;">Making report will availabe after session completion.</td>
+										    <?php endif; ?>
+										    
 	                                    </tr>
 	                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
 	                                    <h5>No Reports to make..</h5>
@@ -193,10 +164,10 @@
 		    </div>
 		</div>
 		<!--reportForm Begin-->
-	                    <div class="tab-pane fade" id="makeReport" role="tabpanel">
-	                    	<?php echo $__env->make('appointment.reportForm', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-	                    </div>
-	                    <!--reportForm end-->
+        <div class="tab-pane fade" id="makeReport" role="tabpanel">
+        	<?php echo $__env->make('appointment.reportForm', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        </div>
+        <!--reportForm end-->
 	</div>
 	<!-- trading history area end -->
 <script>

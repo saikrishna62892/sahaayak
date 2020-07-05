@@ -1,119 +1,112 @@
-                            <div class="card">
-                <div class="card-header">Fill Report Details</div>
+<div class="card shadow p-4 mb-5 bg-white rounded">
+    <h4 align="center" id="demo">Make Report for </h4>
 
-                <div class="card-body">
-                   <form action="/volunteer/report/generateReport" method="post">
-                    <?php echo csrf_field(); ?>
-                    <div class="form-group">
-                        <label for="appointment_id">appointment_id</label>
-                        <input type="number" class="form-control" name="appointment_id" id="appointment_id" aria-describedby="appointment_idHelp" placeholder="Enter appointment_id" value="" readonly>
-                        <small id="appointment_idHelp" class="form-text text-muted">appointment_id</small>
-                        <?php $__errorArgs = ['appointment_id'];
+    <div class="card-body">
+       <form action="/volunteer/report/generateReport" method="post">
+        <?php echo csrf_field(); ?>
+        <div class="row">
+            <div class="form-group  col-lg-2">
+                <label for="appointment_id">ID</label>
+                <input type="text" class="form-control" name="appointment_id" id="appointment_id" aria-describedby="appointment_idHelp" value="" readonly>
+                <?php $__errorArgs = ['appointment_id'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                        <small class="text-danger"><?php echo e($message); ?></small>
-                        <?php unset($message);
+                <small class="text-danger"><?php echo e($message); ?></small>
+                <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                    </div>
-                    <div class="form-group">
-                        <label for="speed">Speed of talk</label>
-                        <input type="number" class="form-control" name="speed" id="speed" aria-describedby="speedHelp" placeholder="enter speed of talk" value="<?php echo e(old('speed')); ?>">
-                        <small id="speedHelp" class="form-text text-muted">enter speed of talk</small>
-                        <?php $__errorArgs = ['speed'];
+            </div>
+            <div class="form-group  col-lg-4">
+                <label for="appointment_id">Name</label>
+                <input type="text" class="form-control" name="appointment_name" id="appointment_name" aria-describedby="appointment_nameHelp" value="" readonly>
+                <?php $__errorArgs = ['appointment_id'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                        <small class="text-danger"><?php echo e($message); ?></small>
-                        <?php unset($message);
+                <small class="text-danger"><?php echo e($message); ?></small>
+                <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                    </div>
-                    <div class="form-group">
-                        <label for="longPause">long Pause</label>
-                        <input type="number" class="form-control" name="longPause" id="longPause" aria-describedby="longPauseHelp" placeholder="Enter long Pause" value="<?php echo e(old('longPause')); ?>">
-                        <small id="longPauseHelp" class="form-text text-muted">enter long Pause</small>
-                        <?php $__errorArgs = ['longPause'];
+            </div>
+            <div class="form-group  col-lg-6">
+                <label for="appointment_id">Email</label>
+                <input type="text" class="form-control" name="appointment_email" id="appointment_email" aria-describedby="appointment_emailHelp" value="" readonly>
+                <?php $__errorArgs = ['appointment_id'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                        <small class="text-danger"><?php echo e($message); ?></small>
-                        <?php unset($message);
+                <small class="text-danger"><?php echo e($message); ?></small>
+                <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                    </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="formControlRange">Enter speed of talk during session</label>
+            <input type="range" class="form-control-range" name="speed" id="speed" aria-describedby="speedHelp" value="<?php echo e(old('speed')); ?>">
+        </div>
+        <div class="form-group">
+            <label for="formControlRange">Enter long pause range during session</label>
+            <input type="range" class="form-control-range" name="longPause" id="longPause" aria-describedby="longPauseHelp" value="<?php echo e(old('longPause')); ?>">
+        </div>
+        <div class="form-group">
+            <label for="formControlRange">Enter loudness of speech during session</label>
+            <input type="range" class="form-control-range" name="loudness" id="loudness" aria-describedby="loudnessHelp" value="<?php echo e(old('loudness')); ?>">
+        </div>
 
-                    <div class="form-group">
-                        <label for="loudness">loudness</label>
-                        <input type="number" class="form-control" name="loudness" id="loudness" aria-describedby="loudnessHelp" placeholder="Enter loudness" value="<?php echo e(old('loudness')); ?>">
-                        <small id="loudnessHelp" class="form-text text-muted">enter loudness</small>
-                        <?php $__errorArgs = ['loudness'];
+        <div class="form-group">
+            <label for="keywords">Enter keywords used by the user while talking</label>
+            <input type="text" class="form-control" name="keywords" id="keywords" placeholder="Enter keywords">
+            <small>Note: Enter multiple keywords separated by comma</small>
+            <?php $__errorArgs = ['keywords'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                        <small class="text-danger"><?php echo e($message); ?></small>
-                        <?php unset($message);
+            <small class="text-danger"><?php echo e($message); ?></small>
+            <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                    </div>
+        </div>
 
-                    <div class="form-group">
-                        <label for="keywords">keywords</label>
-                        <input type="text" class="form-control" name="keywords" id="keywords" aria-describedby="keywordsHelp" placeholder="Enter keywords" value="<?php echo e(old('keywords')); ?>">
-                        <small id="keywordsHelp" class="form-text text-muted">enter purpose</small>
-                        <?php $__errorArgs = ['keywords'];
+        <div class="form-group">
+            <label for="suggestions">Enter suggestions for the user</label>
+            <textarea class="form-control" name="suggestions" id="suggestions" placeholder="You can give your valuable suggestions & prescriptions for the user" rows="8"></textarea>
+            <?php $__errorArgs = ['suggestions'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                        <small class="text-danger"><?php echo e($message); ?></small>
-                        <?php unset($message);
+            <small class="text-danger"><?php echo e($message); ?></small>
+            <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                    </div>
+        </div>
 
-                    <div class="form-group">
-                        <label for="suggestions">suggestions</label>
-                        <textarea class="form-control" name="suggestions" id="suggestions" aria-describedby="suggestionsHelp" placeholder="Enter suggestions" value="<?php echo e(old('suggestions')); ?>"></textarea>
-                        <small id="suggestionsHelp" class="form-text text-muted">enter suggestions</small>
-                        <?php $__errorArgs = ['suggestions'];
+        <div class="form-group">
+            <label for="remarks">Enter remarks</label>
+            <textarea type="textarea" class="form-control" name="remarks" id="remarks" placeholder="Your remarks about the session" rows="5"></textarea>
+            <?php $__errorArgs = ['remarks'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                        <small class="text-danger"><?php echo e($message); ?></small>
-                        <?php unset($message);
+            <small class="text-danger"><?php echo e($message); ?></small>
+            <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="remarks">remarks</label>
-                        <textarea type="textarea" class="form-control" name="remarks" id="remarks" aria-describedby="remarksHelp" placeholder="Enter remarks" value="<?php echo e(old('remarks')); ?>"></textarea>
-                        <small id="remarksHelp" class="form-text text-muted">enter remarks</small>
-                        <?php $__errorArgs = ['remarks'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                        <small class="text-danger"><?php echo e($message); ?></small>
-                        <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                    </div>
-                        <button  type="submit" class="btn btn-primary">generate report</button>
-                   </form>
-                </div>
-            </div><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/appointment/reportForm.blade.php ENDPATH**/ ?>
+        </div>
+            <center><button  type="submit" class="btn btn-primary" style="background-color: #5768ad;">Generate Report</button></center>
+       </form>
+    </div>
+</div><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/appointment/reportForm.blade.php ENDPATH**/ ?>

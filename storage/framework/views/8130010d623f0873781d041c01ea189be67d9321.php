@@ -152,6 +152,7 @@
                         <div class="section-title">
                             <img src="img/icon-white.png" alt="Sahaayak" width="58" height="38">
                             <h2 data-step="7" data-intro="Talk to Us" data-position="bottom-middle-aligned">Make An Appointment</h2>
+                            <small style="color: #fff;">Note: Don't worrry folks we keep your data safe</small>
                         </div>
                     </div>
                 </div>
@@ -168,11 +169,11 @@
                             <input type="text" placeholder="Phone" name="phone">
                         </div>
                         <div class="col-lg-6">
-                            <input type="text" placeholder="Time" name="timings">
+                            <input placeholder="Date & Time" type="datetime-local" name="timings" min="2020-07-10T00:00">
                         </div>
                         <div class="col-lg-12 text-center">
-                            <textarea placeholder="Message" name="message"></textarea>
-                            <button type="submit">Submit</button>
+                            <textarea placeholder="What do you want to talk about ?" name="message"></textarea>
+                            <button type="submit" onclick="alert("The timings provided may vary upto 1 hour!");">Submit</button>
                         </div>
                     </div>
                 </form>

@@ -79,7 +79,6 @@
                                         <th scope="col">Timings</th>
                                         <th scope="col" colspan="3">Message</th>
                                         <th scope="col">Options</th>
-								    	<!--<th scope="col">Session Completed</th>-->
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -92,7 +91,7 @@
 									    <td>{{$item->phone}}</td>
 									    <td>{{$item->timings}}</td>
 									    <td colspan="3">{{$item->message}}</td>
-									    <td><a href="/volunteer/appointment/{{$item->id}}/acceptAppointment" style="color: #5768ad;">Accept</a></td>
+									    <td><a href="/volunteer/appointment/{{$item->id}}/acceptAppointment" style="color: #5768ad;">Accept?</a></td>
                                     </tr>
                                     @empty
                                     <h5>No Requests Made still..</h5>
@@ -105,43 +104,7 @@
 
 		                <!-- report form begin -->
 		     			<div class="tab-pane fade" id="report" role="tabpanel">
-		        			<table class="table table-striped table-responsive-md btn-table">
-
-								<thead>
-								  <tr>
-								    <th>Sno.</th>
-								    <th>Name</th>
-								    <th>Email</th>
-								    <th>Phone</th>
-								    <th>Timing</th>
-								    <th>Message</th>
-								    <th>Make Report</th>
-								  </tr>
-								</thead>
-
-								<tbody>
-								  @foreach($completedappointments->appointments as $key => $item)
-								  <tr>
-								    <th scope="row">{{ $key+1 }}</th>
-								    <td>{{$item->name}}</td>
-								    <td>{{$item->email}}</td>
-								    <td>{{$item->phone}}</td>
-								    <td>{{$item->timings}}</td>
-								    <td>{{$item->message}}</td>
-								    <td>
-								     <!-- <button type="button" onclick="" class="btn btn-primary" style="background-color: #5768ad; ">Accept Request</button> -->
-								     <!--
-								      <a href="/volunteer/appointment/{{$item->id}}/report" class="btn btn-dark">Make Report</a>
-								  	-->
-								  <button id="{{$item->id}}" data-toggle="tab" href="#makeReport" role="tab" onClick="reply_click(this.id)" class="btn btn-primary">Make Report</button>
-								    </td>
-								  </tr>
-								  @endforeach
-								</tbody>
-
-								</table>
-
-								<div class="table-responsive">
+		     				<div class="table-responsive">
 	                            <table class="table table-hover progress-table text-center">
 	                                <thead class="text-uppercase">
 	                                    <tr>
@@ -152,7 +115,6 @@
 	                                        <th scope="col">Timings</th>
 	                                        <th scope="col" colspan="3">Message</th>
 	                                        <th scope="col">Options</th>
-									    	<!--<th scope="col">Session Completed</th>-->
 	                                    </tr>
 	                                </thead>
 	                                <tbody>
@@ -165,7 +127,16 @@
 										    <td>{{$item->phone}}</td>
 										    <td>{{$item->timings}}</td>
 										    <td colspan="3">{{$item->message}}</td>
-										    <td><button id="{{$item->id}}" data-toggle="tab" href="#makeReport" role="tab" onClick="reply_click(this.id)" class="btn btn-primary" style="background-color: #5768ad;">Make Report</button></td>
+										    <?php
+										    	$dtA = new DateTime();
+												$dtB = new DateTime($item->timings);
+											?>
+										    @if($dtA > $dtB)
+										    <td><button id="{{ $item->id }}#{{ $item->name }}#{{ $item->email }}" data-toggle="tab" href="#makeReport" role="tab" onClick="reply_click(this.id,)" class="btn btn-primary" style="background-color: #5768ad;">Make Report</button></td>
+										    @else
+										    <td style="color: lightgrey;">Making report will availabe after session completion.</td>
+										    @endif
+										    
 	                                    </tr>
 	                                    @empty
 	                                    <h5>No Reports to make..</h5>
@@ -193,10 +164,10 @@
 		    </div>
 		</div>
 		<!--reportForm Begin-->
-	                    <div class="tab-pane fade" id="makeReport" role="tabpanel">
-	                    	@include('appointment.reportForm')
-	                    </div>
-	                    <!--reportForm end-->
+        <div class="tab-pane fade" id="makeReport" role="tabpanel">
+        	@include('appointment.reportForm')
+        </div>
+        <!--reportForm end-->
 	</div>
 	<!-- trading history area end -->
 <script>
