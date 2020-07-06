@@ -1,66 +1,70 @@
-@extends('layouts.dashboard')
-@section('content')
-            <div class="card">
-                <div class="card-header">New Questionnaire</div>
+<div class="card shadow p-4 mb-5 bg-white rounded">
+    <h4 align="center" id="demo">Make Report for </h4>
 
-                <div class="card-body">
-                   <form action="/admin/report/{{$appointment->id}}/generateReport" method="post">
-                    @csrf
-                    
-                    <div class="form-group">
-                        <label for="speed">Speed of talk</label>
-                        <input type="number" class="form-control" name="speed" id="speed" aria-describedby="speedHelp" placeholder="Enter title" value="{{ old('speed') }}">
-                        <small id="speedHelp" class="form-text text-muted">enter speed of talk</small>
-                        @error('speed')
-                        <small class="text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                        <label for="longPause">long Pause</label>
-                        <input type="number" class="form-control" name="longPause" id="longPause" aria-describedby="longPauseHelp" placeholder="Enter long Pause" value="{{ old('longPause') }}">
-                        <small id="longPauseHelp" class="form-text text-muted">enter long Pause</small>
-                        @error('longPause')
-                        <small class="text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                        <label for="loudness">loudness</label>
-                        <input type="number" class="form-control" name="loudness" id="loudness" aria-describedby="loudnessHelp" placeholder="Enter loudness" value="{{ old('loudness') }}">
-                        <small id="loudnessHelp" class="form-text text-muted">enter loudness</small>
-                        @error('loudness')
-                        <small class="text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                        <label for="keywords">keywords</label>
-                        <input type="text" class="form-control" name="keywords" id="keywords" aria-describedby="keywordsHelp" placeholder="Enter keywords" value="{{ old('keywords') }}">
-                        <small id="keywordsHelp" class="form-text text-muted">enter purpose</small>
-                        @error('keywords')
-                        <small class="text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                        <label for="suggestions">suggestions</label>
-                        <textarea class="form-control" name="suggestions" id="suggestions" aria-describedby="suggestionsHelp" placeholder="Enter suggestions" value="{{ old('suggestions') }}"></textarea>
-                        <small id="suggestionsHelp" class="form-text text-muted">enter suggestions</small>
-                        @error('suggestions')
-                        <small class="text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                        <label for="remarks">remarks</label>
-                        <textarea type="textarea" class="form-control" name="remarks" id="remarks" aria-describedby="remarksHelp" placeholder="Enter remarks" value="{{ old('remarks') }}"></textarea>
-                        <small id="remarksHelp" class="form-text text-muted">enter remarks</small>
-                        @error('remarks')
-                        <small class="text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
-                        <button  type="submit" class="btn btn-primary">generate report</button>
-                   </form>
-                </div>
+    <div class="card-body">
+       <form action="/volunteer/report/generateReport" method="post">
+        @csrf
+        <div class="row">
+            <div class="form-group  col-lg-2">
+                <label for="appointment_id">ID</label>
+                <input type="text" class="form-control" name="appointment_id" id="appointment_id" aria-describedby="appointment_idHelp" value="" readonly>
+                @error('appointment_id')
+                <small class="text-danger">{{$message}}</small>
+                @enderror
             </div>
-@endsection
+            <div class="form-group  col-lg-4">
+                <label for="appointment_id">Name</label>
+                <input type="text" class="form-control" name="appointment_name" id="appointment_name" aria-describedby="appointment_nameHelp" value="" readonly>
+                @error('appointment_id')
+                <small class="text-danger">{{$message}}</small>
+                @enderror
+            </div>
+            <div class="form-group  col-lg-6">
+                <label for="appointment_id">Email</label>
+                <input type="text" class="form-control" name="appointment_email" id="appointment_email" aria-describedby="appointment_emailHelp" value="" readonly>
+                @error('appointment_id')
+                <small class="text-danger">{{$message}}</small>
+                @enderror
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="formControlRange">Enter speed of talk during session</label>
+            <input type="range" class="form-control-range" name="speed" id="speed" aria-describedby="speedHelp" value="{{ old('speed') }}">
+        </div>
+        <div class="form-group">
+            <label for="formControlRange">Enter long pause range during session</label>
+            <input type="range" class="form-control-range" name="longPause" id="longPause" aria-describedby="longPauseHelp" value="{{ old('longPause') }}">
+        </div>
+        <div class="form-group">
+            <label for="formControlRange">Enter loudness of speech during session</label>
+            <input type="range" class="form-control-range" name="loudness" id="loudness" aria-describedby="loudnessHelp" value="{{ old('loudness') }}">
+        </div>
+
+        <div class="form-group">
+            <label for="keywords">Enter keywords used by the user while talking</label>
+            <input type="text" class="form-control" name="keywords" id="keywords" placeholder="Enter keywords">
+            <small>Note: Enter multiple keywords separated by comma</small>
+            @error('keywords')
+            <small class="text-danger">{{$message}}</small>
+            @enderror
+        </div>
+
+        <div class="form-group">
+            <label for="suggestions">Enter suggestions for the user</label>
+            <textarea class="form-control" name="suggestions" id="suggestions" placeholder="You can give your valuable suggestions & prescriptions for the user" rows="8"></textarea>
+            @error('suggestions')
+            <small class="text-danger">{{$message}}</small>
+            @enderror
+        </div>
+
+        <div class="form-group">
+            <label for="remarks">Enter remarks</label>
+            <textarea type="textarea" class="form-control" name="remarks" id="remarks" placeholder="Your remarks about the session" rows="5"></textarea>
+            @error('remarks')
+            <small class="text-danger">{{$message}}</small>
+            @enderror
+        </div>
+            <center><button  type="submit" class="btn btn-primary" style="background-color: #5768ad;">Generate Report</button></center>
+       </form>
+    </div>
+</div>

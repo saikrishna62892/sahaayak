@@ -9,7 +9,7 @@
 				    <h6 class="card-subtitle mb-2 text-muted">Source: <?php echo e($news->source); ?></h6><br>
 				    <h6 class="card-subtitle mb-2 text-muted">Details: <?php echo e(Carbon\Carbon::parse($news->created_at)->format('d-M-Y g:h:i:s A')); ?></h6><br>
 				    <h6 class="card-subtitle mb-2 text-muted">Content:</h6>
-				    <p class="card-text"><?php echo e($news->content); ?></p>
+				    <p class="card-text" align="justify"><?php echo e($news->content); ?></p>
 				    <?php $link="https://".$news->newsurl ?>
 				    <a href="<?php echo e($link); ?>" target="_blank" style="color: #5768ad;">Read more</a>
 				  </div>

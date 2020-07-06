@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Notifications\QuestionnaireNotification;
 use App\User;
 use Carbon\Carbon;
+use App\dialyquotes;
+use App\News;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +19,13 @@ use Carbon\Carbon;
 */
 /*   Guys Maintain the list in sorted_order */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/',function(){
+    $dialyquote=dialyquotes::all()->last()->quote;
+        $featurednews=News::orderBy('created_at','desc')->take(3)->get();
+        #dd($featurednews);
+        return view('welcome')->with(compact('dialyquote','featurednews'));
 });
+
 
 Route::get('about', function () {
     return view('about');
@@ -134,18 +140,23 @@ Route::get('/videos','HopeBoxController@displayVideos');
 Route::get('/admin/home/volunteer/{unapprovedVolunteer}/getDetails','VolunteerController@getDetails');
 Route::get('/admin/home/volunteer/{unapprovedVolunteer}/approveVolunteer','VolunteerController@approveVolunteer');
 
+
 //Report Routes
+
+Route::post('/volunteer/report/generateReport','appointment_controller@generateReport');
 Route::get('/volunteer/appointment/{appointment}/report','appointment_controller@reportForm');
 Route::post('/admin/report/{appointment}/generateReport','appointment_controller@generateReport');
+
+//end of dileep added routes
+
 
 //learn section routes
 Route::get('home/learn/{learn}/{learnID}','LearnController@show');
 
 
-//end of dileep added routes
-
 
 //end of dileep added routes
+
 Route::get('team', function () {
     return view('team');
 });
@@ -206,9 +217,30 @@ Route::get('/incrementLike/{story}', 'StoryController@incrementLike')->name('inc
 Route::post('/admin/home','QuoteController@save')->name('addFields');
 Route::get('/inspire_me','QuotesViewController@index');
 
+//DialyQuote
+Route::post('/','HomeController@dialyQuote')->name('dialyQuote');
+
 //Playlists routes by john&ganesh
 Route::post('/createPlaylist','PlaylistController@save')->name('createPlaylist');
 Route::get('/playlists','PlaylistController@index');
+
+//Googlesignup routes by john&ganesh
+Route::get('google', function () {
+    return view('auth/register');
+});
+    
+Route::get('/auth/google', 'Auth\LoginController@redirectToGoogle');
+Route::get('/auth/google/callback', 'Auth\LoginController@handleGoogleCallback');
+
+//Facebooksignup routes by john&ganesh
+Route::get('facebook', function () {
+    return view('auth/register');
+});
+    
+Route::get('/auth/facebook', 'Auth\LoginController@redirectToFacebook');
+Route::get('/auth/facebook/callback', 'Auth\LoginController@handleFacebookCallback');
+
+
 
 Route::get('/weavesilk', function () {
     return view('weavesilk');

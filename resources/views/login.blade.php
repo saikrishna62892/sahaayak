@@ -37,7 +37,7 @@
 					</div>
 
 					<div class="contact100-form-checkbox m-l-4">
-						<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me" {{ old('remember') ? 'checked' : '' }}>
+						<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me" value="1" {{ old('remember') ? 'checked' : '' }}>
 						<label class="label-checkbox100" for="ckb1">
 							Remember me
 						</label>

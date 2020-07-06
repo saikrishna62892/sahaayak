@@ -170,7 +170,13 @@
                                     <?php else: ?>
                                     <a class="dropdown-item" href="/home">Return to Dashboard</a>
                                     <?php endif; ?>
-                                    <a class="dropdown-item" href="#">Messages</a>
+                                    <?php if(auth()->user()->is_Volunteer == 1): ?>
+                                    <a class="dropdown-item" href="/home">Notifications</a>
+                                    <?php elseif(auth()->user()->is_admin == 1): ?>
+                                    <a class="dropdown-item" href="admin/home">Notifications</a>
+                                    <?php else: ?>
+                                    <a class="dropdown-item" href="/home">Notifications</a>
+                                    <?php endif; ?>
                                     <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
                                            onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
@@ -377,24 +383,31 @@ unset($__errorArgs, $__bag); ?>
     <script src="/js/jquery.slimscroll.min.js"></script>
     <script src="/js/jquery.slicknav.min.js"></script>
 
+    <!-- Smooth Scroll -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+      // Add smooth scrolling to all links
+      $("a").on('click', function(event) {
+          // Make sure this.hash has a value before overriding default behavior
+          if (this.hash !== "") {
+          // Prevent default anchor click behavior
+            event.preventDefault();
+            // Store hash
+            var hash = this.hash;
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 800, function(){
+              // Add hash (#) to URL when done scrolling (default click behavior)
+              window.location.hash = hash;
+            });
+          } // End if
+        });
+      });
+    </script> 
 
     <!-- ManyChat Plugin -->
     <!--<script src="//widget.manychat.com/101206188315883.js" async="async"></script>-->
-    <!-- Smooth Scrolling -->
-    <script>
-            let anchorlinks = document.querySelectorAll('a[href^="#"]')
-            for (let item of anchorlinks) { // relitere 
-                item.addEventListener('click', (e)=> {
-                    let hashval = item.getAttribute('href')
-                    let target = document.querySelector(hashval)
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    })
-                    history.pushState(null, null, hashval)
-                    e.preventDefault()
-                })
-            }
-    </script>
     <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>
     <script>
