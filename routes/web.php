@@ -17,9 +17,8 @@ use Carbon\Carbon;
 */
 /*   Guys Maintain the list in sorted_order */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','HomeController@welcome');
+
 
 Route::get('about', function () {
     return view('about');
@@ -192,6 +191,9 @@ Route::get('/incrementLike/{story}', 'StoryController@incrementLike')->name('inc
 //Inspireme routes by john&ganesh
 Route::post('/admin/home','QuoteController@save')->name('addFields');
 Route::get('/inspire_me','QuotesViewController@index');
+
+//DialyQuote
+Route::post('/','HomeController@dialyQuote')->name('dialyQuote');
 
 //Playlists routes by john&ganesh
 Route::post('/createPlaylist','PlaylistController@save')->name('createPlaylist');
