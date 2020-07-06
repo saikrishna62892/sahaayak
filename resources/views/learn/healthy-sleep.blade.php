@@ -16,11 +16,11 @@
 
 <h2>What is Healthy-sleep?</h2>
 
-<p>There are many variations of passages of Lorem Ipsum avaihave suffered that the alteration in some form by injected humour or the an randomised words which don’t look even evry is and slightly believable. If you are going to use a passage of Lorem Ipsum you need to be sure there isn’t is the anything aembarrassing hidden in the middle of text.Ipsum available but the that majority have that suffered is humour or randomised words.</p>
+<p>Fewer than six and more than ten hours of sleep per day are associated with metabolic syndrome and its individual components.</p>
 
 <div class="classes__details__item">
     <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/eact_OBCWv8" allowfullscreen></iframe>
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/j5Sl8LyI7k8" allowfullscreen></iframe>
     </div>
 </div>
 
@@ -40,12 +40,11 @@
                                                         </div>
                                                         <div id="collapseOne" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
+                                                                <p>Insufficient as well as excessive sleep are associated with health-related conditions
+                                                                 such as hypertension, obesity, diabetes, cardiovascular events or mortality and stroke.</p>
+                                                                <p>Metabolic disorder consisting of at least three of the following:
+                                                                 elevated waist circumference, high triglyceride levels, low high-density ‘good’
+                                                                  cholesterol levels (HDL-C), hypertension and high fasting glucose.</p>
                                                                 <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
@@ -58,12 +57,10 @@
                                                         </div>
                                                         <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
+                                                                <p>Physical disturbances (for example, chronic pain from arthritis, headaches, fibromyalgia)</p>
+                                                                <p>Medical issues (for example, asthma)</p>
+                                                                <p>Psychiatric disorders (for example, depression and anxiety disorders)</p>
+                                                                <p>Environmental issues (for example, it's too bright, it's too timid)</p>
                                                                 <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
@@ -76,12 +73,11 @@
                                                         </div>
                                                         <div id="collapseThree" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
+                                                                <p>It takes you more than 30 minutes to fall asleep after getting into bed. 
+                                                                 You have been diagnosed as having insomnia.</p>
+                                                                <p>You regularly wake up more than once per night. 
+                                                                You find yourself staying awake for more than 20 minutes after waking up in the middle of the night. 
+                                                                You spend less than 85 percent of your time in bed asleep. </p>
                                                                 <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
@@ -94,12 +90,12 @@
                                                         </div>
                                                         <div id="collapseFour" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
+                                                                <p>Stop watching television or using electronic devices like a laptop or cellphone at least 30 minutes before bedtime.
+                                                                 The blue light that’s emitted from these gadgets can make it difficult to fall asleep. Set your bedroom thermostat to somewhere between 60 and 67 degrees Fahrenheit.
+                                                                   Sleeping in a room that is either too warm or too cool interferes with your body’s ability to drift off.  </p>
+                                                                <p>Follow a consistent sleep schedule. Having poor bedtime habits, such as going to bed too early (before you’re tired)
+                                                                 or too late (when you’re overly tired) can make it more difficult to sleep soundly.
+                                                                 Limit your alcohol consumption to one or two drinks per day.  </p>
                                                                 <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
@@ -112,12 +108,9 @@
                                                         </div>
                                                         <div id="collapseFive" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
+                                                                <p>Sleep is not only beneficial to physical health but to emotional health, safety and quality of life.
+                                                                 A good night's sleep improves learning of any type as it helps in maintaining attention,
+                                                                  making decisions, and being creative.</p>
                                                                 <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
