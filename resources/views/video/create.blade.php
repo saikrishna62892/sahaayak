@@ -2,7 +2,8 @@
     <div class="card-body">
        <form action="/admin/home/videos" method="post">
         @csrf
-        <div class="form-group">
+        @include('video.video')
+        <!--<div class="form-group">
             <label for="videoSource">Please enter video source</label>
             <input type="text" class="form-control" name="videoSource" id="videoSource" aria-describedby="videoSourceHelp" placeholder="Your video source here...">
             @error('videoSource')
@@ -22,7 +23,7 @@
             @error('videoURL')
             <small class="text-danger">{{$message}}</small>
             @enderror
-        </div>
+        </div>-->
         &emsp;
         <center><button type="submit" class="btn btn-primary" style="background-color: #5768ad;">Post Video</button></center>
        </form>

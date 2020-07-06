@@ -63,4 +63,36 @@ class TalkController extends Controller
 		$talk->save();
 		return redirect()->back();
 	}
+    public function deletetalk(Talk $talkid)
+    {
+        $talkid->delete();
+        return redirect()->back();
+    }
+
+    public function edittalk(Talk $talk){
+         return view('talks.edit',compact('talk'));
+    }
+
+    public function update(Talk $talk)
+    {
+
+        $data=request()->validate(
+            [
+                'title' => 'required|min:20',
+            'content' => 'required',
+            'category' => 'required',
+            'image' => 'file|image|max:3000',
+            ]);
+            if (request()->hasFile('image')) {
+            $image = request()->image;
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/img/talks/');
+            $image->move($destinationPath, $name);
+            $data['image'] = $name;
+        }
+
+        $talk->update($data);
+        return redirect()->route('adminDashboard');
+    }
+
 }
