@@ -19,6 +19,7 @@ use App\Quote;
 use Carbon\Carbon;
 use App\dialyquotes;
 use Spatie\Analytics\Period;
+use App\Playlist;
 //use Spatie\Analytics\Analytics;
 
 
@@ -103,8 +104,12 @@ class HomeController extends Controller
         //dd($analyticsData);
         //dd($analyticsData[0]);
         //dd($analyticsData[0]['pageViews']);
-
-        return view('admin.dashboard_admin',compact('unapprovedVolunteers','talks','users_count','volunteers_count','badges','shared_news','shared_videos','shared_quotes','shared_playlists'));
+        $newsarticle = new News();
+        $talk = new Talk();
+        $quote = new Quote();
+        $video = new Video();
+        $playlist = new Playlist();
+        return view('admin.dashboard_admin',compact('unapprovedVolunteers','talks','users_count','volunteers_count','badges','shared_news','shared_videos','shared_quotes','shared_playlists','newsarticle','talk','quote','video','playlist'));
     }
 
     public function volunteerHome()

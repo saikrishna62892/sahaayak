@@ -49,4 +49,40 @@ class PlaylistController extends Controller
       return redirect('/admin/home');
       
     }
+
+    public function deleteplaylist(Playlist $playlist){
+        $playlist->delete();
+        return redirect()->back();
+    }
+
+     public function editplaylist(Playlist $playlist){
+         return view('playlists.edit',compact('playlist'));
+    }
+     public function update(Playlist $playlist)
+    {
+
+        $data=request()->validate(
+            [
+                'playlistSource'=>'required',
+              'playlistTag'=>'required',
+              'playlistURL'=>'required',
+              'image' => 'file|image|max:3000',
+            ]);
+            if (request()->hasFile('image')) {
+            $image = request()->image;
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/img/playlists/');
+            $image->move($destinationPath, $name);
+            $data['image'] = $name;
+        }
+
+        $playlist->update($data);
+        return redirect()->route('adminDashboard');
+    }
+
+
+
+
+
+
 }
