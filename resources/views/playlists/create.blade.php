@@ -2,7 +2,8 @@
     <div class="card-body">
        <form action="{{ route('createPlaylist') }}" method="post" enctype="multipart/form-data">
         @csrf
-        <div class="form-group">
+        @include('playlists.playlist')
+        <!--<div class="form-group">
             <label for="playlistSource">Enter playlist source</label>
             <input type="text" class="form-control" name="playlistSource" id="playlistSource" aria-describedby="playlistSourceHelp" placeholder="Your playlist source here...">
             @error('playlistSource')
@@ -29,7 +30,7 @@
             @error('image')
                 <small class="text-danger">{{$message}}</small>
             @enderror
-        </div>
+        </div>-->
         &emsp;
         <center><button  type="submit" class="btn btn-primary" style="background-color: #5768ad;">Add Playlist</button></center>
        </form>

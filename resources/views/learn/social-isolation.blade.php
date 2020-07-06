@@ -16,11 +16,11 @@
 
 <h2>What is Social-isolation?</h2>
 
-<p>There are many variations of passages of Lorem Ipsum avaihave suffered that the alteration in some form by injected humour or the an randomised words which don’t look even evry is and slightly believable. If you are going to use a passage of Lorem Ipsum you need to be sure there isn’t is the anything aembarrassing hidden in the middle of text.Ipsum available but the that majority have that suffered is humour or randomised words.</p>
+<p>Social isolation can be defined structurally as the absence of social interactions, contacts, and relationships with family and friends, with neighbors on an individual level, and with “society at large” on a broader level.</p>
 
 <div class="classes__details__item">
     <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/C3jlOlzSL8I" allowfullscreen></iframe>
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/fNyJmYGMhXA" allowfullscreen></iframe>
     </div>
 </div>
 
@@ -40,12 +40,11 @@
                                                         </div>
                                                         <div id="collapseOne" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
+                                                                <p>Loneliness does not depend on how many friends or relationships you have.
+                                                                 More than 60% of lonely people are married.</p>
+                                                                <p>Studies have found that merely asking people to recall times they felt lonely was sufficient
+                                                                 to make them devalue their relationships. These perceptual distortions often cause lonely people
+                                                                  to withdraw even further from the very people who could alleviate their loneliness. </p>
                                                                 <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
@@ -58,12 +57,12 @@
                                                         </div>
                                                         <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
+                                                                <p>There are several causes of social isolation. Some people voluntarily choose to isolate themselves from others.
+                                                                For example, an eccentric person may choose to have very little contact with other people.
+                                                                 However, in most cases, social isolation is involuntary.</p>
+                                                                <p>Social isolation can be caused by physical disabilities or illnesses,
+                                                                 Advanced age can also lead to social isolation. As we get older, our health and mobility decline,
+                                                                  and our social roles change. Our living arrangements may also change. </p>
                                                                 <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
@@ -76,12 +75,8 @@
                                                         </div>
                                                         <div id="collapseThree" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
+                                                                <p>Living alone, have recently suffered a bereavement.</p>
+                                                                <p>Not leaving the house regularly.</p>
                                                                 <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
@@ -94,12 +89,8 @@
                                                         </div>
                                                         <div id="collapseFour" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
+                                                                <p>Reduce access to the three "A's": Alienation, Anger, and Unfounded Anxiety</p>
+                                                                <p>Seek out healthy activities.  Reach out to family and friends. Sign up for appointments by volunteers</p>
                                                                 <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
@@ -112,12 +103,7 @@
                                                         </div>
                                                         <div id="collapseFive" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
+                                                                <p>Health of people who are socially isolated is not so good as those who not shows that the health of people can continuously get better when they are controlled by family members or people around them.</p>
                                                                 <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
