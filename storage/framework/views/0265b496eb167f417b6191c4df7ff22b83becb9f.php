@@ -7,11 +7,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__text">
-                        <h2>Discover Stories</h2>
+                        <h2>Expert Talks</h2>
                         <h5>Some text.................</h5>
                         <div class="breadcrumb__widget">
                             <a href="./index.html">Home</a>
-                            <span>Stories</span>
+                            <span>Talks</span>
                         </div>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
             <div class="row">
                 <div class="col-lg-8 order-lg-1 order-1">
                     <div class="row">
-                        <h4>Stories</h4>
+                        <h4>Expert Talks</h4>
                         <?php $count=0; ?>
                         <!-- Faq Begin -->
                         <div class="faq spad">
@@ -35,40 +35,39 @@
                                     <div class="col-lg-11">
                                         <div class="faq__accordion">
                                             <div class="accordion" id="accordionExample">
-                                                <?php $__currentLoopData = $stories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $story): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                <?php $__currentLoopData = $talks; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $talk): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <div class="card">
                                                         <?php if($count==0): ?>
                                                             <div class="card-heading active">
                                                         <?php else: ?>
                                                             <div class="card-heading">
                                                         <?php endif; ?>
-                                                            <a data-toggle="collapse" data-target="#collapse<?php echo e($story->id); ?>">
-                                                                <span><?php echo e($story->title); ?></span>
+                                                            <a data-toggle="collapse" data-target="#collapse<?php echo e($talk->id); ?>">
+                                                                <span><?php echo e($talk->title); ?></span>
                                                             </a>
                                                         </div>
                                                         <?php if($count==0): ?>
-                                                            <div id="collapse<?php echo e($story->id); ?>" class="collapse show" data-parent="#accordionExample">
+                                                            <div id="collapse<?php echo e($talk->id); ?>" class="collapse show" data-parent="#accordionExample">
                                                         <?php else: ?>
-                                                            <div id="collapse<?php echo e($story->id); ?>" class="collapse" data-parent="#accordionExample">
+                                                            <div id="collapse<?php echo e($talk->id); ?>" class="collapse" data-parent="#accordionExample">
                                                         <?php endif; ?>
                                                         <?php $count++; ?>
 
                                                             <div class="card-body">
                                                                 <div class="blog__details__large">
-                                                                    <?php if(is_null($story->image)): ?>
-                                                                        <img src="<?php echo e(asset('/img/stories/default.PNG')); ?>" alt="" width="700" height="350">
+                                                                    <?php if(is_null($talk->image)): ?>
+                                                                        <img src="<?php echo e(asset('/img/talks/default.PNG')); ?>" alt="" width="700" height="350">
                                                                     <?php else: ?>
-                                                                        <img src="<?php echo e(asset('/img/stories/'.$story->image)); ?>" alt="" width="700" height="350">
+                                                                        <img src="<?php echo e(asset('/img/talks/'.$talk->image)); ?>" alt="" width="700" height="350">
                                                                     <?php endif; ?>
-                                                                    <span><?php echo e($story->category); ?></span>
+                                                                    <span><?php echo e($talk->category); ?></span>
                                                                 </div>
                                                                 <div class="blog__details__text blog__item__text">
                                                                     <ul>
-                                                                        <li><i class="fa fa-calendar-o"></i><?php echo e(Carbon\Carbon::parse($story->created_at)->format('d-M-Y g:h:i:s A')); ?></li>
-                                                                        <li><a href="<?php echo e(route('increment', $story)); ?>" class="fa fa-thumbs-up" style="color: black"></a><?php echo e($story->likes); ?></li>
+                                                                        <li><i class="fa fa-calendar-o"></i><?php echo e($talk->created_at); ?></li>
+                                                                        <li><a href="<?php echo e(route('increment', $talk)); ?>" class="fa fa-thumbs-up" style="color: black"></a><?php echo e($talk->likes); ?></li>
                                                                     </ul>
-                                                                    <p><?php echo e($story->content); ?></p>
-                                                                    <h6>Post yor stories anonymously <a href="#" style="color: #5768ad;">Register here.</a></h6>
+                                                                    <p><?php echo e($talk->content); ?></p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -147,4 +146,4 @@
 
 
 
-<?php echo $__env->make('layouts.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views//stories/show.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views//talks/show.blade.php ENDPATH**/ ?>

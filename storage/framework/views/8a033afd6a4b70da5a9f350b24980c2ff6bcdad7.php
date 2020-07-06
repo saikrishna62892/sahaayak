@@ -12,7 +12,7 @@
 <?php $__env->startSection('learncontent'); ?>
 
 <div class="classes__details__large">
-    <img src="/img/classes-details/cd-large.jpg" alt="">
+    <img src="/img/classes-details/cd-large.jpg" alt="" width="750" height="400">
         <span>Understanding Depression</span>
 </div>
 

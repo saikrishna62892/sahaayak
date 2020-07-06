@@ -206,63 +206,6 @@
     </section>
     <!-- Statistics End -->
 
-    <!-- Classes Section Begin -->
-    <section class="upcoming-classes spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
-                        <h2>What We Offer</h2>
-                        <p>The trainings are multi-style and you will learn and practice Hatha Vinyasa<br /> (flow) and
-                            Yin Yoga.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="classes__item">
-                        <div class="classes__item__pic set-bg" data-setbg="img/classes/classes-1.jpg">
-                            <span>20 Jun 2019</span>
-                        </div>
-                        <div class="classes__item__text">
-                            <p>14 Days | Start on 10th Every Month</p>
-                            <h4><a href="#">100 Hour Yoga Course Rishikesh</a></h4>
-                            <h6>Jordan Lawson <span>- Yoga Teacher</span></h6>
-                            <a href="#" class="class-btn">JOIN NOW</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="classes__item">
-                        <div class="classes__item__pic set-bg" data-setbg="img/classes/classes-2.jpg">
-                            <span>20 Jun 2019</span>
-                        </div>
-                        <div class="classes__item__text">
-                            <p>14 Days | Start on 10th Every Month</p>
-                            <h4><a href="#">200 Hour Yoga Course Rishikesh</a></h4>
-                            <h6>Jordan Lawson <span>- Yoga Teacher</span></h6>
-                            <a href="#" class="class-btn">JOIN NOW</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="classes__item">
-                        <div class="classes__item__pic set-bg" data-setbg="img/classes/classes-3.jpg">
-                            <span>20 Jun 2019</span>
-                        </div>
-                        <div class="classes__item__text">
-                            <p>14 Days | Start on 10th Every Month</p>
-                            <h4><a href="#">300 Hour Yoga Course Rishikesh</a></h4>
-                            <h6>Jordan Lawson <span>- Yoga Teacher</span></h6>
-                            <a href="#" class="class-btn">JOIN NOW</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Classes Section End -->
 
     <!-- Counter Begin -->
     <div class="counter spad">
