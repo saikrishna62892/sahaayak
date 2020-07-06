@@ -64,7 +64,7 @@
                                                                 </div>
                                                                 <div class="blog__details__text blog__item__text">
                                                                     <ul>
-                                                                        <li><i class="fa fa-calendar-o"></i>{{ $story->created_at }}</li>
+                                                                        <li><i class="fa fa-calendar-o"></i>{{ Carbon\Carbon::parse($story->created_at)->format('d-M-Y g:h:i:s A') }}</li>
                                                                         <li><a href="{{ route('increment', $story) }}" class="fa fa-thumbs-up" style="color: black"></a>{{ $story->likes }}</li>
                                                                     </ul>
                                                                     <p>{{ $story->content }}</p>
@@ -118,66 +118,7 @@
                         </div>
                         <div class="blog__sidebar__recent">
                             <h4>Recent News</h4>
-                            <div class="blog__recent__item">
-                                <div class="blog__recent__item__pic">
-                                    <img src="img/blog/br-1.jpg" alt="">
-                                </div>
-                                <div class="blog__recent__item__text">
-                                    <h6>09 Kinds Of Vegetables Protect The Liver</h6>
-                                    <span>MAR 05, 2019</span>
-                                    <a href="#">More</a>
-                                </div>
-                            </div>
-                            <div class="blog__recent__item">
-                                <div class="blog__recent__item__pic">
-                                    <img src="img/blog/br-2.jpg" alt="">
-                                </div>
-                                <div class="blog__recent__item__text">
-                                    <h6>Tips You To Balance Nutrition Meal Day</h6>
-                                    <span>MAR 05, 2019</span>
-                                    <a href="#">More</a>
-                                </div>
-                            </div>
-                            <div class="blog__recent__item">
-                                <div class="blog__recent__item__pic">
-                                    <img src="img/blog/br-3.jpg" alt="">
-                                </div>
-                                <div class="blog__recent__item__text">
-                                    <h6>4 Principles Help You Lose Weight With Vegetables</h6>
-                                    <span>MAR 05, 2019</span>
-                                    <a href="#">More</a>
-                                </div>
-                            </div>
-                            <div class="blog__recent__item">
-                                <div class="blog__recent__item__pic">
-                                    <img src="img/blog/br-1.jpg" alt="">
-                                </div>
-                                <div class="blog__recent__item__text">
-                                    <h6>09 Kinds Of Vegetables Protect The Liver</h6>
-                                    <span>MAR 05, 2019</span>
-                                    <a href="#">More</a>
-                                </div>
-                            </div>
-                            <div class="blog__recent__item">
-                                <div class="blog__recent__item__pic">
-                                    <img src="img/blog/br-2.jpg" alt="">
-                                </div>
-                                <div class="blog__recent__item__text">
-                                    <h6>Tips You To Balance Nutrition Meal Day</h6>
-                                    <span>MAR 05, 2019</span>
-                                    <a href="#">More</a>
-                                </div>
-                            </div>
-                            <div class="blog__recent__item">
-                                <div class="blog__recent__item__pic">
-                                    <img src="img/blog/br-3.jpg" alt="">
-                                </div>
-                                <div class="blog__recent__item__text">
-                                    <h6>4 Principles Help You Lose Weight With Vegetables</h6>
-                                    <span>MAR 05, 2019</span>
-                                    <a href="#">More</a>
-                                </div>
-                            </div>
+                            @include('news.recent_news')
                         </div>
                     </div>
                 </div>    

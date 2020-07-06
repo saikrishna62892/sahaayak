@@ -10,7 +10,7 @@
 @section('learncontent')
 
 <div class="classes__details__large">
-    <img src="/img/classes-details/cd-suicide1.png" alt="">
+    <img src="/img/classes-details/cd-suicide1.png" alt="" width="750" height="400">
         <span>Understanding Suicide</span>
 </div>
 

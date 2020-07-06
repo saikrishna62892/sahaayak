@@ -10,7 +10,7 @@
 @section('learncontent')
 
 <div class="classes__details__large">
-    <img src="/img/classes-details/cd-sleep.jpg" alt="">
+    <img src="/img/classes-details/cd-sleep.jpg" alt="" width="750" height="400">
         <span>Understanding Healthy-sleep</span>
 </div>
 
