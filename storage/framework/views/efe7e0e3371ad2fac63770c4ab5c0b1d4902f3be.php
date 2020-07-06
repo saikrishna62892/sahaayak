@@ -16,11 +16,11 @@
 
 <h2>What is Stress?</h2>
 
-<p>There are many variations of passages of Lorem Ipsum avaihave suffered that the alteration in some form by injected humour or the an randomised words which don’t look even evry is and slightly believable. If you are going to use a passage of Lorem Ipsum you need to be sure there isn’t is the anything aembarrassing hidden in the middle of text.Ipsum available but the that majority have that suffered is humour or randomised words.</p>
+<p>Stress is the body's reaction to any change that requires an adjustment or response. The body reacts to these changes with physical, mental, and emotional responses. Stress is a normal part of life. You can experience stress from your environment, your body, and your thoughts. Even positive life changes such as a promotion, a mortgage, or the birth of a child produce stress.</p>
 
 <div class="classes__details__item">
     <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/2ogKpj5QuSY" allowfullscreen></iframe>
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/WuyPuH9ojCE" allowfullscreen></iframe>
     </div>
 </div>
 
@@ -40,12 +40,11 @@
                                                         </div>
                                                         <div id="collapseOne" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
+                                                                <p>Stress is your body's reaction to a challenge or demand. In short bursts, stress can be positive, 
+                                                                such as when it helps you avoid danger or meet a deadline. But when stress lasts for a long time, 
+                                                                it may harm your health.</p>
+                                                                <p>We don’t all experience stress the same way. It’s different for everybody. 
+                                                                You may be stressed out by a high-pressure job, while your coworker thrives on it. </p>
                                                                 <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
@@ -58,12 +57,11 @@
                                                         </div>
                                                         <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
+                                                                <p>Common major life events that can trigger stress include:</p>
+                                                                <p>Job issues or retirement.</p>
+                                                                <p>Lack of time or money.</p>
+                                                                <p>Bereavement, family problems, illness.</p>
+                                                                <p>Relationships, marriage, and divorce. </p>
                                                                 <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
@@ -76,12 +74,14 @@
                                                         </div>
                                                         <div id="collapseThree" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
+                                                                <p>Stress can wear down the body's natural defenses, leading to a variety of physical symptoms.</p>
+                                                                <p>Dizziness or a general feeling of "being out of it".</p>
+                                                                <p>General aches and pains.</p>
+                                                                <p>Grinding teeth, clenched jaw.</p>
+                                                                <p>Headaches, Indigestion or acid reflux symptoms.</p>
+                                                                <p>Increase in or loss of appetite, Muscle tension in neck, face or shoulders.</p>
+                                                                <p>Problems sleeping, Racing heart.</p>
+                                                                <p>Cold and sweaty palms.Tiredness, exhaustion, Trembling/shaking and Weight gain or loss. </p>
                                                                 <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
@@ -94,12 +94,12 @@
                                                         </div>
                                                         <div id="collapseFour" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
+                                                                <p>Keep a positive attitude. Accept that there are events that you cannot control. 
+                                                                Be assertive instead of aggressive. Assert your feelings, opinions, or beliefs instead of becoming angry,
+                                                                 defensive, or passive.</p>
+                                                                <p>Learn and practice relaxation techniques; try meditation, yoga, or tai-chi. 
+                                                                Eat healthy, well-balanced meals. Learn to manage your time more effectively. 
+                                                                Set limits appropriately and say no to requests that would create excessive stress in your life. </p>
                                                                 <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
@@ -112,12 +112,10 @@
                                                         </div>
                                                         <div id="collapseFive" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
+                                                                <p> It should be noted that stress can be considered as a fact of nature and the 
+                                                                force from the outside which disturbs the individual. </p>
+                                                                <p> It is also noted that emotional intelligence plays a role to create the abilities 
+                                                                in an individual to better control the stress.</p>
                                                                 <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>

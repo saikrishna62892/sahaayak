@@ -22,7 +22,7 @@
 
 <div class="classes__details__item">
     <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/G4wTERfoPfA" allowfullscreen></iframe>
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/z-IR48Mb3W0" allowfullscreen></iframe>
     </div>
 </div>
 

@@ -3,7 +3,7 @@
 <?php $__env->startSection('breadcrumb'); ?>
 
 <h2>Understanding fear of loss</h2>
-<h5>Thinking will not overcome fear but action</h5>
+<h5>Thinking will not overcome fear but action will</h5>
 
 <?php $__env->stopSection(); ?>
 
@@ -16,7 +16,7 @@
 
 <h2>What is fear of loss?</h2>
 
-<p>There are many variations of passages of Lorem Ipsum avaihave suffered that the alteration in some form by injected humour or the an randomised words which don’t look even evry is and slightly believable. If you are going to use a passage of Lorem Ipsum you need to be sure there isn’t is the anything aembarrassing hidden in the middle of text.Ipsum available but the that majority have that suffered is humour or randomised words.</p>
+<p>You have something that’s blocking you from your dreams. And that’s fear. While it’s possible there are several fears involved, such as fear of change, fear of loss, or fear of the unknown, what comes through most strongly is the fear of loss.</p>
 
 <div class="classes__details__item">
     <div class="embed-responsive embed-responsive-16by9">
@@ -58,12 +58,9 @@
                                                         </div>
                                                         <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
+                                                                <p>People grow attached to the things in their lives. Things like their career, their status, their salary,
+                                                                 their lifestyle, etc. To pursue something different would mean relinquishing all of these things they have
+                                                                  come to associate as part of their lives. Because of this fear of loss, some people choose to put their dreams on hold — perpetually.</p>
                                                                 <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
@@ -76,12 +73,12 @@
                                                         </div>
                                                         <div id="collapseThree" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
+                                                                <p>When there is a fear of loss, it signals an attachment to the item that is at risk of being lost. 
+                                                                However, this attachment is illogical and comes as a byproduct of being too entrenched in our physical world.</p>
+                                                                <p>The reason why it’s illogical is because everything in our lives, except our consciousness, is impermanent.
+                                                                 This includes everything in the physical world: our wealth, our salary, our material possessions, our status,
+                                                                  our careers, our property, and our physical bodies. We were born into this world as ourselves,
+                                                                   with our consciousness. When we die, we will lose everything and bring with us only our consciousness.</p>
                                                                 <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
@@ -94,12 +91,15 @@
                                                         </div>
                                                         <div id="collapseFour" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
+                                                                <p>Regularly assess your intentions and motivations. If you’re forcing yourself to do something
+                                                                 and a part of you feels it isn’t right, ask yourself, “Do I actually want this right now?”</p>
+                                                                <p>Use loss aversion as motivation to pursue what you really want.
+                                                                 If you hang a large calendar on your wall, and put a star on every day when you do something positive—like
+                                                                  exercise, practice a new hobby, or send out a resume for a new job—you’ll create a
+                                                                   psychological need to keep that streak going.</p>
+                                                                <p> </p>
+                                                                <p>You could say that this is what makes life beautiful and meaningful—since nothing lasts forever,
+                                                                 each moment presents unique possibilities worth fully appreciating and savoring.</p>
                                                                 <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
@@ -112,12 +112,10 @@
                                                         </div>
                                                         <div id="collapseFive" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
+                                                                <p>The reality is that loss is inevitable.</p>
+                                                                <p>Change how you see the inevitability of loss. We will all lose relationships, situations,
+                                                                 and states of being that we enjoy and love. Even if we practice non-attachment,
+                                                                  on some level we will get comfortable with people and circumstances.</p>
                                                                 <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
