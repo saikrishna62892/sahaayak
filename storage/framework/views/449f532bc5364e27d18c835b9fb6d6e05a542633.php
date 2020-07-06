@@ -25,8 +25,8 @@
                         	<?php $link="https://".$quotes->Link ?>
                         	<a href="<?php echo e($link); ?>" style="color: #5768ad;" target="_blank">Click here</a>
                         </td>
-                        <td><a href="#" style="color: #5768ad;">Edit</a></td>
-                        <td><a href="#" style="color: #5768ad;">Delete</a></td>
+                        <td><a href="/admin/home/editQuote/<?php echo e($quotes->id); ?>/quoteedited" style="color: #5768ad;">Edit</a></td>
+                        <td><a href="deleteQuote/<?php echo e($quotes->id); ?>/quotedeleted" style="color: #5768ad;">Delete</a></td>
                         <td><?php echo e(Carbon\Carbon::parse($quotes->created_at)->format('d-M-Y g:h:i:s A')); ?></td>
                     </tr>
                   	<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>

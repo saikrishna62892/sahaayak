@@ -38,6 +38,24 @@ Route::get('news','NewsController@index')->name('news');
 Route::get('news/create','NewsController@create');
 Route::post('admin/news','NewsController@store')->name('storenews');
 Route::get('displayNews','NewsController@display')->name('displayNews');
+Route::get('admin/home/editNews/{newsarticle}/articledited','NewsController@editnews')->name('editNews');
+Route::patch('admin/home/news/{newsarticle}','NewsController@update');
+Route::get('admin/home/editTalk/{talk}/talkedited','TalkController@edittalk');
+Route::patch('admin/home/edittalks/{talk}','TalkController@update');
+Route::get('/admin/home/editQuote/{quote}/quoteedited','QuoteController@editquote');
+Route::patch('/admin/home/editQuote/{quote}','QuoteController@update');
+Route::get('/admin/home/editVideo/{video}/videoedited','VideoController@editvideo');
+Route::patch('/admin/home/editVideo/{video}','VideoController@update');
+Route::get('/admin/home/editPlaylist/{playlist}/playlistedited','PlaylistController@editplaylist');
+Route::patch('/admin/home/editPlaylist/{playlist}','PlaylistController@update');
+
+Route::get('admin/home/deleteNews/{newsarticle}/articledeleted','NewsController@deletenews');
+Route::get('admin/deleteTalk/{talkid}/talkdeleted','TalkController@deletetalk');
+Route::get('admin/deleteQuote/{quoteid}/quotedeleted','QuoteController@deletequote');
+Route::get('admin/deleteVideo/{video}/videodeleted','VideoController@deletevideo');
+Route::get('admin/deletePlaylists/{playlist}/playlistdeleted','PlaylistController@deleteplaylist');
+
+
 
 
 Route::post('/appointment_controller','appointment_controller@save');

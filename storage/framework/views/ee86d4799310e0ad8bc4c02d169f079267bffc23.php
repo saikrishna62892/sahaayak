@@ -1,11 +1,6 @@
-<div class="card">
-    <div class="card-body">
-		<form action="<?php echo e(route('addTalksFields')); ?>" method="POST" enctype="multipart/form-data">
-			<?php echo csrf_field(); ?>
-			<?php echo $__env->make('talks.talk', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-		 <!--  	<div class="form-group">
+<div class="form-group">
 		    	<label for="formGroupExampleInput">Please enter title</label>
-		    	<input type="text" class="form-control" name="title" id="formGroupExampleInput" placeholder="Your title here...">
+		    	<input type="text" class="form-control" name="title" id="formGroupExampleInput" placeholder="Your title here..." value="<?php echo e(old('title') ?? $talk->title); ?>">
 		    	<?php $__errorArgs = ['title'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -19,7 +14,7 @@ unset($__errorArgs, $__bag); ?>
 		   	</div>
 		   	<div class="form-group">
 			    <label for="exampleFormControlTextarea1">Please enter content</label>
-			    <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="10" placeholder="Your content here..."></textarea>
+			    <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="10" placeholder="Your content here..." value="<?php echo e(old('content') ?? $talk->content); ?>"></textarea>
 			    <?php $__errorArgs = ['content'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -32,7 +27,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
 		   	</div>
 			<div class="form-group">
-			    <select class="custom-select" name="category" required>
+			    <select class="custom-select" name="category" required  value="<?php echo e(old('category') ?? $talk->category); ?>">
 			      	<option value="">Please select category...</option>
 			      	<option value="Depression">Depression</option>
 			      	<option value="Suicide">Suicide</option>
@@ -56,7 +51,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
 			</div>
 		    <div class="custom-file">
-  				<input type="file" class="custom-file-input" id="customFile" name="image">
+  				<input type="file" class="custom-file-input" id="customFile" name="image" value="<?php echo e(old('image') ?? url('storage/img/talks/'.$talk->image)); ?>">
   				<label class="custom-file-label" for="customFile">Please choose image...</label>
 			    <?php $__errorArgs = ['image'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -68,9 +63,4 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-			</div>-->
-			&emsp;
-				<center><button type="submit" class="btn btn-primary" style="background-color: #5768ad;">Post Talk</button></center>
-		</form>
-	</div>
-</div><?php /**PATH G:\sahayak1\sahaayak\resources\views/talks/create.blade.php ENDPATH**/ ?>
+			</div><?php /**PATH G:\sahayak1\sahaayak\resources\views/talks/talk.blade.php ENDPATH**/ ?>

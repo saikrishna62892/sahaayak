@@ -20,8 +20,8 @@
                         <td><?php echo e($video->videoSource); ?></td>
                         <td colspan="2"><?php echo e($video->videoTag); ?></td>
                         <td><a href="<?php echo e($video->videoURL); ?>" target="_blank" style="color: #5768ad;">Click here</a></td>
-                        <td><a href="#" style="color: #5768ad;">Edit</a></td>
-                        <td><a href="#" style="color: #5768ad;">Delete</a></td>
+                        <td><a href="/admin/home/editVideo/<?php echo e($video->id); ?>/videoedited" style="color: #5768ad;">Edit</a></td>
+                        <td><a href="deleteVideo/<?php echo e($video->id); ?>/videodeleted" style="color: #5768ad;">Delete</a></td>
                         <td><?php echo e(Carbon\Carbon::parse($video->created_at)->format('d-M-Y g:h:i:s A')); ?></td>
                     </tr>
                   	<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>

@@ -41,4 +41,41 @@ class QuoteController extends Controller
     $quote->save();
     return redirect()->back()->with('message', 'Posted Succcesfully');
 	}
+    public function deletequote(Quote $quoteid){
+        $quoteid->delete();
+        return redirect()->back();
+    }
+    public function editquote(Quote $quote){
+         return view('quotes.edit',compact('quote'));
+    }
+
+    public function update(Quote $quote)
+    {
+
+        $data=request()->validate(
+            [
+                'Author' => 'required',
+                'Quote' => 'required',
+                'Inspired_from' => 'required',
+                'image' => 'file|image|max:3000',
+            ]);
+
+
+
+            if (request()->hasFile('Image')) {
+            $image = request()->Image;
+            $name = $user->id.'_'.$temp.'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/img/quotes/');
+            $image->move($destinationPath, $name);
+            $data['image'] = $name;
+        }
+        $data['Tag'] = request()->Tag;
+        $data['Link'] = request()->Link;
+
+        $quote->update($data);
+        return redirect()->route('adminDashboard');
+    }
+
+
+
 }

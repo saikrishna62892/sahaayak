@@ -25,8 +25,8 @@
                         	<?php $link="https://".$quotes->Link ?>
                         	<a href="{{ $link }}" style="color: #5768ad;" target="_blank">Click here</a>
                         </td>
-                        <td><a href="#" style="color: #5768ad;">Edit</a></td>
-                        <td><a href="#" style="color: #5768ad;">Delete</a></td>
+                        <td><a href="/admin/home/editQuote/{{$quotes->id}}/quoteedited" style="color: #5768ad;">Edit</a></td>
+                        <td><a href="deleteQuote/{{$quotes->id}}/quotedeleted" style="color: #5768ad;">Delete</a></td>
                         <td>{{ Carbon\Carbon::parse($quotes->created_at)->format('d-M-Y g:h:i:s A') }}</td>
                     </tr>
                   	@empty
