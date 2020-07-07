@@ -14,20 +14,17 @@
             <table class="table table-hover progress-table text-center">
                 <thead class="text-uppercase">
                     <tr>
-
                         <th scope="col">S.No</th>
                         <th scope="col">Title/Add Questions</th>
                         <th scope="col">Purpose</th>
                         <th scope="col" colspan="2">Edit</th>
                         <th scope="col">Delete</th>
-
                     </tr>
                 </thead>
                 <tbody>
                     <?php $count=1 ?>
                     @foreach($questionnaires as $questionnaire)
                     <tr>
-
                         <td scope="row">{{ $count++ }}</td>
                         <td><a href="/admin/home/questionnaires/{{$questionnaire->id}}/questions/create" style="color: #5768ad;">{{$questionnaire->questionnaireTitle}}</a></td>
                         <td>{{$questionnaire->questionnairePurpose}}</td>
@@ -38,7 +35,6 @@
                                 @csrf
                                 <button style="color: #5768ad;background:none!important;border:none;">Delete Quesionnaire</button>
                             </form></td>
-
                     </tr>
                     @endforeach
                 </tbody>
