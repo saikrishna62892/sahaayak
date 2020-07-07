@@ -1,5 +1,8 @@
 @extends('layouts.learn')
 
+@section('name')
+    Learn | Depression
+@endsection
 @section('breadcrumb')
 
 <h2>Understanding Depression</h2>

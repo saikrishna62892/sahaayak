@@ -1,5 +1,9 @@
 @extends('layouts/layout')
 
+@section('name')
+    News
+@endsection
+
     @section('content')
 
     

@@ -1,5 +1,8 @@
 @extends('layouts.learn')
 
+@section('name')
+    Learn | Social-Isoloation
+@endsection
 @section('breadcrumb')
 
 <h2>Understanding Social-isolation</h2>

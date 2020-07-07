@@ -1,5 +1,9 @@
 @extends('layouts.dashboard')
 
+@section('name')
+    {{ $admin_name }}
+@endsection
+
 @section('content')
 		
 <br>	
@@ -170,6 +174,9 @@
                         <li>
                             <a data-toggle="tab" href="#shared_playlists" role="tab">Playlists</a>
                         </li>
+                        <li>
+                            <a data-toggle="tab" href="#suggestions" role="tab">Suggestions</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -213,9 +220,9 @@
                     <!-- shared_playlists form end -->   
 
                      <!-- assessments form begin -->
-                    <div class="tab-pane fade" id="all_assessments" role="tabpanel">
+                    <div class="tab-pane fade" id="suggestions" role="tabpanel">
                         <h4 align="center">All Assessments</h4>
-                        @include('questionnaire.allquestionnaires')
+                        @include('suggestions')
                     <!-- assessments form end -->
 
                 </div>

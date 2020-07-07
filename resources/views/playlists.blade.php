@@ -1,4 +1,8 @@
 @extends('layouts.layout')
+
+@section('name')
+    Playlists
+@endsection
     @section('content')
 
     

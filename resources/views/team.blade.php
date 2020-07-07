@@ -1,5 +1,9 @@
 @extends('layouts.layout')
 
+@section('name')
+    Team
+@endsection
+
     @section('content')
 
     
