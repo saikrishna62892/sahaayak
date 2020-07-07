@@ -1,10 +1,6 @@
-    @extends('layouts.layout')
+    
 
-    @section('name')
-        Home
-    @endsection
-
-    @section('content')
+    <?php $__env->startSection('content'); ?>
 
 
 
@@ -17,9 +13,9 @@
                         <div class="col-lg-8">
                             <div class="hero__text">
                                 <span>We Share coz We Care</span>
-                                <h2>{{ $dialyquote }}</h2>
+                                <h2><?php echo e($dialyquote); ?></h2>
                                 <a style="color: white;" href="javascript:void(0);" onclick="javascript:introJs().setOption('showProgress',true).start();"><u><span>Take a Tour</span></u></a>
-                                <a href="{{ url('about') }}" class="primary-btn">DISCOVER MORE</a>
+                                <a href="<?php echo e(url('about')); ?>" class="primary-btn">DISCOVER MORE</a>
                             </div>
                         </div>
                     </div>
@@ -38,11 +34,29 @@
                     </div>
                     <div class="chooseus__item">
                         <div class="chooseus__item__icon">
-                            <img src="img/chooseus/choose-4.png" alt="">
+                            <img src="img/chooseus/choose-1.png" alt="">
                         </div>
                         <div class="chooseus__item__text">
-                            <h2 class="choose-counter">258</h2>
-                            <p>Thousand suicides in India per year</p>
+                            <h2 class="choose-counter">2146</h2>
+                            <p>Students</p>
+                        </div>
+                    </div>
+                    <div class="chooseus__item">
+                        <div class="chooseus__item__icon">
+                            <img src="img/chooseus/choose-2.png" alt="">
+                        </div>
+                        <div class="chooseus__item__text">
+                            <h2 class="choose-counter">15</h2>
+                            <p>Years Of Experience</p>
+                        </div>
+                    </div>
+                    <div class="chooseus__item">
+                        <div class="chooseus__item__icon">
+                            <img src="img/chooseus/choose-3.png" alt="">
+                        </div>
+                        <div class="chooseus__item__text">
+                            <h2 class="choose-counter">48</h2>
+                            <p>Branches</p>
                         </div>
                     </div>
                     <div class="chooseus__item">
@@ -50,26 +64,8 @@
                             <img src="img/chooseus/choose-4.png" alt="">
                         </div>
                         <div class="chooseus__item__text">
-                            <h2 class="choose-counter">800</h2>
-                            <p>Thousand suicides over Globe per year</p>
-                        </div>
-                    </div>
-                    <div class="chooseus__item">
-                        <div class="chooseus__item__icon">
-                            <img src="img/chooseus/choose-4.png" alt="">
-                        </div>
-                        <div class="chooseus__item__text">
-                            <h2 class="choose-counter">40</h2>
-                            <p>Suicide frequency in seconds</p>
-                        </div>
-                    </div>
-                    <div class="chooseus__item">
-                        <div class="chooseus__item__icon">
-                            <img src="img/chooseus/choose-4.png" alt="">
-                        </div>
-                        <div class="chooseus__item__text">
-                            <h2 class="choose-counter">20</h2>
-                            <p>Suicide attempts per day</p>
+                            <h2 class="choose-counter">234</h2>
+                            <p>Expert Staffs</p>
                         </div>
                     </div>
                 </div>
@@ -162,7 +158,7 @@
                     </div>
                 </div>
                 <form action="/appointment_controller" method="post" class="appointment__form">
-                @csrf
+                <?php echo csrf_field(); ?>
                     <div class="row">
                         <div class="col-lg-6">
                             <input type="text" placeholder="Name" name="name">
@@ -199,27 +195,27 @@
                     </div>
                 </div>
                 <div class="row">
-                    @foreach($featurednews as $news)
+                    <?php $__currentLoopData = $featurednews; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $news): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <div class="col-lg-4 col-md-6">
                             <div class="classes__item">
-                                @if(is_null($news->image))
-                                <div class="classes__item__pic set-bg" data-setbg="{{ asset('/img/news/default.jpg') }}">
-                                    <img src="{{ asset('/img/news/default.jpg') }} alt="">
-                                @else
-                                <div class="classes__item__pic set-bg" data-setbg="{{ asset('/img/news/'.$news->image) }}">
-                                    <img src="{{ asset('/img/news/'.$news->image) }}" alt="">
-                                @endif
-                                    <span>{{ Carbon\Carbon::parse($news->created_at)->format('d-M-Y') }}</span>
+                                <?php if(is_null($news->image)): ?>
+                                <div class="classes__item__pic set-bg" data-setbg="<?php echo e(asset('/img/news/default.jpg')); ?>">
+                                    <img src="<?php echo e(asset('/img/news/default.jpg')); ?> alt="">
+                                <?php else: ?>
+                                <div class="classes__item__pic set-bg" data-setbg="<?php echo e(asset('/img/news/'.$news->image)); ?>">
+                                    <img src="<?php echo e(asset('/img/news/'.$news->image)); ?>" alt="">
+                                <?php endif; ?>
+                                    <span><?php echo e(Carbon\Carbon::parse($news->created_at)->format('d-M-Y')); ?></span>
                                 </div>
                                 <div class="classes__item__text">
-                                    <p>{{ $news->source }} </p>
-                                    <h4>{{ $news->headline }}</h4>
-                                    <h6>{{ $news->content }}</span></h6>
-                                    <a href="{{ $news->link }}" class="class-btn">Know More</a>
+                                    <p><?php echo e($news->source); ?> </p>
+                                    <h4><?php echo e($news->headline); ?></h4>
+                                    <h6><?php echo e($news->content); ?></span></h6>
+                                    <a href="<?php echo e($news->link); ?>" class="class-btn">Know More</a>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                 </div>
             </div>
@@ -267,7 +263,7 @@
                             clear picture about symptoms, causes, risks regarding suicides and finally providing you best
                             advice with no paybacks. Regardless of you, having suicidal thoughts or not, everyone is worth
                             knowing these things. We share, cause we care.</p>
-                        <a href="{{ url('about') }}" class="primary-btn">MORE ABOUT US</a>
+                        <a href="<?php echo e(url('about')); ?>" class="primary-btn">MORE ABOUT US</a>
                     </div>
                 </div>
             </div>
@@ -327,4 +323,5 @@
         </div>
     </section>
     <!-- Testimonial Section End -->
-    @endsection
+    <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\sahaayak\resources\views/welcome.blade.php ENDPATH**/ ?>
