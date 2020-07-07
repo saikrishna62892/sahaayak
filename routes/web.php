@@ -144,6 +144,10 @@ Route::get('/admin/home/volunteer/{unapprovedVolunteer}/approveVolunteer','Volun
 //Report Routes
 Route::post('/volunteer/report/generateReport','appointment_controller@generateReport');
 
+//worry tree routes
+Route::get('/worry', 'WorryController@show');
+Route::post('/home/user/worrytree','WorryController@store');
+
 //end of dileep added routes
 
 Route::get('team', function () {
