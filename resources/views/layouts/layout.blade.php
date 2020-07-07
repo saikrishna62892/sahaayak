@@ -7,8 +7,8 @@
     <meta name="keywords" content="Directing, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sahaayak</title>
-    <link rel="icon" href="/img/icon.png" type="image/gif">
+    <title>Sahaayak | @yield('name')</title>
+    <link rel="icon" type="image/png" href="/img/icon.png"/>
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
@@ -34,6 +34,33 @@
 
       gtag('config', 'UA-171070217-1');
     </script>
+
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+}
+
+.left {
+  width: 25%;
+}
+
+.right {
+  width: 75%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
 
 </head>
 
@@ -235,6 +262,7 @@
                                 <li><a href="#">Hope Box</a>
                                     <ul class="dropdown">
                                         <li><a href="{{ url('weavesilk') }}">Interactive Drawing</a></li>
+                                        <li><a href="{{ url('worry') }}">worry</a></li>
                                         <li><a href="{{ url('inspire_me') }}">Inspire Me</a></li>
                                         <li><a href="/videos">Videos</a></li>
                                         <li><a href="{{ url('playlists') }}">Playlists</a></li>
@@ -271,9 +299,8 @@
                     <div class="footer__about">
                         <img src="/img/footer-logo.png" alt="Sahaayak" width="240" height="60">
                         <ul class="footer-address">
-                            <li><i class="fa fa-phone"></i> (01) 436 8888</li>
-                            <li><i class="fa fa-envelope"></i> hello@zogin.com</li>
-                            <li><i class="fa fa-location-arrow"></i> 828 Granville Lights Suite 466</li>
+                            <li><i class="fa fa-envelope"></i> sahaayakofficial@gmail.com</li>
+                            <li><i class="fa fa-location-arrow"></i> NIT Calicut</li>
                         </ul>
                         <h5 style="color:white;">Subscribe</h5><br>
                         <form action="/home/subscribe" method="post" class="subscribe-form">
@@ -303,13 +330,12 @@
                     <div class="footer__widget">
                         <h5>About Us</h5>
                         <ul>
-                            <li><a href="#">Our Mission</a></li>
-                            <li><a href="#">Our Vision</a></li>
-                            <li><a href="#">Statistics</a></li>
-                            <li><a href="#">What we offer</a></li>
-                            <li><a href="#">Impact</a></li>
-                            <li><a href="#">Gallery</a></li>
-                            <li><a href="#">FAQ</a></li>
+                            <li><a href="{{ url('about#mission')}}">Our Mission</a></li>
+                            <li><a href="{{ url('about#vision')}}">Our Vision</a></li>
+                            <li><a href="{{ url('about#stats')}}">Statistics</a></li>
+                            <li><a href="{{ url('about#impact')}}">Impact</a></li>
+                            <li><a href="{{ url('about#gallery')}}">Gallery</a></li>
+                            <li><a href="{{ url('about#faq')}}">FAQ</a></li>
                         </ul>
                     </div>
                 </div>

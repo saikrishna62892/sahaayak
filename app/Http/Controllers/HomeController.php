@@ -46,12 +46,6 @@ class HomeController extends Controller
         $quote->save();
         $dialyquote=$request->quote;
     }
-    public function welcome(){
-        $dialyquote=dialyquotes::all()->last()->quote;
-        $featurednews=News::orderBy('created_at','desc')->get();
-        #dd($featurednews);
-        return view('welcome')->with(compact('dialyquote','featurednews'));
-    }
     public function index()
     {
         $user = Auth::user();
@@ -61,7 +55,7 @@ class HomeController extends Controller
         if(auth()->user()->is_Volunteer == 1)
         {
             if(auth()->user()->volunteer->is_Approved == 1)
-                return redirect()->route('volunteerDashboard');
+                return redirect()->route('volunteerDashboard',compact('user'));
             else
             {
                 Auth::logout();
@@ -95,11 +89,13 @@ class HomeController extends Controller
 
 
         //no-refresh loaders
+        $admin_name=Auth::user()->name;
         $talks = DB::table('talks')->orderBy("created_at","desc")->get();
         $shared_news = DB::table('news')->orderBy("created_at","desc")->get();
         $shared_videos = DB::table('videos')->orderBy("created_at","desc")->get();
         $shared_quotes = DB::table('quotes')->orderBy("id","desc")->get();
         $shared_playlists = DB::table('playlists')->orderBy("id","desc")->get();
+        $suggestions = DB::table('suggestion')->orderBy("id","desc")->get();
 
         //dd($analyticsData);
         //dd($analyticsData[0]);
@@ -109,7 +105,7 @@ class HomeController extends Controller
         $quote = new Quote();
         $video = new Video();
         $playlist = new Playlist();
-        return view('admin.dashboard_admin',compact('unapprovedVolunteers','talks','users_count','volunteers_count','badges','shared_news','shared_videos','shared_quotes','shared_playlists','newsarticle','talk','quote','video','playlist'));
+        return view('admin.dashboard_admin',compact('unapprovedVolunteers','talks','users_count','volunteers_count','badges','shared_news','shared_videos','shared_quotes','shared_playlists','newsarticle','talk','quote','video','playlist','admin_name','suggestions'));
     }
 
     public function volunteerHome()

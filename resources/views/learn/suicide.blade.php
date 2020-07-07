@@ -1,5 +1,8 @@
 @extends('layouts.learn')
 
+@section('name')
+    Learn | Suicide
+@endsection
 @section('breadcrumb')
 
 <h2>Understanding Suicide</h2>

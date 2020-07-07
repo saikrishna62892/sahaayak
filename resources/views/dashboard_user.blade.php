@@ -1,5 +1,9 @@
 @extends('layouts.dashboard')
 
+@section('name')
+    {{ $user->name }}
+@endsection
+
 @section('content')
 <br>    
 <div class="container" id="stats">
@@ -42,14 +46,14 @@
         </div>
     </div>
 </div>
-<br>
 
 
 
 <!-- flash messages section -->
+<!--
 @if(session()->has('message'))
 <div class="alert alert-success">{{ session()->get('message')}}</div>
-@endif
+@endif-->
 
 
 <!-- trading history area start -->

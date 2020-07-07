@@ -1,4 +1,9 @@
 @extends('layouts.layout')
+
+
+@section('name')
+    Inspire-me
+@endsection
     @section('content')
 
     

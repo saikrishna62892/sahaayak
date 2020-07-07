@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Sahaayak</title>
+    <title>Sahaayak | Dashboard | @yield('name')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="shortcut icon" type="image/png" href="/img/icon/favicon.ico">
@@ -61,7 +61,7 @@
         <div class="sidebar-menu">
             <div class="sidebar-header">
                 <div class="logo">
-                    <a href="index.html"><img src="/img/logo-dashboard.png" alt="logo"></a>
+                    <a href="{{ url('/') }}"><img src="/img/logo-dashboard.png" alt="logo" width="225" height="35"></a>
                 </div>
             </div>
             <div class="main-menu">
