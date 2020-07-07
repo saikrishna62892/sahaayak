@@ -202,7 +202,7 @@
                     </div>
                 </div>
             </div>
-            <p align="center"><a href="https://www.who.int/mental_health/en/" style="color: #5768ad;">Click here</a>&nbsp; to know more</p>
+            <p align="center"><a href="https://www.who.int/mental_health/en/" target="_blank" style="color: #5768ad;">Click here</a>&nbsp; to know more</p>
         </div>
     </section>
     <!-- Statistics End -->
@@ -218,19 +218,10 @@
             <div class="counter__text set-bg" data-setbg="img/counter/counter-bg.jpg">
                 <div class="counter__item">
                     <div class="counter__item__icon">
-                        <img src="img/counter/counter-1.png" alt="">
-                    </div>
-                    <div class="counter__item__text">
-                        <h2>2146</h2>
-                        <p>Visitors</p>
-                    </div>
-                </div>
-                <div class="counter__item">
-                    <div class="counter__item__icon">
                         <img src="img/counter/counter-2.png" alt="">
                     </div>
                     <div class="counter__item__text">
-                        <h2>15</h2>
+                        <h2><?php echo e($user_count); ?></h2>
                         <p>Users</p>
                     </div>
                 </div>
@@ -239,7 +230,7 @@
                         <img src="img/counter/counter-3.png" alt="">
                     </div>
                     <div class="counter__item__text">
-                        <h2>48</h2>
+                        <h2><?php echo e($volunteers_count); ?></h2>
                         <p>Volunteers</p>
                     </div>
                 </div>
@@ -248,8 +239,17 @@
                         <img src="img/counter/counter-4.png" alt="">
                     </div>
                     <div class="counter__item__text">
-                        <h2>234</h2>
+                        <h2><?php echo e($appointments_count); ?></h2>
                         <p>Interactions</p>
+                    </div>
+                </div>
+                <div class="counter__item">
+                    <div class="counter__item__icon">
+                        <img src="img/counter/counter-1.png" alt="">
+                    </div>
+                    <div class="counter__item__text">
+                        <h2><?php echo e($stories_count); ?></h2>
+                        <p>Stories</p>
                     </div>
                 </div>
             </div>
