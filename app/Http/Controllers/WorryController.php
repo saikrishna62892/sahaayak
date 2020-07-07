@@ -30,6 +30,6 @@ class WorryController extends Controller
              });
         $user->worries()->createMany($data['worries']);
         //dd($data);
-        return "sfsv";
+        return redirect()->back();;
     }
 }

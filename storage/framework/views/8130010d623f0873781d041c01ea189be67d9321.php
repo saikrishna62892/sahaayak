@@ -75,15 +75,12 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="chooseus__text">
-                        <h2 data-step="3" data-intro="This section deals with the Myths & Facts related to Mental Health." data-position="bottom">Myths & Facts</h2>
-                        <p> It is calculated that around 1.6
-                            lakh people die everyday on average.There are many distinctive causes for these deaths, among
-                            which most of the causes are unpreventable and sometimes inescapable like Ischaemic heart
-                            disease, Stroke, Chronic obstructive pulmonary disease, Lower respiratory infections, Road injury,
-                            and many such.</p>
-                        <p>.But it is unfortunate to know that more 2000 deaths out of 1.6 lakh deaths are
-                            due to suicides.Suicide is not among the causes that are unpreventable and inescapable, it can
-                            be reduced.There is a very great chance that suicides can be reduced if treated in right way.In
+                        <h2 data-step="5" data-intro="Myths & Facts" data-position="left">Myths & Facts</h2>
+                        <p> Talking about suicide provides the opportunity for communication. Fears shared are more
+                         likely to diminish. The first step in encouraging a person with thoughts of suicide to live
+                          comes from talking about those feelings. A simple inquiry about whether or not the person
+                           is intending to end their life can start the conversation.</p>
+                        <p>There is a very great chance that suicides can be reduced if treated in right way. In
                             most of the cases people don’t try to express what they are going through even with thier
                             beloved once.</p>
                         <p>This is because people believe that sharing their suicidal thoughts might disturb
@@ -265,8 +262,7 @@
                             our mission and vision to make you understand, realize and believe strongly that committing
                             suicide is a false choice and not the ultimate decision to end things, let us help you in having a
                             clear picture about symptoms, causes, risks regarding suicides and finally providing you best
-                            advice with no paybacks. Regardless of you, having suicidal thoughts or not, everyone is worth
-                            knowing these things. We share, cause we care.</p>
+                            advice with no paybacks...</p>
                         <a href="<?php echo e(url('about')); ?>" class="primary-btn">MORE ABOUT US</a>
                     </div>
                 </div>

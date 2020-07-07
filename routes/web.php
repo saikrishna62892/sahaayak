@@ -248,6 +248,6 @@ Route::get('/auth/facebook/callback', 'Auth\LoginController@handleFacebookCallba
 
 
 
-Route::get('/weavesilk', function () {
-    return view('weavesilk');
+Route::get('/interactiveDrawing', function () {
+    return view('interactive_drawing');
 });
