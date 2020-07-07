@@ -1,10 +1,10 @@
-@extends('layouts.layout')
 
-@section('name')
+
+<?php $__env->startSection('name'); ?>
     Team
-@endsection
+<?php $__env->stopSection(); ?>
 
-    @section('content')
+    <?php $__env->startSection('content'); ?>
 
     
 
@@ -203,7 +203,7 @@
                     <div class="col-lg-6">
                         <div class="team__item">
                             <div class="team__item__pic">
-                                <img src="/img/team/sai1.png" alt="" height="350">
+                                <img src="/img/team/sai.png" alt="" height="350">
                             </div>
                             <div class="team__item__text">
                                 <div class="team__item__title">
@@ -343,4 +343,5 @@
     </div>
     <!-- Leave Comment End -->
 
-    @endsection
+    <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/team.blade.php ENDPATH**/ ?>

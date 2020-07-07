@@ -79,8 +79,7 @@
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__widget">
             <ul>
-                <li>CALL US: + 1 800-567-8990</li>
-                <li>WRITE US: OFFICE@EXAMPLE.COM</li>
+                <li>WRITE US: <a href="mailto:sahaayakofficial@gmail.com" target="_blank" style="color: #5768ad;">sahaayakofficial@gmail.com</li>
             </ul>
             <?php if(auth()->guard()->guest()): ?>
             <a href="<?php echo e(route('login')); ?>" class="primary-btn">Login</a>
@@ -172,14 +171,14 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-3">
                         <div class="header__logo">
-                            <a href="<?php echo e(url('/')); ?>"><img data-step="1" data-intro="logo" data-position="right" src="/img/logo.png" alt="Sahaayak" width="240" height="60"></a>
+                            <a href="<?php echo e(url('/')); ?>"><img data-step="1" data-intro="Our Brand new logo and motto which describes how we care about you." data-position="right" src="/img/logo.png" alt="Sahaayak" width="240" height="60"></a>
                         </div>
                     </div>
                     <div class="col-lg-9 col-md-9">
                         <div class="header__top__widget">
                             <?php if(auth()->guard()->guest()): ?>
                                 <ul>
-                                    <li>WRITE US: sahaayakofficial@gmail.com</li>
+                                    <li>WRITE US: <a href="mailto:sahaayakofficial@gmail.com" target="_blank" style="color: #5768ad;">sahaayakofficial@gmail.com</li>
                                 </ul>
                                 <a href="<?php echo e(route('login')); ?>" class="primary-btn">Login</a>
                                 <?php if(Route::has('register')): ?>
@@ -289,7 +288,9 @@
 
 
 
-    <?php echo $__env->yieldContent('content'); ?>;
+    <?php echo $__env->yieldContent('content'); ?>
+
+    <br>
 
 
 
@@ -305,7 +306,7 @@
                             <li><i class="fa fa-location-arrow"></i> NIT Calicut</li>
                         </ul>
                         <h5 style="color:white;">Subscribe</h5><br>
-                        <form action="/home/subscribe" method="post" class="subscribe-form">
+                        <form action="/home/subscribe" method="post" class="subscribe-form" data-step="9" data-intro="Here you can subscribe to get the latest updates from our site." data-position="right">
                             <?php echo csrf_field(); ?>
                             <input type="email" placeholder="Your Email" name="subscriberEmail">
                             <?php $__errorArgs = ['subscriberEmail'];
@@ -323,15 +324,15 @@ unset($__errorArgs, $__bag); ?>
                         </form>
                     </div>
                 </div>
-                <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
+                <div class="col-lg-3 offset-lg-1 col-md-3 col-sm-6" data-step="10" data-intro="This section provides information about different helpline numbers across India." data-position="bottom-middle-aligned">
                     <div class="footer__widget">
                         <h5>Helplines</h5>
                         <ul>
-                            <li><a href="https://www.thehindu.com/news/national/suicide-prevention-helplines/article25612310.ece" target="_blank">Delhi 011-4076 9002</a> </li>
-                            <li><a href="https://www.thehindu.com/news/national/suicide-prevention-helplines/article25612310.ece" target="_blank">Andhra 78930-78930</a></li>
-                            <li><a href="https://www.thehindu.com/news/national/suicide-prevention-helplines/article25612310.ece" target="_blank">Karnataka 104</a></li>
-                            <li><a href="https://www.thehindu.com/news/national/suicide-prevention-helplines/article25612310.ece" target="_blank">Kerala 0471-2552056</a></li>
-                            <li><a href="https://www.thehindu.com/news/national/suicide-prevention-helplines/article25612310.ece" target="_blank">Kochi 0484-2361160</a></li>
+                            <li><a href="tel:01140769002" target="_blank">Delhi : 011-4076 9002</a> </li>
+                            <li><a href="tel: 7893078930" target="_blank">Andhra : 78930-78930</a></li>
+                            <li><a href="tel: 104" target="_blank">Karnataka : 104</a></li>
+                            <li><a href="tel: 04712552056" target="_blank">Kerala : 0471-2552056</a></li>
+                            <li><a href="tel: 04842361160" target="_blank">Kochi : 0484-2361160</a></li>
                             <li><a href="https://www.thehindu.com/news/national/suicide-prevention-helplines/article25612310.ece" target="_blank">More</a></li>
                         </ul>
                     </div>
@@ -349,10 +350,10 @@ unset($__errorArgs, $__bag); ?>
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__widget">
                         <h5>Connect Us</h5>
-                        <div class="footer__copyright__social" align="left">
+                        <div class="footer__copyright__social" align="left" data-step="11" data-intro="Social Network handles for our website" data-position="left">
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-google"></i></a>
                             <a href="#"><i class="fa fa-instagram"></i></a>
@@ -360,9 +361,9 @@ unset($__errorArgs, $__bag); ?>
                             <a href="#"><i class="fa fa-linkedin"></i></a>
                         </div>
                         <br>
-                        <h5>Write to Us</h5>
+                        <h5 >Write to Us</h5>
                         <!-- Leave Comment Begin -->
-                        <div class="leave__comment__text">
+                        <div class="leave__comment__text" data-step="12" data-intro="Here you can give us valuable information & suggestions for the development of community and website." data-position="bottom-middle-aligned">
                             <form action="/suggestion_controller" method="get">
                             <?php echo csrf_field(); ?>
                                 <div class="row">

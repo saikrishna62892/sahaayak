@@ -14,7 +14,7 @@
                     <div class="breadcrumb__text">
                         <h2>About Us</h2>
                         <div class="breadcrumb__widget">
-                            <a href="./index.html">Home</a>
+                            <a href="<?php echo e(url('/')); ?>">Home</a>
                             <span>About Us</span>
                         </div>
                     </div>
@@ -201,7 +201,7 @@
                     </div>
                 </div>
             </div>
-            <p align="center"><a href="https://www.who.int/mental_health/en/" style="color: #5768ad;">Click here</a>&nbsp; to know more</p>
+            <p align="center"><a href="https://www.who.int/mental_health/en/" target="_blank" style="color: #5768ad;">Click here</a>&nbsp; to know more</p>
         </div>
     </section>
     <!-- Statistics End -->

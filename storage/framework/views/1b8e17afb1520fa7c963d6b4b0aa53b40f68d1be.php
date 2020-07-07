@@ -1,9 +1,9 @@
-@extends('layouts.layout')
 
-    @section('name')
+
+    <?php $__env->startSection('name'); ?>
        About
-    @endsection
-    @section('content')
+    <?php $__env->stopSection(); ?>
+    <?php $__env->startSection('content'); ?>
     
 
     <!-- Breadcrumb Begin -->
@@ -14,7 +14,7 @@
                     <div class="breadcrumb__text">
                         <h2>About Us</h2>
                         <div class="breadcrumb__widget">
-                            <a href="{{ url('/') }}">Home</a>
+                            <a href="<?php echo e(url('/')); ?>">Home</a>
                             <span>About Us</span>
                         </div>
                     </div>
@@ -31,36 +31,38 @@
                 <div class="section-title">
                     <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
                     <h2>Our Mission</h2>
-                    <p>To save atleast one life.</p>
+                    <p>To be invited to the nearest Cali center and get free physical advice to learn more about
+                                the program.</p>
                 </div>
                 <div class="row">
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="services__item">
-                            <img src="img/services/services-1.png" alt="">
-                            <h5>You're not alone</h5>
-                            <p>Talk to us i.e. make an appointment section which connects users
-                             to socially disciplined volunteers.</p>
+                            <img src="img/about/af-1.png" alt="">
+                            <h5>Purpose 1</h5>
+                            <p>Grab the opportunity to deepen your own yoga practice, relax, restore and experience india!</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="services__item">
-                            <img src="img/services/services-2.png" alt="">
-                            <h5>Information is wealth</h5>
-                            <p>Information,recent news,articles,stories and expert talks about there various experiences</p>
+                            <img src="img/about/af-2.png" alt="">
+                            <h5>Purpose 1</h5>
+                            <p>Grab the opportunity to deepen your own yoga practice, relax, restore and experience
+                                india!</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="services__item">
-                            <img src="img/services/services-3.png" alt="">
-                            <h5>Hope is real</h5>
-                            <p>Hopebox which contains interactive drawing,hope tree,inspiring quotes,videos and playlists</p>
+                            <img src="img/about/af-3.png" alt="">
+                            <h5>Purpose 1</h5>
+                            <p>Grab the opportunity to deepen your own yoga practice, relax, restore and experience
+                                india!</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="services__item">
-                            <img src="img/services/services-4.png" alt="">
-                            <h5>Safety is priceless</h5>
-                            <p>Personalized dashboard with cognitive diary to note down the events and can also share the stories</p>
+                            <img src="img/about/af-4.png" alt="">
+                            <h5>Purpose 1</h5>
+                            <p>Grab the opportunity to deepen your own yoga practice, relax, restore and experience india!</p>
                         </div>
                     </div>
                 </div>
@@ -76,9 +78,8 @@
                         <div class="section-title">
                             <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
                             <h2>Our Vision</h2>
-                            <p>All things cannot be shared with beloved ones
-                                but we assure you that we can be your beloved ones for a meanwhile who doesn’t need your
-                                name</p>
+                            <p>To be invited to the nearest Cali center and get free physical advice to learn more about
+                                the program.</p>
                         </div>
                         <div class="about__bar">
                             <div class="about__bar__item">
@@ -201,7 +202,7 @@
                     </div>
                 </div>
             </div>
-            <p align="center"><a href="https://www.who.int/mental_health/en/" target="_blank" style="color: #5768ad;">Click here</a>&nbsp; to know more</p>
+            <p align="center"><a href="https://www.who.int/mental_health/en/" style="color: #5768ad;">Click here</a>&nbsp; to know more</p>
         </div>
     </section>
     <!-- Statistics End -->
@@ -214,7 +215,7 @@
                 <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
                 <h2>Impact</h2>
             </div>
-            <div class="counter__text set-bg" data-setbg="img/counter/counter-bg11.jpg">
+            <div class="counter__text set-bg" data-setbg="img/counter/counter-bg.jpg">
                 <div class="counter__item">
                     <div class="counter__item__icon">
                         <img src="img/counter/counter-1.png" alt="">
@@ -273,42 +274,42 @@
             <div class="row">
                 <div class="col-lg-3 col-md-4 col-6 p-0">
                     <div class="gallery__pic">
-                        <img src="img/gallery/gallery-10.jpg" alt="">
+                        <img src="img/gallery/gallery-1.jpg" alt="">
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-6 p-0">
                     <div class="gallery__pic">
-                        <img src="img/gallery/gallery-12.jpg" alt="">
+                        <img src="img/gallery/gallery-2.jpg" alt="">
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-6 p-0">
                     <div class="gallery__pic">
-                        <img src="img/gallery/gallery-13.jpg" alt="">
+                        <img src="img/gallery/gallery-3.jpg" alt="">
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-6 p-0">
                     <div class="gallery__pic">
-                        <img src="img/gallery/gallery-18.jpg" alt="">
+                        <img src="img/gallery/gallery-4.jpg" alt="">
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-6 p-0">
                     <div class="gallery__pic">
-                        <img src="img/gallery/gallery-11.jpg" alt="">
+                        <img src="img/gallery/gallery-5.jpg" alt="">
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-6 p-0">
                     <div class="gallery__pic">
-                        <img src="img/gallery/gallery-16.jpg" alt="">
+                        <img src="img/gallery/gallery-6.jpg" alt="">
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-6 p-0">
                     <div class="gallery__pic">
-                        <img src="img/gallery/gallery-19.jpg" alt="">
+                        <img src="img/gallery/gallery-7.jpg" alt="">
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-6 p-0">
                     <div class="gallery__pic">
-                        <img src="img/gallery/gallery-20.jpg" alt="">
+                        <img src="img/gallery/gallery-8.jpg" alt="">
                     </div>
                 </div>
             </div>
@@ -337,7 +338,7 @@
                             <div class="card">
                                 <div class="card-heading">
                                     <a data-toggle="collapse" data-target="#collapseOne">
-                                        <span>What is Sahaayak?</span>
+                                        <span>How to join the community?</span>
                                     </a>
                                 </div>
                                 <div id="collapseOne" class="collapse" data-parent="#accordionExample">
@@ -348,14 +349,14 @@
                                         <p>Please allow 1 day for tracking information to update on your order. If you
                                             are unable to track your order, please let us know and we'll be happy to
                                             assist.</p>
-                                        <h6>Still need help? <a href="{{ route('register') }}">Get in touch with us.</a></h6>
+                                        <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
                             </div>
                             <div class="card">
                                 <div class="card-heading active">
                                     <a data-toggle="collapse" data-target="#collapseTwo">
-                                        <span>What type of service an user can expect?</span>
+                                        <span>Can I give my credits to someone else?</span>
                                     </a>
                                 </div>
                                 <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
@@ -366,14 +367,14 @@
                                         <p>Please allow 1 day for tracking information to update on your order. If you
                                             are unable to track your order, please let us know and we'll be happy to
                                             assist.</p>
-                                        <h6>Still need help? <a href="{{ route('register') }}">Get in touch with us.</a></h6>
+                                        <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
                             </div>
                             <div class="card">
                                 <div class="card-heading">
                                     <a data-toggle="collapse" data-target="#collapseThree">
-                                        <span>How to make an appointment?</span>
+                                        <span>How to watch video workouts?</span>
                                     </a>
                                 </div>
                                 <div id="collapseThree" class="collapse" data-parent="#accordionExample">
@@ -384,14 +385,14 @@
                                         <p>Please allow 1 day for tracking information to update on your order. If you
                                             are unable to track your order, please let us know and we'll be happy to
                                             assist.</p>
-                                        <h6>Still need help? <a href="{{ route('register') }}">Get in touch with us.</a></h6>
+                                        <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
                             </div>
                             <div class="card">
                                 <div class="card-heading">
                                     <a data-toggle="collapse" data-target="#collapseFour">
-                                        <span>What is interactive drawing?</span>
+                                        <span>What is Zogin?</span>
                                     </a>
                                 </div>
                                 <div id="collapseFour" class="collapse" data-parent="#accordionExample">
@@ -402,14 +403,14 @@
                                         <p>Please allow 1 day for tracking information to update on your order. If you
                                             are unable to track your order, please let us know and we'll be happy to
                                             assist.</p>
-                                        <h6>Still need help? <a href="{{ route('register') }}">Get in touch with us.</a></h6>
+                                        <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
                             </div>
                             <div class="card">
                                 <div class="card-heading">
                                     <a data-toggle="collapse" data-target="#collapseFive">
-                                        <span>What is hope tree?</span>
+                                        <span>How many times can I visit a studio each cycle?</span>
                                     </a>
                                 </div>
                                 <div id="collapseFive" class="collapse" data-parent="#accordionExample">
@@ -420,14 +421,14 @@
                                         <p>Please allow 1 day for tracking information to update on your order. If you
                                             are unable to track your order, please let us know and we'll be happy to
                                             assist.</p>
-                                        <h6>Still need help? <a href="{{ route('register') }}">Get in touch with us.</a></h6>
+                                        <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
                             </div>
                             <div class="card">
                                 <div class="card-heading">
                                     <a data-toggle="collapse" data-target="#collapseSix">
-                                        <span>How to subscribe for Sahaayak?</span>
+                                        <span>What is the class cancellation policy?</span>
                                     </a>
                                 </div>
                                 <div id="collapseSix" class="collapse" data-parent="#accordionExample">
@@ -438,7 +439,7 @@
                                         <p>Please allow 1 day for tracking information to update on your order. If you
                                             are unable to track your order, please let us know and we'll be happy to
                                             assist.</p>
-                                        <h6>Still need help? <a href="{{ route('register') }}">Get in touch with us.</a></h6>
+                                        <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
                             </div>
@@ -450,4 +451,5 @@
     </div>
     <!-- Faq End -->
 
-    @endsection
+    <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/about.blade.php ENDPATH**/ ?>

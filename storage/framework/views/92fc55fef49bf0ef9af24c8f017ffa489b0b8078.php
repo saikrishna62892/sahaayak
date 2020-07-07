@@ -203,14 +203,14 @@
                     <div class="col-lg-6">
                         <div class="team__item">
                             <div class="team__item__pic">
-                                <img src="img/team/team-1.png" alt="">
+                                <img src="/img/team/sai1.png" alt="" height="350">
                             </div>
                             <div class="team__item__text">
                                 <div class="team__item__title">
-                                    <h4>Christina Lauren</h4>
-                                    <span>Yoga Teacher</span>
+                                    <h4>Sai Krishna Gudipati</h4>
+                                    <span>M.Tech at NIT Calicut</span>
                                 </div>
-                                <p>Yoga & Therapy Certificate of<br /> Uttarakhand University Sanskirt</p>
+                                <p>A Passionate Computer Geek</p>
                                 <div class="team__item__social">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
                                     <a href="#"><i class="fa fa-twitter"></i></a>

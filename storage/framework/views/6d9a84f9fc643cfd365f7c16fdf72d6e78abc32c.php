@@ -34,7 +34,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="chooseus__text">
-                        <h2 data-step="4" data-intro="Statistics about mental health" data-position="bottom">Stats</h2>
+                        <h2 data-step="2" data-intro="This section deals with the statistics about Mental Health." data-position="bottom">Stats</h2>
                     </div>
                     <div class="chooseus__item">
                         <div class="chooseus__item__icon">
@@ -75,12 +75,24 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="chooseus__text">
+<<<<<<< HEAD
                         <h2 data-step="5" data-intro="Myths & Facts" data-position="left">Myths & Facts</h2>
                         <p> Talking about suicide provides the opportunity for communication. Fears shared are more
                          likely to diminish. The first step in encouraging a person with thoughts of suicide to live
                           comes from talking about those feelings. A simple inquiry about whether or not the person
                            is intending to end their life can start the conversation.</p>
                         <p>There is a very great chance that suicides can be reduced if treated in right way. In
+=======
+                        <h2 data-step="3" data-intro="This section deals with the Myths & Facts related to Mental Health." data-position="bottom">Myths & Facts</h2>
+                        <p> It is calculated that around 1.6
+                            lakh people die everyday on average.There are many distinctive causes for these deaths, among
+                            which most of the causes are unpreventable and sometimes inescapable like Ischaemic heart
+                            disease, Stroke, Chronic obstructive pulmonary disease, Lower respiratory infections, Road injury,
+                            and many such.</p>
+                        <p>.But it is unfortunate to know that more 2000 deaths out of 1.6 lakh deaths are
+                            due to suicides.Suicide is not among the causes that are unpreventable and inescapable, it can
+                            be reduced.There is a very great chance that suicides can be reduced if treated in right way.In
+>>>>>>> aebec638859f65d4cd53b478b377a7a3610053cc
                             most of the cases people don’t try to express what they are going through even with thier
                             beloved once.</p>
                         <p>This is because people believe that sharing their suicidal thoughts might disturb
@@ -101,7 +113,7 @@
                 <div class="col-lg-12">
                     <div class="section-title">
                         <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
-                        <h2 data-step="6" data-intro="purposes" data-position="bottom-middle-aligned">What we can do</h2>
+                        <h2 data-step="4" data-intro="This Section describes the things that you can expect from us" data-position="bottom-middle-aligned">What we can do</h2>
                     </div>
                 </div>
             </div>
@@ -148,12 +160,12 @@
     <!-- Appoinment Section Begin -->
     <section class="appointment" id="talk_to_us">
         <div class="container">
-            <div class="appointment__text">
+            <div class="appointment__text" data-step="5" data-intro="In this form you can make an appointment and can have an interactive session with our socially disciplined volunteers" data-position="bottom-middle-aligned">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title">
                             <img src="img/icon-white.png" alt="Sahaayak" width="58" height="38">
-                            <h2 data-step="7" data-intro="Talk to Us" data-position="bottom-middle-aligned">Make An Appointment</h2>
+                            <h2>Make An Appointment</h2>
                             <small style="color: #fff;">Note: Don't worrry folks we keep your data safe</small>
                         </div>
                     </div>
@@ -191,7 +203,7 @@
                     <div class="col-lg-12">
                         <div class="section-title">
                             <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
-                            <h2 data-step="8" data-intro="Featured Topics" data-position="bottom">Featured Topics</h2>
+                            <h2 data-step="6" data-intro="In this section you can expect the latest featured news gathered from different sources." data-position="bottom-middle-aligned">Featured Topics</h2>
                         </div>
                     </div>
                 </div>
@@ -230,13 +242,17 @@
                 <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
                 <h2>About Us</h2>
             </div>
-        <div class="container" data-step="9" data-intro="Introduction to Sahaayak" data-position="bottom-middle-aligned">
+        <div class="container">
             
             <div class="row">
                 <div class="col-lg-7">
                     <div class="home__about__pic">
                         <div class="home__about__pic__item large-item set-bg">
+<<<<<<< HEAD
                             <img src="img/about/about-1.jpg" alt="">
+=======
+                            <img src="img/about/about-11.jpg" alt="" width="345" height="620">
+>>>>>>> aebec638859f65d4cd53b478b377a7a3610053cc
                         </div>
                         <div class="home__about__pic__item">
                             <div class="home__about__pic__item__inner set-bg" data-setbg="img/about/about-2.jpg">
@@ -248,7 +264,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-5">
+                <div class="col-lg-5" data-step="7" data-intro="This section is introduction to Sahaayak & have a look at it by clicking more about us button because we share & we care." data-position="bottom-middle-aligned">
                     <div class="home__about__text">
                         <span>“We Share coz We Care”</span>
                         <p>We understand your eagerness and enthusiasm to figure out the purpose of this site that is assuring you hope
@@ -272,8 +288,8 @@
     <!-- About Section End -->
 
     <!-- Testimonial Section Begin -->
-    <section class="testimonial spad">
-        <div class="container" data-step="10" data-intro="Testimonials" data-position="bottom-middle-aligned">
+   <!-- <section class="testimonial spad">
+        <div class="container" data-step="8" data-intro="This section describes the testimonies given by honourble personalities." data-position="bottom-middle-aligned">
             <div class="testimonial__slider owl-carousel">
                 <div class="testimonial__item">
                     <div class="row d-flex justify-content-center">
@@ -321,7 +337,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
     <!-- Testimonial Section End -->
     <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\sahaayak\resources\views/welcome.blade.php ENDPATH**/ ?>
