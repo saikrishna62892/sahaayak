@@ -1,5 +1,9 @@
 @extends('layouts.layout')
 
+@section('name')
+    Talks
+@endsection
+
     @section('content')
     <!-- Breadcrumb Begin -->
     <section class="breadcrumb-option set-bg" data-setbg="img/breadcrumb.jpg">

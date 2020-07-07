@@ -1,4 +1,8 @@
 
+
+<?php $__env->startSection('name'); ?>
+    Login
+<?php $__env->stopSection(); ?>
     <?php $__env->startSection('content'); ?>
     <div class="limiter">
         <div class="container-login100">

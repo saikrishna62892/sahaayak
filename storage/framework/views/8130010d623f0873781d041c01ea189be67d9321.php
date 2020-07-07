@@ -1,5 +1,9 @@
     
 
+    <?php $__env->startSection('name'); ?>
+        Home
+    <?php $__env->stopSection(); ?>
+
     <?php $__env->startSection('content'); ?>
 
 
@@ -34,29 +38,11 @@
                     </div>
                     <div class="chooseus__item">
                         <div class="chooseus__item__icon">
-                            <img src="img/chooseus/choose-1.png" alt="">
+                            <img src="img/chooseus/choose-4.png" alt="">
                         </div>
                         <div class="chooseus__item__text">
-                            <h2 class="choose-counter">2146</h2>
-                            <p>Students</p>
-                        </div>
-                    </div>
-                    <div class="chooseus__item">
-                        <div class="chooseus__item__icon">
-                            <img src="img/chooseus/choose-2.png" alt="">
-                        </div>
-                        <div class="chooseus__item__text">
-                            <h2 class="choose-counter">15</h2>
-                            <p>Years Of Experience</p>
-                        </div>
-                    </div>
-                    <div class="chooseus__item">
-                        <div class="chooseus__item__icon">
-                            <img src="img/chooseus/choose-3.png" alt="">
-                        </div>
-                        <div class="chooseus__item__text">
-                            <h2 class="choose-counter">48</h2>
-                            <p>Branches</p>
+                            <h2 class="choose-counter">258</h2>
+                            <p>Thousand suicides in India per year</p>
                         </div>
                     </div>
                     <div class="chooseus__item">
@@ -64,8 +50,26 @@
                             <img src="img/chooseus/choose-4.png" alt="">
                         </div>
                         <div class="chooseus__item__text">
-                            <h2 class="choose-counter">234</h2>
-                            <p>Expert Staffs</p>
+                            <h2 class="choose-counter">800</h2>
+                            <p>Thousand suicides over Globe per year</p>
+                        </div>
+                    </div>
+                    <div class="chooseus__item">
+                        <div class="chooseus__item__icon">
+                            <img src="img/chooseus/choose-4.png" alt="">
+                        </div>
+                        <div class="chooseus__item__text">
+                            <h2 class="choose-counter">40</h2>
+                            <p>Suicide frequency in seconds</p>
+                        </div>
+                    </div>
+                    <div class="chooseus__item">
+                        <div class="chooseus__item__icon">
+                            <img src="img/chooseus/choose-4.png" alt="">
+                        </div>
+                        <div class="chooseus__item__text">
+                            <h2 class="choose-counter">20</h2>
+                            <p>Suicide attempts per day</p>
                         </div>
                     </div>
                 </div>

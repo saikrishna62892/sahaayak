@@ -7,8 +7,8 @@
     <meta name="keywords" content="Directing, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sahaayak</title>
-    <link rel="icon" href="/img/icon.png" type="image/gif">
+    <title>Sahaayak | @yield('name')</title>
+    <link rel="icon" type="image/png" href="/img/icon.png"/>
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
@@ -272,9 +272,8 @@
                     <div class="footer__about">
                         <img src="/img/footer-logo.png" alt="Sahaayak" width="240" height="60">
                         <ul class="footer-address">
-                            <li><i class="fa fa-phone"></i> (01) 436 8888</li>
-                            <li><i class="fa fa-envelope"></i> hello@zogin.com</li>
-                            <li><i class="fa fa-location-arrow"></i> 828 Granville Lights Suite 466</li>
+                            <li><i class="fa fa-envelope"></i> sahaayakofficial@gmail.com</li>
+                            <li><i class="fa fa-location-arrow"></i> NIT Calicut</li>
                         </ul>
                         <h5 style="color:white;">Subscribe</h5><br>
                         <form action="/home/subscribe" method="post" class="subscribe-form">
@@ -305,13 +304,12 @@
                     <div class="footer__widget">
                         <h5>About Us</h5>
                         <ul>
-                            <li><a href="#">Our Mission</a></li>
-                            <li><a href="#">Our Vision</a></li>
-                            <li><a href="#">Statistics</a></li>
-                            <li><a href="#">What we offer</a></li>
-                            <li><a href="#">Impact</a></li>
-                            <li><a href="#">Gallery</a></li>
-                            <li><a href="#">FAQ</a></li>
+                            <li><a href="{{ url('about#mission')}}">Our Mission</a></li>
+                            <li><a href="{{ url('about#vision')}}">Our Vision</a></li>
+                            <li><a href="{{ url('about#stats')}}">Statistics</a></li>
+                            <li><a href="{{ url('about#impact')}}">Impact</a></li>
+                            <li><a href="{{ url('about#gallery')}}">Gallery</a></li>
+                            <li><a href="{{ url('about#faq')}}">FAQ</a></li>
                         </ul>
                     </div>
                 </div>

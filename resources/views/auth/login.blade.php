@@ -1,4 +1,8 @@
 @extends('layouts.reg_forms_layout')
+
+@section('name')
+    Login
+@endsection
     @section('content')
     <div class="limiter">
         <div class="container-login100">

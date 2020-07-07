@@ -1,5 +1,9 @@
 
 
+<?php $__env->startSection('name'); ?>
+    Team
+<?php $__env->stopSection(); ?>
+
     <?php $__env->startSection('content'); ?>
 
     
