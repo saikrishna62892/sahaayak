@@ -2,8 +2,8 @@
   <div class="card-body">
     <form action="/admin/home" method="POST" enctype="multipart/form-data">
     	@csrf
-       	
-           <div class="form-group">
+       	@include('quotes.quote') 
+           <!--<div class="form-group">
         	<label for="formGroupExampleInput">Please enter author</label>
         	<input type="text" class="form-control" name="Author" id="formGroupExampleInput" placeholder="Your author here...">
         	@error('author')
@@ -45,7 +45,7 @@
           @error('image')
               <small class="text-danger">{{$message}}</small>
           @enderror
-        </div>
+        </div> -->
         &emsp;
           <center><button type="submit" class="btn btn-primary" style="background-color: #5768ad;">Post Quote</button></center>
     </form>

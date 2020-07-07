@@ -1,8 +1,10 @@
             <div class="card">
                 <div class="card-body">
                    <form action="{{route('storenews')}}" method="POST" enctype="multipart/form-data">
-                    @csrf    
-                    <div class="form-group">
+                    @csrf  
+
+                    @include('news.news')  
+                    <!--<div class="form-group">
                         <label for="source">Please enter source</label>
                         <input type="text" class="form-control" name="source" id="source" aria-describedby="sourceHelp" placeholder="Your news source here...">
                         @error('source')
@@ -36,7 +38,7 @@
                         @error('image')
                             <small class="text-danger">{{$message}}</small>
                         @enderror
-                    </div>
+                    </div>-->
                     &emsp;
                         <center><button type="submit" class="btn btn-primary" style="background-color: #5768ad;">Post News</button></center>
                    </form>

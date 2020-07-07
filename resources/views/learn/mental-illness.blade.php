@@ -2,25 +2,25 @@
 
 @section('breadcrumb')
 
-<h2>Understanding Suicide</h2>
-<h5>Quote about Suicide</h5>
+<h2>Understanding Mental-illness</h2>
+<h5>Having a mental disorder isn't easy, and it's even harder when people assume you can just get over it</h5>
 
 @endsection
 
 @section('learncontent')
 
 <div class="classes__details__large">
-    <img src="/img/classes-details/cd-large.jpg" alt="">
-        <span>Understanding Suicide</span>
+    <img src="/img/classes-details/cd-mentalillness.jpg" alt="" width="750" height="400">
+        <span>Understanding Mental-illness</span>
 </div>
 
-<h2>What is Suicide?</h2>
+<h2>What is Mental-illness?</h2>
 
-<p>There are many variations of passages of Lorem Ipsum avaihave suffered that the alteration in some form by injected humour or the an randomised words which don’t look even evry is and slightly believable. If you are going to use a passage of Lorem Ipsum you need to be sure there isn’t is the anything aembarrassing hidden in the middle of text.Ipsum available but the that majority have that suffered is humour or randomised words.</p>
+<p>Mental illnesses are health conditions involving changes in emotion, thinking or behavior. Mental illnesses are associated with distress and/or problems functioning in social, work or family activities.</p>
 
 <div class="classes__details__item">
     <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/1i9OktVsTWo" allowfullscreen></iframe>
     </div>
 </div>
 
@@ -35,108 +35,102 @@
                                                     <div class="card">
                                                         <div class="card-heading">
                                                             <a data-toggle="collapse" data-target="#collapseOne">
-                                                                <span>How to join the community?</span>
+                                                                <span>Myths and Facts</span>
                                                             </a>
                                                         </div>
                                                         <div id="collapseOne" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
-                                                                <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
+                                                                <p>Mental health problems are very common. About 1 of every 5 people will experience a
+                                                                 mental health issue in a given year. One of every 25 has a serious mental health disorder.
+                                                                  These include anxiety, major depression, bipolar disorder, and schizophrenia.</p>
+                                                                <p>A large majority of mentally ill people are not violent. Only about 7% of violent acts are committed by a person with symptoms of mental illness.
+                                                                 In fact, people with serious mental health issues are 10 times more likely to be a victim of violence.
+                                                                 Mental illness has nothing to do with strength or weakness.
+                                                                  It is a medical disorder that needs treatment.
+                                                                   If you need help with a mental issue, you are not weak.</p>
+                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="card">
                                                         <div class="card-heading active">
                                                             <a data-toggle="collapse" data-target="#collapseTwo">
-                                                                <span>Can I give my credits to someone else?</span>
+                                                                <span>Reasons for cause</span>
                                                             </a>
                                                         </div>
                                                         <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
-                                                                <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
+                                                                <p>Genetic factors: having a close family member with a mental illness can increase the risk.</p>
+                                                                <p>Drug and alcohol abuse: illicit drug use can trigger a manic episode (bipolar disorder) or an episode of psychosis.</p>
+                                                                <p>Early life environment: negative childhood experiences such as abuse or neglect can increase the risk of some mental illnesses.</p>
+                                                                <p>Trauma and stress: in adulthood, traumatic life events or ongoing stress such as social isolation,
+                                                                 domestic violence, relationship breakdown, financial or work problems can increase the risk of mental illness.</p>
+                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="card">
                                                         <div class="card-heading">
                                                             <a data-toggle="collapse" data-target="#collapseThree">
-                                                                <span>How to watch video workouts?</span>
+                                                                <span>How to identify</span>
                                                             </a>
                                                         </div>
                                                         <div id="collapseThree" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
-                                                                <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
+                                                                <p>Feeling sad or depressed.</p>
+                                                                <p>Trouble concentrating.</p>
+                                                                <p>Extreme feelings (including fear, guilt, sadness, or anger).</p>
+                                                                <p>Withdrawal from friends or activities.</p>
+                                                                <p>Extreme mood changes.</p>
+                                                                <p>Unexplained hostility or violence.</p>
+                                                                <p>Thinking about hurting yourself or others.</p>
+                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="card">
                                                         <div class="card-heading">
                                                             <a data-toggle="collapse" data-target="#collapseFour">
-                                                                <span>What is Zogin?</span>
+                                                                <span>How to overcome</span>
                                                             </a>
                                                         </div>
                                                         <div id="collapseFour" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
-                                                                <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
+                                                                <p>Value yourself. Take care of your body</p>
+                                                                <p>Surround yourself with good people.</p>
+                                                                <p> Learn how to deal with stress.</p>
+                                                                <p>Quiet your mind. Set realistic goals.</p>
+                                                                <p>Avoid alcohol and other drugs. Get help when you need it.</p>
+                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="card">
                                                         <div class="card-heading">
                                                             <a data-toggle="collapse" data-target="#collapseFive">
-                                                                <span>How many times can I visit a studio each cycle?</span>
+                                                                <span>Conclusion</span>
                                                             </a>
                                                         </div>
                                                         <div id="collapseFive" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
-                                                                <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
+                                                                <p>Mental illness are medical conditions that deserve the same respect, consideration,
+                                                                 and right to treatment as any other illness.</p>
+                                                                <p>There are many resources available to help people with mental illness or disorders.</p>
+                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="card">
                                                         <div class="card-heading">
                                                             <a data-toggle="collapse" data-target="#collapseSix">
-                                                                <span>What is the class cancellation policy?</span>
+                                                                <span>How to contact us</span>
                                                             </a>
                                                         </div>
                                                         <div id="collapseSix" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
-                                                                <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
+                                                                <p>You can chat through virtual chat box.</p>
+                                                                <p>You can get a volunteer appointment by clicking below</p>
+                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -148,7 +142,7 @@
 @endsection
 
 @section('learnname')
-Suicide
+Mental-illness
 @endsection
 
 @section('comments')

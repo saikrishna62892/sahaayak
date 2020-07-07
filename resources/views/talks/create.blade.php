@@ -2,7 +2,8 @@
     <div class="card-body">
 		<form action="{{ route('addTalksFields') }}" method="POST" enctype="multipart/form-data">
 			@csrf
-		   	<div class="form-group">
+			@include('talks.talk')
+		 <!--  	<div class="form-group">
 		    	<label for="formGroupExampleInput">Please enter title</label>
 		    	<input type="text" class="form-control" name="title" id="formGroupExampleInput" placeholder="Your title here...">
 		    	@error('title')
@@ -39,7 +40,7 @@
 			    @error('image')
 		        	<small class="text-danger">{{$message}}</small>
 		        @enderror
-			</div>
+			</div>-->
 			&emsp;
 				<center><button type="submit" class="btn btn-primary" style="background-color: #5768ad;">Post Talk</button></center>
 		</form>

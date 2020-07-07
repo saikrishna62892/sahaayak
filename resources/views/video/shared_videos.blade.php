@@ -20,8 +20,8 @@
                         <td>{{ $video->videoSource }}</td>
                         <td colspan="2">{{ $video->videoTag }}</td>
                         <td><a href="{{ $video->videoURL }}" target="_blank" style="color: #5768ad;">Click here</a></td>
-                        <td><a href="#" style="color: #5768ad;">Edit</a></td>
-                        <td><a href="#" style="color: #5768ad;">Delete</a></td>
+                        <td><a href="/admin/home/editVideo/{{$video->id}}/videoedited" style="color: #5768ad;">Edit</a></td>
+                        <td><a href="deleteVideo/{{$video->id}}/videodeleted" style="color: #5768ad;">Delete</a></td>
                         <td>{{ Carbon\Carbon::parse($video->created_at)->format('d-M-Y g:h:i:s A') }}</td>
                     </tr>
                   	@empty

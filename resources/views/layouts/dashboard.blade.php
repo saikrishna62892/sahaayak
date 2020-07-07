@@ -34,14 +34,20 @@
 </script>
     <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
+
 <!--reportForm script begin-->
 <script type="text/javascript">
     function reply_click(clicked_id)
     {
-        document.getElementById('appointment_id').value = clicked_id;
+        var res = clicked_id.split("#");
+        document.getElementById("demo").innerHTML = "Make Report for "+res[1];
+        document.getElementById('appointment_id').value = res[0];
+        document.getElementById('appointment_name').value = res[1];
+        document.getElementById('appointment_email').value = res[2];
     }
 </script>
 <!--reportForm script end-->
+
 <body>
     <!-- preloader area start -->
     <div id="preloader">
@@ -71,20 +77,20 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>About</span></a>
+                                <a href="{{ url('about') }}" aria-expanded="true"><i class="ti-dashboard"></i><span>About</span></a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layout-sidebar-left"></i><span>Learn</span></a>
                                 <ul class="collapse">
-                                    <li><a href="index.html">Depression</a></li>
-                                    <li><a href="index3-horizontalmenu.html">Suicide</a></li>
-                                    <li><a href="index.html">Depression</a></li>
-                                    <li><a href="index3-horizontalmenu.html">Suicide</a></li>
-                                    <li><a href="index.html">Depression</a></li>
-                                    <li><a href="index3-horizontalmenu.html">Suicide</a></li>
-                                    <li><a href="index.html">Depression</a></li>
-                                    <li><a href="index3-horizontalmenu.html">Suicide</a></li>
-                                    <li><a href="index.html">Depression</a></li>
+                                    <li><a href="/home/learn/depression/1">Depression</a></li>
+                                        <li><a href="/home/learn/suicide/2">Suicide</a></li>
+                                        <li><a href="/home/learn/stress/3">Stress</a></li>
+                                        <li><a href="/home/learn/stigma/4">Stigma</a></li>
+                                        <li><a href="/home/learn/healthy-sleep/5">Healthy Sleep</a></li>
+                                        <li><a href="/home/learn/mental-illness/6">Mental Illness</a></li>
+                                        <li><a href="/home/learn/hopelessness/7">Hopelessness</a></li>
+                                        <li><a href="/home/learn/fear-of-loss/8">Fear of Loss</a></li>
+                                        <li><a href="/home/learn/social-isolation/9">Social Isolation</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -102,13 +108,13 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>Talk to Us</span></a>
+                                <a href="{{ url('/#talk_to_us') }}" aria-expanded="true"><i class="ti-dashboard"></i><span>Talk to Us</span></a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layout-sidebar-left"></i><span>Blog</span></a>
                                 <ul class="collapse">
-                                    <li><a href="index.html">Discover Stories</a></li>
-                                    <li><a href="index3-horizontalmenu.html">Expert Talks</a></li>
+                                    <li><a href="{{ url('displayStories') }}">Discover Stories</a></li>
+                                    <li><a href="{{ url('displayTalks') }}">Expert Talks</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -117,17 +123,18 @@
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-thought"></i><span>Hope Box</span></a>
                                 <ul class="collapse">
-                                    <li><a href="index.html">Inspire_me</a></li>
-                                    <li><a href="/home/hopebox/videos">Videos</a></li>
-                                    <li><a href="index.html">Playlists</a></li>
+                                        <li><a href="{{ url('weavesilk') }}">Interactive Drawing</a></li>
+                                        <li><a href="{{ url('inspire_me') }}">Inspire Me</a></li>
+                                        <li><a href="{{ url('videos') }}">Videos</a></li>
+                                        <li><a href="{{ url('playlists') }}">Playlists</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layout-sidebar-left"></i><span>Our Team</span></a>
                                 <ul class="collapse">
-                                    <li><a href="index.html">Volunteers</a></li>
-                                    <li><a href="index3-horizontalmenu.html">Therapists</a></li>
-                                    <li><a href="index.html">Family</a></li>
+                                    <li><a href="{{ url('team#volunteers') }}">Volunteers</a></li>
+                                        <li><a href="{{ url('team#therapists') }}">Therapists</a></li>
+                                        <li><a href="{{ url('team#family') }}">Family</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -154,7 +161,7 @@
                         <div class="breadcrumbs-area clearfix">
                             <h4 class="page-title pull-left">Dashboard</h4>
                             <ul class="breadcrumbs pull-left">
-                                <li><a href="index.html">Home</a></li>
+                                <li><a href="/">Home</a></li>
                                 <li><span>Dashboard</span></li>
                             </ul>
                         </div>

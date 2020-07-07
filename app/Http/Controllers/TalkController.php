@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Talk;
+use App\News;
 use DB;
 use Auth;
 
@@ -56,11 +57,44 @@ class TalkController extends Controller
 		{
 		    $category_count[$i]= DB::select('select category from talks where category = :id', ['id' => $category[$i] ]);
 		}
-		return view('/talks/show')->with(compact('talks', 'category_count'));
+        $recent_news=News::orderBy('created_at','desc')->take(20)->get();
+		return view('/talks/show')->with(compact('talks', 'category_count','recent_news'));
 	}
 	public function incrementLike(Talk $talk){
 		$talk->likes=$talk->likes+1;
 		$talk->save();
 		return redirect()->back();
 	}
+    public function deletetalk(Talk $talkid)
+    {
+        $talkid->delete();
+        return redirect()->back();
+    }
+
+    public function edittalk(Talk $talk){
+         return view('talks.edit',compact('talk'));
+    }
+
+    public function update(Talk $talk)
+    {
+
+        $data=request()->validate(
+            [
+                'title' => 'required|min:20',
+            'content' => 'required',
+            'category' => 'required',
+            'image' => 'file|image|max:3000',
+            ]);
+            if (request()->hasFile('image')) {
+            $image = request()->image;
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/img/talks/');
+            $image->move($destinationPath, $name);
+            $data['image'] = $name;
+        }
+
+        $talk->update($data);
+        return redirect()->route('adminDashboard');
+    }
+
 }

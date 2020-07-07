@@ -15,7 +15,12 @@ use App\News;
 use App\Video;
 use App\Appointment;
 use Analytics;
+use App\Quote;
+use Carbon\Carbon;
+use App\dialyquotes;
 use Spatie\Analytics\Period;
+use App\Playlist;
+//use Spatie\Analytics\Analytics;
 
 
 class HomeController extends Controller
@@ -24,7 +29,7 @@ class HomeController extends Controller
      * Create a new controller instance.
      *
      * @return void
-     */
+     */ 
     public function __construct()
     {
         $this->middleware('auth');
@@ -35,6 +40,18 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    public function dialyQuote(Request $request){
+        $quote= new dialyquotes();
+        $quote->quote=$request->quote;
+        $quote->save();
+        $dialyquote=$request->quote;
+    }
+    public function welcome(){
+        $dialyquote=dialyquotes::all()->last()->quote;
+        $featurednews=News::orderBy('created_at','desc')->get();
+        #dd($featurednews);
+        return view('welcome')->with(compact('dialyquote','featurednews'));
+    }
     public function index()
     {
         $user = Auth::user();
@@ -73,7 +90,8 @@ class HomeController extends Controller
         //$analyticsData=Analytics::fetchVisitorsAndPageViews(Period::days(7));
 
         //retrieve visitors and pageview data for the current day and the last seven days
-        $analyticsData = Analytics::fetchVisitorsAndPageViews(Period::days(7));
+        //$analyticsData = Analytics::fetchVisitorsAndPageViews(Period::days(7));
+
 
 
         //no-refresh loaders
@@ -86,8 +104,12 @@ class HomeController extends Controller
         //dd($analyticsData);
         //dd($analyticsData[0]);
         //dd($analyticsData[0]['pageViews']);
-
-        return view('admin.dashboard_admin',compact('unapprovedVolunteers','talks','users_count','volunteers_count','badges','shared_news','shared_videos','shared_quotes','analyticsData','shared_playlists'));
+        $newsarticle = new News();
+        $talk = new Talk();
+        $quote = new Quote();
+        $video = new Video();
+        $playlist = new Playlist();
+        return view('admin.dashboard_admin',compact('unapprovedVolunteers','talks','users_count','volunteers_count','badges','shared_news','shared_videos','shared_quotes','shared_playlists','newsarticle','talk','quote','video','playlist'));
     }
 
     public function volunteerHome()

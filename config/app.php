@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Kolkata',
 
     /*
     |--------------------------------------------------------------------------
@@ -162,6 +162,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Cohensive\Embed\EmbedServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
 
         /*
@@ -229,6 +230,10 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Embed' => Cohensive\Embed\Facades\Embed::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+    
+        
+
         'PDF' => Barryvdh\DomPDF\Facade::class,
     ],
 

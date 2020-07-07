@@ -91,13 +91,15 @@
             <div class="dropdown">
                 <button class="btn primary-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Return to Dashboard</a>
+                    @if(auth()->user()->is_Volunteer == 1)
+                    <!--<a class="dropdown-item" href="#">Return to Dashboard</a>-->
+                    @endif
                     <a class="dropdown-item" href="#">Messages</a>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
-                        </a>
+                    </a>
                 </div>
             </div>
             @endguest
@@ -109,32 +111,22 @@
                                 <li><a href="{{ url('about') }}">About</a></li>
                                 <li><a href="#">Learn</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('learn_depression') }}">Depression</a></li>
-                                        <li><a href="{{ url('learn_suicide') }}">Suicide</a></li>
-                                        <li><a href="{{ url('learn_stress') }}">Stress</a></li>
-                                        <li><a href="{{ url('learn_stigma') }}">Stigma</a></li>
-                                        <li><a href="{{ url('learn_healthy_sleep') }}">Healthy Sleep</a></li>
-                                        <li><a href="{{ url('learn_mental_illness') }}">Mental Illness</a></li>
-                                        <li><a href="{{ url('learn_hopelessness') }}">Hopelessness</a></li>
-                                        <li><a href="{{ url('learn_fear_of_loss') }}">Fear of Loss</a></li>
-                                        <li><a href="{{ url('learn_social_isolation') }}">Social Isolation</a></li>
+                                         <li><a href="/home/learn/depression/1">Depression</a></li>
+                                        <li><a href="/home/learn/suicide/2">Suicide</a></li>
+                                        <li><a href="/home/learn/stress/3">Stress</a></li>
+                                        <li><a href="/home/learn/stigma/4">Stigma</a></li>
+                                        <li><a href="/home/learn/healthy-sleep/5">Healthy Sleep</a></li>
+                                        <li><a href="/home/learn/mental-illness/6">Mental Illness</a></li>
+                                        <li><a href="/home/learn/hopelessness/7">Hopelessness</a></li>
+                                        <li><a href="/home/learn/fear-of-loss/8">Fear of Loss</a></li>
+                                        <li><a href="/home/learn/social-isolation/9">Social Isolation</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#">Assessment</a>
                                     <ul class="dropdown">
-                                        <li><a href="./classes-details.html">Depression test</a></li>
-                                        <li><a href="./pricing.html">Sleep hygiene test</a></li>
-                                        <li><a href="./pricing.html">Happiness test</a></li>
-                                        <li><a href="./pricing.html">Mental health test</a></li>
-                                        <li><a href="./pricing.html">Anxiety test</a></li>
-                                        <li><a href="./blog-details.html">Self esteem test</a></li>
-                                        <li><a href="./pricing.html">Mental speed test</a></li>
-                                        <li><a href="./pricing.html">Concentration test</a></li>
-                                        <li><a href="./pricing.html">Emotional intelligence test</a></li>
-                                        <li><a href="./blog-details.html">Social skills test</a></li>
-                                        <li><a href="./pricing.html">Stress test</a></li>
-                                        <li><a href="./pricing.html">Self disclosure test</a></li>
-                                        <li><a href="./pricing.html">Healthy lifestyle test</a></li>
+                                    @foreach($questionnaires as $questionnaire)
+                                        <li><a href="/home/questionnaires/{{$questionnaire->id}}/questions">{{$questionnaire->questionnaireTitle}}</a></li>
+                                    @endforeach
                                     </ul>
                                 </li>
                                 <li><a href="{{ url('/#talk_to_us') }}">Talk to Us</a></li>
@@ -197,8 +189,20 @@
                                 <div class="dropdown">
                                   <button class="btn primary-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</button>
                                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Return to Dashboard</a>
-                                    <a class="dropdown-item" href="#">Messages</a>
+                                    @if(auth()->user()->is_Volunteer == 1)
+                                    <a class="dropdown-item" href="/home">Return to Dashboard</a>
+                                    @elseif(auth()->user()->is_admin == 1)
+                                    <a class="dropdown-item" href="admin/home">Return to Dashboard</a>
+                                    @else
+                                    <a class="dropdown-item" href="/home">Return to Dashboard</a>
+                                    @endif
+                                    @if(auth()->user()->is_Volunteer == 1)
+                                    <a class="dropdown-item" href="/home">Notifications</a>
+                                    @elseif(auth()->user()->is_admin == 1)
+                                    <a class="dropdown-item" href="admin/home">Notifications</a>
+                                    @else
+                                    <a class="dropdown-item" href="/home">Notifications</a>
+                                    @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
@@ -397,24 +401,8 @@
     <script src="/js/jquery.slimscroll.min.js"></script>
     <script src="/js/jquery.slicknav.min.js"></script>
 
-
     <!-- ManyChat Plugin -->
     <!--<script src="//widget.manychat.com/101206188315883.js" async="async"></script>-->
-    <!-- Smooth Scrolling -->
-    <script>
-            let anchorlinks = document.querySelectorAll('a[href^="#"]')
-            for (let item of anchorlinks) { // relitere 
-                item.addEventListener('click', (e)=> {
-                    let hashval = item.getAttribute('href')
-                    let target = document.querySelector(hashval)
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    })
-                    history.pushState(null, null, hashval)
-                    e.preventDefault()
-                })
-            }
-    </script>
     <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>
     <script>

@@ -2,25 +2,27 @@
 
 @section('breadcrumb')
 
-<h2>Understanding Suicide</h2>
-<h5>Quote about Suicide</h5>
+<h2>Understanding Depression</h2>
+<h5>Worst part about</h5>
+<h4>DEPRESSION</h4>
+<h5>People don't have it. They just don't get it</h5>
 
 @endsection
 
 @section('learncontent')
 
 <div class="classes__details__large">
-    <img src="/img/classes-details/cd-large.jpg" alt="">
-        <span>Understanding Suicide</span>
+    <img src="/img/classes-details/cd-large.jpg" alt="" width="750" height="400">
+        <span>Understanding Depression</span>
 </div>
 
-<h2>What is Suicide?</h2>
+<h2>What is Depression?</h2>
 
-<p>There are many variations of passages of Lorem Ipsum avaihave suffered that the alteration in some form by injected humour or the an randomised words which don’t look even evry is and slightly believable. If you are going to use a passage of Lorem Ipsum you need to be sure there isn’t is the anything aembarrassing hidden in the middle of text.Ipsum available but the that majority have that suffered is humour or randomised words.</p>
+<p>Depression is a disease of the brain. Experts believe that certain brain chemicals go out of balance to cause the disease. No one thing causes this. Many things, including your genes, stressful events, illness, and medicines, can cause the imbalance.</p>
 
 <div class="classes__details__item">
     <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/z-IR48Mb3W0" allowfullscreen></iframe>
     </div>
 </div>
 
@@ -35,53 +37,46 @@
                                                     <div class="card">
                                                         <div class="card-heading">
                                                             <a data-toggle="collapse" data-target="#collapseOne">
-                                                                <span>How to join the community?</span>
+                                                                <span>Myths and Facts</span>
                                                             </a>
                                                         </div>
                                                         <div id="collapseOne" class="collapse" data-parent="#accordionExample">
-                                                            <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
-                                                                <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
+                                                            <div class="card-body">                                                               
+                                                                <p>Depression is a disease. It is a problem with your brain chemistry, not your character.
+                                                                 You can't force yourself to get over it any more than you can make asthma or a heart attack go away.</p>
+                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="card">
                                                         <div class="card-heading active">
                                                             <a data-toggle="collapse" data-target="#collapseTwo">
-                                                                <span>Can I give my credits to someone else?</span>
+                                                                <span>Reasons for cause</span>
                                                             </a>
                                                         </div>
                                                         <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
-                                                                <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
+                                                                <p>Depression may start after something bad happens, but other things also may trigger it.
+                                                                 Medicines, hormone problems, childbirth, and using alcohol and drugs all can trigger depression.
+                                                                 Sometimes it happens for no clear reason.</p>
+                                                                <p>Depression can develop in any age group, ethnic group, economic group, and gender.
+                                                                 A few people get over depression on their own, but most people need treatment.
+                                                                 Most people with depression can be treated, and they return to their work and home routines.</p>
+                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="card">
                                                         <div class="card-heading">
                                                             <a data-toggle="collapse" data-target="#collapseThree">
-                                                                <span>How to watch video workouts?</span>
+                                                                <span>How to identify</span>
                                                             </a>
                                                         </div>
                                                         <div id="collapseThree" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
+                                                                <p>Feeling agitated or irritated for no reason. Losing interest in doing things you are good at.
+                                                                Trouble in falling asleep, most often known as insomnia. In some cases, you might sleep too much.   </p>
+                                                                <p>Restlessness, feeling alone, sad and empty persistently. Having thoughts to end life or attempting to end life.  </p>
                                                                 <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
@@ -89,54 +84,46 @@
                                                     <div class="card">
                                                         <div class="card-heading">
                                                             <a data-toggle="collapse" data-target="#collapseFour">
-                                                                <span>What is Zogin?</span>
+                                                                <span>How to overcome</span>
                                                             </a>
                                                         </div>
                                                         <div id="collapseFour" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
-                                                                <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
+                                                                <p>People, in general, think talking more about suicides and checking if someone
+                                                                 feels suicidal increases the chances of suicides, in fact, it actually helps the other person to open
+                                                                  up their thoughts to us, offering us a chance to help them get over these thoughts.  </p>
+                                                                <p>Many people with depression are helped by medicine.
+                                                                 Medicine can improve or get rid of the symptoms of depression.</p>
+                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="card">
                                                         <div class="card-heading">
                                                             <a data-toggle="collapse" data-target="#collapseFive">
-                                                                <span>How many times can I visit a studio each cycle?</span>
+                                                                <span>Conclusion</span>
                                                             </a>
                                                         </div>
                                                         <div id="collapseFive" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
-                                                                <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
+                                                                <p> Adolescents should seek treatments because it will definitely help them heal. 
+                                                                However, awareness should be increased on all social levels to enlighten people who suffer from depression. 
+                                                                Depression is a severe problem that should be immediately addressed.</p>                                                                
+                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="card">
                                                         <div class="card-heading">
                                                             <a data-toggle="collapse" data-target="#collapseSix">
-                                                                <span>What is the class cancellation policy?</span>
+                                                                <span>How to contact us</span>
                                                             </a>
                                                         </div>
                                                         <div id="collapseSix" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
-                                                                <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
+                                                                <p>You can chat through virtual chat box.</p>
+                                                                <p>You can get a volunteer appointment by clicking below</p>
+                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -148,5 +135,5 @@
 @endsection
 
 @section('learnname')
-Suicide
+Depression
 @endsection

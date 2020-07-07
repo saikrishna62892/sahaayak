@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Notifications\QuestionnaireNotification;
 use App\User;
 use Carbon\Carbon;
+use App\dialyquotes;
+use App\News;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +19,13 @@ use Carbon\Carbon;
 */
 /*   Guys Maintain the list in sorted_order */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/',function(){
+    $dialyquote=dialyquotes::all()->last()->quote;
+        $featurednews=News::orderBy('created_at','desc')->take(3)->get();
+        #dd($featurednews);
+        return view('welcome')->with(compact('dialyquote','featurednews'));
 });
+
 
 Route::get('about', function () {
     return view('about');
@@ -29,41 +35,6 @@ Route::get('expert_story', function () {
     return view('expert_story');
 });
 
-Route::get('learn_depression', function () {
-    return view('learn_depression');
-});
-
-Route::get('learn_fear_of_loss', function () {
-    return view('learn_fear_of_loss');
-});
-
-Route::get('learn_healthy_sleep', function () {
-    return view('learn_healthy_sleep');
-});
-
-Route::get('learn_hopelessness', function () {
-    return view('learn_hopelessness');
-});
-
-Route::get('learn_mental_illness', function () {
-    return view('learn_mental_illness');
-});
-
-Route::get('learn_social_isolation', function () {
-    return view('learn_social_isolation');
-});
-
-Route::get('learn_stigma', function () {
-    return view('learn_stigma');
-});
-
-Route::get('learn_stress', function () {
-    return view('learn_stress');
-});
-
-Route::get('learn_suicide', function () {
-    return view('learn_suicide');
-});
 
 #Route::get('login', function () {
  #   return view('login');
@@ -73,6 +44,34 @@ Route::get('news','NewsController@index')->name('news');
 Route::get('news/create','NewsController@create');
 Route::post('admin/news','NewsController@store')->name('storenews');
 Route::get('displayNews','NewsController@display')->name('displayNews');
+Route::get('admin/home/editNews/{newsarticle}/articledited','NewsController@editnews')->name('editNews');
+Route::patch('admin/home/news/{newsarticle}','NewsController@update');
+Route::get('admin/home/editTalk/{talk}/talkedited','TalkController@edittalk');
+Route::patch('admin/home/edittalks/{talk}','TalkController@update');
+Route::get('/admin/home/editQuote/{quote}/quoteedited','QuoteController@editquote');
+Route::patch('/admin/home/editQuote/{quote}','QuoteController@update');
+Route::get('/admin/home/editVideo/{video}/videoedited','VideoController@editvideo');
+Route::patch('/admin/home/editVideo/{video}','VideoController@update');
+Route::get('/admin/home/editPlaylist/{playlist}/playlistedited','PlaylistController@editplaylist');
+Route::patch('/admin/home/editPlaylist/{playlist}','PlaylistController@update');
+
+Route::get('admin/home/deleteNews/{newsarticle}/articledeleted','NewsController@deletenews');
+Route::get('admin/deleteTalk/{talkid}/talkdeleted','TalkController@deletetalk');
+Route::get('admin/deleteQuote/{quoteid}/quotedeleted','QuoteController@deletequote');
+Route::get('admin/deleteVideo/{video}/videodeleted','VideoController@deletevideo');
+Route::get('admin/deletePlaylists/{playlist}/playlistdeleted','PlaylistController@deleteplaylist');
+
+
+
+
+Route::post('/appointment_controller','appointment_controller@save');
+
+
+Route::get('volunteer/appointment/{appointment}/acceptAppointment','appointment_controller@appointmentAccepted');
+
+
+Route::get('/suggestion_controller','suggestion_controller@save');
+
 
 //venkat news routes end
 Route::get('shared_stories', function () {
@@ -141,8 +140,18 @@ Route::get('/videos','HopeBoxController@displayVideos');
 Route::get('/admin/home/volunteer/{unapprovedVolunteer}/getDetails','VolunteerController@getDetails');
 Route::get('/admin/home/volunteer/{unapprovedVolunteer}/approveVolunteer','VolunteerController@approveVolunteer');
 
+
 //Report Routes
+
 Route::post('/volunteer/report/generateReport','appointment_controller@generateReport');
+Route::get('/volunteer/appointment/{appointment}/report','appointment_controller@reportForm');
+Route::post('/admin/report/{appointment}/generateReport','appointment_controller@generateReport');
+
+
+//learn section routes
+Route::get('home/learn/{learn}/{learnID}','LearnController@show');
+
+
 
 //worry tree routes
 Route::get('/worry', 'WorryController@show');
@@ -157,14 +166,6 @@ Route::get('team', function () {
 Route::get('inspire_me', function () {
     return view('inspire_me');
 });
-
-Route::post('/appointment_controller','appointment_controller@save');
-
-
-Route::get('volunteer/appointment/{appointment}/acceptAppointment','appointment_controller@appointmentAccepted');
-
-
-Route::get('/suggestion_controller','suggestion_controller@save');
 
 
 
@@ -218,9 +219,30 @@ Route::get('/incrementLike/{story}', 'StoryController@incrementLike')->name('inc
 Route::post('/admin/home','QuoteController@save')->name('addFields');
 Route::get('/inspire_me','QuotesViewController@index');
 
+//DialyQuote
+Route::post('/','HomeController@dialyQuote')->name('dialyQuote');
+
 //Playlists routes by john&ganesh
 Route::post('/createPlaylist','PlaylistController@save')->name('createPlaylist');
 Route::get('/playlists','PlaylistController@index');
+
+//Googlesignup routes by john&ganesh
+Route::get('google', function () {
+    return view('auth/register');
+});
+    
+Route::get('/auth/google', 'Auth\LoginController@redirectToGoogle');
+Route::get('/auth/google/callback', 'Auth\LoginController@handleGoogleCallback');
+
+//Facebooksignup routes by john&ganesh
+Route::get('facebook', function () {
+    return view('auth/register');
+});
+    
+Route::get('/auth/facebook', 'Auth\LoginController@redirectToFacebook');
+Route::get('/auth/facebook/callback', 'Auth\LoginController@handleFacebookCallback');
+
+
 
 Route::get('/weavesilk', function () {
     return view('weavesilk');

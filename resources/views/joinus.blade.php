@@ -84,7 +84,7 @@
 						Facebook
 					</a>
 
-					<a href="#" class="btn-google m-b-10">
+					<a href="{{ url('auth/google') }}" class="btn-google m-b-10" >
 						<img src="img/icons/icon-google.png" alt="GOOGLE">
 						Google
 					</a>

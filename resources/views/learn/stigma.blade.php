@@ -2,25 +2,28 @@
 
 @section('breadcrumb')
 
-<h2>Understanding Suicide</h2>
-<h5>Quote about Suicide</h5>
+<h2>Understanding Stigma</h2>
+<h5>You're stonger even when alone</h5>
 
 @endsection
 
 @section('learncontent')
 
 <div class="classes__details__large">
-    <img src="/img/classes-details/cd-large.jpg" alt="">
-        <span>Understanding Suicide</span>
+    <img src="/img/classes-details/cd-stigma.jpg" alt="" width="750" height="400">
+        <span>Understanding Stigma</span>
 </div>
 
-<h2>What is Suicide?</h2>
+<h2>What is Stigma?</h2>
 
-<p>There are many variations of passages of Lorem Ipsum avaihave suffered that the alteration in some form by injected humour or the an randomised words which don’t look even evry is and slightly believable. If you are going to use a passage of Lorem Ipsum you need to be sure there isn’t is the anything aembarrassing hidden in the middle of text.Ipsum available but the that majority have that suffered is humour or randomised words.</p>
+<p>Stigma involves negative attitudes or discrimination against someone based on a distinguishing 
+characteristic such as a mental illness, health condition, or disability. 
+Social stigmas can also be related to other characteristics including gender, 
+sexuality, race, religion, and culture.</p>
 
 <div class="classes__details__item">
     <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/49mfPFTZsHs" allowfullscreen></iframe>
     </div>
 </div>
 
@@ -35,108 +38,104 @@
                                                     <div class="card">
                                                         <div class="card-heading">
                                                             <a data-toggle="collapse" data-target="#collapseOne">
-                                                                <span>How to join the community?</span>
+                                                                <span>Myths and Facts</span>
                                                             </a>
                                                         </div>
                                                         <div id="collapseOne" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
-                                                                <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
+                                                                <p>Three out of four people with a mental illness report that they have experienced stigma. </p>
+                                                                <p>Stigma is a mark of disgrace that sets a person apart from others. When a person is 
+                                                                labelled by their illness they are no longer seen as an individual but as part of a 
+                                                                stereotyped group. Negative attitudes and beliefs toward this group create prejudice 
+                                                                 which leads to negative actions and discrimination. </p>
+                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="card">
                                                         <div class="card-heading active">
                                                             <a data-toggle="collapse" data-target="#collapseTwo">
-                                                                <span>Can I give my credits to someone else?</span>
+                                                                <span>Reasons for cause</span>
                                                             </a>
                                                         </div>
                                                         <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
-                                                                <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
+                                                                <p> Stigma has two major components: a public one, 
+                                                                or the reaction that the general population has to people with mental illness.</p>
+                                                                <p> Self-stigma, or the prejudice that people with mental illness tend to turn against themselves.</p>
+                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="card">
                                                         <div class="card-heading">
                                                             <a data-toggle="collapse" data-target="#collapseThree">
-                                                                <span>How to watch video workouts?</span>
+                                                                <span>How to identify</span>
                                                             </a>
                                                         </div>
                                                         <div id="collapseThree" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
-                                                                <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
+                                                                 <p>Feelings of shame.</p>
+                                                                 <p>Hopelessness and isolation.</p>
+                                                                 <p>Reluctance to ask for help or to get treatment.</p>
+                                                                 <p>Lack of understanding by family, friends or others.</p>
+                                                                 <p>Fewer opportunities for employment or social interaction.</p>
+                                                                 <p>Bullying, physical violence or harassment</p>
+                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="card">
                                                         <div class="card-heading">
                                                             <a data-toggle="collapse" data-target="#collapseFour">
-                                                                <span>What is Zogin?</span>
+                                                                <span>How to overcome</span>
                                                             </a>
                                                         </div>
                                                         <div id="collapseFour" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
-                                                                <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
+                                                                <p>"Do not hide away". Many people with mental illness want to isolate themselves from the world.
+                                                                 Reaching out to people you trust – family, friends, coaches or religious leaders –
+                                                                  can mean you get the support you need.</p>
+                                                                <p>"Connect with others". Joining a mental health support group – either online or in person –
+                                                                 can help you deal with feelings of isolation and make you realise that you are not alone in your feelings
+                                                                  and experiences.</p>
+                                                                <p>"You are not your illness". Do not define yourself by your illness as other people might.
+                                                                 Instead of saying ‘I'm schizophrenic’, say ‘I have schizophrenia’. There is power in language.</p>
+                                                                <p>Get the mental health treatment you need. 
+                                                                Try not to let the fear of being labelled with a mental illness stop you from getting help.</p>
+                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="card">
                                                         <div class="card-heading">
                                                             <a data-toggle="collapse" data-target="#collapseFive">
-                                                                <span>How many times can I visit a studio each cycle?</span>
+                                                                <span>Conclusion</span>
                                                             </a>
                                                         </div>
                                                         <div id="collapseFive" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
-                                                                <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
+                                                                <p>Researchs suggests that stigma may be reduced by protest, education and contact.
+                                                                Through protest, stigma is presented as a morally unjust and people are encouraged 
+                                                                not to act in inappropriate ways. Education challenges inaccurate stereotypes about 
+                                                                mental illness and replaces these with factual information.
+                                                                 Contact, that is face-to-face interactions between a person with a mental illness
+                                                                  and the general public, brings the greatest improvements in public attitudes. </p>                                                
+                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="card">
                                                         <div class="card-heading">
                                                             <a data-toggle="collapse" data-target="#collapseSix">
-                                                                <span>What is the class cancellation policy?</span>
+                                                                <span>How to contact us</span>
                                                             </a>
                                                         </div>
                                                         <div id="collapseSix" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
-                                                                <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
+                                                                <p>You can chat through virtual chat box.</p>
+                                                                <p>You can get a volunteer appointment by clicking below</p>
+                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -148,7 +147,7 @@
 @endsection
 
 @section('learnname')
-Suicide
+Stigma
 @endsection
 
 @section('comments')

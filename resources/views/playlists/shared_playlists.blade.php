@@ -23,8 +23,8 @@
                         	<?php $link="https://".$playlists->playlistURL ?>
                             <a href="{{ $link }}" style="color:#5768ad;" target="_blank">Click here</a>
                         </td>
-                        <td><a href="#" style="color: #5768ad;">Edit</a></td>
-                        <td><a href="#" style="color: #5768ad;">Delete</a></td>
+                        <td><a href="/admin/home/editPlaylist/{{$playlists->id}}/playlistedited" style="color: #5768ad;">Edit</a></td>
+                        <td><a href="deletePlaylists/{{$playlists->id}}/playlistdeleted" style="color: #5768ad;">Delete</a></td>
                         <td>{{ Carbon\Carbon::parse($playlists->created_at)->format('d-M-Y g:h:i:s A') }}</td>
                     </tr>
                   	@empty
