@@ -73,7 +73,7 @@
                                          document.getElementById('logout-form').submit();">
                             <?php echo e(__('Logout')); ?>
 
-                        </a>
+                    </a>
                 </div>
             </div>
             <?php endif; ?>
@@ -152,8 +152,7 @@
                         <div class="header__top__widget">
                             <?php if(auth()->guard()->guest()): ?>
                                 <ul>
-                                    <li>CALL US: + 1 800-567-8990</li>
-                                    <li>WRITE US: OFFICE@EXAMPLE.COM</li>
+                                    <li>WRITE US: sahaayakofficial@gmail.com</li>
                                 </ul>
                                 <a href="<?php echo e(route('login')); ?>" class="primary-btn">Login</a>
                                 <?php if(Route::has('register')): ?>
@@ -301,13 +300,12 @@ unset($__errorArgs, $__bag); ?>
                     <div class="footer__widget">
                         <h5>Helplines</h5>
                         <ul>
-                            <li><a href="#">Helpline 1</a></li>
-                            <li><a href="#">Helpline 2</a></li>
-                            <li><a href="#">Helpline 3</a></li>
-                            <li><a href="#">Helpline 4</a></li>
-                            <li><a href="#">Helpline 5</a></li>
-                            <li><a href="#">Helpline 6</a></li>
-                            <li><a href="#">More</a></li>
+                            <li><a href="https://www.thehindu.com/news/national/suicide-prevention-helplines/article25612310.ece" target="_blank">Delhi 011-4076 9002</a> </li>
+                            <li><a href="https://www.thehindu.com/news/national/suicide-prevention-helplines/article25612310.ece" target="_blank">Andhra 78930-78930</a></li>
+                            <li><a href="https://www.thehindu.com/news/national/suicide-prevention-helplines/article25612310.ece" target="_blank">Karnataka 104</a></li>
+                            <li><a href="https://www.thehindu.com/news/national/suicide-prevention-helplines/article25612310.ece" target="_blank">Kerala 0471-2552056</a></li>
+                            <li><a href="https://www.thehindu.com/news/national/suicide-prevention-helplines/article25612310.ece" target="_blank">Kochi 0484-2361160</a></li>
+                            <li><a href="https://www.thehindu.com/news/national/suicide-prevention-helplines/article25612310.ece" target="_blank">More</a></li>
                         </ul>
                     </div>
                 </div>
@@ -343,10 +341,10 @@ unset($__errorArgs, $__bag); ?>
                             <?php echo csrf_field(); ?>
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
-                                        <input type="text" placeholder="Name*" name="name">
+                                        <input type="text" placeholder="Name" name="name">
                                     </div>
                                     <div class="col-lg-6 col-md-6">
-                                        <input type="text" placeholder="Email*" name="email">
+                                        <input type="text" placeholder="Email" name="email">
                                     </div>
                                     <div class="col-lg-12 text-center">
                                     <input type="text" placeholder="Comment" name="comment">
@@ -382,29 +380,6 @@ unset($__errorArgs, $__bag); ?>
     <script src="/js/metisMenu.min.js"></script>
     <script src="/js/jquery.slimscroll.min.js"></script>
     <script src="/js/jquery.slicknav.min.js"></script>
-
-    <!-- Smooth Scroll -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-      $(document).ready(function(){
-      // Add smooth scrolling to all links
-      $("a").on('click', function(event) {
-          // Make sure this.hash has a value before overriding default behavior
-          if (this.hash !== "") {
-          // Prevent default anchor click behavior
-            event.preventDefault();
-            // Store hash
-            var hash = this.hash;
-            $('html, body').animate({
-              scrollTop: $(hash).offset().top
-            }, 800, function(){
-              // Add hash (#) to URL when done scrolling (default click behavior)
-              window.location.hash = hash;
-            });
-          } // End if
-        });
-      });
-    </script> 
 
     <!-- ManyChat Plugin -->
     <!--<script src="//widget.manychat.com/101206188315883.js" async="async"></script>-->

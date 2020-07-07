@@ -72,15 +72,19 @@
                 <div class="col-lg-6">
                     <div class="chooseus__text">
                         <h2 data-step="5" data-intro="Myths & Facts" data-position="left">Myths & Facts</h2>
-                        <p>We are offering internationally certified 200 Hour Yoga Teacher Training in Rishikesh and 300
-                            hour yoga teacher training in Rishikesh, India - Join us to have such life-transforming
-                            experience in The world capital of Yoga in Rishikesh.</p>
-                        <p>We are offering internationally certified 200 Hour Yoga Teacher Training in Rishikesh and 300
-                            hour yoga teacher training in Rishikesh, India - Join us to have such life-transforming
-                            experience in The world capital of Yoga in Rishikesh.</p>
-                        <p>We are offering internationally certified 200 Hour Yoga Teacher Training in Rishikesh and 300
-                            hour yoga teacher training in Rishikesh, India - Join us to have such life-transforming
-                            experience in The world capital of Yoga in Rishikesh.</p>
+                        <p> It is calculated that around 1.6
+                            lakh people die everyday on average.There are many distinctive causes for these deaths, among
+                            which most of the causes are unpreventable and sometimes inescapable like Ischaemic heart
+                            disease, Stroke, Chronic obstructive pulmonary disease, Lower respiratory infections, Road injury,
+                            and many such.</p>
+                        <p>.But it is unfortunate to know that more 2000 deaths out of 1.6 lakh deaths are
+                            due to suicides.Suicide is not among the causes that are unpreventable and inescapable, it can
+                            be reduced.There is a very great chance that suicides can be reduced if treated in right way.In
+                            most of the cases people don’t try to express what they are going through even with thier
+                            beloved once.</p>
+                        <p>This is because people believe that sharing their suicidal thoughts might disturb
+                            their relation or think that they might be judged for having such thoughts.These insecurities are
+                            caused due to the myths we believe blindly.</p>
                     </div>
                 </div>
                 </div>
@@ -107,33 +111,30 @@
                     <div class="col-xl-3 col-md-4 col-sm-6">
                         <div class="services__item">
                             <img src="img/services/services-1.png" alt="">
-                            <h5>purpose1</h5>
-                            <p>Grab the opportunity to deepen your own yoga practice, relax, restore and experience
-                                india!</p>
+                            <h5>You're not alone</h5>
+                            <p>Talk to us i.e. make an appointment section which connects users
+                             to socially disciplined volunteers.</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-md-4 col-sm-6">
                         <div class="services__item">
                             <img src="img/services/services-2.png" alt="">
-                            <h5>purpose2</h5>
-                            <p>Grab the opportunity to deepen your own yoga practice, relax, restore and experience
-                                india!</p>
+                            <h5>Information is wealth</h5>
+                            <p>Information,news,articles,stories & expert talks about various experiences</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-md-4 col-sm-6">
                         <div class="services__item">
                             <img src="img/services/services-3.png" alt="">
-                            <h5>purpose3</h5>
-                            <p>Grab the opportunity to deepen your own yoga practice, relax, restore and experience
-                                india!</p>
+                            <h5>Hope is real</h5>
+                            <p>Hopebox which contains interactive drawing,inspiring quotes,videos & playlists</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-md-4 col-sm-6">
                         <div class="services__item">
                             <img src="img/services/services-4.png" alt="">
-                            <h5>purpose4</h5>
-                            <p>Grab the opportunity to deepen your own yoga practice, relax, restore and experience
-                                india!</p>
+                            <h5>Safety is priceless</h5>
+                            <p>Personalized dashboard with cognitive diary to note down the events and can also share the stories</p>
                         </div>
                     </div>
                 </div>
@@ -234,7 +235,7 @@
                 <div class="col-lg-7">
                     <div class="home__about__pic">
                         <div class="home__about__pic__item large-item set-bg">
-                            <img src="img/about/about-1.jpg" alt="">
+                            <img src="img/about/about-11.jpg" alt="">
                         </div>
                         <div class="home__about__pic__item">
                             <div class="home__about__pic__item__inner set-bg" data-setbg="img/about/about-2.jpg">
@@ -249,13 +250,19 @@
                 <div class="col-lg-5">
                     <div class="home__about__text">
                         <span>“We Share coz We Care”</span>
-                        <p>We are offering internationally certified 200 Hour Yoga Teacher Training in Rishikesh and 300
-                            hour yoga teacher training in Rishikesh, India - Join us to have such life-transforming
-                            experience in The world capital of Yoga in Rishikesh.</p>
-                        <p class="para-2">Zogin is a great place for those who are in search of the ancient practice and
-                            true essence of yoga, meditation, health, peace and learning the art of creating a class to
-                            teach safely. We are passionate about adjustments and mainly focus on the alignment of the
-                            asanas.</p>
+                        <p>We understand your eagerness and enthusiasm to figure out the purpose of this site that is assuring you hope
+                            and care in life. Have you ever wondered what it feels to have suicidal thoughts or what
+                            encourages and convinces your guts to commit suicide if your answer is yes, we are pretty sure
+                            that you are in the right hands. To all our fellow beings whose answer is a big yes, let us
+                            undoubtedly tell you that suicide is not the one and only solution or chance, to end all the
+                            problems and obstacles that come your way.</p>
+                        <p class="para-2">In fact, suicide is certainly a wrong choice, that
+                            you might have chosen knowingly or unknowingly over other appropriate choices. As a part of
+                            our mission and vision to make you understand, realize and believe strongly that committing
+                            suicide is a false choice and not the ultimate decision to end things, let us help you in having a
+                            clear picture about symptoms, causes, risks regarding suicides and finally providing you best
+                            advice with no paybacks. Regardless of you, having suicidal thoughts or not, everyone is worth
+                            knowing these things. We share, cause we care.</p>
                         <a href="<?php echo e(url('about')); ?>" class="primary-btn">MORE ABOUT US</a>
                     </div>
                 </div>

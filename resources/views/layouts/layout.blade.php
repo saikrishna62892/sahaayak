@@ -151,8 +151,7 @@
                         <div class="header__top__widget">
                             @guest
                                 <ul>
-                                    <li>CALL US: + 1 800-567-8990</li>
-                                    <li>WRITE US: OFFICE@EXAMPLE.COM</li>
+                                    <li>WRITE US: sahaayakofficial@gmail.com</li>
                                 </ul>
                                 <a href="{{ route('login') }}" class="primary-btn">Login</a>
                                 @if (Route::has('register'))
@@ -291,13 +290,12 @@
                     <div class="footer__widget">
                         <h5>Helplines</h5>
                         <ul>
-                            <li><a href="#">Helpline 1</a></li>
-                            <li><a href="#">Helpline 2</a></li>
-                            <li><a href="#">Helpline 3</a></li>
-                            <li><a href="#">Helpline 4</a></li>
-                            <li><a href="#">Helpline 5</a></li>
-                            <li><a href="#">Helpline 6</a></li>
-                            <li><a href="#">More</a></li>
+                            <li><a href="https://www.thehindu.com/news/national/suicide-prevention-helplines/article25612310.ece" target="_blank">Delhi 011-4076 9002</a> </li>
+                            <li><a href="https://www.thehindu.com/news/national/suicide-prevention-helplines/article25612310.ece" target="_blank">Andhra 78930-78930</a></li>
+                            <li><a href="https://www.thehindu.com/news/national/suicide-prevention-helplines/article25612310.ece" target="_blank">Karnataka 104</a></li>
+                            <li><a href="https://www.thehindu.com/news/national/suicide-prevention-helplines/article25612310.ece" target="_blank">Kerala 0471-2552056</a></li>
+                            <li><a href="https://www.thehindu.com/news/national/suicide-prevention-helplines/article25612310.ece" target="_blank">Kochi 0484-2361160</a></li>
+                            <li><a href="https://www.thehindu.com/news/national/suicide-prevention-helplines/article25612310.ece" target="_blank">More</a></li>
                         </ul>
                     </div>
                 </div>
@@ -333,10 +331,10 @@
                             @csrf
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
-                                        <input type="text" placeholder="Name*" name="name">
+                                        <input type="text" placeholder="Name" name="name">
                                     </div>
                                     <div class="col-lg-6 col-md-6">
-                                        <input type="text" placeholder="Email*" name="email">
+                                        <input type="text" placeholder="Email" name="email">
                                     </div>
                                     <div class="col-lg-12 text-center">
                                     <input type="text" placeholder="Comment" name="comment">
