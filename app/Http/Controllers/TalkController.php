@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Talk;
+use App\News;
 use DB;
 use Auth;
 
@@ -56,7 +57,8 @@ class TalkController extends Controller
 		{
 		    $category_count[$i]= DB::select('select category from talks where category = :id', ['id' => $category[$i] ]);
 		}
-		return view('/talks/show')->with(compact('talks', 'category_count'));
+        $recent_news=News::orderBy('created_at','desc')->take(20)->get();
+		return view('/talks/show')->with(compact('talks', 'category_count','recent_news'));
 	}
 	public function incrementLike(Talk $talk){
 		$talk->likes=$talk->likes+1;

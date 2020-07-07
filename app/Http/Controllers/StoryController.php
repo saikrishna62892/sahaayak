@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Story;
 use DB;
 use Auth;
+use App\News;
 
 class StoryController extends Controller
 {
@@ -56,7 +57,11 @@ class StoryController extends Controller
 		{
 		    $category_count[$i]= DB::select('select category from stories where category = :id', ['id' => $category[$i] ]);
 		}
-		return view('/stories/show')->with(compact('stories', 'category_count'));
+
+        $recent_news=News::orderBy('created_at','desc')->take(20)->get();
+
+
+		return view('/stories/show')->with(compact('stories', 'category_count','recent_news'));
 	}
 	public function incrementLike(Story $story){
 		$story->likes=$story->likes+1;
