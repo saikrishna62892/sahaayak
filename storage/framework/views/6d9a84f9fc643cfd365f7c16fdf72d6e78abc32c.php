@@ -1,5 +1,9 @@
     
 
+    <?php $__env->startSection('name'); ?>
+        Home
+    <?php $__env->stopSection(); ?>
+
     <?php $__env->startSection('content'); ?>
 
 
@@ -34,29 +38,11 @@
                     </div>
                     <div class="chooseus__item">
                         <div class="chooseus__item__icon">
-                            <img src="img/chooseus/choose-1.png" alt="">
+                            <img src="img/chooseus/choose-4.png" alt="">
                         </div>
                         <div class="chooseus__item__text">
-                            <h2 class="choose-counter">2146</h2>
-                            <p>Students</p>
-                        </div>
-                    </div>
-                    <div class="chooseus__item">
-                        <div class="chooseus__item__icon">
-                            <img src="img/chooseus/choose-2.png" alt="">
-                        </div>
-                        <div class="chooseus__item__text">
-                            <h2 class="choose-counter">15</h2>
-                            <p>Years Of Experience</p>
-                        </div>
-                    </div>
-                    <div class="chooseus__item">
-                        <div class="chooseus__item__icon">
-                            <img src="img/chooseus/choose-3.png" alt="">
-                        </div>
-                        <div class="chooseus__item__text">
-                            <h2 class="choose-counter">48</h2>
-                            <p>Branches</p>
+                            <h2 class="choose-counter">258</h2>
+                            <p>Thousand suicides in India per year</p>
                         </div>
                     </div>
                     <div class="chooseus__item">
@@ -64,22 +50,37 @@
                             <img src="img/chooseus/choose-4.png" alt="">
                         </div>
                         <div class="chooseus__item__text">
-                            <h2 class="choose-counter">234</h2>
-                            <p>Expert Staffs</p>
+                            <h2 class="choose-counter">800</h2>
+                            <p>Thousand suicides over Globe per year</p>
+                        </div>
+                    </div>
+                    <div class="chooseus__item">
+                        <div class="chooseus__item__icon">
+                            <img src="img/chooseus/choose-4.png" alt="">
+                        </div>
+                        <div class="chooseus__item__text">
+                            <h2 class="choose-counter">40</h2>
+                            <p>Suicide frequency in seconds</p>
+                        </div>
+                    </div>
+                    <div class="chooseus__item">
+                        <div class="chooseus__item__icon">
+                            <img src="img/chooseus/choose-4.png" alt="">
+                        </div>
+                        <div class="chooseus__item__text">
+                            <h2 class="choose-counter">20</h2>
+                            <p>Suicide attempts per day</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="chooseus__text">
                         <h2 data-step="5" data-intro="Myths & Facts" data-position="left">Myths & Facts</h2>
-                        <p> It is calculated that around 1.6
-                            lakh people die everyday on average.There are many distinctive causes for these deaths, among
-                            which most of the causes are unpreventable and sometimes inescapable like Ischaemic heart
-                            disease, Stroke, Chronic obstructive pulmonary disease, Lower respiratory infections, Road injury,
-                            and many such.</p>
-                        <p>.But it is unfortunate to know that more 2000 deaths out of 1.6 lakh deaths are
-                            due to suicides.Suicide is not among the causes that are unpreventable and inescapable, it can
-                            be reduced.There is a very great chance that suicides can be reduced if treated in right way.In
+                        <p> Talking about suicide provides the opportunity for communication. Fears shared are more
+                         likely to diminish. The first step in encouraging a person with thoughts of suicide to live
+                          comes from talking about those feelings. A simple inquiry about whether or not the person
+                           is intending to end their life can start the conversation.</p>
+                        <p>There is a very great chance that suicides can be reduced if treated in right way. In
                             most of the cases people don’t try to express what they are going through even with thier
                             beloved once.</p>
                         <p>This is because people believe that sharing their suicidal thoughts might disturb
@@ -235,7 +236,7 @@
                 <div class="col-lg-7">
                     <div class="home__about__pic">
                         <div class="home__about__pic__item large-item set-bg">
-                            <img src="img/about/about-11.jpg" alt="">
+                            <img src="img/about/about-1.jpg" alt="">
                         </div>
                         <div class="home__about__pic__item">
                             <div class="home__about__pic__item__inner set-bg" data-setbg="img/about/about-2.jpg">
@@ -261,8 +262,7 @@
                             our mission and vision to make you understand, realize and believe strongly that committing
                             suicide is a false choice and not the ultimate decision to end things, let us help you in having a
                             clear picture about symptoms, causes, risks regarding suicides and finally providing you best
-                            advice with no paybacks. Regardless of you, having suicidal thoughts or not, everyone is worth
-                            knowing these things. We share, cause we care.</p>
+                            advice with no paybacks...</p>
                         <a href="<?php echo e(url('about')); ?>" class="primary-btn">MORE ABOUT US</a>
                     </div>
                 </div>
