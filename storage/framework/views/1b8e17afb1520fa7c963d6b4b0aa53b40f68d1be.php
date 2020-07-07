@@ -218,7 +218,7 @@
             <div class="counter__text set-bg" data-setbg="img/counter/counter-bg.jpg">
                 <div class="counter__item">
                     <div class="counter__item__icon">
-                        <img src="img/counter/counter-2.png" alt="">
+                        <img src="img/counter/counter-4.png" alt="">
                     </div>
                     <div class="counter__item__text">
                         <h2><?php echo e($user_count); ?></h2>
@@ -227,7 +227,7 @@
                 </div>
                 <div class="counter__item">
                     <div class="counter__item__icon">
-                        <img src="img/counter/counter-3.png" alt="">
+                        <img src="img/counter/counter-4.png" alt="">
                     </div>
                     <div class="counter__item__text">
                         <h2><?php echo e($volunteers_count); ?></h2>
@@ -245,7 +245,7 @@
                 </div>
                 <div class="counter__item">
                     <div class="counter__item__icon">
-                        <img src="img/counter/counter-1.png" alt="">
+                        <img src="img/counter/counter-4.png" alt="">
                     </div>
                     <div class="counter__item__text">
                         <h2><?php echo e($stories_count); ?></h2>
