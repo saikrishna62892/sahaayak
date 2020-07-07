@@ -147,13 +147,15 @@ Route::post('/volunteer/report/generateReport','appointment_controller@generateR
 Route::get('/volunteer/appointment/{appointment}/report','appointment_controller@reportForm');
 Route::post('/admin/report/{appointment}/generateReport','appointment_controller@generateReport');
 
-//end of dileep added routes
-
 
 //learn section routes
 Route::get('home/learn/{learn}/{learnID}','LearnController@show');
 
 
+
+//worry tree routes
+Route::get('/worry', 'WorryController@show');
+Route::post('/home/user/worrytree','WorryController@store');
 
 //end of dileep added routes
 

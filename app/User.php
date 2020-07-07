@@ -11,7 +11,7 @@ use App\Volunteer;
 use App\Diary;
 use App\Appointment;
 use App\Comment;
-
+use App\Worry;
 class User extends Authenticatable
 {
     use Notifiable;
@@ -77,10 +77,13 @@ class User extends Authenticatable
         return $this->hasMany(Appointment::class);
     }
 
-
-
     public function comments()
     {
         return $this->hasMany(Comment::class);
+    }
+
+    public function worries()
+    {
+        return $this->hasMany(Worry::class);
     }
 }
