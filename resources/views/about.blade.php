@@ -14,7 +14,7 @@
                     <div class="breadcrumb__text">
                         <h2>About Us</h2>
                         <div class="breadcrumb__widget">
-                            <a href="./index.html">Home</a>
+                            <a href="{{ url('/') }}">Home</a>
                             <span>About Us</span>
                         </div>
                     </div>
