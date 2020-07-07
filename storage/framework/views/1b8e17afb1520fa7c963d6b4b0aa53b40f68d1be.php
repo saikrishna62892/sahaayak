@@ -1,9 +1,9 @@
-@extends('layouts.layout')
 
-    @section('name')
+
+    <?php $__env->startSection('name'); ?>
        About
-    @endsection
-    @section('content')
+    <?php $__env->stopSection(); ?>
+    <?php $__env->startSection('content'); ?>
     
 
     <!-- Breadcrumb Begin -->
@@ -14,7 +14,7 @@
                     <div class="breadcrumb__text">
                         <h2>About Us</h2>
                         <div class="breadcrumb__widget">
-                            <a href="{{ url('/') }}">Home</a>
+                            <a href="<?php echo e(url('/')); ?>">Home</a>
                             <span>About Us</span>
                         </div>
                     </div>
@@ -202,7 +202,7 @@
                     </div>
                 </div>
             </div>
-            <p align="center"><a href="https://www.who.int/mental_health/en/" target="_blank" style="color: #5768ad;">Click here</a>&nbsp; to know more</p>
+            <p align="center"><a href="https://www.who.int/mental_health/en/" style="color: #5768ad;">Click here</a>&nbsp; to know more</p>
         </div>
     </section>
     <!-- Statistics End -->
@@ -451,4 +451,5 @@
     </div>
     <!-- Faq End -->
 
-    @endsection
+    <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/about.blade.php ENDPATH**/ ?>
