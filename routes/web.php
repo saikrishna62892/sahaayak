@@ -90,17 +90,18 @@ Route::get('talks', function () {
 
 //dileep added routes
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
-Route::get('home', 'HomeController@index')->name('home');
+Route::get('home', 'HomeController@welcome')->name('home');
 
-
+//user page route
+Route::get('user/home', 'HomeController@userHome')->name('userDashboard')->middleware('is_user');
 
 //admin page route
 Route::get('admin/home', 'HomeController@adminHome')->name('adminDashboard')->middleware('is_admin');
 
 //volunteer dashboard route
-Route::get('volunteer/home', 'HomeController@volunteerHome')->name('volunteerDashboard');
+Route::get('volunteer/home', 'HomeController@volunteerHome')->name('volunteerDashboard')->middleware('is_volunteer');
 
 //Questionnaire Routes
 Route::get('admin/home/questionnaires/create','QuestionnaireController@create');
@@ -156,6 +157,12 @@ Route::get('home/learn/{learn}/{learnID}','LearnController@show');
 //worry tree routes
 Route::get('/worry', 'WorryController@show');
 Route::post('/home/user/worrytree','WorryController@store');
+
+//waiting approval
+Route::get('volunteer/waitingArroval',function()
+{
+    return view('volunteer.waitingApproval');
+});
 
 //end of dileep added routes
 

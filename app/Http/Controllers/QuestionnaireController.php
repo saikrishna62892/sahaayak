@@ -10,9 +10,9 @@ use Carbon\Carbon;
 class QuestionnaireController extends Controller
 {
 
-    public function __construct()
+   public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth','verified']);
     }
 
     public function create()

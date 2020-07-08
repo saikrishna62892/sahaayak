@@ -11,6 +11,11 @@ use DB;
 
 class diary_controller extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth','verified']);
+    }
+    
     function save(Request $req)
     {
         switch($req->input('action'))

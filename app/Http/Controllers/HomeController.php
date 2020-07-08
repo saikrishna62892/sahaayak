@@ -32,7 +32,7 @@ class HomeController extends Controller
      */ 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth','verified']);
     }
 
     /**
@@ -52,25 +52,10 @@ class HomeController extends Controller
         #dd($featurednews);
         return view('welcome')->with(compact('dialyquote','featurednews'));
     }
-    public function index()
+    /*public function index()
     {
-        $user = Auth::user();
-        $user_stories = $user->stories;
-        $diary = $user->diary;
-
-        if(auth()->user()->is_Volunteer == 1)
-        {
-            if(auth()->user()->volunteer->is_Approved == 1)
-                return redirect()->route('volunteerDashboard');
-            else
-            {
-                Auth::logout();
-                return view('welcome')->with('message','Your Application is under verification process');
-            }
-        }
-        session()->put('message','Welcome '.$user->name.' to the Dashboard');
-        return view('dashboard_user')->with(compact('user','user_stories','diary'));
-    }
+        
+    }*/
 
     public function adminHome()
     {
@@ -119,5 +104,14 @@ class HomeController extends Controller
         $completedappointments= $volunteer->load('appointments');
        return view('volunteer.dashboard_volunteer')->with(compact('appointments','completedappointments'));
 
+    }
+
+    public function userHome()
+    {
+        $user = Auth::user();
+        $user_stories = $user->stories;
+        $diary = $user->diary;
+        session()->put('message','Welcome '.$user->name.' to the Dashboard');
+        return view('dashboard_user')->with(compact('user','user_stories','diary'));
     }
 }
