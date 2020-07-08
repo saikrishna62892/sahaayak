@@ -1185,6 +1185,8 @@ ol {
 	position: absolute;
 	right: -15px;
 	bottom: 0;
+	height: 350;
+	width: 350;
 }
 
 .team__item__text .team__item__title {

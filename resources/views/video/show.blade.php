@@ -1,4 +1,7 @@
 @extends('layouts.layout')
+@section('name')
+    Videos
+@endsection
     @section('content')
     
     <!-- Blog Hero Begin -->
