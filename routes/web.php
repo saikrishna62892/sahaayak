@@ -28,7 +28,11 @@ Route::get('/',function(){
 
 
 Route::get('about', function () {
-    return view('about');
+    $user_count=App\User::all()->count();
+    $volunteers_count=App\Volunteer::all()->count();
+    $appointments_count=App\Appointment::all()->count();
+    $stories_count=App\Story::all()->count();
+    return view('about',compact('user_count','volunteers_count','appointments_count','stories_count'));
 });
 
 Route::get('expert_story', function () {
@@ -251,6 +255,6 @@ Route::get('/auth/facebook/callback', 'Auth\LoginController@handleFacebookCallba
 
 
 
-Route::get('/weavesilk', function () {
-    return view('weavesilk');
+Route::get('/interactiveDrawing', function () {
+    return view('interactive_drawing');
 });

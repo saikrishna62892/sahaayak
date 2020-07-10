@@ -217,28 +217,19 @@
             <div class="counter__text set-bg" data-setbg="img/counter/counter-bg11.jpg">
                 <div class="counter__item">
                     <div class="counter__item__icon">
-                        <img src="img/counter/counter-1.png" alt="">
+                        <img src="img/counter/counter-4.png" alt="">
                     </div>
                     <div class="counter__item__text">
-                        <h2>2146</h2>
-                        <p>Visitors</p>
-                    </div>
-                </div>
-                <div class="counter__item">
-                    <div class="counter__item__icon">
-                        <img src="img/counter/counter-2.png" alt="">
-                    </div>
-                    <div class="counter__item__text">
-                        <h2>15</h2>
+                        <h2>{{ $user_count }}</h2>
                         <p>Users</p>
                     </div>
                 </div>
                 <div class="counter__item">
                     <div class="counter__item__icon">
-                        <img src="img/counter/counter-3.png" alt="">
+                        <img src="img/counter/counter-4.png" alt="">
                     </div>
                     <div class="counter__item__text">
-                        <h2>48</h2>
+                        <h2>{{ $volunteers_count }}</h2>
                         <p>Volunteers</p>
                     </div>
                 </div>
@@ -247,8 +238,17 @@
                         <img src="img/counter/counter-4.png" alt="">
                     </div>
                     <div class="counter__item__text">
-                        <h2>234</h2>
+                        <h2>{{ $appointments_count }}</h2>
                         <p>Interactions</p>
+                    </div>
+                </div>
+                <div class="counter__item">
+                    <div class="counter__item__icon">
+                        <img src="img/counter/counter-4.png" alt="">
+                    </div>
+                    <div class="counter__item__text">
+                        <h2>{{ $stories_count }}</h2>
+                        <p>Stories</p>
                     </div>
                 </div>
             </div>
@@ -256,7 +256,7 @@
     </div>
     <!-- Counter End -->
     <!-- Gallery Section Begin -->
-    <section class="gallery">
+    <!--<section class="gallery">
         <div class="container" id="gallery">
             <div class="row">
                 <div class="col-lg-12">
@@ -313,7 +313,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
     <!-- Gallery Section End -->
     
     <!-- Faq Begin -->

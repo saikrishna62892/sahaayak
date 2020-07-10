@@ -35,33 +35,6 @@
       gtag('config', 'UA-171070217-1');
     </script>
 
-    <style>
-* {
-  box-sizing: border-box;
-}
-
-/* Create two unequal columns that floats next to each other */
-.column {
-  float: left;
-  padding: 10px;
-}
-
-.left {
-  width: 25%;
-}
-
-.right {
-  width: 75%;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-</style>
-
 </head>
 
 <body>
@@ -147,7 +120,7 @@
                                 <li><a href="{{ url('news') }}">News</a></li>
                                 <li><a href="#">Hope Box</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('weavesilk') }}">Interactive Drawing</a></li>
+                                        <li><a href="{{ url('interactiveDrawing') }}">Interactive Drawing</a></li>
                                         <li><a href="{{ url('inspire_me') }}">Inspire Me</a></li>
                                         <li><a href="{{ url('video.show') }}">Videos</a></li>
                                         <li><a href="{{ url('playlists') }}">Playlists</a></li>
@@ -269,8 +242,7 @@
                                 <li><a href="{{ route('displayNews') }}">News</a></li>
                                 <li><a href="#">Hope Box</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('weavesilk') }}">Interactive Drawing</a></li>
-                                        <li><a href="{{ url('worry') }}">worry</a></li>
+                                        <li><a href="{{ url('interactiveDrawing') }}">Interactive Drawing</a></li>
                                         <li><a href="{{ url('inspire_me') }}">Inspire Me</a></li>
                                         <li><a href="/videos">Videos</a></li>
                                         <li><a href="{{ url('playlists') }}">Playlists</a></li>
@@ -344,8 +316,7 @@
                             <li><a href="{{ url('about#vision')}}">Our Vision</a></li>
                             <li><a href="{{ url('about#stats')}}">Statistics</a></li>
                             <li><a href="{{ url('about#impact')}}">Impact</a></li>
-                            <li><a href="{{ url('about#gallery')}}">Gallery</a></li>
-                            <li><a href="{{ url('about#faq')}}">FAQ</a></li>
+                            <li><a href="{{ url('about#faq')}}">FAQ's</a></li>
                         </ul>
                     </div>
                 </div>
