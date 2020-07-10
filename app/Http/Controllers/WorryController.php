@@ -6,10 +6,9 @@ use Illuminate\Http\Request;
 
 class WorryController extends Controller
 {
-	
-	public function __construct()
+    public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth','verified']);
     }
 
     public function show()
@@ -30,6 +29,6 @@ class WorryController extends Controller
              });
         $user->worries()->createMany($data['worries']);
         //dd($data);
-        return "sfsv";
+        return redirect()->back();;
     }
 }

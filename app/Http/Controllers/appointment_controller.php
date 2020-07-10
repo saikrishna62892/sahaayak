@@ -10,9 +10,9 @@ use DB;
 use PDF;
 class appointment_controller extends Controller
 {
-    public function __construct()
+   public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth','verified']);
     }
     function save(Request $req)
     {

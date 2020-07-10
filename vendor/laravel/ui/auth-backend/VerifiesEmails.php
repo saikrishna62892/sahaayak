@@ -19,9 +19,12 @@ trait VerifiesEmails
      */
     public function show(Request $request)
     {
-        return $request->user()->hasVerifiedEmail()
-                        ? redirect($this->redirectPath())
-                        : view('auth.verify');
+        if($request->user()->hasVerifiedEmail())
+        {
+                return redirect($this->redirectPath());
+        }
+        else
+            return view('auth.verify');
     }
 
     /**

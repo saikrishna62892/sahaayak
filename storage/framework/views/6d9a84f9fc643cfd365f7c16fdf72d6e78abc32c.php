@@ -236,7 +236,7 @@
                 <div class="col-lg-7">
                     <div class="home__about__pic">
                         <div class="home__about__pic__item large-item set-bg">
-                            <img src="img/about/about-1.jpg" alt="">
+                            <img src="img/about/about-1.jpg" alt="" width="345" height="620">
                         </div>
                         <div class="home__about__pic__item">
                             <div class="home__about__pic__item__inner set-bg" data-setbg="img/about/about-2.jpg">

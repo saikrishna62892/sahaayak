@@ -35,33 +35,6 @@
       gtag('config', 'UA-171070217-1');
     </script>
 
-    <style>
-* {
-  box-sizing: border-box;
-}
-
-/* Create two unequal columns that floats next to each other */
-.column {
-  float: left;
-  padding: 10px;
-}
-
-.left {
-  width: 25%;
-}
-
-.right {
-  width: 75%;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-</style>
-
 </head>
 
 <body>
@@ -91,16 +64,25 @@
                 <button class="btn primary-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     @if(auth()->user()->is_Volunteer == 1)
-                    <!--<a class="dropdown-item" href="#">Return to Dashboard</a>-->
+                        @if(auth()->user()->step2_done == 0)
+                        <a class="dropdown-item" href="/register/step2/{{auth()->user()->id}}">Complete step2</a>
+                        @elseif(auth()->user()->volunteer->is_Approved == 0)
+                        <a class="dropdown-item" href="/volunteer/waitingApproval">Return to Dashboard</a>
+                        @else
+                        <a class="dropdown-item" href="/volunteer/home">Return to Dashboard</a>
+                        @endif
                     @endif
-                    <a class="dropdown-item" href="#">Messages</a>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                     </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                    @csrf
+                    </form>
                 </div>
             </div>
+
             @endguest
         </div>
         
@@ -138,7 +120,7 @@
                                 <li><a href="{{ url('news') }}">News</a></li>
                                 <li><a href="#">Hope Box</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('weavesilk') }}">Interactive Drawing</a></li>
+                                        <li><a href="{{ url('interactiveDrawing') }}">Interactive Drawing</a></li>
                                         <li><a href="{{ url('inspire_me') }}">Inspire Me</a></li>
                                         <li><a href="{{ url('video.show') }}">Videos</a></li>
                                         <li><a href="{{ url('playlists') }}">Playlists</a></li>
@@ -187,20 +169,20 @@
                                 <div class="dropdown">
                                   <button class="btn primary-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</button>
                                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    @if(auth()->user()->is_Volunteer == 1)
-                                    <a class="dropdown-item" href="/home">Return to Dashboard</a>
+                                    @if(auth()->user()->is_Volunteer == 1 )
+                                        @if(auth()->user()->step2_done == 0)
+                                        <a class="dropdown-item" href="/register/step2/{{auth()->user()->id}}">Complete step2</a>
+                                        @elseif(auth()->user()->volunteer->is_Approved == 0)
+                                        <a class="dropdown-item" href="/volunteer/waitingApproval">Return to Dashboard</a>
+                                        @else
+                                        <a class="dropdown-item" href="/volunteer/home">Return to Dashboard</a>
+                                        @endif
                                     @elseif(auth()->user()->is_admin == 1)
-                                    <a class="dropdown-item" href="admin/home">Return to Dashboard</a>
+                                    <a class="dropdown-item" href="/admin/home">Return to Dashboard</a>
                                     @else
-                                    <a class="dropdown-item" href="/home">Return to Dashboard</a>
+                                    <a class="dropdown-item" href="/user/home">Return to Dashboard</a>
                                     @endif
-                                    @if(auth()->user()->is_Volunteer == 1)
-                                    <a class="dropdown-item" href="/home">Notifications</a>
-                                    @elseif(auth()->user()->is_admin == 1)
-                                    <a class="dropdown-item" href="admin/home">Notifications</a>
-                                    @else
-                                    <a class="dropdown-item" href="/home">Notifications</a>
-                                    @endif
+                                
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
@@ -260,8 +242,7 @@
                                 <li><a href="{{ route('displayNews') }}">News</a></li>
                                 <li><a href="#">Hope Box</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('weavesilk') }}">Interactive Drawing</a></li>
-                                        <li><a href="{{ url('worry') }}">worry</a></li>
+                                        <li><a href="{{ url('interactiveDrawing') }}">Interactive Drawing</a></li>
                                         <li><a href="{{ url('inspire_me') }}">Inspire Me</a></li>
                                         <li><a href="/videos">Videos</a></li>
                                         <li><a href="{{ url('playlists') }}">Playlists</a></li>
@@ -335,8 +316,7 @@
                             <li><a href="{{ url('about#vision')}}">Our Vision</a></li>
                             <li><a href="{{ url('about#stats')}}">Statistics</a></li>
                             <li><a href="{{ url('about#impact')}}">Impact</a></li>
-                            <li><a href="{{ url('about#gallery')}}">Gallery</a></li>
-                            <li><a href="{{ url('about#faq')}}">FAQ</a></li>
+                            <li><a href="{{ url('about#faq')}}">FAQ's</a></li>
                         </ul>
                     </div>
                 </div>

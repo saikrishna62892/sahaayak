@@ -35,33 +35,6 @@
       gtag('config', 'UA-171070217-1');
     </script>
 
-    <style>
-* {
-  box-sizing: border-box;
-}
-
-/* Create two unequal columns that floats next to each other */
-.column {
-  float: left;
-  padding: 10px;
-}
-
-.left {
-  width: 25%;
-}
-
-.right {
-  width: 75%;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-</style>
-
 </head>
 
 <body>
@@ -91,17 +64,26 @@
                 <button class="btn primary-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo e(Auth::user()->name); ?></button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <?php if(auth()->user()->is_Volunteer == 1): ?>
-                    <!--<a class="dropdown-item" href="#">Return to Dashboard</a>-->
+                        <?php if(auth()->user()->step2_done == 0): ?>
+                        <a class="dropdown-item" href="/register/step2/<?php echo e(auth()->user()->id); ?>">Complete step2</a>
+                        <?php elseif(auth()->user()->volunteer->is_Approved == 0): ?>
+                        <a class="dropdown-item" href="/volunteer/waitingApproval">Return to Dashboard</a>
+                        <?php else: ?>
+                        <a class="dropdown-item" href="/volunteer/home">Return to Dashboard</a>
+                        <?php endif; ?>
                     <?php endif; ?>
-                    <a class="dropdown-item" href="#">Messages</a>
                     <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
                            onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
                             <?php echo e(__('Logout')); ?>
 
                     </a>
+                    <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" >
+                    <?php echo csrf_field(); ?>
+                    </form>
                 </div>
             </div>
+
             <?php endif; ?>
         </div>
         
@@ -139,7 +121,7 @@
                                 <li><a href="<?php echo e(url('news')); ?>">News</a></li>
                                 <li><a href="#">Hope Box</a>
                                     <ul class="dropdown">
-                                        <li><a href="<?php echo e(url('weavesilk')); ?>">Interactive Drawing</a></li>
+                                        <li><a href="<?php echo e(url('interactiveDrawing')); ?>">Interactive Drawing</a></li>
                                         <li><a href="<?php echo e(url('inspire_me')); ?>">Inspire Me</a></li>
                                         <li><a href="<?php echo e(url('video.show')); ?>">Videos</a></li>
                                         <li><a href="<?php echo e(url('playlists')); ?>">Playlists</a></li>
@@ -188,20 +170,20 @@
                                 <div class="dropdown">
                                   <button class="btn primary-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo e(Auth::user()->name); ?></button>
                                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <?php if(auth()->user()->is_Volunteer == 1): ?>
-                                    <a class="dropdown-item" href="/home">Return to Dashboard</a>
+                                    <?php if(auth()->user()->is_Volunteer == 1 ): ?>
+                                        <?php if(auth()->user()->step2_done == 0): ?>
+                                        <a class="dropdown-item" href="/register/step2/<?php echo e(auth()->user()->id); ?>">Complete step2</a>
+                                        <?php elseif(auth()->user()->volunteer->is_Approved == 0): ?>
+                                        <a class="dropdown-item" href="/volunteer/waitingApproval">Return to Dashboard</a>
+                                        <?php else: ?>
+                                        <a class="dropdown-item" href="/volunteer/home">Return to Dashboard</a>
+                                        <?php endif; ?>
                                     <?php elseif(auth()->user()->is_admin == 1): ?>
-                                    <a class="dropdown-item" href="admin/home">Return to Dashboard</a>
+                                    <a class="dropdown-item" href="/admin/home">Return to Dashboard</a>
                                     <?php else: ?>
-                                    <a class="dropdown-item" href="/home">Return to Dashboard</a>
+                                    <a class="dropdown-item" href="/user/home">Return to Dashboard</a>
                                     <?php endif; ?>
-                                    <?php if(auth()->user()->is_Volunteer == 1): ?>
-                                    <a class="dropdown-item" href="/home">Notifications</a>
-                                    <?php elseif(auth()->user()->is_admin == 1): ?>
-                                    <a class="dropdown-item" href="admin/home">Notifications</a>
-                                    <?php else: ?>
-                                    <a class="dropdown-item" href="/home">Notifications</a>
-                                    <?php endif; ?>
+                                
                                     <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
                                            onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
@@ -262,8 +244,7 @@
                                 <li><a href="<?php echo e(route('displayNews')); ?>">News</a></li>
                                 <li><a href="#">Hope Box</a>
                                     <ul class="dropdown">
-                                        <li><a href="<?php echo e(url('weavesilk')); ?>">Interactive Drawing</a></li>
-                                        <li><a href="<?php echo e(url('worry')); ?>">worry</a></li>
+                                        <li><a href="<?php echo e(url('interactiveDrawing')); ?>">Interactive Drawing</a></li>
                                         <li><a href="<?php echo e(url('inspire_me')); ?>">Inspire Me</a></li>
                                         <li><a href="/videos">Videos</a></li>
                                         <li><a href="<?php echo e(url('playlists')); ?>">Playlists</a></li>
@@ -345,8 +326,7 @@ unset($__errorArgs, $__bag); ?>
                             <li><a href="<?php echo e(url('about#vision')); ?>">Our Vision</a></li>
                             <li><a href="<?php echo e(url('about#stats')); ?>">Statistics</a></li>
                             <li><a href="<?php echo e(url('about#impact')); ?>">Impact</a></li>
-                            <li><a href="<?php echo e(url('about#gallery')); ?>">Gallery</a></li>
-                            <li><a href="<?php echo e(url('about#faq')); ?>">FAQ</a></li>
+                            <li><a href="<?php echo e(url('about#faq')); ?>">FAQ's</a></li>
                         </ul>
                     </div>
                 </div>
