@@ -16,9 +16,6 @@ class PlaylistController extends Controller
 
   }
   
-  
-  
-  
   public function save(Request $request)
   {
     $playlist= new Playlist();

@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 use App\Video;
 class VideoController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth','verified']);
+    }
+    
     public function create()
     {
     	return view('video.create');

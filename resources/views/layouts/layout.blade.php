@@ -91,16 +91,25 @@
                 <button class="btn primary-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     @if(auth()->user()->is_Volunteer == 1)
-                    <!--<a class="dropdown-item" href="#">Return to Dashboard</a>-->
+                        @if(auth()->user()->step2_done == 0)
+                        <a class="dropdown-item" href="/register/step2/{{auth()->user()->id}}">Complete step2</a>
+                        @elseif(auth()->user()->volunteer->is_Approved == 0)
+                        <a class="dropdown-item" href="/volunteer/waitingApproval">Return to Dashboard</a>
+                        @else
+                        <a class="dropdown-item" href="/volunteer/home">Return to Dashboard</a>
+                        @endif
                     @endif
-                    <a class="dropdown-item" href="#">Messages</a>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                     </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                    @csrf
+                    </form>
                 </div>
             </div>
+
             @endguest
         </div>
         
@@ -187,20 +196,20 @@
                                 <div class="dropdown">
                                   <button class="btn primary-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</button>
                                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    @if(auth()->user()->is_Volunteer == 1)
-                                    <a class="dropdown-item" href="/home">Return to Dashboard</a>
+                                    @if(auth()->user()->is_Volunteer == 1 )
+                                        @if(auth()->user()->step2_done == 0)
+                                        <a class="dropdown-item" href="/register/step2/{{auth()->user()->id}}">Complete step2</a>
+                                        @elseif(auth()->user()->volunteer->is_Approved == 0)
+                                        <a class="dropdown-item" href="/volunteer/waitingApproval">Return to Dashboard</a>
+                                        @else
+                                        <a class="dropdown-item" href="/volunteer/home">Return to Dashboard</a>
+                                        @endif
                                     @elseif(auth()->user()->is_admin == 1)
-                                    <a class="dropdown-item" href="admin/home">Return to Dashboard</a>
+                                    <a class="dropdown-item" href="/admin/home">Return to Dashboard</a>
                                     @else
-                                    <a class="dropdown-item" href="/home">Return to Dashboard</a>
+                                    <a class="dropdown-item" href="/user/home">Return to Dashboard</a>
                                     @endif
-                                    @if(auth()->user()->is_Volunteer == 1)
-                                    <a class="dropdown-item" href="/home">Notifications</a>
-                                    @elseif(auth()->user()->is_admin == 1)
-                                    <a class="dropdown-item" href="admin/home">Notifications</a>
-                                    @else
-                                    <a class="dropdown-item" href="/home">Notifications</a>
-                                    @endif
+                                
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
