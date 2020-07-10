@@ -33,7 +33,7 @@ class HomeController extends Controller
      */ 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth','verified']);
     }
 
     /**
@@ -47,34 +47,20 @@ class HomeController extends Controller
         $quote->save();
         $dialyquote=$request->quote;
     }
-    public function index()
-    {
-        $user = Auth::user();
-        $user_stories = $user->stories;
-        $diary = $user->diary;
 
-        //User stats
-        $checkins=$user->checkins;
-        $checkins=$checkins+1;
-        $user->checkins=$checkins;
-        $user->save();
-        $stories_count=$user_stories->count();
-        $events_count=$diary->count();
-        $worries_count=Worry::where('user_id',$user->id)->get()->count();
-
-        if(auth()->user()->is_Volunteer == 1)
-        {
-            if(auth()->user()->volunteer->is_Approved == 1)
-                return redirect()->route('volunteerDashboard',compact('user'));
-            else
-            {
-                Auth::logout();
-                return view('welcome')->with('message','Your Application is under verification process');
-            }
-        }
-        //session()->put('message','Welcome '.$user->name.' to the Dashboard');
-        return view('dashboard_user')->with(compact('user','user_stories','diary','checkins','stories_count','events_count','worries_count'));
+     public function welcome(){
+        $dialyquote=dialyquotes::all()->last()->quote;
+        $featurednews=News::orderBy('created_at','desc')->get();
+        #dd($featurednews);
+        return view('welcome')->with(compact('dialyquote','featurednews'));
     }
+
+
+   
+    /*public function index()
+    {
+        
+    }*/
 
     public function adminHome()
     {
@@ -138,5 +124,24 @@ class HomeController extends Controller
         $pending_reports=$interactions;
        return view('volunteer.dashboard_volunteer')->with(compact('appointments','completedappointments','volunteer','checkins','requests','interactions','pending_reports'));
 
+    }
+
+    public function userHome()
+    {
+
+        $user = Auth::user();
+        $user_stories = $user->stories;
+        $diary = $user->diary;
+
+        $checkins=$user->checkins;
+        $checkins=$checkins+1;
+        $user->checkins=$checkins;
+        $user->save();
+        $stories_count=$user_stories->count();
+        $events_count=$diary->count();
+        $worries_count=Worry::where('user_id',$user->id)->get()->count();
+
+        session()->put('message','Welcome '.$user->name.' to the Dashboard');
+        return view('dashboard_user')->with(compact('user','user_stories','diary','checkins','stories_count','events_count','worries_count'));
     }
 }

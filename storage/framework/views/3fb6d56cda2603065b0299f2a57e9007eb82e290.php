@@ -64,17 +64,26 @@
                 <button class="btn primary-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo e(Auth::user()->name); ?></button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <?php if(auth()->user()->is_Volunteer == 1): ?>
-                    <!--<a class="dropdown-item" href="#">Return to Dashboard</a>-->
+                        <?php if(auth()->user()->step2_done == 0): ?>
+                        <a class="dropdown-item" href="/register/step2/<?php echo e(auth()->user()->id); ?>">Complete step2</a>
+                        <?php elseif(auth()->user()->volunteer->is_Approved == 0): ?>
+                        <a class="dropdown-item" href="/volunteer/waitingApproval">Return to Dashboard</a>
+                        <?php else: ?>
+                        <a class="dropdown-item" href="/volunteer/home">Return to Dashboard</a>
+                        <?php endif; ?>
                     <?php endif; ?>
-                    <a class="dropdown-item" href="#">Messages</a>
                     <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
                            onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
                             <?php echo e(__('Logout')); ?>
 
                     </a>
+                    <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" >
+                    <?php echo csrf_field(); ?>
+                    </form>
                 </div>
             </div>
+
             <?php endif; ?>
         </div>
         
@@ -161,20 +170,20 @@
                                 <div class="dropdown">
                                   <button class="btn primary-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo e(Auth::user()->name); ?></button>
                                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <?php if(auth()->user()->is_Volunteer == 1): ?>
-                                    <a class="dropdown-item" href="/home">Return to Dashboard</a>
+                                    <?php if(auth()->user()->is_Volunteer == 1 ): ?>
+                                        <?php if(auth()->user()->step2_done == 0): ?>
+                                        <a class="dropdown-item" href="/register/step2/<?php echo e(auth()->user()->id); ?>">Complete step2</a>
+                                        <?php elseif(auth()->user()->volunteer->is_Approved == 0): ?>
+                                        <a class="dropdown-item" href="/volunteer/waitingApproval">Return to Dashboard</a>
+                                        <?php else: ?>
+                                        <a class="dropdown-item" href="/volunteer/home">Return to Dashboard</a>
+                                        <?php endif; ?>
                                     <?php elseif(auth()->user()->is_admin == 1): ?>
-                                    <a class="dropdown-item" href="admin/home">Return to Dashboard</a>
+                                    <a class="dropdown-item" href="/admin/home">Return to Dashboard</a>
                                     <?php else: ?>
-                                    <a class="dropdown-item" href="/home">Return to Dashboard</a>
+                                    <a class="dropdown-item" href="/user/home">Return to Dashboard</a>
                                     <?php endif; ?>
-                                    <?php if(auth()->user()->is_Volunteer == 1): ?>
-                                    <a class="dropdown-item" href="/home">Notifications</a>
-                                    <?php elseif(auth()->user()->is_admin == 1): ?>
-                                    <a class="dropdown-item" href="admin/home">Notifications</a>
-                                    <?php else: ?>
-                                    <a class="dropdown-item" href="/home">Notifications</a>
-                                    <?php endif; ?>
+                                
                                     <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
                                            onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">

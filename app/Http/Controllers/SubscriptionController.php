@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 use App\Subscription;
 class SubscriptionController extends Controller
 {
+	public function __construct()
+    {
+        $this->middleware(['auth','verified']);
+    }
+    
     public function store()
     {
     	$data=request()->validate([
