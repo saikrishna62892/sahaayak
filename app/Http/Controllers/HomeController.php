@@ -49,7 +49,8 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $user_stories = $user->stories;
+        //$user_stories = $user->stories;
+        $user_stories=Story::where('user_id',$user->id)->get();
         $diary = $user->diary;
 
         if(auth()->user()->is_Volunteer == 1)

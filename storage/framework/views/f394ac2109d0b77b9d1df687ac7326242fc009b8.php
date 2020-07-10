@@ -1,4 +1,7 @@
 
+<?php $__env->startSection('name'); ?>
+    Videos
+<?php $__env->stopSection(); ?>
     <?php $__env->startSection('content'); ?>
     
     <!-- Blog Hero Begin -->
