@@ -36,7 +36,6 @@
 
   gtag('config', 'UA-171070217-1');
 </script>
-
 </head>
 <body>
 
