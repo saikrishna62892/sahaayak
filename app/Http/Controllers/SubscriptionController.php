@@ -9,15 +9,15 @@ class SubscriptionController extends Controller
 {
 	public function __construct()
     {
+
         $this->middleware(['auth','verified','is_user']);
     }
     
+
     public function store()
     {
-    	$data=request()->validate([
-    		'subscriberEmail' => 'required',
-    	]);
-    	Subscription::create($data);
+    	
+    	Subscription::create(['user_id' => auth()->user()->id]);
     	return redirect('/');
     }
 }

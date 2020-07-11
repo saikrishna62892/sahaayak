@@ -54,12 +54,16 @@
                         </div>
         
                 @endforeach
+                
+
             
                         <div class="blog__details__quote">
                             <p>link to the pocast/playlist and a short description about that</p>
                             <p><a href="" style="color:#5768ad;">Open Playlist</a></p>
                         </div>
+                        <div class="col-lg-12"><span>{{$playlist->links()}}</span></div>
                     </div>
+
                 </div>
             </div>
             <div class="row">

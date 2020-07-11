@@ -19,9 +19,9 @@ class QuestionnaireNotification extends Notification
      *
      * @return void
      */
-    public function __construct($dileep)
+    public function __construct($questionnaire)
     {
-        $this->dileep=$dileep;
+        $this->questionnaire = $questionnaire;
     }
 
     /**
@@ -44,7 +44,7 @@ class QuestionnaireNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.'.$this->dileep)
+                    ->line('The introduction to the notification.'.$this->questionnaire)
                     ->action('Notification Action', url('/'))
                     ->line('Thank you for using our application!');
     }
@@ -58,7 +58,7 @@ class QuestionnaireNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            'data'=>'new notification'.$this->dileep,
+            'data'=>'new notification'.$this->questionnaire,
             'refrence'=>'this is reference'          
         ];
     }

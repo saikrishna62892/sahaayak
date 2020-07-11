@@ -33,14 +33,14 @@
                     <h2>#{{ $count++ }}</h2>
                     <div class="blog__details">
                         <div class="blog__details__author">
-                            <div class="blog__details__author__pic">
+                            <!--<div class="blog__details__author__pic">
                                 <img src="img/blog/details/blog-posted.png" alt="">
                             </div>
                             <div class="blog__details__author__text">
                                 <h4>Author: </h4>
                                 <p>Inspired from :</p>
                                 <p><span>Tags:</span> All, Trending, Fuel, Cardio, Life Style</p>
-                            </div>
+                            </div>-->
                         </div>
                         <div class="embed-responsive embed-responsive-16by9">
                             {!! $embedURL !!}
@@ -52,6 +52,7 @@
             </div>
             <br>
             @endforeach
+            <div class="col-lg-12"><span>{{$urls->links()}}</span></div>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="classes__pagination">
