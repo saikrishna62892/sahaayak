@@ -14,7 +14,7 @@
                 <div class="card-body">
                     <h5 class="card-title" align="center">Checkins</h5>
                     <p align="center">#Logins</p>
-                    <h1 align="center" align="center">2000</h1>
+                    <h1 align="center" align="center"><?php echo e($checkins); ?></h1>
                 </div>
             </div>
         </div>
@@ -23,7 +23,7 @@
                 <div class="card-body">
                     <h5 class="card-title" align="center">Posts</h5>
                     <p align="center">#shared Stories</p>
-                    <h1 align="center" align="center">300</h1>
+                    <h1 align="center" align="center"><?php echo e($stories_count); ?></h1>
                 </div>
             </div>
         </div>
@@ -32,16 +32,16 @@
                 <div class="card-body">
                     <h5 class="card-title" align="center">Diary</h5>
                     <p align="center">#events in Diary</p>
-                    <h1 align="center" align="center">100</h1>
+                    <h1 align="center" align="center"><?php echo e($events_count); ?></h1>
                 </div>
             </div>
         </div>
         <div class="col-sm-3">
             <div class="card shadow p-4 mb-5 bg-white rounded">
                 <div class="card-body">
-                    <h5 class="card-title" align="center">ToDo List</h5>
-                    <p align="center">#Items in the list</p>
-                    <h1 align="center" align="center">50</h1>
+                    <h5 class="card-title" align="center">Worries</h5>
+                    <p align="center">#number of worries</p>
+                    <h1 align="center" align="center"><?php echo e($worries_count); ?></h1>
                 </div>
             </div>
         </div>
@@ -72,9 +72,6 @@
                             <a data-toggle="tab" href="#diary" role="tab">Cognitive Diary</a>
                         </li>
                         <li>
-                            <a data-toggle="tab" href="#list" role="tab">ToDo</a>
-                        </li>
-                        <li>
                             <a  href="#stories" data-toggle="tab" role="tab">Shared Stories</a>
                         </li>
                         <li>
@@ -96,12 +93,6 @@
                         <?php echo $__env->make('diary.create', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     </div>
                     <!-- Cognitive diary end -->
-
-                    <!-- Habits form begin -->
-                    <div class="tab-pane fade" id="list" role="tabpanel">
-                                
-                    </div>
-                    <!-- Habits form end -->
                     
                     <!-- Shared stories form begin -->
                     <div class="tab-pane fade" id="stories" role="tabpanel">
@@ -111,7 +102,7 @@
 
                     <!-- Worry tree form begin -->
                     <div class="tab-pane fade" id="worrytree" role="tabpanel">
-                                
+                        <?php echo $__env->make('worrytree', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>         
                     </div>
                     <!-- worry tree form end -->
                 </div>

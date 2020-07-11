@@ -1,7 +1,9 @@
 
 
+<?php $__env->startSection('name'); ?>
+    <?php echo e($volunteer->name); ?>
 
-
+<?php $__env->stopSection(); ?>
 	<?php $__env->startSection('content'); ?>
 	<br>	
 	<div class="container" id="stats">
@@ -11,26 +13,16 @@
 					<div class="card-body">
 						<h5 class="card-title" align="center">Checkins</h5>
 						<p class="card-text" align="center">#Logins</p>
-						<h1 align="center">2000</h1>
+						<h1 align="center"><?php echo e($checkins); ?></h1>
 					</div>
 				</div>
 			</div>
 			<div class="col-sm-3">
 			    <div class="card shadow p-4 mb-5 bg-white rounded">
 			        <div class="card-body">
-				        <h5 class="card-title" align="center">Posts</h5>
-				        <p class="card-text" align="center">#Talks</p>
-				        <h1 align="center">300</h1>
-				        
-			        </div>
-			    </div>
-			</div>
-			<div class="col-sm-3">
-			    <div class="card shadow p-4 mb-5 bg-white rounded">
-			        <div class="card-body">
 				        <h5 class="card-title" align="center">Sessions</h5>
 				        <p class="card-text" align="center">#Interactions</p>
-				        <h1 align="center">100</h1>
+				        <h1 align="center"><?php echo e($interactions); ?></h1>
 			        </div>
 				</div>
 			</div>
@@ -39,9 +31,19 @@
 				    <div class="card-body">
 				        <h5 class="card-title" align="center">Requests</h5>
 				        <p class="card-text" align="center">#Yet to accept</p>
-				        <h1 align="center">50</h1>
+				        <h1 align="center"><?php echo e($requests); ?></h1>
 				    </div>
 				</div>
+			</div>
+			<div class="col-sm-3">
+			    <div class="card shadow p-4 mb-5 bg-white rounded">
+			        <div class="card-body">
+				        <h5 class="card-title" align="center">Reports</h5>
+				        <p class="card-text" align="center">#Pending reports</p>
+				        <h1 align="center"><?php echo e($pending_reports); ?></h1>
+				        
+			        </div>
+			    </div>
 			</div>
 		</div>
 	</div>
@@ -122,6 +124,7 @@
 	                                </thead>
 	                                <tbody>
 	                                    <?php $count=1 ?>
+
 	                                     <?php $__empty_1 = true; $__currentLoopData = $completedappointments->appointments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
 	                                    <tr>
 	                                        <td scope="row"><?php echo e($count++); ?></td>

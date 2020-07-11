@@ -41,7 +41,7 @@ class AppointmentAcceptedNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->greeting('Hello  '.$this->appointment)
+                    ->greeting('Hello  '.$this->appointment->name)
                     ->subject('Regarding Appointment Request')
                     ->line('Your Appointment has been accepted and our volunteer will contact you as per your request on  '.$this->appointment->timings)
                     ->line('Thank you for using our application!');
