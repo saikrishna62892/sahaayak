@@ -34,14 +34,14 @@
                     <h2>#<?php echo e($count++); ?></h2>
                     <div class="blog__details">
                         <div class="blog__details__author">
-                            <div class="blog__details__author__pic">
+                            <!--<div class="blog__details__author__pic">
                                 <img src="img/blog/details/blog-posted.png" alt="">
                             </div>
                             <div class="blog__details__author__text">
                                 <h4>Author: </h4>
                                 <p>Inspired from :</p>
                                 <p><span>Tags:</span> All, Trending, Fuel, Cardio, Life Style</p>
-                            </div>
+                            </div>-->
                         </div>
                         <div class="embed-responsive embed-responsive-16by9">
                             <?php echo $embedURL; ?>
@@ -54,6 +54,7 @@
             </div>
             <br>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            <div class="col-lg-12"><span><?php echo e($urls->links()); ?></span></div>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="classes__pagination">
