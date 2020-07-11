@@ -1427,7 +1427,8 @@ ol {
 }
 
 .classes__item__text {
-	padding: 24px 0 28px 30px;
+	padding: 15px 15px 28px 30px;
+	
 }
 
 .classes__item__text ul {

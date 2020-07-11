@@ -9,7 +9,13 @@ use Auth;
 use DB;
 class PlaylistController extends Controller
 {
-  
+    public function __construct()
+    {
+        $this->middleware(['auth','verified']);
+        $this->middleware(['is_user'])->only(['index']);
+        $this->middleware(['is_admin'])->only(['save','deleteplaylist','editplaylist','update']);
+    }
+
   public function index(){
     $playlist = Playlist::all();
     return view('playlists')->with(compact('playlist'));

@@ -28,7 +28,7 @@
 <div class="row">
     <p align="center" style="color: #5768ad;">This Worry Tree represents your worries, to have a big tree make your worries less</p>
     <div class="col-lg-1 col-md-1"></div> 
-    <canvas id="my_canvas" width="800" height="800"></canvas>
+    <canvas id="my_canvas" width="1000" height="800"></canvas>
 </div>
 <script>
 var myCanvas = document.getElementById("my_canvas");
@@ -63,12 +63,16 @@ function draw(startX, startY, len, angle, branchWidth) {
 }
 var i={{ $i }};
 tree(i);
-
-document.getElementById("add").onclick  = function() {   
+if(i>=0 && i<5)
+document.getElementById('worry').readOnly = false;
+if(i>=5)
+document.getElementById('worry').readOnly = true;
+document.getElementById("add").onclick  = function() {  
+var text = document.getElementById("worry").value;
+if(text.length>0) {
 var node = document.createElement("input");
 node.type="text";
 node.className = "list-group-item";
-var text = document.getElementById("worry").value;
 node.id=++i;
 node.name="worries[][worry]";
 node.value=text;
@@ -82,6 +86,13 @@ remove(node.id);
 
 document.getElementById("worriess").appendChild(node);
 document.getElementById('worry').value="";
+if(i>=0 && i<5)
+document.getElementById('worry').readOnly = false;
+else if(i>=5)
+document.getElementById('worry').readOnly = true;
+}
+else
+    alert("please provide some input");
 }
 
 function remove(el)
@@ -91,21 +102,25 @@ function remove(el)
     ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
     i--;
     tree(i);
+    if(i>=0 && i<5)
+        document.getElementById('worry').readOnly = false;
+    else if(i>=5)
+        document.getElementById('worry').readOnly = true;
 }
 function tree(i)
 {
     if(i==0)
-        draw(400, 600, 130, 0, 10);
+        draw(500, 650, 130, 0, 10);
     else if(i==1)
-        draw(400, 600, 120, 0, 10);
+        draw(500, 600, 120, 0, 10);
     else if(i==2)
-        draw(400, 510, 100, 0, 10);
+        draw(500, 510, 100, 0, 10);
     else if(i==3)
-        draw(400, 370, 80, 0, 10);
+        draw(500, 400, 80, 0, 10);
     else if(i==4)
-        draw(400, 320, 50, 0, 10);
+        draw(500, 320, 50, 0, 10);
     else if(i==5)
-        draw(400, 300, 30, 0, 10);
+        draw(500, 300, 30, 0, 10);
 }
 </script>
 <!--tree end-->

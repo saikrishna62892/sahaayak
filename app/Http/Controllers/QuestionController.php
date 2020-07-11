@@ -12,6 +12,8 @@ class QuestionController extends Controller
     public function __construct()
     {
         $this->middleware(['auth','verified']);
+        $this->middleware(['is_user'])->only(['show','getResult']);
+        $this->middleware(['is_admin'])->only(['create','store','editQuestions','edit','update','destroy']);
     }
 
     public function create(Questionnaire $questionnaire)

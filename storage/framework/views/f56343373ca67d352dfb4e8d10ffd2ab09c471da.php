@@ -303,6 +303,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                             <button type="submit"><i class="fa fa-send"></i></button>
                         </form>
+                        <a href="/home/subscribe"><i class="fa fa-send"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 offset-lg-1 col-md-3 col-sm-6" data-step="10" data-intro="This section provides information about different helpline numbers across India." data-position="bottom-middle-aligned">

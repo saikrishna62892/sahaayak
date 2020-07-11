@@ -11,7 +11,13 @@ use App\User;
 
 class NewsController extends Controller
 {
-    //
+    public function __construct()
+    {
+        $this->middleware(['auth','verified']);
+        $this->middleware(['is_user'])->only(['index','display']);
+        $this->middleware(['is_admin'])->only(['create','store','deletenews','editnews','update']);
+    }
+
 	function index()
 	{
 		$data = DB::table('users')->paginate(2);
