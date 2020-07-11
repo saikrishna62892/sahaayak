@@ -8,11 +8,22 @@ use App\Appointment;
 use Auth;
 use DB;
 use PDF;
+use App\Notifications\AppointmentReceivedNotification;
+use App\Notifications\AppointmentAcceptedNotification;
+use App\User;
+use App\Traits\NotificationTrait;
+
 class appointment_controller extends Controller
 {
-   public function __construct()
+
+    use NotificationTrait;
+
+    public function __construct()
     {
-        $this->middleware(['auth','verified','is_user']);
+        $this->middleware(['auth','verified']);
+        $this->middleware('is_user')->only(['save']);
+        $this->middleware('is_volunteer')->only(['appointmentAccepted']);
+
     }
     function save(Request $req)
     {
@@ -33,7 +44,18 @@ class appointment_controller extends Controller
         $appointment->timestamps=now();
         $appointment->user_id=$user->id;
         $appointment->save();
+        $this->sendAppointmentReceivedNotif($appointment->name);
         return redirect()->back()->with('message', 'Posted Succcesfully'); 
     }
+
+     public function appointmentAccepted(Appointment $appointment)
+    {
+        $appointment->update(['volunteer_id' => auth()->user()->volunteer->id]);
+        $this->sendAppointmentAcceptedNotif($appointment->user_id,$appointment);
+        return redirect()->back();
+
+    }
+
     
+
 }

@@ -7,8 +7,15 @@ use Illuminate\Http\Request;
 use App\Playlist;
 use Auth;
 use DB;
+use App\User;
+use App\Notifications\NewsNotification;
+use App\Traits\NotificationTrait;
 class PlaylistController extends Controller
 {
+
+  use NotificationTrait;
+  
+
     public function __construct()
     {
         $this->middleware(['auth','verified']);
@@ -17,7 +24,7 @@ class PlaylistController extends Controller
     }
 
   public function index(){
-    $playlist = Playlist::all();
+    $playlist = Playlist::orderBy("created_at","desc")->paginate(6);
     return view('playlists')->with(compact('playlist'));
 
   }
@@ -48,7 +55,10 @@ class PlaylistController extends Controller
             $image->move($destinationPath, $name);
             $playlist->image=$name;
         }
+
+
         $playlist->save();
+        $this->sendPlaylistNotif($playlist->playlistTag);
       return redirect('/admin/home');
       
     }

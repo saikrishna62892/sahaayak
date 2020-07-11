@@ -12,7 +12,11 @@ use App\Diary;
 use App\Appointment;
 use App\Comment;
 use App\Worry;
+
+use App\Subscription;
+
 class User extends Authenticatable implements MustVerifyEmail
+
 {
     use Notifiable;
 
@@ -83,5 +87,9 @@ class User extends Authenticatable implements MustVerifyEmail
     public function worries()
     {
         return $this->hasMany(Worry::class);
+    }
+    public function subscription()
+    {
+        return $this->hasOne(Subscription::class);
     }
 }

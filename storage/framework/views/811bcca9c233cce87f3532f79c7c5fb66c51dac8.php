@@ -38,7 +38,7 @@
                             </div>
                             <div class="blog__details__author__text">
                             <?php if(is_null($i->image)): ?>
-                                    <img src="<?php echo e(asset('/img/playlists/default.png')); ?>" alt="">
+                                    <img src="<?php echo e(asset('/img/playlists/default3.png')); ?>" alt="">
                                 <?php else: ?>
                                     <img src="<?php echo e(asset('/img/playlists/'.$i->image)); ?>" alt="">
                                 <?php endif; ?>
@@ -54,12 +54,16 @@
                         </div>
         
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                
+
             
                         <div class="blog__details__quote">
                             <p>link to the pocast/playlist and a short description about that</p>
                             <p><a href="" style="color:#5768ad;">Open Playlist</a></p>
                         </div>
+                        <div class="col-lg-12"><span><?php echo e($playlist->links()); ?></span></div>
                     </div>
+
                 </div>
             </div>
             <div class="row">

@@ -54,12 +54,7 @@ class VolunteerController extends Controller
         return redirect()->back()->with('message','This volunteer is approved');
     }
 
-    public function appointmentAccepted(Appointment $appointment)
-    {
-        $appointment->update(['volunteer_id' => auth()->user()->volunteer->id]);
-        return redirect()->back();
-
-    }
+   
 
     public function reportForm(Appointment $appointment)
     {
