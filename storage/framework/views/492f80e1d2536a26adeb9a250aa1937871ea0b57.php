@@ -1,5 +1,8 @@
 
 
+<?php $__env->startSection('name'); ?>
+    Learn | Depression
+<?php $__env->stopSection(); ?>
 <?php $__env->startSection('breadcrumb'); ?>
 
 <h2>Understanding Depression</h2>
@@ -12,7 +15,7 @@
 <?php $__env->startSection('learncontent'); ?>
 
 <div class="classes__details__large">
-    <img src="/img/classes-details/cd-large.jpg" alt="" width="750" height="400">
+    <img src="/img/classes-details/cd-depression.jpg" alt="" width="750" height="400">
         <span>Understanding Depression</span>
 </div>
 

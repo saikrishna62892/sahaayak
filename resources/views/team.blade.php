@@ -43,7 +43,7 @@
                     <div class="col-lg-6">
                         <div class="team__item">
                             <div class="team__item__pic">
-                                <img src="img/team/team-1.png" alt="">
+                                <img src="img/team/default_volunteer_men.jpg" alt="">
                             </div>
                             <div class="team__item__text">
                                 <div class="team__item__title">
@@ -63,7 +63,7 @@
                     <div class="col-lg-6">
                         <div class="team__item">
                             <div class="team__item__pic">
-                                <img src="img/team/team-2.png" alt="">
+                                <img src="img/team/default_volunteer_women.jpg" alt="">
                             </div>
                             <div class="team__item__text">
                                 <div class="team__item__title">
@@ -83,7 +83,7 @@
                     <div class="col-lg-6">
                         <div class="team__item">
                             <div class="team__item__pic">
-                                <img src="img/team/team-2.png" alt="">
+                                <img src="img/team/default_volunteer_men.jpg" alt="">
                             </div>
                             <div class="team__item__text">
                                 <div class="team__item__title">
@@ -123,7 +123,7 @@
                     <div class="col-lg-6">
                         <div class="team__item">
                             <div class="team__item__pic">
-                                <img src="img/team/team-1.png" alt="">
+                                <img src="img/team/default_therapist_men.jpg" alt="">
                             </div>
                             <div class="team__item__text">
                                 <div class="team__item__title">
@@ -143,7 +143,7 @@
                     <div class="col-lg-6">
                         <div class="team__item">
                             <div class="team__item__pic">
-                                <img src="img/team/team-2.png" alt="">
+                                <img src="img/team/default_therapist_women.jpg" alt="">
                             </div>
                             <div class="team__item__text">
                                 <div class="team__item__title">
@@ -163,7 +163,7 @@
                     <div class="col-lg-6">
                         <div class="team__item">
                             <div class="team__item__pic">
-                                <img src="img/team/team-2.png" alt="">
+                                <img src="img/team/default_therapist_men.jpg" alt="">
                             </div>
                             <div class="team__item__text">
                                 <div class="team__item__title">
@@ -223,7 +223,7 @@
                     <div class="col-lg-6">
                         <div class="team__item">
                             <div class="team__item__pic">
-                                <img src="img/team/team-2.png" alt="">
+                                <img src="img/team/default.jpg" alt="">
                             </div>
                             <div class="team__item__text">
                                 <div class="team__item__title">

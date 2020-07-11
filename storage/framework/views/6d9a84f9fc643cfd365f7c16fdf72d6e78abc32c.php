@@ -75,24 +75,12 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="chooseus__text">
-<<<<<<< HEAD
                         <h2 data-step="5" data-intro="Myths & Facts" data-position="left">Myths & Facts</h2>
                         <p> Talking about suicide provides the opportunity for communication. Fears shared are more
                          likely to diminish. The first step in encouraging a person with thoughts of suicide to live
                           comes from talking about those feelings. A simple inquiry about whether or not the person
                            is intending to end their life can start the conversation.</p>
                         <p>There is a very great chance that suicides can be reduced if treated in right way. In
-=======
-                        <h2 data-step="3" data-intro="This section deals with the Myths & Facts related to Mental Health." data-position="bottom">Myths & Facts</h2>
-                        <p> It is calculated that around 1.6
-                            lakh people die everyday on average.There are many distinctive causes for these deaths, among
-                            which most of the causes are unpreventable and sometimes inescapable like Ischaemic heart
-                            disease, Stroke, Chronic obstructive pulmonary disease, Lower respiratory infections, Road injury,
-                            and many such.</p>
-                        <p>.But it is unfortunate to know that more 2000 deaths out of 1.6 lakh deaths are
-                            due to suicides.Suicide is not among the causes that are unpreventable and inescapable, it can
-                            be reduced.There is a very great chance that suicides can be reduced if treated in right way.In
->>>>>>> aebec638859f65d4cd53b478b377a7a3610053cc
                             most of the cases people don’t try to express what they are going through even with thier
                             beloved once.</p>
                         <p>This is because people believe that sharing their suicidal thoughts might disturb
@@ -248,11 +236,7 @@
                 <div class="col-lg-7">
                     <div class="home__about__pic">
                         <div class="home__about__pic__item large-item set-bg">
-<<<<<<< HEAD
-                            <img src="img/about/about-1.jpg" alt="">
-=======
-                            <img src="img/about/about-11.jpg" alt="" width="345" height="620">
->>>>>>> aebec638859f65d4cd53b478b377a7a3610053cc
+                            <img src="img/about/about-1.jpg" alt="" width="345" height="620">
                         </div>
                         <div class="home__about__pic__item">
                             <div class="home__about__pic__item__inner set-bg" data-setbg="img/about/about-2.jpg">
