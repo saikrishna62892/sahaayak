@@ -38,7 +38,7 @@ class VolunteerController extends Controller
             'file1' => $data['file1']->store('uploads/volunteer','public'),
             'file2' => $data['file2']->store('uploads/volunteer','public')
         ]);
-        $user->update(['step2_done' => "1"]);
+        $user->update(['step2_done' => 1]);
 
     	return redirect('/volunteer/waitingApproval');
     }
