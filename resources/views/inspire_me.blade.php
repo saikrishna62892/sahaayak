@@ -58,7 +58,9 @@
             @empty
                 <h4>No Quotes Available</h4>
             @endforelse
+
         </div>
+        <div class="col-lg-12"><span>{{$quotes->links()}}</span></div>
         <div class="row">
                 <div class="col-lg-12">
                     <div class="classes__pagination">

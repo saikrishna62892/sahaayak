@@ -191,7 +191,7 @@ Route::get('markAsRead',function(){
 
 Route::get('/home/abc',function(){
 
-    #auth()->user()->unreadNotifications->markAsRead();
+    auth()->user()->unreadNotifications->markAsRead();
     #return redirect()->back();
    return redirect()->back();
 

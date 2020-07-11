@@ -8,10 +8,6 @@ use Illuminate\Http\Request;
 use App\Video;
 class HopeBoxController extends Controller
 {   
-    public function __construct()
-    {
-        $this->middleware(['auth','verified','is_user']);
-    }
     
 	public function getEmbedHtml($urls)
 	{
@@ -37,9 +33,9 @@ class HopeBoxController extends Controller
 
     public function displayVideos()
     {
-    	$urls=Video::select('videoURL')->get();
+    	$urls=Video::select('videoURL')->paginate(2);
     	$embedURLs = $this->getEmbedHtml($urls);
     	//dd($embedURLs);
-    	return view('video.show',compact('embedURLs'));
+    	return view('video.show',compact('embedURLs','urls'));
     }
 }

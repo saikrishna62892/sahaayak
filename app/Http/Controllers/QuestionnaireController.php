@@ -7,8 +7,11 @@ use App\Questionnaire;
 use App\Notifications\QuestionnaireNotification;
 use App\User;
 use Carbon\Carbon;
+use App\Traits\NotificationTrait;
+
 class QuestionnaireController extends Controller
 {
+    use NotificationTrait;
 
    public function __construct()
     {
@@ -52,10 +55,7 @@ class QuestionnaireController extends Controller
 
     public function complete(Questionnaire $questionnaire)
     {
-        /*$users=User::all();
-        foreach ($users as $user) {
-        $user->notify(new QuestionnaireNotification($questionnaire->questionnaireTitle));
-        }*/
+        $this->sendQuestionnaireNotif($questionnaire->questionnaireTitle);
         return redirect('/admin/home');
     }
 

@@ -5,14 +5,22 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Video;
+use App\Notifications\VideoNotification;
+use App\User;
+use App\Traits\NotificationTrait;
 class VideoController extends Controller
 {
+
+    use NotificationTrait;
+
+
     public function __construct()
     {
         $this->middleware(['auth','verified']);
         $this->middleware('is_admin')->only(['create','store','deletevideo','editvideo','update']);
     }
     
+
     public function create()
     {
     	return view('video.create');
@@ -27,6 +35,7 @@ class VideoController extends Controller
                 'videoURL'=>'required',
             ]);
         $video = Video::create($data);
+        $this->sendVideosNotif($video->videoURL);
         return redirect('/admin/home');
     }
 
