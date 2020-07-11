@@ -1,31 +1,29 @@
 
 
 <?php $__env->startSection('name'); ?>
-    Learn | Depression
+    Learn | Stress
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('breadcrumb'); ?>
 
-<h2>Understanding Depression</h2>
-<h5>Worst part about</h5>
-<h4>DEPRESSION</h4>
-<h5>People don't have it. They just don't get it</h5>
+<h2>Understanding Stress</h2>
+<h5>It's not stress that kills us,it is our reaction to it</h5>
 
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('learncontent'); ?>
 
 <div class="classes__details__large">
-    <img src="/img/classes-details/cd-depression.jpg" alt="" width="750" height="400">
-        <span>Understanding Depression</span>
+    <img src="/img/classes-details/cd-stress1.jpg" alt="" width="750" height="400">
+        <span>Understanding Stress</span>
 </div>
 
-<h2>What is Depression?</h2>
+<h2>What is Stress?</h2>
 
-<p>Depression is a disease of the brain. Experts believe that certain brain chemicals go out of balance to cause the disease. No one thing causes this. Many things, including your genes, stressful events, illness, and medicines, can cause the imbalance.</p>
+<p>Stress is the body's reaction to any change that requires an adjustment or response. The body reacts to these changes with physical, mental, and emotional responses. Stress is a normal part of life. You can experience stress from your environment, your body, and your thoughts. Even positive life changes such as a promotion, a mortgage, or the birth of a child produce stress.</p>
 
 <div class="classes__details__item">
     <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/z-IR48Mb3W0" allowfullscreen></iframe>
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/WuyPuH9ojCE" allowfullscreen></iframe>
     </div>
 </div>
 
@@ -44,9 +42,12 @@
                                                             </a>
                                                         </div>
                                                         <div id="collapseOne" class="collapse" data-parent="#accordionExample">
-                                                            <div class="card-body">                                                               
-                                                                <p>Depression is a disease. It is a problem with your brain chemistry, not your character.
-                                                                 You can't force yourself to get over it any more than you can make asthma or a heart attack go away.</p>
+                                                            <div class="card-body">
+                                                                <p>Stress is your body's reaction to a challenge or demand. In short bursts, stress can be positive, 
+                                                                such as when it helps you avoid danger or meet a deadline. But when stress lasts for a long time, 
+                                                                it may harm your health.</p>
+                                                                <p>We don’t all experience stress the same way. It’s different for everybody. 
+                                                                You may be stressed out by a high-pressure job, while your coworker thrives on it. </p>
                                                                 <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
@@ -59,12 +60,11 @@
                                                         </div>
                                                         <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>Depression may start after something bad happens, but other things also may trigger it.
-                                                                 Medicines, hormone problems, childbirth, and using alcohol and drugs all can trigger depression.
-                                                                 Sometimes it happens for no clear reason.</p>
-                                                                <p>Depression can develop in any age group, ethnic group, economic group, and gender.
-                                                                 A few people get over depression on their own, but most people need treatment.
-                                                                 Most people with depression can be treated, and they return to their work and home routines.</p>
+                                                                <p>Common major life events that can trigger stress include:</p>
+                                                                <p>Job issues or retirement.</p>
+                                                                <p>Lack of time or money.</p>
+                                                                <p>Bereavement, family problems, illness.</p>
+                                                                <p>Relationships, marriage, and divorce. </p>
                                                                 <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
@@ -77,10 +77,15 @@
                                                         </div>
                                                         <div id="collapseThree" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>Feeling agitated or irritated for no reason. Losing interest in doing things you are good at.
-                                                                Trouble in falling asleep, most often known as insomnia. In some cases, you might sleep too much.   </p>
-                                                                <p>Restlessness, feeling alone, sad and empty persistently. Having thoughts to end life or attempting to end life.  </p>
-                                                                <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
+                                                                <p>Stress can wear down the body's natural defenses, leading to a variety of physical symptoms.</p>
+                                                                <p>Dizziness or a general feeling of "being out of it".</p>
+                                                                <p>General aches and pains.</p>
+                                                                <p>Grinding teeth, clenched jaw.</p>
+                                                                <p>Headaches, Indigestion or acid reflux symptoms.</p>
+                                                                <p>Increase in or loss of appetite, Muscle tension in neck, face or shoulders.</p>
+                                                                <p>Problems sleeping, Racing heart.</p>
+                                                                <p>Cold and sweaty palms.Tiredness, exhaustion, Trembling/shaking and Weight gain or loss. </p>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -92,11 +97,12 @@
                                                         </div>
                                                         <div id="collapseFour" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>People, in general, think talking more about suicides and checking if someone
-                                                                 feels suicidal increases the chances of suicides, in fact, it actually helps the other person to open
-                                                                  up their thoughts to us, offering us a chance to help them get over these thoughts.  </p>
-                                                                <p>Many people with depression are helped by medicine.
-                                                                 Medicine can improve or get rid of the symptoms of depression.</p>
+                                                                <p>Keep a positive attitude. Accept that there are events that you cannot control. 
+                                                                Be assertive instead of aggressive. Assert your feelings, opinions, or beliefs instead of becoming angry,
+                                                                 defensive, or passive.</p>
+                                                                <p>Learn and practice relaxation techniques; try meditation, yoga, or tai-chi. 
+                                                                Eat healthy, well-balanced meals. Learn to manage your time more effectively. 
+                                                                Set limits appropriately and say no to requests that would create excessive stress in your life. </p>
                                                                 <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
@@ -109,9 +115,10 @@
                                                         </div>
                                                         <div id="collapseFive" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p> Adolescents should seek treatments because it will definitely help them heal. 
-                                                                However, awareness should be increased on all social levels to enlighten people who suffer from depression. 
-                                                                Depression is a severe problem that should be immediately addressed.</p>                                                                
+                                                                <p> It should be noted that stress can be considered as a fact of nature and the 
+                                                                force from the outside which disturbs the individual. </p>
+                                                                <p> It is also noted that emotional intelligence plays a role to create the abilities 
+                                                                in an individual to better control the stress.</p>
                                                                 <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
@@ -138,7 +145,45 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('learnname'); ?>
-Depression
+Stress
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.learn', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/learn/depression.blade.php ENDPATH**/ ?>
+<?php $__env->startSection('comments'); ?>
+    <div class="classes__sidebar__comment">
+                                    <div class="classes__sidebar__comment__pic">
+                                        <img src="/img/classes-details/comment-1.png" alt="">
+                                        <div class="classes__sidebar__comment__rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
+                                    </div>
+                                    <div class="classes__sidebar__comment__text">
+                                        <span>04 Mar 2018</span>
+                                        <h6>Brandon Kelley</h6>
+                                        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
+                                            adipisci velit,</p>
+                                    </div>
+                                </div>
+                                <div class="classes__sidebar__comment">
+                                    <div class="classes__sidebar__comment__pic">
+                                        <img src="/img/classes-details/comment-2.png" alt="">
+                                        <div class="classes__sidebar__comment__rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
+                                    </div>
+                                    <div class="classes__sidebar__comment__text">
+                                        <span>04 Mar 2018</span>
+                                        <h6>Christina Kelley</h6>
+                                        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,</p>
+                                    </div>
+                                </div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.learn', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/learn/stress.blade.php ENDPATH**/ ?>

@@ -256,7 +256,7 @@
     </div>
     <!-- Counter End -->
     <!-- Gallery Section Begin -->
-    <!--<section class="gallery">
+    <section class="gallery">
         <div class="container" id="gallery">
             <div class="row">
                 <div class="col-lg-12">
@@ -313,7 +313,7 @@
                 </div>
             </div>
         </div>
-    </section>-->
+    </section>
     <!-- Gallery Section End -->
     
     <!-- Faq Begin -->

@@ -32,11 +32,6 @@
                     <div class="classes__sidebar">
                         <div class="classes__sidebar__item classes__sidebar__item--info">
                             <h4><?php echo $__env->yieldContent('learnname'); ?></h4>
-                            <ul class="classes__sidebar__item__widget">
-                                <li><span class="icon_calendar"></span>Date: </li>
-                                <li><span class="icon_clock_alt"></span>Time: </li>
-                            </ul>
-                            <a href="#" class="sidebar-btn">Visit Website</a>
                         </div>
                         <div class="classes__sidebar__item">
                             <h4>Review & Comment</h4>

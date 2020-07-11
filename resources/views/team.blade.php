@@ -34,7 +34,7 @@
                     <div class="section-title">
                         <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
                         <h2>Meet Our Volunteers</h2>
-                        <p>We search the entire world to provide you with passionate, authentic Indian Yoga</p>
+                        <p>We search the entire nation to provide you with passionate and caring volunteers</p>
                     </div>
                 </div>
             </div>
@@ -47,10 +47,10 @@
                             </div>
                             <div class="team__item__text">
                                 <div class="team__item__title">
-                                    <h4>Christina Lauren</h4>
-                                    <span>Yoga Teacher</span>
+                                    <h4>Volunnteer Name</h4>
+                                    <span>Profession</span>
                                 </div>
-                                <p>Yoga & Therapy Certificate of<br /> Uttarakhand University Sanskirt</p>
+                                <p>About Volunteer<br>and his details</p>
                                 <div class="team__item__social">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
                                     <a href="#"><i class="fa fa-twitter"></i></a>
@@ -67,10 +67,10 @@
                             </div>
                             <div class="team__item__text">
                                 <div class="team__item__title">
-                                    <h4>Tracy Maclaren</h4>
-                                    <span>Yoga Teacher</span>
+                                    <h4>Volunnteer Name</h4>
+                                    <span>Profession</span>
                                 </div>
-                                <p>Yoga & Therapy Certificate of<br /> Uttarakhand University Sanskirt</p>
+                                <p>About Volunteer<br>and his details</p>
                                 <div class="team__item__social">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
                                     <a href="#"><i class="fa fa-twitter"></i></a>
@@ -87,10 +87,10 @@
                             </div>
                             <div class="team__item__text">
                                 <div class="team__item__title">
-                                    <h4>Tracy Maclaren</h4>
-                                    <span>Yoga Teacher</span>
+                                    <h4>Volunnteer Name</h4>
+                                    <span>Profession</span>
                                 </div>
-                                <p>Yoga & Therapy Certificate of<br /> Uttarakhand University Sanskirt</p>
+                                <p>About Volunteer<br>and his details</p>
                                 <div class="team__item__social">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
                                     <a href="#"><i class="fa fa-twitter"></i></a>
@@ -114,7 +114,7 @@
                     <div class="section-title">
                         <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
                         <h2>Meet Our Therapists</h2>
-                        <p>We search the entire world to provide you with passionate, authentic Indian Yoga</p>
+                        <p>We search the entire nation to provide you with passionate and caring therapists</p>
                     </div>
                 </div>
             </div>
@@ -127,10 +127,10 @@
                             </div>
                             <div class="team__item__text">
                                 <div class="team__item__title">
-                                    <h4>Christina Lauren</h4>
-                                    <span>Yoga Teacher</span>
+                                    <h4>Therapist Name</h4>
+                                    <span>Profession</span>
                                 </div>
-                                <p>Yoga & Therapy Certificate of<br /> Uttarakhand University Sanskirt</p>
+                                <p>About Therapist<br>and his details</p>
                                 <div class="team__item__social">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
                                     <a href="#"><i class="fa fa-twitter"></i></a>
@@ -147,10 +147,10 @@
                             </div>
                             <div class="team__item__text">
                                 <div class="team__item__title">
-                                    <h4>Tracy Maclaren</h4>
-                                    <span>Yoga Teacher</span>
+                                    <h4>Therapist Name</h4>
+                                    <span>Profession</span>
                                 </div>
-                                <p>Yoga & Therapy Certificate of<br /> Uttarakhand University Sanskirt</p>
+                                <p>About Therapist<br>and his details</p>
                                 <div class="team__item__social">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
                                     <a href="#"><i class="fa fa-twitter"></i></a>
@@ -167,10 +167,10 @@
                             </div>
                             <div class="team__item__text">
                                 <div class="team__item__title">
-                                    <h4>Tracy Maclaren</h4>
-                                    <span>Yoga Teacher</span>
+                                    <h4>Therapist Name</h4>
+                                    <span>Profession</span>
                                 </div>
-                                <p>Yoga & Therapy Certificate of<br /> Uttarakhand University Sanskirt</p>
+                                <p>About Therapist<br>and his details</p>
                                 <div class="team__item__social">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
                                     <a href="#"><i class="fa fa-twitter"></i></a>
@@ -194,7 +194,7 @@
                     <div class="section-title">
                         <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
                         <h2>Meet Our Family</h2>
-                        <p>We search the entire world to provide you with passionate, authentic Indian Yoga</p>
+                        <p>We are with you with passion to provide the best for you</p>
                     </div>
                 </div>
             </div>
@@ -203,19 +203,20 @@
                     <div class="col-lg-6">
                         <div class="team__item">
                             <div class="team__item__pic">
-                                <img src="/img/team/sai1.png" alt="" height="350">
+                                <img src="/img/team/sai1.png" alt="">
                             </div>
                             <div class="team__item__text">
                                 <div class="team__item__title">
                                     <h4>Sai Krishna Gudipati</h4>
                                     <span>M.Tech at NIT Calicut</span>
                                 </div>
-                                <p>A Passionate Computer Geek</p>
+                                <p>A Passionate Computer programmer <br>who loves to solve new challenges.</p>
                                 <div class="team__item__social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                                    <a href="https://www.linkedin.com/in/saikrishna62892/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                    <a href="mailto:saikrishna62892@gmail.com" target="_blank"><i class="fa fa-google"></i></a>
+                                    <a href="https://www.instagram.com/saikrishna62892/" target="_blank"><i class="fa fa-instagram"></i></a>
+                                    <a href="https://www.facebook.com/saikrishna62892" target="
+                                    _blank"><i class="fa fa-facebook"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -223,19 +224,22 @@
                     <div class="col-lg-6">
                         <div class="team__item">
                             <div class="team__item__pic">
-                                <img src="img/team/default.jpg" alt="">
+                                <img src="/img/team/sai1.png" alt="">
                             </div>
                             <div class="team__item__text">
                                 <div class="team__item__title">
-                                    <h4>Tracy Maclaren</h4>
-                                    <span>Yoga Teacher</span>
+                                    <h4>Dileep Kumar Nandi</h4>
+                                    <span>M.Tech at NIT Calicut</span>
                                 </div>
-                                <p>Yoga & Therapy Certificate of<br /> Uttarakhand University Sanskirt</p>
+                                <p>Pursuing M.Tech at NIT Calicut<br> Wants to become SDE.</p>
                                 <div class="team__item__social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                                    <a href="https://www.linkedin.com/in/dileep-kumar-128735108/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                    <a href="mailto:dileepkumar.nandi9441@gmail.com" target="_blank"><i class="fa fa-google"></i></a>
+                                    <a href="https://www.instagram.com/dileepkumarnandi/?hl=en" target="_blank"><i class="fa fa-instagram"></i></a>
+                                    <a href="https://www.facebook.com/profile.php?id=100004780184464" target="
+                                    _blank"><i class="fa fa-facebook"></i></a>
+                                    <a href="https://twitter.com/dileepkumar9441" target="
+                                    _blank"><i class="fa fa-twitter"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -243,19 +247,89 @@
                     <div class="col-lg-6">
                         <div class="team__item">
                             <div class="team__item__pic">
-                                <img src="img/team/team-2.png" alt="">
+                                <img src="/img/team/sai1.png" alt="">
                             </div>
                             <div class="team__item__text">
                                 <div class="team__item__title">
-                                    <h4>Tracy Maclaren</h4>
-                                    <span>Yoga Teacher</span>
+                                    <h4>Venkat Govardhan Dasari</h4>
+                                    <span>M.Tech at NIT Calicut</span>
                                 </div>
-                                <p>Yoga & Therapy Certificate of<br /> Uttarakhand University Sanskirt</p>
+                                <p>Pursuing M.Tech at NIT Calicut<br> Wants to become SDE.</p>
                                 <div class="team__item__social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                                    <a href="https://www.linkedin.com/in/venkat-govardhan-dasari-a62586134" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                    <a href="mailto:ven1997kat@gmail.com" target="_blank"><i class="fa fa-google"></i></a>
+                                    <a href="https://www.instagram.com/govardhan.venkat/" target="_blank"><i class="fa fa-instagram"></i></a>
+                                    <a href="https://www.facebook.com/venkatgovardhan15" target="
+                                    _blank"><i class="fa fa-facebook"></i></a>
+                                    <a href="https://twitter.com/dileepkumar9441" target="
+                                    _blank"><i class="fa fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="team__item">
+                            <div class="team__item__pic">
+                                <img src="/img/team/sai1.png" alt="">
+                            </div>
+                            <div class="team__item__text">
+                                <div class="team__item__title">
+                                    <h4>John Benyen Munga</h4>
+                                    <span>M.Tech at NIT Calicut</span>
+                                </div>
+                                <p>A Hard-working Team guy <br> Aspires to become SDE.</p>
+                                <div class="team__item__social">
+                                    <a href="https://www.linkedin.com/in/john-benyen/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                    <a href="mailto:johnbenyen162@gmail.com" target="_blank"><i class="fa fa-google"></i></a>
+                                    <a href="https://www.instagram.com/johnbenyen/?hl=en" target="_blank"><i class="fa fa-instagram"></i></a>
+                                    <a href="https://www.facebook.com/john.benyen/" target="
+                                    _blank"><i class="fa fa-facebook"></i></a>
+                                    <a href="https://twitter.com/JohnBenyen/" target="
+                                    _blank"><i class="fa fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="team__item">
+                            <div class="team__item__pic">
+                                <img src="/img/team/sai1.png" alt="">
+                            </div>
+                            <div class="team__item__text">
+                                <div class="team__item__title">
+                                    <h4>Ganesh Chandra Sekhar</h4>
+                                    <span>M.Tech at NIT Calicut</span>
+                                </div>
+                                <p>I am a M.Tech Student <br>Wanted to work on new Tech.</p>
+                                <div class="team__item__social">
+                                    <a href="https://www.linkedin.com/in/ganesh-n-43b558120/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                    <a href="mailto:ganeshchandu1996@gmail.com" target="_blank"><i class="fa fa-google"></i></a>
+                                    <a href="https://www.instagram.com/chandu_naram/?hl=en" target="_blank"><i class="fa fa-instagram"></i></a>
+                                    <a href="https://www.facebook.com/profile.php?id=100006110857712" target="
+                                    _blank"><i class="fa fa-facebook"></i></a>
+                                    <a href="https://twitter.com/chandu_1996" target="
+                                    _blank"><i class="fa fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="team__item">
+                            <div class="team__item__pic">
+                                <img src="/img/team/sai1.png" alt="">
+                            </div>
+                            <div class="team__item__text">
+                                <div class="team__item__title">
+                                    <h4>Spandana Priya </h4>
+                                    <span>Web Developer</span>
+                                </div>
+                                <p>Passionate Content Writer<br>Works in Conquerors Hyderabad.</p>
+                                <div class="team__item__social">
+                                    <a href="https://www.linkedin.com/in/saikrishna62892/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                    <a href="mailto:saikrishna62892@gmail.com" target="_blank"><i class="fa fa-google"></i></a>
+                                    <a href="https://www.instagram.com/saikrishna62892/" target="_blank"><i class="fa fa-instagram"></i></a>
+                                    <a href="https://www.facebook.com/saikrishna62892" target="
+                                    _blank"><i class="fa fa-facebook"></i></a>
                                 </div>
                             </div>
                         </div>
