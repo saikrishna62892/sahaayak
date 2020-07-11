@@ -15,7 +15,7 @@ class IsVolunteer
      */
     public function handle($request, Closure $next)
     {
-        if(auth()->user()->is_Volunteer == 1 && auth()->user()->volunteer->step2_done == 1 && auth()->user()->volunteer->is_Approved == 1){
+        if(auth()->user()->is_Volunteer == 1 && auth()->user()->step2_done == 1 && auth()->user()->volunteer->is_Approved == 1){
             return $next($request);
         }
    

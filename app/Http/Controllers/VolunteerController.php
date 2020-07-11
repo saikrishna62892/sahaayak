@@ -38,7 +38,7 @@ class VolunteerController extends Controller
             'file1' => $data['file1']->store('uploads/volunteer','public'),
             'file2' => $data['file2']->store('uploads/volunteer','public')
         ]);
-        $user->update(['step2_done' => "1"]);
+        $user->update(['step2_done' => 1]);
 
     	return redirect('/volunteer/waitingApproval');
     }
@@ -54,12 +54,7 @@ class VolunteerController extends Controller
         return redirect()->back()->with('message','This volunteer is approved');
     }
 
-    public function appointmentAccepted(Appointment $appointment)
-    {
-        $appointment->update(['volunteer_id' => auth()->user()->volunteer->id]);
-        return redirect()->back();
-
-    }
+   
 
     public function reportForm(Appointment $appointment)
     {

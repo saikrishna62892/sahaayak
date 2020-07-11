@@ -13,7 +13,7 @@
 @section('learncontent')
 
 <div class="classes__details__large">
-    <img src="/img/classes-details/cd-stress1.jpg" alt="" width="750" height="400">
+    <img src="/img/classes-details/cd-stress.jpg" alt="" width="750" height="400">
         <span>Understanding Stress</span>
 </div>
 
