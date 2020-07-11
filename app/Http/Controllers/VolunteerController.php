@@ -9,6 +9,13 @@ use App\Volunteer;
 
 class VolunteerController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth','verified']);
+        $this->middleware('is_volunteer')->only(['appointmentAccepted','reportForm','generateReport']);
+        $this->middleware('is_admin')->only(['getDetails','approveVolunteer']);
+    }
+    
     public function step2(User $user)
     {
     	return view('volunteer.volunteer_signup',compact('user'));
@@ -26,13 +33,14 @@ class VolunteerController extends Controller
             'file1' => 'required|file|image|max:3000',
             'file2' => 'required|file|image|max:3000'
     	]);
-
     	$volunteer = $user->volunteer()->create($data) ;
         $volunteer->update([
             'file1' => $data['file1']->store('uploads/volunteer','public'),
             'file2' => $data['file2']->store('uploads/volunteer','public')
         ]);
-    	return view('/')->with('message','Your Application has been submitted. please wait for approval');
+        $user->update(['step2_done' => "1"]);
+
+    	return redirect('/volunteer/waitingApproval');
     }
 
     public function getDetails(Volunteer $unapprovedVolunteer)
@@ -44,5 +52,27 @@ class VolunteerController extends Controller
     {
         $unapprovedVolunteer->update(['is_Approved' => 1]);
         return redirect()->back()->with('message','This volunteer is approved');
+    }
+
+    public function appointmentAccepted(Appointment $appointment)
+    {
+        $appointment->update(['volunteer_id' => auth()->user()->volunteer->id]);
+        return redirect()->back();
+
+    }
+
+    public function reportForm(Appointment $appointment)
+    {
+        return view('appointment.reportForm',compact('appointment'));
+    }
+
+    public function generateReport()
+    {
+        $data = request()->all();
+        $appointment = Appointment::find($data['appointment_id']);
+        $data['user_id'] = $appointment->user_id;
+        $data['volunteer_id'] = $appointment->volunteer_id;
+        $pdf = PDF::loadView('appointment.generateReport',compact('data'));
+        return $pdf->download('report.pdf');
     }
 }

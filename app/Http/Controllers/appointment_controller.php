@@ -15,11 +15,12 @@ use App\Traits\NotificationTrait;
 
 class appointment_controller extends Controller
 {
+
     use NotificationTrait;
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth','verified','is_user']);
     }
     function save(Request $req)
     {
@@ -43,6 +44,7 @@ class appointment_controller extends Controller
         $this->sendAppointmentReceivedNotif($appointment->name);
         return redirect()->back()->with('message', 'Posted Succcesfully'); 
     }
+
     public function appointmentAccepted(Appointment $appointment)
     {
         $appointment->update(['volunteer_id' => auth()->user()->volunteer->id]);
@@ -65,4 +67,5 @@ class appointment_controller extends Controller
         $pdf = PDF::loadView('appointment.generateReport',compact('data'));
         return $pdf->download('report.pdf');
     }
+
 }

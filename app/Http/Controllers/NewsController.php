@@ -11,8 +11,16 @@ use App\User;
 use App\Traits\NotificationTrait;
 class NewsController extends Controller
 {
+
     use NotificationTrait;
     //
+
+    public function __construct()
+    {
+        $this->middleware(['is_admin'])->only(['create','store','deletenews','editnews','update']);
+    }
+
+
 	function index()
 	{
 		$data = DB::table('users')->paginate(2);
@@ -52,21 +60,8 @@ class NewsController extends Controller
     	$news->newsurl=$request->newsurl;
 
         
-    	//$users=User::all();
-    //foreach ($users as $user) {
-
-       // $user->notify(new QuestionnaireNotification($news->newsurl));
-   // }
-
-
-
-    	//dd(request()->file('image'));
 		$news->save();
         $this->sendNewsNotif($news->newsurl);
-		#return $news;
-    	#return redirect()->back()->with('message', 'Posted Succcesfully');
-       
-        //return redirect('admin/news/create');
         return redirect()->back();
     
     }

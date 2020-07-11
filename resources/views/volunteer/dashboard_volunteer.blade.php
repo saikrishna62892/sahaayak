@@ -1,7 +1,8 @@
 @extends('layouts.dashboard')
 
-
-
+@section('name')
+    {{ $volunteer->name }}
+@endsection
 	@section('content')
 	<br>	
 	<div class="container" id="stats">
@@ -11,26 +12,16 @@
 					<div class="card-body">
 						<h5 class="card-title" align="center">Checkins</h5>
 						<p class="card-text" align="center">#Logins</p>
-						<h1 align="center">2000</h1>
+						<h1 align="center">{{ $checkins }}</h1>
 					</div>
 				</div>
 			</div>
 			<div class="col-sm-3">
 			    <div class="card shadow p-4 mb-5 bg-white rounded">
 			        <div class="card-body">
-				        <h5 class="card-title" align="center">Posts</h5>
-				        <p class="card-text" align="center">#Talks</p>
-				        <h1 align="center">300</h1>
-				        
-			        </div>
-			    </div>
-			</div>
-			<div class="col-sm-3">
-			    <div class="card shadow p-4 mb-5 bg-white rounded">
-			        <div class="card-body">
 				        <h5 class="card-title" align="center">Sessions</h5>
 				        <p class="card-text" align="center">#Interactions</p>
-				        <h1 align="center">100</h1>
+				        <h1 align="center">{{ $interactions }}</h1>
 			        </div>
 				</div>
 			</div>
@@ -39,9 +30,19 @@
 				    <div class="card-body">
 				        <h5 class="card-title" align="center">Requests</h5>
 				        <p class="card-text" align="center">#Yet to accept</p>
-				        <h1 align="center">50</h1>
+				        <h1 align="center">{{ $requests }}</h1>
 				    </div>
 				</div>
+			</div>
+			<div class="col-sm-3">
+			    <div class="card shadow p-4 mb-5 bg-white rounded">
+			        <div class="card-body">
+				        <h5 class="card-title" align="center">Reports</h5>
+				        <p class="card-text" align="center">#Pending reports</p>
+				        <h1 align="center">{{ $pending_reports }}</h1>
+				        
+			        </div>
+			    </div>
 			</div>
 		</div>
 	</div>
@@ -122,6 +123,7 @@
 	                                </thead>
 	                                <tbody>
 	                                    <?php $count=1 ?>
+
 	                                     @forelse($completedappointments->appointments as $key => $item)
 	                                    <tr>
 	                                        <td scope="row">{{ $count++ }}</td>

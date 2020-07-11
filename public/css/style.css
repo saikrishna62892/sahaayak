@@ -1185,6 +1185,8 @@ ol {
 	position: absolute;
 	right: -15px;
 	bottom: 0;
+	height: 350;
+	width: 350;
 }
 
 .team__item__text .team__item__title {
@@ -1425,7 +1427,8 @@ ol {
 }
 
 .classes__item__text {
-	padding: 24px 0 28px 30px;
+	padding: 15px 15px 28px 30px;
+	
 }
 
 .classes__item__text ul {

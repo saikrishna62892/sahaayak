@@ -56,10 +56,24 @@ class LoginController extends Controller
             if (auth()->user()->is_admin == 1) {
                 return redirect()->route('adminDashboard');
             }
+            else if(auth()->user()->is_Volunteer == 1){
+                if(auth()->user()->step2_done == 1)
+                {
+                    if(auth()->user()->volunteer->is_Approved == 1)
+                        return redirect()->route('volunteerDashboard');
+                    else{
+                        Auth::logout();
+                        return view('welcome')->with('message','Your Application is under verification process');
+                        }
+                }
+                else
+                    return redirect('/register/step2/'.auth()->user()->id);
+            }
             else{
                 return redirect()->route('home');
             }
-        }else{
+        }
+        else{
             return redirect()->route('login')->with('error','Email-Address And Password Are Wrong.');
         }
           

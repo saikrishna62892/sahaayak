@@ -13,16 +13,6 @@
     <br>
 	<div class="row">
 		<div class="col-sm-3">
-			<div class="card shadow p-4 mb-5 bg-white rounded">
-				<div class="card-body">
-					<h5 class="card-title" align="center">Visitors</h5>
-					<h1 align="center">2000</h1>
-					<p class="card-text" align="center">Website Visitors</p>
-					<center><a href="https://analytics.google.com/analytics/web/#/report-home/a171070217w237922628p222495327" class="btn btn-primary" target="_blank" style="background-color: #5768ad;">See Analytics</a></center>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-3">
 		    <div class="card shadow p-4 mb-5 bg-white rounded">
 		        <div class="card-body">
 			        <h5 class="card-title" align="center">Users</h5>
@@ -52,6 +42,16 @@
 			    </div>
 			</div>
 		</div>
+        <div class="col-sm-3">
+            <div class="card shadow p-4 mb-5 bg-white rounded">
+                <div class="card-body">
+                    <h5 class="card-title" align="center">Talks</h5>
+                    <h1 align="center"><?php echo e($talks_count); ?></h1>
+                    <p class="card-text" align="center">#expert talks</p>
+                    <center><a href="https://analytics.google.com/analytics/web/#/report-home/a171070217w237922628p222495327" class="btn btn-primary" target="_blank" style="background-color: #5768ad;">See Analytics</a></center>
+                </div>
+            </div>
+        </div>
 	</div>
 </div>
 <br>

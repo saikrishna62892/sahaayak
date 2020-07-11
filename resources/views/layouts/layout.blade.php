@@ -35,33 +35,6 @@
       gtag('config', 'UA-171070217-1');
     </script>
 
-    <style>
-* {
-  box-sizing: border-box;
-}
-
-/* Create two unequal columns that floats next to each other */
-.column {
-  float: left;
-  padding: 10px;
-}
-
-.left {
-  width: 25%;
-}
-
-.right {
-  width: 75%;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-</style>
-
 </head>
 
 <body>
@@ -79,8 +52,7 @@
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__widget">
             <ul>
-                <li>CALL US: + 1 800-567-8990</li>
-                <li>WRITE US: OFFICE@EXAMPLE.COM</li>
+                <li>WRITE US: <a href="mailto:sahaayakofficial@gmail.com" target="_blank" style="color: #5768ad;">sahaayakofficial@gmail.com</li>
             </ul>
             @guest
             <a href="{{ route('login') }}" class="primary-btn">Login</a>
@@ -92,16 +64,25 @@
                 <button class="btn primary-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     @if(auth()->user()->is_Volunteer == 1)
-                    <!--<a class="dropdown-item" href="#">Return to Dashboard</a>-->
+                        @if(auth()->user()->step2_done == 0)
+                        <a class="dropdown-item" href="/register/step2/{{auth()->user()->id}}">Complete step2</a>
+                        @elseif(auth()->user()->volunteer->is_Approved == 0)
+                        <a class="dropdown-item" href="/volunteer/waitingApproval">Return to Dashboard</a>
+                        @else
+                        <a class="dropdown-item" href="/volunteer/home">Return to Dashboard</a>
+                        @endif
                     @endif
-                    <a class="dropdown-item" href="#">Messages</a>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                     </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                    @csrf
+                    </form>
                 </div>
             </div>
+
             @endguest
         </div>
         
@@ -139,7 +120,7 @@
                                 <li><a href="{{ url('news') }}">News</a></li>
                                 <li><a href="#">Hope Box</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('weavesilk') }}">Interactive Drawing</a></li>
+                                        <li><a href="{{ url('interactiveDrawing') }}">Interactive Drawing</a></li>
                                         <li><a href="{{ url('inspire_me') }}">Inspire Me</a></li>
                                         <li><a href="{{ url('video.show') }}">Videos</a></li>
                                         <li><a href="{{ url('playlists') }}">Playlists</a></li>
@@ -171,15 +152,14 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-3">
                         <div class="header__logo">
-                            <a href="{{ url('/') }}"><img data-step="1" data-intro="logo" data-position="right" src="/img/logo.png" alt="Sahaayak" width="240" height="60"></a>
+                            <a href="{{ url('/') }}"><img data-step="1" data-intro="Our Brand new logo and motto which describes how we care about you." data-position="right" src="/img/logo.png" alt="Sahaayak" width="240" height="60"></a>
                         </div>
                     </div>
                     <div class="col-lg-9 col-md-9">
                         <div class="header__top__widget">
                             @guest
                                 <ul>
-                                    <li>CALL US: + 1 800-567-8990</li>
-                                    <li>WRITE US: OFFICE@EXAMPLE.COM</li>
+                                    <li>WRITE US: <a href="mailto:sahaayakofficial@gmail.com" target="_blank" style="color: #5768ad;">sahaayakofficial@gmail.com</li>
                                 </ul>
                                 <a href="{{ route('login') }}" class="primary-btn">Login</a>
                                 @if (Route::has('register'))
@@ -189,20 +169,20 @@
                                 <div class="dropdown">
                                   <button class="btn primary-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</button>
                                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    @if(auth()->user()->is_Volunteer == 1)
-                                    <a class="dropdown-item" href="/home">Return to Dashboard</a>
+                                    @if(auth()->user()->is_Volunteer == 1 )
+                                        @if(auth()->user()->step2_done == 0)
+                                        <a class="dropdown-item" href="/register/step2/{{auth()->user()->id}}">Complete step2</a>
+                                        @elseif(auth()->user()->volunteer->is_Approved == 0)
+                                        <a class="dropdown-item" href="/volunteer/waitingApproval">Return to Dashboard</a>
+                                        @else
+                                        <a class="dropdown-item" href="/volunteer/home">Return to Dashboard</a>
+                                        @endif
                                     @elseif(auth()->user()->is_admin == 1)
-                                    <a class="dropdown-item" href="admin/home">Return to Dashboard</a>
+                                    <a class="dropdown-item" href="/admin/home">Return to Dashboard</a>
                                     @else
-                                    <a class="dropdown-item" href="/home">Return to Dashboard</a>
+                                    <a class="dropdown-item" href="/user/home">Return to Dashboard</a>
                                     @endif
-                                    @if(auth()->user()->is_Volunteer == 1)
-                                    <a class="dropdown-item" href="/home">Notifications</a>
-                                    @elseif(auth()->user()->is_admin == 1)
-                                    <a class="dropdown-item" href="admin/home">Notifications</a>
-                                    @else
-                                    <a class="dropdown-item" href="/home">Notifications</a>
-                                    @endif
+                                
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
@@ -262,8 +242,7 @@
                                 <li><a href="{{ route('displayNews') }}">News</a></li>
                                 <li><a href="#">Hope Box</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('weavesilk') }}">Interactive Drawing</a></li>
-                                        <li><a href="{{ url('worry') }}">worry</a></li>
+                                        <li><a href="{{ url('interactiveDrawing') }}">Interactive Drawing</a></li>
                                         <li><a href="{{ url('inspire_me') }}">Inspire Me</a></li>
                                         <li><a href="/videos">Videos</a></li>
                                         <li><a href="{{ url('playlists') }}">Playlists</a></li>
@@ -288,7 +267,9 @@
 
 
 
-    @yield('content');
+    @yield('content')
+
+    <br>
 
 
 
@@ -304,28 +285,21 @@
                             <li><i class="fa fa-location-arrow"></i> NIT Calicut</li>
                         </ul>
                         <h5 style="color:white;">Subscribe</h5><br>
-                        <!--<form action="/home/subscribe" method="post" class="subscribe-form">
-                            @csrf
-                            <input type="email" placeholder="Your Email" name="subscriberEmail">
-                            @error('subscriberEmail')
-                            {{$messsage}}
-                            @enderror
-                            <button type="submit"><i class="fa fa-send"></i></button>
-                        </form>-->
+
                         <a href="/home/subscribe" ><i class="fa fa-send"></i></a>
+
                     </div>
                 </div>
-                <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
+                <div class="col-lg-3 offset-lg-1 col-md-3 col-sm-6" data-step="10" data-intro="This section provides information about different helpline numbers across India." data-position="bottom-middle-aligned">
                     <div class="footer__widget">
                         <h5>Helplines</h5>
                         <ul>
-                            <li><a href="#">Helpline 1</a></li>
-                            <li><a href="#">Helpline 2</a></li>
-                            <li><a href="#">Helpline 3</a></li>
-                            <li><a href="#">Helpline 4</a></li>
-                            <li><a href="#">Helpline 5</a></li>
-                            <li><a href="#">Helpline 6</a></li>
-                            <li><a href="#">More</a></li>
+                            <li><a href="tel:01140769002" target="_blank">Delhi : 011-4076 9002</a> </li>
+                            <li><a href="tel: 7893078930" target="_blank">Andhra : 78930-78930</a></li>
+                            <li><a href="tel: 104" target="_blank">Karnataka : 104</a></li>
+                            <li><a href="tel: 04712552056" target="_blank">Kerala : 0471-2552056</a></li>
+                            <li><a href="tel: 04842361160" target="_blank">Kochi : 0484-2361160</a></li>
+                            <li><a href="https://www.thehindu.com/news/national/suicide-prevention-helplines/article25612310.ece" target="_blank">More</a></li>
                         </ul>
                     </div>
                 </div>
@@ -337,15 +311,14 @@
                             <li><a href="{{ url('about#vision')}}">Our Vision</a></li>
                             <li><a href="{{ url('about#stats')}}">Statistics</a></li>
                             <li><a href="{{ url('about#impact')}}">Impact</a></li>
-                            <li><a href="{{ url('about#gallery')}}">Gallery</a></li>
-                            <li><a href="{{ url('about#faq')}}">FAQ</a></li>
+                            <li><a href="{{ url('about#faq')}}">FAQ's</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__widget">
                         <h5>Connect Us</h5>
-                        <div class="footer__copyright__social" align="left">
+                        <div class="footer__copyright__social" align="left" data-step="11" data-intro="Social Network handles for our website" data-position="left">
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-google"></i></a>
                             <a href="#"><i class="fa fa-instagram"></i></a>
@@ -353,17 +326,17 @@
                             <a href="#"><i class="fa fa-linkedin"></i></a>
                         </div>
                         <br>
-                        <h5>Write to Us</h5>
+                        <h5 >Write to Us</h5>
                         <!-- Leave Comment Begin -->
-                        <div class="leave__comment__text">
+                        <div class="leave__comment__text" data-step="12" data-intro="Here you can give us valuable information & suggestions for the development of community and website." data-position="bottom-middle-aligned">
                             <form action="/suggestion_controller" method="get">
                             @csrf
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
-                                        <input type="text" placeholder="Name*" name="name">
+                                        <input type="text" placeholder="Name" name="name">
                                     </div>
                                     <div class="col-lg-6 col-md-6">
-                                        <input type="text" placeholder="Email*" name="email">
+                                        <input type="text" placeholder="Email" name="email">
                                     </div>
                                     <div class="col-lg-12 text-center">
                                     <input type="text" placeholder="Comment" name="comment">

@@ -12,9 +12,11 @@ use App\Diary;
 use App\Appointment;
 use App\Comment;
 use App\Worry;
+
 use App\Subscription;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
+
 {
     use Notifiable;
 
@@ -23,10 +25,8 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $guarded=[];
-
     protected $fillable = [
-        'name','email', 'googleid','facebookid'
+        'name','email','password','is_Volunteer', 'googleid','facebookid'
     ];
 
     /**

@@ -12,7 +12,15 @@ use App\User;
 use App\Traits\NotificationTrait;
 class QuoteController extends Controller
 {
+
     use NotificationTrait;
+
+
+    public function __construct()
+    {
+        $this->middleware(['auth','verified']);
+        $this->middleware(['is_admin'])->only(['save','deletequote','editquote','update']);
+    }
 
     public function save(Request $request)
     {

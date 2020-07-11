@@ -24,14 +24,14 @@
     <!-- modernizr css -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171070217-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171070217-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'UA-171070217-1');
-</script>
+      gtag('config', 'UA-171070217-1');
+    </script>
     <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
@@ -69,12 +69,13 @@
                     <nav>
                         <ul class="metismenu" id="menu">
                             <li>
-                                <a href="javascript:void(0)" aria-expanded="false"><i class="ti-dashboard"></i><span>Dashboard</span></a>
-                                <ul class="collapse">
-                                    <li class="active"><a href="#">D opt1</a></li>
-                                    <li><a href="index2.html">D opt2</a></li>
-                                    <li><a href="index3.html">D opt3</a></i>
-                                </ul>
+                                @if(auth()->user()->is_Volunteer == 1)
+                                    <a href="/home" aria-expanded="false"><i class="ti-settings"></i><span>Dashboard</span></a>
+                                @elseif(auth()->user()->is_admin == 1)
+                                    <a href="/admin/home" aria-expanded="false"><i class="ti-settings"></i><span>Dashboard</span></a>
+                                @else
+                                    <a href="/home" aria-expanded="false"><i class="ti-settings"></i><span>Dashboard</span></a>
+                                @endif                                
                             </li>
                             <li>
                                 <a href="{{ url('about') }}" aria-expanded="true"><i class="ti-dashboard"></i><span>About</span></a>
@@ -94,7 +95,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layout-sidebar-left"></i><span>Assessment</span></a>
+                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layers"></i><span>Assessment</span></a>
                                 <ul class="collapse">
                                     <li><a href="index.html">Depression</a></li>
                                     <li><a href="index3-horizontalmenu.html">Suicide</a></li>
@@ -108,20 +109,20 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="{{ url('/#talk_to_us') }}" aria-expanded="true"><i class="ti-dashboard"></i><span>Talk to Us</span></a>
+                                <a href="{{ url('/#talk_to_us') }}" aria-expanded="true"><i class="ti-microphone"></i><span>Talk to Us</span></a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layout-sidebar-left"></i><span>Blog</span></a>
+                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-server"></i><span>Blog</span></a>
                                 <ul class="collapse">
                                     <li><a href="{{ url('displayStories') }}">Discover Stories</a></li>
                                     <li><a href="{{ url('displayTalks') }}">Expert Talks</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="{{ url('news') }}" aria-expanded="true"><i class="ti-dashboard"></i><span>News</span></a>
+                                <a href="{{ url('news') }}" aria-expanded="true"><i class="ti-world"></i><span>News</span></a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-thought"></i><span>Hope Box</span></a>
+                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-heart"></i><span>Hope Box</span></a>
                                 <ul class="collapse">
                                         <li><a href="{{ url('weavesilk') }}">Interactive Drawing</a></li>
                                         <li><a href="{{ url('inspire_me') }}">Inspire Me</a></li>
@@ -130,7 +131,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layout-sidebar-left"></i><span>Our Team</span></a>
+                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-light-bulb"></i><span>Our Team</span></a>
                                 <ul class="collapse">
                                     <li><a href="{{ url('team#volunteers') }}">Volunteers</a></li>
                                         <li><a href="{{ url('team#therapists') }}">Therapists</a></li>
@@ -207,8 +208,6 @@
                                 <li>
                                     <h4 style="color: #5768ad;" class="user-name dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->name }} <i class="fa fa-angle-down"></i></h4>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Message</a>
-                                        <a class="dropdown-item" href="#">Settings</a>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">

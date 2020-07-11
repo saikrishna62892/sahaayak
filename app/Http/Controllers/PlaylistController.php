@@ -12,16 +12,22 @@ use App\Notifications\NewsNotification;
 use App\Traits\NotificationTrait;
 class PlaylistController extends Controller
 {
+
   use NotificationTrait;
   
+
+    public function __construct()
+    {
+        $this->middleware(['auth','verified']);
+        $this->middleware(['is_user'])->only(['index']);
+        $this->middleware(['is_admin'])->only(['save','deleteplaylist','editplaylist','update']);
+    }
+
   public function index(){
     $playlist = Playlist::orderBy("created_at","desc")->paginate(6);
     return view('playlists')->with(compact('playlist'));
 
   }
-  
-  
-  
   
   public function save(Request $request)
   {

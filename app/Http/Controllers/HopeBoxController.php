@@ -7,7 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Video;
 class HopeBoxController extends Controller
-{
+{   
+    
 	public function getEmbedHtml($urls)
 	{
 		$i=0;$j=0;$count=0;

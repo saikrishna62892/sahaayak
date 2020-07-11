@@ -10,7 +10,16 @@ use App\User;
 use App\Traits\NotificationTrait;
 class VideoController extends Controller
 {
+
     use NotificationTrait;
+
+
+    public function __construct()
+    {
+        $this->middleware(['auth','verified']);
+        $this->middleware('is_admin')->only(['create','store','deletevideo','editvideo','update']);
+    }
+    
 
     public function create()
     {

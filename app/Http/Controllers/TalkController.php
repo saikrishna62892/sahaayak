@@ -13,7 +13,16 @@ use App\Traits\NotificationTrait;
 
 class TalkController extends Controller
 {
+
     use NotificationTrait;
+
+    public function __construct()
+    {
+        $this->middleware(['auth','verified']);
+        
+        $this->middleware(['is_admin'])->only(['index','store','deletetalk']);
+    }
+
 
     public function index()
     {

@@ -13,9 +13,9 @@ class QuestionnaireController extends Controller
 {
     use NotificationTrait;
 
-    public function __construct()
+   public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth','verified','is_admin']);
     }
 
     public function create()

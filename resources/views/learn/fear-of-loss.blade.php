@@ -12,7 +12,7 @@
 @section('learncontent')
 
 <div class="classes__details__large">
-    <img src="/img/classes-details/cd-loss1.jpg" alt="" width="750" height="400">
+    <img src="/img/classes-details/cd-loss.jpg" alt="" width="750" height="400">
         <span>Understanding fear of loss</span>
 </div>
 
