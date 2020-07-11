@@ -9,7 +9,7 @@ use Auth;
 use DB;
 use PDF;
 use App\Notifications\AppointmentReceivedNotification;
-use App\Notifications\appointmentAcceptedNotification;
+use App\Notifications\AppointmentAcceptedNotification;
 use App\User;
 use App\Traits\NotificationTrait;
 
@@ -20,7 +20,10 @@ class appointment_controller extends Controller
 
     public function __construct()
     {
-        $this->middleware(['auth','verified','is_user']);
+        $this->middleware(['auth','verified']);
+        $this->middleware('is_user')->only(['save']);
+        $this->middleware('is_volunteer')->only(['appointmentAccepted']);
+
     }
     function save(Request $req)
     {
@@ -45,27 +48,14 @@ class appointment_controller extends Controller
         return redirect()->back()->with('message', 'Posted Succcesfully'); 
     }
 
-    public function appointmentAccepted(Appointment $appointment)
+     public function appointmentAccepted(Appointment $appointment)
     {
         $appointment->update(['volunteer_id' => auth()->user()->volunteer->id]);
-        $this->sendAppointmentAcceptedNotif($appointment->user_id,$appointment->name);
+        $this->sendAppointmentAcceptedNotif($appointment->user_id,$appointment);
         return redirect()->back();
 
     }
 
-    public function reportForm(Appointment $appointment)
-    {
-        return view('appointment.reportForm',compact('appointment'));
-    }
-
-    public function generateReport()
-    {
-        $data = request()->all();
-        $appointment = Appointment::find($data['appointment_id']);
-        $data['user_id'] = $appointment->user_id;
-        $data['volunteer_id'] = $appointment->volunteer_id;
-        $pdf = PDF::loadView('appointment.generateReport',compact('data'));
-        return $pdf->download('report.pdf');
-    }
+    
 
 }
