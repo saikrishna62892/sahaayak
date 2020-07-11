@@ -6,7 +6,19 @@
 
     <?php $__env->startSection('content'); ?>
 
+    <script>
+        function truncateText(selector, maxLength) {
+        var element = document.querySelector(selector),
+            truncated = element.innerText;
 
+        if (truncated.length > maxLength) {
+            truncated = truncated.substr(0,maxLength) + '...';
+        }
+        return truncated;
+
+        }
+        document.querySelector('p').innerText = truncateText('p', 107);       
+    </script>
 
     <!-- Hero Section Begin -->
     <section class="hero">
@@ -211,7 +223,7 @@
                                 <div class="classes__item__text">
                                     <p><?php echo e($news->source); ?> </p>
                                     <h4><?php echo e($news->headline); ?></h4>
-                                    <h6><?php echo e($news->content); ?></span></h6>
+                                    <p align="justify" style="overflow: hidden;display: -webkit-box;-webkit-line-clamp: 7;-webkit-box-orient: vertical;"><?php echo e($news->content); ?></p>
                                     <a href="<?php echo e($news->link); ?>" class="class-btn">Know More</a>
                                 </div>
                             </div>
@@ -236,7 +248,7 @@
                 <div class="col-lg-7">
                     <div class="home__about__pic">
                         <div class="home__about__pic__item large-item set-bg">
-                            <img src="img/about/about-11.jpg" alt="" width="345" height="620">
+                            <img src="img/about/about-1.jpg" alt="" width="345" height="620">
                         </div>
                         <div class="home__about__pic__item">
                             <div class="home__about__pic__item__inner set-bg" data-setbg="img/about/about-2.jpg">
@@ -272,7 +284,7 @@
     <!-- About Section End -->
 
     <!-- Testimonial Section Begin -->
-   <!-- <section class="testimonial spad">
+    <section class="testimonial spad">
         <div class="container" data-step="8" data-intro="This section describes the testimonies given by honourble personalities." data-position="bottom-middle-aligned">
             <div class="testimonial__slider owl-carousel">
                 <div class="testimonial__item">
@@ -280,7 +292,7 @@
                         <div class="col-lg-10">
                             <div class="testimonial__text">
                                 <p>Testimonal about our website which includes user experience of our website,thoughts and reviews about our website.</p>
-                                <img src="img/testimonial/testimonial-1.png" alt="">
+                                <img src="img/testimonial/default.PNG" alt="">
                                 <h5>person name<span>- profession</span></h5>
                             </div>
                         </div>
@@ -291,7 +303,7 @@
                         <div class="col-lg-10">
                             <div class="testimonial__text">
                                 <p>Testimonal about our website which includes user experience of our website,thoughts and reviews about our website.</p>
-                                <img src="img/testimonial/testimonial-1.png" alt="">
+                                <img src="img/testimonial/default.PNG" alt="">
                                 <h5>person name<span>- profession</span></h5>
                             </div>
                         </div>
@@ -302,7 +314,7 @@
                         <div class="col-lg-10">
                             <div class="testimonial__text">
                                 <p>Testimonal about our website which includes user experience of our website,thoughts and reviews about our website.</p>
-                                <img src="img/testimonial/testimonial-1.png" alt="">
+                                <img src="img/testimonial/default.PNG" alt="">
                                 <h5>person name<span>- profession</span></h5>
                             </div>
                         </div>
@@ -313,7 +325,7 @@
                         <div class="col-lg-10">
                             <div class="testimonial__text">
                                 <p>Testimonal about our website which includes user experience of our website,thoughts and reviews about our website.</p>
-                                <img src="img/testimonial/testimonial-1.png" alt="">
+                                <img src="img/testimonial/default.PNG" alt="">
                                 <h5>person name<span>- profession</span></h5>
                             </div>
                         </div>
@@ -321,7 +333,7 @@
                 </div>
             </div>
         </div>
-    </section>-->
+    </section>
     <!-- Testimonial Section End -->
     <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/welcome.blade.php ENDPATH**/ ?>
