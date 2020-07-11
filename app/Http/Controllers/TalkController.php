@@ -13,6 +13,7 @@ class TalkController extends Controller
     public function __construct()
     {
         $this->middleware(['auth','verified']);
+        
         $this->middleware(['is_admin'])->only(['index','store','deletetalk']);
     }
 
