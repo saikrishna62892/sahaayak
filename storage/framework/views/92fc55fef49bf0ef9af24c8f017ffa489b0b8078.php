@@ -203,7 +203,7 @@
                     <div class="col-lg-6">
                         <div class="team__item">
                             <div class="team__item__pic">
-                                <img src="/img/team/sai1.png" alt="" height="350">
+                                <img src="/img/team/john.png" alt="" height="350">
                             </div>
                             <div class="team__item__text">
                                 <div class="team__item__title">
