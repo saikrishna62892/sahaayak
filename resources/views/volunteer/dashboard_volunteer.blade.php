@@ -1,8 +1,7 @@
 @extends('layouts.dashboard')
 
-@section('name')
-    {{ $user->name }}
-@endsection
+
+
 	@section('content')
 	<br>	
 	<div class="container" id="stats">

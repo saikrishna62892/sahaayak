@@ -7,9 +7,14 @@ use App\Talk;
 use App\News;
 use DB;
 use Auth;
+use App\Notifications\TalksNotification;
+use App\User;
+use App\Traits\NotificationTrait;
 
 class TalkController extends Controller
 {
+    use NotificationTrait;
+
     public function index()
     {
     	return view('talks.create');
@@ -23,7 +28,7 @@ class TalkController extends Controller
     	$temp++;
 
     	$data = request()->validate([
-    		'title' => 'required|min:20',
+    		'title' => 'required|min:5',
     		'content' => 'required',
     		'category' => 'required',
             'image' => 'file|image|max:3000',
@@ -43,6 +48,7 @@ class TalkController extends Controller
         $talk->image=$name;
     }
     $talk->save();
+    $this->sendTalksNotif($talk->title);
     return redirect()->back()->with('message', 'Posted Succcesfully');
 	}
 

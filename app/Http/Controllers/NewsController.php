@@ -6,11 +6,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\News;
-use App\Notifications\QuestionnaireNotification;
+use App\Notifications\NewsNotification;
 use App\User;
-
+use App\Traits\NotificationTrait;
 class NewsController extends Controller
 {
+    use NotificationTrait;
     //
 	function index()
 	{
@@ -25,6 +26,7 @@ class NewsController extends Controller
 
     public function store(Request $request)
     {
+        
     	$news= new News();
 
     	$data=request()->validate(
@@ -49,13 +51,18 @@ class NewsController extends Controller
     	$news->content=$request->content;
     	$news->newsurl=$request->newsurl;
 
-    	$users=User::all();
-    foreach ($users as $user) {
+        
+    	//$users=User::all();
+    //foreach ($users as $user) {
 
-        $user->notify(new QuestionnaireNotification($news->newsurl));
-    }
+       // $user->notify(new QuestionnaireNotification($news->newsurl));
+   // }
+
+
+
     	//dd(request()->file('image'));
 		$news->save();
+        $this->sendNewsNotif($news->newsurl);
 		#return $news;
     	#return redirect()->back()->with('message', 'Posted Succcesfully');
        

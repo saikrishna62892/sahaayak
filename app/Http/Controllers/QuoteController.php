@@ -7,8 +7,13 @@ use Illuminate\Http\Request;
 use App\Quote;
 use Auth;
 use DB;
+use App\Notifications\InspiremeNotification;
+use App\User;
+use App\Traits\NotificationTrait;
 class QuoteController extends Controller
 {
+    use NotificationTrait;
+
     public function save(Request $request)
     {
         $quote= new Quote();
@@ -39,6 +44,7 @@ class QuoteController extends Controller
         $quote->Image=$name;
     }
     $quote->save();
+    $this->sendInspiremeNotif($quote->Quote);
     return redirect()->back()->with('message', 'Posted Succcesfully');
 	}
     public function deletequote(Quote $quoteid){

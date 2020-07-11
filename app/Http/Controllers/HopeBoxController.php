@@ -32,9 +32,9 @@ class HopeBoxController extends Controller
 
     public function displayVideos()
     {
-    	$urls=Video::select('videoURL')->get();
+    	$urls=Video::select('videoURL')->paginate(2);
     	$embedURLs = $this->getEmbedHtml($urls);
     	//dd($embedURLs);
-    	return view('video.show',compact('embedURLs'));
+    	return view('video.show',compact('embedURLs','urls'));
     }
 }

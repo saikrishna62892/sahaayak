@@ -126,7 +126,7 @@ Route::get('admin/home/videos/create','VideoController@create');
 Route::post('admin/home/videos','VideoController@store');
 
 //Subscription Routes
-Route::post('/home/subscribe','SubscriptionController@store');
+Route::get('/home/subscribe','SubscriptionController@store');
 
 //Registration Routes
 Route::get('/register/step2/{user}','VolunteerController@step2');
@@ -180,7 +180,7 @@ Route::get('markAsRead',function(){
 
 Route::get('/home/abc',function(){
 
-    #auth()->user()->unreadNotifications->markAsRead();
+    auth()->user()->unreadNotifications->markAsRead();
     #return redirect()->back();
    return redirect()->back();
 

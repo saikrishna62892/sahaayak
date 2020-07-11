@@ -304,14 +304,15 @@
                             <li><i class="fa fa-location-arrow"></i> NIT Calicut</li>
                         </ul>
                         <h5 style="color:white;">Subscribe</h5><br>
-                        <form action="/home/subscribe" method="post" class="subscribe-form">
+                        <!--<form action="/home/subscribe" method="post" class="subscribe-form">
                             @csrf
                             <input type="email" placeholder="Your Email" name="subscriberEmail">
                             @error('subscriberEmail')
                             {{$messsage}}
                             @enderror
                             <button type="submit"><i class="fa fa-send"></i></button>
-                        </form>
+                        </form>-->
+                        <a href="/home/subscribe" ><i class="fa fa-send"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">

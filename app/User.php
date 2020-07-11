@@ -12,6 +12,8 @@ use App\Diary;
 use App\Appointment;
 use App\Comment;
 use App\Worry;
+use App\Subscription;
+
 class User extends Authenticatable
 {
     use Notifiable;
@@ -85,5 +87,9 @@ class User extends Authenticatable
     public function worries()
     {
         return $this->hasMany(Worry::class);
+    }
+    public function subscription()
+    {
+        return $this->hasOne(Subscription::class);
     }
 }

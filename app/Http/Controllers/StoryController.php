@@ -48,7 +48,7 @@ class StoryController extends Controller
 
 	public function display()
 	{
-		$stories=Story::orderBy('created_at','desc')->get();
+		$stories=Story::orderBy('created_at','desc')->paginate(6);
 
 		//counts will happen here
 		$category=['Depression','Suicide','Stress','Stigma','Healthy Sleep','Mental Illness','Hopelessness','Fear of Loss','Social Isolation'];

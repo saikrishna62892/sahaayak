@@ -77,6 +77,7 @@
                                                         </div>
                                                     </div>
                                                 @endforeach
+                                                 <div class="col-lg-12"><span>{{$stories->links()}}</span></div>
                                             </div>
                                         </div>
                                     </div>
