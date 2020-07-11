@@ -12,7 +12,7 @@ class QuestionnaireController extends Controller
 
    public function __construct()
     {
-        $this->middleware(['auth','verified']);
+        $this->middleware(['auth','verified','is_admin']);
     }
 
     public function create()

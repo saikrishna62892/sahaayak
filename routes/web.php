@@ -131,7 +131,7 @@ Route::get('admin/home/videos/create','VideoController@create');
 Route::post('admin/home/videos','VideoController@store');
 
 //Subscription Routes
-Route::post('/home/subscribe','SubscriptionController@store');
+Route::get('/home/subscribe','SubscriptionController@store');
 
 //Registration Routes
 Route::get('/register/step2/{user}','VolunteerController@step2');

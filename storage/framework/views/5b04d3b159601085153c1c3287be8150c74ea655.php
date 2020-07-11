@@ -159,8 +159,5 @@ unset($__errorArgs, $__bag); ?>
 			</div>
 		</div>
 	</div>
-<script>
-	window.onunload = function(){ <?php echo e(Auth::logout()); ?> };
-</script>
 	<?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.reg_forms_layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Ganesh\Desktop\dileep\sahaayak\resources\views/volunteer/volunteer_signup.blade.php ENDPATH**/ ?>

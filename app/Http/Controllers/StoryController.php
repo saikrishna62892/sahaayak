@@ -10,6 +10,12 @@ use App\News;
 
 class StoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth','verified']);
+        $this->middleware(['is_user'])->only(['index','store','display','incrementLike']);
+    }
+
     public function index()
     {
     	return view('stories.create');

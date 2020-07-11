@@ -13,7 +13,7 @@ class diary_controller extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth','verified']);
+        $this->middleware(['auth','verified','is_user']);
     }
     
     function save(Request $req)

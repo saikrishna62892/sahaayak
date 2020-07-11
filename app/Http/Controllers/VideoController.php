@@ -10,6 +10,7 @@ class VideoController extends Controller
     public function __construct()
     {
         $this->middleware(['auth','verified']);
+        $this->middleware('is_admin')->only(['create','store','deletevideo','editvideo','update']);
     }
     
     public function create()

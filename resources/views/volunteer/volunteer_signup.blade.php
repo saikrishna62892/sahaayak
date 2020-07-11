@@ -117,7 +117,4 @@
 			</div>
 		</div>
 	</div>
-<script>
-	window.onunload = function(){ {{Auth::logout()}} };
-</script>
 	@endsection
