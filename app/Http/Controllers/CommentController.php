@@ -8,7 +8,7 @@ class CommentController extends Controller
 {
 	public function __construct()
     {
-        $this->middleware(['auth','verified']);
+        $this->middleware(['auth','verified','is_user']);
     }
 
     public function store($learn , $learnID)

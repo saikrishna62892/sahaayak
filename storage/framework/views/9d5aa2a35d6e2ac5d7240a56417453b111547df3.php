@@ -7,8 +7,8 @@
     <meta name="keywords" content="Directing, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sahaayak</title>
-    <link rel="icon" href="/img/icon.png" type="image/gif">
+    <title>Sahaayak | <?php echo $__env->yieldContent('name'); ?></title>
+    <link rel="icon" type="image/png" href="/img/icon.png"/>
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
@@ -35,33 +35,6 @@
       gtag('config', 'UA-171070217-1');
     </script>
 
-    <style>
-* {
-  box-sizing: border-box;
-}
-
-/* Create two unequal columns that floats next to each other */
-.column {
-  float: left;
-  padding: 10px;
-}
-
-.left {
-  width: 25%;
-}
-
-.right {
-  width: 75%;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-</style>
-
 </head>
 
 <body>
@@ -79,8 +52,7 @@
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__widget">
             <ul>
-                <li>CALL US: + 1 800-567-8990</li>
-                <li>WRITE US: OFFICE@EXAMPLE.COM</li>
+                <li>WRITE US: <a href="mailto:sahaayakofficial@gmail.com" target="_blank" style="color: #5768ad;">sahaayakofficial@gmail.com</li>
             </ul>
             <?php if(auth()->guard()->guest()): ?>
             <a href="<?php echo e(route('login')); ?>" class="primary-btn">Login</a>
@@ -149,7 +121,7 @@
                                 <li><a href="<?php echo e(url('news')); ?>">News</a></li>
                                 <li><a href="#">Hope Box</a>
                                     <ul class="dropdown">
-                                        <li><a href="<?php echo e(url('weavesilk')); ?>">Interactive Drawing</a></li>
+                                        <li><a href="<?php echo e(url('interactiveDrawing')); ?>">Interactive Drawing</a></li>
                                         <li><a href="<?php echo e(url('inspire_me')); ?>">Inspire Me</a></li>
                                         <li><a href="<?php echo e(url('video.show')); ?>">Videos</a></li>
                                         <li><a href="<?php echo e(url('playlists')); ?>">Playlists</a></li>
@@ -181,15 +153,14 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-3">
                         <div class="header__logo">
-                            <a href="<?php echo e(url('/')); ?>"><img data-step="1" data-intro="logo" data-position="right" src="/img/logo.png" alt="Sahaayak" width="240" height="60"></a>
+                            <a href="<?php echo e(url('/')); ?>"><img data-step="1" data-intro="Our Brand new logo and motto which describes how we care about you." data-position="right" src="/img/logo.png" alt="Sahaayak" width="240" height="60"></a>
                         </div>
                     </div>
                     <div class="col-lg-9 col-md-9">
                         <div class="header__top__widget">
                             <?php if(auth()->guard()->guest()): ?>
                                 <ul>
-                                    <li>CALL US: + 1 800-567-8990</li>
-                                    <li>WRITE US: OFFICE@EXAMPLE.COM</li>
+                                    <li>WRITE US: <a href="mailto:sahaayakofficial@gmail.com" target="_blank" style="color: #5768ad;">sahaayakofficial@gmail.com</li>
                                 </ul>
                                 <a href="<?php echo e(route('login')); ?>" class="primary-btn">Login</a>
                                 <?php if(Route::has('register')): ?>
@@ -273,8 +244,7 @@
                                 <li><a href="<?php echo e(route('displayNews')); ?>">News</a></li>
                                 <li><a href="#">Hope Box</a>
                                     <ul class="dropdown">
-                                        <li><a href="<?php echo e(url('weavesilk')); ?>">Interactive Drawing</a></li>
-                                        <li><a href="<?php echo e(url('worry')); ?>">worry</a></li>
+                                        <li><a href="<?php echo e(url('interactiveDrawing')); ?>">Interactive Drawing</a></li>
                                         <li><a href="<?php echo e(url('inspire_me')); ?>">Inspire Me</a></li>
                                         <li><a href="/videos">Videos</a></li>
                                         <li><a href="<?php echo e(url('playlists')); ?>">Playlists</a></li>
@@ -299,7 +269,9 @@
 
 
 
-    <?php echo $__env->yieldContent('content'); ?>;
+    <?php echo $__env->yieldContent('content'); ?>
+
+    <br>
 
 
 
@@ -311,40 +283,24 @@
                     <div class="footer__about">
                         <img src="/img/footer-logo.png" alt="Sahaayak" width="240" height="60">
                         <ul class="footer-address">
-                            <li><i class="fa fa-phone"></i> (01) 436 8888</li>
-                            <li><i class="fa fa-envelope"></i> hello@zogin.com</li>
-                            <li><i class="fa fa-location-arrow"></i> 828 Granville Lights Suite 466</li>
+                            <li><i class="fa fa-envelope"></i> sahaayakofficial@gmail.com</li>
+                            <li><i class="fa fa-location-arrow"></i> NIT Calicut</li>
                         </ul>
                         <h5 style="color:white;">Subscribe</h5><br>
-                        <form action="/home/subscribe" method="post" class="subscribe-form">
-                            <?php echo csrf_field(); ?>
-                            <input type="email" placeholder="Your Email" name="subscriberEmail">
-                            <?php $__errorArgs = ['subscriberEmail'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                            <?php echo e($messsage); ?>
-
-                            <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                            <button type="submit"><i class="fa fa-send"></i></button>
-                        </form>
+                        
+                        <a href="/home/subscribe"><i class="fa fa-send"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
+                <div class="col-lg-3 offset-lg-1 col-md-3 col-sm-6" data-step="10" data-intro="This section provides information about different helpline numbers across India." data-position="bottom-middle-aligned">
                     <div class="footer__widget">
                         <h5>Helplines</h5>
                         <ul>
-                            <li><a href="#">Helpline 1</a></li>
-                            <li><a href="#">Helpline 2</a></li>
-                            <li><a href="#">Helpline 3</a></li>
-                            <li><a href="#">Helpline 4</a></li>
-                            <li><a href="#">Helpline 5</a></li>
-                            <li><a href="#">Helpline 6</a></li>
-                            <li><a href="#">More</a></li>
+                            <li><a href="tel:01140769002" target="_blank">Delhi : 011-4076 9002</a> </li>
+                            <li><a href="tel: 7893078930" target="_blank">Andhra : 78930-78930</a></li>
+                            <li><a href="tel: 104" target="_blank">Karnataka : 104</a></li>
+                            <li><a href="tel: 04712552056" target="_blank">Kerala : 0471-2552056</a></li>
+                            <li><a href="tel: 04842361160" target="_blank">Kochi : 0484-2361160</a></li>
+                            <li><a href="https://www.thehindu.com/news/national/suicide-prevention-helplines/article25612310.ece" target="_blank">More</a></li>
                         </ul>
                     </div>
                 </div>
@@ -352,20 +308,18 @@ unset($__errorArgs, $__bag); ?>
                     <div class="footer__widget">
                         <h5>About Us</h5>
                         <ul>
-                            <li><a href="#">Our Mission</a></li>
-                            <li><a href="#">Our Vision</a></li>
-                            <li><a href="#">Statistics</a></li>
-                            <li><a href="#">What we offer</a></li>
-                            <li><a href="#">Impact</a></li>
-                            <li><a href="#">Gallery</a></li>
-                            <li><a href="#">FAQ</a></li>
+                            <li><a href="<?php echo e(url('about#mission')); ?>">Our Mission</a></li>
+                            <li><a href="<?php echo e(url('about#vision')); ?>">Our Vision</a></li>
+                            <li><a href="<?php echo e(url('about#stats')); ?>">Statistics</a></li>
+                            <li><a href="<?php echo e(url('about#impact')); ?>">Impact</a></li>
+                            <li><a href="<?php echo e(url('about#faq')); ?>">FAQ's</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__widget">
                         <h5>Connect Us</h5>
-                        <div class="footer__copyright__social" align="left">
+                        <div class="footer__copyright__social" align="left" data-step="11" data-intro="Social Network handles for our website" data-position="left">
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-google"></i></a>
                             <a href="#"><i class="fa fa-instagram"></i></a>
@@ -373,17 +327,17 @@ unset($__errorArgs, $__bag); ?>
                             <a href="#"><i class="fa fa-linkedin"></i></a>
                         </div>
                         <br>
-                        <h5>Write to Us</h5>
+                        <h5 >Write to Us</h5>
                         <!-- Leave Comment Begin -->
-                        <div class="leave__comment__text">
+                        <div class="leave__comment__text" data-step="12" data-intro="Here you can give us valuable information & suggestions for the development of community and website." data-position="bottom-middle-aligned">
                             <form action="/suggestion_controller" method="get">
                             <?php echo csrf_field(); ?>
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
-                                        <input type="text" placeholder="Name*" name="name">
+                                        <input type="text" placeholder="Name" name="name">
                                     </div>
                                     <div class="col-lg-6 col-md-6">
-                                        <input type="text" placeholder="Email*" name="email">
+                                        <input type="text" placeholder="Email" name="email">
                                     </div>
                                     <div class="col-lg-12 text-center">
                                     <input type="text" placeholder="Comment" name="comment">

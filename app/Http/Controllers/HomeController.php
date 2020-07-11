@@ -31,16 +31,18 @@ class HomeController extends Controller
      *
      * @return void
      */ 
-    public function __construct()
-    {
-        $this->middleware(['auth','verified']);
-    }
 
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+    public function __construct()
+    {
+        $this->middleware(['auth','verified']);
+    }
+    
     public function dialyQuote(Request $request){
         $quote= new dialyquotes();
         $quote->quote=$request->quote;

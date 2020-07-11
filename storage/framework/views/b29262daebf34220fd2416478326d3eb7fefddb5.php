@@ -1,5 +1,10 @@
 
 
+<?php $__env->startSection('name'); ?>
+    <?php echo e($admin_name); ?>
+
+<?php $__env->stopSection(); ?>
+
 <?php $__env->startSection('content'); ?>
 		
 <br>	
@@ -7,16 +12,6 @@
     <h4 align="center">Site Analytics</h4>
     <br>
 	<div class="row">
-		<div class="col-sm-3">
-			<div class="card shadow p-4 mb-5 bg-white rounded">
-				<div class="card-body">
-					<h5 class="card-title" align="center">Visitors</h5>
-					<h1 align="center">2000</h1>
-					<p class="card-text" align="center">Website Visitors</p>
-					<center><a href="https://analytics.google.com/analytics/web/#/report-home/a171070217w237922628p222495327" class="btn btn-primary" target="_blank" style="background-color: #5768ad;">See Analytics</a></center>
-				</div>
-			</div>
-		</div>
 		<div class="col-sm-3">
 		    <div class="card shadow p-4 mb-5 bg-white rounded">
 		        <div class="card-body">
@@ -47,6 +42,16 @@
 			    </div>
 			</div>
 		</div>
+        <div class="col-sm-3">
+            <div class="card shadow p-4 mb-5 bg-white rounded">
+                <div class="card-body">
+                    <h5 class="card-title" align="center">Talks</h5>
+                    <h1 align="center"><?php echo e($talks_count); ?></h1>
+                    <p class="card-text" align="center">#expert talks</p>
+                    <center><a href="https://analytics.google.com/analytics/web/#/report-home/a171070217w237922628p222495327" class="btn btn-primary" target="_blank" style="background-color: #5768ad;">See Analytics</a></center>
+                </div>
+            </div>
+        </div>
 	</div>
 </div>
 <br>
@@ -170,6 +175,9 @@
                         <li>
                             <a data-toggle="tab" href="#shared_playlists" role="tab">Playlists</a>
                         </li>
+                        <li>
+                            <a data-toggle="tab" href="#suggestions" role="tab">Suggestions</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -213,9 +221,9 @@
                     <!-- shared_playlists form end -->   
 
                      <!-- assessments form begin -->
-                    <div class="tab-pane fade" id="all_assessments" role="tabpanel">
+                    <div class="tab-pane fade" id="suggestions" role="tabpanel">
                         <h4 align="center">All Assessments</h4>
-                        <?php echo $__env->make('questionnaire.allquestionnaires', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                        <?php echo $__env->make('suggestions', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     <!-- assessments form end -->
 
                 </div>
