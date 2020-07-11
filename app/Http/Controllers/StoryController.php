@@ -13,7 +13,7 @@ class StoryController extends Controller
     public function __construct()
     {
         $this->middleware(['auth','verified']);
-        $this->middleware(['is_user'])->only(['index','store','display','incrementLike']);
+        $this->middleware(['is_user'])->only(['index','store']);
     }
 
     public function index()
