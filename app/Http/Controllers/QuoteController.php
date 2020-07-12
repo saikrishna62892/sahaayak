@@ -52,7 +52,7 @@ class QuoteController extends Controller
         $quote->Image=$name;
     }
     $quote->save();
-    $this->sendInspiremeNotif($quote->Quote);
+    $this->sendInspiremeNotif($quote->Author);
     return redirect()->back()->with('message', 'Posted Succcesfully');
 	}
     public function deletequote(Quote $quoteid){

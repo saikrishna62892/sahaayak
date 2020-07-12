@@ -138,7 +138,7 @@ Route::get('/register/step2/{user}','VolunteerController@step2');
 Route::post('/register/step2/{user}','VolunteerController@store');
 
 //User HopeBox Video Routes
-Route::get('/videos','HopeBoxController@displayVideos');
+Route::get('/videos','HopeBoxController@displayVideos')->name('videos');
 
 
 //Admin Volunteer list Routes
@@ -176,7 +176,7 @@ Route::get('team', function () {
 
 Route::get('inspire_me', function () {
     return view('inspire_me');
-});
+})->name('inspire_me');
 
 
 
@@ -219,7 +219,7 @@ Route::get('/incrementLike/{story}', 'StoryController@incrementLike')->name('inc
 
 //Admin expert talks routes
 Route::post('/postTalks','TalkController@store')->name('addTalksFields');
-Route::get('/displayTalks','TalkController@display');
+Route::get('/displayTalks','TalkController@display')->name('displayTalks');
 
 //Diary routes by john & ganesh
 Route::post('home/displaydiary','diary_controller@save')->name('addFields');
@@ -235,7 +235,7 @@ Route::post('/','HomeController@dialyQuote')->name('dialyQuote');
 
 //Playlists routes by john&ganesh
 Route::post('/createPlaylist','PlaylistController@save')->name('createPlaylist');
-Route::get('/playlists','PlaylistController@index');
+Route::get('/playlists','PlaylistController@index')->name('playlists');
 
 //Googlesignup routes by john&ganesh
 Route::get('google', function () {

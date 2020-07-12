@@ -342,13 +342,9 @@
                                 </div>
                                 <div id="collapseOne" class="collapse" data-parent="#accordionExample">
                                     <div class="card-body">
-                                        <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                            you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                            card here.</p>
-                                        <p>Please allow 1 day for tracking information to update on your order. If you
-                                            are unable to track your order, please let us know and we'll be happy to
-                                            assist.</p>
-                                        <h6>Still need help? <a href="<?php echo e(route('register')); ?>">Get in touch with us.</a></h6>
+                                        <p>Sahaayak is a friend, well-wisher, helper ready to walk along to help you in fighting your mental battles.</p>
+                                        <p>It is a one stop solution for all the help you need regarding your mental health.</p>
+                                        <h6>Need help? -> <a href="<?php echo e(route('register')); ?>">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
                             </div>
@@ -360,13 +356,10 @@
                                 </div>
                                 <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
                                     <div class="card-body">
-                                        <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                            you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                            card here.</p>
-                                        <p>Please allow 1 day for tracking information to update on your order. If you
-                                            are unable to track your order, please let us know and we'll be happy to
-                                            assist.</p>
-                                        <h6>Still need help? <a href="<?php echo e(route('register')); ?>">Get in touch with us.</a></h6>
+                                        <p>1) We provide you with volunteers to share your issues and get help.</p>
+                                        <p>2) We have different assesements parameters to access your status.</p>
+                                        <p>3) We have interactive drawing feature for you to have some me time and get relaxed.</p>
+                                        <h6>Need help? -> <a href="<?php echo e(route('register')); ?>">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
                             </div>
@@ -378,13 +371,11 @@
                                 </div>
                                 <div id="collapseThree" class="collapse" data-parent="#accordionExample">
                                     <div class="card-body">
-                                        <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                            you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                            card here.</p>
-                                        <p>Please allow 1 day for tracking information to update on your order. If you
-                                            are unable to track your order, please let us know and we'll be happy to
-                                            assist.</p>
-                                        <h6>Still need help? <a href="<?php echo e(route('register')); ?>">Get in touch with us.</a></h6>
+                                        <p>1) Complete the registration.</p>
+                                        <p>2) Go to home page.</p>
+                                        <p>3) Click on Talk To Us in the dashboard.</p>
+                                        <p>4) Fill the required details and our team will contact you.</p>
+                                        <h6>Need help? -> <a href="<?php echo e(route('register')); ?>">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
                             </div>
@@ -396,13 +387,8 @@
                                 </div>
                                 <div id="collapseFour" class="collapse" data-parent="#accordionExample">
                                     <div class="card-body">
-                                        <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                            you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                            card here.</p>
-                                        <p>Please allow 1 day for tracking information to update on your order. If you
-                                            are unable to track your order, please let us know and we'll be happy to
-                                            assist.</p>
-                                        <h6>Still need help? <a href="<?php echo e(route('register')); ?>">Get in touch with us.</a></h6>
+                                        <p>It is a feature which lets you draw random things, It helps you to relax and have some alone time whenever you want</p>
+                                        <h6>Need help? -> <a href="<?php echo e(route('register')); ?>">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
                             </div>
@@ -414,13 +400,8 @@
                                 </div>
                                 <div id="collapseFive" class="collapse" data-parent="#accordionExample">
                                     <div class="card-body">
-                                        <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                            you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                            card here.</p>
-                                        <p>Please allow 1 day for tracking information to update on your order. If you
-                                            are unable to track your order, please let us know and we'll be happy to
-                                            assist.</p>
-                                        <h6>Still need help? <a href="<?php echo e(route('register')); ?>">Get in touch with us.</a></h6>
+                                        <p></p>
+                                        <h6>Need help? -> <a href="<?php echo e(route('register')); ?>">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
                             </div>
@@ -432,13 +413,11 @@
                                 </div>
                                 <div id="collapseSix" class="collapse" data-parent="#accordionExample">
                                     <div class="card-body">
-                                        <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                            you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                            card here.</p>
-                                        <p>Please allow 1 day for tracking information to update on your order. If you
-                                            are unable to track your order, please let us know and we'll be happy to
-                                            assist.</p>
-                                        <h6>Still need help? <a href="<?php echo e(route('register')); ?>">Get in touch with us.</a></h6>
+                                        <p>1) Register yourself.</p>
+                                        <p>2) Login into Sahaayak.</p>
+                                        <p>3) It the footer section there is a subscribe button available.</p>
+                                        <p>4) Click on it and you will keep on hearing from us.</p>
+                                        <h6>Need help? -> <a href="<?php echo e(route('register')); ?>">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
                             </div>
