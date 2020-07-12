@@ -28,19 +28,17 @@
     <section class="blog-details spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 order-lg-2 order-1">
-                <?php $count=1; ?>
                 @foreach($playlist as $i)
-                    <h2> {{$count++}}</h2>
+                <div class="col-lg-6  order-lg-2 order-1">
                     <div class="blog__details">
                         <div class="blog__details__author">
                             <div class="blog__details__author__pic">
                             </div>
                             <div class="blog__details__author__text">
                             @if(is_null($i->image))
-                                    <img src="{{ asset('/img/playlists/default3.png') }}" alt="">
+                                    <img src="{{ asset('/img/playlists/default3.png') }}" alt="" width="500" height="250">
                                 @else
-                                    <img src="{{ asset('/img/playlists/'.$i->image) }}" alt="">
+                                    <img src="{{ asset('/img/playlists/'.$i->image) }}" alt="" width="500" height="250">
                                 @endif
                             </div>
                     
@@ -48,32 +46,14 @@
                                  <p>Tag : {{$i->playlistTag}}</p>
                                 
                                 <p> URL: <?php $link="https://$i->playlistURL" ?>
-                            <p><a href="{{ $link }}" style="color:#5768ad;" target="_blank">Click Here</a></p></p>
+                            <a href="{{ $link }}" style="color:#5768ad;" target="_blank">Click Here</a></p>
                                 
                             </div>
                         </div>
-        
+                    </div>
                 @endforeach
-                
-
-            
-                        <div class="blog__details__quote">
-                            <p>link to the pocast/playlist and a short description about that</p>
-                            <p><a href="" style="color:#5768ad;">Open Playlist</a></p>
-                        </div>
-                        <div class="col-lg-12"><span>{{$playlist->links()}}</span></div>
-                    </div>
-
-                </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="classes__pagination">
-                        <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#"><span class="arrow_carrot-right"></span></a>
-                    </div>
-                </div>  
+                <div class="col-lg-12"><span>{{$playlist->links()}}</span></div>
             </div>
         </div>
     </section>

@@ -25,12 +25,10 @@
 <!-- Blog Details Section Begin -->
     <section class="blog-details spad">
         <div class="container">
-            {{ $count=1}}
             @foreach($embedURLs as $key1 => $embedURL2)
             <div class="row">
                 @foreach($embedURL2 as $key => $embedURL)
                 <div class="col-lg-6 order-lg-2 order-1">
-                    <h2>#{{ $count++ }}</h2>
                     <div class="blog__details">
                         <div class="blog__details__author">
                             <!--<div class="blog__details__author__pic">
@@ -53,15 +51,6 @@
             <br>
             @endforeach
             <div class="col-lg-12"><span>{{$urls->links()}}</span></div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="classes__pagination">
-                        <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#"><span class="arrow_carrot-right"></span></a>
-                    </div>
-                </div>  
-            </div>
         
         </div>
     </section>

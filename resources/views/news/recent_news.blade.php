@@ -2,7 +2,7 @@
     <div class="blog__recent__item">
         <div class="blog__recent__item__pic">
             @if(is_null($news->image))
-                <img src="{{ asset('/img/news/default.jpg') }}" alt="" width="70" height="70">
+                <img src="{{ asset('/img/news/default1.jpg') }}" alt="" width="70" height="70">
             @else
                 <img src="{{ asset('/img/news/'.$news->image) }}" alt="" width="70" height="70">
             @endif
