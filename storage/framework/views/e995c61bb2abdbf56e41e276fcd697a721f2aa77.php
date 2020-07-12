@@ -1,16 +1,18 @@
 
-
+<?php $__env->startSection('name'); ?>
+    Learn | Hopelessness
+<?php $__env->stopSection(); ?>
 <?php $__env->startSection('breadcrumb'); ?>
 
 <h2>Understanding Hopelessness</h2>
-<h5>Although the world is full of suffering, it is also full of the overcoming of it.</h5>
+<h5>Whether you think you can, or you think you can’t – you’re right.</h5>
 
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('learncontent'); ?>
 
 <div class="classes__details__large">
-    <img src="/img/classes-details/cd-hope.jpg" alt="">
+    <img src="/img/classes-details/cd-hope.jpg" alt="" width="750" height="400">
         <span>Understanding Hopelessness</span>
 </div>
 
@@ -20,7 +22,7 @@
 
 <div class="classes__details__item">
     <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/RSQke1e7Suk" allowfullscreen></iframe>
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/-M9j8wOG2WE" allowfullscreen></iframe>
     </div>
 </div>
 
@@ -40,12 +42,9 @@
                                                         </div>
                                                         <div id="collapseOne" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
+                                                                <p>Hope Influences our belief system is a myth hope is informed and primed by our beliefs.</p>
+                                                                <p>We are meant to do more than survive—we are meant to thrive.
+                                                                 Hope is the link that moves us toward thriving—and our beliefs are at the very heart of what makes hope work.</p>
                                                                 <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>

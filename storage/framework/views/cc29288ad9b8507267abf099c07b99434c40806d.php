@@ -19,11 +19,11 @@
 
 <h2>What is Suicide?</h2>
 
-<p>There are many variations of passages of Lorem Ipsum avaihave suffered that the alteration in some form by injected humour or the an randomised words which don’t look even evry is and slightly believable. If you are going to use a passage of Lorem Ipsum you need to be sure there isn’t is the anything aembarrassing hidden in the middle of text.Ipsum available but the that majority have that suffered is humour or randomised words.</p>
+<p>Suicide is the act of intentionally causing one's own death. Mental disorders—including depression, bipolar disorder, autism, schizophrenia, personality disorders, anxiety disorders, physical disorders such as chronic fatigue syndrome, and substance abuse—including alcoholism are risk factors.</p>
 
 <div class="classes__details__item">
     <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/OJLNNfsXVuM" allowfullscreen></iframe>
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/933rac-TBfA" allowfullscreen></iframe>
     </div>
 </div>
 
@@ -43,12 +43,11 @@
                                                         </div>
                                                         <div id="collapseOne" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
+                                                                <p>There's a misconception that a suicidal person will find a way to take his or her own life, no matter what.
+                                                                 This fuels the dangerous notion that it's useless to reach out to someone contemplating suicide,
+                                                                  when in fact nothing could be further from the truth.
+                                                                 "When people are suicidal, many times they're highly ambivalent. They're unsure about suicide".</p>
+                                                                <p>"They're torn between a desire to live and a desire to die."</p>
                                                                 <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
@@ -61,12 +60,10 @@
                                                         </div>
                                                         <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
+                                                                <p>1. Feeling depressed.</p>
+                                                                <p>2. Feeling psychotic.</p>
+                                                                <p>3. Feeling impulsive. </p>
+                                                                <p>4. Feel like crying out for help.</p>
                                                                 <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
@@ -79,12 +76,11 @@
                                                         </div>
                                                         <div id="collapseThree" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
+                                                                <p>1. Excessive sadness or moodiness.</p>
+                                                                <p>2. Sudden calmness.</p>
+                                                                <p>3. Changes in personality and/or appearance.</p>
+                                                                <p>4. Dangerous or self-harmful behavior.</p>
+                                                                <p>5. Recent trauma or life crisis.</p>
                                                                 <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
@@ -97,12 +93,10 @@
                                                         </div>
                                                         <div id="collapseFour" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
+                                                                <p>1. Remove yourself from danger or (if safe) stay where you are.</p>
+                                                                <p>2. Re-focus.</p>
+                                                                <p>3. Reach out.</p>
+                                                                <p>4. Remind yourself of recovery.</p>
                                                                 <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
@@ -115,12 +109,12 @@
                                                         </div>
                                                         <div id="collapseFive" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
+                                                                <p>Suicide is a very crucial topic that should taken very seriously when intervening in a one's life.
+                                                                 Suicide can be triggered my many things and it is important to be able to recognize the warning signs
+                                                                  that can lead to an attempted or successful taking of one's life.</p>
+                                                                <p>There are several ways that you can help someone if you feel that they are at risk at attempting suicide:
+                                                                 call the physician, remove any harmful items from the house, and talk to them openly about their problems.</p>
+                                                                 <p>Together, hopefully, we can save lives.</p>
                                                                 <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
