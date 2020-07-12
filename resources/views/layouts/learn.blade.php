@@ -67,7 +67,7 @@
     <!-- Classes Section End -->
 
     <!-- Leave Comment Begin -->
-    <div class="leave-comment spad">
+    <div class="leave-comment spad" style="padding: 0">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -82,7 +82,7 @@
                                 </div>
                                 <div class="col-lg-12 text-center">
                                     <form action="/home/learn/{{$learn}}/comment/{{$learnID}}" method="post">
-                                    <textarea placeholder="Your Comment" name="comment" rows="2"></textarea>
+                                    <textarea placeholder="Your Comment" name="comment" rows="10"></textarea>
                                     @error('comment')
                                     <small class="text-danger">{{$message}}</small>
                                     @enderror

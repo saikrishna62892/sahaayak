@@ -22,7 +22,7 @@ class appointment_controller extends Controller
     {
         $this->middleware(['auth','verified']);
         $this->middleware('is_user')->only(['save']);
-        $this->middleware('is_volunteer')->only(['appointmentAccepted']);
+        $this->middleware('is_volunteer')->only(['appointmentAccepted','reportForm','generateReport']);
 
     }
     function save(Request $req)
@@ -54,6 +54,21 @@ class appointment_controller extends Controller
         $this->sendAppointmentAcceptedNotif($appointment->user_id,$appointment);
         return redirect()->back();
 
+    }
+
+    public function reportForm(Appointment $appointment)
+    {
+        return view('appointment.reportForm',compact('appointment'));
+    }
+
+    public function generateReport()
+    {
+        $data = request()->all();
+        $appointment = Appointment::find($data['appointment_id']);
+        $data['user_id'] = $appointment->user_id;
+        $data['volunteer_id'] = $appointment->volunteer_id;
+        $pdf = PDF::loadView('appointment.generateReport',compact('data'));
+        return $pdf->download('report.pdf');
     }
 
     

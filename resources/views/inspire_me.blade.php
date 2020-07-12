@@ -48,8 +48,7 @@
                         </div>
                         <div class="blog__details__quote">
                             <p style="font-size: 25px;font-weight: bold;font-style: italic;font-family: Futura;"><i class="fa fa-quote-left" aria-hidden="true"></i>&nbsp;{{ $quote->Quote }}&nbsp;<i class="fa fa-quote-right" aria-hidden="true"></i></p>
-                            <?php $link="https://$quote->Link" ?>
-                            <p><a href="{{ $link }}" style="color:#5768ad;" target="_blank">Read More</a></p>
+                            <p><a href="{{ $quote->Link }}" style="color:#5768ad;" target="_blank">Read More</a></p>
                         </div>
                     </div>
                 </div>

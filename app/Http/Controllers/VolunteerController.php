@@ -12,7 +12,7 @@ class VolunteerController extends Controller
     public function __construct()
     {
         $this->middleware(['auth','verified']);
-        $this->middleware('is_volunteer')->only(['appointmentAccepted','reportForm','generateReport']);
+        $this->middleware('is_volunteer')->only(['appointmentAccepted']);
         $this->middleware('is_admin')->only(['getDetails','approveVolunteer']);
     }
     
@@ -56,18 +56,5 @@ class VolunteerController extends Controller
 
    
 
-    public function reportForm(Appointment $appointment)
-    {
-        return view('appointment.reportForm',compact('appointment'));
-    }
-
-    public function generateReport()
-    {
-        $data = request()->all();
-        $appointment = Appointment::find($data['appointment_id']);
-        $data['user_id'] = $appointment->user_id;
-        $data['volunteer_id'] = $appointment->volunteer_id;
-        $pdf = PDF::loadView('appointment.generateReport',compact('data'));
-        return $pdf->download('report.pdf');
-    }
+    
 }

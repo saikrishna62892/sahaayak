@@ -70,7 +70,7 @@ class LoginController extends Controller
                     return redirect('/register/step2/'.auth()->user()->id);
             }
             else{
-                return redirect()->route('home');
+                return redirect('/user/home');
             }
         }
         else{
