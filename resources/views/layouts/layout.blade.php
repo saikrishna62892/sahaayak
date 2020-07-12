@@ -187,10 +187,10 @@
                                            onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
-                                        </a>
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
-                                            @csrf
-                                        </form>
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                                        @csrf
+                                    </form>
                                   </div>
                                 </div>
                             @endguest
@@ -277,25 +277,25 @@
     <section class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <img src="/img/footer-logo.png" alt="Sahaayak" width="240" height="60">
                         <ul class="footer-address">
                             <li><i class="fa fa-envelope"></i> sahaayakofficial@gmail.com</li>
                             <li><i class="fa fa-location-arrow"></i> NIT Calicut</li>
                         </ul>
-                        <h5 style="color:white;">Subscribe</h5><br>
+                        <!--<h5 style="color:white;">Subscribe</h5>--><br>
 
-                        <a href="/home/subscribe"><i class="fa fa-send"></i></a>
+                        <a href="/home/subscribe" class="btn primary-btn">Subscribe&nbsp;<i class="fa fa-send"></i></a>
 
                     </div>
                 </div>
-                <div class="col-lg-3 offset-lg-1 col-md-3 col-sm-6" data-step="10" data-intro="This section provides information about different helpline numbers across India." data-position="bottom-middle-aligned">
+                <div class="col-lg-3 col-md-4 col-sm-6" data-step="10" data-intro="This section provides information about different helpline numbers across India." data-position="bottom-middle-aligned">
                     <div class="footer__widget">
                         <h5>Helplines</h5>
                         <ul>
                             <li><a href="tel:01140769002" target="_blank">Delhi : 011-4076 9002</a> </li>
-                            <li><a href="tel: 7893078930" target="_blank">Andhra : 78930-78930</a></li>
+                            <li><a href="tel: 7893078930" target="_blank">Andhra Pradesh : 78930-78930</a></li>
                             <li><a href="tel: 104" target="_blank">Karnataka : 104</a></li>
                             <li><a href="tel: 04712552056" target="_blank">Kerala : 0471-2552056</a></li>
                             <li><a href="tel: 04842361160" target="_blank">Kochi : 0484-2361160</a></li>
@@ -310,6 +310,7 @@
                             <li><a href="{{ url('about#mission')}}">Our Mission</a></li>
                             <li><a href="{{ url('about#vision')}}">Our Vision</a></li>
                             <li><a href="{{ url('about#stats')}}">Statistics</a></li>
+                            <li><a href="{{ url('about#gallery')}}">Gallery</a></li>
                             <li><a href="{{ url('about#impact')}}">Impact</a></li>
                             <li><a href="{{ url('about#faq')}}">FAQ's</a></li>
                         </ul>

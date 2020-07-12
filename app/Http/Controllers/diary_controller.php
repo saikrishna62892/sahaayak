@@ -18,9 +18,9 @@ class diary_controller extends Controller
     
     function save(Request $req)
     {
+        $user = Auth::user();
         switch($req->input('action'))
         {
-            $user = Auth::user();
             case 'add_to_diary':
                 $diary=new Diary();
                 $data = request()->validate([

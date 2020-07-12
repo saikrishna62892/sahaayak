@@ -1,4 +1,8 @@
 @extends('layouts.layout')
+
+@section('name')
+    {{$questionnaire->questionnaireTitle}}
+@endsection
 @section('content')
 <!-- Hero Section Begin -->
     <section class="hero">
@@ -25,7 +29,7 @@
                 <div class="card-header">{{$key+1}}) {{$question->question}}</div>
                     <div class="card-body">
                         @error('responses'.$key.'answer_id')
-                        <small class="text-danger">{{$message}}</small>
+                            <small class="text-danger">{{$message}}</small>
                         @enderror
                         <ul class="list-group">
                         @foreach($question->answers as $answer)
@@ -36,7 +40,7 @@
                                  class="mr-2" value="{{$answer->id}}">
                                 </input>
                                 {{$answer->answer}}
-                    <input type="hidden" name="response[{{$key}}][question_id]" id="answer{{$question->id}}"></input>
+                        <input type="hidden" name="response[{{$key}}][question_id]" id="answer{{$question->id}}"></input>
                             </li>
                         </label>
                         @endforeach

@@ -344,7 +344,7 @@
                                     <div class="card-body">
                                         <p>Sahaayak is a friend, well-wisher, helper ready to walk along to help you in fighting your mental battles.</p>
                                         <p>It is a one stop solution for all the help you need regarding your mental health.</p>
-                                        <h6>Need help? -> <a href="{{ route('register') }}">Get in touch with us.</a></h6>
+                                        <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
                             </div>
@@ -359,7 +359,7 @@
                                         <p>1) We provide you with volunteers to share your issues and get help.</p>
                                         <p>2) We have different assesements parameters to access your status.</p>
                                         <p>3) We have interactive drawing feature for you to have some me time and get relaxed.</p>
-                                        <h6>Need help? -> <a href="{{ route('register') }}">Get in touch with us.</a></h6>
+                                        <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
                             </div>
@@ -375,7 +375,7 @@
                                         <p>2) Go to home page.</p>
                                         <p>3) Click on Talk To Us in the dashboard.</p>
                                         <p>4) Fill the required details and our team will contact you.</p>
-                                        <h6>Need help? -> <a href="{{ route('register') }}">Get in touch with us.</a></h6>
+                                        <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
                             </div>
@@ -388,7 +388,7 @@
                                 <div id="collapseFour" class="collapse" data-parent="#accordionExample">
                                     <div class="card-body">
                                         <p>It is a feature which lets you draw random things, It helps you to relax and have some alone time whenever you want.</p>
-                                        <h6>Need help? -> <a href="{{ route('register') }}">Get in touch with us.</a></h6>
+                                        <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
                             </div>
@@ -401,7 +401,7 @@
                                 <div id="collapseFive" class="collapse" data-parent="#accordionExample">
                                     <div class="card-body">
                                         <p>Worry tree is a built in sophisticated feature of sahaayak which lets you to add your worries and once if you are able to overcome it you can strikeoff your worries so that the worry tree will grow and have a handy experience to make you feel better.</p>
-                                        <h6>Need help? -> <a href="{{ route('register') }}">Get in touch with us.</a></h6>
+                                        <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
                             </div>
@@ -415,9 +415,9 @@
                                     <div class="card-body">
                                         <p>1) Register yourself.</p>
                                         <p>2) Login into Sahaayak.</p>
-                                        <p>3) It the footer section there is a subscribe button available.</p>
+                                        <p>3) In the footer section there is a subscribe button available.</p>
                                         <p>4) Click on it and you will keep on hearing from us.</p>
-                                        <h6>Need help? -> <a href="{{ route('register') }}">Get in touch with us.</a></h6>
+                                        <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
                             </div>

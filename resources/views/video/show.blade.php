@@ -23,7 +23,7 @@
     <!-- Blog Hero End -->
     
 <!-- Blog Details Section Begin -->
-    <section class="blog-details spad">
+    <section class="blog-details spad" style="padding-top: 0px;">
         <div class="container">
             @foreach($embedURLs as $key1 => $embedURL2)
             <div class="row">
