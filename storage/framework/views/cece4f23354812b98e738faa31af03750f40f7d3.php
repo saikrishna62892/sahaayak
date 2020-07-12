@@ -18,4 +18,4 @@
 	<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
 	<h5>No Stories Available</h5>
 <?php endif; ?>
-</div><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/stories/shared_stories.blade.php ENDPATH**/ ?>
+</div><?php /**PATH C:\sahaayak\resources\views/stories/shared_stories.blade.php ENDPATH**/ ?>

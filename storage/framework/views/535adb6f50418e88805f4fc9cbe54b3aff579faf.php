@@ -81,4 +81,4 @@ unset($__errorArgs, $__bag); ?>
     </div>
 </div>
 
-<?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/diary/create.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\sahaayak\resources\views/diary/create.blade.php ENDPATH**/ ?>

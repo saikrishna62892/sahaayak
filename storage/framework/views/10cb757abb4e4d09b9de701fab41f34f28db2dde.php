@@ -124,4 +124,4 @@ function tree(i)
         draw(500, 300, 30, 0, 10);
 }
 </script>
-<!--tree end--><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/worrytree.blade.php ENDPATH**/ ?>
+<!--tree end--><?php /**PATH C:\sahaayak\resources\views/worrytree.blade.php ENDPATH**/ ?>

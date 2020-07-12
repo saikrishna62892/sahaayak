@@ -256,4 +256,4 @@
 </body>
 
 </html>
-<?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/layouts/dashboard.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\sahaayak\resources\views/layouts/dashboard.blade.php ENDPATH**/ ?>
