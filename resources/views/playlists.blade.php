@@ -38,7 +38,7 @@
                             </div>
                             <div class="blog__details__author__text">
                             @if(is_null($i->image))
-                                    <img src="{{ asset('/img/playlists/default.png') }}" alt="">
+                                    <img src="{{ asset('/img/playlists/default3.png') }}" alt="">
                                 @else
                                     <img src="{{ asset('/img/playlists/'.$i->image) }}" alt="">
                                 @endif

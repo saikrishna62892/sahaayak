@@ -1,16 +1,16 @@
-@extends('layouts.learn')
 
-@section('name')
+
+<?php $__env->startSection('name'); ?>
     Learn | Stress
-@endsection
-@section('breadcrumb')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('breadcrumb'); ?>
 
 <h2>Understanding Stress</h2>
 <h5>It's not stress that kills us,it is our reaction to it</h5>
 
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('learncontent')
+<?php $__env->startSection('learncontent'); ?>
 
 <div class="classes__details__large">
     <img src="/img/classes-details/cd-stress.jpg" alt="" width="750" height="400">
@@ -27,9 +27,9 @@
     </div>
 </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('faq')
+<?php $__env->startSection('faq'); ?>
                       <div class="container">
                                     <div class="row d-flex justify-content-center">
                                         <div class="col-lg-12">
@@ -48,7 +48,7 @@
                                                                 it may harm your health.</p>
                                                                 <p>We don’t all experience stress the same way. It’s different for everybody. 
                                                                 You may be stressed out by a high-pressure job, while your coworker thrives on it. </p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -65,7 +65,7 @@
                                                                 <p>Lack of time or money.</p>
                                                                 <p>Bereavement, family problems, illness.</p>
                                                                 <p>Relationships, marriage, and divorce. </p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -85,7 +85,7 @@
                                                                 <p>Increase in or loss of appetite, Muscle tension in neck, face or shoulders.</p>
                                                                 <p>Problems sleeping, Racing heart.</p>
                                                                 <p>Cold and sweaty palms.Tiredness, exhaustion, Trembling/shaking and Weight gain or loss. </p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -103,7 +103,7 @@
                                                                 <p>Learn and practice relaxation techniques; try meditation, yoga, or tai-chi. 
                                                                 Eat healthy, well-balanced meals. Learn to manage your time more effectively. 
                                                                 Set limits appropriately and say no to requests that would create excessive stress in your life. </p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -119,7 +119,7 @@
                                                                 force from the outside which disturbs the individual. </p>
                                                                 <p> It is also noted that emotional intelligence plays a role to create the abilities 
                                                                 in an individual to better control the stress.</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -133,7 +133,7 @@
                                                             <div class="card-body">
                                                                 <p>You can chat through virtual chat box.</p>
                                                                 <p>You can get a volunteer appointment by clicking below</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -142,13 +142,13 @@
                                         </div>
                                     </div>
                                 </div>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('learnname')
+<?php $__env->startSection('learnname'); ?>
 Stress
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('comments')
+<?php $__env->startSection('comments'); ?>
     <div class="classes__sidebar__comment">
                                     <div class="classes__sidebar__comment__pic">
                                         <img src="/img/classes-details/comment-1.png" alt="">
@@ -185,4 +185,5 @@ Stress
                                     </div>
                                 </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.learn', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\sahaayak\resources\views/learn/stress.blade.php ENDPATH**/ ?>

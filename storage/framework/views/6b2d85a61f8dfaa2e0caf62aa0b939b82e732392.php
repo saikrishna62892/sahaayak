@@ -1,35 +1,34 @@
-@extends('layouts.learn')
 
-@section('name')
-    Learn | Stress
-@endsection
-@section('breadcrumb')
+<?php $__env->startSection('name'); ?>
+    Learn | Fear-of-Loss
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('breadcrumb'); ?>
 
-<h2>Understanding Stress</h2>
-<h5>It's not stress that kills us,it is our reaction to it</h5>
+<h2>Understanding fear of loss</h2>
+<h5>Thinking will not overcome fear but action will</h5>
 
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('learncontent')
+<?php $__env->startSection('learncontent'); ?>
 
 <div class="classes__details__large">
-    <img src="/img/classes-details/cd-stress.jpg" alt="" width="750" height="400">
-        <span>Understanding Stress</span>
+    <img src="/img/classes-details/cd-loss.jpg" alt="" width="750" height="400">
+        <span>Understanding fear of loss</span>
 </div>
 
-<h2>What is Stress?</h2>
+<h2>What is fear of loss?</h2>
 
-<p>Stress is the body's reaction to any change that requires an adjustment or response. The body reacts to these changes with physical, mental, and emotional responses. Stress is a normal part of life. You can experience stress from your environment, your body, and your thoughts. Even positive life changes such as a promotion, a mortgage, or the birth of a child produce stress.</p>
+<p>You have something that’s blocking you from your dreams. And that’s fear. While it’s possible there are several fears involved, such as fear of change, fear of loss, or fear of the unknown, what comes through most strongly is the fear of loss.</p>
 
 <div class="classes__details__item">
     <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/WuyPuH9ojCE" allowfullscreen></iframe>
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/T58d2jg8050" allowfullscreen></iframe>
     </div>
 </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('faq')
+<?php $__env->startSection('faq'); ?>
                       <div class="container">
                                     <div class="row d-flex justify-content-center">
                                         <div class="col-lg-12">
@@ -43,12 +42,13 @@
                                                         </div>
                                                         <div id="collapseOne" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>Stress is your body's reaction to a challenge or demand. In short bursts, stress can be positive, 
-                                                                such as when it helps you avoid danger or meet a deadline. But when stress lasts for a long time, 
-                                                                it may harm your health.</p>
-                                                                <p>We don’t all experience stress the same way. It’s different for everybody. 
-                                                                You may be stressed out by a high-pressure job, while your coworker thrives on it. </p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
+                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
+                                                                    card here.</p>
+                                                                <p>Please allow 1 day for tracking information to update on your order. If you
+                                                                    are unable to track your order, please let us know and we'll be happy to
+                                                                    assist.</p>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -60,12 +60,10 @@
                                                         </div>
                                                         <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>Common major life events that can trigger stress include:</p>
-                                                                <p>Job issues or retirement.</p>
-                                                                <p>Lack of time or money.</p>
-                                                                <p>Bereavement, family problems, illness.</p>
-                                                                <p>Relationships, marriage, and divorce. </p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <p>People grow attached to the things in their lives. Things like their career, their status, their salary,
+                                                                 their lifestyle, etc. To pursue something different would mean relinquishing all of these things they have
+                                                                  come to associate as part of their lives. Because of this fear of loss, some people choose to put their dreams on hold — perpetually.</p>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -77,15 +75,13 @@
                                                         </div>
                                                         <div id="collapseThree" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>Stress can wear down the body's natural defenses, leading to a variety of physical symptoms.</p>
-                                                                <p>Dizziness or a general feeling of "being out of it".</p>
-                                                                <p>General aches and pains.</p>
-                                                                <p>Grinding teeth, clenched jaw.</p>
-                                                                <p>Headaches, Indigestion or acid reflux symptoms.</p>
-                                                                <p>Increase in or loss of appetite, Muscle tension in neck, face or shoulders.</p>
-                                                                <p>Problems sleeping, Racing heart.</p>
-                                                                <p>Cold and sweaty palms.Tiredness, exhaustion, Trembling/shaking and Weight gain or loss. </p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <p>When there is a fear of loss, it signals an attachment to the item that is at risk of being lost. 
+                                                                However, this attachment is illogical and comes as a byproduct of being too entrenched in our physical world.</p>
+                                                                <p>The reason why it’s illogical is because everything in our lives, except our consciousness, is impermanent.
+                                                                 This includes everything in the physical world: our wealth, our salary, our material possessions, our status,
+                                                                  our careers, our property, and our physical bodies. We were born into this world as ourselves,
+                                                                   with our consciousness.</p>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -97,13 +93,15 @@
                                                         </div>
                                                         <div id="collapseFour" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>Keep a positive attitude. Accept that there are events that you cannot control. 
-                                                                Be assertive instead of aggressive. Assert your feelings, opinions, or beliefs instead of becoming angry,
-                                                                 defensive, or passive.</p>
-                                                                <p>Learn and practice relaxation techniques; try meditation, yoga, or tai-chi. 
-                                                                Eat healthy, well-balanced meals. Learn to manage your time more effectively. 
-                                                                Set limits appropriately and say no to requests that would create excessive stress in your life. </p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <p>Regularly assess your intentions and motivations. If you’re forcing yourself to do something
+                                                                 and a part of you feels it isn’t right, ask yourself, “Do I actually want this right now?”</p>
+                                                                <p>Use loss aversion as motivation to pursue what you really want.
+                                                                 If you hang a large calendar on your wall, and put a star on every day when you do something positive—like
+                                                                  exercise, practice a new hobby, or send out a resume for a new job—you’ll create a
+                                                                   psychological need to keep that streak going.</p>
+                                                                <p>You could say that this is what makes life beautiful and meaningful—since nothing lasts forever,
+                                                                 each moment presents unique possibilities worth fully appreciating and savoring.</p>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -115,11 +113,11 @@
                                                         </div>
                                                         <div id="collapseFive" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p> It should be noted that stress can be considered as a fact of nature and the 
-                                                                force from the outside which disturbs the individual. </p>
-                                                                <p> It is also noted that emotional intelligence plays a role to create the abilities 
-                                                                in an individual to better control the stress.</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <p>The reality is that loss is inevitable.</p>
+                                                                <p>Change how you see the inevitability of loss. We will all lose relationships, situations,
+                                                                 and states of being that we enjoy and love. Even if we practice non-attachment,
+                                                                  on some level we will get comfortable with people and circumstances.</p>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -133,7 +131,7 @@
                                                             <div class="card-body">
                                                                 <p>You can chat through virtual chat box.</p>
                                                                 <p>You can get a volunteer appointment by clicking below</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -142,13 +140,13 @@
                                         </div>
                                     </div>
                                 </div>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('learnname')
-Stress
-@endsection
+<?php $__env->startSection('learnname'); ?>
+fear of loss
+<?php $__env->stopSection(); ?>
 
-@section('comments')
+<?php $__env->startSection('comments'); ?>
     <div class="classes__sidebar__comment">
                                     <div class="classes__sidebar__comment__pic">
                                         <img src="/img/classes-details/comment-1.png" alt="">
@@ -185,4 +183,6 @@ Stress
                                     </div>
                                 </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.learn', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\sahaayak\resources\views/learn/fear-of-loss.blade.php ENDPATH**/ ?>
