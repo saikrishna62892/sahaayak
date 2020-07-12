@@ -44,8 +44,10 @@ class InspiremeNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
+                    ->greeting('Hello')
+                    ->subject('A quote by '.$this->inspireme)
+                    ->line('Hey checkout the latest quote and keep yourself motivated')
+                    ->action('Quote', url('/inspire_me'))
                     ->line('Thank you for using our application!');
     }
 
@@ -58,8 +60,8 @@ class InspiremeNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            'data'=>'new notification'.$this->inspireme,
-            'refrence'=>'this is reference' 
+            'data'=>'A new quote by '.$this->inspireme,
+            'refrence'=>'inspire_me' 
         ];
     }
 }

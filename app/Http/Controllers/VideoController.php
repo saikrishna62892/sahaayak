@@ -35,7 +35,7 @@ class VideoController extends Controller
                 'videoURL'=>'required',
             ]);
         $video = Video::create($data);
-        $this->sendVideosNotif($video->videoURL);
+        $this->sendVideosNotif($video->videoTag);
         return redirect('/admin/home');
     }
 

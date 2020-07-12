@@ -183,7 +183,7 @@
 
                                         <div class="nofity-list">
                                              @foreach (auth()->user()->unreadnotifications as $notification)
-                                            <a href="{{route('gotonewsarticle')}}" class="notify-item">
+                                            <a href="{{route($notification->data['refrence'])}}" class="notify-item">
                                                 <div class="notify-thumb"><i class="ti-key btn-danger"></i></div>
                                                 <div class="notify-text">
                                                     <p>{{$notification->data['data']}}</p>
@@ -192,7 +192,7 @@
                                             @endforeach
 
                                             @foreach (auth()->user()->readnotifications as $notification)
-                                            <a href="{{route('gotonewsarticle')}}" class="notify-item">
+                                            <a href="{{route($notification->data['refrence'])}}" class="notify-item">
                                                 <div class="notify-thumb"><i class="ti-key btn-danger"></i></div>
                                                 <div class="notify-text">
                                                     <p>{{$notification->data['data']}}</p>

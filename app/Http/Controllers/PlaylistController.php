@@ -57,7 +57,7 @@ class PlaylistController extends Controller
 
 
         $playlist->save();
-        $this->sendPlaylistNotif($playlist->playlistTag);
+        $this->sendPlaylistNotif($playlist->playlistSource);
       return redirect('/admin/home');
       
     }
