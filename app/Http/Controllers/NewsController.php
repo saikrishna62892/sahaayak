@@ -61,7 +61,7 @@ class NewsController extends Controller
 
         
 		$news->save();
-        $this->sendNewsNotif($news->newsurl);
+        $this->sendNewsNotif($news->headline);
         return redirect()->back();
     
     }

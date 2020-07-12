@@ -44,8 +44,10 @@ class PlaylistNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
+                    ->greeting('Hello')
+                    ->subject('Hey check out the latest playlist')
+                    ->line('A playlist for you to checkout by'.$this->playlist)
+                    ->action('Playlist', url('/playlists'))
                     ->line('Thank you for using our application!');
     }
 
@@ -58,8 +60,8 @@ class PlaylistNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            'data'=>'new notification'.$this->playlist,
-            'refrence'=>'this is reference' 
+            'data'=>'A new playlist from'.$this->playlist,
+            'refrence'=>'playlists' 
         ];
     }
 }

@@ -18,5 +18,6 @@
 		<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
 		<h5>No Talks Available</h5>
 	<?php endif; ?>
+	<div class="col-lg-12"><span><?php echo e($talks->links()); ?></span></div>
 	</div>
 </div><?php /**PATH G:\sahayak1\sahaayak\resources\views/talks/shared_talks.blade.php ENDPATH**/ ?>

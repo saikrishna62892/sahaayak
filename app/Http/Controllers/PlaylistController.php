@@ -18,8 +18,8 @@ class PlaylistController extends Controller
 
     public function __construct()
     {
-        $this->middleware(['auth','verified']);
-        $this->middleware(['is_user'])->only(['index']);
+        //$this->middleware(['auth','verified']);
+       // $this->middleware(['is_user'])->only(['index']);
         $this->middleware(['is_admin'])->only(['save','deleteplaylist','editplaylist','update']);
     }
 
@@ -58,7 +58,7 @@ class PlaylistController extends Controller
 
 
         $playlist->save();
-        $this->sendPlaylistNotif($playlist->playlistTag);
+        $this->sendPlaylistNotif($playlist->playlistSource);
       return redirect('/admin/home');
       
     }

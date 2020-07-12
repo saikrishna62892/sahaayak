@@ -25,7 +25,8 @@
 <!-- Blog Details Section Begin -->
     <section class="blog-details spad">
         <div class="container">
-            
+            <?php echo e($count=1); ?>
+
             <?php $__currentLoopData = $embedURLs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key1 => $embedURL2): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="row">
                 <?php $__currentLoopData = $embedURL2; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $embedURL): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>

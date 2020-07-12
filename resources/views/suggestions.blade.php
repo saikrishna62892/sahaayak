@@ -13,5 +13,6 @@
 			@empty
 			<h5>No Suggestions Available</h5>
 		@endforelse
+		<div class="col-lg-12"><span>{{$suggestions->links()}}</span></div>
 	</div>
 </div>

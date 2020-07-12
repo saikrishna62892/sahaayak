@@ -32,6 +32,7 @@
 					<?php endif; ?>
                 </tbody>
             </table>
+            <div class="col-lg-12"><span><?php echo e($shared_playlists->links()); ?></span></div>
         </div>
     </div>
 </div>
