@@ -29,6 +29,7 @@
 					@endforelse
                 </tbody>
             </table>
+            <div class="col-lg-12"><span>{{$shared_videos->links()}}</span></div>
         </div>
     </div>
 </div>

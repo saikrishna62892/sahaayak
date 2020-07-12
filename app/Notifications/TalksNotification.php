@@ -44,8 +44,10 @@ class TalksNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
+                    ->greeting('Hello')
+                    ->subject(''.$this->talk)
+                    ->line('A new article for you to read and get inspired.')
+                    ->action('Expert Talk', url('/displayTalks'))
                     ->line('Thank you for using our application!');
     }
 
@@ -58,8 +60,8 @@ class TalksNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            'data'=>'new notification'.$this->talk,
-            'refrence'=>'this is reference' 
+            'data'=>'A new article '.$this->talk,
+            'refrence'=>'displayTalks' 
         ];
     }
 }

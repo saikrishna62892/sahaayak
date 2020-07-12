@@ -44,8 +44,10 @@ class VideosNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
+                    ->greeting('Hello')
+                    ->subject('A video on '.$this->video)
+                    ->line('A new video has been added for you to check it out.')
+                    ->action('Watch Video', url('/videos'))
                     ->line('Thank you for using our application!');
     }
 
@@ -58,8 +60,8 @@ class VideosNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            'data'=>'new notification'.$this->video,
-            'refrence'=>'this is reference' 
+            'data'=>'New video on '.$this->video,
+            'refrence'=>'videos' 
         ];
     }
 }

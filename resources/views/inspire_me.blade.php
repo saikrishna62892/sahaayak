@@ -29,10 +29,8 @@
     <section class="blog-details spad">
         <div class="container">
             <div class="row">
-            <?php $counter=1; ?>
             @forelse($quotes as $quote)
                 <div class="col-lg-6 order-lg-2 order-1">
-                    <h2>{{ $counter++ }}</h2>
                     <div class="blog__details">
                         <div class="blog__details__author">
                             <div class="blog__details__author__pic">
@@ -61,14 +59,5 @@
 
         </div>
         <div class="col-lg-12"><span>{{$quotes->links()}}</span></div>
-        <div class="row">
-                <div class="col-lg-12">
-                    <div class="classes__pagination">
-                        <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#"><span class="arrow_carrot-right"></span></a>
-                    </div>
-                </div>  
-            </div>
     </section>
     @endsection

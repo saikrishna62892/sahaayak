@@ -18,5 +18,6 @@
 		@empty
 		<h5>No Talks Available</h5>
 	@endforelse
+	<div class="col-lg-12"><span>{{$talks->links()}}</span></div>
 	</div>
 </div>

@@ -17,5 +17,6 @@
 			@empty
 			<h5>No News Available</h5>
 		@endforelse
+		<div class="col-lg-12"><span>{{$shared_news->links()}}</span></div>
 	</div>
 </div>

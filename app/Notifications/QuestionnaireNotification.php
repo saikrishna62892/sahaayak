@@ -44,8 +44,10 @@ class QuestionnaireNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.'.$this->questionnaire)
-                    ->action('Notification Action', url('/'))
+                    ->greeting('Hello')
+                    ->subject('A new Questionnaire '.$this->questionnaire->questionnaireTitle)
+                    ->line('A new questionnaire has been added for the purpose of '.$this->questionnaire.'. Check it out if you think it will help you')
+                    ->action('Questionnaire', url('/'))
                     ->line('Thank you for using our application!');
     }
 
@@ -58,8 +60,8 @@ class QuestionnaireNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            'data'=>'new notification'.$this->questionnaire,
-            'refrence'=>'this is reference'          
+            'data'=>'New questionnaire'.$this->questionnaire->questionnaireTitle,
+            'refrence'=>'#'          
         ];
     }
 }
