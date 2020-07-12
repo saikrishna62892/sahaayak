@@ -91,12 +91,14 @@
       					<input type="file" class="custom-file-input" id="customFile" name="file1" value="{{ old('file1') }}">
       					<div> {{ $errors->first('file1') }} </div>
 					    <label class="custom-file-label" for="customFile">Aadhar/Driving License..etc</label>
+					    <div id="file-upload-filename"></div>
 					</div>
 					Note: Provide any Working-id prooof.
 					<div class="custom-file mb-3">
       					<input type="file" class="custom-file-input" id="customFile" name="file2" value="{{ old('file2') }}">
       					<div> {{ $errors->first('file2') }} </div>
-					    <label class="custom-file-label" for="customFile">Choose file</label>
+					    <label class="custom-file-label" for="customFile">Working Proof</label>
+					    <div id="file-upload-filename"></div>
 					</div>
 					<div class="container-login100-form-btn p-t-12">
 						<button class="login100-form-btn">

@@ -47,36 +47,24 @@
                     <div class="classes__item">
                         
                         @if(is_null($item->image))
-                            <div class="classes__item__pic set-bg" data-setbg="img/news/default.jpg">
+                            <div class="classes__item__pic set-bg" data-setbg="img/news/default1.jpg">
                         @else
                             <div class="classes__item__pic set-bg" data-setbg="img/news/{{$item->image}}">
                         @endif
-                            <span>{{$item->created_at}}</span>
+                            <span>{{ Carbon\Carbon::parse($item->created_at)->format('d-M-Y') }}</span>
                         </div>
                         <div class="classes__item__text">
                             <p>Source:{{$item->source}}</p>
                             <h4>{{$item->headline}}</h4>
-                            <h6>{{$item->content}}</span></h6>
-                            <?php $newvariable="http://$item->newsurl" ?>
-                            <a href="{{$newvariable}}" class="btn btn-primary" target="_blank">Read More</a>
+                            <h6 align="justify" style="overflow: hidden;display: -webkit-box;-webkit-line-clamp: 7;-webkit-box-orient: vertical;">{{$item->content}}</span></h6>
+                            <a href="{{ $item->newsurl }}" class="btn btn-primary" target="_blank" style="background-color: #5768ad;">Read More</a>
                         </div>
                     </div>
                 </div>
                 @endforeach
                 <div class="col-lg-12"><span>{{$news->links()}}</span></div>
-                
-
-
-                <div class="col-lg-12">
-                    <div class="classes__pagination">
-                        <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#"><span class="arrow_carrot-right"></span></a>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
     <!-- Classes Section End -->
-
     @endsection

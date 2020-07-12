@@ -16,8 +16,8 @@ class VideoController extends Controller
 
     public function __construct()
     {
-        $this->middleware(['auth','verified']);
-        $this->middleware('is_admin')->only(['create','store','deletevideo','editvideo','update']);
+        //$this->middleware(['auth','verified']);
+        $this->middleware('auth','verified','is_admin')->only(['create','store','deletevideo','editvideo','update']);
     }
     
 
@@ -35,7 +35,7 @@ class VideoController extends Controller
                 'videoURL'=>'required',
             ]);
         $video = Video::create($data);
-        $this->sendVideosNotif($video->videoURL);
+        $this->sendVideosNotif($video->videoTag);
         return redirect('/admin/home');
     }
 

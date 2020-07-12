@@ -56,7 +56,8 @@ class AppointmentReceivedNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            'data'=>'Appointmnet request received '.$this->appointment
+            'data'=>'Appointmnet request received '.$this->appointment,
+            'refrence'=>'#' 
         ];
     }
 }

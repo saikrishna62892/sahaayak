@@ -44,8 +44,10 @@ class NewsNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
+                     ->greeting('Hello')
+                    ->subject(''.$this->news)
+                    ->line('A new news article for you')
+                    ->action('Check it out', url('displayNews'))
                     ->line('Thank you for using our application!');
     }
 
@@ -59,7 +61,7 @@ class NewsNotification extends Notification
     {
         return [
             'data'=>'new notification'.$this->news,
-            'refrence'=>'this is reference' 
+            'refrence'=>'displayNews' 
         ];
     }
 }

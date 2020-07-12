@@ -32,6 +32,7 @@
 					@endforelse
                 </tbody>
             </table>
+            <div class="col-lg-12"><span>{{$shared_playlists->links()}}</span></div>
         </div>
     </div>
 </div>

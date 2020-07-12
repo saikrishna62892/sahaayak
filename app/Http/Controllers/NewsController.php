@@ -17,7 +17,7 @@ class NewsController extends Controller
 
     public function __construct()
     {
-        $this->middleware(['is_admin'])->only(['create','store','deletenews','editnews','update']);
+        $this->middleware(['auth','verified','is_admin'])->only(['create','store','deletenews','editnews','update']);
     }
 
 
@@ -61,7 +61,7 @@ class NewsController extends Controller
 
         
 		$news->save();
-        $this->sendNewsNotif($news->newsurl);
+        $this->sendNewsNotif($news->headline);
         return redirect()->back();
     
     }

@@ -55,7 +55,7 @@ class QuestionnaireController extends Controller
 
     public function complete(Questionnaire $questionnaire)
     {
-        $this->sendQuestionnaireNotif($questionnaire->questionnaireTitle);
+        $this->sendQuestionnaireNotif($questionnaire);
         return redirect('/admin/home');
     }
 

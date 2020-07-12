@@ -89,12 +89,12 @@ class HomeController extends Controller
 
         //no-refresh loaders
         $admin_name=Auth::user()->name;
-        $talks = DB::table('talks')->orderBy("created_at","desc")->get();
-        $shared_news = DB::table('news')->orderBy("created_at","desc")->get();
-        $shared_videos = DB::table('videos')->orderBy("created_at","desc")->get();
-        $shared_quotes = DB::table('quotes')->orderBy("id","desc")->get();
-        $shared_playlists = DB::table('playlists')->orderBy("id","desc")->get();
-        $suggestions = DB::table('suggestion')->orderBy("id","desc")->get();
+        $talks = DB::table('talks')->orderBy("created_at","desc")->paginate(3);
+        $shared_news = DB::table('news')->orderBy("created_at","desc")->paginate(3);
+        $shared_videos = DB::table('videos')->orderBy("created_at","desc")->paginate(5);
+        $shared_quotes = DB::table('quotes')->orderBy("id","desc")->paginate(5);
+        $shared_playlists = DB::table('playlists')->orderBy("id","desc")->paginate(5);
+        $suggestions = DB::table('suggestion')->orderBy("id","desc")->paginate(5);
 
         //dd($analyticsData);
         //dd($analyticsData[0]);
@@ -143,7 +143,7 @@ class HomeController extends Controller
         $events_count=$diary->count();
         $worries_count=Worry::where('user_id',$user->id)->get()->count();
 
-        session()->put('message','Welcome '.$user->name.' to the Dashboard');
+        //session()->put('message','Welcome '.$user->name.' to the Dashboard');
         return view('dashboard_user')->with(compact('user','user_stories','diary','checkins','stories_count','events_count','worries_count'));
     }
 }

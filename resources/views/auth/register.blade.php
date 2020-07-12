@@ -96,7 +96,7 @@
                             Already Signed?
                         </span>
 
-                        <a class="txt1 bo1 hov1" href="/login">
+                        <a class="txt1 bo1 hov1" href="{{ route('login') }}">
                             Login now                           
                         </a>
                     </div>

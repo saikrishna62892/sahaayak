@@ -99,7 +99,7 @@ Auth::routes(['verify' => true]);
 Route::get('home', 'HomeController@welcome')->name('home');
 
 //user page route
-Route::get('user/home', 'HomeController@userHome')->name('userDashboard')->middleware('is_user');
+Route::get('/user/home', 'HomeController@userHome')->name('userDashboard')->middleware('is_user');
 
 //admin page route
 Route::get('admin/home', 'HomeController@adminHome')->name('adminDashboard')->middleware('is_admin');
@@ -138,7 +138,7 @@ Route::get('/register/step2/{user}','VolunteerController@step2');
 Route::post('/register/step2/{user}','VolunteerController@store');
 
 //User HopeBox Video Routes
-Route::get('/videos','HopeBoxController@displayVideos');
+Route::get('/videos','HopeBoxController@displayVideos')->name('videos');
 
 
 //Admin Volunteer list Routes
@@ -155,7 +155,7 @@ Route::post('/admin/report/{appointment}/generateReport','appointment_controller
 
 //learn section routes
 Route::get('home/learn/{learn}/{learnID}','LearnController@show');
-
+Route::post('home/learn/{learn}/comment/{learnID}','CommentController@store');
 
 
 //worry tree routes
@@ -176,7 +176,7 @@ Route::get('team', function () {
 
 Route::get('inspire_me', function () {
     return view('inspire_me');
-});
+})->name('inspire_me');
 
 
 
@@ -199,18 +199,6 @@ Route::get('/home/abc',function(){
 
 #bell icon routes end
 
-Route::get('dashboard_user', function () {
-    return view('dashboard_user');
-});
-
-Route::get('dashboard_admin', function () {
-    return view('dashboard_admin');
-});
-
-Route::get('dashboard_volunteer', function () {
-    return view('dashboard_volunteer');
-});
-
 //User Dashboard post a story form
 
 Route::post('/postStory','StoryController@store')->name('addStoryFields');
@@ -219,10 +207,10 @@ Route::get('/incrementLike/{story}', 'StoryController@incrementLike')->name('inc
 
 //Admin expert talks routes
 Route::post('/postTalks','TalkController@store')->name('addTalksFields');
-Route::get('/displayTalks','TalkController@display');
+Route::get('/displayTalks','TalkController@display')->name('displayTalks');
 
 //Diary routes by john & ganesh
-Route::post('home/displaydiary','diary_controller@save')->name('addFields');
+Route::post('/user/home/displaydiary','diary_controller@save')->name('addFields');
 Route::get('/displayStories','StoryController@display');
 Route::get('/incrementLike/{story}', 'StoryController@incrementLike')->name('increment');
 
@@ -235,7 +223,7 @@ Route::post('/','HomeController@dialyQuote')->name('dialyQuote');
 
 //Playlists routes by john&ganesh
 Route::post('/createPlaylist','PlaylistController@save')->name('createPlaylist');
-Route::get('/playlists','PlaylistController@index');
+Route::get('/playlists','PlaylistController@index')->name('playlists');
 
 //Googlesignup routes by john&ganesh
 Route::get('google', function () {

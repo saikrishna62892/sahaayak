@@ -11,7 +11,6 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb__text">
                         <h2>Discover Stories</h2>
-                        <h5>Some text.................</h5>
                         <div class="breadcrumb__widget">
                             <a href="./index.html">Home</a>
                             <span>Stories</span>
@@ -59,7 +58,7 @@
                                                             <div class="card-body">
                                                                 <div class="blog__details__large">
                                                                     @if(is_null($story->image))
-                                                                        <img src="{{ asset('/img/stories/default.PNG') }}" alt="" width="700" height="350">
+                                                                        <img src="{{ asset('/img/stories/default1.jpg') }}" alt="" width="700" height="350">
                                                                     @else
                                                                         <img src="{{ asset('/img/stories/'.$story->image) }}" alt="" width="700" height="350">
                                                                     @endif
@@ -70,8 +69,8 @@
                                                                         <li><i class="fa fa-calendar-o"></i>{{ Carbon\Carbon::parse($story->created_at)->format('d-M-Y g:h:i:s A') }}</li>
                                                                         <li><a href="{{ route('increment', $story) }}" class="fa fa-thumbs-up" style="color: black"></a>{{ $story->likes }}</li>
                                                                     </ul>
-                                                                    <p>{{ $story->content }}</p>
-                                                                    <h6>Post yor stories anonymously <a href="#" style="color: #5768ad;">Register here.</a></h6>
+                                                                    <p align="justify">{{ $story->content }}</p>
+                                                                    <h6>Post yor stories anonymously <a href="{{ route('register') }}" style="color: #5768ad;">Register here.</a></h6>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -85,14 +84,6 @@
                             </div>
                         </div>
                         <!-- Faq End -->
-                        
-                        <div class="col-lg-12">
-                            <div class="classes__pagination blog__pagination">
-                                <a href="#">1</a>
-                                <a href="#">2</a>
-                                <a href="#"><span class="arrow_carrot-right"></span></a>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4 order-lg-2 order-2">
