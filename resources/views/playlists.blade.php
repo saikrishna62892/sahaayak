@@ -45,8 +45,8 @@
                                 <h4>Source: {{$i->playlistSource}} </h4>
                                  <p>Tag : {{$i->playlistTag}}</p>
                                 
-                                <p> URL: <?php $link="https://$i->playlistURL" ?>
-                            <a href="{{ $link }}" style="color:#5768ad;" target="_blank">Click Here</a></p>
+                                <p> URL:
+                            <a href="{{ $i->playlistURL }}" style="color:#5768ad;" target="_blank">Click Here</a></p>
                                 
                             </div>
                         </div>

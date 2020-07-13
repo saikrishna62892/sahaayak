@@ -1,4 +1,8 @@
 @extends('layouts.layout')
+
+@section('name')
+    {{$questionnaire->questionnaireTitle}}
+@endsection
 @section('content')
 <!-- Hero Section Begin -->
     <section class="hero">
@@ -36,6 +40,7 @@
                                  class="mr-2" value="{{$answer->id}}">
                                 {{$answer->answer}}
                     <input type="hidden" name="response[{{$key}}][question_id]" id="answer{{$question->id}}">
+
                             </li>
                         </label>
                         @endforeach

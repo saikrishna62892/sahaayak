@@ -1,7 +1,7 @@
 <div class="row">
     <div class="card col-lg-12 col-md-12 shadow p-4 mb-5 bg-white rounded">
         <div class="form-group row" style="background-color: #fff;">
-        	<input type="text" class="form-control col-lg-9 col-md-9" id="worry" placeholder="Your worries here..." autocomplete="off" />
+        	<input type="text" class="form-control col-lg-9 col-md-9" id="worry" placeholder="Your worries here..."/>
             &emsp;&emsp;
     		<input type="button" class="btn btn-primary col-lg-2 col-md-2" style="background-color: #5768ad;" value ="Add Worry" id="add">
         </div>
@@ -10,14 +10,14 @@
             <small>Now You can strikeoff your worries to grow the tree</small><br>
             <small>You can Add max upto 5 worries</small>
             <form action="/home/user/worrytree" method="post">
-                @csrf
+                <?php echo csrf_field(); ?>
             <ul id="worriess"> 
                 <?php $i=0 ?>
-                @foreach($user->worries as $worry)
-                    <input type="text" class="list-group-item" id="{{$worry->id}}" name="worries[][worry]" 
-                    value="{{$worry->worry}}" onclick="remove(this.id)">
+                <?php $__currentLoopData = $user->worries; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $worry): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <input type="text" class="list-group-item" id="<?php echo e($worry->id); ?>" name="worries[][worry]" 
+                    value="<?php echo e($worry->worry); ?>" onclick="remove(this.id)">
                     <?php $i++ ?>
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         	</ul>
                 <center><button  type="submit" class="btn btn-primary" style="background-color: #5768ad;">Save Worries</button></center>
             </form>
@@ -62,7 +62,7 @@ function draw(startX, startY, len, angle, branchWidth) {
 
     ctx.restore();
 }
-var i={{ $i }};
+var i=<?php echo e($i); ?>;
 tree(i);
 if(i>=0 && i<5)
 document.getElementById('worry').readOnly = false;
@@ -124,4 +124,4 @@ function tree(i)
         draw(500, 300, 30, 0, 10);
 }
 </script>
-<!--tree end-->
+<!--tree end--><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/worrytree.blade.php ENDPATH**/ ?>

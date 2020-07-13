@@ -23,7 +23,7 @@ class appointment_controller extends Controller
     {
         $this->middleware(['auth','verified']);
         $this->middleware('is_user')->only(['save']);
-        $this->middleware('is_volunteer')->only(['appointmentAccepted']);
+        $this->middleware('is_volunteer')->only(['appointmentAccepted','reportForm','generateReport']);
 
     }
     function save(Request $req)
@@ -76,7 +76,6 @@ class appointment_controller extends Controller
         $user->notify(new AppointmentReportNotification($pdf));
         return redirect()->back();
     }
-    
 
 }
         

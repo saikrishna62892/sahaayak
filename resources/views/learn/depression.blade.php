@@ -80,7 +80,7 @@
                                                                 <p>Feeling agitated or irritated for no reason. Losing interest in doing things you are good at.
                                                                 Trouble in falling asleep, most often known as insomnia. In some cases, you might sleep too much.   </p>
                                                                 <p>Restlessness, feeling alone, sad and empty persistently. Having thoughts to end life or attempting to end life.  </p>
-                                                                <h6>Still need help? <a href="#">Get in touch with us.</a></h6>
+                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>

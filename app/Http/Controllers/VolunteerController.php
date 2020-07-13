@@ -12,7 +12,7 @@ class VolunteerController extends Controller
     public function __construct()
     {
         $this->middleware(['auth','verified']);
-        $this->middleware('is_volunteer')->only(['appointmentAccepted','reportForm','generateReport']);
+        $this->middleware('is_volunteer')->only(['appointmentAccepted']);
         $this->middleware('is_admin')->only(['getDetails','approveVolunteer']);
     }
     

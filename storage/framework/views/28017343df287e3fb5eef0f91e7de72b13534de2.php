@@ -7,17 +7,16 @@
         </div>
 
         <div>
-            <small>Now You can strikeoff your worries to grow the tree</small><br>
-            <small>You can Add max upto 5 worries</small>
+            <small>Now You can strikeoff your worries to grow the tree</small>
             <form action="/home/user/worrytree" method="post">
-                @csrf
+                <?php echo csrf_field(); ?>
             <ul id="worriess"> 
                 <?php $i=0 ?>
-                @foreach($user->worries as $worry)
-                    <input type="text" class="list-group-item" id="{{$worry->id}}" name="worries[][worry]" 
-                    value="{{$worry->worry}}" onclick="remove(this.id)">
+                <?php $__currentLoopData = $user->worries; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $worry): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <input type="text" class="list-group-item" id="<?php echo e($worry->id); ?>" name="worries[][worry]" 
+                    value="<?php echo e($worry->worry); ?>" onclick="remove(this.id)">
                     <?php $i++ ?>
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         	</ul>
                 <center><button  type="submit" class="btn btn-primary" style="background-color: #5768ad;">Save Worries</button></center>
             </form>
@@ -62,7 +61,7 @@ function draw(startX, startY, len, angle, branchWidth) {
 
     ctx.restore();
 }
-var i={{ $i }};
+var i=<?php echo e($i); ?>;
 tree(i);
 if(i>=0 && i<5)
 document.getElementById('worry').readOnly = false;
@@ -124,4 +123,4 @@ function tree(i)
         draw(500, 300, 30, 0, 10);
 }
 </script>
-<!--tree end-->
+<!--tree end--><?php /**PATH C:\Users\Ganesh\Desktop\dileep\sahaayak\resources\views/worrytree.blade.php ENDPATH**/ ?>

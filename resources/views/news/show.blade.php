@@ -51,14 +51,13 @@
                         @else
                             <div class="classes__item__pic set-bg" data-setbg="img/news/{{$item->image}}">
                         @endif
-                            <span>{{$item->created_at}}</span>
+                            <span>{{ Carbon\Carbon::parse($item->created_at)->format('d-M-Y') }}</span>
                         </div>
                         <div class="classes__item__text">
                             <p>Source:{{$item->source}}</p>
                             <h4>{{$item->headline}}</h4>
                             <h6 align="justify" style="overflow: hidden;display: -webkit-box;-webkit-line-clamp: 7;-webkit-box-orient: vertical;">{{$item->content}}</span></h6>
-                            <?php $newvariable="http://$item->newsurl" ?>
-                            <a href="{{$newvariable}}" class="btn btn-primary" target="_blank">Read More</a>
+                            <a href="{{ $item->newsurl }}" class="btn btn-primary" target="_blank" style="background-color: #5768ad;">Read More</a>
                         </div>
                     </div>
                 </div>

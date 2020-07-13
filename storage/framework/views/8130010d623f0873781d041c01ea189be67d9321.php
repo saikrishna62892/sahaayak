@@ -1,10 +1,10 @@
-    @extends('layouts.layout')
+    
 
-    @section('name')
+    <?php $__env->startSection('name'); ?>
         Home
-    @endsection
+    <?php $__env->stopSection(); ?>
 
-    @section('content')
+    <?php $__env->startSection('content'); ?>
 
     <script>
         function truncateText(selector, maxLength) {
@@ -29,9 +29,9 @@
                         <div class="col-lg-8">
                             <div class="hero__text">
                                 <span>We Share coz We Care</span>
-                                <h2>{{ $dialyquote }}</h2>
+                                <h2><?php echo e($dialyquote); ?></h2>
                                 <a style="color: white;" href="javascript:void(0);" onclick="javascript:introJs().setOption('showProgress',true).start();"><u><span>Take a Tour</span></u></a>
-                                <a href="{{ url('about') }}" class="primary-btn">DISCOVER MORE</a>
+                                <a href="<?php echo e(url('about')); ?>" class="primary-btn">DISCOVER MORE</a>
                             </div>
                         </div>
                     </div>
@@ -171,23 +171,23 @@
                     </div>
                 </div>
                 <form action="/appointment_controller" method="post" class="appointment__form">
-                @csrf
+                <?php echo csrf_field(); ?>
                     <div class="row">
                         <div class="col-lg-6">
-                            <input type="text" placeholder="Name" name="name" autocomplete="off" >
+                            <input type="text" placeholder="Name" name="name">
                         </div>
                         <div class="col-lg-6">
-                            <input type="text" placeholder="Email" name="email" autocomplete="off" >
+                            <input type="text" placeholder="Email" name="email">
                         </div>
                         <div class="col-lg-6">
-                            <input type="text" placeholder="Phone" name="phone" autocomplete="off" >
+                            <input type="text" placeholder="Phone" name="phone">
                         </div>
                         <div class="col-lg-6">
                             <input placeholder="Pick your Appointment" type="datetime-local" name="timings" min="2020-05-10T00:00">
                         </div>
                         <div class="col-lg-12 text-center">
-                            <textarea placeholder="What do you want to talk about ?" name="message" autocomplete="off" ></textarea>
-                        <button type="submit" onclick="alert('The timings provided may vary upto 1 hour!');">Submit</button>
+                            <textarea placeholder="What do you want to talk about ?" name="message"></textarea>
+                            <button type="submit" onclick="alert("The timings provided may vary upto 1 hour!");">Submit</button>
                         </div>
                     </div>
                 </form>
@@ -208,28 +208,28 @@
                     </div>
                 </div>
                 <div class="row">
-                    @foreach($featurednews as $news)
+                    <?php $__currentLoopData = $featurednews; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $news): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <div class="col-lg-4 col-md-6">
                             <div class="classes__item">
-                                @if(is_null($news->image))
-                                <div class="classes__item__pic set-bg" data-setbg="{{ asset('/img/news/default.jpg') }}">
-                                    <img src="{{ asset('/img/news/default.jpg') }} alt="">
-                                @else
-                                <div class="classes__item__pic set-bg" data-setbg="{{ asset('/img/news/'.$news->image) }}">
-                                    <img src="{{ asset('/img/news/'.$news->image) }}" alt="">
-                                @endif
-                                    <span>{{ Carbon\Carbon::parse($news->created_at)->format('d-M-Y') }}</span>
+                                <?php if(is_null($news->image)): ?>
+                                <div class="classes__item__pic set-bg" data-setbg="<?php echo e(asset('/img/news/default.jpg')); ?>">
+                                    <img src="<?php echo e(asset('/img/news/default.jpg')); ?> alt="">
+                                <?php else: ?>
+                                <div class="classes__item__pic set-bg" data-setbg="<?php echo e(asset('/img/news/'.$news->image)); ?>">
+                                    <img src="<?php echo e(asset('/img/news/'.$news->image)); ?>" alt="">
+                                <?php endif; ?>
+                                    <span><?php echo e(Carbon\Carbon::parse($news->created_at)->format('d-M-Y')); ?></span>
                                 </div>
                                 <div class="classes__item__text">
-                                    <p>{{ $news->source }} </p>
-                                    <h4>{{ $news->headline }}</h4>
-                                    <p align="justify" style="overflow: hidden;display: -webkit-box;-webkit-line-clamp: 7;-webkit-box-orient: vertical;">{{ $news->content }}</p>
+                                    <p><?php echo e($news->source); ?> </p>
+                                    <h4><?php echo e($news->headline); ?></h4>
+                                    <p align="justify" style="overflow: hidden;display: -webkit-box;-webkit-line-clamp: 7;-webkit-box-orient: vertical;"><?php echo e($news->content); ?></p>
                                     <?php $newvariable="https://$news->newsurl" ?>
-                                    <a href="{{ $newvariable }}" class="class-btn" target="_blank">Know More</a>
+                                    <a href="<?php echo e($newvariable); ?>" class="class-btn" target="_blank">Know More</a>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                 </div>
             </div>
@@ -276,7 +276,7 @@
                             suicide is a false choice and not the ultimate decision to end things, let us help you in having a
                             clear picture about symptoms, causes, risks regarding suicides and finally providing you best
                             advice with no paybacks...</p>
-                        <a href="{{ url('about') }}" class="primary-btn">MORE ABOUT US</a>
+                        <a href="<?php echo e(url('about')); ?>" class="primary-btn">MORE ABOUT US</a>
                     </div>
                 </div>
             </div>
@@ -336,4 +336,5 @@
         </div>
     </section>
     <!-- Testimonial Section End -->
-    @endsection
+    <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/welcome.blade.php ENDPATH**/ ?>
