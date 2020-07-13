@@ -17,9 +17,9 @@
             <p>{{$data['keywords']}}</p>
                  
 		    <h4 align="center">Suggestions:</h4>
-		    <p align="justify">{{$data['suggestions']}}</p>
+		    <p align="justify" style="white-space: pre-line;">{{$data['suggestions']}}</p>
 		    <h4 align="center">Remarks:</h4>
-		    <p align="justify">{{$data['suggestions']}}</p>
+		    <p align="justify" style="white-space: pre-line;">{{$data['remarks']}}</p>
 		    <small><a href="https://sahaayak.co.in/login" target="_blank">Click here to login</a></small>
 		  </div>
 		</div>
