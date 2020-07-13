@@ -334,13 +334,13 @@
                             @csrf
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
-                                        <input type="text" placeholder="Name" name="name">
+                                        <input type="text" placeholder="Name" name="name"  autocomplete="off" >
                                     </div>
                                     <div class="col-lg-6 col-md-6">
-                                        <input type="text" placeholder="Email" name="email">
+                                        <input type="text" placeholder="Email" name="email" autocomplete="off" >
                                     </div>
                                     <div class="col-lg-12 text-center">
-                                    <input type="text" placeholder="Comment" name="comment">
+                                    <input type="text" placeholder="Comment" name="comment" autocomplete="off" >
                                         <button type="submit" class="site-btn">Submit</button>
                                     </div>
                                 </div>

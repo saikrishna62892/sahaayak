@@ -47,7 +47,8 @@ class QuestionController extends Controller
     {
         $score=0;
         $data = request()->validate([
-            'response.*.answer_id' => 'required'
+            'response.*.answer_id' => 'required',
+            'response.*.question_id' => 'required',
         ]);
 
         foreach($data['response'] as $a)
