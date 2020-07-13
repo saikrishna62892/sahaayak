@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class AppointmentAcceptedNotification extends Notification
+class AppointmentReportNotification extends Notification
 {
     use Queueable;
 
@@ -16,9 +16,9 @@ class AppointmentAcceptedNotification extends Notification
      *
      * @return void
      */
-    public function __construct($appointment)
+    public function __construct($pdf)
     {
-        $this->appointment = $appointment;
+        $this->pdf = $pdf;
     }
 
     /**
@@ -41,10 +41,10 @@ class AppointmentAcceptedNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->greeting('Hello  '.$this->appointment->name)
-                    ->subject('Regarding Appointment Request')
-                    ->line('Your Appointment has been accepted and our volunteer will contact you as per your request on  '.$this->appointment->timings)
-                    ->line('Thank you for using our application!');
+                    ->line('Report regarding your Appointment')
+                    ->action('Notification Action', url('/'))
+                    ->line('Thank you for using sahaayak!')
+                    ->attachData($this->pdf->output(),'appointmentReport.pdf');
     }
 
     /**
@@ -56,7 +56,7 @@ class AppointmentAcceptedNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            'data'=>'new notification'.$this->appointment,
+            'data'=>'report generated for your appointment check your mail',
             'refrence'=>'userDashboard' 
         ];
     }

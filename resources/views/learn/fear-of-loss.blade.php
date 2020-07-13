@@ -22,7 +22,7 @@
 
 <div class="classes__details__item">
     <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/T58d2jg8050" allowfullscreen></iframe>
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/GDjwfFmXwfE" allowfullscreen></iframe>
     </div>
 </div>
 
@@ -42,12 +42,12 @@
                                                         </div>
                                                         <div id="collapseOne" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>No. You may not transfer, trade, or otherwise exchange ClassPass credits. If
-                                                                    you’re interested in gifting ClassPass to someone, you can purchase a gift
-                                                                    card here.</p>
-                                                                <p>Please allow 1 day for tracking information to update on your order. If you
-                                                                    are unable to track your order, please let us know and we'll be happy to
-                                                                    assist.</p>
+                                                                <p>The pain of loss will go away faster if you ignore it is false. 
+                                                                Trying to ignore your pain will only make it worse in the long run.
+                                                                 Finding safe and comfortable settings for the expression of your feelings — 
+                                                                 with trusted friends or family, in a support group, with a counselor, through artistic expression —
+                                                                  is an important part of taking care of yourself at this trying time. 
+                                                                  And sometimes you will need to do or think about other things — there’s nothing wrong with this.</p>
                                                                 <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
