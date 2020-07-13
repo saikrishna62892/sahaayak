@@ -203,7 +203,7 @@
                     <div class="col-lg-6">
                         <div class="team__item">
                             <div class="team__item__pic">
-                                <img src="/img/team/sai1.png" alt="">
+                                <img src="/img/team/sai.png" alt="">
                             </div>
                             <div class="team__item__text">
                                 <div class="team__item__title">
@@ -224,7 +224,7 @@
                     <div class="col-lg-6">
                         <div class="team__item">
                             <div class="team__item__pic">
-                                <img src="/img/team/sai1.png" alt="">
+                                <img src="/img/team/dileep.png" alt="">
                             </div>
                             <div class="team__item__text">
                                 <div class="team__item__title">
@@ -247,7 +247,7 @@
                     <div class="col-lg-6">
                         <div class="team__item">
                             <div class="team__item__pic">
-                                <img src="/img/team/sai1.png" alt="">
+                                <img src="/img/team/venkat.png" alt="">
                             </div>
                             <div class="team__item__text">
                                 <div class="team__item__title">
@@ -270,7 +270,7 @@
                     <div class="col-lg-6">
                         <div class="team__item">
                             <div class="team__item__pic">
-                                <img src="/img/team/sai1.png" alt="">
+                                <img src="/img/team/john.png" alt="">
                             </div>
                             <div class="team__item__text">
                                 <div class="team__item__title">
@@ -293,7 +293,7 @@
                     <div class="col-lg-6">
                         <div class="team__item">
                             <div class="team__item__pic">
-                                <img src="/img/team/sai1.png" alt="">
+                                <img src="/img/team/ganesh.png" alt="">
                             </div>
                             <div class="team__item__text">
                                 <div class="team__item__title">
@@ -316,7 +316,7 @@
                     <div class="col-lg-6">
                         <div class="team__item">
                             <div class="team__item__pic">
-                                <img src="/img/team/sai1.png" alt="">
+                                <img src="/img/team/spandana.png" alt="">
                             </div>
                             <div class="team__item__text">
                                 <div class="team__item__title">

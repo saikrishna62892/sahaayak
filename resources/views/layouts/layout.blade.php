@@ -286,7 +286,7 @@
                         </ul>
                         <h5 style="color:white;">Subscribe</h5><br>
 
-                        <a href="/home/subscribe" ><i class="fa fa-send"></i></a>
+                        <a href="/home/subscribe" ><button type="submit" class="site-btn">Subscribe</button></a>
 
                     </div>
                 </div>

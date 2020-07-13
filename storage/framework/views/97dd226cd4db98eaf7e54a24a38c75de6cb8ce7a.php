@@ -387,7 +387,7 @@
                                 </div>
                                 <div id="collapseFour" class="collapse" data-parent="#accordionExample">
                                     <div class="card-body">
-                                        <p>It is a feature which lets you draw random things, It helps you to relax and have some alone time whenever you want</p>
+                                        <p>It is a feature which lets you draw random things, It helps you to relax and have some alone time whenever you want.</p>
                                         <h6>Need help? -> <a href="<?php echo e(route('register')); ?>">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
