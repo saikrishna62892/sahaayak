@@ -97,15 +97,9 @@
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layers"></i><span>Assessment</span></a>
                                 <ul class="collapse">
-                                    <li><a href="index.html">Depression</a></li>
-                                    <li><a href="index3-horizontalmenu.html">Suicide</a></li>
-                                    <li><a href="index.html">Depression</a></li>
-                                    <li><a href="index3-horizontalmenu.html">Suicide</a></li>
-                                    <li><a href="index.html">Depression</a></li>
-                                    <li><a href="index3-horizontalmenu.html">Suicide</a></li>
-                                    <li><a href="index.html">Depression</a></li>
-                                    <li><a href="index3-horizontalmenu.html">Suicide</a></li>
-                                    <li><a href="index.html">Depression</a></li>
+                                    @foreach($questionnaires as $questionnaire)
+                                        <li><a href="/home/questionnaires/{{$questionnaire->id}}/questions">{{$questionnaire->questionnaireTitle}}</a></li>
+                                    @endforeach
                                 </ul>
                             </li>
                             <li>
