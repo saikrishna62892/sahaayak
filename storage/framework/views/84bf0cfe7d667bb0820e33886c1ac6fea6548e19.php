@@ -3,8 +3,8 @@
         <?php $__empty_1 = true; $__currentLoopData = $diary; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $event): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
             <div class="card shadow p-4 mb-5 bg-white rounded">
                 <div class="card-body">
-                    <div align="right"><a href="#" style="color: #5768ad;">Edit</a>&emsp;
-                    <a href="#" style="color: #5768ad;">Delete</a></div>
+                    <div align="right"><a href="/user/home/editEvent/<?php echo e($event->id); ?>/eventedited" style="color: #5768ad;">Edit</a>&emsp;
+                    <a href="/user/home/deleteEvent/<?php echo e($event->id); ?>/eventdeleted" style="color: #5768ad;">Delete</a></div>
                     <h5><?php echo e($event->title); ?></h5><br>
                     <h6 class="card-subtitle mb-2 text-muted">Details: <?php echo e(Carbon\Carbon::parse($event->created_at)->format('d-M-Y g:h:i:s A')); ?></h6><br>
                     <h6 class="card-subtitle mb-2 text-muted"><?php echo e($event->category); ?></h6><br>
@@ -16,15 +16,18 @@
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
             <h4>No Events added</h4>
         <?php endif; ?>
+        <div class="col-lg-12"><span><?php echo e($diary->links()); ?></span></div>
     </div>
-    <div class="col-lg-6 col-md-6">
+    
+   <div class="col-lg-6 col-md-6">
         <h4 align="center">Post an Event</h4>
         <br><br>
         <form action="home/displaydiary" method="POST" enctype="multipart/form-data">
             <?php echo csrf_field(); ?>
-            <div class="form-group">
+            <?php echo $__env->make('diary.diary', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?> 
+          <!--  <div class="form-group">
                 <label for="formGroupExampleInput">Please enter event title</label>
-                <input type="text" class="form-control" name="title" id="formGroupExampleInput" placeholder="Your title here...">
+                <input type="text" class="form-control" name="title" id="formGroupExampleInput" placeholder="Your title here..." autocomplete="off" >
                 <?php echo csrf_field(); ?>
                 <?php $__errorArgs = ['title'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -39,7 +42,7 @@ unset($__errorArgs, $__bag); ?>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Please enter event content</label>
-                <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="10" placeholder="Your content here..."></textarea>
+                <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="10" placeholder="Your content here..." autocomplete="off" ></textarea>
                 <?php $__errorArgs = ['content'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -74,7 +77,7 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-            </div>
+            </div> -->
             <center><button type="submit" name="action" value="add_to_diary" class="btn btn-primary" style="background-color: #5768ad;">Add to diary</button>&emsp;
             <button type="submit" name="action" value="add_to_story" class="btn btn-primary" style="background-color: #5768ad;">Add to story</button></center>
         </form>

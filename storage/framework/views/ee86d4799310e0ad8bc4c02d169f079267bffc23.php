@@ -1,6 +1,6 @@
 <div class="form-group">
 		    	<label for="formGroupExampleInput">Please enter title</label>
-		    	<input type="text" class="form-control" name="title" id="formGroupExampleInput" placeholder="Your title here..." value="<?php echo e(old('title') ?? $talk->title); ?>">
+		    	<input type="text" class="form-control" name="title" id="formGroupExampleInput" placeholder="Your title here..." value="<?php echo e(old('title') ?? $talk->title); ?>" autocomplete="off" >
 		    	<?php $__errorArgs = ['title'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -14,7 +14,7 @@ unset($__errorArgs, $__bag); ?>
 		   	</div>
 		   	<div class="form-group">
 			    <label for="exampleFormControlTextarea1">Please enter content</label>
-			    <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="10" placeholder="Your content here..." value="<?php echo e(old('content') ?? $talk->content); ?>"></textarea>
+			    <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="10" placeholder="Your content here..." value="<?php echo e(old('content') ?? $talk->content); ?>" autocomplete="off" ></textarea>
 			    <?php $__errorArgs = ['content'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -51,7 +51,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
 			</div>
 		    <div class="custom-file">
-  				<input type="file" class="custom-file-input" id="customFile" name="image" value="<?php echo e(old('image') ?? url('storage/img/talks/'.$talk->image)); ?>">
+  				<input type="file" class="custom-file-input" id="customFile" name="image" value="<?php echo e(old('image') ?? url('storage/img/talks/'.$talk->image)); ?>" autocomplete="off" >
   				<label class="custom-file-label" for="customFile">Please choose image...</label>
 			    <?php $__errorArgs = ['image'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');

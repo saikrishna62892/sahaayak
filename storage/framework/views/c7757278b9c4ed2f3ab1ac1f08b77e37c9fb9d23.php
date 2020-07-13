@@ -93,7 +93,7 @@ unset($__errorArgs, $__bag); ?>
                             Not a member?
                         </span>
 
-                        <a class="txt1 hov1" href="#">
+                        <a class="txt1 hov1" href="<?php echo e(route('register')); ?>">
                             Sign up now                         
                         </a>
                     </div>

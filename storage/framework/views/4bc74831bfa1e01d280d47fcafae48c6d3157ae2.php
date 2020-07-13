@@ -189,10 +189,10 @@
                                                          document.getElementById('logout-form').submit();">
                                             <?php echo e(__('Logout')); ?>
 
-                                        </a>
-                                        <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" >
-                                            <?php echo csrf_field(); ?>
-                                        </form>
+                                    </a>
+                                    <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" >
+                                        <?php echo csrf_field(); ?>
+                                    </form>
                                   </div>
                                 </div>
                             <?php endif; ?>
@@ -279,25 +279,27 @@
     <section class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <img src="/img/footer-logo.png" alt="Sahaayak" width="240" height="60">
                         <ul class="footer-address">
                             <li><i class="fa fa-envelope"></i> sahaayakofficial@gmail.com</li>
                             <li><i class="fa fa-location-arrow"></i> NIT Calicut</li>
                         </ul>
-                        <h5 style="color:white;">Subscribe</h5><br>
+                        <!--<h5 style="color:white;">Subscribe</h5>--><br>
 
-                        <a href="/home/subscribe" ><button type="submit" class="site-btn">Subscribe</button></a>
+
+                        <a href="/home/subscribe" class="btn primary-btn">Subscribe&nbsp;<i class="fa fa-send"></i></a>
+
 
                     </div>
                 </div>
-                <div class="col-lg-3 offset-lg-1 col-md-3 col-sm-6" data-step="10" data-intro="This section provides information about different helpline numbers across India." data-position="bottom-middle-aligned">
+                <div class="col-lg-3 col-md-4 col-sm-6" data-step="10" data-intro="This section provides information about different helpline numbers across India." data-position="bottom-middle-aligned">
                     <div class="footer__widget">
                         <h5>Helplines</h5>
                         <ul>
                             <li><a href="tel:01140769002" target="_blank">Delhi : 011-4076 9002</a> </li>
-                            <li><a href="tel: 7893078930" target="_blank">Andhra : 78930-78930</a></li>
+                            <li><a href="tel: 7893078930" target="_blank">Andhra Pradesh : 78930-78930</a></li>
                             <li><a href="tel: 104" target="_blank">Karnataka : 104</a></li>
                             <li><a href="tel: 04712552056" target="_blank">Kerala : 0471-2552056</a></li>
                             <li><a href="tel: 04842361160" target="_blank">Kochi : 0484-2361160</a></li>
@@ -312,6 +314,7 @@
                             <li><a href="<?php echo e(url('about#mission')); ?>">Our Mission</a></li>
                             <li><a href="<?php echo e(url('about#vision')); ?>">Our Vision</a></li>
                             <li><a href="<?php echo e(url('about#stats')); ?>">Statistics</a></li>
+                            <li><a href="<?php echo e(url('about#gallery')); ?>">Gallery</a></li>
                             <li><a href="<?php echo e(url('about#impact')); ?>">Impact</a></li>
                             <li><a href="<?php echo e(url('about#faq')); ?>">FAQ's</a></li>
                         </ul>
@@ -335,13 +338,13 @@
                             <?php echo csrf_field(); ?>
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
-                                        <input type="text" placeholder="Name" name="name">
+                                        <input type="text" placeholder="Name" name="name"  autocomplete="off" >
                                     </div>
                                     <div class="col-lg-6 col-md-6">
-                                        <input type="text" placeholder="Email" name="email">
+                                        <input type="text" placeholder="Email" name="email" autocomplete="off" >
                                     </div>
                                     <div class="col-lg-12 text-center">
-                                    <input type="text" placeholder="Comment" name="comment">
+                                    <input type="text" placeholder="Comment" name="comment" autocomplete="off" >
                                         <button type="submit" class="site-btn">Submit</button>
                                     </div>
                                 </div>

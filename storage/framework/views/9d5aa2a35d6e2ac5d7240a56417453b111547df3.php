@@ -287,23 +287,9 @@
                             <li><i class="fa fa-location-arrow"></i> NIT Calicut</li>
                         </ul>
                         <h5 style="color:white;">Subscribe</h5><br>
-                        <form action="/home/subscribe" method="post" class="subscribe-form" data-step="9" data-intro="Here you can subscribe to get the latest updates from our site." data-position="right">
-                            <?php echo csrf_field(); ?>
-                            <input type="email" placeholder="Your Email" name="subscriberEmail">
-                            <?php $__errorArgs = ['subscriberEmail'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                            <?php echo e($messsage); ?>
 
-                            <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                            <button type="submit"><i class="fa fa-send"></i></button>
-                        </form>
                         <a href="/home/subscribe"><i class="fa fa-send"></i></a>
+
                     </div>
                 </div>
                 <div class="col-lg-3 offset-lg-1 col-md-3 col-sm-6" data-step="10" data-intro="This section provides information about different helpline numbers across India." data-position="bottom-middle-aligned">
@@ -349,13 +335,13 @@ unset($__errorArgs, $__bag); ?>
                             <?php echo csrf_field(); ?>
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
-                                        <input type="text" placeholder="Name" name="name">
+                                        <input type="text" placeholder="Name" name="name"  autocomplete="off" >
                                     </div>
                                     <div class="col-lg-6 col-md-6">
-                                        <input type="text" placeholder="Email" name="email">
+                                        <input type="text" placeholder="Email" name="email" autocomplete="off" >
                                     </div>
                                     <div class="col-lg-12 text-center">
-                                    <input type="text" placeholder="Comment" name="comment">
+                                    <input type="text" placeholder="Comment" name="comment" autocomplete="off" >
                                         <button type="submit" class="site-btn">Submit</button>
                                     </div>
                                 </div>

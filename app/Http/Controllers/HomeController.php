@@ -132,8 +132,9 @@ class HomeController extends Controller
     {
 
         $user = Auth::user();
-        $user_stories = $user->stories;
-        $diary = $user->diary;
+        //$user_stories = $user->stories->paginate(4);
+        $user_stories = Story::where('user_id',$user->id)->paginate(4);
+        $diary = DB::table('diary')->orderBy("created_at","desc")->paginate(4);
 
         $checkins=$user->checkins;
         $checkins=$checkins+1;
@@ -143,7 +144,7 @@ class HomeController extends Controller
         $events_count=$diary->count();
         $worries_count=Worry::where('user_id',$user->id)->get()->count();
 
-        session()->put('message','Welcome '.$user->name.' to the Dashboard');
+        //session()->put('message','Welcome '.$user->name.' to the Dashboard');
         return view('dashboard_user')->with(compact('user','user_stories','diary','checkins','stories_count','events_count','worries_count'));
     }
 }

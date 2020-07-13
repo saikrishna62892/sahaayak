@@ -183,7 +183,7 @@
 
                                         <div class="nofity-list">
                                              <?php $__currentLoopData = auth()->user()->unreadnotifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $notification): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                            <a href="<?php echo e(route('gotonewsarticle')); ?>" class="notify-item">
+                                            <a href="<?php echo e(route($notification->data['refrence'])); ?>" class="notify-item">
                                                 <div class="notify-thumb"><i class="ti-key btn-danger"></i></div>
                                                 <div class="notify-text">
                                                     <p><?php echo e($notification->data['data']); ?></p>
@@ -192,35 +192,13 @@
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                                             <?php $__currentLoopData = auth()->user()->readnotifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $notification): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                            <a href="<?php echo e(route('gotonewsarticle')); ?>" class="notify-item">
+                                            <a href="<?php echo e(route($notification->data['refrence'])); ?>" class="notify-item">
                                                 <div class="notify-thumb"><i class="ti-key btn-danger"></i></div>
                                                 <div class="notify-text">
                                                     <p><?php echo e($notification->data['data']); ?></p>
                                                     </div>
                                             </a>
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-                                            <a href="<?php echo e(route('gotonewsarticle')); ?>" class="notify-item">
-                                                <div class="notify-thumb"><i class="ti-comments-smiley btn-info"></i></div>
-                                                <div class="notify-text">
-                                                    <p>New Commetns On Post</p>
-                                                    <span>30 Seconds ago</span>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="notify-item">
-                                                <div class="notify-thumb"><i class="ti-key btn-primary"></i></div>
-                                                <div class="notify-text">
-                                                    <p>Some special like you</p>
-                                                    <span>Just Now</span>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="notify-item">
-                                                <div class="notify-thumb"><i class="ti-comments-smiley btn-info"></i></div>
-                                                <div class="notify-text">
-                                                    <p>New Commetns On Post</p>
-                                                    <span>30 Seconds ago</span>
-                                                </div>
-                                            </a>
                                         </div>
                                     </div>
                                 </li>

@@ -13,5 +13,6 @@
 			<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
 			<h5>No Suggestions Available</h5>
 		<?php endif; ?>
+		<div class="col-lg-12"><span><?php echo e($suggestions->links()); ?></span></div>
 	</div>
 </div><?php /**PATH C:\Users\Ganesh\Desktop\dileep\sahaayak\resources\views/suggestions.blade.php ENDPATH**/ ?>

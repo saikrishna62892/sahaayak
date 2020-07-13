@@ -12,7 +12,6 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb__text">
                         <h2>Expert Talks</h2>
-                        <h5>Some text.................</h5>
                         <div class="breadcrumb__widget">
                             <a href="./index.html">Home</a>
                             <span>Talks</span>
@@ -60,7 +59,7 @@
                                                             <div class="card-body">
                                                                 <div class="blog__details__large">
                                                                     @if(is_null($talk->image))
-                                                                        <img src="{{ asset('/img/talks/default.PNG') }}" alt="" width="700" height="350">
+                                                                        <img src="{{ asset('/img/talks/default1.jpg') }}" alt="" width="700" height="350">
                                                                     @else
                                                                         <img src="{{ asset('/img/talks/'.$talk->image) }}" alt="" width="700" height="350">
                                                                     @endif
@@ -71,7 +70,7 @@
                                                                         <li><i class="fa fa-calendar-o"></i>{{ $talk->created_at }}</li>
                                                                         <li><a href="{{ route('increment', $talk) }}" class="fa fa-thumbs-up" style="color: black"></a>{{ $talk->likes }}</li>
                                                                     </ul>
-                                                                    <p>{{ $talk->content }}</p>
+                                                                    <p align="justify">{{ $talk->content }}</p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -80,18 +79,11 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-lg-12"><span>{{$talks->links()}}</span></div>
                                 </div>
                             </div>
                         </div>
                         <!-- Faq End -->
-                        
-                        <div class="col-lg-12">
-                            <div class="classes__pagination blog__pagination">
-                                <a href="#">1</a>
-                                <a href="#">2</a>
-                                <a href="#"><span class="arrow_carrot-right"></span></a>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4 order-lg-2 order-2">

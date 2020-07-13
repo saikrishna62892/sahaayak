@@ -10,7 +10,7 @@
 		    <h6 class="card-subtitle mb-2 text-muted">Likes: <?php echo e($story->likes); ?></h6><br>
 		    <h6 class="card-subtitle mb-2 text-muted">Content:</h6>
 		    <p class="card-text" align="justify"><?php echo e($story->content); ?></p>
-		    <a href="#" class="card-link">See Post</a>
+		    <a href="#" class="card-link" style="color: #5768ad;">See Post</a>
 		  </div>
 		</div>
 	</div>

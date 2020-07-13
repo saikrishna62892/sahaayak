@@ -58,12 +58,16 @@ Route::get('/admin/home/editVideo/{video}/videoedited','VideoController@editvide
 Route::patch('/admin/home/editVideo/{video}','VideoController@update');
 Route::get('/admin/home/editPlaylist/{playlist}/playlistedited','PlaylistController@editplaylist');
 Route::patch('/admin/home/editPlaylist/{playlist}','PlaylistController@update');
+Route::get('user/home/editEvent/{event}/eventedited','diary_controller@editevent');
+Route::patch('/user/home/diaryEvent/{event}','diary_controller@update');
 
 Route::get('admin/home/deleteNews/{newsarticle}/articledeleted','NewsController@deletenews');
 Route::get('admin/deleteTalk/{talkid}/talkdeleted','TalkController@deletetalk');
 Route::get('admin/deleteQuote/{quoteid}/quotedeleted','QuoteController@deletequote');
 Route::get('admin/deleteVideo/{video}/videodeleted','VideoController@deletevideo');
 Route::get('admin/deletePlaylists/{playlist}/playlistdeleted','PlaylistController@deleteplaylist');
+Route::get('user/home/deleteStory/{story}/storydeleted','StoryController@deletestory');
+Route::get('user/home/deleteEvent/{event}/eventdeleted','diary_controller@deleteevent');
 
 
 
@@ -99,7 +103,7 @@ Auth::routes(['verify' => true]);
 Route::get('home', 'HomeController@welcome')->name('home');
 
 //user page route
-Route::get('user/home', 'HomeController@userHome')->name('userDashboard')->middleware('is_user');
+Route::get('/user/home', 'HomeController@userHome')->name('userDashboard')->middleware('is_user');
 
 //admin page route
 Route::get('admin/home', 'HomeController@adminHome')->name('adminDashboard')->middleware('is_admin');
@@ -155,7 +159,7 @@ Route::post('/admin/report/{appointment}/generateReport','appointment_controller
 
 //learn section routes
 Route::get('home/learn/{learn}/{learnID}','LearnController@show');
-
+Route::post('home/learn/{learn}/comment/{learnID}','CommentController@store');
 
 
 //worry tree routes
@@ -163,7 +167,7 @@ Route::get('/worry', 'WorryController@show');
 Route::post('/home/user/worrytree','WorryController@store');
 
 //waiting approval
-Route::get('volunteer/waitingArroval',function()
+Route::get('volunteer/waitingApproval',function()
 {
     return view('volunteer.waitingApproval');
 });
@@ -199,18 +203,6 @@ Route::get('/home/abc',function(){
 
 #bell icon routes end
 
-Route::get('dashboard_user', function () {
-    return view('dashboard_user');
-});
-
-Route::get('dashboard_admin', function () {
-    return view('dashboard_admin');
-});
-
-Route::get('dashboard_volunteer', function () {
-    return view('dashboard_volunteer');
-});
-
 //User Dashboard post a story form
 
 Route::post('/postStory','StoryController@store')->name('addStoryFields');
@@ -222,7 +214,7 @@ Route::post('/postTalks','TalkController@store')->name('addTalksFields');
 Route::get('/displayTalks','TalkController@display')->name('displayTalks');
 
 //Diary routes by john & ganesh
-Route::post('home/displaydiary','diary_controller@save')->name('addFields');
+Route::post('/user/home/displaydiary','diary_controller@save')->name('addFields');
 Route::get('/displayStories','StoryController@display');
 Route::get('/incrementLike/{story}', 'StoryController@incrementLike')->name('increment');
 

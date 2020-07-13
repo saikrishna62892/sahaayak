@@ -1,13 +1,14 @@
 <div class="row">
     <div class="card col-lg-12 col-md-12 shadow p-4 mb-5 bg-white rounded">
         <div class="form-group row" style="background-color: #fff;">
-        	<input type="text" class="form-control col-lg-9 col-md-9" id="worry" placeholder="Your worries here..."/>
+        	<input type="text" class="form-control col-lg-9 col-md-9" id="worry" placeholder="Your worries here..." autocomplete="off" />
             &emsp;&emsp;
     		<input type="button" class="btn btn-primary col-lg-2 col-md-2" style="background-color: #5768ad;" value ="Add Worry" id="add">
         </div>
 
         <div>
-            <small>Now You can strikeoff your worries to grow the tree</small>
+            <small>Now You can strikeoff your worries to grow the tree</small><br>
+            <small>You can Add max upto 5 worries</small>
             <form action="/home/user/worrytree" method="post">
                 @csrf
             <ul id="worriess"> 

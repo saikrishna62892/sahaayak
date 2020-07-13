@@ -23,7 +23,7 @@
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="hero__sliders owl-carousel">
-            <div class="hero__items set-bg" data-setbg="img/hero/hero-1.jpg">
+            <div class="hero__items set-bg" data-setbg="/img/hero/hero-1.jpg">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8">
@@ -87,15 +87,15 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="chooseus__text">
-                        <h2 data-step="5" data-intro="Myths & Facts" data-position="left">Myths & Facts</h2>
-                        <p> Talking about suicide provides the opportunity for communication. Fears shared are more
+                        <h2 data-step="3" data-intro="Myths & Facts" data-intro="This section deals with the Myths & Facts about Mental Health." data-position="left">Myths & Facts</h2>
+                        <p align="justify"> Talking about suicide provides the opportunity for communication. Fears shared are more
                          likely to diminish. The first step in encouraging a person with thoughts of suicide to live
                           comes from talking about those feelings. A simple inquiry about whether or not the person
-                           is intending to end their life can start the conversation.</p>
-                        <p>There is a very great chance that suicides can be reduced if treated in right way. In
+                           is intending to end their life can start the conversation.</p><br>
+                        <p align="justify">There is a very great chance that suicides can be reduced if treated in right way. In
                             most of the cases people don’t try to express what they are going through even with thier
-                            beloved once.</p>
-                        <p>This is because people believe that sharing their suicidal thoughts might disturb
+                            beloved once.</p><br>
+                        <p align="justify">This is because people believe that sharing their suicidal thoughts might disturb
                             their relation or think that they might be judged for having such thoughts.These insecurities are
                             caused due to the myths we believe blindly.</p>
                     </div>
@@ -113,7 +113,7 @@
                 <div class="col-lg-12">
                     <div class="section-title">
                         <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
-                        <h2 data-step="4" data-intro="This Section describes the things that you can expect from us" data-position="bottom-middle-aligned">What we can do</h2>
+                        <h2 data-step="4" data-intro="This Section describes the things that you can expect from us" data-position="bottom-middle-aligned">what we can do</h2>
                     </div>
                 </div>
             </div>
@@ -174,20 +174,20 @@
                 @csrf
                     <div class="row">
                         <div class="col-lg-6">
-                            <input type="text" placeholder="Name" name="name">
+                            <input type="text" placeholder="Name" name="name" autocomplete="off" >
                         </div>
                         <div class="col-lg-6">
-                            <input type="text" placeholder="Email" name="email">
+                            <input type="text" placeholder="Email" name="email" autocomplete="off" >
                         </div>
                         <div class="col-lg-6">
-                            <input type="text" placeholder="Phone" name="phone">
+                            <input type="text" placeholder="Phone" name="phone" autocomplete="off" >
                         </div>
                         <div class="col-lg-6">
-                            <input placeholder="Date & Time" type="datetime-local" name="timings" min="2020-05-10T00:00">
+                            <input placeholder="Pick your Appointment" type="datetime-local" name="timings" min="2020-05-10T00:00">
                         </div>
                         <div class="col-lg-12 text-center">
-                            <textarea placeholder="What do you want to talk about ?" name="message"></textarea>
-                            <button type="submit" onclick="alert("The timings provided may vary upto 1 hour!");">Submit</button>
+                            <textarea placeholder="What do you want to talk about ?" name="message" autocomplete="off" ></textarea>
+                        <button type="submit" onclick="alert('The timings provided may vary upto 1 hour!');">Submit</button>
                         </div>
                     </div>
                 </form>
@@ -224,7 +224,8 @@
                                     <p>{{ $news->source }} </p>
                                     <h4>{{ $news->headline }}</h4>
                                     <p align="justify" style="overflow: hidden;display: -webkit-box;-webkit-line-clamp: 7;-webkit-box-orient: vertical;">{{ $news->content }}</p>
-                                    <a href="{{ $news->link }}" class="class-btn">Know More</a>
+                                    <?php $newvariable="https://$news->newsurl" ?>
+                                    <a href="{{ $newvariable }}" class="class-btn" target="_blank">Know More</a>
                                 </div>
                             </div>
                         </div>
@@ -263,13 +264,13 @@
                 <div class="col-lg-5" data-step="7" data-intro="This section is introduction to Sahaayak & have a look at it by clicking more about us button because we share & we care." data-position="bottom-middle-aligned">
                     <div class="home__about__text">
                         <span>“We Share coz We Care”</span>
-                        <p>We understand your eagerness and enthusiasm to figure out the purpose of this site that is assuring you hope
+                        <p align="justify">We understand your eagerness and enthusiasm to figure out the purpose of this site that is assuring you hope
                             and care in life. Have you ever wondered what it feels to have suicidal thoughts or what
                             encourages and convinces your guts to commit suicide if your answer is yes, we are pretty sure
                             that you are in the right hands. To all our fellow beings whose answer is a big yes, let us
                             undoubtedly tell you that suicide is not the one and only solution or chance, to end all the
                             problems and obstacles that come your way.</p>
-                        <p class="para-2">In fact, suicide is certainly a wrong choice, that
+                        <p class="para-2" align="justify">In fact, suicide is certainly a wrong choice, that
                             you might have chosen knowingly or unknowingly over other appropriate choices. As a part of
                             our mission and vision to make you understand, realize and believe strongly that committing
                             suicide is a false choice and not the ultimate decision to end things, let us help you in having a

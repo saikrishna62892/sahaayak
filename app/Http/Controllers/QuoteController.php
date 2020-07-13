@@ -18,8 +18,8 @@ class QuoteController extends Controller
 
     public function __construct()
     {
-        $this->middleware(['auth','verified']);
-        $this->middleware(['is_admin'])->only(['save','deletequote','editquote','update']);
+        //$this->middleware(['auth','verified']);
+        $this->middleware(['auth','verified','is_admin'])->only(['save','deletequote','editquote','update']);
     }
 
     public function save(Request $request)

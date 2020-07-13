@@ -7,7 +7,8 @@
         </div>
 
         <div>
-            <small>Now You can strikeoff your worries to grow the tree</small>
+            <small>Now You can strikeoff your worries to grow the tree</small><br>
+            <small>You can Add max upto 5 worries</small>
             <form action="/home/user/worrytree" method="post">
                 <?php echo csrf_field(); ?>
             <ul id="worriess"> 

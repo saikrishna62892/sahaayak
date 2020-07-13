@@ -183,7 +183,7 @@
 
                                         <div class="nofity-list">
                                              <?php $__currentLoopData = auth()->user()->unreadnotifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $notification): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                            <a href="<?php echo e(route('gotonewsarticle')); ?>" class="notify-item">
+                                            <a href="<?php echo e(route($notification->data['refrence'])); ?>" class="notify-item">
                                                 <div class="notify-thumb"><i class="ti-key btn-danger"></i></div>
                                                 <div class="notify-text">
                                                     <p><?php echo e($notification->data['data']); ?></p>
@@ -192,7 +192,7 @@
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                                             <?php $__currentLoopData = auth()->user()->readnotifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $notification): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                            <a href="<?php echo e(route('gotonewsarticle')); ?>" class="notify-item">
+                                            <a href="<?php echo e(route($notification->data['refrence'])); ?>" class="notify-item">
                                                 <div class="notify-thumb"><i class="ti-key btn-danger"></i></div>
                                                 <div class="notify-text">
                                                     <p><?php echo e($notification->data['data']); ?></p>

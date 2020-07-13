@@ -2,7 +2,7 @@
     <div class="blog__recent__item">
         <div class="blog__recent__item__pic">
             <?php if(is_null($news->image)): ?>
-                <img src="<?php echo e(asset('/img/news/default.jpg')); ?>" alt="" width="70" height="70">
+                <img src="<?php echo e(asset('/img/news/default1.jpg')); ?>" alt="" width="70" height="70">
             <?php else: ?>
                 <img src="<?php echo e(asset('/img/news/'.$news->image)); ?>" alt="" width="70" height="70">
             <?php endif; ?>

@@ -12,8 +12,8 @@ class StoryController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth','verified']);
-        $this->middleware(['is_user'])->only(['index','store']);
+        //$this->middleware(['auth','verified']);
+        $this->middleware(['auth','verified','is_user'])->only(['index','store']);
     }
 
     public function index()
@@ -74,4 +74,8 @@ class StoryController extends Controller
 		$story->save();
 		return redirect()->back();
 	}
+    public function deletestory(Story $story){
+        $story->delete();
+        return redirect()->back();
+    }
 }

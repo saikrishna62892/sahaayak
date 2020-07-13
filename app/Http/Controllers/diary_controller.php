@@ -18,9 +18,9 @@ class diary_controller extends Controller
     
     function save(Request $req)
     {
+        $user = Auth::user();
         switch($req->input('action'))
         {
-            $user = Auth::user();
             case 'add_to_diary':
                 $diary=new Diary();
                 $data = request()->validate([
@@ -30,6 +30,7 @@ class diary_controller extends Controller
 
                 $diary->title=$req->title;
                 $diary->content=$req->content;
+                $diary->category = $req->category;
                 $diary->user_id=$user->id;
                 $diary->save();
              
@@ -54,4 +55,34 @@ class diary_controller extends Controller
         }
         
     }
+    public function deleteevent(Diary $event){
+        $event->delete();
+        return redirect()->back();
+    }
+
+    public function editevent(Diary $event){
+         return view('diary.editEvent',compact('event'));
+    }
+    public function update(Diary $event)
+    {
+        $user = Auth::user();
+        $data=request()->validate(
+            [
+                'title' => 'required',
+                'content' => 'required',
+                'category' => 'required',
+            ]);
+           $data['user_id'] = $user->id;
+
+        $event->update($data);
+        return redirect()->route('userDashboard');
+    }
+
+
+
+
+
+
+
+
 }

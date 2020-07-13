@@ -7,6 +7,8 @@ use App\Questionnaire;
 use App\Answer;
 use App\Survey;
 use App\Question;
+use App\User;
+use Auth;
 class QuestionController extends Controller
 {
     public function __construct()
@@ -45,7 +47,8 @@ class QuestionController extends Controller
     {
         $score=0;
         $data = request()->validate([
-            'response.*.answer_id' => 'required'
+            'response.*.answer_id' => 'required',
+            'response.*.question_id' => 'required',
         ]);
 
         foreach($data['response'] as $a)
@@ -54,7 +57,12 @@ class QuestionController extends Controller
         }
         $survey= Survey :: create(['awarded_point'=>$score,'user_id'=>auth()->user()->id,'questionnaire_id'=>$questionnaire->id]);
         $survey->save();
-        return 'Thank you';
+        $user_name=Auth::user()->name;
+        $questions_count=Question::where('questionnaire_id',$questionnaire->id)->count();
+        $assessment=Questionnaire::where('id',$questionnaire->id)->get();
+        $assessment_name=$assessment[0]->questionnaireTitle;
+
+        return view('survey.result',compact('score','user_name','questions_count','assessment_name'));
     }
 
     public function editQuestions(Questionnaire $questionnaire)

@@ -29,6 +29,7 @@
 					<?php endif; ?>
                 </tbody>
             </table>
+            <div class="col-lg-12"><span><?php echo e($shared_videos->links()); ?></span></div>
         </div>
     </div>
 </div>

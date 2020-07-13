@@ -32,11 +32,6 @@
                     <div class="classes__sidebar">
                         <div class="classes__sidebar__item classes__sidebar__item--info">
                             <h4><?php echo $__env->yieldContent('learnname'); ?></h4>
-                            <ul class="classes__sidebar__item__widget">
-                                <li><span class="icon_calendar"></span>Date: </li>
-                                <li><span class="icon_clock_alt"></span>Time: </li>
-                            </ul>
-                            <a href="#" class="sidebar-btn">Visit Website</a>
                         </div>
                         <div class="classes__sidebar__item">
                             <h4>Review & Comment</h4>
@@ -44,7 +39,7 @@
                                 <?php $__empty_1 = true; $__currentLoopData = $comments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $comment): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
                                 <div class="classes__sidebar__comment">
                                     <div class="classes__sidebar__comment__pic">
-                                        <img src="/img/classes-details/comment-1.png" alt="">
+                                        <img src="/img/classes-details/default.png" alt="">
                                         <div class="classes__sidebar__comment__rating">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -72,7 +67,7 @@
     <!-- Classes Section End -->
 
     <!-- Leave Comment Begin -->
-    <div class="leave-comment spad">
+    <div class="leave-comment spad" style="padding: 0">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -87,7 +82,7 @@
                                 </div>
                                 <div class="col-lg-12 text-center">
                                     <form action="/home/learn/<?php echo e($learn); ?>/comment/<?php echo e($learnID); ?>" method="post">
-                                    <textarea placeholder="Your Comment" name="comment" rows="2"></textarea>
+                                    <textarea placeholder="Your Comment" name="comment" rows="10"></textarea>
                                     <?php $__errorArgs = ['comment'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
