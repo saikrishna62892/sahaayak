@@ -3,13 +3,6 @@
         font-family: "DejaVu Sans";
         font-size: 8px;
     }
-    .upn {
-      background-image:url("{{ asset('img/logo.png') }}");
-      background-repeat:no-repeat;
-      width:700px;
-      height:342px;
-      position:absolute;
-   }
 </style>
 
 <?php $volunteer= App\Volunteer::find($data['volunteer_id'])?>

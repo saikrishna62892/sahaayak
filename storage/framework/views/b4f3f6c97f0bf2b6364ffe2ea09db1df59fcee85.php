@@ -1,10 +1,10 @@
-@extends('layouts.layout')
 
-@section('name')
+
+<?php $__env->startSection('name'); ?>
     Team
-@endsection
+<?php $__env->stopSection(); ?>
 
-    @section('content')
+    <?php $__env->startSection('content'); ?>
 
     
 
@@ -16,7 +16,7 @@
                     <div class="breadcrumb__text">
                         <h2>Meet Our Team</h2>
                         <div class="breadcrumb__widget">
-                            <a href="{{ url('/') }}">Home</a>
+                            <a href="<?php echo e(url('/')); ?>">Home</a>
                             <span>Team</span>
                         </div>
                     </div>
@@ -386,4 +386,5 @@
     </div>
     <!-- Map End -->
 
-    @endsection
+    <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/team.blade.php ENDPATH**/ ?>

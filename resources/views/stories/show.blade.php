@@ -12,7 +12,7 @@
                     <div class="breadcrumb__text">
                         <h2>Discover Stories</h2>
                         <div class="breadcrumb__widget">
-                            <a href="./index.html">Home</a>
+                            <a href="{{ url('/') }}">Home</a>
                             <span>Stories</span>
                         </div>
                     </div>
@@ -69,7 +69,7 @@
                                                                         <li><i class="fa fa-calendar-o"></i>{{ Carbon\Carbon::parse($story->created_at)->format('d-M-Y g:h:i:s A') }}</li>
                                                                         <li><a href="{{ route('increment', $story) }}" class="fa fa-thumbs-up" style="color: black"></a>{{ $story->likes }}</li>
                                                                     </ul>
-                                                                    <p align="justify">{{ $story->content }}</p>
+                                                                    <p align="justify" style="white-space: pre-wrap">{{ $story->content }}</p>
                                                                     <h6>Post yor stories anonymously <a href="{{ route('register') }}" style="color: #5768ad;">Register here.</a></h6>
                                                                 </div>
                                                             </div>

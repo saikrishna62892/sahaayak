@@ -1,8 +1,8 @@
-@extends('layouts.layout')
-@section('name')
+
+<?php $__env->startSection('name'); ?>
     Videos
-@endsection
-    @section('content')
+<?php $__env->stopSection(); ?>
+    <?php $__env->startSection('content'); ?>
     
     <!-- Blog Hero Begin -->
     <section class="breadcrumb-option blog-hero set-bg" data-setbg="/img/breadcrumb.jpg">
@@ -12,7 +12,7 @@
                     <div class="breadcrumb__text">
                         <h2>Motivational Videos</h2>
                         <div class="breadcrumb__widget">
-                            <a href="{{ url('/') }}">Home</a>
+                            <a href="<?php echo e(url('/')); ?>">Home</a>
                             <span>Videos</span>
                         </div>
                     </div>
@@ -25,9 +25,9 @@
 <!-- Blog Details Section Begin -->
     <section class="blog-details spad" style="padding-top: 0px;">
         <div class="container">
-            @foreach($embedURLs as $key1 => $embedURL2)
+            <?php $__currentLoopData = $embedURLs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key1 => $embedURL2): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="row">
-                @foreach($embedURL2 as $key => $embedURL)
+                <?php $__currentLoopData = $embedURL2; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $embedURL): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="col-lg-6 order-lg-2 order-1">
                     <div class="blog__details">
                         <div class="blog__details__author">
@@ -41,17 +41,19 @@
                             </div>-->
                         </div>
                         <div class="embed-responsive embed-responsive-16by9">
-                            {!! $embedURL !!}
+                            <?php echo $embedURL; ?>
+
                             
                         </div>      
                     </div>
                 </div>
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
             <br>
-            @endforeach
-            <div class="col-lg-12"><span>{{$urls->links()}}</span></div>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            <div class="col-lg-12"><span><?php echo e($urls->links()); ?></span></div>
         
         </div>
     </section>
-    @endsection
+    <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\sahaayak\resources\views/video/show.blade.php ENDPATH**/ ?>

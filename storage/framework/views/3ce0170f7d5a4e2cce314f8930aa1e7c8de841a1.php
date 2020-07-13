@@ -55,7 +55,7 @@ unset($__errorArgs, $__bag); ?>
 		</div>
 		<div class="custom-file">
 		    <input type="file" class="custom-file-input" name="image" id="file-upload">
-		    <label class="custom-file-label" for="validatedCustomFile">Choose Image for the Post...</label>
+		    <label class="custom-file-label" for="validatedCustomFile">Choose Image...</label>
 		    <div id="file-upload-filename"></div>
 		    <?php $__errorArgs = ['image'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');

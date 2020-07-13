@@ -75,7 +75,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
             </div>
-            <center><button type="submit" name="action" value="add_to_diary" class="btn btn-primary" style="background-color: #5768ad;">Add to diary</button>&emsp;
+            <center><button type="submit" name="action" value="add_to_diary" class="btn btn-primary" style="background-color: #5768ad;">Add to diary</button><br><br>
             <button type="submit" name="action" value="add_to_story" class="btn btn-primary" style="background-color: #5768ad;">Add to story</button></center>
         </form>
     </div>

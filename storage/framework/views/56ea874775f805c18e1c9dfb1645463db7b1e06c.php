@@ -97,15 +97,9 @@
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layers"></i><span>Assessment</span></a>
                                 <ul class="collapse">
-                                    <li><a href="index.html">Depression</a></li>
-                                    <li><a href="index3-horizontalmenu.html">Suicide</a></li>
-                                    <li><a href="index.html">Depression</a></li>
-                                    <li><a href="index3-horizontalmenu.html">Suicide</a></li>
-                                    <li><a href="index.html">Depression</a></li>
-                                    <li><a href="index3-horizontalmenu.html">Suicide</a></li>
-                                    <li><a href="index.html">Depression</a></li>
-                                    <li><a href="index3-horizontalmenu.html">Suicide</a></li>
-                                    <li><a href="index.html">Depression</a></li>
+                                    <?php $__currentLoopData = $questionnaires; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $questionnaire): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <li><a href="/home/questionnaires/<?php echo e($questionnaire->id); ?>/questions"><?php echo e($questionnaire->questionnaireTitle); ?></a></li>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </ul>
                             </li>
                             <li>

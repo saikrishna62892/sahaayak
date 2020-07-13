@@ -9,7 +9,7 @@
 		    <h6 class="card-subtitle mb-2 text-muted">Details: <?php echo e(Carbon\Carbon::parse($story->created_at)->format('d-M-Y g:h:i:s A')); ?></h6><br>
 		    <h6 class="card-subtitle mb-2 text-muted">Likes: <?php echo e($story->likes); ?></h6><br>
 		    <h6 class="card-subtitle mb-2 text-muted">Content:</h6>
-		    <p class="card-text" align="justify"><?php echo e($story->content); ?></p>
+		    <p class="card-text" align="justify" style="white-space: pre-wrap"><?php echo e($story->content); ?></p>
 		    <a href="#" class="card-link" style="color: #5768ad;">See Post</a>
 		  </div>
 		</div>
