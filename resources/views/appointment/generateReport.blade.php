@@ -1,10 +1,3 @@
-<style type="text/css">
-    * {
-        font-family: "DejaVu Sans";
-        font-size: 8px;
-    }
-</style>
-
 <?php $volunteer= App\Volunteer::find($data['volunteer_id'])?>
 
 <div class="container" style="border-style: solid;border-color: black;">
