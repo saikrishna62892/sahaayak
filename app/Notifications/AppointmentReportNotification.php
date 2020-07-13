@@ -56,8 +56,8 @@ class AppointmentReportNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            'data'=>'report generated for your appointment',
-            'refrence'=>'/' 
+            'data'=>'report generated for your appointment check your mail',
+            'refrence'=>'userDashboard' 
         ];
     }
 }

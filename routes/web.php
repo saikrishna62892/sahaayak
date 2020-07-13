@@ -58,12 +58,16 @@ Route::get('/admin/home/editVideo/{video}/videoedited','VideoController@editvide
 Route::patch('/admin/home/editVideo/{video}','VideoController@update');
 Route::get('/admin/home/editPlaylist/{playlist}/playlistedited','PlaylistController@editplaylist');
 Route::patch('/admin/home/editPlaylist/{playlist}','PlaylistController@update');
+Route::get('user/home/editEvent/{event}/eventedited','diary_controller@editevent');
+Route::patch('/user/home/diaryEvent/{event}','diary_controller@update');
 
 Route::get('admin/home/deleteNews/{newsarticle}/articledeleted','NewsController@deletenews');
 Route::get('admin/deleteTalk/{talkid}/talkdeleted','TalkController@deletetalk');
 Route::get('admin/deleteQuote/{quoteid}/quotedeleted','QuoteController@deletequote');
 Route::get('admin/deleteVideo/{video}/videodeleted','VideoController@deletevideo');
 Route::get('admin/deletePlaylists/{playlist}/playlistdeleted','PlaylistController@deleteplaylist');
+Route::get('user/home/deleteStory/{story}/storydeleted','StoryController@deletestory');
+Route::get('user/home/deleteEvent/{event}/eventdeleted','diary_controller@deleteevent');
 
 
 

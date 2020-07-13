@@ -79,6 +79,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-lg-12"><span>{{$talks->links()}}</span></div>
                                 </div>
                             </div>
                         </div>
