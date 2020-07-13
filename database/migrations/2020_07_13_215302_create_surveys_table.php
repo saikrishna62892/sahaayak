@@ -21,6 +21,7 @@ class CreateSurveysTable extends Migration
 
             $table->unsignedBigInteger('questionnaire_id');
             $table->foreign('questionnaire_id')->references('id')->on('questionnaires')->onDelete('cascade');
+            $table->float('awarded_point');
 
             $table->timestamps();
         });
