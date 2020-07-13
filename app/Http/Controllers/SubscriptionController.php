@@ -16,8 +16,8 @@ class SubscriptionController extends Controller
 
     public function store()
     {
-    	
-    	Subscription::create(['user_id' => auth()->user()->id]);
+    	if( !Subscription::where('user_id' , auth()->user()->id)->exists())
+    	   Subscription::create(['user_id' => auth()->user()->id]);
     	return redirect('/');
     }
 }

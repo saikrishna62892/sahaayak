@@ -399,10 +399,10 @@
                         <form action="#">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
-                                    <input type="text" placeholder="Name*">
+                                    <input type="text" placeholder="Name*"  autocomplete="off" >
                                 </div>
                                 <div class="col-lg-6 col-md-6">
-                                    <input type="text" placeholder="Email*">
+                                    <input type="text" placeholder="Email*" autocomplete="off" >
                                 </div>
                                 <div class="col-lg-12 text-center">
                                     <textarea placeholder="Your Comment"></textarea>

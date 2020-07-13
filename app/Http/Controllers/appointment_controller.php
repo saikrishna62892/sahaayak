@@ -10,6 +10,7 @@ use DB;
 use PDF;
 use App\Notifications\AppointmentReceivedNotification;
 use App\Notifications\AppointmentAcceptedNotification;
+use App\Notifications\AppointmentReportNotification;
 use App\User;
 use App\Traits\NotificationTrait;
 
@@ -50,12 +51,32 @@ class appointment_controller extends Controller
 
      public function appointmentAccepted(Appointment $appointment)
     {
-        $appointment->update(['volunteer_id' => auth()->user()->volunteer->id]);
-        $this->sendAppointmentAcceptedNotif($appointment->user_id,$appointment);
+        if(!is_null($appointment->volunteer_id))
+        {
+            $appointment->update(['volunteer_id' => auth()->user()->volunteer->id]);
+            $this->sendAppointmentAcceptedNotif($appointment->user_id,$appointment);
+        }
         return redirect()->back();
 
     }
 
+    public function reportForm(Appointment $appointment)
+    {
+        return view('appointment.reportForm',compact('appointment'));
+    }
+
+    public function generateReport()
+    {
+        $data = request()->all();
+        $appointment = Appointment::find($data['appointment_id']);
+        $data['user_id'] = $appointment->user_id;
+        $data['volunteer_id'] = $appointment->volunteer_id;
+        $pdf = PDF::loadView('appointment.generateReport',compact('data'));
+        $user = User::find($appointment->user_id);
+        $user->notify(new AppointmentReportNotification($pdf));
+        return redirect()->back();
+    }
     
 
 }
+        

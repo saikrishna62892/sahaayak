@@ -163,7 +163,7 @@ Route::get('/worry', 'WorryController@show');
 Route::post('/home/user/worrytree','WorryController@store');
 
 //waiting approval
-Route::get('volunteer/waitingArroval',function()
+Route::get('volunteer/waitingApproval',function()
 {
     return view('volunteer.waitingApproval');
 });

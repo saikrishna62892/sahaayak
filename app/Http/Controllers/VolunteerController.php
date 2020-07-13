@@ -56,18 +56,5 @@ class VolunteerController extends Controller
 
    
 
-    public function reportForm(Appointment $appointment)
-    {
-        return view('appointment.reportForm',compact('appointment'));
-    }
-
-    public function generateReport()
-    {
-        $data = request()->all();
-        $appointment = Appointment::find($data['appointment_id']);
-        $data['user_id'] = $appointment->user_id;
-        $data['volunteer_id'] = $appointment->volunteer_id;
-        $pdf = PDF::loadView('appointment.generateReport',compact('data'));
-        return $pdf->download('report.pdf');
-    }
+    
 }

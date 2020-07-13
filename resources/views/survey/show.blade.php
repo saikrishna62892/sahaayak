@@ -24,8 +24,8 @@
             <div class="card mt-4 shadow p-4 mb-5 bg-white rounded" >
                 <div class="card-header">{{$key+1}}) {{$question->question}}</div>
                     <div class="card-body">
-                        @error('responses'.$key.'answer_id')
-                        <small class="text-danger">{{$message}}</small>
+                        @error('response.'.$key.'.answer_id')
+                        <small class="text-danger">This question needs to be answered}</small>
                         @enderror
                         <ul class="list-group">
                         @foreach($question->answers as $answer)
@@ -34,9 +34,8 @@
                                 <input type="radio" name="response[{{$key}}][answer_id]" id="answer{{$answer->id}}" 
                                 {{ (old('response.'.$key.'.answer_id') ==  $answer->id) ? 'checked':''}}
                                  class="mr-2" value="{{$answer->id}}">
-                                </input>
                                 {{$answer->answer}}
-                    <input type="hidden" name="response[{{$key}}][question_id]" id="answer{{$question->id}}"></input>
+                    <input type="hidden" name="response[{{$key}}][question_id]" id="answer{{$question->id}}">
                             </li>
                         </label>
                         @endforeach

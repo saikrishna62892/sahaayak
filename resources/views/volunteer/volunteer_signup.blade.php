@@ -10,7 +10,7 @@
 						SignUp : Step 2
 					</span>
 					<div class="wrap-input100 validate-input m-b-16">
-						<input class="input100" type="text" name="name" value="{{ old('name') }}" placeholder="Full Name" required>
+						<input class="input100" type="text" name="name" value="{{ old('name') }}" placeholder="Full Name"  autocomplete="off" required>
 						@error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -23,7 +23,7 @@
 					</div>
 					Note: Please Provide 10 digit number.
 					<div class="wrap-input100 validate-input m-b-16">
-						<input class="input100" type="tel" name="phone" value="{{ old('phone') }}" placeholder="Phone" required>
+						<input class="input100" type="tel" name="phone" value="{{ old('phone') }}" placeholder="Phone"  autocomplete="off" required>
 						@error('phone')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -36,7 +36,7 @@
 					</div>
 					Note: Please Provide Highest degree.
 					<div class="wrap-input100 validate-input m-b-16">
-						<input class="input100" type="text" name="qualification" value="{{ old('qualification') }}" placeholder="Qualification" required>
+						<input class="input100" type="text" name="qualification" value="{{ old('qualification') }}" placeholder="Qualification"  autocomplete="off" required>
 						@error('qualification')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -49,7 +49,7 @@
 					</div>
 					Note: Please Provide Your Job Details.
 					<div class="wrap-input100 validate-input m-b-16">
-						<input class="input100" type="text" name="work" value="{{ old('work') }}" placeholder="Working in" required>
+						<input class="input100" type="text" name="work" value="{{ old('work') }}" placeholder="Working in"  autocomplete="off" required>
 						@error('work')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -62,7 +62,7 @@
 					</div>
 					Note: Insight about becoming a Volunteer.
 					<div class="wrap-input100 validate-input m-b-16">
-						<input class="input100" type="text" name="insight" value="{{ old('insight') }}" placeholder="Insight" required>
+						<input class="input100" type="text" name="insight" value="{{ old('insight') }}" placeholder="Insight"  autocomplete="off" required>
 						@error('insight')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -75,7 +75,7 @@
 					</div>
 					Note: Any Questions for us?
 					<div class="wrap-input100 validate-input m-b-16">
-						<input class="input100" type="text" name="queries" value="{{ old('queries') }}"placeholder="Queries">
+						<input class="input100" type="text" name="queries" value="{{ old('queries') }}"placeholder="Queries" autocomplete="off" >
 						@error('queries')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

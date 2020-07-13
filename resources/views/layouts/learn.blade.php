@@ -82,7 +82,7 @@
                                 </div>
                                 <div class="col-lg-12 text-center">
                                     <form action="/home/learn/{{$learn}}/comment/{{$learnID}}" method="post">
-                                    <textarea placeholder="Your Comment" name="comment" rows="2"></textarea>
+                                    <textarea placeholder="Your Comment" name="comment" rows="2" autocomplete="off" ></textarea>
                                     @error('comment')
                                     <small class="text-danger">{{$message}}</small>
                                     @enderror

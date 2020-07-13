@@ -24,7 +24,7 @@
             @csrf
             <div class="form-group">
                 <label for="formGroupExampleInput">Please enter event title</label>
-                <input type="text" class="form-control" name="title" id="formGroupExampleInput" placeholder="Your title here...">
+                <input type="text" class="form-control" name="title" id="formGroupExampleInput" placeholder="Your title here..." autocomplete="off" >
                 @csrf
                 @error('title')
                     <small class="text-danger">{{$message}}</small>
@@ -32,7 +32,7 @@
             </div>
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Please enter event content</label>
-                <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="10" placeholder="Your content here..."></textarea>
+                <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="10" placeholder="Your content here..." autocomplete="off" ></textarea>
                 @error('content')
                     <small class="text-danger">{{$message}}</small>
                 @enderror
