@@ -23,7 +23,7 @@
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="hero__sliders owl-carousel">
-            <div class="hero__items set-bg" data-setbg="/img/hero/hero-1.jpg">
+            <div class="hero__items set-bg" data-setbg="/img/hero/hero-2.jpg">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8">
@@ -174,20 +174,20 @@
                 <?php echo csrf_field(); ?>
                     <div class="row">
                         <div class="col-lg-6">
-                            <input type="text" placeholder="Name" name="name">
+                            <input type="text" placeholder="Name" name="name" autocomplete="off" >
                         </div>
                         <div class="col-lg-6">
-                            <input type="text" placeholder="Email" name="email">
+                            <input type="text" placeholder="Email" name="email" autocomplete="off" >
                         </div>
                         <div class="col-lg-6">
-                            <input type="text" placeholder="Phone" name="phone">
+                            <input type="text" placeholder="Phone" name="phone" autocomplete="off" >
                         </div>
                         <div class="col-lg-6">
                             <input placeholder="Pick your Appointment" type="datetime-local" name="timings" min="2020-05-10T00:00">
                         </div>
                         <div class="col-lg-12 text-center">
-                            <textarea placeholder="What do you want to talk about ?" name="message"></textarea>
-                            <button type="submit" onclick="alert("The timings provided may vary upto 1 hour!");">Submit</button>
+                            <textarea placeholder="What do you want to talk about ?" name="message" autocomplete="off" ></textarea>
+                        <button type="submit" onclick="alert('The timings provided may vary upto 1 hour!');">Submit</button>
                         </div>
                     </div>
                 </form>
