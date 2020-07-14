@@ -74,4 +74,8 @@ class StoryController extends Controller
 		$story->save();
 		return redirect()->back();
 	}
+    public function deletestory(Story $story){
+        $story->delete();
+        return redirect()->back();
+    }
 }

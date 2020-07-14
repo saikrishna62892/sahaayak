@@ -42,7 +42,7 @@
 
         <div class="form-group">
             <label for="keywords">Enter keywords used by the user while talking</label>
-            <input type="text" class="form-control" name="keywords" id="keywords" placeholder="Enter keywords"autocomplete="off" >
+            <input type="text" class="form-control" name="keywords" id="keywords" placeholder="Enter keywords">
             <small>Note: Enter multiple keywords separated by comma</small>
             @error('keywords')
             <small class="text-danger">{{$message}}</small>
@@ -52,6 +52,7 @@
         <div class="form-group">
             <label for="suggestions">Enter suggestions for the user</label>
             <textarea class="form-control" name="suggestions" id="suggestions" placeholder="You can give your valuable suggestions & prescriptions for the user" rows="8" autocomplete="off" ></textarea>
+            <small>Note: Enter Your suggestions separated by newline</small>
             @error('suggestions')
             <small class="text-danger">{{$message}}</small>
             @enderror
@@ -60,6 +61,7 @@
         <div class="form-group">
             <label for="remarks">Enter remarks</label>
             <textarea type="textarea" class="form-control" name="remarks" id="remarks" placeholder="Your remarks about the session" rows="5"></textarea>
+            <small>Note: Enter Your Remarks about the session separated by newline</small>
             @error('remarks')
             <small class="text-danger">{{$message}}</small>
             @enderror

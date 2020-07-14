@@ -16,7 +16,7 @@
                     <div class="breadcrumb__text">
                         <h2>Recent News</h2>
                         <div class="breadcrumb__widget">
-                            <a href="./index.html">Home</a>
+                            <a href="{{ url('/') }}">Home</a>
                             <span>News</span>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
                         <div class="classes__item__text">
                             <p>Source:{{$item->source}}</p>
                             <h4>{{$item->headline}}</h4>
-                            <h6 align="justify" style="overflow: hidden;display: -webkit-box;-webkit-line-clamp: 7;-webkit-box-orient: vertical;">{{$item->content}}</span></h6>
+                            <h6 align="justify" style="overflow: hidden;display: -webkit-box;-webkit-line-clamp: 12;-webkit-box-orient: vertical;white-space: pre-wrap">{{$item->content}}</span></h6>
                             <a href="{{ $item->newsurl }}" class="btn btn-primary" target="_blank" style="background-color: #5768ad;">Read More</a>
                         </div>
                     </div>

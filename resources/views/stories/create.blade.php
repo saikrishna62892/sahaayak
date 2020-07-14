@@ -33,8 +33,8 @@
 	        @enderror
 		</div>
 		<div class="custom-file">
-		    <input type="file" class="custom-file-input" name="image" id="file-upload" autocomplete="off" >
-		    <label class="custom-file-label" for="validatedCustomFile">Choose Image for the Post...</label>
+		    <input type="file" class="custom-file-input" name="image" id="file-upload" autocomplete="off">
+		    <label class="custom-file-label" for="validatedCustomFile">Choose Image...</label>
 		    <div id="file-upload-filename"></div>
 		    @error('image')
 	        	<small class="text-danger">{{$message}}</small>

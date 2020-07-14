@@ -16,7 +16,7 @@
                     <div class="breadcrumb__text">
                         <h2>Meet Our Team</h2>
                         <div class="breadcrumb__widget">
-                            <a href="./index.html">Home</a>
+                            <a href="{{ url('/') }}">Home</a>
                             <span>Team</span>
                         </div>
                     </div>
@@ -355,21 +355,21 @@
                     <div class="contact__widget__item">
                         <span class="icon_mail_alt"></span>
                         <h4>Mail to</h4>
-                        <a href="#" style="color:black;">Mail Handle</a>
+                        <a href="mailto:sahaayakofficial@gmail.com" style="color:black;">Mail Handle</a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="contact__widget__item">
                         <span class="social_facebook"></span>
                         <h4>Like at</h4>
-                        <a href="#" style="color:black;">Facebook Handle</a>
+                        <a href="https://www.facebook.com/saikrishna62892" style="color:black;">Facebook Handle</a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="contact__widget__item">
                         <span class="social_instagram"></span>
                         <h4>DM at</h4>
-                        <a href="#" style="color:black;">Instagram Handle</a>
+                        <a href="https://www.instagram.com/saikrishna62892/" style="color:black;">Instagram Handle</a>
                     </div>
                 </div>
             </div>
@@ -385,36 +385,4 @@
         </div>
     </div>
     <!-- Map End -->
-
-    <!-- Leave Comment Begin -->
-    <div class="leave-comment comment-form spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="leave__comment__text">
-                        <div class="section-title">
-                        <img src="img/icon.png" alt="Sahaayak" width="58" height="38" align="center">
-                        <h2>Any Faq's Please Write to Us</h2>
-                        </div>
-                        <form action="#">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6">
-                                    <input type="text" placeholder="Name*"  autocomplete="off" >
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <input type="text" placeholder="Email*" autocomplete="off" >
-                                </div>
-                                <div class="col-lg-12 text-center">
-                                    <textarea placeholder="Your Comment"></textarea>
-                                    <button type="submit" class="site-btn">Submit</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Leave Comment End -->
-
     @endsection

@@ -60,28 +60,27 @@
                 <a href="{{ route('register') }}" class="primary-btn">Join us</a>
             @endif
             @else
-            <div class="dropdown">
-                <button class="btn primary-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    @if(auth()->user()->is_Volunteer == 1)
+                    @if(auth()->user()->is_Volunteer == 1 )
                         @if(auth()->user()->step2_done == 0)
-                        <a class="dropdown-item" href="/register/step2/{{auth()->user()->id}}">Complete step2</a>
+                        <a class="dropdown-item" href="/register/step2/{{auth()->user()->id}}" style="color: #5768ad;">Complete step2</a>
                         @elseif(auth()->user()->volunteer->is_Approved == 0)
-                        <a class="dropdown-item" href="/volunteer/waitingApproval">Return to Dashboard</a>
+                        <a class="dropdown-item" href="/volunteer/waitingApproval" style="color: #5768ad;">Return to Dashboard</a>
                         @else
-                        <a class="dropdown-item" href="/volunteer/home">Return to Dashboard</a>
+                        <a class="dropdown-item" href="/volunteer/home" style="color: #5768ad;">Return to Dashboard</a>
                         @endif
+                    @elseif(auth()->user()->is_admin == 1)
+                    <a class="dropdown-item" href="/admin/home" style="color: #5768ad;">Return to Dashboard</a>
+                    @else
+                    <a class="dropdown-item" href="/user/home" style="color: #5768ad;">Return to Dashboard</a>
                     @endif
                     <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">
+                                         document.getElementById('logout-form').submit();" style="color: #5768ad;">
                             {{ __('Logout') }}
                     </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" >
                     @csrf
                     </form>
-                </div>
-            </div>
 
             @endguest
         </div>
@@ -286,7 +285,9 @@
                         </ul>
                         <!--<h5 style="color:white;">Subscribe</h5>--><br>
 
+
                         <a href="/home/subscribe" class="btn primary-btn">Subscribe&nbsp;<i class="fa fa-send"></i></a>
+
 
                     </div>
                 </div>
@@ -375,7 +376,7 @@
     <script src="/js/jquery.slicknav.min.js"></script>
 
     <!-- ManyChat Plugin -->
-    <!--<script src="//widget.manychat.com/101206188315883.js" async="async"></script>-->
+    <script src="//widget.manychat.com/101206188315883.js" async="async"></script> 
     <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>
     <script>

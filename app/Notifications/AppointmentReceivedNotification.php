@@ -57,7 +57,7 @@ class AppointmentReceivedNotification extends Notification
     {
         return [
             'data'=>'Appointmnet request received '.$this->appointment,
-            'refrence'=>'#' 
+            'refrence'=>'userDashboard'
         ];
     }
 }

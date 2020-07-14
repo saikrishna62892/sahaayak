@@ -61,7 +61,7 @@ class QuestionnaireNotification extends Notification
     {
         return [
             'data'=>'New questionnaire'.$this->questionnaire->questionnaireTitle,
-            'refrence'=>'#'          
+            'refrence'=>'home'          
         ];
     }
 }

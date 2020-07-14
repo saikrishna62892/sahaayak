@@ -63,7 +63,7 @@ class TalkController extends Controller
 
 	public function display()
 	{
-		$talks=Talk::orderBy('created_at','desc')->get();
+		$talks=Talk::orderBy('created_at','desc')->paginate(6);
 
 		//counts will happen here
 		$category=['Depression','Suicide','Stress','Stigma','Healthy Sleep','Mental Illness','Hopelessness','Fear of Loss','Social Isolation'];

@@ -13,7 +13,7 @@
                     <div class="breadcrumb__text">
                         <h2>Expert Talks</h2>
                         <div class="breadcrumb__widget">
-                            <a href="./index.html">Home</a>
+                            <a href="{{ url('/') }}">Home</a>
                             <span>Talks</span>
                         </div>
                     </div>
@@ -70,7 +70,7 @@
                                                                         <li><i class="fa fa-calendar-o"></i>{{ $talk->created_at }}</li>
                                                                         <li><a href="{{ route('increment', $talk) }}" class="fa fa-thumbs-up" style="color: black"></a>{{ $talk->likes }}</li>
                                                                     </ul>
-                                                                    <p align="justify">{{ $talk->content }}</p>
+                                                                    <p align="justify" style="white-space: pre-wrap">{{ $talk->content }}</p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -79,6 +79,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-lg-12"><span>{{$talks->links()}}</span></div>
                                 </div>
                             </div>
                         </div>
