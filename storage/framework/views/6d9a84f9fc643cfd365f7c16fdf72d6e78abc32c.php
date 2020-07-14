@@ -23,7 +23,7 @@
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="hero__sliders owl-carousel">
-            <div class="hero__items set-bg" data-setbg="/img/hero/hero-2.jpg">
+            <div class="hero__items set-bg" data-setbg="/img/hero/hero.jpg">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8">
@@ -88,7 +88,7 @@
                 <div class="col-lg-6">
                     <div class="chooseus__text">
                         <h2 data-step="3" data-intro="Myths & Facts" data-intro="This section deals with the Myths & Facts about Mental Health." data-position="left">Myths & Facts</h2>
-                        <p align="justify"> Talking about suicide provides the opportunity for communication. Fears shared are more
+                        <p align="justify">Talking about suicide provides the opportunity for communication. Fears shared are more
                          likely to diminish. The first step in encouraging a person with thoughts of suicide to live
                           comes from talking about those feelings. A simple inquiry about whether or not the person
                            is intending to end their life can start the conversation.</p><br>
@@ -183,7 +183,7 @@
                             <input type="text" placeholder="Phone" name="phone" autocomplete="off" >
                         </div>
                         <div class="col-lg-6">
-                            <input placeholder="Pick your Appointment" type="datetime-local" name="timings" min="2020-05-10T00:00">
+                            <input placeholder="Pick your Appointment" type="datetime-local" name="timings">
                         </div>
                         <div class="col-lg-12 text-center">
                             <textarea placeholder="What do you want to talk about ?" name="message" autocomplete="off" ></textarea>
@@ -224,8 +224,7 @@
                                     <p><?php echo e($news->source); ?> </p>
                                     <h4><?php echo e($news->headline); ?></h4>
                                     <p align="justify" style="overflow: hidden;display: -webkit-box;-webkit-line-clamp: 7;-webkit-box-orient: vertical;"><?php echo e($news->content); ?></p>
-                                    <?php $newvariable="https://$news->newsurl" ?>
-                                    <a href="<?php echo e($newvariable); ?>" class="class-btn" target="_blank">Know More</a>
+                                    <a href="<?php echo e($news->newsurl); ?>" class="class-btn" target="_blank">Know More</a>
                                 </div>
                             </div>
                         </div>
