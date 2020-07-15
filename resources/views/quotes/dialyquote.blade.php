@@ -10,7 +10,7 @@
         @enderror
      	</div>
       &emsp;
-          <center><button type="submit" class="btn btn-primary" style="background-color: #5768ad;">Post Quote</button></center>
+          <center><button type="submit" class="btn btn-primary" style="background-color: #5768ad;" onclick="alert('Posted Succesfully')">Post Quote</button></center>
     </form>
   </div>
 </div>

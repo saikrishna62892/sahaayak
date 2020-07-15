@@ -68,7 +68,7 @@
                                                                 <div class="blog__details__text blog__item__text">
                                                                     <ul>
                                                                         <li><i class="fa fa-calendar-o"></i>{{ $talk->created_at }}</li>
-                                                                        <li><a href="{{ route('increment', $talk) }}" class="fa fa-thumbs-up" style="color: black"></a>{{ $talk->likes }}</li>
+                                                                        <!--<li><a href="{{ route('increment', $talk) }}" class="fa fa-thumbs-up" style="color: black"></a>{{ $talk->likes }}</li>-->
                                                                     </ul>
                                                                     <p align="justify" style="white-space: pre-wrap">{{ $talk->content }}</p>
                                                                 </div>

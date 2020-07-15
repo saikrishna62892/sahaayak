@@ -10,7 +10,7 @@
             <div class="hero__items set-bg" data-setbg="/img/hero/hero-1.jpg">
                 <div class="container">
                     <div class="row">
-                        <h1 style="color: #fff;">{{$questionnaire->questionnaireTitle}}</h1>
+                        <h1 style="color: #5768ad;">{{$questionnaire->questionnaireTitle}}</h1>
                     </div>
                     <p style="color: #fff;">Slide down to complete the survey and submit it to get your assessment score</p>
                 </div>
@@ -29,7 +29,7 @@
                 <div class="card-header">{{$key+1}}) {{$question->question}}</div>
                     <div class="card-body">
                         @error('response.'.$key.'.answer_id')
-                        <small class="text-danger">This question needs to be answered}</small>
+                        <small class="text-danger">This question needs to be answered</small>
                         @enderror
                         <ul class="list-group">
                         @foreach($question->answers as $answer)

@@ -8,7 +8,7 @@
             @csrf
             
             @include('questionnaire.questionnaire')
-                <button  type="submit" class="btn btn-primary">save questionnaire</button>
+                <button  type="submit" class="btn btn-primary" style="background-color: #5768ad;">save questionnaire</button>
            </form>
         </div>
     </div>
