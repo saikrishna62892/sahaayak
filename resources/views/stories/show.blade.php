@@ -67,10 +67,10 @@
                                                                 <div class="blog__details__text blog__item__text">
                                                                     <ul>
                                                                         <li><i class="fa fa-calendar-o"></i>{{ Carbon\Carbon::parse($story->created_at)->format('d-M-Y g:h:i:s A') }}</li>
-                                                                        <li><a href="{{ route('increment', $story) }}" class="fa fa-thumbs-up" style="color: black"></a>{{ $story->likes }}</li>
+                                                                        <!--<li><a href="{{ route('increment', $story) }}" class="fa fa-thumbs-up" style="color: black"></a>{{ $story->likes }}</li>-->
                                                                     </ul>
                                                                     <p align="justify" style="white-space: pre-wrap">{{ $story->content }}</p>
-                                                                    <h6>Post yor stories anonymously <a href="{{ route('register') }}" style="color: #5768ad;">Register here.</a></h6>
+                                                                    <h6>Post your stories anonymously <a href="{{ route('register') }}" style="color: #5768ad;">Register here.</a></h6>
                                                                 </div>
                                                             </div>
                                                         </div>

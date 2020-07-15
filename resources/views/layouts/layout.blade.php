@@ -116,12 +116,12 @@
                                         <li><a href="{{ url('displayTalks') }}">Expert Talks</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="{{ url('news') }}">News</a></li>
+                                <li><a href="{{ url('displayNews') }}">News</a></li>
                                 <li><a href="#">Hope Box</a>
                                     <ul class="dropdown">
                                         <li><a href="{{ url('interactiveDrawing') }}">Interactive Drawing</a></li>
                                         <li><a href="{{ url('inspire_me') }}">Inspire Me</a></li>
-                                        <li><a href="{{ url('video.show') }}">Videos</a></li>
+                                        <li><a href="/videos">Videos</a></li>
                                         <li><a href="{{ url('playlists') }}">Playlists</a></li>
                                     </ul>
                                 </li>
@@ -286,7 +286,7 @@
                         <!--<h5 style="color:white;">Subscribe</h5>--><br>
 
 
-                        <a href="/home/subscribe" class="btn primary-btn">Subscribe&nbsp;<i class="fa fa-send"></i></a>
+                        <a href="/home/subscribe" class="btn primary-btn" data-step="9" data-intro="Here you can subscribe for the latest updates of Sahaayak." data-position="right" onclick="alert('Subscribed Succesfully')">Subscribe&nbsp;<i class="fa fa-send"></i></a>
 
 
                     </div>
@@ -342,7 +342,7 @@
                                     </div>
                                     <div class="col-lg-12 text-center">
                                     <input type="text" placeholder="Comment" name="comment" autocomplete="off" >
-                                        <button type="submit" class="site-btn">Submit</button>
+                                        <button type="submit" class="site-btn" onclick="alert('Your suggestion was recorded and we will act accordingly')">Submit</button>
                                     </div>
                                 </div>
                             </form>
@@ -376,7 +376,7 @@
     <script src="/js/jquery.slicknav.min.js"></script>
 
     <!-- ManyChat Plugin -->
-    <script src="//widget.manychat.com/101206188315883.js" async="async"></script> 
+    <!--<script src="//widget.manychat.com/101206188315883.js" async="async"></script> -->
     <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>
     <script>

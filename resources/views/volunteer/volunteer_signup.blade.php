@@ -1,5 +1,9 @@
 @extends('layouts.reg_forms_layout')
 
+@section('name')
+	Step-2
+@endsection
+
 	@section('content')
 	<div class="limiter">
 		<div class="container-login100">
@@ -111,7 +115,7 @@
 							Already Signed?
 						</span>
 
-						<a class="txt1 bo1 hov1" href="#">
+						<a class="txt1 bo1 hov1" href="{{url('login')}}">
 							Login now							
 						</a>
 					</div>
