@@ -22,7 +22,6 @@ use App\News;
 Route::get('/',function(){
         $dialyquote=dialyquotes::all()->last()->quote;
         $featurednews=News::orderBy('created_at','desc')->take(3)->get();
-        #dd($featurednews);
         return view('welcome')->with(compact('dialyquote','featurednews'));
 });
 
