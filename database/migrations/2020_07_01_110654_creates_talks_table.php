@@ -21,8 +21,8 @@ class CreatesTalksTable extends Migration
             $table->integer('likes')->default(1);
             $table->mediumText('image')->nullable();
             $table->unsignedBigInteger('user_id');
-            $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

@@ -15,6 +15,17 @@ class CreateVolunteersTable extends Migration
     {
         Schema::create('volunteers', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('phone',10)->unique();
+            $table->string('qualification');
+            $table->string('work');
+            $table->string('insight');
+            $table->string('queries')->nullable();
+            $table->string('file1')->nullable();
+            $table->string('file2')->nullable();
+            $table->boolean('is_Approved')->default(0);
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

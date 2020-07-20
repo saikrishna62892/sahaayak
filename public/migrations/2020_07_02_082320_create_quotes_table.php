@@ -16,12 +16,13 @@ class CreateQuotesTable extends Migration
         Schema::create('quotes', function (Blueprint $table) {
             $table->id();
             $table->string('Author');
-            $table->text('Quote'); 
+            $table->text('Quote');
+            
             $table->string('Inspired_from');
             $table->string('Tag');
             $table->string('Link');
-            $table->mediumText('Image')->nullable();
-            $table->timestamps(); 
+            $table->mediumText('Image')->nullable(); 
+
         });
     }
 

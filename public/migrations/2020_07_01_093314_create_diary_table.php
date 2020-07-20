@@ -14,13 +14,10 @@ class CreateDiaryTable extends Migration
     public function up()
     {
         Schema::create('diary', function (Blueprint $table) {
-            $table->id();
             $table->text('title');
             $table->text('content');
-            $table->string('category');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->timestamps();
+            $table->dateTime('date');
+            
         });
     }
 
