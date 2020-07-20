@@ -22,7 +22,7 @@ class CreateTableAppointmentsTable extends Migration
             $table->text('message');
             $table->boolean('is_Completed')->default(0);
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('volunteer_id');
+            $table->unsignedBigInteger('volunteer_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('volunteer_id')->references('id')->on('volunteers')->onDelete('cascade');
             $table->timestamps();
