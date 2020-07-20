@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableAppointmentsTable extends Migration
+class CreateAppointmentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -36,6 +36,6 @@ class CreateTableAppointmentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_appointments');
+        Schema::dropIfExists('appointments');
     }
 }
