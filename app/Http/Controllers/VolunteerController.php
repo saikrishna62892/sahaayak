@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
 use App\Volunteer;
-
+use Storage;
 class VolunteerController extends Controller
 {
     public function __construct()
@@ -35,9 +35,11 @@ class VolunteerController extends Controller
     	]);
     	$volunteer = $user->volunteer()->create($data) ;
         $volunteer->update([
-            'file1' => $data['file1']->store('uploads/volunteer','public'),
-            'file2' => $data['file2']->store('uploads/volunteer','public')
+            'file1' => $data['file1']->store('uploads/volunteer','s3'),
+            'file2' => $data['file2']->store('uploads/volunteer','s3')
         ]);
+        //Storage::disk('s3')->setVisibility($volunteer->file1,'public');
+        //Storage::disk('s3')->setVisibility($volunteer->file2,'public');
         $user->update(['step2_done' => 1]);
 
     	return redirect('/volunteer/waitingApproval');

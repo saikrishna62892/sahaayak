@@ -29,7 +29,7 @@
                         <div class="col-lg-8">
                             <div class="hero__text">
                                 <span>We Share coz We Care</span>
-                                <h2>{{ $dialyquote }}</h2>
+                                <h2 style="color: #5768ad;">{{ $dialyquote }}</h2>
                                 <a style="color: white;" href="javascript:void(0);" onclick="javascript:introJs().setOption('showProgress',true).start();"><u><span>Take a Tour</span></u></a>
                                 <a href="{{ url('about') }}" class="primary-btn">DISCOVER MORE</a>
                             </div>
@@ -88,7 +88,7 @@
                 <div class="col-lg-6">
                     <div class="chooseus__text">
                         <h2 data-step="3" data-intro="Myths & Facts" data-intro="This section deals with the Myths & Facts about Mental Health." data-position="left">Myths & Facts</h2>
-                        <p align="justify"> Talking about suicide provides the opportunity for communication. Fears shared are more
+                        <p align="justify">Talking about suicide provides the opportunity for communication. Fears shared are more
                          likely to diminish. The first step in encouraging a person with thoughts of suicide to live
                           comes from talking about those feelings. A simple inquiry about whether or not the person
                            is intending to end their life can start the conversation.</p><br>
@@ -107,7 +107,7 @@
     <!-- Chooseus Section End -->
 
     <!-- Services Section Begin -->
-    <section class="services spad">
+    <section class="services spad" style="padding-top: 0px;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -183,10 +183,10 @@
                             <input type="text" placeholder="Phone" name="phone" autocomplete="off" >
                         </div>
                         <div class="col-lg-6">
-                            <input placeholder="Pick your Appointment" type="datetime-local" name="timings" min="2020-05-10T00:00">
+                            <input placeholder="Pick your Appointment" type="datetime-local" name="timings">
                         </div>
                         <div class="col-lg-12 text-center">
-                            <textarea placeholder="What do you want to talk about ?" name="message" autocomplete="off" ></textarea>
+                            <textarea placeholder="What do you want to talk about" name="message" autocomplete="off" ></textarea>
                         <button type="submit" onclick="alert('The timings provided may vary upto 1 hour!');">Submit</button>
                         </div>
                     </div>
@@ -224,8 +224,7 @@
                                     <p>{{ $news->source }} </p>
                                     <h4>{{ $news->headline }}</h4>
                                     <p align="justify" style="overflow: hidden;display: -webkit-box;-webkit-line-clamp: 7;-webkit-box-orient: vertical;">{{ $news->content }}</p>
-                                    <?php $newvariable="https://$news->newsurl" ?>
-                                    <a href="{{ $newvariable }}" class="class-btn" target="_blank">Know More</a>
+                                    <a href="{{ $news->newsurl }}" class="class-btn" target="_blank">Know More</a>
                                 </div>
                             </div>
                         </div>
@@ -238,7 +237,7 @@
     <!-- Classes Section End -->
 
     <!-- About Section Begin -->
-    <section class="home-about spad">
+    <section class="home-about spad" style="padding-top: 0px;">
         <div class="section-title">
                 <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
                 <h2>About Us</h2>
@@ -292,7 +291,7 @@
                     <div class="row d-flex justify-content-center">
                         <div class="col-lg-10">
                             <div class="testimonial__text">
-                                <p>Testimonal about our website which includes user experience of our website,thoughts and reviews about our website.</p>
+                                <p>Testimonial about our website which includes user experience of our website,thoughts and reviews about our website.</p>
                                 <img src="img/testimonial/default.PNG" alt="">
                                 <h5>person name<span>- profession</span></h5>
                             </div>
@@ -303,7 +302,7 @@
                     <div class="row d-flex justify-content-center">
                         <div class="col-lg-10">
                             <div class="testimonial__text">
-                                <p>Testimonal about our website which includes user experience of our website,thoughts and reviews about our website.</p>
+                                <p>Testimonial about our website which includes user experience of our website,thoughts and reviews about our website.</p>
                                 <img src="img/testimonial/default.PNG" alt="">
                                 <h5>person name<span>- profession</span></h5>
                             </div>
@@ -314,7 +313,7 @@
                     <div class="row d-flex justify-content-center">
                         <div class="col-lg-10">
                             <div class="testimonial__text">
-                                <p>Testimonal about our website which includes user experience of our website,thoughts and reviews about our website.</p>
+                                <p>Testimonial about our website which includes user experience of our website,thoughts and reviews about our website.</p>
                                 <img src="img/testimonial/default.PNG" alt="">
                                 <h5>person name<span>- profession</span></h5>
                             </div>
@@ -325,7 +324,7 @@
                     <div class="row d-flex justify-content-center">
                         <div class="col-lg-10">
                             <div class="testimonial__text">
-                                <p>Testimonal about our website which includes user experience of our website,thoughts and reviews about our website.</p>
+                                <p>Testimonial about our website which includes user experience of our website,thoughts and reviews about our website.</p>
                                 <img src="img/testimonial/default.PNG" alt="">
                                 <h5>person name<span>- profession</span></h5>
                             </div>

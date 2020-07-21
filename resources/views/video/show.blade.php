@@ -12,7 +12,7 @@
                     <div class="breadcrumb__text">
                         <h2>Motivational Videos</h2>
                         <div class="breadcrumb__widget">
-                            <a href="./index.html">Home</a>
+                            <a href="{{ url('/') }}">Home</a>
                             <span>Videos</span>
                         </div>
                     </div>

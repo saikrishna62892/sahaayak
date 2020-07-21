@@ -48,6 +48,8 @@ class HomeController extends Controller
         $quote->quote=$request->quote;
         $quote->save();
         $dialyquote=$request->quote;
+        $featurednews=News::orderBy('created_at','desc')->get();
+        return view('welcome')->with(compact('dialyquote','featurednews'));
     }
 
      public function welcome(){

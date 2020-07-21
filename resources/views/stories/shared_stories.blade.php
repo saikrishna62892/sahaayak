@@ -7,10 +7,10 @@
             <a href="/user/home/deleteStory/{{$story->id}}/storydeleted" style="color: #5768ad;">Delete</a></div>
 		    <h5 class="card-title">{{ $story->title }}</h5><br>
 		    <h6 class="card-subtitle mb-2 text-muted">Details: {{ Carbon\Carbon::parse($story->created_at)->format('d-M-Y g:h:i:s A') }}</h6><br>
-		    <h6 class="card-subtitle mb-2 text-muted">Likes: {{ $story->likes }}</h6><br>
+		    <!--<h6 class="card-subtitle mb-2 text-muted">Likes: {{ $story->likes }}</h6><br>-->
 		    <h6 class="card-subtitle mb-2 text-muted">Content:</h6>
-		    <p class="card-text" align="justify">{{ $story->content }}</p>
-		    <a href="#" class="card-link" style="color: #5768ad;">See Post</a>
+		    <p class="card-text" align="justify" style="white-space: pre-wrap">{{ $story->content }}</p>
+		    <a href="{{ url('displayStories') }}" class="card-link" style="color: #5768ad;">See Post</a>
 		  </div>
 		</div>
 	</div>

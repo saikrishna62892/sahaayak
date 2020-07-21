@@ -10,7 +10,7 @@
         <div class="blog__recent__item__text">
             <h6>{{ $news->headline }}</h6>
             <span>{{ Carbon\Carbon::parse($news->created_at)->format('d-M-Y') }}</span>
-            <a href="{{ url('news') }}">More</a>
+            <a href="{{ url('displayNews') }}" style="color: #5768ad;">More</a>
         </div>
     </div>
 @empty

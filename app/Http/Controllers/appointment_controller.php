@@ -51,12 +51,15 @@ class appointment_controller extends Controller
 
      public function appointmentAccepted(Appointment $appointment)
     {
-        if(!is_null($appointment->volunteer_id))
+        if(is_null($appointment->volunteer_id))
         {
             $appointment->update(['volunteer_id' => auth()->user()->volunteer->id]);
             $this->sendAppointmentAcceptedNotif($appointment->user_id,$appointment);
+            return redirect()->back()->with('message','User Appointment accepted');
         }
-        return redirect()->back();
+        else{
+            return redirect()->back()->with('message','Sorry,User already alloted');
+        }
 
     }
 

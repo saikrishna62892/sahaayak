@@ -61,7 +61,7 @@ class InspiremeNotification extends Notification
     {
         return [
             'data'=>'A new quote by '.$this->inspireme,
-            'refrence'=>'inspire_me' 
+            'refrence'=>'userDashboard' 
         ];
     }
 }

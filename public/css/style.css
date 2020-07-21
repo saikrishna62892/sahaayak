@@ -482,6 +482,12 @@ ol {
 	align-items: center;
 }
 
+.hero__items__result {
+	height: 850px;
+	display: flex;
+	align-items: center;
+}
+
 .hero__text span {
 	font-size: 16px;
 	color: #ffffff;
@@ -1841,7 +1847,6 @@ ol {
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	background: #ffffff;
 	border-radius: 2px;
-	height: 60px;
 	margin-bottom: 8px;
 	resize: none;
 	padding-top: 14px;
