@@ -10,6 +10,7 @@ use DB;
 use App\User;
 use App\Notifications\NewsNotification;
 use App\Traits\NotificationTrait;
+use Storage;
 class PlaylistController extends Controller
 {
 
@@ -46,12 +47,16 @@ class PlaylistController extends Controller
           $playlist->playlistURL = $request->playlistURL;
           
           #for image upload
-        if ($request->hasFile('image')) {
+        if (request()->hasFile('image')) {
+            $image = request()->image;
+            $destinationPath = $image->store('uploads/playlist/img','s3');
+            $playlist->image = basename($destinationPath);
+            /*
             $image = $request->file('image');
             $name = $temp.'.'.$image->getClientOriginalExtension();
             $destinationPath = public_path('/img/playlists/');
             $image->move($destinationPath, $name);
-            $playlist->image=$name;
+            $playlist->image=$name;*/
         }
 
 
@@ -62,6 +67,7 @@ class PlaylistController extends Controller
     }
 
     public function deleteplaylist(Playlist $playlist){
+        Storage::disk('s3')->delete('uploads/playlist/img/'.$playlist->image);
         $playlist->delete();
         return redirect()->back();
     }
@@ -80,11 +86,16 @@ class PlaylistController extends Controller
               'image' => 'file|image|max:3000',
             ]);
             if (request()->hasFile('image')) {
+              Storage::disk('s3')->delete('uploads/playlist/img/'.$playlist->image);
+              $image = request()->image;
+              $destinationPath = $image->store('uploads/playlist/img','s3');
+              $data['image'] = basename($destinationPath);
+            /*
             $image = request()->image;
             $name = time().'.'.$image->getClientOriginalExtension();
             $destinationPath = public_path('/img/playlists/');
             $image->move($destinationPath, $name);
-            $data['image'] = $name;
+            $data['image'] = $name;*/
         }
 
         $playlist->update($data);

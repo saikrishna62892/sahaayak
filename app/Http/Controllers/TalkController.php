@@ -10,7 +10,7 @@ use Auth;
 use App\Notifications\TalksNotification;
 use App\User;
 use App\Traits\NotificationTrait;
-
+use Storage;
 class TalkController extends Controller
 {
 
@@ -50,11 +50,15 @@ class TalkController extends Controller
     	
     	#for image upload
     if ($request->hasFile('image')) {
+        $image = $request->image;
+        $destinationPath = $image->store('uploads/talk/img','s3');
+        $talk->image = basename($destinationPath);
+        /*
         $image = $request->file('image');
         $name = $user->id.'_'.$temp.'.'.$image->getClientOriginalExtension();
         $destinationPath = public_path('/img/talks/');
         $image->move($destinationPath, $name);
-        $talk->image=$name;
+        $talk->image=$name;*/
     }
     $talk->save();
     $this->sendTalksNotif($talk->title);
@@ -80,9 +84,10 @@ class TalkController extends Controller
 		$talk->save();
 		return redirect()->back();
 	}
-    public function deletetalk(Talk $talkid)
+    public function deletetalk(Talk $talk)
     {
-        $talkid->delete();
+        Storage::disk('s3')->delete('uploads/talk/img/'.$talk->image);
+        $talk->delete();
         return redirect()->back();
     }
 
@@ -101,11 +106,16 @@ class TalkController extends Controller
             'image' => 'file|image|max:3000',
             ]);
             if (request()->hasFile('image')) {
+                Storage::disk('s3')->delete('uploads/talk/img/'.$talk->image);
+                $image = request()->image;
+                $destinationPath = $image->store('uploads/talk/img','s3');
+                $data['image'] = basename($destinationPath);
+                /*
             $image = request()->image;
             $name = time().'.'.$image->getClientOriginalExtension();
             $destinationPath = public_path('/img/talks/');
             $image->move($destinationPath, $name);
-            $data['image'] = $name;
+            $data['image'] = $name;*/
         }
 
         $talk->update($data);

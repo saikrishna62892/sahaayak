@@ -30,7 +30,7 @@
 		        @enderror
 			</div>
 		    <div class="custom-file">
-  				<input type="file" class="custom-file-input" id="customFile" name="image" value="{{ old('image') ?? url('storage/img/talks/'.$talk->image)}}" autocomplete="off" >
+  				<input type="file" class="custom-file-input" id="customFile" name="image" value="{{ old('image') ?? \Storage::disk('s3')->url('uploads/talk/img/'.$talk->image)}}" autocomplete="off" >
   				<label class="custom-file-label" for="customFile">Please choose image...</label>
 			    @error('image')
 		        	<small class="text-danger">{{$message}}</small>
