@@ -25,6 +25,7 @@
         <form action="home/displaydiary" method="POST" enctype="multipart/form-data">
             <?php echo csrf_field(); ?>
             <?php echo $__env->make('diary.diary', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?> 
+            &emsp;
             <center><button type="submit" name="action" value="add_to_diary" class="btn btn-primary" style="background-color: #5768ad;" onclick="alert('Event added Succesfully')">Add to diary</button><br><br>
             <button type="submit" name="action" value="add_to_story" class="btn btn-primary" style="background-color: #5768ad;" onclick="alert('Posted Succesfully')">Add to story</button></center>
         </form>

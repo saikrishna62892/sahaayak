@@ -264,10 +264,13 @@
                                             {{ $unapprovedVolunteer->user->email }}
                                         </td>
                                         <td>
+                                            
                                             <a href="/admin/home/volunteer/{{$unapprovedVolunteer->id}}/getDetails">get details</a>
+                                            
                                         </td>
                                         <td>
                                             <a class="btn btn-info" href="/admin/home/volunteer/{{$unapprovedVolunteer->id}}/approveVolunteer" style="background-color: #5768ad;">Approve</a>
+                                            <a class="btn btn-info" href="/admin/home/volunteer/{{$unapprovedVolunteer->id}}/rejectVolunteer" style="background-color: #5768ad;">Reject</a>
                                         </td>
                                     </tr>
                                     @endforeach

@@ -1,6 +1,6 @@
 <div class="form-group">
                 <label for="formGroupExampleInput">Please enter event title</label>
-                <input type="text" class="form-control" name="title" id="formGroupExampleInput" placeholder="Your title here..." autocomplete="off" >
+                <input type="text" class="form-control" name="title" id="formGroupExampleInput" placeholder="Your title here..."  value="<?php echo e(old('title') ?? $event->title); ?>" autocomplete="off" >
                 <?php echo csrf_field(); ?>
                 <?php $__errorArgs = ['title'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -15,7 +15,7 @@ unset($__errorArgs, $__bag); ?>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Please enter event content</label>
-                <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="10" placeholder="Your content here..."  autocomplete="off" ></textarea>
+                <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="10" placeholder="Your content here..."  autocomplete="off" ><?php echo e(old('content') ?? $event->content); ?></textarea>
                 <?php $__errorArgs = ['content'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :

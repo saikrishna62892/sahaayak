@@ -54,6 +54,14 @@ class VolunteerController extends Controller
         return redirect()->back()->with('message','This volunteer is approved');
     }
 
+    public function destroy(Volunteer $unapprovedVolunteer)
+    {
+        $user = User::find($unapprovedVolunteer->user_id);
+       // Storage::disk('s3')->delete([$unapprovedVolunteer->file1,$unapprovedVolunteer->file2]);
+        $user->delete();
+        return redirect()->back()->with('message','This volunteer is rejected');
+    }
+
    
 
     

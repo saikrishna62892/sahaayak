@@ -28,7 +28,7 @@ unset($__errorArgs, $__bag); ?>
                     </div>
                     <div class="form-group">
                         <label for="content">Please enter content</label>
-                        <textarea type="text"class="form-control" name="content" id="content" rows="10" placeholder="Your content here..." value="<?php echo e(old('content') ?? $newsarticle->content); ?>" autocomplete="off" ></textarea> 
+                        <textarea type="text"class="form-control" name="content" id="content" rows="10" placeholder="Your content here..."  autocomplete="off" ><?php echo e(old('content') ?? $newsarticle->content); ?></textarea> 
                         <?php $__errorArgs = ['content'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :

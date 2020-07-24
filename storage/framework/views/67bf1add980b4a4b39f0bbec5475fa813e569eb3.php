@@ -270,6 +270,7 @@
                                         </td>
                                         <td>
                                             <a class="btn btn-info" href="/admin/home/volunteer/<?php echo e($unapprovedVolunteer->id); ?>/approveVolunteer" style="background-color: #5768ad;">Approve</a>
+                                            <a class="btn btn-info" href="/admin/home/volunteer/<?php echo e($unapprovedVolunteer->id); ?>/rejectVolunteer" style="background-color: #5768ad;">Reject</a>
                                         </td>
                                     </tr>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
