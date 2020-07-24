@@ -7,7 +7,7 @@ use App\Story;
 use DB;
 use Auth;
 use App\News;
-
+use Storage;
 class StoryController extends Controller
 {
     public function __construct()
@@ -42,11 +42,16 @@ class StoryController extends Controller
     	
     	#for image upload
     if ($request->hasFile('image')) {
+        $image = $request->image;
+        $destinationPath = $image->store('uploads/story/img','s3');
+        $story->image = basename($destinationPath);
+        /*
+
         $image = $request->file('image');
         $name = $user->id.'_'.$temp.'.'.$image->getClientOriginalExtension();
         $destinationPath = public_path('/img/stories/');
         $image->move($destinationPath, $name);
-        $story->image=$name;
+        $story->image=$name;*/
     }
     $story->save();
     return redirect()->back()->with('message', 'Posted Succcesfully');
@@ -75,6 +80,7 @@ class StoryController extends Controller
 		return redirect()->back();
 	}
     public function deletestory(Story $story){
+        Storage::disk('s3')->delete('uploads/story/img/'.$story->image);
         $story->delete();
         return redirect()->back();
     }

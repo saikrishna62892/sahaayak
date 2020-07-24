@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
 use App\Volunteer;
-
+use Storage;
+use App\Mail\RejectVolunteerMail;
+use Illuminate\Support\Facades\Mail;
 class VolunteerController extends Controller
 {
     public function __construct()
@@ -35,9 +37,11 @@ class VolunteerController extends Controller
     	]);
     	$volunteer = $user->volunteer()->create($data) ;
         $volunteer->update([
-            'file1' => $data['file1']->store('uploads/volunteer','public'),
-            'file2' => $data['file2']->store('uploads/volunteer','public')
+            'file1' => $data['file1']->store('uploads/volunteer','s3'),
+            'file2' => $data['file2']->store('uploads/volunteer','s3')
         ]);
+        //Storage::disk('s3')->setVisibility($volunteer->file1,'public');
+        //Storage::disk('s3')->setVisibility($volunteer->file2,'public');
         $user->update(['step2_done' => 1]);
 
     	return redirect('/volunteer/waitingApproval');
@@ -54,7 +58,13 @@ class VolunteerController extends Controller
         return redirect()->back()->with('message','This volunteer is approved');
     }
 
-   
-
+    public function destroy(Volunteer $unapprovedVolunteer)
+    {
+        $user = User::find($unapprovedVolunteer->user_id);
+        Mail::to($user->email)->send(new RejectVolunteerMail());
+        Storage::disk('s3')->delete([$unapprovedVolunteer->file1,$unapprovedVolunteer->file2]);
+        $user->delete();
+        return redirect()->back()->with('message','This volunteer is rejected');
+    }
     
 }

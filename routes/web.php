@@ -20,9 +20,8 @@ use App\News;
 /*   Guys Maintain the list in sorted_order */
 
 Route::get('/',function(){
-    $dialyquote=dialyquotes::all()->last()->quote;
+        $dialyquote=dialyquotes::all()->last()->quote;
         $featurednews=News::orderBy('created_at','desc')->take(3)->get();
-        #dd($featurednews);
         return view('welcome')->with(compact('dialyquote','featurednews'));
 });
 
@@ -148,6 +147,7 @@ Route::get('/videos','HopeBoxController@displayVideos')->name('videos');
 //Admin Volunteer list Routes
 Route::get('/admin/home/volunteer/{unapprovedVolunteer}/getDetails','VolunteerController@getDetails');
 Route::get('/admin/home/volunteer/{unapprovedVolunteer}/approveVolunteer','VolunteerController@approveVolunteer');
+Route::get('/admin/home/volunteer/{unapprovedVolunteer}/rejectVolunteer','VolunteerController@destroy');
 
 
 //Report Routes
@@ -180,7 +180,7 @@ Route::get('team', function () {
 
 Route::get('inspire_me', function () {
     return view('inspire_me');
-})->name('inspire_me');
+})->name('inspireMe');
 
 
 

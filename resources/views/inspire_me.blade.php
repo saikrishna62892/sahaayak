@@ -37,17 +37,17 @@
                                 @if(is_null($quote->Image))
                                     <img src="{{ asset('/img/quotes/default.png') }}" alt="">
                                 @else
-                                    <img src="{{ asset('/img/quotes/'.$quote->Image) }}" alt="">
+                                    <img src="\Storage::disk('s3')->url('uploads/quote/img/'.$quote->Image)" alt="">
                                 @endif
                             </div>
                             <div class="blog__details__author__text">
-                                <h4>Author:{{ $quote->Author }}</h4>
-                                <p>Inspired from :{{ $quote->Inspired_from }}</p>
-                                <p><span>Tags:</span>{{ $quote->Tag }}</p>
+                                <h4>Author: {{ $quote->Author }}</h4>
+                                <p>Inspired from : {{ $quote->Inspired_from }}</p>
+                                <p><span>Tags: </span>{{ $quote->Tag }}</p>
                             </div>
                         </div>
                         <div class="blog__details__quote">
-                            <p style="font-size: 25px;font-weight: bold;font-style: italic;font-family: Futura;"><i class="fa fa-quote-left" aria-hidden="true"></i>&nbsp;{{ $quote->Quote }}&nbsp;<i class="fa fa-quote-right" aria-hidden="true"></i></p>
+                            <p align="justify" style="font-size: 25px;font-weight: bold;font-style: italic;font-family: Futura;"><i class="fa fa-quote-left" aria-hidden="true"></i>&nbsp;{{ $quote->Quote }}&nbsp;<i class="fa fa-quote-right" aria-hidden="true"></i></p>
                             <p><a href="{{ $quote->Link }}" style="color:#5768ad;" target="_blank">Read More</a></p>
                         </div>
                     </div>

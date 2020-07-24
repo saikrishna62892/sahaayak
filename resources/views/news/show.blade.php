@@ -49,15 +49,15 @@
                         @if(is_null($item->image))
                             <div class="classes__item__pic set-bg" data-setbg="img/news/default1.jpg">
                         @else
-                            <div class="classes__item__pic set-bg" data-setbg="img/news/{{$item->image}}">
+                            <div class="classes__item__pic set-bg" data-setbg="{{\Storage::disk('s3')->url('uploads/news/img/'.$item->image)}}">
                         @endif
                             <span>{{ Carbon\Carbon::parse($item->created_at)->format('d-M-Y') }}</span>
                         </div>
                         <div class="classes__item__text">
                             <p>Source:{{$item->source}}</p>
                             <h4>{{$item->headline}}</h4>
-                            <h6 align="justify" style="overflow: hidden;display: -webkit-box;-webkit-line-clamp: 12;-webkit-box-orient: vertical;white-space: pre-wrap">{{$item->content}}</span></h6>
-                            <a href="{{ $item->newsurl }}" class="btn btn-primary" target="_blank" style="background-color: #5768ad;">Read More</a>
+                            <h6 align="justify" style="color:#9B9EA3;overflow: hidden;display: -webkit-box;-webkit-line-clamp: 12;-webkit-box-orient: vertical;white-space: pre-wrap">{{$item->content}}</span></h6>
+                            <a href="{{ $item->newsurl }}" class="class-btn" target="_blank" >Read More</a>
                         </div>
                     </div>
                 </div>

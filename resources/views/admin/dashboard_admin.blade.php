@@ -56,11 +56,11 @@
 <br>
 
 <!-- flash messages section -->
-<div class="container">
+<!--<div class="container">
     @if(session()->has('message'))
     <center><div class="alert alert-success">{{ session()->get('message')}}</div></center>
     @endif
-</div>
+</div>-->
 
 <!-- trading history area start -->
 <div class="col-lg-12 mt-sm-30 mt-xs-30" id="forms">
@@ -264,10 +264,13 @@
                                             {{ $unapprovedVolunteer->user->email }}
                                         </td>
                                         <td>
+                                            
                                             <a href="/admin/home/volunteer/{{$unapprovedVolunteer->id}}/getDetails">get details</a>
+                                            
                                         </td>
                                         <td>
                                             <a class="btn btn-info" href="/admin/home/volunteer/{{$unapprovedVolunteer->id}}/approveVolunteer" style="background-color: #5768ad;">Approve</a>
+                                            <a class="btn btn-info" href="/admin/home/volunteer/{{$unapprovedVolunteer->id}}/rejectVolunteer" style="background-color: #5768ad;">Reject</a>
                                         </td>
                                     </tr>
                                     @endforeach

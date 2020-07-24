@@ -46,7 +46,7 @@ class QuestionnaireNotification extends Notification
         return (new MailMessage)
                     ->greeting('Hello')
                     ->subject('A new Questionnaire '.$this->questionnaire->questionnaireTitle)
-                    ->line('A new questionnaire has been added for the purpose of '.$this->questionnaire.'. Check it out if you think it will help you')
+                    ->line('A new questionnaire has been added for the purpose of '.$this->questionnaire->questionnairePurpose.'. Check it out if you think it will help you')
                     ->action('Questionnaire', url('/'))
                     ->line('Thank you for using our application!');
     }
@@ -60,7 +60,7 @@ class QuestionnaireNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            'data'=>'New questionnaire'.$this->questionnaire->questionnaireTitle,
+            'data'=>'New questionnaire '.$this->questionnaire->questionnaireTitle,
             'refrence'=>'home'          
         ];
     }

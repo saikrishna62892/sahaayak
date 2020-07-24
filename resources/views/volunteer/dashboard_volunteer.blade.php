@@ -46,7 +46,12 @@
 			</div>
 		</div>
 	</div>
-	<br>
+	<!-- flash messages section -->
+	<div class="container">
+	    @if(session()->has('message'))
+	    <center><div class="alert alert-success">{{ session()->get('message')}}</div></center>
+	    @endif
+	</div>
 
 	<!-- trading history area start -->
 	<div class="col-lg-12 mt-sm-30 mt-xs-30" id="forms">
@@ -157,7 +162,7 @@
 		                <div class="tab-pane fade" id="refer" role="tabpanel">
 		                    <p align="center">For goodness sake... don't make make us beg, spread the word!<br></p>
 		                     <!-- The text field -->
-							<p align="center"><input  align="center" type="text" class="form-control" value="www.sahaayak.co.in" id="myInput" style="width: 16%;pointer-events:none;" disabled="disabled">
+							<p align="center"><input  align="center" type="text" class="form-control" value="www.sahaayak.co.in" id="myInput" style="width: 17%;pointer-events:none;" disabled="disabled">
 
 							<!-- The button used to copy the text -->
 							<button onclick="myFunction()" style="color: #5768ad;background:none!important;border:none;">Click here the copy the URL</button> </p>

@@ -15,10 +15,11 @@ class CreateSuggestionTable extends Migration
     public function up()
     {
         Schema::create('suggestion', function (Blueprint $table) {
+            $table->id();
             $table->string('name',100);
             $table->string('email',100);
             $table->string('comment',100);
-            $table->dateTime('timestamp');
+            $table->timestamps();
         });
     }
 

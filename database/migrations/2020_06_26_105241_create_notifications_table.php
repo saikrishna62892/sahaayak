@@ -20,6 +20,7 @@ class CreateNotificationsTable extends Migration
             $table->text('data');
             $table->timestamp('read_at')->nullable();
             $table->timestamps();
+            $table->string('refrence')->default('no refrence');
         });
     }
 

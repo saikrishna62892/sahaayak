@@ -21,6 +21,8 @@ class CreatesStoriesTable extends Migration
             $table->integer('likes')->default(1);
             $table->mediumText('image')->nullable();
             $table->timestamps();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

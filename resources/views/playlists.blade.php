@@ -38,7 +38,7 @@
                             @if(is_null($i->image))
                                     <img src="{{ asset('/img/playlists/default3.png') }}" alt="" width="500" height="250">
                                 @else
-                                    <img src="{{ asset('/img/playlists/'.$i->image) }}" alt="" width="500" height="250">
+                                    <img src="{{\Storage::disk('s3')->url('uploads/playlist/img/'.$i->image)}}" alt="" width="500" height="250">
                                 @endif
                             </div>
                     
