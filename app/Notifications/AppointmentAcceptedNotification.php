@@ -56,7 +56,7 @@ class AppointmentAcceptedNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            'data'=>'new notification'.$this->appointment,
+            'data'=>'Appointment Accepted '.$this->appointment->name,
             'refrence'=>'userDashboard' 
         ];
     }

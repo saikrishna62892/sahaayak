@@ -60,7 +60,7 @@ class NewsNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            'data'=>'new notification'.$this->news,
+            'data'=>'new news article added '.$this->news,
             'refrence'=>'displayNews' 
         ];
     }
