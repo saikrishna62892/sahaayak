@@ -8,7 +8,7 @@ use App\Diary;
 use App\Story;
 use Auth;
 use DB;
-
+use Storage;
 class diary_controller extends Controller
 {
     public function __construct()
@@ -42,7 +42,6 @@ class diary_controller extends Controller
                 'title' => 'required|min:20',
                 'content' => 'required',
                 'category' => 'required',
-                'image' => 'file|image|max:3000',
                 ]);
     
                 $story->title = $req->title;

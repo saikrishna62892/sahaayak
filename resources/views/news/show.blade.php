@@ -49,7 +49,7 @@
                         @if(is_null($item->image))
                             <div class="classes__item__pic set-bg" data-setbg="img/news/default1.jpg">
                         @else
-                            <div class="classes__item__pic set-bg" data-setbg="img/news/{{$item->image}}">
+                            <div class="classes__item__pic set-bg" data-setbg="{{\Storage::disk('s3')->url('uploads/news/img/'.$item->image)}}">
                         @endif
                             <span>{{ Carbon\Carbon::parse($item->created_at)->format('d-M-Y') }}</span>
                         </div>

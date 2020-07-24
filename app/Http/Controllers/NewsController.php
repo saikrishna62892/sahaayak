@@ -9,6 +9,7 @@ use App\News;
 use App\Notifications\NewsNotification;
 use App\User;
 use App\Traits\NotificationTrait;
+use Storage;
 class NewsController extends Controller
 {
 
@@ -48,10 +49,13 @@ class NewsController extends Controller
 
     		if ($request->hasFile('image')) {
 	        $image = $request->image;
+            $destinationPath = $image->store('uploads/news/img','s3');
+            $news->image = basename($destinationPath);
+            /*
 	        $name = time().'.'.$image->getClientOriginalExtension();
-	        $destinationPath = public_path('/img/news/');
+	         = public_path('/img/news/');
 	        $image->move($destinationPath, $name);
-	        $news->image=$name;
+	        $news->image=$name;*/
     	}
 
     	$news->source=$request->source;
@@ -73,6 +77,7 @@ class NewsController extends Controller
 
     public function deletenews(News $newsarticle){
         $newsarticle->delete();
+        Storage::disk('s3')->delete('uploads/news/img/'.$newsarticle->image);
         return redirect()->back();
     }
 
@@ -91,11 +96,16 @@ class NewsController extends Controller
                 'newsurl'=>'required',
             ]);
             if (request()->hasFile('image')) {
+                Storage::disk('s3')->delete('uploads/news/img/'.$newsarticle->image);
+                $image = request()->image;
+                $destinationPath = $image->store('uploads/news/img','s3');
+                $data['image'] = basename($destinationPath);
+            /*
             $image = request()->image;
             $name = time().'.'.$image->getClientOriginalExtension();
             $destinationPath = public_path('/img/news/');
             $image->move($destinationPath, $name);
-            $data['image'] = $name;
+            $data['image'] = $name;*/
         }
 
         $newsarticle->update($data);
