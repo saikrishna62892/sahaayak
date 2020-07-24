@@ -56,7 +56,7 @@ unset($__errorArgs, $__bag); ?>
                     </div>
                     <div class="custom-file">
                         <input type="file" class="custom-file-input" id="customFile" name="image" 
-                        value="<?php echo e(old('image') ?? url('storage/img/news/'.$newsarticle->image)); ?>" autocomplete="off" >
+                        value="<?php echo e(old('image') ?? \Storage::disk('s3')->url('uploads/news/img/'.$newsarticle->image)); ?>" autocomplete="off" >
                         <label class="custom-file-label" for="customFile">Please choose image...</label>
                         <?php $__errorArgs = ['image'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');

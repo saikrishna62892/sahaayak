@@ -39,11 +39,11 @@
             </div>
             <div class="form-group">
                 <label for="name">Identity</label>
-                <img src="<?php echo e(asset('storage/'.$unapprovedVolunteer->file1)); ?>">
+                <img src="<?php echo e(\Storage::disk('s3')->url($unapprovedVolunteer->file1)); ?>">
             </div>
             <div class="form-group">
                 <label for="name">Work Identity</label>
-                <img src="<?php echo e(asset('storage/'.$unapprovedVolunteer->file2)); ?>">
+                <img src="<?php echo e(\Storage::disk('s3')->url($unapprovedVolunteer->file2)); ?>">
             </div>
 		</div>
 	</div>

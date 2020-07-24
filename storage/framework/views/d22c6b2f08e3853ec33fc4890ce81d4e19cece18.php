@@ -70,9 +70,9 @@ endif;
 unset($__errorArgs, $__bag); ?>
        	</div>
     	  <div class="custom-file">
-          <input type="file" class="custom-file-input" id="customFile" name="Image" value="<?php echo e(old('Image') ?? url('storage/img/quotes/'.$quote->Image)); ?>" autocomplete="off" >
+          <input type="file" class="custom-file-input" id="customFile" name="Image" value="<?php echo e(old('Image') ?? \Storage::disk('s3')->url('uploads/quote/img/'.$quote->Image)); ?>" autocomplete="off" >
           <label class="custom-file-label" for="customFile">Please choose image...</label>
-          <?php $__errorArgs = ['image'];
+          <?php $__errorArgs = ['Image'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }

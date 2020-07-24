@@ -266,7 +266,9 @@
 
                                         </td>
                                         <td>
+                                            
                                             <a href="/admin/home/volunteer/<?php echo e($unapprovedVolunteer->id); ?>/getDetails">get details</a>
+                                            
                                         </td>
                                         <td>
                                             <a class="btn btn-info" href="/admin/home/volunteer/<?php echo e($unapprovedVolunteer->id); ?>/approveVolunteer" style="background-color: #5768ad;">Approve</a>
