@@ -35,9 +35,9 @@
             @enderror
        	</div>
     	  <div class="custom-file">
-          <input type="file" class="custom-file-input" id="customFile" name="Image" value="{{ old('Image') ?? url('storage/img/quotes/'.$quote->Image)}}" autocomplete="off" >
+          <input type="file" class="custom-file-input" id="customFile" name="Image" value="{{ old('Image') ?? \Storage::disk('s3')->url('uploads/quote/img/'.$quote->Image)}}" autocomplete="off" >
           <label class="custom-file-label" for="customFile">Please choose image...</label>
-          @error('image')
+          @error('Image')
               <small class="text-danger">{{$message}}</small>
           @enderror
         </div>
