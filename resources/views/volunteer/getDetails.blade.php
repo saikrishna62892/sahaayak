@@ -1,5 +1,6 @@
 @extends('layouts.dashboard')
 
+
 @section('name')
     {{$unapprovedVolunteer->name}} details
 @endsection

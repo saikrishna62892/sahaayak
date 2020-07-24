@@ -25,6 +25,7 @@
         <form action="home/displaydiary" method="POST" enctype="multipart/form-data">
             @csrf
             @include('diary.diary') 
+            &emsp;
             <center><button type="submit" name="action" value="add_to_diary" class="btn btn-primary" style="background-color: #5768ad;" onclick="alert('Event added Succesfully')">Add to diary</button><br><br>
             <button type="submit" name="action" value="add_to_story" class="btn btn-primary" style="background-color: #5768ad;" onclick="alert('Posted Succesfully')">Add to story</button></center>
         </form>

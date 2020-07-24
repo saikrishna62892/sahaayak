@@ -14,7 +14,7 @@
                     </div>
                     <div class="form-group">
                         <label for="content">Please enter content</label>
-                        <textarea type="text"class="form-control" name="content" id="content" rows="10" placeholder="Your content here..." value="{{ old('content') ?? $newsarticle->content }}" autocomplete="off" ></textarea> 
+                        <textarea type="text"class="form-control" name="content" id="content" rows="10" placeholder="Your content here..."  autocomplete="off" >{{ old('content') ?? $newsarticle->content }}</textarea> 
                         @error('content')
                         <small class="text-danger">{{$message}}</small>
                         @enderror
@@ -28,7 +28,7 @@
                     </div>
                     <div class="custom-file">
                         <input type="file" class="custom-file-input" id="customFile" name="image" 
-                        value="{{ old('image') ?? url('storage/img/news/'.$newsarticle->image)}}" autocomplete="off" >
+                        value="{{ old('image') ?? \Storage::disk('s3')->url('uploads/news/img/'.$newsarticle->image)}}" autocomplete="off" >
                         <label class="custom-file-label" for="customFile">Please choose image...</label>
                         @error('image')
                             <small class="text-danger">{{$message}}</small>

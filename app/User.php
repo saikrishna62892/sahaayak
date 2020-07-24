@@ -68,7 +68,7 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Talk::class);
     }
 
-    public function diary()
+    public function diaries()
     {
         return $this->hasMany(Diary::class);
 

@@ -46,7 +46,7 @@ class PlaylistNotification extends Notification
         return (new MailMessage)
                     ->greeting('Hello')
                     ->subject('Hey check out the latest playlist')
-                    ->line('A playlist for you to checkout by'.$this->playlist)
+                    ->line('A playlist for you to checkout by '.$this->playlist)
                     ->action('Playlist', url('/playlists'))
                     ->line('Thank you for using our application!');
     }
@@ -60,7 +60,7 @@ class PlaylistNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            'data'=>'A new playlist from'.$this->playlist,
+            'data'=>'A new playlist from '.$this->playlist,
             'refrence'=>'playlists' 
         ];
     }

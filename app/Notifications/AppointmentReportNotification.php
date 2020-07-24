@@ -42,7 +42,6 @@ class AppointmentReportNotification extends Notification
     {
         return (new MailMessage)
                     ->line('Report regarding your Appointment')
-                    ->action('Notification Action', url('/'))
                     ->line('Thank you for using sahaayak!')
                     ->attachData($this->pdf->output(),'appointmentReport.pdf');
     }

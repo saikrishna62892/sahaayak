@@ -136,7 +136,8 @@ class HomeController extends Controller
         $user = Auth::user();
         //$user_stories = $user->stories->paginate(4);
         $user_stories = Story::where('user_id',$user->id)->paginate(4);
-        $diary = DB::table('diary')->orderBy("created_at","desc")->paginate(4);
+       // $diary = DB::table('diary')->orderBy("created_at","desc")->paginate(4);
+           $diary = $user->diaries()->orderBy("created_at","desc")->paginate(4);
 
         $checkins=$user->checkins;
         $checkins=$checkins+1;

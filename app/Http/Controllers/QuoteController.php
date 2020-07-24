@@ -10,6 +10,7 @@ use DB;
 use App\Notifications\InspiremeNotification;
 use App\User;
 use App\Traits\NotificationTrait;
+use Storage;
 class QuoteController extends Controller
 {
 
@@ -45,18 +46,23 @@ class QuoteController extends Controller
     	
     	#for image upload
     if ($request->hasFile('Image')) {
+        $image = $request->Image;
+        $destinationPath = $image->store('uploads/quote/img','s3');
+        $quote->Image = basename($destinationPath);
+        /*
         $Image = $request->file('Image');
         $name = $user->id.'_'.$temp.'.'.$Image->getClientOriginalExtension();
         $destinationPath = public_path('/img/quotes/');
         $Image->move($destinationPath, $name);
-        $quote->Image=$name;
+        $quote->Image=$name;*/
     }
     $quote->save();
     $this->sendInspiremeNotif($quote->Author);
     return redirect()->back()->with('message', 'Posted Succcesfully');
 	}
-    public function deletequote(Quote $quoteid){
-        $quoteid->delete();
+    public function deletequote(Quote $quote){
+        Storage::disk('s3')->delete('uploads/quote/img/'.$quote->Image);
+        $quote->delete();
         return redirect()->back();
     }
     public function editquote(Quote $quote){
@@ -71,17 +77,20 @@ class QuoteController extends Controller
                 'Author' => 'required',
                 'Quote' => 'required',
                 'Inspired_from' => 'required',
-                'image' => 'file|image|max:3000',
+                'Image' => 'file|image|max:3000',
             ]);
 
-
-
             if (request()->hasFile('Image')) {
+                Storage::disk('s3')->delete('uploads/quote/img/'.$quote->Image);
+                $image = request()->Image;
+                $destinationPath = $image->store('uploads/quote/img','s3');
+                $data['Image'] = basename($destinationPath);
+              /*
             $image = request()->Image;
             $name = $user->id.'_'.$temp.'.'.$image->getClientOriginalExtension();
             $destinationPath = public_path('/img/quotes/');
             $image->move($destinationPath, $name);
-            $data['image'] = $name;
+            $data['image'] = $name;*/
         }
         $data['Tag'] = request()->Tag;
         $data['Link'] = request()->Link;
