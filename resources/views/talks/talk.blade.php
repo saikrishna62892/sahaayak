@@ -7,7 +7,7 @@
 		   	</div>
 		   	<div class="form-group">
 			    <label for="exampleFormControlTextarea1">Please enter content</label>
-			    <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="10" placeholder="Your content here..." value="{{ old('content') ?? $talk->content }}" autocomplete="off" ></textarea>
+			    <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="10" placeholder="Your content here..." autocomplete="off" >{{ old('content') ?? $talk->content }}</textarea>
 			    @error('content')
 		        	<small class="text-danger">{{$message}}</small>
 		        @enderror

@@ -14,7 +14,7 @@
                     </div>
                     <div class="form-group">
                         <label for="content">Please enter content</label>
-                        <textarea type="text"class="form-control" name="content" id="content" rows="10" placeholder="Your content here..." value="{{ old('content') ?? $newsarticle->content }}" autocomplete="off" ></textarea> 
+                        <textarea type="text"class="form-control" name="content" id="content" rows="10" placeholder="Your content here..."  autocomplete="off" >{{ old('content') ?? $newsarticle->content }}</textarea> 
                         @error('content')
                         <small class="text-danger">{{$message}}</small>
                         @enderror
