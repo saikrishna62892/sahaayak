@@ -183,7 +183,8 @@
                             <input type="text" placeholder="Phone" name="phone" autocomplete="off" >
                         </div>
                         <div class="col-lg-6">
-                            <input placeholder="Pick your Appointment" type="datetime-local" name="timings">
+                            <input type="datetime-local" placeholder="Time" name="timings" style="margin-bottom: 0px;">
+                            <small style="color: #fff;">Enter your convinient virtual meeting time</small>
                         </div>
                         <div class="col-lg-12 text-center">
                             <textarea placeholder="What do you want to talk about" name="message" autocomplete="off" ></textarea>

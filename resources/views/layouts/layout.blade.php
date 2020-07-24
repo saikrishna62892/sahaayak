@@ -376,7 +376,7 @@
     <script src="/js/jquery.slicknav.min.js"></script>
 
     <!-- ManyChat Plugin -->
-    <!--<script src="//widget.manychat.com/101206188315883.js" async="async"></script> -->
+    <script src="//widget.manychat.com/101206188315883.js" async="async"></script>
     <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>
     <script>

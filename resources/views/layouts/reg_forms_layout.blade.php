@@ -29,6 +29,10 @@
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171070217-1"></script>
+
+	<!-- ManyChat Plugin -->
+    <script src="//widget.manychat.com/101206188315883.js" async="async"></script>
+    
 	<script>
 	  window.dataLayer = window.dataLayer || [];
 	  function gtag(){dataLayer.push(arguments);}
