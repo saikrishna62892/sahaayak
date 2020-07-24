@@ -19,6 +19,7 @@ class CreatePlaylistsTable extends Migration
             $table->string('playlistTag');
             $table->string('playlistURL');
             $table->timestamps();
+            $table->mediumText('image')->nullable();
         });
     }
 
