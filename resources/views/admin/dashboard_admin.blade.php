@@ -250,7 +250,7 @@
                                         <th scope="col">Phone No</th>
                                         <th scope="col">Email</th>
                                         <th scope="col">Details</th>
-                                        <th scope="col">Verification</th>
+                                        <th scope="col" colspan="2">Verification</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -266,13 +266,9 @@
                                         <td>
                                             <a href="/admin/home/volunteer/{{$unapprovedVolunteer->id}}/getDetails" style="color: #5768ad;">get details</a>
                                         </td>
-                                        <td>
-                                            <a href="/admin/home/volunteer/{{$unapprovedVolunteer->id}}/approveVolunteer" style="color: #5768ad;">Approve?</a>
-                                            
-                                        </td>
-                                        <td>
-                                            <a class="btn btn-info" href="/admin/home/volunteer/{{$unapprovedVolunteer->id}}/approveVolunteer" style="background-color: #5768ad;">Approve</a>
-                                            <a class="btn btn-info" href="/admin/home/volunteer/{{$unapprovedVolunteer->id}}/rejectVolunteer" style="background-color: #5768ad;">Reject</a>
+                                        <td colspan="2">
+                                            <a href="/admin/home/volunteer/{{$unapprovedVolunteer->id}}/approveVolunteer" style="color: #5768ad;">Approve?</a>&emsp;
+                                            <a href="/admin/home/volunteer/{{$unapprovedVolunteer->id}}/rejectVolunteer" style="color: #5768ad;">Reject</a>
                                         </td>
                                     </tr>
                                     @endforeach
