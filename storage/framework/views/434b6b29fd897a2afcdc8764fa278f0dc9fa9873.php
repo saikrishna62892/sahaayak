@@ -46,11 +46,11 @@
                 </div>
                 <div class="form-group">
                     <label for="name"><strong>Identity : </strong></label>
-                    <img src="<?php echo e(asset('storage/'.$unapprovedVolunteer->file1)); ?>">
+                    <img src="<?php echo e(\Storage::disk('s3')->url($unapprovedVolunteer->file1)); ?>">
                 </div>
                 <div class="form-group">
                     <label for="name"><strong>Work Identity : </strong></label>
-                    <img src="<?php echo e(asset('storage/'.$unapprovedVolunteer->file2)); ?>">
+                    <img src="<?php echo e(\Storage::disk('s3')->url($unapprovedVolunteer->file2)); ?>">
                 </div>
                 <div align="right">
                     <a href="/admin/home" style="color: #5768ad;">Return to Dashboard</a>&emsp;
