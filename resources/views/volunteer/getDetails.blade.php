@@ -40,12 +40,13 @@
                     {{$unapprovedVolunteer->queries}}
                 </div>
                 <div class="form-group">
-                    <label for="name"><strong>Identity : </strong></label>
-                    <img src="{{\Storage::disk('s3')->url($unapprovedVolunteer->file1)}}">
+                    <label for="name"><strong>Identity : </strong></label><br>
+                    <img src="{{\Storage::disk('s3')->url($unapprovedVolunteer->file1)}}" width="800" height="400">
                 </div>
                 <div class="form-group">
-                    <label for="name"><strong>Work Identity : </strong></label>
-                    <img src="{{\Storage::disk('s3')->url($unapprovedVolunteer->file2)}}">
+                    <br>
+                    <label for="name"><strong>Work Identity : </strong></label><br>
+                    <img src="{{\Storage::disk('s3')->url($unapprovedVolunteer->file2)}}" width="800" height="400">
                 </div>
                 <div align="right">
                     <a href="/admin/home" style="color: #5768ad;">Return to Dashboard</a>&emsp;
