@@ -1,52 +1,57 @@
-@extends('layouts.dashboard')
 
 
-@section('name')
-    {{$unapprovedVolunteer->name}} details
-@endsection
 
-@section('content')
+<?php $__env->startSection('name'); ?>
+    <?php echo e($unapprovedVolunteer->name); ?> details
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
 <br>
 <div class="container">
     <div class="card shadow p-4 mb-5 bg-white rounded">
-        <div class="card-header"><h3 align="center">{{$unapprovedVolunteer->name}} details</h3></div>
+        <div class="card-header"><h3 align="center"><?php echo e($unapprovedVolunteer->name); ?> details</h3></div>
             <div class="card-body">
                 <div class="form-group">
                     <label for="name"><strong>Name : </strong></label>
-                    {{$unapprovedVolunteer->name}}
+                    <?php echo e($unapprovedVolunteer->name); ?>
+
                 </div>
                 <div class="form-group">
                     <label for="name"><strong>Phone : </strong></label>
-                    <a href="tel:{{$unapprovedVolunteer->phone}}" style="color: #000;"> {{$unapprovedVolunteer->phone}}</a>
+                    <a href="tel:<?php echo e($unapprovedVolunteer->phone); ?>" style="color: #000;"> <?php echo e($unapprovedVolunteer->phone); ?></a>
                 </div>
                 <div class="form-group">
                     <label for="name"><strong>Email : </strong></label>
-                    <a href="mailto:{{$unapprovedVolunteer->user->email}}" style="color: #000;">{{$unapprovedVolunteer->user->email}}</a>
+                    <a href="mailto:<?php echo e($unapprovedVolunteer->user->email); ?>" style="color: #000;"><?php echo e($unapprovedVolunteer->user->email); ?></a>
                 </div>
                 <div class="form-group">
                     <label for="name"><strong>Qualification : </strong></label>
-                    {{$unapprovedVolunteer->qualification}}
+                    <?php echo e($unapprovedVolunteer->qualification); ?>
+
                 </div>
                 <div class="form-group">
                     <label for="name"><strong>work : </strong></label>
-                    {{$unapprovedVolunteer->work}}
+                    <?php echo e($unapprovedVolunteer->work); ?>
+
                 </div>
                 <div class="form-group">
                     <label for="name"><strong>Insight : </strong></label>
-                    {{$unapprovedVolunteer->insight}}
+                    <?php echo e($unapprovedVolunteer->insight); ?>
+
                 </div>
                 <div class="form-group">
                     <label for="name"><strong>Queries : </strong></label>
-                    {{$unapprovedVolunteer->queries}}
+                    <?php echo e($unapprovedVolunteer->queries); ?>
+
                 </div>
                 <div class="form-group">
                     <label for="name"><strong>Identity : </strong></label><br>
-                    <img src="{{\Storage::disk('s3')->url($unapprovedVolunteer->file1)}}" width="800" height="400">
+                    <img src="<?php echo e(\Storage::disk('s3')->url($unapprovedVolunteer->file1)); ?>" width="800" height="400">
                 </div>
                 <div class="form-group">
                     <br>
                     <label for="name"><strong>Work Identity : </strong></label><br>
-                    <img src="{{\Storage::disk('s3')->url($unapprovedVolunteer->file2)}}" width="800" height="400">
+                    <img src="<?php echo e(\Storage::disk('s3')->url($unapprovedVolunteer->file2)); ?>" width="800" height="400">
                 </div>
                 <div align="right">
                     <a href="/admin/home" style="color: #5768ad;">Return to Dashboard</a>&emsp;
@@ -54,4 +59,6 @@
     		</div>
     	</div>
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.dashboard', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\Sahayak\sahaayak\resources\views/volunteer/getDetails.blade.php ENDPATH**/ ?>
