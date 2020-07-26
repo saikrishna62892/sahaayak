@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<title>Sahaayak | @yield('name')</title>
+	<link rel="icon" type="image/png" href="/img/icon.png"/>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -40,6 +41,10 @@
 
 	  gtag('config', 'UA-171070217-1');
 	</script>
+
+
+	<!-- Recaptcha -->
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 
