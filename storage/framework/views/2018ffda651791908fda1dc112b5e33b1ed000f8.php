@@ -182,10 +182,12 @@
                         <div class="col-lg-6">
                             <input type="text" placeholder="Phone" name="phone" autocomplete="off" >
                         </div>
+
                         <div class="col-lg-6">
                             <input type="datetime-local" placeholder="Time" name="timings" style="margin-bottom: 0px;">
                             <small style="color: #fff;">Enter your convinient virtual meeting time</small>
                         </div>
+
                         <div class="col-lg-12 text-center">
                             <textarea placeholder="What do you want to talk about" name="message" autocomplete="off" ></textarea>
                         <button type="submit" onclick="alert('The timings provided may vary upto 1 hour!');">Submit</button>
@@ -337,4 +339,4 @@
     </section>
     <!-- Testimonial Section End -->
     <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\Sahayak\sahaayak\resources\views/welcome.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH G:\sahayak1\sahaayak\resources\views/welcome.blade.php ENDPATH**/ ?>
