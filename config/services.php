@@ -31,9 +31,9 @@ return [
     ],
 
     'google' => [
-        'client_id' => '255442959012-da7ej0v007c1s0kaf8pdt76b95erk19r.apps.googleusercontent.com',
-        'client_secret' => '2rkp-M4tR6f9pOTfyewvIgvM',
-        'redirect' => 'http://localhost:8000/auth/google/callback',
+        'client_id' => '255442959012-sr42pqsic33sbth40tlorllk1m67f5cr.apps.googleusercontent.com',
+        'client_secret' => 'UCkEfjIwKNSs4XefTaXNFdRt',
+        'redirect' => 'http://sahaayakdemo.herokuapp.com/auth/google/callback',
     ],
 
     'facebook' => [
