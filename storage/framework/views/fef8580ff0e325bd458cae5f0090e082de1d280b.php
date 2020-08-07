@@ -6,7 +6,7 @@
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100 p-l-50 p-r-50 p-t-45 p-b-30">
-                <form class="login100-form validate-form" method="POST" action="<?php echo e(route('register')); ?>">
+                <form class="login100-form validate-form" method="POST" action="<?php echo e(route('register')); ?>" name='signupform'>
                     <?php echo csrf_field(); ?>
                     <span class="login100-form-title p-b-25">
                         SignUp : Step 1
@@ -79,7 +79,7 @@ unset($__errorArgs, $__bag); ?>
                     </div>
 
                     <div class="contact100-form-checkbox m-l-4" data-validate = "Accept terms and conditions">
-                        <input class="input-checkbox100" id="ckb1" type="checkbox" name="terms" required>
+                        <input class="input-checkbox100" id="ckb1" type="checkbox" name="terms" value="1" required>
                         <?php $__errorArgs = ['terms'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -98,6 +98,7 @@ unset($__errorArgs, $__bag); ?>
                     </div>
 
                     <div>
+                    <div class="wrap-input100 validate-input m-b-16" align="center">
                         Role&emsp;
                                 <label class="radio-container m-r-20">
                                     <input type="radio" checked="checked" name="is_Volunteer" value="0">
@@ -107,6 +108,15 @@ unset($__errorArgs, $__bag); ?>
                                     <input type="radio" name="is_Volunteer" value="1">
                                     <span class="checkmark"></span>Volunteer
                                 </label>
+                    </div>
+
+                    <div class="wrap-input100 validate-input m-b-16" align="center">
+                        <div class="g-recaptcha" data-sitekey="<?php echo e(env('CAPTCHA_KEY')); ?>"></div>
+                        <?php if($errors->has('g-recaptcha-response')): ?>
+                            <span class="invalid-feedback" style="display: block;">
+                                <strong><?php echo e($errors->first('g-recaptcha-response')); ?></strong>
+                            </span>
+                        <?php endif; ?>
                     </div>
                     
                     <div class="container-login100-form-btn p-t-12">

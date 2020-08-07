@@ -6,7 +6,7 @@
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100 p-l-50 p-r-50 p-t-45 p-b-30">
-                <form class="login100-form validate-form" method="POST" action="{{ route('register') }}">
+                <form class="login100-form validate-form" method="POST" action="{{ route('register') }}" name='signupform'>
                     @csrf
                     <span class="login100-form-title p-b-25">
                         SignUp : Step 1
@@ -58,7 +58,7 @@
                     </div>
 
                     <div class="contact100-form-checkbox m-l-4" data-validate = "Accept terms and conditions">
-                        <input class="input-checkbox100" id="ckb1" type="checkbox" name="terms" required>
+                        <input class="input-checkbox100" id="ckb1" type="checkbox" name="terms" value="1" required>
                         @error('terms')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -70,6 +70,7 @@
                     </div>
 
                     <div>
+                    <div class="wrap-input100 validate-input m-b-16" align="center">
                         Role&emsp;
                                 <label class="radio-container m-r-20">
                                     <input type="radio" checked="checked" name="is_Volunteer" value="0">
@@ -79,6 +80,15 @@
                                     <input type="radio" name="is_Volunteer" value="1">
                                     <span class="checkmark"></span>Volunteer
                                 </label>
+                    </div>
+
+                    <div class="wrap-input100 validate-input m-b-16" align="center">
+                        <div class="g-recaptcha" data-sitekey="{{env('CAPTCHA_KEY')}}"></div>
+                        @if($errors->has('g-recaptcha-response'))
+                            <span class="invalid-feedback" style="display: block;">
+                                <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                            </span>
+                        @endif
                     </div>
                     
                     <div class="container-login100-form-btn p-t-12">

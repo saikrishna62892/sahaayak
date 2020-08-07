@@ -8,6 +8,8 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Rules\Captcha;
+
 
 class RegisterController extends Controller
 {
@@ -55,6 +57,7 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'is_Volunteer' =>['required'],
             'terms'=>['required']
+            //'g-captcha-response' => new Captcha()
         ]);
     }
 
