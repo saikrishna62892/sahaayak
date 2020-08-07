@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Sahaayak | @yield('name')</title>
+	<title>Sahaayak | <?php echo $__env->yieldContent('name'); ?></title>
 	<link rel="icon" type="image/png" href="/img/icon.png"/>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -60,7 +60,7 @@
 </head>
 <body>
 
-	@yield('content');
+	<?php echo $__env->yieldContent('content'); ?>;
 
 <!--===============================================================================================-->	
 	<script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -81,4 +81,4 @@
     </script>
 
 </body>
-</html>
+</html><?php /**PATH C:\sahaayak\resources\views/layouts/reg_forms_layout.blade.php ENDPATH**/ ?>
