@@ -78,7 +78,7 @@ unset($__errorArgs, $__bag); ?>
                         </span>
                     </div>
 
-                    <div>
+                    <div class="wrap-input100 validate-input m-b-16" align="center">
                         Role&emsp;
                                 <label class="radio-container m-r-20">
                                     <input type="radio" checked="checked" name="is_Volunteer" value="0">
@@ -88,6 +88,15 @@ unset($__errorArgs, $__bag); ?>
                                     <input type="radio" name="is_Volunteer" value="1">
                                     <span class="checkmark"></span>Volunteer
                                 </label>
+                    </div>
+
+                    <div class="wrap-input100 validate-input m-b-16" align="center">
+                        <div class="g-recaptcha" data-sitekey="<?php echo e(env('CAPTCHA_KEY')); ?>"></div>
+                        <?php if($errors->has('g-recaptcha-response')): ?>
+                            <span class="invalid-feedback" style="display: block;">
+                                <strong><?php echo e($errors->first('g-captcha-response')); ?></strong>
+                            </span>
+                        <?php endif; ?>
                     </div>
                     
                     <div class="container-login100-form-btn p-t-12">

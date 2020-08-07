@@ -37,7 +37,7 @@
                                 @if(is_null($quote->Image))
                                     <img src="{{ asset('/img/quotes/default.PNG') }}" alt="">
                                 @else
-                                    <img src="{{\Storage::disk('s3')->url('uploads/quote/img/'.$quote->Image)}}" alt="">
+                                    <img src="{{ \Storage::disk('s3')->url('uploads/quote/img/'.$quote->Image) }}" alt="">
                                 @endif
                             </div>
                             <div class="blog__details__author__text">

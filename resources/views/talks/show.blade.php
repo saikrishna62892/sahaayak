@@ -61,7 +61,7 @@
                                                                     @if(is_null($talk->image))
                                                                         <img src="{{ asset('/img/talks/default1.jpg') }}" alt="" width="700" height="350">
                                                                     @else
-                                                                        <img src="{{ asset('/img/talks/'.$talk->image) }}" alt="" width="700" height="350">
+                                                                        <img src="{{ \Storage::disk('s3')->url('uploads/talk/img/'.$talk->image) }}" alt="" width="700" height="350">
                                                                     @endif
                                                                     <span>{{ $talk->category }}</span>
                                                                 </div>
