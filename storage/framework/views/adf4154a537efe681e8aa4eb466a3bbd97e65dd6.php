@@ -78,4 +78,4 @@ If you have a special reason for us to delete all record of you just let us know
 
 
 <h4>Applicable Law</h4>
-<p align="justify">This Policy and information contained herein, shall be governed by the laws of the Republic of India and the courts of Kerala, India shall retain exclusive jurisdiction to entertain any proceedings in relation to any disputes arising out of the same.</p>
+<p align="justify">This Policy and information contained herein, shall be governed by the laws of the Republic of India and the courts of Kerala, India shall retain exclusive jurisdiction to entertain any proceedings in relation to any disputes arising out of the same.</p><?php /**PATH C:\sahaayak\resources\views/auth/privacy_policy.blade.php ENDPATH**/ ?>

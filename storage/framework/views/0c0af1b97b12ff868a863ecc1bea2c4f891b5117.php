@@ -185,3 +185,4 @@ authorization of SAHAAYAK.
 
 <h4>Applicable Law </h4>
 <p align="justify">This Website, including the Content and information contained herein, shall be governed by the laws of the Republic of India and the courts of Bengaluru, India shall retain exclusive jurisdiction to entertain any proceedings in relation to any disputes arising out of the same. As such, the laws of India shall govern the disclaimer, legal notices, privacy policy, order form and any transaction completed using this Website.</p>
+<?php /**PATH C:\sahaayak\resources\views/auth/termsandconditions.blade.php ENDPATH**/ ?>
