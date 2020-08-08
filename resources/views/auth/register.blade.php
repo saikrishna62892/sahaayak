@@ -90,7 +90,7 @@
                             <div id="myTerms" class="modal">
 
                               <!-- Terms & Conditions -->
-                              <div class="modal-content" style="overflow-y: scroll;">
+                              <div class="modal-content" style="overflow-y: auto;">
                                 <span class="close1">&times;</span>
                                 @include('auth.termsandconditions')
                               </div>
@@ -101,7 +101,7 @@
                             <div id="myPrivacy" class="modal">
 
                               <!-- Modal content -->
-                              <div class="modal-content" style="overflow-y: scroll;">
+                              <div class="modal-content" style="overflow-y: auto;">
                                 <span class="close2">&times;</span>
                                 @include('auth.privacy_policy')
                               </div>
