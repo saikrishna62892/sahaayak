@@ -6,7 +6,7 @@
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100 p-l-50 p-r-50 p-t-45 p-b-30">
-                <form class="login100-form validate-form" method="POST" action="<?php echo e(route('register')); ?>" name='signupform'>
+                <form class="login100-form validate-form" method="POST" action="<?php echo e(route('register')); ?>" >
                     <?php echo csrf_field(); ?>
                     <span class="login100-form-title p-b-25">
                         SignUp : Step 1
@@ -52,19 +52,7 @@ unset($__errorArgs, $__bag); ?>
                     </div>
 
                     <div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
-                        <input class="input100" id="password" type="password" name="password" required autocomplete="new-password" placeholder="Password">
-                        <?php $__errorArgs = ['password'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong><?php echo e($message); ?></strong>
-                                    </span>
-                        <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
+                        <input class="input100" id="password" type="password" name="password" required autocomplete="new-password" placeholder="Password" minlength="8" maxlength="15">
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <span class="lnr lnr-lock"></span>
@@ -72,6 +60,18 @@ unset($__errorArgs, $__bag); ?>
                     </div>
                     <div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
                         <input class="input100" id="password-confirm" type="password" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password">
+                        <?php $__errorArgs = ['password'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                    <span role="alert">
+                                        <p style="color:red;" align="center">*<?php echo e($message); ?></p>
+                                    </span>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <span class="lnr lnr-lock"></span>
@@ -79,25 +79,24 @@ unset($__errorArgs, $__bag); ?>
                     </div>
 
                     <div class="contact100-form-checkbox m-l-4" data-validate = "Accept terms and conditions">
-                        <input class="input-checkbox100" id="ckb1" type="checkbox" name="terms" value="1" required>
+                        <input class="input-checkbox100" id="ckb1" type="checkbox" name="terms" value="1">
+                        <label class="label-checkbox100" for="ckb1">
+                            By checking this box, I certify that I have read and accept the terms&conditions and the privacy policy and I will adhere to the terms.
+                        </label>
                         <?php $__errorArgs = ['terms'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong><?php echo e($message); ?></strong>
+                                    <span role="alert">
+                                        <p style="color:red;" align="center">*<?php echo e($message); ?></p>
                                     </span>
                         <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                        <label class="label-checkbox100" for="ckb1">
-                            By checking this box, I certify that I have read and accept the terms&conditions and the privacy policy and I will adhere to the terms.
-                        </label>
                     </div>
 
-                    <div>
                     <div class="wrap-input100 validate-input m-b-16" align="center">
                         Role&emsp;
                                 <label class="radio-container m-r-20">
@@ -155,4 +154,4 @@ unset($__errorArgs, $__bag); ?>
         </div>
     </div>
     <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.reg_forms_layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\sahaayak\resources\views/auth/register.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.reg_forms_layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Ganesh\Desktop\dileep\sahaayak\resources\views/auth/register.blade.php ENDPATH**/ ?>
