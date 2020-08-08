@@ -160,7 +160,6 @@
                             <?php if(auth()->guard()->guest()): ?>
                                 <ul>
                                     <li>WRITE US: <a href="mailto:sahaayakofficial@gmail.com" target="_blank" style="color: #5768ad;">sahaayakofficial@gmail.com</a><br>
-                                                <a href="mailto:saahaayakofficial@gmail.com" target="_blank" style="color: #5768ad;">saahayakofficial@gmail.com</a></li>
                                 </ul>
                                 <a href="<?php echo e(route('login')); ?>" class="primary-btn">Login</a>
                                 <?php if(Route::has('register')): ?>

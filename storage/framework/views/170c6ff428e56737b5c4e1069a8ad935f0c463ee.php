@@ -111,7 +111,7 @@ unset($__errorArgs, $__bag); ?>
                             <div id="myTerms" class="modal">
 
                               <!-- Terms & Conditions -->
-                              <div class="modal-content" style="overflow-y: scroll;">
+                              <div class="modal-content" style="overflow-y: auto;">
                                 <span class="close1">&times;</span>
                                 <?php echo $__env->make('auth.termsandconditions', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                               </div>
@@ -122,7 +122,7 @@ unset($__errorArgs, $__bag); ?>
                             <div id="myPrivacy" class="modal">
 
                               <!-- Modal content -->
-                              <div class="modal-content" style="overflow-y: scroll;">
+                              <div class="modal-content" style="overflow-y: auto;">
                                 <span class="close2">&times;</span>
                                 <?php echo $__env->make('auth.privacy_policy', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                               </div>
