@@ -2,14 +2,14 @@
 @section('name')
     Join-us
 @endsection
-    @section('content') 
+    @section('content')
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100 p-l-50 p-r-50 p-t-45 p-b-30">
-                <form class="login100-form validate-form" method="POST" action="{{ route('register') }}" name='signupform'>
+                <form class="login100-form validate-form" method="POST" action="{{ route('register') }}" >
                     @csrf
                     <span class="login100-form-title p-b-25">
-                        SignUp : Step 1
+                        SignUp
                     </span>
                     <div class="wrap-input100 validate-input m-b-16">
                         <input class="input100" type="text" id="name" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Username">
@@ -38,12 +38,7 @@
                     </div>
 
                     <div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
-                        <input class="input100" id="password" type="password" name="password" required autocomplete="new-password" placeholder="Password">
-                        @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                        @enderror
+                        <input class="input100" id="password" type="password" name="password" required autocomplete="new-password" placeholder="Password" minlength="8" maxlength="15">
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <span class="lnr lnr-lock"></span>
@@ -51,25 +46,17 @@
                     </div>
                     <div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
                         <input class="input100" id="password-confirm" type="password" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password">
+                        @error('password')
+                                    <span role="alert">
+                                        <p style="color:red;" align="center">*{{ $message }}</p>
+                                    </span>
+                        @enderror
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <span class="lnr lnr-lock"></span>
                         </span>
                     </div>
 
-                    <div class="contact100-form-checkbox m-l-4" data-validate = "Accept terms and conditions">
-                        <input class="input-checkbox100" id="ckb1" type="checkbox" name="terms" value="1" required>
-                        @error('terms')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                        @enderror
-                        <label class="label-checkbox100" for="ckb1">
-                            By checking this box, I certify that I have read and accept the terms&conditions and the privacy policy and I will adhere to the terms.
-                        </label>
-                    </div>
-
-                    <div>
                     <div class="wrap-input100 validate-input m-b-16" align="center">
                         Role&emsp;
                                 <label class="radio-container m-r-20">
@@ -89,6 +76,43 @@
                                 <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
                             </span>
                         @endif
+                    </div>
+
+
+                    
+
+                    <div class="contact100-form-checkbox m-l-4" data-validate = "Accept terms and conditions">
+                        <input class="input-checkbox100" id="ckb1" type="checkbox" name="terms" value="1">
+                        <label class="label-checkbox100" for="ckb1">
+                            By checking this box, I certify that I have read and accept the <button id="terms_conditions" class="btn btn-link" style="color: #5768ad;padding: 0px 0px 0px 0px;">terms&conditions</button> and the <button id="privacy_policy" class="btn btn-link" style="color: #5768ad;padding: 0px 0px 0px 0px;"> privacy policy </button> and I will adhere to the terms.
+
+                            <!-- The Modal -->
+                            <div id="myTerms" class="modal">
+
+                              <!-- Terms & Conditions -->
+                              <div class="modal-content" style="overflow-y: scroll;">
+                                <span class="close1">&times;</span>
+                                @include('auth.termsandconditions')
+                              </div>
+
+                            </div>
+
+                            <!-- Privacy Policy -->
+                            <div id="myPrivacy" class="modal">
+
+                              <!-- Modal content -->
+                              <div class="modal-content" style="overflow-y: scroll;">
+                                <span class="close2">&times;</span>
+                                @include('auth.privacy_policy')
+                              </div>
+
+                            </div>
+                        </label>
+                        @error('terms')
+                                    <span role="alert">
+                                        <p style="color:red;" align="center">*{{ $message }}</p>
+                                    </span>
+                        @enderror
                     </div>
                     
                     <div class="container-login100-form-btn p-t-12">

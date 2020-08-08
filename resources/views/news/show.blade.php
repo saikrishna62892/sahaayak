@@ -33,8 +33,6 @@
                     <div class="section-title">
                         <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
                         <h2>Top News</h2>
-                        <p>The trainings are multi-style and you will learn and practice Hatha Vinyasa (flow)<br /> and
-                            Yin Yoga.</p>
                     </div>
                 </div>
             <div class="row">

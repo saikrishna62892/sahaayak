@@ -339,4 +339,4 @@
     </section>
     <!-- Testimonial Section End -->
     <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH G:\sahayak1\sahaayak\resources\views/welcome.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\Sahayak\sahaayak\resources\views/welcome.blade.php ENDPATH**/ ?>

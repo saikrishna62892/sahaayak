@@ -56,8 +56,8 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'is_Volunteer' =>['required'],
-            'terms'=>['required']
-            //'g-captcha-response' => new Captcha()
+            'terms'=>['required'],
+            'g-captcha-response' => new Captcha()
         ]);
     }
 
