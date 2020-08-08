@@ -42,7 +42,19 @@
 	  gtag('config', 'UA-171070217-1');
 	</script>
 
-
+	<script>
+	document.getElementById('signupform').onsubmit = function() {
+    // get reference to required checkbox
+    var terms = this.elements['terms'];
+    
+    if ( !terms.checked ) { // if it's not checked
+        // display error info (generally not an alert these days)
+        alert( 'Please signify your agreement with our terms.' );
+        return false; // don't submit
+    }
+    return true; // submit
+	};
+	</script>
 	<!-- Recaptcha -->
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
