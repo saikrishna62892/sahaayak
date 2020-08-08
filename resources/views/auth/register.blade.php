@@ -2,7 +2,7 @@
 @section('name')
     Join-us
 @endsection
-    @section('content') 
+    @section('content')
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100 p-l-50 p-r-50 p-t-45 p-b-30">
@@ -78,10 +78,35 @@
                         @endif
                     </div>
 
+
+                    
+
                     <div class="contact100-form-checkbox m-l-4" data-validate = "Accept terms and conditions">
                         <input class="input-checkbox100" id="ckb1" type="checkbox" name="terms" value="1">
                         <label class="label-checkbox100" for="ckb1">
-                            By checking this box, I certify that I have read and accept the terms&conditions and the privacy policy and I will adhere to the terms.
+                            By checking this box, I certify that I have read and accept the <button id="terms_conditions" class="btn btn-link" style="color: #5768ad;padding: 0px 0px 0px 0px;">terms&conditions</button> and the <button id="privacy_policy" class="btn btn-link" style="color: #5768ad;padding: 0px 0px 0px 0px;"> privacy policy </button> and I will adhere to the terms.
+
+                            <!-- The Modal -->
+                            <div id="myTerms" class="modal">
+
+                              <!-- Terms & Conditions -->
+                              <div class="modal-content" style="overflow-y: scroll;">
+                                <span class="close1">&times;</span>
+                                @include('auth.termsandconditions')
+                              </div>
+
+                            </div>
+
+                            <!-- Privacy Policy -->
+                            <div id="myPrivacy" class="modal">
+
+                              <!-- Modal content -->
+                              <div class="modal-content" style="overflow-y: scroll;">
+                                <span class="close2">&times;</span>
+                                @include('auth.privacy_policy')
+                              </div>
+
+                            </div>
                         </label>
                         @error('terms')
                                     <span role="alert">
