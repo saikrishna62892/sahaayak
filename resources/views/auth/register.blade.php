@@ -6,7 +6,7 @@
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100 p-l-50 p-r-50 p-t-45 p-b-30">
-                <form class="login100-form validate-form" method="POST" action="{{ route('register') }}" name='signupform'>
+                <form class="login100-form validate-form" method="POST" action="{{ route('register') }}" >
                     @csrf
                     <span class="login100-form-title p-b-25">
                         SignUp : Step 1
@@ -38,12 +38,7 @@
                     </div>
 
                     <div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
-                        <input class="input100" id="password" type="password" name="password" required autocomplete="new-password" placeholder="Password">
-                        @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                        @enderror
+                        <input class="input100" id="password" type="password" name="password" required autocomplete="new-password" placeholder="Password" minlength="8" maxlength="15">
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <span class="lnr lnr-lock"></span>
@@ -51,6 +46,11 @@
                     </div>
                     <div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
                         <input class="input100" id="password-confirm" type="password" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password">
+                        @error('password')
+                                    <span role="alert">
+                                        <p style="color:red;" align="center">*{{ $message }}</p>
+                                    </span>
+                        @enderror
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <span class="lnr lnr-lock"></span>
@@ -58,18 +58,17 @@
                     </div>
 
                     <div class="contact100-form-checkbox m-l-4" data-validate = "Accept terms and conditions">
-                        <input class="input-checkbox100" id="ckb1" type="checkbox" name="terms" value="1" required>
-                        @error('terms')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                        @enderror
+                        <input class="input-checkbox100" id="ckb1" type="checkbox" name="terms" value="1">
                         <label class="label-checkbox100" for="ckb1">
                             By checking this box, I certify that I have read and accept the terms&conditions and the privacy policy and I will adhere to the terms.
                         </label>
+                        @error('terms')
+                                    <span role="alert">
+                                        <p style="color:red;" align="center">*{{ $message }}</p>
+                                    </span>
+                        @enderror
                     </div>
 
-                    <div>
                     <div class="wrap-input100 validate-input m-b-16" align="center">
                         Role&emsp;
                                 <label class="radio-container m-r-20">
