@@ -9,7 +9,7 @@
                 <form class="login100-form validate-form" method="POST" action="{{ route('register') }}">
                     @csrf
                     <span class="login100-form-title p-b-25">
-                        SignUp : Step 1
+                        SignUp
                     </span>
                     <div class="wrap-input100 validate-input m-b-16">
                         <input class="input100" type="text" id="name" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Username">

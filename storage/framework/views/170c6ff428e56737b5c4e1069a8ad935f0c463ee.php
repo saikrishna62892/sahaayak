@@ -94,7 +94,7 @@ unset($__errorArgs, $__bag); ?>
                         <div class="g-recaptcha" data-sitekey="<?php echo e(env('CAPTCHA_KEY')); ?>"></div>
                         <?php if($errors->has('g-recaptcha-response')): ?>
                             <span class="invalid-feedback" style="display: block;">
-                                <strong><?php echo e($errors->first('g-captcha-response')); ?></strong>
+                                <strong><?php echo e($errors->first('g-recaptcha-response')); ?></strong>
                             </span>
                         <?php endif; ?>
                     </div>
