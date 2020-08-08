@@ -421,6 +421,30 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="card">
+                                <div class="card-heading">
+                                    <a data-toggle="collapse" data-target="#collapseSeven">
+                                        <span>What are our privacy policies?</span>
+                                    </a>
+                                </div>
+                                <div id="collapseSeven" class="collapse" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <?php echo $__env->make('auth.privacy_policy', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-heading">
+                                    <a data-toggle="collapse" data-target="#collapseEight">
+                                        <span>What are our terms & conditions?</span>
+                                    </a>
+                                </div>
+                                <div id="collapseEight" class="collapse" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <?php echo $__env->make('auth.termsandconditions', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
