@@ -206,7 +206,7 @@
                     <div class="col-lg-12">
                         <div class="section-title">
                             <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
-                            <h2 data-step="6" data-intro="In this section you can expect the latest featured news gathered from different sources." data-position="bottom-middle-aligned">Featured Topics</h2>
+                            <h2 data-step="6" data-intro="In this section you can expect the latest featured news gathered from different sources." data-position="bottom-middle-aligned">News & Announcements</h2>
                         </div>
                     </div>
                 </div>
@@ -235,6 +235,7 @@
 
                 </div>
             </div>
+            <center><a href="{{ url('displayNews') }}" class="primary-btn">View All News & Announcements</a></center>
     </section>
 
     <!-- Classes Section End -->
