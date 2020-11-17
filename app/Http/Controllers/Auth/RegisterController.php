@@ -38,6 +38,10 @@ class RegisterController extends Controller
      *
      * @return void
      */
+    
+
+
+    //@dileep
     public function __construct()
     {
         $this->middleware('guest');
@@ -53,9 +57,10 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'rollnum' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'is_Volunteer' =>['required'],
+            //'is_Volunteer' =>['required'],
             'terms'=>['required'],
             'g-captcha-response' => new Captcha()
         ]);
@@ -71,9 +76,10 @@ class RegisterController extends Controller
     {
         $user=User::create([
             'name' => $data['name'],
+            'rollnum' => $data['rollnum'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'is_Volunteer' => $data['is_Volunteer']
+            //'is_Volunteer' => $data['is_Volunteer']
         ]);
         
         return $user;
