@@ -166,7 +166,8 @@
                         <div class="section-title">
                             <img src="img/icon-white.png" alt="Sahaayak" width="58" height="38">
                             <h2>Make An Appointment</h2>
-                            <small style="color: #fff;">Note: Don't worrry folks we keep your data safe</small>
+                            <small style="color: #fff;">Note: For avoiding reschedule of appointments please visit the calenders of Counsellors for a convenient timing</small><br>
+                            <small style="color: #fff;"><u><a href="https://calendar.google.com/calendar/u/1?cid=c2Fpa3Jpc2huYV9tMTkwMjQxY3NAbml0Yy5hYy5pbg" target="_blank" style="color: #fff;">Visit Dr.Aneesh T Calendar</a></u>&emsp;<u><a href="#" style="color: #fff;">Visit Ms.Neethu NT Calendar</a></u></small>
                         </div>
                     </div>
                 </div>
@@ -177,19 +178,29 @@
                             <input type="text" placeholder="Name" name="name" autocomplete="off" >
                         </div>
                         <div class="col-lg-6">
-                            <input type="text" placeholder="Email" name="email" autocomplete="off" >
+                            <input type="text" placeholder="College ID" name="collegeid" autocomplete="off" >
                         </div>
                         <div class="col-lg-6">
-                            <input type="text" placeholder="Phone" name="phone" autocomplete="off" >
+                          <select  id="counsellor">
+                            <option value="" selected disabled hidden>Choose Your Counsellor</option>
+                            <option value="1" style="color: black;"><a href="#">Dr.Aneesh T-Clinical Psychologist</a></option>
+                            <option value="2" style="color: black;"><a href="#">Ms.Neethu NT-Consultant Psychologist</a></option>
+                          </select>
                         </div>
-
                         <div class="col-lg-6">
-                            <input type="datetime-local" placeholder="Time" name="timings" style="margin-bottom: 0px;">
-                            <small style="color: #fff;">Enter your convinient virtual meeting time</small>
+                          <select  id="counsellor">
+                            <option value="" selected disabled hidden>Choose Your Slot</option>
+                            <option value="1" style="color: black;">9AM - 10AM</option>
+                            <option value="2" style="color: black;">10AM - 11AM</option>
+                            <option value="3" style="color: black;">11AM - 12PM</option>
+                            <option value="4" style="color: black;">2PM - 3PM</option>
+                            <option value="5" style="color: black;">3PM - 4PM</option>
+                            <option value="6" style="color: black;">4PM - 5PM</option>
+                            <option value="7" style="color: black;">5PM - 6PM</option>
+                          </select>
                         </div>
-
                         <div class="col-lg-12 text-center">
-                            <textarea placeholder="What do you want to talk about" name="message" autocomplete="off" ></textarea>
+                            <textarea placeholder="What do you want to talk about in 100 words" name="message" autocomplete="off" ></textarea>
                         <button type="submit" onclick="alert('The timings provided may vary upto 1 hour!');">Submit</button>
                         </div>
                     </div>
