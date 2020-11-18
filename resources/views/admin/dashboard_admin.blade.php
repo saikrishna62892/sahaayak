@@ -93,7 +93,7 @@
                             <a data-toggle="tab" href="#playlists" role="tab">Playlists</a>
                         </li>
                         <li>
-                            <a data-toggle="tab" href="#galley" role="tab">Gallery</a>
+                            <a data-toggle="tab" href="#gallery" role="tab">Gallery</a>
                         </li>
                         <li>
                             <a data-toggle="tab" href="#assessments" role="tab">Assessments</a>
@@ -105,7 +105,7 @@
                 <div class="tab-content" id="myTabContent">
                     <!-- Add Counsellor Form begin  -->
                     <div class="tab-pane fade show active" id="addcounsellor" role="tabpanel">
-                        <!--@include('quotes.dialyquote')-->
+                        @include('admin.add_counsellors')
                     </div>
                     <!-- Add Counsellor Form end -->
                     
@@ -149,13 +149,9 @@
                     </div>
                     <!-- playlists form end -->
                     <!-- Galley form begin -->
-                    <div class="tab-pane fade" id="galley" role="tabpanel">
+                    <div class="tab-pane fade" id="gallery" role="tabpanel">
                         @include('gallery.create')
-                @error('image')
-                    <small class="text-danger">{{$message}}</small>
-                @enderror
-            </div>          
-                    </div>
+                    </div>          
                     <!-- Gallery form end -->
 
                     <!-- assessments form begin -->
@@ -163,6 +159,7 @@
                         @include('questionnaire.allquestionnaires')
                     </div>
                     <!-- assessments form end -->
+                </div>
                 </div>
             </div>
         </div>
@@ -195,6 +192,9 @@
                         </li>
                         <li>
                             <a data-toggle="tab" href="#shared_playlists" role="tab">Playlists</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#shared_gallery" role="tab">Gallery</a>
                         </li>
                         <li>
                             <a data-toggle="tab" href="#suggestions" role="tab">Suggestions</a>
@@ -239,14 +239,21 @@
                         @include('playlists.shared_playlists')
                                     
                     </div>
-                    <!-- shared_playlists form end -->   
+                    <!-- shared_playlists form end -->
+
+                    <!-- shared_talks form begin -->
+                    <div class="tab-pane fade" id="shared_gallery" role="tabpanel">
+                        <h4 align="center">Shared Gallery</h4>
+                        @include('gallery.shared_gallery')
+                    </div>
+                    <!-- shared_talks form end -->   
 
                      <!-- assessments form begin -->
                     <div class="tab-pane fade" id="suggestions" role="tabpanel">
                         <h4 align="center">All Assessments</h4>
                         @include('suggestions')
                     <!-- assessments form end -->
-
+                    </div>
                 </div>
             </div>
         </div>
@@ -254,14 +261,13 @@
 </div>
 <!-- trading history area end -->
 
-
     <div class="main-content-inner" id="table">
     	<div class="row">
         <!-- Progress Table start -->
         <div class="col-12 mt-5">
             <div class="card shadow p-4 mb-5 bg-white rounded">
                 <div class="card-body">
-                    <h4 class="header-title" align="center">Pending Volunteers List</h4>
+                    <h4 class="header-title" align="center">Pending Volunteers List(Currently Disabled)</h4>
                     <div class="single-table">
                         <div class="table-responsive">
                             <table class="table table-hover progress-table text-center">

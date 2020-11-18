@@ -271,24 +271,44 @@
         </div>
         @endforeach
     -->
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-    @foreach($gallery as $gal)
-        <div class="carousel-item active" style="height: 550px;">
-            @if(is_null($gal->image))
-                <img class="d-block w-100" src="{{ asset('/img/galleries/default.jpg') }}" alt="">
-            @else
-                <img class="d-block w-100" src="{{ asset('/img/galleries/'.$gal->image) }}" alt="">
-            @endif
-          <div class="carousel-caption d-none d-md-block">
-            <strong><h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">{{ $gal->caption }}</h5></strong>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">{{ $gal->paragraph }}</p>
-          </div>
-        </div>
-        @endforeach
+    <div  class="section-title">
+        <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
+        <h2>Gallery</h2>
     </div>
-</div>
-    
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <?php $count=0; ?>
+        @foreach($gallery as $gal)
+            @if($count==0)
+                <li data-target="#carouselExampleIndicators" data-slide-to="{{ $count }}" class="active"></li>
+            @else
+                <li data-target="#carouselExampleIndicators" data-slide-to="{{ $count }}"></li>
+            @endif
+            <?php $count++; ?>
+        @endforeach
+      </ol>
+      <div class="carousel-inner">
+        <?php $count=0; ?>
+        @foreach($gallery as $gal)
+            @if($count==0)
+                <div class="carousel-item active" style="height: 550px;">
+
+            @else
+                <div class="carousel-item" style="height: 550px;">
+            @endif
+            @if(is_null($gal->image))
+                <img class="d-block w-100" src="{{ asset('/img/galleries/default.jpg') }}" alt="Gallery-Image" height="550">
+            @else
+                <img class="d-block w-100" src="{{ asset('/img/galleries/'.$gal->image) }}" alt="Gallery-Image" height="550">
+            @endif
+              <div class="carousel-caption d-none d-md-block">
+                <strong><h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">{{ $gal->caption }}</h5></strong>
+                <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">{{ $gal->paragraph }}</p>
+              </div>
+            </div>
+            <?php $count++; ?>
+        @endforeach
+      </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>

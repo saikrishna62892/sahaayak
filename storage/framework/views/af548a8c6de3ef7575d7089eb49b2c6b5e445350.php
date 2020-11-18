@@ -271,24 +271,46 @@
         </div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     -->
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-    <?php $__currentLoopData = $gallery; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $gal): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        <div class="carousel-item active" style="height: 550px;">
-            <?php if(is_null($gal->image)): ?>
-                <img class="d-block w-100" src="<?php echo e(asset('/img/galleries/default.jpg')); ?>" alt="">
-            <?php else: ?>
-                <img class="d-block w-100" src="<?php echo e(asset('/img/galleries/'.$gal->image)); ?>" alt="">
-            <?php endif; ?>
-          <div class="carousel-caption d-none d-md-block">
-            <strong><h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;"><?php echo e($gal->caption); ?></h5></strong>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;"><?php echo e($gal->paragraph); ?></p>
-          </div>
-        </div>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    <div  class="section-title">
+        <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
+        <h2>Gallery</h2>
     </div>
-</div>
-    
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <?php $count=0; ?>
+        <?php $__currentLoopData = $gallery; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $gal): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php if($count==0): ?>
+                <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo e($count); ?>" class="active"></li>
+            <?php else: ?>
+                <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo e($count); ?>"></li>
+            <?php endif; ?>
+            <?php $count++; ?>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+      </ol>
+      <div class="carousel-inner">
+        <?php $count=0; ?>
+        <?php $__currentLoopData = $gallery; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $gal): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php if($count==0): ?>
+                <div class="carousel-item active" style="height: 550px;">
+
+            <?php else: ?>
+                <div class="carousel-item" style="height: 550px;">
+            <?php endif; ?>
+            <?php if(is_null($gal->image)): ?>
+                <h4>hiii</h4>
+                <img class="d-block w-100" src="<?php echo e(asset('/img/galleries/default.jpg')); ?>" alt="Gallery-Image" height="550">
+            <?php else: ?>
+                <h4>byee</h4>
+                <img class="d-block w-100" src="<?php echo e(asset('/img/galleries/'.$gal->image)); ?>" alt="Gallery-Image" height="550">
+            <?php endif; ?>
+              <div class="carousel-caption d-none d-md-block">
+                <strong><h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;"><?php echo e($gal->caption); ?></h5></strong>
+                <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;"><?php echo e($gal->paragraph); ?></p>
+              </div>
+            </div>
+            <?php $count++; ?>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+      </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>

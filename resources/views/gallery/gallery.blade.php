@@ -1,14 +1,14 @@
 <div class="form-group">
 	<label for="formGroupExampleInput">Please enter Caption of the Image</label>
 	<input type="text" class="form-control" name="caption" id="formGroupExampleInput" placeholder="Your caption here..." autocomplete="off" >
-	@error('title')
+	@error('caption')
     	<small class="text-danger">{{$message}}</small>
     @enderror
 </div>
 <div class="form-group">
     <label for="exampleFormControlTextarea1">Please enter Description of the Image</label>
     <textarea class="form-control" name="paragraph" id="exampleFormControlTextarea1" rows="2" placeholder="Your content here..." autocomplete="off" ></textarea>
-    @error('content')
+    @error('paragraph')
     	<small class="text-danger">{{$message}}</small>
     @enderror
 </div>

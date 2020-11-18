@@ -36,6 +36,8 @@ class GalleryController extends Controller
     	
     	$data = request()->validate([
             'image' => 'file|image|max:3000',
+            'caption' => 'required',
+            'paragraph' => 'required'
             ]);
     	
     	$gallery->caption = $request->caption;
@@ -54,4 +56,10 @@ class GalleryController extends Controller
 	    
 	    return redirect()->back()->with('message', 'Posted Succcesfully');
 	}
+
+	public function deletegallery(Gallery $gallery){
+        //Storage::disk('s3')->delete('uploads/playlist/img/'.$playlist->image);
+        $gallery->delete();
+        return redirect()->back();
+    }
 }

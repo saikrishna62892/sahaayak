@@ -94,7 +94,7 @@
                             <a data-toggle="tab" href="#playlists" role="tab">Playlists</a>
                         </li>
                         <li>
-                            <a data-toggle="tab" href="#galley" role="tab">Gallery</a>
+                            <a data-toggle="tab" href="#gallery" role="tab">Gallery</a>
                         </li>
                         <li>
                             <a data-toggle="tab" href="#assessments" role="tab">Assessments</a>
@@ -106,7 +106,7 @@
                 <div class="tab-content" id="myTabContent">
                     <!-- Add Counsellor Form begin  -->
                     <div class="tab-pane fade show active" id="addcounsellor" role="tabpanel">
-                        <!--<?php echo $__env->make('quotes.dialyquote', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>-->
+                        <?php echo $__env->make('admin.add_counsellors', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     </div>
                     <!-- Add Counsellor Form end -->
                     
@@ -150,20 +150,9 @@
                     </div>
                     <!-- playlists form end -->
                     <!-- Galley form begin -->
-                    <div class="tab-pane fade" id="galley" role="tabpanel">
+                    <div class="tab-pane fade" id="gallery" role="tabpanel">
                         <?php echo $__env->make('gallery.create', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                <?php $__errorArgs = ['image'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                    <small class="text-danger"><?php echo e($message); ?></small>
-                <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-            </div>          
-                    </div>
+                    </div>          
                     <!-- Gallery form end -->
 
                     <!-- assessments form begin -->
@@ -171,6 +160,7 @@ unset($__errorArgs, $__bag); ?>
                         <?php echo $__env->make('questionnaire.allquestionnaires', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     </div>
                     <!-- assessments form end -->
+                </div>
                 </div>
             </div>
         </div>
@@ -203,6 +193,9 @@ unset($__errorArgs, $__bag); ?>
                         </li>
                         <li>
                             <a data-toggle="tab" href="#shared_playlists" role="tab">Playlists</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#shared_gallery" role="tab">Gallery</a>
                         </li>
                         <li>
                             <a data-toggle="tab" href="#suggestions" role="tab">Suggestions</a>
@@ -247,14 +240,21 @@ unset($__errorArgs, $__bag); ?>
                         <?php echo $__env->make('playlists.shared_playlists', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                     
                     </div>
-                    <!-- shared_playlists form end -->   
+                    <!-- shared_playlists form end -->
+
+                    <!-- shared_talks form begin -->
+                    <div class="tab-pane fade" id="shared_gallery" role="tabpanel">
+                        <h4 align="center">Shared Gallery</h4>
+                        <?php echo $__env->make('gallery.shared_gallery', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                    </div>
+                    <!-- shared_talks form end -->   
 
                      <!-- assessments form begin -->
                     <div class="tab-pane fade" id="suggestions" role="tabpanel">
                         <h4 align="center">All Assessments</h4>
                         <?php echo $__env->make('suggestions', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     <!-- assessments form end -->
-
+                    </div>
                 </div>
             </div>
         </div>
@@ -262,14 +262,13 @@ unset($__errorArgs, $__bag); ?>
 </div>
 <!-- trading history area end -->
 
-
     <div class="main-content-inner" id="table">
     	<div class="row">
         <!-- Progress Table start -->
         <div class="col-12 mt-5">
             <div class="card shadow p-4 mb-5 bg-white rounded">
                 <div class="card-body">
-                    <h4 class="header-title" align="center">Pending Volunteers List</h4>
+                    <h4 class="header-title" align="center">Pending Volunteers List(Currently Disabled)</h4>
                     <div class="single-table">
                         <div class="table-responsive">
                             <table class="table table-hover progress-table text-center">

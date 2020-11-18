@@ -68,7 +68,7 @@ Route::get('admin/deleteVideo/{video}/videodeleted','VideoController@deletevideo
 Route::get('admin/deletePlaylists/{playlist}/playlistdeleted','PlaylistController@deleteplaylist');
 Route::get('user/home/deleteStory/{story}/storydeleted','StoryController@deletestory');
 Route::get('user/home/deleteEvent/{event}/eventdeleted','diary_controller@deleteevent');
-
+Route::get('admin/deleteGallery/{gallery}/gallerydeleted','GalleryController@deletegallery');
 
 
 
@@ -216,7 +216,6 @@ Route::get('/displayTalks','TalkController@display')->name('displayTalks');
 
 //Admin gallery Routes
 Route::post('/postGallery','GalleryController@store')->name('addGalleryFields');
-//Route::get('/displayTalks','TalkController@display')->name('displayTalks');
 
 //Diary routes by john & ganesh
 Route::post('/user/home/displaydiary','diary_controller@save')->name('addFields');

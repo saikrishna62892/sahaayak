@@ -8,6 +8,7 @@ use App\Volunteer;
 use App\User;
 use App\Talk;
 use App\Story;
+use App\Gallery;
 use DB;
 use App\Diary;
 use Auth;
@@ -97,6 +98,7 @@ class HomeController extends Controller
         $shared_quotes = DB::table('quotes')->orderBy("id","desc")->paginate(5);
         $shared_playlists = DB::table('playlists')->orderBy("id","desc")->paginate(5);
         $suggestions = DB::table('suggestion')->orderBy("id","desc")->paginate(5);
+        $gallery = Gallery::all();
 
         //dd($analyticsData);
         //dd($analyticsData[0]);
@@ -106,7 +108,7 @@ class HomeController extends Controller
         $quote = new Quote();
         $video = new Video();
         $playlist = new Playlist();
-        return view('admin.dashboard_admin',compact('unapprovedVolunteers','talks','users_count','volunteers_count','badges','shared_news','shared_videos','shared_quotes','shared_playlists','newsarticle','talk','quote','video','playlist','admin_name','suggestions','talks_count'));
+        return view('admin.dashboard_admin',compact('unapprovedVolunteers','talks','users_count','volunteers_count','badges','shared_news','shared_videos','shared_quotes','shared_playlists','newsarticle','talk','quote','video','playlist','admin_name','suggestions','talks_count','gallery'));
     }
 
     public function volunteerHome()
