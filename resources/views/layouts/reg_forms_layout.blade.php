@@ -48,7 +48,7 @@
 </head>
 <body>
 
-	@yield('content');
+	@yield('content')
 
 <!--===============================================================================================-->	
 	<script src="/vendor/jquery/jquery-3.2.1.min.js"></script>

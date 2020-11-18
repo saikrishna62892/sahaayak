@@ -7,7 +7,7 @@
     <title>Sahaayak | Dashboard | <?php echo $__env->yieldContent('name'); ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" type="image/png" href="/img/icon/favicon.ico">
+    <link rel="shortcut icon" type="image/png" href="/img/icon-white.png">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/themify-icons.css">

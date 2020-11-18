@@ -48,7 +48,7 @@
 </head>
 <body>
 
-	<?php echo $__env->yieldContent('content'); ?>;
+	<?php echo $__env->yieldContent('content'); ?>
 
 <!--===============================================================================================-->	
 	<script src="/vendor/jquery/jquery-3.2.1.min.js"></script>

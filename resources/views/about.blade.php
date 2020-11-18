@@ -255,100 +255,40 @@
         </div>
     </div>
     <!-- Counter End -->
-
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="9"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="10"></li>
-      </ol>
+    <!--
+         @foreach($gallery as $gal)
       <div class="carousel-inner">
         <div class="carousel-item active" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-1.jpg" alt="Gallery-Image-1">
+            @if(is_null($gal->image))
+                <img src="{{ asset('/img/galleries/default.jpg') }}" alt="">
+            @else
+                <img src="{{ asset('/img/galleries/'.$gal->image) }}" alt="">
+            @endif
           <div class="carousel-caption d-none d-md-block">
-            <strong><h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 1</h5></strong>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 1</p>
+            <strong><h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">{{ $gal->caption }}</h5></strong>
+            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">{{ $gal->paragraph }}</p>
           </div>
         </div>
-        <div class="carousel-item" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-2.jpg" alt="Gallery-Image-2">
+        @endforeach
+    -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+    @foreach($gallery as $gal)
+        <div class="carousel-item active" style="height: 550px;">
+            @if(is_null($gal->image))
+                <img class="d-block w-100" src="{{ asset('/img/galleries/default.jpg') }}" alt="">
+            @else
+                <img class="d-block w-100" src="{{ asset('/img/galleries/'.$gal->image) }}" alt="">
+            @endif
           <div class="carousel-caption d-none d-md-block">
-            <h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 2</h5>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 2</p>
+            <strong><h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">{{ $gal->caption }}</h5></strong>
+            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">{{ $gal->paragraph }}</p>
           </div>
         </div>
-        <div class="carousel-item" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-3.jpg" alt="Gallery-Image-3">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 3</h5>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 3</p>
-          </div>
-        </div>
-        <div class="carousel-item" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-4.jpg" alt="Gallery-Image-4">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 4</h5>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 4</p>
-          </div>
-        </div>
-        <div class="carousel-item" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-5.jpg" alt="Gallery-Image-5">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 5</h5>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 5</p>
-          </div>
-        </div>
-        <div class="carousel-item" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-6.jpg" alt="Gallery-Image-6">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 6</h5>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 6</p>
-          </div>
-        </div>
-        <div class="carousel-item" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-7.jpg" alt="Gallery-Image-7">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 7</h5>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 7</p>
-          </div>
-        </div>
-        <div class="carousel-item" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-8.jpg" alt="Gallery-Image-8">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 8</h5>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 8</p>
-          </div>
-        </div>
-        <div class="carousel-item" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-9.jpg" alt="Gallery-Image-9">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 9</h5>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 9</p>
-          </div>
-        </div>
-        <div class="carousel-item" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-10.jpg" alt="Gallery-Image-10">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 10</h5>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 10</p>
-          </div>
-        </div>
-        <div class="carousel-item" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-11.jpg" alt="Gallery-Image-11">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 11</h5>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 11</p>
-          </div>
-        </div>
-      </div>
+        @endforeach
+    </div>
+</div>
+    
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>

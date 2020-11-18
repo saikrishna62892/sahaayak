@@ -7,6 +7,7 @@
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100 p-l-50 p-r-50 p-t-45 p-b-30">
+                <a style="color: #5768ad;float: right;" href="<?php echo e(url('/')); ?>" class="primary-btn">Home</a>
                 <form class="login100-form validate-form" method="POST" action="<?php echo e(route('login')); ?>">
                     <?php echo csrf_field(); ?>
                     <span class="login100-form-title p-b-25">
@@ -72,21 +73,7 @@ unset($__errorArgs, $__bag); ?>
                         <?php endif; ?>
                     </div>
 
-                    <div class="text-center w-full p-t-12 p-b-12">
-                        <span class="txt1">
-                            Or login with
-                        </span>
-                    </div>
 
-                    <a href="<?php echo e(url('auth/facebook')); ?>" class="btn-face m-b-10">
-                        <i class="fa fa-facebook-official"></i>
-                        Facebook
-                    </a>
-
-                    <a href="<?php echo e(url('auth/google')); ?>" class="btn-google m-b-10">
-                        <img src="img/icons/icon-google.png" alt="GOOGLE">
-                        Google
-                    </a>
 
                     <div class="text-center w-full p-t-4">
                         <span class="txt1">
@@ -215,5 +202,22 @@ unset($__errorArgs, $__bag); ?>
 
 -->
 
+
+<!--<div class="text-center w-full p-t-12 p-b-12">
+                        <span class="txt1">
+                            Or login with
+                        </span>
+                    </div>
+
+                    <a href="<?php echo e(url('auth/facebook')); ?>" class="btn-face m-b-10">
+                        <i class="fa fa-facebook-official"></i>
+                        Facebook
+                    </a>
+
+                    <a href="<?php echo e(url('auth/google')); ?>" class="btn-google m-b-10">
+                        <img src="img/icons/icon-google.png" alt="GOOGLE">
+                        Google
+                    </a>
+                -->
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('layouts.reg_forms_layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\Sahayak\sahaayak\resources\views/auth/login.blade.php ENDPATH**/ ?>

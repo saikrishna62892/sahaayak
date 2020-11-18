@@ -7,6 +7,7 @@
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100 p-l-50 p-r-50 p-t-45 p-b-30">
+                <a style="color: #5768ad;float: right;" href="{{ url('/') }}" class="primary-btn">Home</a>
                 <form class="login100-form validate-form" method="POST" action="{{ route('login') }}">
                     @csrf
                     <span class="login100-form-title p-b-25">
@@ -57,21 +58,7 @@
                         @endif
                     </div>
 
-                    <div class="text-center w-full p-t-12 p-b-12">
-                        <span class="txt1">
-                            Or login with
-                        </span>
-                    </div>
 
-                    <a href="{{ url('auth/facebook') }}" class="btn-face m-b-10">
-                        <i class="fa fa-facebook-official"></i>
-                        Facebook
-                    </a>
-
-                    <a href="{{ url('auth/google') }}" class="btn-google m-b-10">
-                        <img src="img/icons/icon-google.png" alt="GOOGLE">
-                        Google
-                    </a>
 
                     <div class="text-center w-full p-t-4">
                         <span class="txt1">
@@ -168,3 +155,21 @@
 @endsection
 
 -->
+
+
+<!--<div class="text-center w-full p-t-12 p-b-12">
+                        <span class="txt1">
+                            Or login with
+                        </span>
+                    </div>
+
+                    <a href="{{ url('auth/facebook') }}" class="btn-face m-b-10">
+                        <i class="fa fa-facebook-official"></i>
+                        Facebook
+                    </a>
+
+                    <a href="{{ url('auth/google') }}" class="btn-google m-b-10">
+                        <img src="img/icons/icon-google.png" alt="GOOGLE">
+                        Google
+                    </a>
+                -->

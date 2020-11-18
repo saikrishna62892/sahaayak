@@ -31,7 +31,8 @@ Route::get('about', function () {
     $volunteers_count=App\Volunteer::all()->count();
     $appointments_count=App\Appointment::all()->count();
     $stories_count=App\Story::all()->count();
-    return view('about',compact('user_count','volunteers_count','appointments_count','stories_count'));
+    $gallery=App\Gallery::all();
+    return view('about',compact('user_count','volunteers_count','appointments_count','stories_count','gallery'));
 });
 
 Route::get('expert_story', function () {
@@ -212,6 +213,10 @@ Route::get('/incrementLike/{story}', 'StoryController@incrementLike')->name('inc
 //Admin expert talks routes
 Route::post('/postTalks','TalkController@store')->name('addTalksFields');
 Route::get('/displayTalks','TalkController@display')->name('displayTalks');
+
+//Admin gallery Routes
+Route::post('/postGallery','GalleryController@store')->name('addGalleryFields');
+//Route::get('/displayTalks','TalkController@display')->name('displayTalks');
 
 //Diary routes by john & ganesh
 Route::post('/user/home/displaydiary','diary_controller@save')->name('addFields');

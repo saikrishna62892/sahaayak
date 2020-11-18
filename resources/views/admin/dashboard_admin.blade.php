@@ -150,7 +150,11 @@
                     <!-- playlists form end -->
                     <!-- Galley form begin -->
                     <div class="tab-pane fade" id="galley" role="tabpanel">
-                         <!--@include('playlists.create') -->          
+                        @include('gallery.create')
+                @error('image')
+                    <small class="text-danger">{{$message}}</small>
+                @enderror
+            </div>          
                     </div>
                     <!-- Gallery form end -->
 
