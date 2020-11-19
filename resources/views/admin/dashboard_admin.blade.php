@@ -70,7 +70,7 @@
             <div class="d-sm-flex justify-content-between align-items-center">
                 
                 <div class="trd-history-tabs">
-                    <ul class="nav" role="tablist">
+                    <ul class="nav" role="tablist" style="float: right;">
                         <li>
                             <a class="active" data-toggle="tab" href="#addcounsellor" role="tab">Add Counsellor</a>
                         </li>
@@ -271,10 +271,10 @@
 </div>
 <!-- trading history area end -->
 
-    <div class="main-content-inner" id="table">
-    	<div class="row">
+<!--  <div class="main-content-inner" id="table">
+    	<div class="row"> -->
         <!-- Progress Table start -->
-        <div class="col-12 mt-5">
+        <!--<div class="col-12 mt-5">
             <div class="card shadow p-4 mb-5 bg-white rounded">
                 <div class="card-body">
                     <h4 class="header-title" align="center">Pending Volunteers List(Currently Disabled)</h4>
@@ -316,7 +316,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
         <!-- Progress Table end -->
     </div>
 </div>

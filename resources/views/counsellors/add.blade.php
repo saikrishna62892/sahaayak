@@ -20,6 +20,13 @@
                         @enderror
                     </div>
                     <div class="form-group">
+                        <label for="calendar_url">Google Calendar URL</label>
+                        <input type="text" class="form-control" name="calendar_url" id="calendar_url" aria-describedby="calendar_urlHelp" placeholder="Please enter Google Calendar URL" value="{{ old('calendar_url') ?? $counsellor->calendar_url }}" autocomplete="off" >
+                        @error('calendar_url')
+                        <small class="text-danger">{{$message}}</small>
+                        @enderror
+                    </div>
+                    <div class="form-group">
                         <label for="profession">Profession</label>
                         <input type="text" class="form-control" name="profession" id="profession" aria-describedby="professionHelp" placeholder="Please enter Counsellor profession" value="{{ old('profession') ?? $counsellor->profession }}" autocomplete="off" >
                         @error('profession')

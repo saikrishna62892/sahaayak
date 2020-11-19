@@ -167,44 +167,72 @@
                             <img src="img/icon-white.png" alt="Sahaayak" width="58" height="38">
                             <h2>Make An Appointment</h2>
                             <small style="color: #fff;">Note: For avoiding reschedule of appointments please visit the calenders of Counsellors for a convenient timing</small><br>
-                            <small style="color: #fff;"><u><a href="https://calendar.google.com/calendar/u/1?cid=c2Fpa3Jpc2huYV9tMTkwMjQxY3NAbml0Yy5hYy5pbg" target="_blank" style="color: #fff;">Visit Dr.Aneesh T Calendar</a></u>&emsp;<u><a href="#" style="color: #fff;">Visit Ms.Neethu NT Calendar</a></u></small>
+                            <small style="color: #fff;">
+                                @foreach($counsellors as $counsellor)
+                                    <u><a href="{{ $counsellor->calendar_url }}" target="_blank" style="color: #fff;">Visit {{ $counsellor->name }} Calendar</a></u>&emsp;
+                                @endforeach
+                            </small>
                         </div>
                     </div>
                 </div>
                 <form action="/appointment_controller" method="post" class="appointment__form">
                 @csrf
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-4">
                             <input type="text" placeholder="Name" name="name" autocomplete="off" >
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-4">
                             <input type="text" placeholder="College ID" name="collegeid" autocomplete="off" >
+                        </div>
+                        <div class="col-lg-4">
+                            <input type="text" placeholder="Department" name="department" autocomplete="off" >
+                        </div>
+                        <div class="col-lg-4">
+                          <select  id="gender">
+                            <option value="" selected disabled hidden>Your Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="not_specified">Rather not to say</option>
+                          </select>
+                        </div>
+                        <div class="col-lg-4">
+                          <select  id="appointment_type">
+                            <option value="" selected disabled hidden>Appointment Type</option>
+                            <option value="male">Initial Appointment</option>
+                            <option value="female">Follow-up Appointment</option>
+                          </select>
+                        </div>
+                        <div class="col-lg-4">
+                            <input type="text" placeholder="Your Faculty Advisor" name="faculty_advisor" autocomplete="off" >
                         </div>
                         <div class="col-lg-6">
                           <select  id="counsellor">
                             <option value="" selected disabled hidden>Choose Your Counsellor</option>
-                            <option value="1"><a href="#">Dr.Aneesh T-Clinical Psychologist</a></option>
-                            <option value="2"><a href="#">Ms.Neethu NT-Consultant Psychologist</a></option>
+                            @foreach($counsellors as $counsellor)
+                                <option value="{{ $counsellor->id }}">{{ $counsellor->name }}-{{ $counsellor->profession}}</option>
+                            @endforeach
                           </select>
                         </div>
                         <div class="col-lg-3">
-                          <input type="date" id="date" name="date" placeholder="Choose Your Date" autocomplete="off" >
+                          <input type="text" id="date" name="date" placeholder="Choose Your Date" onfocus="(this.type='date')"autocomplete="off" >
                         </div>
                         <div class="col-lg-3">
-                          <select  id="counsellor">
+                          <select  id="slot">
                             <option value="" selected disabled hidden>Choose Your Slot</option>
-                            <option value="1">9AM - 10AM</option>
-                            <option value="2">10AM - 11AM</option>
-                            <option value="3">11AM - 12PM</option>
-                            <option value="4">2PM - 3PM</option>
-                            <option value="5">3PM - 4PM</option>
-                            <option value="6">4PM - 5PM</option>
-                            <option value="7">5PM - 6PM</option>
+                            <option value="1">8AM - 9AM</option>
+                            <option value="2">9AM - 10AM</option>
+                            <option value="3">10AM - 11AM</option>
+                            <option value="4">11AM - 12PM</option>
+                            <option value="5">12PM - 1PM</option>
+                            <option value="6">1PM - 2PM</option>
+                            <option value="7">2PM - 3PM</option>
+                            <option value="8">3PM - 4PM</option>
+                            <option value="9">4PM - 5PM</option>
                           </select>
                         </div>
                         <div class="col-lg-12 text-center">
                             <textarea placeholder="What do you want to talk about in 100 words" name="message" autocomplete="off" ></textarea>
-                        <button type="submit" onclick="alert('The timings provided may vary upto 1 hour!');">Submit</button>
+                        <button type="submit">Submit</button>
                         </div>
                     </div>
                 </form>
@@ -281,18 +309,15 @@
                 <div class="col-lg-5" data-step="7" data-intro="This section is introduction to Sahaayak & have a look at it by clicking more about us button because we share & we care." data-position="bottom-middle-aligned">
                     <div class="home__about__text">
                         <span>“We Share coz We Care”</span>
-                        <p align="justify">We understand your eagerness and enthusiasm to figure out the purpose of this site that is assuring you hope
-                            and care in life. Have you ever wondered what it feels to have suicidal thoughts or what
-                            encourages and convinces your guts to commit suicide if your answer is yes, we are pretty sure
-                            that you are in the right hands. To all our fellow beings whose answer is a big yes, let us
-                            undoubtedly tell you that suicide is not the one and only solution or chance, to end all the
-                            problems and obstacles that come your way.</p>
-                        <p class="para-2" align="justify">In fact, suicide is certainly a wrong choice, that
-                            you might have chosen knowingly or unknowingly over other appropriate choices. As a part of
-                            our mission and vision to make you understand, realize and believe strongly that committing
-                            suicide is a false choice and not the ultimate decision to end things, let us help you in having a
-                            clear picture about symptoms, causes, risks regarding suicides and finally providing you best
-                            advice with no paybacks...</p>
+                        <p align="justify">Student Guidance Cell (SGC) aims to provide guidance and counselling services to students
+                         based on their needs with assured privacy and confidential exchange of communication. SGC also provides academic
+                          support in the form of special classes for students. The formation of SGC was based on the feedback from graduated 
+                          students of the institute who stressed on the need to have a facility to counsel and motivate the students.
+                           SGC helps the students to function better in all domains of life - academic, social, personal and psychological.</p>
+                        <p class="para-2" align="justify">The motive behind SGC stems from the need to facilitate the process of growth and
+                         maintain a positive wellbeing of the students. The counselling services offered by SGC empowers the students to 
+                         have enhanced ability to solve problems, make decisions as well as make them more efficient in tackling personal problems.
+                          In a nut shell, it is aimed at enhancing their ability to utilize the best potential available in them.</p>
                         <a href="{{ url('about') }}" class="primary-btn">MORE ABOUT US</a>
                     </div>
                 </div>
