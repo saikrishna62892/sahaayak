@@ -38,29 +38,28 @@
                         <div class="services__item">
                             <img src="img/services/services-1.png" alt="">
                             <h5>You're not alone</h5>
-                            <p>Talk to us i.e. make an appointment section which connects users
-                             to socially disciplined volunteers.</p>
+                            <p>Talk to us i.e. make an appointment section which connects users to socially disciplined volunteers.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="services__item">
                             <img src="img/services/services-2.png" alt="">
                             <h5>Information is wealth</h5>
-                            <p>Information,recent news,articles,stories and expert talks about there various experiences</p>
+                            <p>Information,recent news,articles,stories and expert talks about their various experiences</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="services__item">
                             <img src="img/services/services-3.png" alt="">
-                            <h5>Hope is real</h5>
-                            <p>Hopebox which contains interactive drawing,hope tree,inspiring quotes,videos and playlists</p>
+                            <h5>Personal issues services</h5>
+                            <p>Skill training, Academic support, Mentorship program, Workshops and presentations to classes and groups</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="services__item">
-                            <img src="img/services/services-4.png" alt="">
-                            <h5>Safety is priceless</h5>
-                            <p>Personalized dashboard with cognitive diary to note down the events and can also share the stories</p>
+                            <img src="img/services/services-5.png" alt="">
+                            <h5>Psycological services</h5>
+                            <p>Confidential counselling, Stress management, Relaxation Training and Supportive Therapy</p>
                         </div>
                     </div>
                 </div>
@@ -255,99 +254,59 @@
         </div>
     </div>
     <!-- Counter End -->
-
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="9"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="10"></li>
-      </ol>
+    <!--
+         @foreach($gallery as $gal)
       <div class="carousel-inner">
         <div class="carousel-item active" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-1.jpg" alt="Gallery-Image-1">
+            @if(is_null($gal->image))
+                <img src="{{ asset('/img/galleries/default.jpg') }}" alt="">
+            @else
+                <img src="{{ asset('/img/galleries/'.$gal->image) }}" alt="">
+            @endif
           <div class="carousel-caption d-none d-md-block">
-            <strong><h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 1</h5></strong>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 1</p>
+            <strong><h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">{{ $gal->caption }}</h5></strong>
+            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">{{ $gal->paragraph }}</p>
           </div>
         </div>
-        <div class="carousel-item" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-2.jpg" alt="Gallery-Image-2">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 2</h5>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 2</p>
-          </div>
-        </div>
-        <div class="carousel-item" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-3.jpg" alt="Gallery-Image-3">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 3</h5>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 3</p>
-          </div>
-        </div>
-        <div class="carousel-item" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-4.jpg" alt="Gallery-Image-4">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 4</h5>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 4</p>
-          </div>
-        </div>
-        <div class="carousel-item" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-5.jpg" alt="Gallery-Image-5">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 5</h5>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 5</p>
-          </div>
-        </div>
-        <div class="carousel-item" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-6.jpg" alt="Gallery-Image-6">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 6</h5>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 6</p>
-          </div>
-        </div>
-        <div class="carousel-item" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-7.jpg" alt="Gallery-Image-7">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 7</h5>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 7</p>
-          </div>
-        </div>
-        <div class="carousel-item" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-8.jpg" alt="Gallery-Image-8">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 8</h5>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 8</p>
-          </div>
-        </div>
-        <div class="carousel-item" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-9.jpg" alt="Gallery-Image-9">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 9</h5>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 9</p>
-          </div>
-        </div>
-        <div class="carousel-item" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-10.jpg" alt="Gallery-Image-10">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 10</h5>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 10</p>
-          </div>
-        </div>
-        <div class="carousel-item" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-11.jpg" alt="Gallery-Image-11">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 11</h5>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 11</p>
-          </div>
-        </div>
+        @endforeach
+    -->
+    <div  class="section-title">
+        <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
+        <h2>Gallery</h2>
+    </div>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <?php $count=0; ?>
+        @foreach($gallery as $gal)
+            @if($count==0)
+                <li data-target="#carouselExampleIndicators" data-slide-to="{{ $count }}" class="active"></li>
+            @else
+                <li data-target="#carouselExampleIndicators" data-slide-to="{{ $count }}"></li>
+            @endif
+            <?php $count++; ?>
+        @endforeach
+      </ol>
+      <div class="carousel-inner">
+        <?php $count=0; ?>
+        @foreach($gallery as $gal)
+            @if($count==0)
+                <div class="carousel-item active" style="height: 550px;">
+
+            @else
+                <div class="carousel-item" style="height: 550px;">
+            @endif
+            @if(is_null($gal->image))
+                <img class="d-block w-100" src="{{ asset('/img/galleries/default.jpg') }}" alt="Gallery-Image" height="550">
+            @else
+                <img class="d-block w-100" src="{{ asset('/img/galleries/'.$gal->image) }}" alt="Gallery-Image" height="550">
+            @endif
+              <div class="carousel-caption d-none d-md-block">
+                <strong><h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">{{ $gal->caption }}</h5></strong>
+                <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">{{ $gal->paragraph }}</p>
+              </div>
+            </div>
+            <?php $count++; ?>
+        @endforeach
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

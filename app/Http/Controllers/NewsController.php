@@ -56,7 +56,7 @@ class NewsController extends Controller
 	         = public_path('/img/news/');
 	        $image->move($destinationPath, $name);
 	        $news->image=$name;*/
-    	}
+    	   }
 
     	$news->source=$request->source;
     	$news->headline=$request->headline;

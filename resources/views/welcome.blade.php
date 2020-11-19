@@ -133,21 +133,21 @@
                         <div class="services__item">
                             <img src="img/services/services-2.png" alt="">
                             <h5>Information is wealth</h5>
-                            <p>Information,news,articles,stories & expert talks about various experiences</p>
+                            <p>Information,news,articles,stories & expert talks about their various experiences</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-md-4 col-sm-6">
                         <div class="services__item">
                             <img src="img/services/services-3.png" alt="">
-                            <h5>Hope is real</h5>
-                            <p>Hopebox which contains interactive drawing,inspiring quotes,videos & playlists</p>
+                            <h5>Personal issues services</h5>
+                            <p>Skill training, Academic support, Mentorship program, Workshops and presentations to classes and groups</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-md-4 col-sm-6">
                         <div class="services__item">
-                            <img src="img/services/services-4.png" alt="">
-                            <h5>Safety is priceless</h5>
-                            <p>Personalized dashboard with cognitive diary to note down the events and can also share the stories</p>
+                            <img src="img/services/services-5.png" alt="">
+                            <h5>Psycological services</h5>
+                            <p>Confidential counselling, Stress management, Relaxation Training and Supportive Therapy</p>
                         </div>
                     </div>
                 </div>
@@ -166,7 +166,8 @@
                         <div class="section-title">
                             <img src="img/icon-white.png" alt="Sahaayak" width="58" height="38">
                             <h2>Make An Appointment</h2>
-                            <small style="color: #fff;">Note: Don't worrry folks we keep your data safe</small>
+                            <small style="color: #fff;">Note: For avoiding reschedule of appointments please visit the calenders of Counsellors for a convenient timing</small><br>
+                            <small style="color: #fff;"><u><a href="https://calendar.google.com/calendar/u/1?cid=c2Fpa3Jpc2huYV9tMTkwMjQxY3NAbml0Yy5hYy5pbg" target="_blank" style="color: #fff;">Visit Dr.Aneesh T Calendar</a></u>&emsp;<u><a href="#" style="color: #fff;">Visit Ms.Neethu NT Calendar</a></u></small>
                         </div>
                     </div>
                 </div>
@@ -177,19 +178,32 @@
                             <input type="text" placeholder="Name" name="name" autocomplete="off" >
                         </div>
                         <div class="col-lg-6">
-                            <input type="text" placeholder="Email" name="email" autocomplete="off" >
+                            <input type="text" placeholder="College ID" name="collegeid" autocomplete="off" >
                         </div>
                         <div class="col-lg-6">
-                            <input type="text" placeholder="Phone" name="phone" autocomplete="off" >
+                          <select  id="counsellor">
+                            <option value="" selected disabled hidden>Choose Your Counsellor</option>
+                            <option value="1"><a href="#">Dr.Aneesh T-Clinical Psychologist</a></option>
+                            <option value="2"><a href="#">Ms.Neethu NT-Consultant Psychologist</a></option>
+                          </select>
                         </div>
-
-                        <div class="col-lg-6">
-                            <input type="datetime-local" placeholder="Time" name="timings" style="margin-bottom: 0px;">
-                            <small style="color: #fff;">Enter your convinient virtual meeting time</small>
+                        <div class="col-lg-3">
+                          <input type="date" id="date" name="date" placeholder="Choose Your Date" autocomplete="off" >
                         </div>
-
+                        <div class="col-lg-3">
+                          <select  id="counsellor">
+                            <option value="" selected disabled hidden>Choose Your Slot</option>
+                            <option value="1">9AM - 10AM</option>
+                            <option value="2">10AM - 11AM</option>
+                            <option value="3">11AM - 12PM</option>
+                            <option value="4">2PM - 3PM</option>
+                            <option value="5">3PM - 4PM</option>
+                            <option value="6">4PM - 5PM</option>
+                            <option value="7">5PM - 6PM</option>
+                          </select>
+                        </div>
                         <div class="col-lg-12 text-center">
-                            <textarea placeholder="What do you want to talk about" name="message" autocomplete="off" ></textarea>
+                            <textarea placeholder="What do you want to talk about in 100 words" name="message" autocomplete="off" ></textarea>
                         <button type="submit" onclick="alert('The timings provided may vary upto 1 hour!');">Submit</button>
                         </div>
                     </div>

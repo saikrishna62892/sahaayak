@@ -24,9 +24,9 @@
 		<div class="col-sm-3">
 		    <div class="card shadow p-4 mb-5 bg-white rounded">
 		        <div class="card-body">
-			        <h5 class="card-title" align="center">Volunteers</h5>
-			        <h1 align="center">{{ $volunteers_count }}</h1>
-			        <p class="card-text" align="center">Applied Volunteers</p>
+			        <h5 class="card-title" align="center">Counsellors</h5>
+			        <h1 align="center">{{ $counsellors_count }}</h1>
+			        <p class="card-text" align="center">Active Counsellors</p>
 			        <center><a href="https://analytics.google.com/analytics/web/#/report-home/a171070217w237922628p222495327" class="btn btn-primary" target="_blank" style="background-color: #5768ad;">See Analytics</a></center>
 		        </div>
 			</div>
@@ -34,8 +34,8 @@
 		<div class="col-sm-3">
 			<div class="card shadow p-4 mb-5 bg-white rounded">
 			    <div class="card-body">
-			        <h5 class="card-title" align="center">Badges</h5>
-			        <h1 align="center">{{ $badges }}</h1>
+			        <h5 class="card-title" align="center">Gallery</h5>
+			        <h1 align="center">{{ $gallery_count }}</h1>
 			        <p class="card-text" align="center">Active Volunteers</p>
 			        <center><a href="https://analytics.google.com/analytics/web/#/report-home/a171070217w237922628p222495327" class="btn btn-primary" target="_blank" style="background-color: #5768ad;">See Analytics</a></center>
 			    </div>
@@ -66,12 +66,16 @@
 <div class="col-lg-12 mt-sm-30 mt-xs-30" id="forms">
     <div class="card shadow p-4 mb-5 bg-white rounded">
         <div class="card-body">
+            <h4 class="header-title">Form Handles</h4>
             <div class="d-sm-flex justify-content-between align-items-center">
-                <h4 class="header-title">Form Handles</h4>
+                
                 <div class="trd-history-tabs">
                     <ul class="nav" role="tablist">
                         <li>
-                            <a class="active" data-toggle="tab" href="#dialyquote" role="tab">Dialy Quote</a>
+                            <a class="active" data-toggle="tab" href="#addcounsellor" role="tab">Add Counsellor</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#dialyquote" role="tab">Dialy Quote</a>
                         </li>
                         <li>
                             <a data-toggle="tab" href="#expert_talks" role="tab">Expert Talks</a>
@@ -89,6 +93,9 @@
                             <a data-toggle="tab" href="#playlists" role="tab">Playlists</a>
                         </li>
                         <li>
+                            <a data-toggle="tab" href="#gallery" role="tab">Gallery</a>
+                        </li>
+                        <li>
                             <a data-toggle="tab" href="#assessments" role="tab">Assessments</a>
                         </li>
                     </ul>
@@ -96,8 +103,14 @@
             </div>
             <div class="trad-history mt-4">
                 <div class="tab-content" id="myTabContent">
+                    <!-- Add Counsellor Form begin  -->
+                    <div class="tab-pane fade show active" id="addcounsellor" role="tabpanel">
+                        @include('counsellors.create')
+                    </div>
+                    <!-- Add Counsellor Form end -->
+                    
                     <!-- Dialy Quote Form begin  -->
-                    <div class="tab-pane fade show active" id="dialyquote" role="tabpanel">
+                    <div class="tab-pane fade" id="dialyquote" role="tabpanel">
                         @include('quotes.dialyquote')
                     </div>
                     <!-- Dialy Quote Form end -->
@@ -135,12 +148,18 @@
                          @include('playlists.create')           
                     </div>
                     <!-- playlists form end -->
+                    <!-- Galley form begin -->
+                    <div class="tab-pane fade" id="gallery" role="tabpanel">
+                        @include('gallery.create')
+                    </div>          
+                    <!-- Gallery form end -->
 
                     <!-- assessments form begin -->
                     <div class="tab-pane fade" id="assessments" role="tabpanel">
                         @include('questionnaire.allquestionnaires')
                     </div>
                     <!-- assessments form end -->
+                </div>
                 </div>
             </div>
         </div>
@@ -160,7 +179,10 @@
                 <div class="trd-history-tabs">
                     <ul class="nav" role="tablist">
                         <li>
-                            <a class="active" data-toggle="tab" href="#shared_news" role="tab">News</a>
+                            <a class="active" data-toggle="tab" href="#counsellor_accepted" role="tab">Counsellors</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#shared_news" role="tab">News</a>
                         </li>
                         <li>
                             <a data-toggle="tab" href="#shared_talks" role="tab">Talks</a>
@@ -175,6 +197,9 @@
                             <a data-toggle="tab" href="#shared_playlists" role="tab">Playlists</a>
                         </li>
                         <li>
+                            <a data-toggle="tab" href="#shared_gallery" role="tab">Gallery</a>
+                        </li>
+                        <li>
                             <a data-toggle="tab" href="#suggestions" role="tab">Suggestions</a>
                         </li>
                     </ul>
@@ -182,8 +207,15 @@
             </div>
             <div class="trad-history mt-4">
                 <div class="tab-content" id="myTabContent">
+                    <!-- counsellors_accepted form begin -->
+                    <div class="tab-pane fade show active" id="counsellor_accepted" role="tabpanel">
+                        <h4 align="center">Counsellors Data</h4>
+                        @include('counsellors.counsellor_accepted')
+                    </div>
+                    <!-- counsellors_accepted form end -->
+
                     <!-- shared_news form begin -->
-                    <div class="tab-pane fade show active" id="shared_news" role="tabpanel">
+                    <div class="tab-pane fade show" id="shared_news" role="tabpanel">
                         <h4 align="center">Shared News</h4>
                         @include('news.shared_news')
                     </div>
@@ -217,14 +249,21 @@
                         @include('playlists.shared_playlists')
                                     
                     </div>
-                    <!-- shared_playlists form end -->   
+                    <!-- shared_playlists form end -->
+
+                    <!-- shared_talks form begin -->
+                    <div class="tab-pane fade" id="shared_gallery" role="tabpanel">
+                        <h4 align="center">Shared Gallery</h4>
+                        @include('gallery.shared_gallery')
+                    </div>
+                    <!-- shared_talks form end -->   
 
                      <!-- assessments form begin -->
                     <div class="tab-pane fade" id="suggestions" role="tabpanel">
                         <h4 align="center">All Assessments</h4>
                         @include('suggestions')
                     <!-- assessments form end -->
-
+                    </div>
                 </div>
             </div>
         </div>
@@ -232,14 +271,13 @@
 </div>
 <!-- trading history area end -->
 
-
     <div class="main-content-inner" id="table">
     	<div class="row">
         <!-- Progress Table start -->
         <div class="col-12 mt-5">
             <div class="card shadow p-4 mb-5 bg-white rounded">
                 <div class="card-body">
-                    <h4 class="header-title" align="center">Pending Volunteers List</h4>
+                    <h4 class="header-title" align="center">Pending Volunteers List(Currently Disabled)</h4>
                     <div class="single-table">
                         <div class="table-responsive">
                             <table class="table table-hover progress-table text-center">
