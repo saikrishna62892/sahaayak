@@ -216,7 +216,7 @@
                     <!-- counsellors_accepted form end -->
 
                     <!-- shared_news form begin -->
-                    <div class="tab-pane fade show active" id="shared_news" role="tabpanel">
+                    <div class="tab-pane fade show" id="shared_news" role="tabpanel">
                         <h4 align="center">Shared News</h4>
                         <?php echo $__env->make('news.shared_news', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     </div>
