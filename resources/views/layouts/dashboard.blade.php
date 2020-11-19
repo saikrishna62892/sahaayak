@@ -40,7 +40,7 @@
     function reply_click(clicked_id)
     {
         var res = clicked_id.split("#");
-        document.getElementById("demo").innerHTML = "Make Report for "+res[1];
+        document.getElementById("demo").innerHTML = "Add Case history for "+res[1];
         document.getElementById('appointment_id').value = res[0];
         document.getElementById('appointment_name').value = res[1];
         document.getElementById('appointment_email').value = res[2];

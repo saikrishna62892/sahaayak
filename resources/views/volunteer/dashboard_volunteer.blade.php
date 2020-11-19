@@ -62,10 +62,13 @@
 	                <div class="trd-history-tabs">
 	                    <ul class="nav" role="tablist">
 	                    	<li>
-	                            <a class="active" data-toggle="tab" href="#list" role="tab">Appointments</a>
+	                            <a class="active" data-toggle="tab" href="#list" role="tab">All Appointments</a>
 	                        </li>
 	                        <li>
-	                            <a data-toggle="tab" href="#report" role="tab">Generate Report</a>
+	                            <a data-toggle="tab" href="#casehistory" role="tab">My appointments</a>
+	                        </li>
+	                        <li>
+	                            <a data-toggle="tab" href="#reports" role="tab">Reports</a>
 	                        </li>
 	                        <li>
 	                            <a data-toggle="tab" href="#refer" role="tab">Refer</a>
@@ -111,8 +114,8 @@
 		                </div>
 		                <!-- Appointments form end -->
 
-		                <!-- report form begin -->
-		     			<div class="tab-pane fade" id="report" role="tabpanel">
+		                <!-- My appointments -->
+		     			<div class="tab-pane fade" id="casehistory" role="tabpanel">
 		     				<div class="table-responsive">
 	                            <table class="table table-hover progress-table text-center">
 	                                <thead class="text-uppercase">
@@ -142,11 +145,12 @@
 												$dtB = new DateTime($item->timings);
 											?>
 										    @if($dtA > $dtB)
-										    <td><button id="{{ $item->id }}#{{ $item->name }}#{{ $item->email }}" data-toggle="tab" href="#makeReport" role="tab" onClick="reply_click(this.id,)" class="btn btn-primary" style="background-color: #5768ad;">Make Report</button></td>
+										    <td><button id="{{ $item->id }}#{{ $item->name }}#{{ $item->email }}" data-toggle="tab" href="#makereport" role="tab" onClick="reply_click(this.id,)" class="btn btn-primary" style="background-color: #5768ad;">Make Report</button></td>
 										    @else
-										    <td style="color: lightgrey;">Making report will availabe after session completion.</td>
+										    <td style="color: lightgrey;">Make report will availabe after session completion.</td>
 										    @endif
-										    
+
+										    <td><a target="_blank" href="/volunteer/appointment/{{$item->user_id}}/getCaseHistory" class="btn btn-primary" style="background-color: #5768ad;">Get case history</a></td>
 	                                    </tr>
 	                                    @empty
 	                                    <h5>No Reports to make..</h5>
@@ -157,6 +161,54 @@
 
 		                </div>
 		                <!-- report form end -->
+
+
+		                <!-- Case history form begin -->
+		                <!--<div class="tab-pane fade show active" id="casehistory" role="tabpanel">
+								<div class="table-responsive">
+                            <table class="table table-hover progress-table text-center">
+                                <thead class="text-uppercase">
+                                    <tr>
+                                        <th scope="col">S.No</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Phone</th>
+                                        <th scope="col">Timings</th>
+                                        <th scope="col" colspan="3">Message</th>
+                                        <th scope="col">Options</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php $count=1 ?>
+                                    @forelse($appointments as $item)
+                                    <tr>
+                                        <td scope="row">{{ $count++ }}</td>
+                                        <td>{{$item->name}}</td>
+									    <td>{{$item->email}}</td>
+									    <td>{{$item->phone}}</td>
+									    <td>{{$item->timings}}</td>
+									    <td colspan="3">{{$item->message}}</td>
+									    <td><a href="/volunteer/appointment/{{$item->id}}/acceptAppointment" style="color: #5768ad;">Accept?</a></td>
+                                    </tr>
+                                    @empty
+                                    <h5>No Requests Made still..</h5>
+                                    @endforelse
+                                </tbody>
+                            </table>
+                        </div>
+		                </div>-->
+
+		              
+
+
+		                <!-- Case history form end -->
+
+		                <!-- reports form begin -->
+		                <div class="tab-pane fade" id="reports" role="tabpanel">
+		                    
+	                    </div>
+	                    <!-- reports form end -->
+
 						
 						<!-- refer form begin -->
 		                <div class="tab-pane fade" id="refer" role="tabpanel">
@@ -174,7 +226,7 @@
 		    </div>
 		</div>
 		<!--reportForm Begin-->
-        <div class="tab-pane fade" id="makeReport" role="tabpanel">
+        <div class="tab-pane fade" id="makereport" role="tabpanel">
         	@include('appointment.reportForm')
         </div>
         <!--reportForm end-->

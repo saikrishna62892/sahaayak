@@ -16,13 +16,14 @@ class CreateCounsellorsTable extends Migration
         Schema::create('counsellors', function (Blueprint $table) {
                 $table->id();
                 $table->string('name');
+                $table->string('college_id');
                 $table->string('email');
-                $table->text('qualification');
-                $table->text('bio');
-                $table->text('achievements');
+                $table->string('calendar_url');
+                $table->text('profession');
+                $table->text('bio')->nullable();
+                $table->text('achievements')->nullable();
+                $table->mediumText('image')->nullable();
                 $table->timestamps();
-                $table->mediumText('image1')->nullable();
-                $table->mediumText('image2')->nullable();
         });
     }
 

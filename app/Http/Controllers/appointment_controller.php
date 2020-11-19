@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Appointment;
+use App\Casehistory;
 use Auth;
 use DB;
 use PDF;
@@ -74,6 +75,13 @@ class appointment_controller extends Controller
         $appointment = Appointment::find($data['appointment_id']);
         $data['user_id'] = $appointment->user_id;
         $data['volunteer_id'] = $appointment->volunteer_id;
+
+        $casehistory = new Casehistory();
+        $casehistory->appointment_id = $data['appointment_id'];
+        $casehistory->remarks = $data['remarks'];
+        $casehistory->save();
+
+
         $pdf = PDF::loadView('appointment.generateReport',compact('data'));
         $user = User::find($appointment->user_id);
         $user->notify(new AppointmentReportNotification($pdf));

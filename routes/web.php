@@ -6,6 +6,7 @@ use App\User;
 use Carbon\Carbon;
 use App\dialyquotes;
 use App\News;
+use App\Counsellor;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,8 @@ use App\News;
 Route::get('/',function(){
         $dialyquote=dialyquotes::all()->last()->quote;
         $featurednews=News::orderBy('created_at','desc')->take(3)->get();
-        return view('welcome')->with(compact('dialyquote','featurednews'));
+        $counsellors=Counsellor::all();
+        return view('welcome')->with(compact('dialyquote','featurednews','counsellors'));
 });
 
 
@@ -77,7 +79,7 @@ Route::post('/appointment_controller','appointment_controller@save');
 
 
 Route::get('volunteer/appointment/{appointment}/acceptAppointment','appointment_controller@appointmentAccepted');
-
+//Route::post('/volunteer/casehistory/addCasehistory','VolunteerController@addCasehistory')->name('addCaseHistory');
 
 Route::get('/suggestion_controller','suggestion_controller@save');
 
@@ -148,6 +150,10 @@ Route::get('/videos','HopeBoxController@displayVideos')->name('videos');
 
 //Admin Volunteer list Routes
 Route::get('/admin/home/volunteer/{unapprovedVolunteer}/getDetails','VolunteerController@getDetails');
+Route::get('/admin/home/counsellor/{counsellor}/getDetails','CounsellorController@getDetails');
+Route::get('/admin/home/counsellor/{counsellor}/removeDetails','CounsellorController@removeDetails');
+Route::get('/admin/home/counsellor/{counsellor}/editDetails','CounsellorController@editDetails');
+Route::patch('/admin/home/counsellor/{counsellor}/updateDetails','CounsellorController@updateDetails');
 Route::get('/admin/home/volunteer/{unapprovedVolunteer}/approveVolunteer','VolunteerController@approveVolunteer');
 Route::get('/admin/home/volunteer/{unapprovedVolunteer}/rejectVolunteer','VolunteerController@destroy');
 
@@ -158,6 +164,9 @@ Route::post('/volunteer/report/generateReport','appointment_controller@generateR
 Route::get('/volunteer/appointment/{appointment}/report','appointment_controller@reportForm');
 Route::post('/admin/report/{appointment}/generateReport','appointment_controller@generateReport');
 
+//Get case history routes
+
+Route::get('/volunteer/appointment/{user}/getCaseHistory','VolunteerController@getCaseHistory');
 
 //learn section routes
 Route::get('home/learn/{learn}/{learnID}','LearnController@show');

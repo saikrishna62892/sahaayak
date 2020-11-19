@@ -167,41 +167,72 @@
                             <img src="img/icon-white.png" alt="Sahaayak" width="58" height="38">
                             <h2>Make An Appointment</h2>
                             <small style="color: #fff;">Note: For avoiding reschedule of appointments please visit the calenders of Counsellors for a convenient timing</small><br>
-                            <small style="color: #fff;"><u><a href="https://calendar.google.com/calendar/u/1?cid=c2Fpa3Jpc2huYV9tMTkwMjQxY3NAbml0Yy5hYy5pbg" target="_blank" style="color: #fff;">Visit Dr.Aneesh T Calendar</a></u>&emsp;<u><a href="#" style="color: #fff;">Visit Ms.Neethu NT Calendar</a></u></small>
+                            <small style="color: #fff;">
+                                @foreach($counsellors as $counsellor)
+                                    <u><a href="{{ $counsellor->calendar_url }}" target="_blank" style="color: #fff;">Visit {{ $counsellor->name }} Calendar</a></u>&emsp;
+                                @endforeach
+                            </small>
                         </div>
                     </div>
                 </div>
                 <form action="/appointment_controller" method="post" class="appointment__form">
                 @csrf
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-4">
                             <input type="text" placeholder="Name" name="name" autocomplete="off" >
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-4">
                             <input type="text" placeholder="College ID" name="collegeid" autocomplete="off" >
+                        </div>
+                        <div class="col-lg-4">
+                            <input type="text" placeholder="Department" name="department" autocomplete="off" >
+                        </div>
+                        <div class="col-lg-4">
+                          <select  id="gender">
+                            <option value="" selected disabled hidden>Your Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="not_specified">Rather not to say</option>
+                          </select>
+                        </div>
+                        <div class="col-lg-4">
+                          <select  id="appointment_type">
+                            <option value="" selected disabled hidden>Appointment Type</option>
+                            <option value="male">Initial Appointment</option>
+                            <option value="female">Follow-up Appointment</option>
+                          </select>
+                        </div>
+                        <div class="col-lg-4">
+                            <input type="text" placeholder="Your Faculty Advisor" name="faculty_advisor" autocomplete="off" >
                         </div>
                         <div class="col-lg-6">
                           <select  id="counsellor">
                             <option value="" selected disabled hidden>Choose Your Counsellor</option>
-                            <option value="1" style="color: black;"><a href="#">Dr.Aneesh T-Clinical Psychologist</a></option>
-                            <option value="2" style="color: black;"><a href="#">Ms.Neethu NT-Consultant Psychologist</a></option>
+                            @foreach($counsellors as $counsellor)
+                                <option value="{{ $counsellor->id }}">{{ $counsellor->name }}-{{ $counsellor->profession}}</option>
+                            @endforeach
                           </select>
                         </div>
-                        <div class="col-lg-6">
-                          <select  id="counsellor">
+                        <div class="col-lg-3">
+                          <input type="text" id="date" name="date" placeholder="Choose Your Date" onfocus="(this.type='date')"autocomplete="off" >
+                        </div>
+                        <div class="col-lg-3">
+                          <select  id="slot">
                             <option value="" selected disabled hidden>Choose Your Slot</option>
-                            <option value="1" style="color: black;">9AM - 10AM</option>
-                            <option value="2" style="color: black;">10AM - 11AM</option>
-                            <option value="3" style="color: black;">11AM - 12PM</option>
-                            <option value="4" style="color: black;">2PM - 3PM</option>
-                            <option value="5" style="color: black;">3PM - 4PM</option>
-                            <option value="6" style="color: black;">4PM - 5PM</option>
-                            <option value="7" style="color: black;">5PM - 6PM</option>
+                            <option value="1">8AM - 9AM</option>
+                            <option value="2">9AM - 10AM</option>
+                            <option value="3">10AM - 11AM</option>
+                            <option value="4">11AM - 12PM</option>
+                            <option value="5">12PM - 1PM</option>
+                            <option value="6">1PM - 2PM</option>
+                            <option value="7">2PM - 3PM</option>
+                            <option value="8">3PM - 4PM</option>
+                            <option value="9">4PM - 5PM</option>
                           </select>
                         </div>
                         <div class="col-lg-12 text-center">
                             <textarea placeholder="What do you want to talk about in 100 words" name="message" autocomplete="off" ></textarea>
-                        <button type="submit" onclick="alert('The timings provided may vary upto 1 hour!');">Submit</button>
+                        <button type="submit">Submit</button>
                         </div>
                     </div>
                 </form>
