@@ -132,7 +132,7 @@
 	                                <tbody>
 	                                    <?php $count=1 ?>
 
-	                                     @forelse($completedappointments->appointments as $key => $item)
+	                                     @forelse($completedappointments as $key => $item)
 	                                    <tr>
 	                                        <td scope="row">{{ $count++ }}</td>
 	                                        <td>{{$item->name}}</td>
@@ -205,7 +205,24 @@
 
 		                <!-- reports form begin -->
 		                <div class="tab-pane fade" id="reports" role="tabpanel">
-		                    
+		                    <div class="card">
+       					    <div class="card-header">Enter ID to get History</div>
+
+					        <div class="card-body">
+        				    <form action="/volunteer/appointment/getCaseHistory" method="get" target="_blank">
+            @csrf
+            				<div class="form-group">
+
+    <label for="userID">Please enter userID</label>
+    <input type="text" class="form-control" name="userID" id="userID" aria-describedby="userIDHelp" placeholder="Enter userID"  autocomplete="off" >
+    @error('userID')
+    <small class="text-danger">{{$message}}</small>
+    @enderror
+</div>
+               				  <button   type="submit" class="btn btn-primary" style="background-color: #5768ad;">case history</button>
+               				</form>
+        					</div>
+    						</div>
 	                    </div>
 	                    <!-- reports form end -->
 

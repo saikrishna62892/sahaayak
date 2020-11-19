@@ -65,7 +65,7 @@ class appointment_controller extends Controller
 
      public function appointmentAccepted(Appointment $appointment)
     {
-        if(is_null($appointment->volunteer_id))
+        /*if(is_null($appointment->volunteer_id))
         {
             $appointment->update(['volunteer_id' => auth()->user()->volunteer->id]);
             $this->sendAppointmentAcceptedNotif($appointment->user_id,$appointment);
@@ -73,8 +73,9 @@ class appointment_controller extends Controller
         }
         else{
             return redirect()->back()->with('message','Sorry,User already alloted');
-        }
-
+        }*/
+        $appointment->update(['accept' => 1]);
+        return redirect()->back()->with('message','User Appointment accepted');
     }
 
     public function reportForm(Appointment $appointment)
@@ -94,6 +95,7 @@ class appointment_controller extends Controller
         $casehistory->remarks = $data['remarks'];
         $casehistory->save();
 
+        $appointment->update(['is_Completed' => 1]);
 
         $pdf = PDF::loadView('appointment.generateReport',compact('data'));
         $user = User::find($appointment->user_id);
