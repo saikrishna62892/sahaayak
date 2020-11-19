@@ -27,7 +27,7 @@
     <!-- Breadcrumb End -->
 
     <!-- Team Section Begin -->
-    <section class="team spad" id="volunteers">
+    <section class="team spad" id="counsellors">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -75,7 +75,7 @@
     <!-- Team Section End -->
 
     <!-- Team Section Begin -->
-    <section class="team spad" id="therapists">
+    <section class="team spad" id="sgc">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -137,7 +137,7 @@
     <!-- Team Section End -->
 
     <!-- Team Section Begin -->
-    <section class="team spad" id="family">
+    <section class="team spad" id="team">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">

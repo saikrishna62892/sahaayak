@@ -278,18 +278,15 @@
                 <div class="col-lg-5" data-step="7" data-intro="This section is introduction to Sahaayak & have a look at it by clicking more about us button because we share & we care." data-position="bottom-middle-aligned">
                     <div class="home__about__text">
                         <span>“We Share coz We Care”</span>
-                        <p align="justify">We understand your eagerness and enthusiasm to figure out the purpose of this site that is assuring you hope
-                            and care in life. Have you ever wondered what it feels to have suicidal thoughts or what
-                            encourages and convinces your guts to commit suicide if your answer is yes, we are pretty sure
-                            that you are in the right hands. To all our fellow beings whose answer is a big yes, let us
-                            undoubtedly tell you that suicide is not the one and only solution or chance, to end all the
-                            problems and obstacles that come your way.</p>
-                        <p class="para-2" align="justify">In fact, suicide is certainly a wrong choice, that
-                            you might have chosen knowingly or unknowingly over other appropriate choices. As a part of
-                            our mission and vision to make you understand, realize and believe strongly that committing
-                            suicide is a false choice and not the ultimate decision to end things, let us help you in having a
-                            clear picture about symptoms, causes, risks regarding suicides and finally providing you best
-                            advice with no paybacks...</p>
+                        <p align="justify">Student Guidance Cell (SGC) aims to provide guidance and counselling services to students
+                         based on their needs with assured privacy and confidential exchange of communication. SGC also provides academic
+                          support in the form of special classes for students. The formation of SGC was based on the feedback from graduated 
+                          students of the institute who stressed on the need to have a facility to counsel and motivate the students.
+                           SGC helps the students to function better in all domains of life - academic, social, personal and psychological.</p>
+                        <p class="para-2" align="justify">The motive behind SGC stems from the need to facilitate the process of growth and
+                         maintain a positive wellbeing of the students. The counselling services offered by SGC empowers the students to 
+                         have enhanced ability to solve problems, make decisions as well as make them more efficient in tackling personal problems.
+                          In a nut shell, it is aimed at enhancing their ability to utilize the best potential available in them.</p>
                         <a href="{{ url('about') }}" class="primary-btn">MORE ABOUT US</a>
                     </div>
                 </div>

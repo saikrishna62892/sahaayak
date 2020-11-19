@@ -414,14 +414,22 @@
                             <div class="card">
                                 <div class="card-heading active">
                                     <a data-toggle="collapse" data-target="#collapseTwo">
-                                        <span>What type of service an user can expect?</span>
+                                        <span>What type of services an user can expect from SGC?</span>
                                     </a>
                                 </div>
                                 <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
                                     <div class="card-body">
-                                        <p>1) We provide you with volunteers to share your issues and get help.</p>
-                                        <p>2) We have different assesements parameters to access your status.</p>
-                                        <p>3) We have interactive drawing feature for you to have some me time and get relaxed.</p>
+                                        <p>1) Stress Management.</p>
+                                        <p>2) Classes for Academic Support.</p>
+                                        <p>3) Skill Training.</p>
+                                        <p>4) Referral for Medical Evalution.</p>
+                                        <p>5) Mentorship Program.</p>
+                                        <p>6) Workshops and Presentations to classes and groups.</p>
+                                        <p>7) Confidential Personal Counselling.</p>
+                                        <p>8) Relaxation Training.</p>
+                                        <p>8) Supportive Therapy.</p>
+                                        <p>10) Different assesements parameters to access your status.</p>
+                                        <p>11) Interactive drawing feature for you to have some me time and get relaxed.</p>
                                         <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
@@ -438,6 +446,41 @@
                                         <p>2) Go to home page.</p>
                                         <p>3) Click on Talk To Us in the dashboard.</p>
                                         <p>4) Fill the required details and our team will contact you.</p>
+                                        <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-heading">
+                                    <a data-toggle="collapse" data-target="#collapseNine">
+                                        <span>Faculty Coordinators of Student Guidance Cell?</span>
+                                    </a>
+                                </div>
+                                <div id="collapseNine" class="collapse" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p>Faculty In-Charge: Dr.S.Sunitha , Assistant Professor</p>
+                                        <p>EEE: Dr. Rijil Ramchand, Assistant Professor and Mr. Kumaravel S, Assistant Professor</p>
+                                        <p>ME: Dr. Manu R, Assistant Professor.</p>
+                                        <p>CE: Mr. A S Sajith,Assistant Professor.</p>
+                                        <p>CSE: Ms. Anu Mary Chacko, Assistant Professor.</p>
+                                        <p>CH: Dr.Lity Alen Varghese , Associate Professor</p>
+                                        <p>ECE: Dr.Rama Subrahmanyam Komaragiri, Associate Professor</p>                                        
+                                        <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-heading">
+                                    <a data-toggle="collapse" data-target="#collapseTen">
+                                        <span>What are the issues covered by the SGC?</span>
+                                    </a>
+                                </div>
+                                <div id="collapseTen" class="collapse" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p>1) Personal Concerns: Identity Issues, Academic Stress, Family Problems, Self Esteem, Language Problems.</p>
+                                        <p>2) Inter Personal Issues: Adjustment Problems, Communication Skills, Relationship Issues.</p>
+                                        <p>3) Psychological Issues: Eating disorder, Anxiety, Depression, Addiction .</p>
+                                        <p>4) Crisis Intervention services: Acute Stress, Death of Family member/Friends.</p>
                                         <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                     </div>
                                 </div>

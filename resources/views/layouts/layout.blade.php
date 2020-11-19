@@ -127,9 +127,9 @@
                                 </li>
                                 <li><a href="{{ url('team') }}">Team</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('team#volunteers') }}">Volunteers</a></li>
-                                        <li><a href="{{ url('team#therapists') }}">Therapists</a></li>
-                                        <li><a href="{{ url('team#family') }}">Family</a></li>
+                                        <li><a href="{{ url('team#counsellors') }}">Counsellors</a></li>
+                                        <li><a href="{{ url('team#sgc') }}">Student Guidance Cell</a></li>
+                                        <li><a href="{{ url('team#team') }}">Team</a></li>
                                     </ul>
                                 </li>
             </ul>
@@ -249,9 +249,9 @@
                                 </li>
                                 <li><a href="{{ url('team') }}">Team</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('team#volunteers') }}">Volunteers</a></li>
-                                        <li><a href="{{ url('team#therapists') }}">Therapists</a></li>
-                                        <li><a href="{{ url('team#family') }}">Family</a></li>
+                                        <li><a href="{{ url('team#counsellors') }}">Counsellors</a></li>
+                                        <li><a href="{{ url('team#sgc') }}">SGC</a></li>
+                                        <li><a href="{{ url('team#team') }}">Team</a></li>
                                     </ul>
                                 </li>
                             </ul>
