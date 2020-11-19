@@ -133,21 +133,21 @@
                         <div class="services__item">
                             <img src="img/services/services-2.png" alt="">
                             <h5>Information is wealth</h5>
-                            <p>Information,news,articles,stories & expert talks about various experiences</p>
+                            <p>Information,news,articles,stories & expert talks about their various experiences</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-md-4 col-sm-6">
                         <div class="services__item">
                             <img src="img/services/services-3.png" alt="">
-                            <h5>Hope is real</h5>
-                            <p>Hopebox which contains interactive drawing,inspiring quotes,videos & playlists</p>
+                            <h5>Personal issues services</h5>
+                            <p>Skill training, Academic support, Mentorship program, Workshops and presentations to classes and groups</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-md-4 col-sm-6">
                         <div class="services__item">
-                            <img src="img/services/services-4.png" alt="">
-                            <h5>Safety is priceless</h5>
-                            <p>Personalized dashboard with cognitive diary to note down the events and can also share the stories</p>
+                            <img src="img/services/services-5.png" alt="">
+                            <h5>Psycological services</h5>
+                            <p>Confidential counselling, Stress management, Relaxation Training and Supportive Therapy</p>
                         </div>
                     </div>
                 </div>
