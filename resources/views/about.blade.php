@@ -38,28 +38,28 @@
                         <div class="services__item">
                             <img src="img/services/services-1.png" alt="">
                             <h5>You're not alone</h5>
-                            <p>Talk to us i.e. make an appointment section which connects users to socially disciplined volunteers.</p>
+                            <p>Talk to us i.e. make an appointment section which connects users to socially disciplined counsellors.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="services__item">
                             <img src="img/services/services-2.png" alt="">
                             <h5>Information is wealth</h5>
-                            <p>Information,recent news,articles,stories and expert talks about their various experiences</p>
+                            <p>Information,recent news,articles,stories and expert talks about their various experiences.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="services__item">
                             <img src="img/services/services-3.png" alt="">
                             <h5>Personal issues services</h5>
-                            <p>Skill training, Academic support, Mentorship program, Workshops and presentations to classes and groups</p>
+                            <p>Skill training, Academic support, Mentorship program, Workshops and presentations to classes and groups.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="services__item">
                             <img src="img/services/services-5.png" alt="">
                             <h5>Psycological services</h5>
-                            <p>Confidential counselling, Stress management, Relaxation Training and Supportive Therapy</p>
+                            <p>Confidential counselling, Stress management, Relaxation Training and Supportive Therapy.</p>
                         </div>
                     </div>
                 </div>
@@ -442,10 +442,14 @@
                                 </div>
                                 <div id="collapseThree" class="collapse" data-parent="#accordionExample">
                                     <div class="card-body">
-                                        <p>1) Complete the registration.</p>
-                                        <p>2) Go to home page.</p>
-                                        <p>3) Click on Talk To Us in the dashboard.</p>
-                                        <p>4) Fill the required details and our team will contact you.</p>
+                                        <p>1)&nbsp; Complete the registration.</p>
+                                        <p>&emsp;Go to home page.</p>
+                                        <p>&emsp;Click on Talk To Us in the dashboard.</p>
+                                        <p>&emsp;Fill the required details and our team will contact you.</p>
+                                        <p>2) Call 0495-2286180 to fix appointment</p>
+                                        <p>3) Email to <a href="mailto:sgc@nitc.ac.in" target="_blank" style="color:#5768AD;" > sgc@nitc.ac.in </a> </p>
+                                        <p>4) Direct walk-in</p>
+                                        <p>5) Referrals through Department/ Faculty members</p>
                                         <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
@@ -465,6 +469,26 @@
                                         <p>CSE: Ms. Anu Mary Chacko, Assistant Professor.</p>
                                         <p>CH: Dr.Lity Alen Varghese , Associate Professor</p>
                                         <p>ECE: Dr.Rama Subrahmanyam Komaragiri, Associate Professor</p>                                        
+                                        <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-heading">
+                                    <a data-toggle="collapse" data-target="#collapseEleven">
+                                        <span>What is the structure of SGC?</span>
+                                    </a>
+                                </div>
+                                <div id="collapseEleven" class="collapse" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p>Patron - Director, NIT Calicut</p>
+                                        <p>The other members of SGC are:</p>
+                                        <p>Dean (Students Welfare)</p>
+                                        <p>Faculty in-charge</p>
+                                        <p>Faculty Co-ordinators</p>
+                                        <p>Faculty Advisors</p>
+                                        <p>Student Cousellors</p>    
+                                        <p>Student Co-ordinators</p>                                      
                                         <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
@@ -494,6 +518,21 @@
                                 <div id="collapseFour" class="collapse" data-parent="#accordionExample">
                                     <div class="card-body">
                                         <p>It is a feature which lets you draw random things, It helps you to relax and have some alone time whenever you want.</p>
+                                        <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-heading">
+                                    <a data-toggle="collapse" data-target="#collapseTwelve">
+                                        <span>How SGC functions?</span>
+                                    </a>
+                                </div>
+                                <div id="collapseTwelve" class="collapse" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p>Professional counselors in the campus will be available for counseling purposes at any time of need as per the student.</p>
+                                        <p>Student-faculty meetings will be organized to improve the relationship between them.</p>
+                                        <p>Students and parents should keep in touch with their respective faculty advisors continuously.</p>                                                                            
                                         <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                     </div>
                                 </div>

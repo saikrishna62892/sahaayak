@@ -23,7 +23,6 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link href="/css/introjs.css" rel="stylesheet">
     <link href="/css/introjs-modern.css" rel="stylesheet">
-    
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171070217-1"></script>
@@ -52,7 +51,7 @@
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__widget">
             <ul>
-                <li>WRITE US: <a href="mailto:sahaayakofficial@gmail.com" target="_blank" style="color: #5768ad;">sahaayakofficial@gmail.com</li>
+                <li>WRITE US: <a href="mailto:sgc@nitc.ac.in" target="_blank" style="color: #5768ad;">sgc@nitc.ac.in</li>
             </ul>
             <?php if(auth()->guard()->guest()): ?>
             <a href="<?php echo e(route('login')); ?>" class="primary-btn">Login</a>
@@ -159,7 +158,7 @@
                         <div class="header__top__widget">
                             <?php if(auth()->guard()->guest()): ?>
                                 <ul>
-                                    <li>WRITE US: <a href="mailto:sahaayakofficial@gmail.com" target="_blank" style="color: #5768ad;">sahaayakofficial@gmail.com</a><br>
+                                    <li>WRITE US: <a href="mailto:sgc@nitc.ac.in" target="_blank" style="color: #5768ad;">sgc@nitc.ac.in</a><br>
                                 </ul>
                                 <a href="<?php echo e(route('login')); ?>" class="primary-btn">Login</a>
                                 <?php if(Route::has('register')): ?>
@@ -282,13 +281,13 @@
                     <div class="footer__about">
                         <img src="/img/footer-logo.png" alt="Sahaayak" width="240" height="60">
                         <ul class="footer-address">
-                            <li><i class="fa fa-envelope"></i> sahaayakofficial@gmail.com</li>
+                            <li><i class="fa fa-envelope"></i>sgc@nitc.ac.in</li>
                             <li><i class="fa fa-location-arrow"></i> NIT Calicut</li>
                         </ul>
                         <!--<h5 style="color:white;">Subscribe</h5>--><br>
 
 
-                        <a href="/home/subscribe" class="btn primary-btn" data-step="9" data-intro="Here you can subscribe for the latest updates of Sahaayak." data-position="right" onclick="alert('Subscribed Succesfully')">Subscribe&nbsp;<i class="fa fa-send"></i></a>
+                        <a href="/home/subscribe" class="btn primary-btn" data-step="9" data-intro="Here you can subscribe for the latest updates of Sahaayak." data-position="right">Subscribe&nbsp;<i class="fa fa-send"></i></a>
 
 
                     </div>
@@ -323,11 +322,10 @@
                     <div class="footer__widget">
                         <h5>Connect Us</h5>
                         <div class="footer__copyright__social" align="left" data-step="11" data-intro="Social Network handles for our website" data-position="left">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-google"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="https://www.facebook.com/NIT.Calicut.Kerala" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="mailto:sgc@nitc.ac.in" target="_blank"><i class="fa fa-google"></i></a>
+                            <a href="https://www.instagram.com/nitcofficial/?hl=en" target="_blank"><i class="fa fa-instagram"></i></a>
+                            <a href="https://twitter.com/nitcofficial?lang=en" target="_blank"><i class="fa fa-twitter"></i></a>
                         </div>
                         <br>
                         <h5 >Write to Us</h5>

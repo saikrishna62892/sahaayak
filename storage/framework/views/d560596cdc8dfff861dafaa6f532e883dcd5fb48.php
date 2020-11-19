@@ -25,9 +25,9 @@
 		<div class="col-sm-3">
 		    <div class="card shadow p-4 mb-5 bg-white rounded">
 		        <div class="card-body">
-			        <h5 class="card-title" align="center">Volunteers</h5>
-			        <h1 align="center"><?php echo e($volunteers_count); ?></h1>
-			        <p class="card-text" align="center">Applied Volunteers</p>
+			        <h5 class="card-title" align="center">Counsellors</h5>
+			        <h1 align="center"><?php echo e($counsellors_count); ?></h1>
+			        <p class="card-text" align="center">Active Counsellors</p>
 			        <center><a href="https://analytics.google.com/analytics/web/#/report-home/a171070217w237922628p222495327" class="btn btn-primary" target="_blank" style="background-color: #5768ad;">See Analytics</a></center>
 		        </div>
 			</div>
@@ -35,8 +35,8 @@
 		<div class="col-sm-3">
 			<div class="card shadow p-4 mb-5 bg-white rounded">
 			    <div class="card-body">
-			        <h5 class="card-title" align="center">Badges</h5>
-			        <h1 align="center"><?php echo e($badges); ?></h1>
+			        <h5 class="card-title" align="center">Gallery</h5>
+			        <h1 align="center"><?php echo e($gallery_count); ?></h1>
 			        <p class="card-text" align="center">Active Volunteers</p>
 			        <center><a href="https://analytics.google.com/analytics/web/#/report-home/a171070217w237922628p222495327" class="btn btn-primary" target="_blank" style="background-color: #5768ad;">See Analytics</a></center>
 			    </div>
@@ -71,7 +71,7 @@
             <div class="d-sm-flex justify-content-between align-items-center">
                 
                 <div class="trd-history-tabs">
-                    <ul class="nav" role="tablist">
+                    <ul class="nav" role="tablist" style="float: right;">
                         <li>
                             <a class="active" data-toggle="tab" href="#addcounsellor" role="tab">Add Counsellor</a>
                         </li>
@@ -180,10 +180,10 @@
                 <div class="trd-history-tabs">
                     <ul class="nav" role="tablist">
                         <li>
-                            <a data-toggle="tab" href="#counsellor_accepted" role="tab">Talks</a>
+                            <a class="active" data-toggle="tab" href="#counsellor_accepted" role="tab">Counsellors</a>
                         </li>
                         <li>
-                            <a class="active" data-toggle="tab" href="#shared_news" role="tab">News</a>
+                            <a data-toggle="tab" href="#shared_news" role="tab">News</a>
                         </li>
                         <li>
                             <a data-toggle="tab" href="#shared_talks" role="tab">Talks</a>
@@ -209,11 +209,14 @@
             <div class="trad-history mt-4">
                 <div class="tab-content" id="myTabContent">
                     <!-- counsellors_accepted form begin -->
-                    
+                    <div class="tab-pane fade show active" id="counsellor_accepted" role="tabpanel">
+                        <h4 align="center">Counsellors Data</h4>
+                        <?php echo $__env->make('counsellors.counsellor_accepted', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                    </div>
                     <!-- counsellors_accepted form end -->
 
                     <!-- shared_news form begin -->
-                    <div class="tab-pane fade show active" id="shared_news" role="tabpanel">
+                    <div class="tab-pane fade show" id="shared_news" role="tabpanel">
                         <h4 align="center">Shared News</h4>
                         <?php echo $__env->make('news.shared_news', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     </div>
@@ -269,10 +272,10 @@
 </div>
 <!-- trading history area end -->
 
-    <div class="main-content-inner" id="table">
-    	<div class="row">
+<!--  <div class="main-content-inner" id="table">
+    	<div class="row"> -->
         <!-- Progress Table start -->
-        <div class="col-12 mt-5">
+        <!--<div class="col-12 mt-5">
             <div class="card shadow p-4 mb-5 bg-white rounded">
                 <div class="card-body">
                     <h4 class="header-title" align="center">Pending Volunteers List(Currently Disabled)</h4>
@@ -315,7 +318,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
         <!-- Progress Table end -->
     </div>
 </div>
