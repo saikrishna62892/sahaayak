@@ -47,6 +47,7 @@ Route::get('expert_story', function () {
 Route::get('news','NewsController@index')->name('news');
 Route::get('news/create','NewsController@create');
 Route::post('admin/news','NewsController@store')->name('storenews');
+Route::post('admin/addcounsellor','CounsellorController@store')->name('storecounsellor');
 Route::get('displayNews','NewsController@display')->name('displayNews');
 Route::get('admin/home/editNews/{newsarticle}/articledited','NewsController@editnews')->name('editNews');
 Route::patch('admin/home/news/{newsarticle}','NewsController@update');

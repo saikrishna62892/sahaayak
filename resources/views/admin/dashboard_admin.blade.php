@@ -105,7 +105,7 @@
                 <div class="tab-content" id="myTabContent">
                     <!-- Add Counsellor Form begin  -->
                     <div class="tab-pane fade show active" id="addcounsellor" role="tabpanel">
-                        @include('admin.add_counsellors')
+                        @include('counsellors.create')
                     </div>
                     <!-- Add Counsellor Form end -->
                     
@@ -179,6 +179,9 @@
                 <div class="trd-history-tabs">
                     <ul class="nav" role="tablist">
                         <li>
+                            <a data-toggle="tab" href="#counsellor_accepted" role="tab">Talks</a>
+                        </li>
+                        <li>
                             <a class="active" data-toggle="tab" href="#shared_news" role="tab">News</a>
                         </li>
                         <li>
@@ -204,6 +207,10 @@
             </div>
             <div class="trad-history mt-4">
                 <div class="tab-content" id="myTabContent">
+                    <!-- counsellors_accepted form begin -->
+                    
+                    <!-- counsellors_accepted form end -->
+
                     <!-- shared_news form begin -->
                     <div class="tab-pane fade show active" id="shared_news" role="tabpanel">
                         <h4 align="center">Shared News</h4>
