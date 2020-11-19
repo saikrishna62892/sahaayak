@@ -12,6 +12,9 @@ return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Counsellor' => $baseDir . '/app/Counsellor.php',
     'App\\Customer' => $baseDir . '/app/Customer.php',
+
+    'App\\Dialyquotes' => $baseDir . '/app/Dialyquotes.php',
+
     'App\\Diary' => $baseDir . '/app/Diary.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Gallery' => $baseDir . '/app/Gallery.php',

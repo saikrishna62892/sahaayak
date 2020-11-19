@@ -22,7 +22,7 @@
                         <td><a href="mailto:{{ $counsellor->email }}" target="_blank" style="color: #5768ad;">{{ $counsellor->email }}</a></td>
                         <td>{{ $counsellor->profession }}</td>
                         <td><a href="/admin/home/counsellor/{{$counsellor->id}}/getDetails" style="color: #5768ad;">See Full Details</a>&emsp;
-                        	<a href="/admin/home/counsellor/{{$counsellor->id}}/getDetails" style="color: #5768ad;">Remove</a>
+                        	<a href="/admin/home/counsellor/{{$counsellor->id}}/removeDetails" style="color: #5768ad;">Remove</a>
                         </td>
                     </tr>
                   	@empty

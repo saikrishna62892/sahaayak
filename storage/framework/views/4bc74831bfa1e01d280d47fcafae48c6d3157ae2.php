@@ -287,7 +287,7 @@
                         <!--<h5 style="color:white;">Subscribe</h5>--><br>
 
 
-                        <a href="/home/subscribe" class="btn primary-btn" data-step="9" data-intro="Here you can subscribe for the latest updates of Sahaayak." data-position="right" onclick="alert('Subscribed Succesfully')">Subscribe&nbsp;<i class="fa fa-send"></i></a>
+                        <a href="/home/subscribe" class="btn primary-btn" data-step="9" data-intro="Here you can subscribe for the latest updates of Sahaayak." data-position="right">Subscribe&nbsp;<i class="fa fa-send"></i></a>
 
 
                     </div>
@@ -408,4 +408,4 @@
 
 </body>
 
-</html><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\Sahayak\sahaayak\resources\views/layouts/layout.blade.php ENDPATH**/ ?>
+</html><?php /**PATH G:\sahayak1\sahaayak\resources\views/layouts/layout.blade.php ENDPATH**/ ?>

@@ -627,6 +627,7 @@ class ComposerStaticInitf4ae8ae2835ae9d4188de33563386321
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Counsellor' => __DIR__ . '/../..' . '/app/Counsellor.php',
         'App\\Customer' => __DIR__ . '/../..' . '/app/Customer.php',
+        'App\\Dialyquotes' => __DIR__ . '/../..' . '/app/Dialyquotes.php',
         'App\\Diary' => __DIR__ . '/../..' . '/app/Diary.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Gallery' => __DIR__ . '/../..' . '/app/Gallery.php',
