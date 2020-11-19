@@ -48,6 +48,14 @@
 </script>
 <!--reportForm script end-->
 
+<script type="text/javascript">
+    function getUserID()
+    {
+        var id=document.getElementById("userID");
+        var link="/volunteer/appointment/"+id+"/getCaseHistory";
+        return link;
+    }
+</script>
 <body>
     <!-- preloader area start -->
     <div id="preloader">

@@ -133,7 +133,7 @@
 	                                <tbody>
 	                                    <?php $count=1 ?>
 
-	                                     <?php $__empty_1 = true; $__currentLoopData = $completedappointments->appointments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
+	                                     <?php $__empty_1 = true; $__currentLoopData = $completedappointments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
 	                                    <tr>
 	                                        <td scope="row"><?php echo e($count++); ?></td>
 	                                        <td><?php echo e($item->name); ?></td>
@@ -206,7 +206,31 @@
 
 		                <!-- reports form begin -->
 		                <div class="tab-pane fade" id="reports" role="tabpanel">
-		                    
+		                    <div class="card">
+       					    <div class="card-header">Enter ID to get History</div>
+
+					        <div class="card-body">
+        				    <form action="/volunteer/appointment/getCaseHistory" method="get" target="_blank">
+            <?php echo csrf_field(); ?>
+            				<div class="form-group">
+
+    <label for="userID">Please enter userID</label>
+    <input type="text" class="form-control" name="userID" id="userID" aria-describedby="userIDHelp" placeholder="Enter userID"  autocomplete="off" >
+    <?php $__errorArgs = ['userID'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+    <small class="text-danger"><?php echo e($message); ?></small>
+    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+</div>
+               				  <button   type="submit" class="btn btn-primary" style="background-color: #5768ad;">case history</button>
+               				</form>
+        					</div>
+    						</div>
 	                    </div>
 	                    <!-- reports form end -->
 
@@ -234,20 +258,20 @@
 	</div>
 	<!-- trading history area end -->
 <script>
-function myFunction() {
-  /* Get the text field */
-  var copyText = document.getElementById("myInput");
+	function myFunction() {
+	  /* Get the text field */
+	  var copyText = document.getElementById("myInput");
 
-  /* Select the text field */
-  copyText.select();
-  copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+	  /* Select the text field */
+	  copyText.select();
+	  copyText.setSelectionRange(0, 99999); /*For mobile devices*/
 
-  /* Copy the text inside the text field */
-  document.execCommand("copy");
+	  /* Copy the text inside the text field */
+	  document.execCommand("copy");
 
-  /* Alert the copied text */
-  alert("Copied the text: " + copyText.value);
-} 
+	  /* Alert the copied text */
+	  alert("Copied the text: " + copyText.value);
+	} 
 </script>
 
 <?php $__env->stopSection(); ?> 
