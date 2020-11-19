@@ -22,6 +22,7 @@ class CounsellorController extends Controller
                 'name'=>'required',
                 'college_id'=>'required',
                 'email'=>'required',
+                'calendar_url' => 'required',
                 'profession'=>'required'
             ]);
 
@@ -36,6 +37,7 @@ class CounsellorController extends Controller
         $counsellor->name=$request->name;
         $counsellor->college_id=$request->college_id;
         $counsellor->email=$request->email;
+        $counsellor->calendar_url=$request->calendar_url;
         $counsellor->profession=$request->profession;
         $counsellor->bio=$request->bio;
         $counsellor->achievements=$request->achievements;        

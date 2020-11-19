@@ -18,9 +18,10 @@ class CreateCounsellorsTable extends Migration
                 $table->string('name');
                 $table->string('college_id');
                 $table->string('email');
+                $table->string('calendar_url');
                 $table->text('profession');
-                $table->text('bio');
-                $table->text('achievements');
+                $table->text('bio')->nullable();
+                $table->text('achievements')->nullable();
                 $table->mediumText('image')->nullable();
                 $table->timestamps();
         });

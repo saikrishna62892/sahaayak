@@ -167,7 +167,11 @@
                             <img src="img/icon-white.png" alt="Sahaayak" width="58" height="38">
                             <h2>Make An Appointment</h2>
                             <small style="color: #fff;">Note: For avoiding reschedule of appointments please visit the calenders of Counsellors for a convenient timing</small><br>
-                            <small style="color: #fff;"><u><a href="https://calendar.google.com/calendar/u/1?cid=c2Fpa3Jpc2huYV9tMTkwMjQxY3NAbml0Yy5hYy5pbg" target="_blank" style="color: #fff;">Visit Dr.Aneesh T Calendar</a></u>&emsp;<u><a href="#" style="color: #fff;">Visit Ms.Neethu NT Calendar</a></u></small>
+                            <small style="color: #fff;">
+                                <?php $__currentLoopData = $counsellors; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $counsellor): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <u><a href="<?php echo e($counsellor->calendar_url); ?>" target="_blank" style="color: #fff;">Visit <?php echo e($counsellor->name); ?> Calendar</a></u>&emsp;
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </small>
                         </div>
                     </div>
                 </div>
@@ -184,7 +188,7 @@
                             <input type="text" placeholder="Department" name="department" autocomplete="off" >
                         </div>
                         <div class="col-lg-4">
-                          <select  id="counsellor">
+                          <select  id="gender">
                             <option value="" selected disabled hidden>Your Gender</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
@@ -192,7 +196,7 @@
                           </select>
                         </div>
                         <div class="col-lg-4">
-                          <select  id="counsellor">
+                          <select  id="appointment_type">
                             <option value="" selected disabled hidden>Appointment Type</option>
                             <option value="male">Initial Appointment</option>
                             <option value="female">Follow-up Appointment</option>
@@ -210,23 +214,25 @@
                           </select>
                         </div>
                         <div class="col-lg-3">
-                          <input type="date" id="date" name="date" placeholder="Choose Your Date" autocomplete="off" >
+                          <input type="text" id="date" name="date" placeholder="Choose Your Date" onfocus="(this.type='date')"autocomplete="off" >
                         </div>
                         <div class="col-lg-3">
-                          <select  id="counsellor">
+                          <select  id="slot">
                             <option value="" selected disabled hidden>Choose Your Slot</option>
-                            <option value="1">9AM - 10AM</option>
-                            <option value="2">10AM - 11AM</option>
-                            <option value="3">11AM - 12PM</option>
-                            <option value="4">2PM - 3PM</option>
-                            <option value="5">3PM - 4PM</option>
-                            <option value="6">4PM - 5PM</option>
-                            <option value="7">5PM - 6PM</option>
+                            <option value="1">8AM - 9AM</option>
+                            <option value="2">9AM - 10AM</option>
+                            <option value="3">10AM - 11AM</option>
+                            <option value="4">11AM - 12PM</option>
+                            <option value="5">12PM - 1PM</option>
+                            <option value="6">1PM - 2PM</option>
+                            <option value="7">2PM - 3PM</option>
+                            <option value="8">3PM - 4PM</option>
+                            <option value="9">4PM - 5PM</option>
                           </select>
                         </div>
                         <div class="col-lg-12 text-center">
                             <textarea placeholder="What do you want to talk about in 100 words" name="message" autocomplete="off" ></textarea>
-                        <button type="submit" onclick="alert('The timings provided may vary upto 1 hour!');">Submit</button>
+                        <button type="submit">Submit</button>
                         </div>
                     </div>
                 </form>

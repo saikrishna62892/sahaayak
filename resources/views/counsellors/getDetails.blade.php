@@ -22,7 +22,11 @@
                 </div>
                 <div class="form-group">
                     <label for="name"><strong>Email : </strong></label>
-                    <a href="mailto:{{$counsellor->email}}" style="color: #000;">{{$counsellor->email}}</a>
+                    <a href="mailto:{{$counsellor->email}}" style="color: #000;"><u>{{$counsellor->email}}</u></a>
+                </div>
+                <div class="form-group">
+                    <label for="name"><strong>Google Calendar URL : </strong></label>
+                    <a href="mailto:{{$counsellor->calendar_url}}" style="color: #000;"><u>{{$counsellor->calendar_url}}</u></a>
                 </div>
                 <div class="form-group">
                     <label for="name"><strong>Profession : </strong></label>

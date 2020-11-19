@@ -9,5 +9,5 @@ class Counsellor extends Model
     //
     protected $guarded=[];
     protected $table = 'counsellors';
-    protected $fillable = ['name','email','college_id','qualification','bio','achievements','image'];
+    protected $fillable = ['name','email','college_id','qualification','bio','achievements','image','calendar_url'];
 }
