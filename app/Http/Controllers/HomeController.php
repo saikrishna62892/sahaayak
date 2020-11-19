@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Questionnaire;
 use App\Volunteer;
+use App\Counsellor;
 use App\User;
 use App\Talk;
 use App\Story;
@@ -72,6 +73,8 @@ class HomeController extends Controller
         //stats
         $users_count = User::all()->count();
         $volunteers_count = Volunteer::all()->count();
+        $counsellors_count = Counsellor::all()->count();
+        $gallery_count = Gallery::all()->count();
         $unapprovedVolunteers = Volunteer::where('is_Approved',0)->get();
         $badges = $volunteers_count-$unapprovedVolunteers->count();
         $talks_count=Talk::all()->count();
@@ -99,6 +102,7 @@ class HomeController extends Controller
         $shared_playlists = DB::table('playlists')->orderBy("id","desc")->paginate(5);
         $suggestions = DB::table('suggestion')->orderBy("id","desc")->paginate(5);
         $gallery = Gallery::all();
+        $counsellors = Counsellor::all();
 
         //dd($analyticsData);
         //dd($analyticsData[0]);
@@ -108,7 +112,7 @@ class HomeController extends Controller
         $quote = new Quote();
         $video = new Video();
         $playlist = new Playlist();
-        return view('admin.dashboard_admin',compact('unapprovedVolunteers','talks','users_count','volunteers_count','badges','shared_news','shared_videos','shared_quotes','shared_playlists','newsarticle','talk','quote','video','playlist','admin_name','suggestions','talks_count','gallery'));
+        return view('admin.dashboard_admin',compact('unapprovedVolunteers','talks','users_count','volunteers_count','badges','shared_news','shared_videos','shared_quotes','shared_playlists','newsarticle','talk','quote','video','playlist','admin_name','suggestions','talks_count','gallery','counsellors_count','gallery_count','counsellors'));
     }
 
     public function volunteerHome()

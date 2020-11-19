@@ -8,6 +8,6 @@ class Counsellor extends Model
 {
     //
     protected $guarded=[];
-    protected $table = 'counsellor';
+    protected $table = 'counsellors';
     protected $fillable = ['name','email','college_id','qualification','bio','achievements','image'];
 }

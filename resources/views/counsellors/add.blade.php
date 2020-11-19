@@ -1,5 +1,5 @@
                     <div class="form-group">
-                        <label for="name">Name of the Counsellor</label>
+                        <label for="name">Counsellor Name</label>
                         <input type="text" class="form-control" name="name" id="name" aria-describedby="nameHelp" placeholder="Please enter Counsellor name"  autocomplete="off" >
                         @error('name')
                         <small class="text-danger">{{$message}}</small>
@@ -14,28 +14,28 @@
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="text" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Please enter Counsellor's email"  autocomplete="off" >
+                        <input type="text" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Please enter Counsellor email"  autocomplete="off" >
                         @error('email')
                         <small class="text-danger">{{$message}}</small>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="profession">Profession</label>
-                        <input type="text" class="form-control" name="profession" id="profession" aria-describedby="professionHelp" placeholder="Please enter Counsellor's profession" autocomplete="off" >
+                        <input type="text" class="form-control" name="profession" id="profession" aria-describedby="professionHelp" placeholder="Please enter Counsellor profession" autocomplete="off" >
                         @error('profession')
                         <small class="text-danger">{{$message}}</small>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="bio">Add Bio</label>
-                        <textarea type="text"class="form-control" name="bio" id="bio" rows="5" placeholder="Please enter Counsellor's Bio"  autocomplete="off" > </textarea> 
+                        <textarea type="text"class="form-control" name="bio" id="bio" rows="3" placeholder="Please enter Counsellor Bio"  autocomplete="off" > </textarea> 
                         @error('bio')
                         <small class="text-danger">{{$message}}</small>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="achievements">Achievements</label>
-                        <textarea type="text"class="form-control" name="achievements" id="achievements" rows="5" placeholder="Please enter Counsellor's achievements"  autocomplete="off" > </textarea> 
+                        <textarea type="text"class="form-control" name="achievements" id="achievements" rows="3" placeholder="Please enter Counsellor achievements"  autocomplete="off" > </textarea> 
                         @error('achievements')
                         <small class="text-danger">{{$message}}</small>
                         @enderror
