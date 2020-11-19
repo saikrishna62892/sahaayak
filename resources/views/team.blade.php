@@ -57,7 +57,7 @@
                     <div class="col-lg-6">
                         <div class="team__item">
                             <div class="team__item__pic">
-                                <img src="img/team/neetu_2.png" alt="">
+                                <img src="img/team/neethu.png" alt="">
                             </div>
                             <div class="team__item__text">
                                 <div class="team__item__title">
@@ -294,7 +294,7 @@
                                     <h4>Aswathi Mohan</h4>
                                     <span>Project co-ordinator</span>
                                 </div>
-                                <p>Phone:<br>Gmail: aswathipranavam@gmail.com<br> <br></p>
+                                <p>Phone: 9497307550<br>Gmail: aswathipranavam@gmail.com<br> <br></p>
                             </div>
                         </div>
                     </div>
