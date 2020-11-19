@@ -35,13 +35,26 @@ class appointment_controller extends Controller
         $temp++;
         $data = request()->validate([
          'name' => 'required',
-         'email' => 'required|email',
-         'phone'=>'required|min:10|numeric',
+         'college_id' => 'required',
+         'department' => 'required',
+         'gender' => 'required',
+         'appointment_type' => 'required',
+         'faculty_advisor' => 'required',
+         'counsellor_name' => 'required',
+         'date' => 'required',
+         'slot' => 'required',
+         'message' => 'required',
          ]);
+
         $appointment->name=$req->name;
-        $appointment->email=$req->email;
-        $appointment->phone=$req->phone;
-        $appointment->timings=$req->timings;
+        $appointment->college_id=$req->college_id;
+        $appointment->department=$req->department;
+        $appointment->gender=$req->gender;
+        $appointment->appointment_type=$req->appointment_type;
+        $appointment->faculty_advisor=$req->faculty_advisor;
+        $appointment->counsellor_name=$req->counsellor_name;
+        $appointment->date=$req->date;
+        $appointment->slot=$req->slot;
         $appointment->message=$req->message;
         $appointment->timestamps=now();
         $appointment->user_id=$user->id;

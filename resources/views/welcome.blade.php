@@ -182,13 +182,13 @@
                             <input type="text" placeholder="Name" name="name" autocomplete="off" >
                         </div>
                         <div class="col-lg-4">
-                            <input type="text" placeholder="College ID" name="collegeid" autocomplete="off" >
+                            <input type="text" placeholder="College ID" name="college_id" autocomplete="off" >
                         </div>
                         <div class="col-lg-4">
                             <input type="text" placeholder="Department" name="department" autocomplete="off" >
                         </div>
                         <div class="col-lg-4">
-                          <select  id="gender">
+                          <select name="gender">
                             <option value="" selected disabled hidden>Your Gender</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
@@ -196,17 +196,17 @@
                           </select>
                         </div>
                         <div class="col-lg-4">
-                          <select  id="appointment_type">
+                          <select  name="appointment_type">
                             <option value="" selected disabled hidden>Appointment Type</option>
-                            <option value="male">Initial Appointment</option>
-                            <option value="female">Follow-up Appointment</option>
+                            <option value="Initial Appointment">Initial Appointment</option>
+                            <option value="Follow-up Appointment">Follow-up Appointment</option>
                           </select>
                         </div>
                         <div class="col-lg-4">
                             <input type="text" placeholder="Your Faculty Advisor" name="faculty_advisor" autocomplete="off" >
                         </div>
                         <div class="col-lg-6">
-                          <select  id="counsellor">
+                          <select  name="counsellor_name">
                             <option value="" selected disabled hidden>Choose Your Counsellor</option>
                             @foreach($counsellors as $counsellor)
                                 <option value="{{ $counsellor->id }}">{{ $counsellor->name }}-{{ $counsellor->profession}}</option>
@@ -217,7 +217,7 @@
                           <input type="text" id="date" name="date" placeholder="Choose Your Date" onfocus="(this.type='date')"autocomplete="off" >
                         </div>
                         <div class="col-lg-3">
-                          <select  id="slot">
+                          <select  name="slot">
                             <option value="" selected disabled hidden>Choose Your Slot</option>
                             <option value="1">8AM - 9AM</option>
                             <option value="2">9AM - 10AM</option>
