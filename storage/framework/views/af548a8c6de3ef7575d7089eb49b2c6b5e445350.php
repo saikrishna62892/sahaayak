@@ -297,10 +297,8 @@
                 <div class="carousel-item" style="height: 550px;">
             <?php endif; ?>
             <?php if(is_null($gal->image)): ?>
-                <h4>hiii</h4>
                 <img class="d-block w-100" src="<?php echo e(asset('/img/galleries/default.jpg')); ?>" alt="Gallery-Image" height="550">
             <?php else: ?>
-                <h4>byee</h4>
                 <img class="d-block w-100" src="<?php echo e(asset('/img/galleries/'.$gal->image)); ?>" alt="Gallery-Image" height="550">
             <?php endif; ?>
               <div class="carousel-caption d-none d-md-block">

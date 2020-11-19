@@ -183,20 +183,23 @@
                         <div class="col-lg-6">
                           <select  id="counsellor">
                             <option value="" selected disabled hidden>Choose Your Counsellor</option>
-                            <option value="1" style="color: black;"><a href="#">Dr.Aneesh T-Clinical Psychologist</a></option>
-                            <option value="2" style="color: black;"><a href="#">Ms.Neethu NT-Consultant Psychologist</a></option>
+                            <option value="1"><a href="#">Dr.Aneesh T-Clinical Psychologist</a></option>
+                            <option value="2"><a href="#">Ms.Neethu NT-Consultant Psychologist</a></option>
                           </select>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-3">
+                          <input type="date" id="date" name="date" placeholder="Choose Your Date" autocomplete="off" >
+                        </div>
+                        <div class="col-lg-3">
                           <select  id="counsellor">
                             <option value="" selected disabled hidden>Choose Your Slot</option>
-                            <option value="1" style="color: black;">9AM - 10AM</option>
-                            <option value="2" style="color: black;">10AM - 11AM</option>
-                            <option value="3" style="color: black;">11AM - 12PM</option>
-                            <option value="4" style="color: black;">2PM - 3PM</option>
-                            <option value="5" style="color: black;">3PM - 4PM</option>
-                            <option value="6" style="color: black;">4PM - 5PM</option>
-                            <option value="7" style="color: black;">5PM - 6PM</option>
+                            <option value="1">9AM - 10AM</option>
+                            <option value="2">10AM - 11AM</option>
+                            <option value="3">11AM - 12PM</option>
+                            <option value="4">2PM - 3PM</option>
+                            <option value="5">3PM - 4PM</option>
+                            <option value="6">4PM - 5PM</option>
+                            <option value="7">5PM - 6PM</option>
                           </select>
                         </div>
                         <div class="col-lg-12 text-center">

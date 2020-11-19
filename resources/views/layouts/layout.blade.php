@@ -23,7 +23,6 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link href="/css/introjs.css" rel="stylesheet">
     <link href="/css/introjs-modern.css" rel="stylesheet">
-    
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171070217-1"></script>
