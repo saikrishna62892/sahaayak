@@ -167,6 +167,7 @@ Route::post('/admin/report/{appointment}/generateReport','appointment_controller
 //Get case history routes
 
 Route::get('/volunteer/appointment/{user}/getCaseHistory','VolunteerController@getCaseHistory');
+Route::get('/volunteer/appointment/getCaseHistory','VolunteerController@getHistory');
 
 //learn section routes
 Route::get('home/learn/{learn}/{learnID}','LearnController@show');

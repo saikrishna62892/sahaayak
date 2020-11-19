@@ -81,7 +81,14 @@ class VolunteerController extends Controller
         //user->appointments->casehistories
         $user->load('appointments.casehistory');
         $pdf = PDF::loadView('volunteer.casehistory',compact('user'));
-        return $pdf->stream('a.pdf');
+        return $pdf->stream('casehistory.pdf');
+    }
+    public function getHistory(Request $req)
+    {
+        $user = User::find($req->userID);
+        $user->load('appointments.casehistory');
+        $pdf = PDF::loadView('volunteer.casehistory',compact('user'));
+        return $pdf->stream('casehistory.pdf');
     }
     
 }
