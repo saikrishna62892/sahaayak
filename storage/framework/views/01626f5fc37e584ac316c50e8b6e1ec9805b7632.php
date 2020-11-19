@@ -22,7 +22,7 @@
                         <td><a href="mailto:<?php echo e($counsellor->email); ?>" target="_blank" style="color: #5768ad;"><?php echo e($counsellor->email); ?></a></td>
                         <td><?php echo e($counsellor->profession); ?></td>
                         <td><a href="/admin/home/counsellor/<?php echo e($counsellor->id); ?>/getDetails" style="color: #5768ad;">See Full Details</a>&emsp;
-                        	<a href="/admin/home/counsellor/<?php echo e($counsellor->id); ?>/getDetails" style="color: #5768ad;">Remove</a>
+                        	<a href="/admin/home/counsellor/<?php echo e($counsellor->id); ?>/removeDetails" style="color: #5768ad;">Remove</a>
                         </td>
                     </tr>
                   	<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>

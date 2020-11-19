@@ -43,7 +43,7 @@
     		</div>
             <div class="card-body" style="width: 40%;">
                 <div align="right">
-                    <a href="/admin/home" style="color: #5768ad;">Edit Details</a>&emsp;
+                    <a href="/admin/home/counsellor/<?php echo e($counsellor->id); ?>/editDetails" style="color: #5768ad;">Edit Details</a>&emsp;
                 </div>
                 <br>
                 <div class="form-group">

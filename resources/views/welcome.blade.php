@@ -174,17 +174,39 @@
                 <form action="/appointment_controller" method="post" class="appointment__form">
                 @csrf
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-4">
                             <input type="text" placeholder="Name" name="name" autocomplete="off" >
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-4">
                             <input type="text" placeholder="College ID" name="collegeid" autocomplete="off" >
+                        </div>
+                        <div class="col-lg-4">
+                            <input type="text" placeholder="Department" name="department" autocomplete="off" >
+                        </div>
+                        <div class="col-lg-4">
+                          <select  id="counsellor">
+                            <option value="" selected disabled hidden>Your Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="not_specified">Rather not to say</option>
+                          </select>
+                        </div>
+                        <div class="col-lg-4">
+                          <select  id="counsellor">
+                            <option value="" selected disabled hidden>Appointment Type</option>
+                            <option value="male">Initial Appointment</option>
+                            <option value="female">Follow-up Appointment</option>
+                          </select>
+                        </div>
+                        <div class="col-lg-4">
+                            <input type="text" placeholder="Your Faculty Advisor" name="faculty_advisor" autocomplete="off" >
                         </div>
                         <div class="col-lg-6">
                           <select  id="counsellor">
                             <option value="" selected disabled hidden>Choose Your Counsellor</option>
-                            <option value="1"><a href="#">Dr.Aneesh T-Clinical Psychologist</a></option>
-                            <option value="2"><a href="#">Ms.Neethu NT-Consultant Psychologist</a></option>
+                            @foreach($counsellors as $counsellor)
+                                <option value="{{ $counsellor->id }}">{{ $counsellor->name }}-{{ $counsellor->profession}}</option>
+                            @endforeach
                           </select>
                         </div>
                         <div class="col-lg-3">

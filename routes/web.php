@@ -6,6 +6,7 @@ use App\User;
 use Carbon\Carbon;
 use App\dialyquotes;
 use App\News;
+use App\Counsellor;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,8 @@ use App\News;
 Route::get('/',function(){
         $dialyquote=dialyquotes::all()->last()->quote;
         $featurednews=News::orderBy('created_at','desc')->take(3)->get();
-        return view('welcome')->with(compact('dialyquote','featurednews'));
+        $counsellors=Counsellor::all();
+        return view('welcome')->with(compact('dialyquote','featurednews','counsellors'));
 });
 
 
