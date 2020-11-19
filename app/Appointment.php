@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\User;
 use App\Volunteer;
+use App\Casehistory;
 
 class Appointment extends Model
 {
@@ -19,5 +20,9 @@ class Appointment extends Model
     public function volunteer()
     {
     	return $this->belongsTo(Volunteer::class);
+    }
+    public function casehistory()
+    {
+        return $this->hasOne(Casehistory::class);
     }
 }
