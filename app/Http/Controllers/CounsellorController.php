@@ -9,14 +9,20 @@ use App\Counsellor;
 use Storage;
 use Auth;
 use Carbon\Carbon;
-
+use App\User;
 class CounsellorController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth','verified']);
+        $this->middleware('is_counsellor')->only(['appointmentAccepted','getCaseHistory','getHistory']);
+        //$this->middleware('is_admin')->only(['getDetails','approveVolunteer']);
+    }
+
     public function store(Request $request)
     {
+        $newuser = new User();
     	$counsellor= new Counsellor();
-        $user = Auth::user();
-
     	$data=request()->validate(
             [
                 'image' => 'file|image|max:3000',
@@ -27,6 +33,13 @@ class CounsellorController extends Controller
                 'profession'=>'required'
             ]);
 
+        $newuser->name=$request->name;
+        $newuser->email=$request->email;
+        $newuser->rollnum=$request->college_id;
+        $newuser->password=bcrypt('12345678');
+        $newuser->email_verified_at=Carbon::now();
+        $newuser->is_Counsellor=1;
+        $newuser->save();  
         #for image upload
         if ($request->hasFile('image')) {
             $image = $request->file('image');
@@ -35,13 +48,15 @@ class CounsellorController extends Controller
             $image->move($destinationPath, $name);
             $counsellor->image=$name;
         }
+        $counsellor->user_id=$newuser->id;
         $counsellor->name=$request->name;
         $counsellor->college_id=$request->college_id;
         $counsellor->email=$request->email;
         $counsellor->calendar_url=$request->calendar_url;
         $counsellor->profession=$request->profession;
         $counsellor->bio=$request->bio;
-        $counsellor->achievements=$request->achievements;        
+        $counsellor->achievements=$request->achievements;  
+        $newuser->save();      
         $counsellor->save();
         return redirect()->back()->with('message', 'Posted Succcesfully');
     }
@@ -99,4 +114,19 @@ class CounsellorController extends Controller
         return redirect()->route('adminDashboard');
     }
 
+    public function getCaseHistory(User $user)
+    {
+        //user->appointments->casehistories
+        $user->load('appointments.casehistory');
+        $pdf = PDF::loadView('volunteer.casehistory',compact('user'));
+        return $pdf->stream('casehistory'.$user->id.'pdf');
+    }
+
+    public function getHistory(Request $req)
+    {
+        $user = User::find($req->userID);
+        $user->load('appointments.casehistory');
+        $pdf = PDF::loadView('volunteer.casehistory',compact('user'));
+        return $pdf->stream('casehistory'.$user->id.'pdf');
+    }
 }

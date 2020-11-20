@@ -56,6 +56,9 @@ class LoginController extends Controller
             if (auth()->user()->is_admin == 1) {
                 return redirect()->route('adminDashboard');
             }
+            else if(auth()->user()->is_Counsellor == 1){
+                return redirect()->route('counsellorDashboard');
+            }
             else if(auth()->user()->is_Volunteer == 1){
                 if(auth()->user()->step2_done == 1)
                 {

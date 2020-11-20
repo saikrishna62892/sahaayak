@@ -16,7 +16,7 @@ class VolunteerController extends Controller
     public function __construct()
     {
         $this->middleware(['auth','verified']);
-        $this->middleware('is_volunteer')->only(['appointmentAccepted']);
+        $this->middleware('is_counsellor')->only(['appointmentAccepted']);
         $this->middleware('is_admin')->only(['getDetails','approveVolunteer']);
     }
     
@@ -76,19 +76,19 @@ class VolunteerController extends Controller
         $casehistory->save();
          return redirect()->back()->with('message','Case history added');
     }*/
-    public function getCaseHistory(User $user)
+    /*public function getCaseHistory(User $user)
     {
         //user->appointments->casehistories
         $user->load('appointments.casehistory');
         $pdf = PDF::loadView('volunteer.casehistory',compact('user'));
         return $pdf->stream('casehistory.pdf');
-    }
-    public function getHistory(Request $req)
+    }*/
+    /*public function getHistory(Request $req)
     {
         $user = User::find($req->userID);
         $user->load('appointments.casehistory');
         $pdf = PDF::loadView('volunteer.casehistory',compact('user'));
         return $pdf->stream('casehistory.pdf');
-    }
+    }/*
     
 }
