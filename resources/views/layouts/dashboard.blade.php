@@ -57,11 +57,11 @@
     }
 </script>
 <body>
-    <!-- preloader area start -->
+    <!-- preloader area start 
     <div id="preloader">
         <div class="loader"></div>
     </div>
-    <!-- preloader area end -->
+     preloader area end -->
 
     <!-- page container area start -->
     <div class="page-container">
@@ -220,6 +220,9 @@
                                             @csrf
                                         </form>
                                     </div>
+                                </li>
+                                <li>
+                                    <a href="http://www.nitc.ac.in/" target="_blank"><img src="/img/nitc.png"></a>
                                 </li>
                             </ul>
                         </div>

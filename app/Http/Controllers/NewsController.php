@@ -10,6 +10,8 @@ use App\Notifications\NewsNotification;
 use App\User;
 use App\Traits\NotificationTrait;
 use Storage;
+use Session;
+
 class NewsController extends Controller
 {
 
@@ -66,6 +68,7 @@ class NewsController extends Controller
         
 		$news->save();
         $this->sendNewsNotif($news->headline);
+        Session::flash('alert-success', 'News Added Succesfully');
         return redirect()->back();
     
     }
@@ -78,6 +81,7 @@ class NewsController extends Controller
     public function deletenews(News $newsarticle){
         $newsarticle->delete();
         Storage::disk('s3')->delete('uploads/news/img/'.$newsarticle->image);
+        Session::flash('alert-warning', 'News Deleted Succesfully');
         return redirect()->back();
     }
 
@@ -109,6 +113,7 @@ class NewsController extends Controller
         }
 
         $newsarticle->update($data);
+        Session::flash('alert-info', 'News Edited Succesfully');
         return redirect()->route('adminDashboard');
     }
 }

@@ -8,6 +8,7 @@ use App\Notifications\QuestionnaireNotification;
 use App\User;
 use Carbon\Carbon;
 use App\Traits\NotificationTrait;
+use Session;
 
 class QuestionnaireController extends Controller
 {

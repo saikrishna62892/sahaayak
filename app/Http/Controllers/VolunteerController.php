@@ -11,6 +11,8 @@ use Storage;
 use PDF;
 use App\Mail\RejectVolunteerMail;
 use Illuminate\Support\Facades\Mail;
+use Session;
+
 class VolunteerController extends Controller
 {
     public function __construct()
@@ -22,6 +24,7 @@ class VolunteerController extends Controller
     
     public function step2(User $user)
     {
+        Session::flash('alert-info', 'Please Complete Step2');
     	return view('volunteer.volunteer_signup',compact('user'));
     }
 
@@ -45,7 +48,7 @@ class VolunteerController extends Controller
         //Storage::disk('s3')->setVisibility($volunteer->file1,'public');
         //Storage::disk('s3')->setVisibility($volunteer->file2,'public');
         $user->update(['step2_done' => 1]);
-
+        Session::flash('alert-info', 'Your Application is waitng for Approval');
     	return redirect('/volunteer/waitingApproval');
     }
 
@@ -57,7 +60,8 @@ class VolunteerController extends Controller
     public function approveVolunteer(Volunteer $unapprovedVolunteer)
     {
         $unapprovedVolunteer->update(['is_Approved' => 1]);
-        return redirect()->back()->with('message','This volunteer is approved');
+        Session::flash('alert-success', 'Volunteer Approved');
+        return redirect()->back();
     }
 
     public function destroy(Volunteer $unapprovedVolunteer)
@@ -66,7 +70,8 @@ class VolunteerController extends Controller
         Mail::to($user->email)->send(new RejectVolunteerMail());
         Storage::disk('s3')->delete([$unapprovedVolunteer->file1,$unapprovedVolunteer->file2]);
         $user->delete();
-        return redirect()->back()->with('message','This volunteer is rejected');
+        Session::flash('alert-warning', 'Volunteer Rejected Successfully');
+        return redirect()->back();
     }
    /* public function addCasehistory(request $req)
     {

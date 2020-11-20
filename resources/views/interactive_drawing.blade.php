@@ -55,6 +55,9 @@
 			</div>
 
 			<div class="row">
+				<div class="btn silk-icon visible">
+					<a href="{{ url('/') }}" style="color: #fff;" class="text">Home</a></span>
+				</div>
 				<div class="btn silk-icon visible" data-bind="click: toggleFullscreen, css: { visible: notPristine }">
 					<div class="contents"><i class="icon-fullscreen"></i></div>
 					<div class="tt" data-bind="visible: isFullscreen" style="display: none;">Full Screen</div>

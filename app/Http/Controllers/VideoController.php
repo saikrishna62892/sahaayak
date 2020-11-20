@@ -8,6 +8,8 @@ use App\Video;
 use App\Notifications\VideoNotification;
 use App\User;
 use App\Traits\NotificationTrait;
+use Session;
+
 class VideoController extends Controller
 {
 
@@ -36,11 +38,13 @@ class VideoController extends Controller
             ]);
         $video = Video::create($data);
         $this->sendVideosNotif($video->videoTag);
+        Session::flash('alert-success', 'Video Added Successfully');
         return redirect('/admin/home');
     }
 
     public function deletevideo(Video $video){
         $video->delete();
+        Session::flash('alert-warning', 'Video Deleted Successfully');
         return redirect()->back();
     }
     public function editvideo(Video $video){
@@ -57,6 +61,7 @@ class VideoController extends Controller
             ]);
 
         $video->update($data);
+        Session::flash('alert-info', 'Video Edited Successfully');
         return redirect()->route('adminDashboard');
     }
 

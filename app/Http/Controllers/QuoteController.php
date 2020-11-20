@@ -11,6 +11,8 @@ use App\Notifications\InspiremeNotification;
 use App\User;
 use App\Traits\NotificationTrait;
 use Storage;
+use Session;
+
 class QuoteController extends Controller
 {
 
@@ -58,11 +60,13 @@ class QuoteController extends Controller
     }
     $quote->save();
     $this->sendInspiremeNotif($quote->Author);
-    return redirect()->back()->with('message', 'Posted Succcesfully');
+    Session::flash('alert-success', 'Quote Added Succesfully');
+    return redirect()->back();
 	}
     public function deletequote(Quote $quote){
         Storage::disk('s3')->delete('uploads/quote/img/'.$quote->Image);
         $quote->delete();
+        Session::flash('alert-warning', 'Quote Deleted Succesfully');
         return redirect()->back();
     }
     public function editquote(Quote $quote){
@@ -96,6 +100,7 @@ class QuoteController extends Controller
         $data['Link'] = request()->Link;
 
         $quote->update($data);
+        Session::flash('alert-info', 'Quote Edited Succesfully');
         return redirect()->route('adminDashboard');
     }
 

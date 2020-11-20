@@ -16,6 +16,8 @@ use App\User;
 use App\Traits\NotificationTrait;
 use Spatie\GoogleCalendar\Event;
 use Carbon\Carbon;
+use Session;
+
 class appointment_controller extends Controller
 {
 
@@ -77,11 +79,12 @@ class appointment_controller extends Controller
         $counsellor=Counsellor::find($appointment->counsellor_id);
         //$counsellor->email
         $event->addAttendee(['email' => 'saikrishna_m190241cs@nitc.ac.in']);
-        $event->description='Your appointment has been scheduled with '.$counsellor->name.' and please be on time.';
+        $event->description='Appointment has been scheduled successfully and Please be on time.';
         //$event->conferenceDataVersion=1;
         $event->save(); 
-        return redirect()->back()->with('message', 'Posted Succcesfully');
-        //return redirect()->back();
+       
+        Session::flash('alert-success', 'Appointment Created Succesfully Please check your Google Calendar'); 
+        return redirect()->back(); 
     }
 
      public function appointmentAccepted(Appointment $appointment)
@@ -97,8 +100,9 @@ class appointment_controller extends Controller
         }*/
 
         $appointment->update(['accept' => 1]);
-        //dd($appointment);
-        return redirect()->back()->with('message','User Appointment accepted');
+
+        Session::flash('alert-success', 'User Appointment accepted'); 
+        return redirect()->back();
     }
 
     public function reportForm(Appointment $appointment)
@@ -123,6 +127,7 @@ class appointment_controller extends Controller
         $pdf = PDF::loadView('appointment.generateReport',compact('data'));
         $user = User::find($appointment->user_id);
         $user->notify(new AppointmentReportNotification($pdf));
+        Session::flash('alert-success', 'CaseHistory Added Succesfully'); 
         return redirect()->back();
     }
 

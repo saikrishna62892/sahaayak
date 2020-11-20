@@ -186,7 +186,7 @@
                         </div>
                         <div class="chooseus__item__text">
                             <h2 class="choose-counter">90</h2>
-                            <p>Percent Stress rate in Inda</p>
+                            <p>Percent Stress rate in India</p>
                         </div>
                     </div>
                     <div class="chooseus__item">
@@ -274,6 +274,7 @@
         <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
         <h2>Gallery</h2>
     </div>
+    <div class="container">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <?php $count=0; ?>
@@ -308,6 +309,7 @@
             <?php $count++; ?>
         @endforeach
       </div>
+
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
@@ -316,6 +318,7 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
+    </div>
     </div>
 
     <!-- Gallery Section Begin -->

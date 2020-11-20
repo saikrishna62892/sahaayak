@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Session;
+
 
 class WorryController extends Controller
 {
@@ -29,6 +31,7 @@ class WorryController extends Controller
              });
         $user->worries()->createMany($data['worries']);
         //dd($data);
+        Session::flash('alert-success', 'Worries Added!!');
         return redirect()->back();;
     }
 }
