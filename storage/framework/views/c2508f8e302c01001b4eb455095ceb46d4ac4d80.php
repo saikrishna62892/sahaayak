@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Sahaayak | Dashboard | @yield('name')</title>
+    <title>Sahaayak | Dashboard | <?php echo $__env->yieldContent('name'); ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="shortcut icon" type="image/png" href="/img/icon-white.png">
@@ -69,7 +69,7 @@
         <div class="sidebar-menu">
             <div class="sidebar-header">
                 <div class="logo">
-                    <a href="{{ url('/') }}"><img src="/img/logo-dashboard.png" alt="logo" width="225" height="35"></a>
+                    <a href="<?php echo e(url('/')); ?>"><img src="/img/logo-dashboard.png" alt="logo" width="225" height="35"></a>
                 </div>
             </div>
             <div class="main-menu">
@@ -77,16 +77,16 @@
                     <nav>
                         <ul class="metismenu" id="menu">
                             <li>
-                                @if(auth()->user()->is_Volunteer == 1)
+                                <?php if(auth()->user()->is_Volunteer == 1): ?>
                                     <a href="/home" aria-expanded="false"><i class="ti-settings"></i><span>Dashboard</span></a>
-                                @elseif(auth()->user()->is_admin == 1)
+                                <?php elseif(auth()->user()->is_admin == 1): ?>
                                     <a href="/admin/home" aria-expanded="false"><i class="ti-settings"></i><span>Dashboard</span></a>
-                                @else
+                                <?php else: ?>
                                     <a href="/home" aria-expanded="false"><i class="ti-settings"></i><span>Dashboard</span></a>
-                                @endif                                
+                                <?php endif; ?>                                
                             </li>
                             <li>
-                                <a href="{{ url('about') }}" aria-expanded="true"><i class="ti-dashboard"></i><span>About</span></a>
+                                <a href="<?php echo e(url('about')); ?>" aria-expanded="true"><i class="ti-dashboard"></i><span>About</span></a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layout-sidebar-left"></i><span>Learn</span></a>
@@ -105,39 +105,39 @@
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layers"></i><span>Assessment</span></a>
                                 <ul class="collapse">
-                                    @foreach($questionnaires as $questionnaire)
-                                        <li><a href="/home/questionnaires/{{$questionnaire->id}}/questions">{{$questionnaire->questionnaireTitle}}</a></li>
-                                    @endforeach
+                                    <?php $__currentLoopData = $questionnaires; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $questionnaire): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <li><a href="/home/questionnaires/<?php echo e($questionnaire->id); ?>/questions"><?php echo e($questionnaire->questionnaireTitle); ?></a></li>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </ul>
                             </li>
                             <li>
-                                <a href="{{ url('/#talk_to_us') }}" aria-expanded="true"><i class="ti-microphone"></i><span>Talk to Us</span></a>
+                                <a href="<?php echo e(url('/#talk_to_us')); ?>" aria-expanded="true"><i class="ti-microphone"></i><span>Talk to Us</span></a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-server"></i><span>Blog</span></a>
                                 <ul class="collapse">
-                                    <li><a href="{{ url('displayStories') }}">Discover Stories</a></li>
-                                    <li><a href="{{ url('displayTalks') }}">Expert Talks</a></li>
+                                    <li><a href="<?php echo e(url('displayStories')); ?>">Discover Stories</a></li>
+                                    <li><a href="<?php echo e(url('displayTalks')); ?>">Expert Talks</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="{{ url('news') }}" aria-expanded="true"><i class="ti-world"></i><span>News</span></a>
+                                <a href="<?php echo e(url('news')); ?>" aria-expanded="true"><i class="ti-world"></i><span>News</span></a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-heart"></i><span>Hope Box</span></a>
                                 <ul class="collapse">
-                                        <li><a href="{{ url('weavesilk') }}">Interactive Drawing</a></li>
-                                        <li><a href="{{ url('inspire_me') }}">Inspire Me</a></li>
-                                        <li><a href="{{ url('videos') }}">Videos</a></li>
-                                        <li><a href="{{ url('playlists') }}">Playlists</a></li>
+                                        <li><a href="<?php echo e(url('weavesilk')); ?>">Interactive Drawing</a></li>
+                                        <li><a href="<?php echo e(url('inspire_me')); ?>">Inspire Me</a></li>
+                                        <li><a href="<?php echo e(url('videos')); ?>">Videos</a></li>
+                                        <li><a href="<?php echo e(url('playlists')); ?>">Playlists</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-light-bulb"></i><span>Our Team</span></a>
                                 <ul class="collapse">
-                                    <li><a href="{{ url('team#counsellors') }}">Counsellors</a></li>
-                                        <li><a href="{{ url('team#sgc') }}">SGC</a></li>
-                                        <li><a href="{{ url('team#team') }}">Team</a></li>
+                                    <li><a href="<?php echo e(url('team#counsellors')); ?>">Counsellors</a></li>
+                                        <li><a href="<?php echo e(url('team#sgc')); ?>">SGC</a></li>
+                                        <li><a href="<?php echo e(url('team#team')); ?>">Team</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -174,33 +174,33 @@
                         <ul class="notification-area pull-right">
                                 <li class="dropdown">
                                     <i class="ti-bell dropdown-toggle" data-toggle="dropdown">
-                                        @if(auth::user()->unreadnotifications->count())
-                                    <span class="badge badge-light">{{auth::user()->unreadnotifications->count()}}</span>
-                                    @endif
+                                        <?php if(auth::user()->unreadnotifications->count()): ?>
+                                    <span class="badge badge-light"><?php echo e(auth::user()->unreadnotifications->count()); ?></span>
+                                    <?php endif; ?>
                                     </i>
                                     <div class="dropdown-menu bell-notify-box notify-box">
-                                        <span class="notify-title">You have {{auth::user()->unreadnotifications->count()}} new notifications</span>
+                                        <span class="notify-title">You have <?php echo e(auth::user()->unreadnotifications->count()); ?> new notifications</span>
 
-                                        <a style="color: red" class="dropdown-item" href="{{route('markRead')}}">Mark all as read</a>
+                                        <a style="color: red" class="dropdown-item" href="<?php echo e(route('markRead')); ?>">Mark all as read</a>
 
                                         <div class="nofity-list">
-                                             @foreach (auth()->user()->unreadnotifications as $notification)
-                                            <a href="{{route($notification->data['refrence'])}}" class="notify-item">
+                                             <?php $__currentLoopData = auth()->user()->unreadnotifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $notification): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <a href="<?php echo e(route($notification->data['refrence'])); ?>" class="notify-item">
                                                 <div class="notify-thumb"><i class="ti-key btn-danger"></i></div>
                                                 <div class="notify-text">
-                                                    <p>{{$notification->data['data']}}</p>
+                                                    <p><?php echo e($notification->data['data']); ?></p>
                                                     </div>
                                             </a>
-                                            @endforeach
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
-                                            @foreach (auth()->user()->readnotifications as $notification)
-                                            <a href="{{route($notification->data['refrence'])}}" class="notify-item">
+                                            <?php $__currentLoopData = auth()->user()->readnotifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $notification): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <a href="<?php echo e(route($notification->data['refrence'])); ?>" class="notify-item">
                                                 <div class="notify-thumb"><i class="ti-key btn-danger"></i></div>
                                                 <div class="notify-text">
-                                                    <p>{{$notification->data['data']}}</p>
+                                                    <p><?php echo e($notification->data['data']); ?></p>
                                                     </div>
                                             </a>
-                                            @endforeach
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         </div>
                                     </div>
                                 </li>
@@ -208,16 +208,17 @@
 
 
                                 <li>
-                                    <h4 style="color: #5768ad;" class="user-name dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->name }} <i class="fa fa-angle-down"></i></h4>
+                                    <h4 style="color: #5768ad;" class="user-name dropdown-toggle" data-toggle="dropdown"><?php echo e(Auth::user()->name); ?> <i class="fa fa-angle-down"></i></h4>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                        <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
                                            onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
+                                            <?php echo e(__('Logout')); ?>
+
                                         </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
-                                            @csrf
+                                        <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" >
+                                            <?php echo csrf_field(); ?>
                                         </form>
                                     </div>
                                 </li>
@@ -228,7 +229,7 @@
             <!-- header area end -->
 
 
-            @yield('content')
+            <?php echo $__env->yieldContent('content'); ?>
 
         </div>
 
@@ -257,3 +258,4 @@
 </body>
 
 </html>
+<?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\Sahayak\sahaayak\resources\views/layouts/dashboard.blade.php ENDPATH**/ ?>

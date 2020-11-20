@@ -1,10 +1,10 @@
-@extends('layouts.layout')
 
-@section('name')
+
+<?php $__env->startSection('name'); ?>
     Team
-@endsection
+<?php $__env->stopSection(); ?>
 
-    @section('content')
+    <?php $__env->startSection('content'); ?>
 
     
 
@@ -16,7 +16,7 @@
                     <div class="breadcrumb__text">
                         <h2>Meet Our Team</h2>
                         <div class="breadcrumb__widget">
-                            <a href="{{ url('/') }}">Home</a>
+                            <a href="<?php echo e(url('/')); ?>">Home</a>
                             <span>Team</span>
                         </div>
                     </div>
@@ -40,23 +40,23 @@
             </div>
             <div class="row">
                 <div class="team__slider owl-carousel">
-                    @foreach($counsellors as $counsellor)
+                    <?php $__currentLoopData = $counsellors; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $counsellor): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <div class="col-lg-6">
                             <div class="team__item">
                                 <div class="team__item__pic">
-                                    <img src="{{ asset('/img/counsellors/'.$counsellor->image) }}" alt="" width="320" height="323">
+                                    <img src="<?php echo e(asset('/img/counsellors/'.$counsellor->image)); ?>" alt="" width="320" height="323">
                                 </div>
                                 <div class="team__item__text">
                                     <div class="team__item__title">
-                                        <h4>{{ $counsellor->name }}</h4>
-                                        <span>{{ $counsellor->profession }} </span>
+                                        <h4><?php echo e($counsellor->name); ?></h4>
+                                        <span><?php echo e($counsellor->profession); ?> </span>
                                     </div>
-                                    <p>{{ $counsellor->bio }}<br>
-                                        Email: {{ $counsellor->email }}</p>
+                                    <p><?php echo e($counsellor->bio); ?><br>
+                                        Email: <?php echo e($counsellor->email); ?></p>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
             </div>
         </div>
@@ -338,4 +338,5 @@
         </div>
     </div>
     <!-- Map End -->
-    @endsection
+    <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\Sahayak\sahaayak\resources\views/team.blade.php ENDPATH**/ ?>

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use App\Counsellor;
 use Storage;
 use Auth;
+use Carbon\Carbon;
 
 class CounsellorController extends Controller
 {
@@ -29,7 +30,7 @@ class CounsellorController extends Controller
         #for image upload
         if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $name = $request->college_id.'_'.$request->name.'.'.$image->getClientOriginalExtension();
+            $name = Carbon::now()->timestamp.'_'.request()->college_id.'_'.request()->name.'.'.$image->getClientOriginalExtension();
             $destinationPath = public_path('/img/counsellors/');
             $image->move($destinationPath, $name);
             $counsellor->image=$name;
@@ -60,6 +61,7 @@ class CounsellorController extends Controller
     }
     public function updateDetails(Counsellor $counsellor)
     {
+
         $user = Auth::user();
 
         $data=request()->validate(
@@ -68,19 +70,32 @@ class CounsellorController extends Controller
                 'name'=>'required',
                 'college_id'=>'required',
                 'email'=>'required',
-                'profession'=>'required'
+                'profession'=>'required',
+                'calendar_url' => 'required'
             ]);
 
         #for image upload
         if (request()->hasFile('image')) {
-            $counsellor->image->delete();
-            $image = request()->file('image');
-            $name = request()->college_id.'_'.$request->name.'.'.$image->getClientOriginalExtension();
+
             $destinationPath = public_path('/img/counsellors/');
+            //code for remove old file
+            if($counsellor->image != ''  && $counsellor->image != null){
+                $image_old = $destinationPath.$counsellor->image;
+                unlink($image_old);
+            }
+            $image = request()->image;
+            $name = Carbon::now()->timestamp.'_'.request()->college_id.'_'.request()->name.'.'.$image->getClientOriginalExtension();
             $image->move($destinationPath, $name);
-            $data['image'] = basename($destinationPath);
+            $counsellor->image=$name;
         }
-        $counsellor->update($data);
+        $counsellor->name =  request()->name;
+        $counsellor->college_id =  request()->college_id;
+        $counsellor->email =  request()->email;
+        $counsellor->profession =  request()->profession;
+        $counsellor->bio =  request()->bio;
+        $counsellor->achievements =  request()->achievements;
+        $counsellor->calendar_url =  request()->calendar_url;
+        $counsellor->save();
         return redirect()->route('adminDashboard');
     }
 
