@@ -11,6 +11,8 @@ use App\User;
 use App\Notifications\NewsNotification;
 use App\Traits\NotificationTrait;
 use Storage;
+use Session;
+
 class PlaylistController extends Controller
 {
 

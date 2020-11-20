@@ -23,6 +23,7 @@ use App\dialyquotes;
 use Spatie\Analytics\Period;
 use App\Playlist;
 use App\Worry;
+use Session;
 //use Spatie\Analytics\Analytics;
 
 
@@ -51,14 +52,17 @@ class HomeController extends Controller
         $quote->save();
         $dialyquote=$request->quote;
         $featurednews=News::orderBy('created_at','desc')->get();
-        return view('welcome')->with(compact('dialyquote','featurednews'));
+        $counsellors = Counsellor::all();
+        Session::flash('alert-success', 'DialyQuote Added Succesfully'); 
+        return view('welcome')->with(compact('dialyquote','featurednews','counsellors'));
     }
 
      public function welcome(){
         $dialyquote=dialyquotes::all()->last()->quote;
         $featurednews=News::orderBy('created_at','desc')->get();
+        $counsellors=Counsellor::all();
         #dd($featurednews);
-        return view('welcome')->with(compact('dialyquote','featurednews'));
+        return view('welcome')->with(compact('dialyquote','featurednews','counsellors'));
     }
 
 

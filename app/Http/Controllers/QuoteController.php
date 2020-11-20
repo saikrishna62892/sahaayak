@@ -11,6 +11,8 @@ use App\Notifications\InspiremeNotification;
 use App\User;
 use App\Traits\NotificationTrait;
 use Storage;
+use Session;
+
 class QuoteController extends Controller
 {
 

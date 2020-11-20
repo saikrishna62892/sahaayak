@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Suggestion;
 use Auth;
 use DB;
+use Session;
+
 
 class suggestion_controller extends Controller
 {

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Subscription;
+use Session;
+
+
 class SubscriptionController extends Controller
 {
 	public function __construct()

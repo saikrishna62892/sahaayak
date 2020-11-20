@@ -6,6 +6,8 @@ use Cohensive\Embed\Facades\Embed;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Video;
+use Session;
+
 class HopeBoxController extends Controller
 {   
     

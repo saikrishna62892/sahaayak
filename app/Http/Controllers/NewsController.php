@@ -10,6 +10,8 @@ use App\Notifications\NewsNotification;
 use App\User;
 use App\Traits\NotificationTrait;
 use Storage;
+use Session;
+
 class NewsController extends Controller
 {
 

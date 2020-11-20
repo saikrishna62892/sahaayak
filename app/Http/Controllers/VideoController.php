@@ -8,6 +8,8 @@ use App\Video;
 use App\Notifications\VideoNotification;
 use App\User;
 use App\Traits\NotificationTrait;
+use Session;
+
 class VideoController extends Controller
 {
 

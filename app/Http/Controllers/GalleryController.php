@@ -11,6 +11,7 @@ use App\User;
 use App\Traits\NotificationTrait;
 use Storage;
 use Auth;
+use Session;
 
 class GalleryController extends Controller
 {

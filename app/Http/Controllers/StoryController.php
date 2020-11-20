@@ -8,6 +8,8 @@ use DB;
 use Auth;
 use App\News;
 use Storage;
+use Session;
+
 class StoryController extends Controller
 {
     public function __construct()

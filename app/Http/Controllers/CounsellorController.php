@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use App\Counsellor;
 use Storage;
 use Auth;
+use Session;
 use Carbon\Carbon;
 
 class CounsellorController extends Controller
@@ -43,7 +44,8 @@ class CounsellorController extends Controller
         $counsellor->bio=$request->bio;
         $counsellor->achievements=$request->achievements;        
         $counsellor->save();
-        return redirect()->back()->with('message', 'Posted Succcesfully');
+        Session::flash('alert-success', 'Counsellor Details Added Successfully');
+        return redirect()->back();
     }
     public function getDetails(Counsellor $counsellor)
     {
@@ -96,6 +98,7 @@ class CounsellorController extends Controller
         $counsellor->achievements =  request()->achievements;
         $counsellor->calendar_url =  request()->calendar_url;
         $counsellor->save();
+        Session::flash('alert-success', 'Counsellor Details Edited Successfully'); 
         return redirect()->route('adminDashboard');
     }
 

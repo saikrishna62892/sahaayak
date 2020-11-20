@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Mail\WelcomeMail;
 use Illuminate\Support\Facades\Mail;
 use Cohensive\Embed\Facades\Embed;
+use Session;
+
 class CustomerController extends Controller
 {
 	public function getEmbedHtml($vid)

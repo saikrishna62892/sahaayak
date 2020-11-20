@@ -11,6 +11,8 @@ use App\Notifications\TalksNotification;
 use App\User;
 use App\Traits\NotificationTrait;
 use Storage;
+use Session;
+
 class TalkController extends Controller
 {
 
@@ -62,7 +64,8 @@ class TalkController extends Controller
     }
     $talk->save();
     $this->sendTalksNotif($talk->title);
-    return redirect()->back()->with('message', 'Posted Succcesfully');
+    Session::flash('alert-success', 'Expert Talk Added Succesfully'); 
+    return redirect()->back();
 	}
 
 	public function display()
@@ -88,6 +91,7 @@ class TalkController extends Controller
     {
         Storage::disk('s3')->delete('uploads/talk/img/'.$talk->image);
         $talk->delete();
+        Session::flash('alert-info', 'Expert Talk Deleted Succesfully');
         return redirect()->back();
     }
 
@@ -100,7 +104,7 @@ class TalkController extends Controller
 
         $data=request()->validate(
             [
-                'title' => 'required|min:20',
+            'title' => 'required|min:20',
             'content' => 'required',
             'category' => 'required',
             'image' => 'file|image|max:3000',
@@ -119,6 +123,7 @@ class TalkController extends Controller
         }
 
         $talk->update($data);
+        Session::flash('alert-success', 'Expert Talk Edited Succesfully');
         return redirect()->route('adminDashboard');
     }
 

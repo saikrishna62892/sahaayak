@@ -14,6 +14,7 @@ use App\Notifications\AppointmentAcceptedNotification;
 use App\Notifications\AppointmentReportNotification;
 use App\User;
 use App\Traits\NotificationTrait;
+use Session;
 
 class appointment_controller extends Controller
 {
@@ -60,6 +61,7 @@ class appointment_controller extends Controller
         $appointment->user_id=$user->id;
         $appointment->save();
         $this->sendAppointmentReceivedNotif($appointment->name);
+        Session::flash('alert-success', 'Appointment Created Succesfully Please check your Google Calendar'); 
         return redirect()->back()->with('message', 'Posted Succcesfully'); 
     }
 
@@ -75,7 +77,8 @@ class appointment_controller extends Controller
             return redirect()->back()->with('message','Sorry,User already alloted');
         }*/
         $appointment->update(['accept' => 1]);
-        return redirect()->back()->with('message','User Appointment accepted');
+        Session::flash('alert-success', 'User Appointment accepted'); 
+        return redirect()->back();
     }
 
     public function reportForm(Appointment $appointment)
@@ -100,6 +103,7 @@ class appointment_controller extends Controller
         $pdf = PDF::loadView('appointment.generateReport',compact('data'));
         $user = User::find($appointment->user_id);
         $user->notify(new AppointmentReportNotification($pdf));
+        Session::flash('alert-success', 'CaseHistory Added Succesfully'); 
         return redirect()->back();
     }
 

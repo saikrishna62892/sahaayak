@@ -9,6 +9,8 @@ use App\Survey;
 use App\Question;
 use App\User;
 use Auth;
+use Session;
+
 class QuestionController extends Controller
 {
     public function __construct()

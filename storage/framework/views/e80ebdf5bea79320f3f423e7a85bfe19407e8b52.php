@@ -154,11 +154,12 @@
                             <a href="<?php echo e(url('/')); ?>"><img data-step="1" data-intro="Our Brand new logo and motto which describes how we care about you." data-position="right" src="/img/logo.png" alt="Sahaayak" width="240" height="60"></a>
                         </div>
                     </div>
-                    <div class="col-lg-9 col-md-9">
+                    <div class="col-lg-7 col-md-7">
                         <div class="header__top__widget">
                             <?php if(auth()->guard()->guest()): ?>
                                 <ul>
                                     <li>WRITE US: <a href="mailto:sgc@nitc.ac.in" target="_blank" style="color: #5768ad;">sgc@nitc.ac.in</a><br>
+
                                 </ul>
                                 <a href="<?php echo e(route('login')); ?>" class="primary-btn">Login</a>
                                 <?php if(Route::has('register')): ?>
@@ -193,9 +194,13 @@
                                     </form>
                                   </div>
                                 </div>
+
                             <?php endif; ?>
                         </div>
                     </div>
+                    <div class="col-lg-2 col-md-2">
+                    </div>
+
 
                 </div>
                 <div class="canvas__open">
@@ -281,8 +286,8 @@
                     <div class="footer__about">
                         <img src="/img/footer-logo.png" alt="Sahaayak" width="240" height="60">
                         <ul class="footer-address">
-                            <li><i class="fa fa-envelope"></i>sgc@nitc.ac.in</li>
-                            <li><i class="fa fa-location-arrow"></i> NIT Calicut</li>
+                            <li><i class="fa fa-envelope"></i><a href="sgc@nitc.ac.in" target="_blank" style="color: #5768ad;">sgc@nitc.ac.in</a></li>
+                            <li><i class="fa fa-location-arrow"></i> <a href="http://nitc.ac.in/" target="_blank" style="color: #5768ad;"> NIT Calicut</li>
                         </ul>
                         <!--<h5 style="color:white;">Subscribe</h5>--><br>
 

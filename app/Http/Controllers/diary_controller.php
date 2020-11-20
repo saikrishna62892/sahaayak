@@ -9,6 +9,8 @@ use App\Story;
 use Auth;
 use DB;
 use Storage;
+use Session;
+
 class diary_controller extends Controller
 {
     public function __construct()

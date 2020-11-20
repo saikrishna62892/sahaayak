@@ -56,7 +56,7 @@
 
 			<div class="row">
 				<div class="btn silk-icon visible">
-					<a href="{{ url('/') }}" style="color: #fff;" class="text">Home</a></span>
+					<a href="<?php echo e(url('/')); ?>" style="color: #fff;" class="text">Home</a></span>
 				</div>
 				<div class="btn silk-icon visible" data-bind="click: toggleFullscreen, css: { visible: notPristine }">
 					<div class="contents"><i class="icon-fullscreen"></i></div>
@@ -253,3 +253,4 @@
 
 
 </body></html>
+<?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\Sahayak\sahaayak\resources\views/interactive_drawing.blade.php ENDPATH**/ ?>

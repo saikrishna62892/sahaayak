@@ -10,6 +10,7 @@ use Socialite;
 use App\User;
 use Auth;
 use DB;
+use Session;
 
 class LoginController extends Controller
 {
@@ -54,6 +55,7 @@ class LoginController extends Controller
         if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
         {
             if (auth()->user()->is_admin == 1) {
+                Session::flash('alert-success', 'Welcome '.auth()->user()->name);
                 return redirect()->route('adminDashboard');
             }
             else if(auth()->user()->is_Volunteer == 1){

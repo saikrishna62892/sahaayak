@@ -49,11 +49,15 @@
 
 
 
-<!-- flash messages section -->
-<!--
-@if(session()->has('message'))
-<div class="alert alert-success">{{ session()->get('message')}}</div>
-@endif-->
+<!-- flash messages section begin -->
+    <div class="flash-message">
+      @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+        @if(Session::has('alert-' . $msg))
+            <center><p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }}</p></center>
+        @endif
+      @endforeach
+    </div>
+<!-- flash messages section end -->
 
 
 <!-- trading history area start -->

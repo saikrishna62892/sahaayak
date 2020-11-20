@@ -26,6 +26,15 @@
             <div class="hero__items set-bg" data-setbg="/img/hero/hero-1.jpg">
                 <div class="container">
                     <div class="row">
+                        <!-- flash messages section begin -->
+                            <div class="flash-message">
+                              @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+                                @if(Session::has('alert-' . $msg))
+                                    <center><p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }}</p></center>
+                                @endif
+                              @endforeach
+                            </div>
+                        <!-- flash messages section end -->
                         <div class="col-lg-8">
                             <div class="hero__text">
                                 <span>We Share coz We Care</span>

@@ -11,6 +11,8 @@ use Storage;
 use PDF;
 use App\Mail\RejectVolunteerMail;
 use Illuminate\Support\Facades\Mail;
+use Session;
+
 class VolunteerController extends Controller
 {
     public function __construct()

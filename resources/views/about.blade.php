@@ -186,7 +186,7 @@
                         </div>
                         <div class="chooseus__item__text">
                             <h2 class="choose-counter">90</h2>
-                            <p>Percent Stress rate in Inda</p>
+                            <p>Percent Stress rate in India</p>
                         </div>
                     </div>
                     <div class="chooseus__item">
