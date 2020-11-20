@@ -187,7 +187,8 @@ Route::get('volunteer/waitingApproval',function()
 //end of dileep added routes
 
 Route::get('team', function () {
-    return view('team');
+    $counsellors=Counsellor::all();
+    return view('team')->with(compact('counsellors'));
 });
 
 Route::get('inspire_me', function () {

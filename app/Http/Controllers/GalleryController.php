@@ -46,7 +46,7 @@ class GalleryController extends Controller
     	#for image upload
 	    if ($request->hasFile('image')) {
 	        $image = $request->file('image');
-	        $name = $user->id.'_'.$temp.'.'.$image->getClientOriginalExtension();
+	        $name = Carbon::now()->timestamp.'_'.request()->college_id.'_'.request()->name.'.'.$image->getClientOriginalExtension();
 	        $destinationPath = public_path('/img/galleries/');
 	        $image->move($destinationPath, $name);
 	        $gallery->image=$name;

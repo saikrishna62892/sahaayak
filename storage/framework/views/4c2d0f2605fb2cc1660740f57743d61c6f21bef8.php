@@ -1,10 +1,10 @@
-@extends('layouts.layout')
 
-@section('name')
+
+<?php $__env->startSection('name'); ?>
     Team
-@endsection
+<?php $__env->stopSection(); ?>
 
-    @section('content')
+    <?php $__env->startSection('content'); ?>
 
     
 
@@ -16,7 +16,7 @@
                     <div class="breadcrumb__text">
                         <h2>Meet Our Team</h2>
                         <div class="breadcrumb__widget">
-                            <a href="{{ url('/') }}">Home</a>
+                            <a href="<?php echo e(url('/')); ?>">Home</a>
                             <span>Team</span>
                         </div>
                     </div>
@@ -40,23 +40,23 @@
             </div>
             <div class="row">
                 <div class="team__slider owl-carousel">
-                    @foreach($counsellors as $counsellor)
+                    <?php $__currentLoopData = $counsellors; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $counsellor): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <div class="col-lg-6">
                             <div class="team__item">
                                 <div class="team__item__pic">
-                                    <img src="{{ asset('/img/counsellors/'.$counsellor->image) }}" alt="" width="320" height="323">
+                                    <img src="<?php echo e(asset('/img/counsellors/'.$counsellor->image)); ?>" alt="" width="320" height="323">
                                 </div>
                                 <div class="team__item__text">
                                     <div class="team__item__title">
-                                        <h4>{{ $counsellor->name }}</h4>
-                                        <span>{{ $counsellor->profession }} </span>
+                                        <h4><?php echo e($counsellor->name); ?></h4>
+                                        <span><?php echo e($counsellor->profession); ?> </span>
                                     </div>
-                                    <p>{{ $counsellor->bio }}<br>
-                                        Email: {{ $counsellor->email }}</p>
+                                    <p><?php echo e($counsellor->bio); ?><br>
+                                        Email: <?php echo e($counsellor->email); ?></p>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
             </div>
         </div>
@@ -87,10 +87,7 @@
                                     <h4>Dr. S. D. Madhu Kumar</h4>
                                     <span>Dean and Professor of CSED</span>
                                 </div>
-                                <div class="team__item__social">
-                                    <a href="mailto:madhu@nitc.ac.in" target="_blank"><i class="fa fa-google"></i></a>
-                                    <a href="0495 2286806" target="_blank"><i class="fa fa-phone"></i></a>                                    
-                                </div>
+                                <p>Phone: 0495 2286806<br>Gmail: madhu@nitc.ac.in</p>
                             </div>
                         </div>
                     </div>
@@ -104,10 +101,7 @@
                                     <h4>Ms. Lyla B Das</h4>
                                     <span>Associate Professor, ECED</span>
                                 </div>
-                                <div class="team__item__social">
-                                    <a href="mailto:lbd@nitc.ac.in" target="_blank"><i class="fa fa-google"></i></a>
-                                    <a href="9447415558" target="_blank"><i class="fa fa-phone"></i></a>                                    
-                                </div>
+                                <p>Phone:9447415558<br>Gmail: lbd@nitc.ac.in</p>
                             </div>
                         </div>
                     </div>
@@ -121,10 +115,7 @@
                                     <h4>Dr. Anu Mary Chacko</h4>
                                     <span>Associate Professor, CSED</span>
                                 </div>
-                                <div class="team__item__social">
-                                    <a href="mailto:anu.chacko@nitc.ac.in" target="_blank"><i class="fa fa-google"></i></a>
-                                    <a href="9496135685" target="_blank"><i class="fa fa-phone"></i></a>                                    
-                                </div>
+                                <p>Phone: 9496135685<br>Gmail: anu.chacko@nitc.ac.in</p>
                             </div>
                         </div>
                     </div>
@@ -202,7 +193,7 @@
                                     <h4>Venkat Govardhan Dasari</h4>
                                     <span>M.Tech at NIT Calicut</span>
                                 </div>
-                                <p>I am neither clever nor gifted, just <br> a curious person who loves to learn.</p>
+                                <p>Pursuing M.Tech at NIT Calicut<br> Wants to become SDE.</p>
                                 <div class="team__item__social">
                                     <a href="https://www.linkedin.com/in/venkat-govardhan-dasari-a62586134" target="_blank"><i class="fa fa-linkedin"></i></a>
                                     <a href="mailto:ven1997kat@gmail.com" target="_blank"><i class="fa fa-google"></i></a>
@@ -225,7 +216,7 @@
                                     <h4>John Benyen Munga</h4>
                                     <span>M.Tech at NIT Calicut</span>
                                 </div>
-                                <p>A Hard-working Team guy <br> Aspiring to become SDE.</p>
+                                <p>A Hard-working Team guy <br> Aspires to become SDE.</p>
                                 <div class="team__item__social">
                                     <a href="https://www.linkedin.com/in/john-benyen/" target="_blank"><i class="fa fa-linkedin"></i></a>
                                     <a href="mailto:johnbenyen162@gmail.com" target="_blank"><i class="fa fa-google"></i></a>
@@ -273,8 +264,11 @@
                                 </div>
                                 <p>Passionate Content Writer<br>Works in Conquerors Hyderabad.</p>
                                 <div class="team__item__social">
-                                    <a href="https://www.linkedin.com/in/spandana-priya-312225191" target="_blank"><i class="fa fa-linkedin"></i></a>
-                                    <a href="david.martha1996@gmail.com" target="_blank"><i class="fa fa-google"></i></a>
+                                    <a href="https://www.linkedin.com/in/saikrishna62892/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                    <a href="mailto:saikrishna62892@gmail.com" target="_blank"><i class="fa fa-google"></i></a>
+                                    <a href="https://www.instagram.com/saikrishna62892/" target="_blank"><i class="fa fa-instagram"></i></a>
+                                    <a href="https://www.facebook.com/saikrishna62892" target="
+                                    _blank"><i class="fa fa-facebook"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -289,11 +283,7 @@
                                     <h4>Aswathi Mohan</h4>
                                     <span>Project co-ordinator</span>
                                 </div>
-                                <p>Working as project coordinator <br> in NIT Calicut.</p>
-                                <div class="team__item__social">
-                                    <a href="tel:9497307550" target="_blank"><i class="fa fa-phone"></i></a>
-                                    <a href="aswathipranavam@gmail.com<" target="_blank"><i class="fa fa-google"></i></a>
-                                </div>
+                                <p>Phone: 9497307550<br>Gmail: aswathipranavam@gmail.com<br> <br></p>
                             </div>
                         </div>
                     </div>
@@ -311,28 +301,28 @@
                     <div class="contact__widget__item">
                         <span class="icon_phone"></span>
                         <h4>Call to</h4>
-                        <a href="tel:0495-228-6180" style="color:black;">0495-228-6180</a>
+                        <a href="tel:9553843804" style="color:black;">+91 955-384-3804</a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="contact__widget__item">
                         <span class="icon_mail_alt"></span>
                         <h4>Mail to</h4>
-                        <a href="mailto:sgc@nitc.ac.in" style="color:black;">Mail Handle</a>
+                        <a href="mailto:sahaayakofficial@gmail.com" style="color:black;">Mail Handle</a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="contact__widget__item">
                         <span class="social_facebook"></span>
                         <h4>Like at</h4>
-                        <a href="https://www.facebook.com/NIT.Calicut.Kerala" target="_blank" style="color:black;">Facebook Handle</a>
+                        <a href="https://www.facebook.com/saikrishna62892" style="color:black;">Facebook Handle</a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="contact__widget__item">
                         <span class="social_instagram"></span>
                         <h4>DM at</h4>
-                        <a href="https://www.instagram.com/nitcofficial/?hl=en" target="_blank" style="color:black;">Instagram Handle</a>
+                        <a href="https://www.instagram.com/saikrishna62892/" style="color:black;">Instagram Handle</a>
                     </div>
                 </div>
             </div>
@@ -348,4 +338,5 @@
         </div>
     </div>
     <!-- Map End -->
-    @endsection
+    <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\Sahayak\sahaayak\resources\views/team.blade.php ENDPATH**/ ?>
