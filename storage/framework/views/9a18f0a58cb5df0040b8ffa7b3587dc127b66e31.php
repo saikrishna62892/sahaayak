@@ -7,7 +7,7 @@
     <meta name="keywords" content="Directing, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sahaayak | @yield('name')</title>
+    <title>Sahaayak | <?php echo $__env->yieldContent('name'); ?></title>
     <link rel="icon" type="image/png" href="/img/icon.png"/>
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -46,48 +46,49 @@
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu">
         <div class="offcanvas__logo">
-            <a href="{{ url('/') }}"><img src="/img/logo.png" alt="Sahaayak" width="240" height="60"></a>
+            <a href="<?php echo e(url('/')); ?>"><img src="/img/logo.png" alt="Sahaayak" width="240" height="60"></a>
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__widget">
             <ul>
                 <li>WRITE US: <a href="mailto:sgc@nitc.ac.in" target="_blank" style="color: #5768ad;">sgc@nitc.ac.in</li>
             </ul>
-            @guest
-            <a href="{{ route('login') }}" class="primary-btn">Login</a>
-            @if (Route::has('register'))
-                <a href="{{ route('register') }}" class="primary-btn">Join us</a>
-            @endif
-            @else
-                    @if(auth()->user()->is_Volunteer == 1 )
-                        @if(auth()->user()->step2_done == 0)
-                        <a class="dropdown-item" href="/register/step2/{{auth()->user()->id}}" style="color: #5768ad;">Complete step2</a>
-                        @elseif(auth()->user()->volunteer->is_Approved == 0)
+            <?php if(auth()->guard()->guest()): ?>
+            <a href="<?php echo e(route('login')); ?>" class="primary-btn">Login</a>
+            <?php if(Route::has('register')): ?>
+                <a href="<?php echo e(route('register')); ?>" class="primary-btn">Join us</a>
+            <?php endif; ?>
+            <?php else: ?>
+                    <?php if(auth()->user()->is_Volunteer == 1 ): ?>
+                        <?php if(auth()->user()->step2_done == 0): ?>
+                        <a class="dropdown-item" href="/register/step2/<?php echo e(auth()->user()->id); ?>" style="color: #5768ad;">Complete step2</a>
+                        <?php elseif(auth()->user()->volunteer->is_Approved == 0): ?>
                         <a class="dropdown-item" href="/volunteer/waitingApproval" style="color: #5768ad;">Return to Dashboard</a>
-                        @else
+                        <?php else: ?>
                         <a class="dropdown-item" href="/volunteer/home" style="color: #5768ad;">Return to Dashboard</a>
-                        @endif
-                    @elseif(auth()->user()->is_admin == 1)
+                        <?php endif; ?>
+                    <?php elseif(auth()->user()->is_admin == 1): ?>
                     <a class="dropdown-item" href="/admin/home" style="color: #5768ad;">Return to Dashboard</a>
-                    @else
+                    <?php else: ?>
                     <a class="dropdown-item" href="/user/home" style="color: #5768ad;">Return to Dashboard</a>
-                    @endif
-                    <a class="dropdown-item" href="{{ route('logout') }}"
+                    <?php endif; ?>
+                    <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
                            onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();" style="color: #5768ad;">
-                            {{ __('Logout') }}
+                            <?php echo e(__('Logout')); ?>
+
                     </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" >
-                    @csrf
+                    <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" >
+                    <?php echo csrf_field(); ?>
                     </form>
 
-            @endguest
+            <?php endif; ?>
         </div>
         
         <nav class="header__menu">
             <ul class="mobile-menu">
-                <li class="active"><a href="{{ url('/') }}">Home</a></li>
-                                <li><a href="{{ url('about') }}">About</a></li>
+                <li class="active"><a href="<?php echo e(url('/')); ?>">Home</a></li>
+                                <li><a href="<?php echo e(url('about')); ?>">About</a></li>
                                 <li><a href="#">Learn</a>
                                     <ul class="dropdown">
                                          <li><a href="/home/learn/depression/1">Depression</a></li>
@@ -103,32 +104,32 @@
                                 </li>
                                 <li><a href="#">Assessment</a>
                                     <ul class="dropdown">
-                                    @foreach($questionnaires as $questionnaire)
-                                        <li><a href="/home/questionnaires/{{$questionnaire->id}}/questions">{{$questionnaire->questionnaireTitle}}</a></li>
-                                    @endforeach
+                                    <?php $__currentLoopData = $questionnaires; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $questionnaire): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <li><a href="/home/questionnaires/<?php echo e($questionnaire->id); ?>/questions"><?php echo e($questionnaire->questionnaireTitle); ?></a></li>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </ul>
                                 </li>
-                                <li><a href="{{ url('/#talk_to_us') }}">Talk to Us</a></li>
+                                <li><a href="<?php echo e(url('/#talk_to_us')); ?>">Talk to Us</a></li>
                                 <li><a href="#">Blog</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('displayStories') }}">Discover Stories</a></li>
-                                        <li><a href="{{ url('displayTalks') }}">Expert Talks</a></li>
+                                        <li><a href="<?php echo e(url('displayStories')); ?>">Discover Stories</a></li>
+                                        <li><a href="<?php echo e(url('displayTalks')); ?>">Expert Talks</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="{{ url('displayNews') }}">News</a></li>
+                                <li><a href="<?php echo e(url('displayNews')); ?>">News</a></li>
                                 <li><a href="#">Hope Box</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('interactiveDrawing') }}">Interactive Drawing</a></li>
-                                        <li><a href="{{ url('inspire_me') }}">Inspire Me</a></li>
+                                        <li><a href="<?php echo e(url('interactiveDrawing')); ?>">Interactive Drawing</a></li>
+                                        <li><a href="<?php echo e(url('inspire_me')); ?>">Inspire Me</a></li>
                                         <li><a href="/videos">Videos</a></li>
-                                        <li><a href="{{ url('playlists') }}">Playlists</a></li>
+                                        <li><a href="<?php echo e(url('playlists')); ?>">Playlists</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="{{ url('team') }}">Team</a>
+                                <li><a href="<?php echo e(url('team')); ?>">Team</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('team#counsellors') }}">Counsellors</a></li>
-                                        <li><a href="{{ url('team#sgc') }}">Student Guidance Cell</a></li>
-                                        <li><a href="{{ url('team#team') }}">Team</a></li>
+                                        <li><a href="<?php echo e(url('team#counsellors')); ?>">Counsellors</a></li>
+                                        <li><a href="<?php echo e(url('team#sgc')); ?>">Student Guidance Cell</a></li>
+                                        <li><a href="<?php echo e(url('team#team')); ?>">Team</a></li>
                                     </ul>
                                 </li>
             </ul>
@@ -150,57 +151,53 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-3">
                         <div class="header__logo">
-                            <a href="{{ url('/') }}"><img data-step="1" data-intro="Our Brand new logo and motto which describes how we care about you." data-position="right" src="/img/logo.png" alt="Sahaayak" width="240" height="60"></a>
+                            <a href="<?php echo e(url('/')); ?>"><img data-step="1" data-intro="Our Brand new logo and motto which describes how we care about you." data-position="right" src="/img/logo.png" alt="Sahaayak" width="240" height="60"></a>
                         </div>
                     </div>
                     <div class="col-lg-7 col-md-7">
                         <div class="header__top__widget">
-                            @guest
-                                <a href="{{ route('login') }}" class="primary-btn">Login</a>
-
-                                @if (Route::has('register'))
-                                    <a href="{{ route('register') }}" class="primary-btn">Join us</a>
-                                @endif
-                                @else
-                                <div class="dropdown">
-                                  <button class="btn primary-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</button>
-                                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    @if(auth()->user()->is_Volunteer == 1 )
-                                        @if(auth()->user()->step2_done == 0)
-                                        <a class="dropdown-item" href="/register/step2/{{auth()->user()->id}}">Complete step2</a>
-                                        @elseif(auth()->user()->volunteer->is_Approved == 0)
-                                        <a class="dropdown-item" href="/volunteer/waitingApproval">Return to Dashboard</a>
-                                        @else
-                                        <a class="dropdown-item" href="/volunteer/home">Return to Dashboard</a>
-                                        @endif
-                                    @elseif(auth()->user()->is_admin == 1)
-                                    <a class="dropdown-item" href="/admin/home">Return to Dashboard</a>
-                                    @else
-                                    <a class="dropdown-item" href="/user/home">Return to Dashboard</a>
-                                    @endif
+                            <?php if(auth()->guard()->guest()): ?>
                                 
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                <a href="<?php echo e(route('login')); ?>" class="primary-btn">Login</a>
+
+                                <?php if(Route::has('register')): ?>
+                                    <a href="<?php echo e(route('register')); ?>" class="primary-btn">Join us</a>
+                                <?php endif; ?>
+                                <?php else: ?>
+                                <div class="dropdown">
+                                  <button class="btn primary-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo e(Auth::user()->name); ?></button>
+                                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <?php if(auth()->user()->is_Volunteer == 1 ): ?>
+                                        <?php if(auth()->user()->step2_done == 0): ?>
+                                        <a class="dropdown-item" href="/register/step2/<?php echo e(auth()->user()->id); ?>">Complete step2</a>
+                                        <?php elseif(auth()->user()->volunteer->is_Approved == 0): ?>
+                                        <a class="dropdown-item" href="/volunteer/waitingApproval">Return to Dashboard</a>
+                                        <?php else: ?>
+                                        <a class="dropdown-item" href="/volunteer/home">Return to Dashboard</a>
+                                        <?php endif; ?>
+                                    <?php elseif(auth()->user()->is_admin == 1): ?>
+                                    <a class="dropdown-item" href="/admin/home">Return to Dashboard</a>
+                                    <?php else: ?>
+                                    <a class="dropdown-item" href="/user/home">Return to Dashboard</a>
+                                    <?php endif; ?>
+                                
+                                    <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
                                            onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
+                                            <?php echo e(__('Logout')); ?>
+
                                     </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" >
-                                        @csrf
+                                    <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" >
+                                        <?php echo csrf_field(); ?>
                                     </form>
                                   </div>
                                 </div>
-
-                            @endguest
+                            <?php endif; ?>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-2">
-<<<<<<< HEAD
-                    </div>
-
-=======
                         <img src="/img/nitc1.png" width="280" height="102">
                     </div>
->>>>>>> 5ae15e05aa1e7d4483fbf08e0b099602f4ceec87
 
                 </div>
                 <div class="canvas__open">
@@ -215,8 +212,8 @@
                     <div class="col-lg-12 col-md-9">
                         <nav class="header__menu">
                             <ul>
-                                <li><a href="{{ url('/') }}">Home</a></li>
-                                <li><a href="{{ url('about') }}">About</a></li>
+                                <li><a href="<?php echo e(url('/')); ?>">Home</a></li>
+                                <li><a href="<?php echo e(url('about')); ?>">About</a></li>
                                 <li><a href="#">Learn</a>
                                     <ul class="dropdown">
                                         <li><a href="/home/learn/depression/1">Depression</a></li>
@@ -232,32 +229,32 @@
                                 </li>
                                 <li><a href="#">Assessment</a>
                                     <ul class="dropdown">
-                                    @foreach($questionnaires as $questionnaire)
-                                        <li><a href="/home/questionnaires/{{$questionnaire->id}}/questions">{{$questionnaire->questionnaireTitle}}</a></li>
-                                    @endforeach
+                                    <?php $__currentLoopData = $questionnaires; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $questionnaire): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <li><a href="/home/questionnaires/<?php echo e($questionnaire->id); ?>/questions"><?php echo e($questionnaire->questionnaireTitle); ?></a></li>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </ul>
                                 </li>
-                                <li><a href="{{ url('/#talk_to_us') }}">Talk to Us</a></li>
+                                <li><a href="<?php echo e(url('/#talk_to_us')); ?>">Talk to Us</a></li>
                                 <li><a href="#">Blog</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('displayStories') }}">Discover Stories</a></li>
-                                        <li><a href="{{ url('displayTalks') }}">Expert Talks</a></li>
+                                        <li><a href="<?php echo e(url('displayStories')); ?>">Discover Stories</a></li>
+                                        <li><a href="<?php echo e(url('displayTalks')); ?>">Expert Talks</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="{{ route('displayNews') }}">News</a></li>
+                                <li><a href="<?php echo e(route('displayNews')); ?>">News</a></li>
                                 <li><a href="#">Hope Box</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('interactiveDrawing') }}">Interactive Drawing</a></li>
-                                        <li><a href="{{ url('inspire_me') }}">Inspire Me</a></li>
+                                        <li><a href="<?php echo e(url('interactiveDrawing')); ?>">Interactive Drawing</a></li>
+                                        <li><a href="<?php echo e(url('inspire_me')); ?>">Inspire Me</a></li>
                                         <li><a href="/videos">Videos</a></li>
-                                        <li><a href="{{ url('playlists') }}">Playlists</a></li>
+                                        <li><a href="<?php echo e(url('playlists')); ?>">Playlists</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="{{ url('team') }}">Team</a>
+                                <li><a href="<?php echo e(url('team')); ?>">Team</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('team#counsellors') }}">Counsellors</a></li>
-                                        <li><a href="{{ url('team#sgc') }}">SGC</a></li>
-                                        <li><a href="{{ url('team#team') }}">Team</a></li>
+                                        <li><a href="<?php echo e(url('team#counsellors')); ?>">Counsellors</a></li>
+                                        <li><a href="<?php echo e(url('team#sgc')); ?>">SGC</a></li>
+                                        <li><a href="<?php echo e(url('team#team')); ?>">Team</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -272,7 +269,7 @@
 
 
 
-    @yield('content')
+    <?php echo $__env->yieldContent('content'); ?>
 
     <br>
 
@@ -289,14 +286,9 @@
                     <div class="footer__about">
                         <img src="/img/footer-logo.png" alt="Sahaayak" width="240" height="60">
                         <ul class="footer-address">
-<<<<<<< HEAD
-                            <li><i class="fa fa-envelope"></i><a href="sgc@nitc.ac.in" target="_blank" style="color: #5768ad;">sgc@nitc.ac.in</a></li>
-                            <li><i class="fa fa-location-arrow"></i> <a href="http://nitc.ac.in/" target="_blank" style="color: #5768ad;"> NIT Calicut</li>
-=======
                             <li><i class="fa fa-envelope"></i> sgc@nitc.ac.in</li>
                             <li><i class="fa fa-phone"></i> 0495-228-6180</li>
                             <li><i class="fa fa-location-arrow"></i> NIT Calicut</li>
->>>>>>> 5ae15e05aa1e7d4483fbf08e0b099602f4ceec87
                         </ul>
                         <!--<h5 style="color:white;">Subscribe</h5>--><br>
 
@@ -323,12 +315,12 @@
                     <div class="footer__widget">
                         <h5>About Us</h5>
                         <ul>
-                            <li><a href="{{ url('about#mission')}}">Our Mission</a></li>
-                            <li><a href="{{ url('about#vision')}}">Our Vision</a></li>
-                            <li><a href="{{ url('about#stats')}}">Statistics</a></li>
-                            <li><a href="{{ url('about#gallery')}}">Gallery</a></li>
-                            <li><a href="{{ url('about#impact')}}">Impact</a></li>
-                            <li><a href="{{ url('about#faq')}}">FAQ's</a></li>
+                            <li><a href="<?php echo e(url('about#mission')); ?>">Our Mission</a></li>
+                            <li><a href="<?php echo e(url('about#vision')); ?>">Our Vision</a></li>
+                            <li><a href="<?php echo e(url('about#stats')); ?>">Statistics</a></li>
+                            <li><a href="<?php echo e(url('about#gallery')); ?>">Gallery</a></li>
+                            <li><a href="<?php echo e(url('about#impact')); ?>">Impact</a></li>
+                            <li><a href="<?php echo e(url('about#faq')); ?>">FAQ's</a></li>
                         </ul>
                     </div>
                 </div>
@@ -347,7 +339,7 @@
                         <!-- Leave Comment Begin -->
                         <div class="leave__comment__text" data-step="12" data-intro="Here you can give us valuable information & suggestions for the development of community and website." data-position="bottom-middle-aligned">
                             <form action="/suggestion_controller" method="get">
-                            @csrf
+                            <?php echo csrf_field(); ?>
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
                                         <input type="text" placeholder="Name" name="name"  autocomplete="off" >
@@ -422,4 +414,4 @@
 
 </body>
 
-</html>
+</html><?php /**PATH D:\Sahaayak\sahaayak\resources\views/layouts/layout.blade.php ENDPATH**/ ?>

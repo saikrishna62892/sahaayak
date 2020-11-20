@@ -1,10 +1,10 @@
-@extends('layouts.layout')
 
-@section('name')
+
+<?php $__env->startSection('name'); ?>
     Team
-@endsection
+<?php $__env->stopSection(); ?>
 
-    @section('content')
+    <?php $__env->startSection('content'); ?>
 
     
 
@@ -16,7 +16,7 @@
                     <div class="breadcrumb__text">
                         <h2>Meet Our Team</h2>
                         <div class="breadcrumb__widget">
-                            <a href="{{ url('/') }}">Home</a>
+                            <a href="<?php echo e(url('/')); ?>">Home</a>
                             <span>Team</span>
                         </div>
                     </div>
@@ -40,23 +40,40 @@
             </div>
             <div class="row">
                 <div class="team__slider owl-carousel">
-                    @foreach($counsellors as $counsellor)
-                        <div class="col-lg-6">
-                            <div class="team__item">
-                                <div class="team__item__pic">
-                                    <img src="{{ asset('/img/counsellors/'.$counsellor->image) }}" alt="" width="320" height="323">
+                    <div class="col-lg-6">
+                        <div class="team__item">
+                            <div class="team__item__pic">
+                                <img src="img/team/aneesh.png" alt="">
+                            </div>
+                            <div class="team__item__text">
+                                <div class="team__item__title">
+                                    <h4>Dr. Aneesh T</h4>
+                                    <span>Clinical Psychologist </span>
                                 </div>
-                                <div class="team__item__text">
-                                    <div class="team__item__title">
-                                        <h4>{{ $counsellor->name }}</h4>
-                                        <span>{{ $counsellor->profession }} </span>
-                                    </div>
-                                    <p>{{ $counsellor->bio }}<br>
-                                        Email: {{ $counsellor->email }}</p>
+                                <div class="team__item__social">
+                                    <a href="mailto:aneeshtiss@gmail.com" target="_blank"><i class="fa fa-google"></i></a>
+                                    <a href="tel:7045616525" target="_blank"><i class="fa fa-phone"></i></a>                                    
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="team__item">
+                            <div class="team__item__pic">
+                                <img src="img/team/neethu.png" alt="">
+                            </div>
+                            <div class="team__item__text">
+                                <div class="team__item__title">
+                                    <h4>Ms. Neethu NT</h4>
+                                    <span>Consultant Psychologist</span>
+                                </div>
+                                <div class="team__item__social">
+                                    <a href="mailto:neethusgc@gmail.com" target="_blank"><i class="fa fa-google"></i></a>
+                                    <a href="7902274890" target="_blank"><i class="fa fa-phone"></i></a>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -225,7 +242,7 @@
                                     <h4>John Benyen Munga</h4>
                                     <span>M.Tech at NIT Calicut</span>
                                 </div>
-                                <p>A Hard-working Team guy <br> Aspiring to become SDE.</p>
+                                <p>A Hard-working Team guy <br> Aspires to become SDE.</p>
                                 <div class="team__item__social">
                                     <a href="https://www.linkedin.com/in/john-benyen/" target="_blank"><i class="fa fa-linkedin"></i></a>
                                     <a href="mailto:johnbenyen162@gmail.com" target="_blank"><i class="fa fa-google"></i></a>
@@ -289,7 +306,7 @@
                                     <h4>Aswathi Mohan</h4>
                                     <span>Project co-ordinator</span>
                                 </div>
-                                <p>Working as project coordinator <br> in NIT Calicut.</p>
+                                <p>Working as project coordinator <br> in NIT Calicut</p>
                                 <div class="team__item__social">
                                     <a href="tel:9497307550" target="_blank"><i class="fa fa-phone"></i></a>
                                     <a href="aswathipranavam@gmail.com<" target="_blank"><i class="fa fa-google"></i></a>
@@ -348,4 +365,5 @@
         </div>
     </div>
     <!-- Map End -->
-    @endsection
+    <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Sahaayak\sahaayak\resources\views/team.blade.php ENDPATH**/ ?>
