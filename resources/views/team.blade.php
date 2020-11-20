@@ -27,14 +27,51 @@
     <!-- Breadcrumb End -->
 
     <!-- Team Section Begin -->
-    <section class="team spad" id="volunteers">
+    <section class="team spad" id="counsellors">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
                         <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
-                        <h2>Meet Our Volunteers</h2>
-                        <p>We search the entire nation to provide you with passionate and caring volunteers</p>
+                        <h2>Meet Our Counsellors</h2>
+                        <p>Details</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="team__slider owl-carousel">
+                    @foreach($counsellors as $counsellor)
+                        <div class="col-lg-6">
+                            <div class="team__item">
+                                <div class="team__item__pic">
+                                    <img src="{{ asset('/img/counsellors/'.$counsellor->image) }}" alt="" width="320" height="323">
+                                </div>
+                                <div class="team__item__text">
+                                    <div class="team__item__title">
+                                        <h4>{{ $counsellor->name }}</h4>
+                                        <span>{{ $counsellor->profession }} </span>
+                                    </div>
+                                    <p>{{ $counsellor->bio }}<br>
+                                        Email: {{ $counsellor->email }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Team Section End -->
+
+    <!-- Team Section Begin -->
+    <section class="team spad" id="sgc">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
+                        <h2>Meet Our Sudent Guidance Cell</h2>
+                        <p>Details</p>
                     </div>
                 </div>
             </div>
@@ -43,60 +80,42 @@
                     <div class="col-lg-6">
                         <div class="team__item">
                             <div class="team__item__pic">
-                                <img src="img/team/default_volunteer_men.jpg" alt="">
+                                <img src="img/team/kumar.png" alt="">
                             </div>
                             <div class="team__item__text">
                                 <div class="team__item__title">
-                                    <h4>Volunnteer Name</h4>
-                                    <span>Profession</span>
+                                    <h4>Dr. S. D. Madhu Kumar</h4>
+                                    <span>Dean and Professor of CSED</span>
                                 </div>
-                                <p>About Volunteer<br>and his details</p>
-                                <div class="team__item__social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                                </div>
+                                <p>Phone: 0495 2286806<br>Gmail: madhu@nitc.ac.in</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="team__item">
                             <div class="team__item__pic">
-                                <img src="img/team/default_volunteer_women.jpg" alt="">
+                                <img src="img/team/das.png" alt="">
                             </div>
                             <div class="team__item__text">
                                 <div class="team__item__title">
-                                    <h4>Volunnteer Name</h4>
-                                    <span>Profession</span>
+                                    <h4>Ms. Lyla B Das</h4>
+                                    <span>Associate Professor, ECED</span>
                                 </div>
-                                <p>About Volunteer<br>and his details</p>
-                                <div class="team__item__social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                                </div>
+                                <p>Phone:9447415558<br>Gmail: lbd@nitc.ac.in</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="team__item">
                             <div class="team__item__pic">
-                                <img src="img/team/default_volunteer_men.jpg" alt="">
+                                <img src="img/team/anu_mary.png" alt="">
                             </div>
                             <div class="team__item__text">
                                 <div class="team__item__title">
-                                    <h4>Volunnteer Name</h4>
-                                    <span>Profession</span>
+                                    <h4>Dr. Anu Mary Chacko</h4>
+                                    <span>Associate Professor, CSED</span>
                                 </div>
-                                <p>About Volunteer<br>and his details</p>
-                                <div class="team__item__social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                                </div>
+                                <p>Phone: 9496135685<br>Gmail: anu.chacko@nitc.ac.in</p>
                             </div>
                         </div>
                     </div>
@@ -107,93 +126,13 @@
     <!-- Team Section End -->
 
     <!-- Team Section Begin -->
-    <section class="team spad" id="therapists">
+    <section class="team spad" id="team">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
                         <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
-                        <h2>Meet Our Therapists</h2>
-                        <p>We search the entire nation to provide you with passionate and caring therapists</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="team__slider owl-carousel">
-                    <div class="col-lg-6">
-                        <div class="team__item">
-                            <div class="team__item__pic">
-                                <img src="img/team/default_therapist_men.jpg" alt="">
-                            </div>
-                            <div class="team__item__text">
-                                <div class="team__item__title">
-                                    <h4>Therapist Name</h4>
-                                    <span>Profession</span>
-                                </div>
-                                <p>About Therapist<br>and his details</p>
-                                <div class="team__item__social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="team__item">
-                            <div class="team__item__pic">
-                                <img src="img/team/default_therapist_women.jpg" alt="">
-                            </div>
-                            <div class="team__item__text">
-                                <div class="team__item__title">
-                                    <h4>Therapist Name</h4>
-                                    <span>Profession</span>
-                                </div>
-                                <p>About Therapist<br>and his details</p>
-                                <div class="team__item__social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="team__item">
-                            <div class="team__item__pic">
-                                <img src="img/team/default_therapist_men.jpg" alt="">
-                            </div>
-                            <div class="team__item__text">
-                                <div class="team__item__title">
-                                    <h4>Therapist Name</h4>
-                                    <span>Profession</span>
-                                </div>
-                                <p>About Therapist<br>and his details</p>
-                                <div class="team__item__social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Team Section End -->
-
-    <!-- Team Section Begin -->
-    <section class="team spad" id="family">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
-                        <h2>Meet Our Family</h2>
+                        <h2>Meet Our Team</h2>
                         <p>We are with you with passion to provide the best for you</p>
                     </div>
                 </div>
@@ -331,6 +270,20 @@
                                     <a href="https://www.facebook.com/saikrishna62892" target="
                                     _blank"><i class="fa fa-facebook"></i></a>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="team__item">
+                            <div class="team__item__pic">
+                                <img src="/img/team/aswathi.png" alt="">
+                            </div>
+                            <div class="team__item__text">
+                                <div class="team__item__title">
+                                    <h4>Aswathi Mohan</h4>
+                                    <span>Project co-ordinator</span>
+                                </div>
+                                <p>Phone: 9497307550<br>Gmail: aswathipranavam@gmail.com<br> <br></p>
                             </div>
                         </div>
                     </div>

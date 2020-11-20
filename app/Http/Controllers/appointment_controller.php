@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Appointment;
+use App\Casehistory;
 use Auth;
 use DB;
 use PDF;
@@ -48,13 +49,26 @@ class appointment_controller extends Controller
         $temp++;
         $data = request()->validate([
          'name' => 'required',
-         'email' => 'required|email',
-         'phone'=>'required|min:10|numeric',
+         'college_id' => 'required',
+         'department' => 'required',
+         'gender' => 'required',
+         'appointment_type' => 'required',
+         'faculty_advisor' => 'required',
+         'counsellor_name' => 'required',
+         'date' => 'required',
+         'slot' => 'required',
+         'message' => 'required',
          ]);
+
         $appointment->name=$req->name;
-        $appointment->email=$req->email;
-        $appointment->phone=$req->phone;
-        $appointment->timings=$req->timings;
+        $appointment->college_id=$req->college_id;
+        $appointment->department=$req->department;
+        $appointment->gender=$req->gender;
+        $appointment->appointment_type=$req->appointment_type;
+        $appointment->faculty_advisor=$req->faculty_advisor;
+        $appointment->counsellor_name=$req->counsellor_name;
+        $appointment->date=$req->date;
+        $appointment->slot=$req->slot;
         $appointment->message=$req->message;
         $appointment->timestamps=now();
         $appointment->user_id=$user->id;
@@ -67,7 +81,7 @@ class appointment_controller extends Controller
 
      public function appointmentAccepted(Appointment $appointment)
     {
-        if(is_null($appointment->volunteer_id))
+        /*if(is_null($appointment->volunteer_id))
         {
             $appointment->update(['volunteer_id' => auth()->user()->volunteer->id]);
             $this->sendAppointmentAcceptedNotif($appointment->user_id,$appointment);
@@ -75,8 +89,9 @@ class appointment_controller extends Controller
         }
         else{
             return redirect()->back()->with('message','Sorry,User already alloted');
-        }
-
+        }*/
+        $appointment->update(['accept' => 1]);
+        return redirect()->back()->with('message','User Appointment accepted');
     }
 
     public function reportForm(Appointment $appointment)
@@ -90,6 +105,14 @@ class appointment_controller extends Controller
         $appointment = Appointment::find($data['appointment_id']);
         $data['user_id'] = $appointment->user_id;
         $data['volunteer_id'] = $appointment->volunteer_id;
+
+        $casehistory = new Casehistory();
+        $casehistory->appointment_id = $data['appointment_id'];
+        $casehistory->remarks = $data['remarks'];
+        $casehistory->save();
+
+        $appointment->update(['is_Completed' => 1]);
+
         $pdf = PDF::loadView('appointment.generateReport',compact('data'));
         $user = User::find($appointment->user_id);
         $user->notify(new AppointmentReportNotification($pdf));

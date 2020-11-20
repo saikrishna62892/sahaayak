@@ -7,7 +7,7 @@
     <title>Sahaayak | Dashboard | @yield('name')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" type="image/png" href="/img/icon/favicon.ico">
+    <link rel="shortcut icon" type="image/png" href="/img/icon-white.png">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/themify-icons.css">
@@ -40,7 +40,7 @@
     function reply_click(clicked_id)
     {
         var res = clicked_id.split("#");
-        document.getElementById("demo").innerHTML = "Make Report for "+res[1];
+        document.getElementById("demo").innerHTML = "Add Case history for "+res[1];
         document.getElementById('appointment_id').value = res[0];
         document.getElementById('appointment_name').value = res[1];
         document.getElementById('appointment_email').value = res[2];
@@ -48,6 +48,14 @@
 </script>
 <!--reportForm script end-->
 
+<script type="text/javascript">
+    function getUserID()
+    {
+        var id=document.getElementById("userID");
+        var link="/volunteer/appointment/"+id+"/getCaseHistory";
+        return link;
+    }
+</script>
 <body>
     <!-- preloader area start -->
     <div id="preloader">
@@ -127,9 +135,9 @@
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-light-bulb"></i><span>Our Team</span></a>
                                 <ul class="collapse">
-                                    <li><a href="{{ url('team#volunteers') }}">Volunteers</a></li>
-                                        <li><a href="{{ url('team#therapists') }}">Therapists</a></li>
-                                        <li><a href="{{ url('team#family') }}">Family</a></li>
+                                    <li><a href="{{ url('team#counsellors') }}">Counsellors</a></li>
+                                        <li><a href="{{ url('team#sgc') }}">SGC</a></li>
+                                        <li><a href="{{ url('team#team') }}">Team</a></li>
                                 </ul>
                             </li>
                         </ul>

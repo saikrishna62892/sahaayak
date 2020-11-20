@@ -1,6 +1,6 @@
             <div class="card">
                 <div class="card-body">
-                   <form action="{{route('storenews')}}" method="POST" enctype="multipart/form-data">
+                   <form action="{{ route('storenews')}}" method="POST" enctype="multipart/form-data">
                     @csrf  
 
                     @include('news.news')  

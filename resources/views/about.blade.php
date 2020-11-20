@@ -38,29 +38,28 @@
                         <div class="services__item">
                             <img src="img/services/services-1.png" alt="">
                             <h5>You're not alone</h5>
-                            <p>Talk to us i.e. make an appointment section which connects users
-                             to socially disciplined volunteers.</p>
+                            <p>Talk to us i.e. make an appointment section which connects users to socially disciplined counsellors.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="services__item">
                             <img src="img/services/services-2.png" alt="">
                             <h5>Information is wealth</h5>
-                            <p>Information,recent news,articles,stories and expert talks about there various experiences</p>
+                            <p>Information,recent news,articles,stories and expert talks about their various experiences.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="services__item">
                             <img src="img/services/services-3.png" alt="">
-                            <h5>Hope is real</h5>
-                            <p>Hopebox which contains interactive drawing,hope tree,inspiring quotes,videos and playlists</p>
+                            <h5>Personal issues services</h5>
+                            <p>Skill training, Academic support, Mentorship program, Workshops and presentations to classes and groups.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="services__item">
-                            <img src="img/services/services-4.png" alt="">
-                            <h5>Safety is priceless</h5>
-                            <p>Personalized dashboard with cognitive diary to note down the events and can also share the stories</p>
+                            <img src="img/services/services-5.png" alt="">
+                            <h5>Psycological services</h5>
+                            <p>Confidential counselling, Stress management, Relaxation Training and Supportive Therapy.</p>
                         </div>
                     </div>
                 </div>
@@ -255,99 +254,59 @@
         </div>
     </div>
     <!-- Counter End -->
-
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="9"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="10"></li>
-      </ol>
+    <!--
+         @foreach($gallery as $gal)
       <div class="carousel-inner">
         <div class="carousel-item active" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-1.jpg" alt="Gallery-Image-1">
+            @if(is_null($gal->image))
+                <img src="{{ asset('/img/galleries/default.jpg') }}" alt="">
+            @else
+                <img src="{{ asset('/img/galleries/'.$gal->image) }}" alt="">
+            @endif
           <div class="carousel-caption d-none d-md-block">
-            <strong><h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 1</h5></strong>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 1</p>
+            <strong><h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">{{ $gal->caption }}</h5></strong>
+            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">{{ $gal->paragraph }}</p>
           </div>
         </div>
-        <div class="carousel-item" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-2.jpg" alt="Gallery-Image-2">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 2</h5>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 2</p>
-          </div>
-        </div>
-        <div class="carousel-item" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-3.jpg" alt="Gallery-Image-3">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 3</h5>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 3</p>
-          </div>
-        </div>
-        <div class="carousel-item" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-4.jpg" alt="Gallery-Image-4">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 4</h5>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 4</p>
-          </div>
-        </div>
-        <div class="carousel-item" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-5.jpg" alt="Gallery-Image-5">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 5</h5>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 5</p>
-          </div>
-        </div>
-        <div class="carousel-item" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-6.jpg" alt="Gallery-Image-6">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 6</h5>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 6</p>
-          </div>
-        </div>
-        <div class="carousel-item" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-7.jpg" alt="Gallery-Image-7">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 7</h5>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 7</p>
-          </div>
-        </div>
-        <div class="carousel-item" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-8.jpg" alt="Gallery-Image-8">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 8</h5>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 8</p>
-          </div>
-        </div>
-        <div class="carousel-item" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-9.jpg" alt="Gallery-Image-9">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 9</h5>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 9</p>
-          </div>
-        </div>
-        <div class="carousel-item" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-10.jpg" alt="Gallery-Image-10">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 10</h5>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 10</p>
-          </div>
-        </div>
-        <div class="carousel-item" style="height: 550px;">
-          <img class="d-block w-100" src="img/gallery/gallery-11.jpg" alt="Gallery-Image-11">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Caption 11</h5>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">Paragraph 11</p>
-          </div>
-        </div>
+        @endforeach
+    -->
+    <div  class="section-title">
+        <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
+        <h2>Gallery</h2>
+    </div>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <?php $count=0; ?>
+        @foreach($gallery as $gal)
+            @if($count==0)
+                <li data-target="#carouselExampleIndicators" data-slide-to="{{ $count }}" class="active"></li>
+            @else
+                <li data-target="#carouselExampleIndicators" data-slide-to="{{ $count }}"></li>
+            @endif
+            <?php $count++; ?>
+        @endforeach
+      </ol>
+      <div class="carousel-inner">
+        <?php $count=0; ?>
+        @foreach($gallery as $gal)
+            @if($count==0)
+                <div class="carousel-item active" style="height: 550px;">
+
+            @else
+                <div class="carousel-item" style="height: 550px;">
+            @endif
+            @if(is_null($gal->image))
+                <img class="d-block w-100" src="{{ asset('/img/galleries/default.jpg') }}" alt="Gallery-Image" height="550">
+            @else
+                <img class="d-block w-100" src="{{ asset('/img/galleries/'.$gal->image) }}" alt="Gallery-Image" height="550">
+            @endif
+              <div class="carousel-caption d-none d-md-block">
+                <strong><h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">{{ $gal->caption }}</h5></strong>
+                <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">{{ $gal->paragraph }}</p>
+              </div>
+            </div>
+            <?php $count++; ?>
+        @endforeach
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -455,14 +414,22 @@
                             <div class="card">
                                 <div class="card-heading active">
                                     <a data-toggle="collapse" data-target="#collapseTwo">
-                                        <span>What type of service an user can expect?</span>
+                                        <span>What type of services an user can expect from SGC?</span>
                                     </a>
                                 </div>
                                 <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
                                     <div class="card-body">
-                                        <p>1) We provide you with volunteers to share your issues and get help.</p>
-                                        <p>2) We have different assesements parameters to access your status.</p>
-                                        <p>3) We have interactive drawing feature for you to have some me time and get relaxed.</p>
+                                        <p>1) Stress Management.</p>
+                                        <p>2) Classes for Academic Support.</p>
+                                        <p>3) Skill Training.</p>
+                                        <p>4) Referral for Medical Evalution.</p>
+                                        <p>5) Mentorship Program.</p>
+                                        <p>6) Workshops and Presentations to classes and groups.</p>
+                                        <p>7) Confidential Personal Counselling.</p>
+                                        <p>8) Relaxation Training.</p>
+                                        <p>8) Supportive Therapy.</p>
+                                        <p>10) Different assesements parameters to access your status.</p>
+                                        <p>11) Interactive drawing feature for you to have some me time and get relaxed.</p>
                                         <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
@@ -475,10 +442,69 @@
                                 </div>
                                 <div id="collapseThree" class="collapse" data-parent="#accordionExample">
                                     <div class="card-body">
-                                        <p>1) Complete the registration.</p>
-                                        <p>2) Go to home page.</p>
-                                        <p>3) Click on Talk To Us in the dashboard.</p>
-                                        <p>4) Fill the required details and our team will contact you.</p>
+                                        <p>1)&nbsp; Complete the registration.</p>
+                                        <p>&emsp;Go to home page.</p>
+                                        <p>&emsp;Click on Talk To Us in the dashboard.</p>
+                                        <p>&emsp;Fill the required details and our team will contact you.</p>
+                                        <p>2) Call 0495-2286180 to fix appointment</p>
+                                        <p>3) Email to <a href="mailto:sgc@nitc.ac.in" target="_blank" style="color:#5768AD;" > sgc@nitc.ac.in </a> </p>
+                                        <p>4) Direct walk-in</p>
+                                        <p>5) Referrals through Department/ Faculty members</p>
+                                        <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-heading">
+                                    <a data-toggle="collapse" data-target="#collapseNine">
+                                        <span>Faculty Coordinators of Student Guidance Cell?</span>
+                                    </a>
+                                </div>
+                                <div id="collapseNine" class="collapse" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p>Faculty In-Charge: Dr.S.Sunitha , Assistant Professor</p>
+                                        <p>EEE: Dr. Rijil Ramchand, Assistant Professor and Mr. Kumaravel S, Assistant Professor</p>
+                                        <p>ME: Dr. Manu R, Assistant Professor.</p>
+                                        <p>CE: Mr. A S Sajith,Assistant Professor.</p>
+                                        <p>CSE: Ms. Anu Mary Chacko, Assistant Professor.</p>
+                                        <p>CH: Dr.Lity Alen Varghese , Associate Professor</p>
+                                        <p>ECE: Dr.Rama Subrahmanyam Komaragiri, Associate Professor</p>                                        
+                                        <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-heading">
+                                    <a data-toggle="collapse" data-target="#collapseEleven">
+                                        <span>What is the structure of SGC?</span>
+                                    </a>
+                                </div>
+                                <div id="collapseEleven" class="collapse" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p>Patron - Director, NIT Calicut</p>
+                                        <p>The other members of SGC are:</p>
+                                        <p>Dean (Students Welfare)</p>
+                                        <p>Faculty in-charge</p>
+                                        <p>Faculty Co-ordinators</p>
+                                        <p>Faculty Advisors</p>
+                                        <p>Student Cousellors</p>    
+                                        <p>Student Co-ordinators</p>                                      
+                                        <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-heading">
+                                    <a data-toggle="collapse" data-target="#collapseTen">
+                                        <span>What are the issues covered by the SGC?</span>
+                                    </a>
+                                </div>
+                                <div id="collapseTen" class="collapse" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p>1) Personal Concerns: Identity Issues, Academic Stress, Family Problems, Self Esteem, Language Problems.</p>
+                                        <p>2) Inter Personal Issues: Adjustment Problems, Communication Skills, Relationship Issues.</p>
+                                        <p>3) Psychological Issues: Eating disorder, Anxiety, Depression, Addiction .</p>
+                                        <p>4) Crisis Intervention services: Acute Stress, Death of Family member/Friends.</p>
                                         <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
@@ -492,6 +518,21 @@
                                 <div id="collapseFour" class="collapse" data-parent="#accordionExample">
                                     <div class="card-body">
                                         <p>It is a feature which lets you draw random things, It helps you to relax and have some alone time whenever you want.</p>
+                                        <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-heading">
+                                    <a data-toggle="collapse" data-target="#collapseTwelve">
+                                        <span>How SGC functions?</span>
+                                    </a>
+                                </div>
+                                <div id="collapseTwelve" class="collapse" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p>Professional counselors in the campus will be available for counseling purposes at any time of need as per the student.</p>
+                                        <p>Student-faculty meetings will be organized to improve the relationship between them.</p>
+                                        <p>Students and parents should keep in touch with their respective faculty advisors continuously.</p>                                                                            
                                         <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                     </div>
                                 </div>

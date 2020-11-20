@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Questionnaire;
 use App\Volunteer;
+use App\Counsellor;
 use App\User;
 use App\Talk;
 use App\Story;
+use App\Gallery;
 use DB;
 use App\Diary;
 use Auth;
@@ -71,6 +73,8 @@ class HomeController extends Controller
         //stats
         $users_count = User::all()->count();
         $volunteers_count = Volunteer::all()->count();
+        $counsellors_count = Counsellor::all()->count();
+        $gallery_count = Gallery::all()->count();
         $unapprovedVolunteers = Volunteer::where('is_Approved',0)->get();
         $badges = $volunteers_count-$unapprovedVolunteers->count();
         $talks_count=Talk::all()->count();
@@ -97,6 +101,8 @@ class HomeController extends Controller
         $shared_quotes = DB::table('quotes')->orderBy("id","desc")->paginate(5);
         $shared_playlists = DB::table('playlists')->orderBy("id","desc")->paginate(5);
         $suggestions = DB::table('suggestion')->orderBy("id","desc")->paginate(5);
+        $gallery = Gallery::all();
+        $counsellors = Counsellor::all();
 
         //dd($analyticsData);
         //dd($analyticsData[0]);
@@ -106,24 +112,33 @@ class HomeController extends Controller
         $quote = new Quote();
         $video = new Video();
         $playlist = new Playlist();
-        return view('admin.dashboard_admin',compact('unapprovedVolunteers','talks','users_count','volunteers_count','badges','shared_news','shared_videos','shared_quotes','shared_playlists','newsarticle','talk','quote','video','playlist','admin_name','suggestions','talks_count'));
+        $counsellor = new Counsellor();
+        return view('admin.dashboard_admin',compact('unapprovedVolunteers','talks','users_count','volunteers_count','badges','shared_news','shared_videos','shared_quotes','shared_playlists','newsarticle','talk','quote','video','playlist','admin_name','suggestions','talks_count','gallery','counsellors_count','gallery_count','counsellors','counsellor'));
     }
 
     public function volunteerHome()
     {
-        $appointments=Appointment::where('volunteer_id',null)->get();
-        $volunteer = auth()->user()->volunteer;
-        $completedappointments= $volunteer->load('appointments');
-
-
-        //volunteer stats
         $user=Auth::user();
+        //user->volunteer->may appointments
+        $volunteer = $user->volunteer;
+
+        $appointments = $volunteer->appointments->where('accept',0);  //pending appointments as appointments, section- Allappointments
+
+        //$appointments=Appointment::where('volunteer_id',null)->get();
+       $completedappointments= $volunteer->appointments->where('accept',1)->where('is_Completed',0);  // accepted but not completed as completedappointments, section-myAppointments
+
+        
+        //volunteer stats
+        
         $checkins=$user->checkins;
         $checkins=$checkins+1;
         $user->checkins=$checkins;
         $user->save();
+
         $requests=$appointments->count();
-        $interactions=$completedappointments->appointments->count();
+
+        $interactions=$completedappointments->count();
+
         //should be changed further
         $pending_reports=$interactions;
        return view('volunteer.dashboard_volunteer')->with(compact('appointments','completedappointments','volunteer','checkins','requests','interactions','pending_reports'));

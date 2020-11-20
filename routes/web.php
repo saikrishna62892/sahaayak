@@ -6,6 +6,7 @@ use App\User;
 use Carbon\Carbon;
 use App\dialyquotes;
 use App\News;
+use App\Counsellor;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,8 @@ use App\News;
 Route::get('/',function(){
         $dialyquote=dialyquotes::all()->last()->quote;
         $featurednews=News::orderBy('created_at','desc')->take(3)->get();
-        return view('welcome')->with(compact('dialyquote','featurednews'));
+        $counsellors=Counsellor::all();
+        return view('welcome')->with(compact('dialyquote','featurednews','counsellors'));
 });
 
 
@@ -31,7 +33,8 @@ Route::get('about', function () {
     $volunteers_count=App\Volunteer::all()->count();
     $appointments_count=App\Appointment::all()->count();
     $stories_count=App\Story::all()->count();
-    return view('about',compact('user_count','volunteers_count','appointments_count','stories_count'));
+    $gallery=App\Gallery::all();
+    return view('about',compact('user_count','volunteers_count','appointments_count','stories_count','gallery'));
 });
 
 Route::get('expert_story', function () {
@@ -46,6 +49,7 @@ Route::get('expert_story', function () {
 Route::get('news','NewsController@index')->name('news');
 Route::get('news/create','NewsController@create');
 Route::post('admin/news','NewsController@store')->name('storenews');
+Route::post('admin/addcounsellor','CounsellorController@store')->name('storecounsellor');
 Route::get('displayNews','NewsController@display')->name('displayNews');
 Route::get('admin/home/editNews/{newsarticle}/articledited','NewsController@editnews')->name('editNews');
 Route::patch('admin/home/news/{newsarticle}','NewsController@update');
@@ -67,7 +71,7 @@ Route::get('admin/deleteVideo/{video}/videodeleted','VideoController@deletevideo
 Route::get('admin/deletePlaylists/{playlist}/playlistdeleted','PlaylistController@deleteplaylist');
 Route::get('user/home/deleteStory/{story}/storydeleted','StoryController@deletestory');
 Route::get('user/home/deleteEvent/{event}/eventdeleted','diary_controller@deleteevent');
-
+Route::get('admin/deleteGallery/{gallery}/gallerydeleted','GalleryController@deletegallery');
 
 
 
@@ -75,7 +79,7 @@ Route::get('/appointment_controller','appointment_controller@save');
 
 
 Route::get('volunteer/appointment/{appointment}/acceptAppointment','appointment_controller@appointmentAccepted');
-
+//Route::post('/volunteer/casehistory/addCasehistory','VolunteerController@addCasehistory')->name('addCaseHistory');
 
 Route::get('/suggestion_controller','suggestion_controller@save');
 
@@ -146,6 +150,10 @@ Route::get('/videos','HopeBoxController@displayVideos')->name('videos');
 
 //Admin Volunteer list Routes
 Route::get('/admin/home/volunteer/{unapprovedVolunteer}/getDetails','VolunteerController@getDetails');
+Route::get('/admin/home/counsellor/{counsellor}/getDetails','CounsellorController@getDetails');
+Route::get('/admin/home/counsellor/{counsellor}/removeDetails','CounsellorController@removeDetails');
+Route::get('/admin/home/counsellor/{counsellor}/editDetails','CounsellorController@editDetails');
+Route::patch('/admin/home/counsellor/{counsellor}/updateDetails','CounsellorController@updateDetails');
 Route::get('/admin/home/volunteer/{unapprovedVolunteer}/approveVolunteer','VolunteerController@approveVolunteer');
 Route::get('/admin/home/volunteer/{unapprovedVolunteer}/rejectVolunteer','VolunteerController@destroy');
 
@@ -156,6 +164,10 @@ Route::post('/volunteer/report/generateReport','appointment_controller@generateR
 Route::get('/volunteer/appointment/{appointment}/report','appointment_controller@reportForm');
 Route::post('/admin/report/{appointment}/generateReport','appointment_controller@generateReport');
 
+//Get case history routes
+
+Route::get('/volunteer/appointment/{user}/getCaseHistory','VolunteerController@getCaseHistory');
+Route::get('/volunteer/appointment/getCaseHistory','VolunteerController@getHistory');
 
 //learn section routes
 Route::get('home/learn/{learn}/{learnID}','LearnController@show');
@@ -175,7 +187,8 @@ Route::get('volunteer/waitingApproval',function()
 //end of dileep added routes
 
 Route::get('team', function () {
-    return view('team');
+    $counsellors=Counsellor::all();
+    return view('team')->with(compact('counsellors'));
 });
 
 Route::get('inspire_me', function () {
@@ -212,6 +225,9 @@ Route::get('/incrementLike/{story}', 'StoryController@incrementLike')->name('inc
 //Admin expert talks routes
 Route::post('/postTalks','TalkController@store')->name('addTalksFields');
 Route::get('/displayTalks','TalkController@display')->name('displayTalks');
+
+//Admin gallery Routes
+Route::post('/postGallery','GalleryController@store')->name('addGalleryFields');
 
 //Diary routes by john & ganesh
 Route::post('/user/home/displaydiary','diary_controller@save')->name('addFields');

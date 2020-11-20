@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
 use App\Volunteer;
+use App\Casehistory;
 use Storage;
+use PDF;
 use App\Mail\RejectVolunteerMail;
 use Illuminate\Support\Facades\Mail;
 class VolunteerController extends Controller
@@ -65,6 +67,28 @@ class VolunteerController extends Controller
         Storage::disk('s3')->delete([$unapprovedVolunteer->file1,$unapprovedVolunteer->file2]);
         $user->delete();
         return redirect()->back()->with('message','This volunteer is rejected');
+    }
+   /* public function addCasehistory(request $req)
+    {
+        $casehistory = new Casehistory();
+        $casehistory->appointment_id = $req->appointment_id;
+        $casehistory->remarks = $req->remarks;
+        $casehistory->save();
+         return redirect()->back()->with('message','Case history added');
+    }*/
+    public function getCaseHistory(User $user)
+    {
+        //user->appointments->casehistories
+        $user->load('appointments.casehistory');
+        $pdf = PDF::loadView('volunteer.casehistory',compact('user'));
+        return $pdf->stream('casehistory.pdf');
+    }
+    public function getHistory(Request $req)
+    {
+        $user = User::find($req->userID);
+        $user->load('appointments.casehistory');
+        $pdf = PDF::loadView('volunteer.casehistory',compact('user'));
+        return $pdf->stream('casehistory.pdf');
     }
     
 }
