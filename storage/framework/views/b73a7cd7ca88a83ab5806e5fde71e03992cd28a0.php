@@ -26,6 +26,17 @@
             <div class="hero__items set-bg" data-setbg="/img/hero/hero-1.jpg">
                 <div class="container">
                     <div class="row">
+                        <!-- flash messages section begin -->
+                        <center>
+                            <div class="flash-message" style="display: flex;justify-content: center;align-items: center;">
+                              <?php $__currentLoopData = ['danger', 'warning', 'success', 'info']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $msg): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <?php if(Session::has('alert-' . $msg)): ?>
+                                    <center><p class="alert alert-<?php echo e($msg); ?>"><?php echo e(Session::get('alert-' . $msg)); ?></p></center>
+                                <?php endif; ?>
+                              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </div>
+                        </center>
+                        <!-- flash messages section end -->
                         <div class="col-lg-8">
                             <div class="hero__text">
                                 <span>We Share coz We Care</span>

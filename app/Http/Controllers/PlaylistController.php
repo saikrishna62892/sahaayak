@@ -64,6 +64,7 @@ class PlaylistController extends Controller
 
         $playlist->save();
         $this->sendPlaylistNotif($playlist->playlistSource);
+        Session::flash('alert-success', 'Playlist Added Succesfully');
       return redirect('/admin/home');
       
     }
@@ -71,6 +72,7 @@ class PlaylistController extends Controller
     public function deleteplaylist(Playlist $playlist){
         Storage::disk('s3')->delete('uploads/playlist/img/'.$playlist->image);
         $playlist->delete();
+        Session::flash('alert-warning', 'Playlist Deleted Succesfully');
         return redirect()->back();
     }
 
@@ -101,6 +103,7 @@ class PlaylistController extends Controller
         }
 
         $playlist->update($data);
+        Session::flash('alert-info', 'Playlist Edited Succesfully');
         return redirect()->route('adminDashboard');
     }
 

@@ -54,6 +54,7 @@ class CounsellorController extends Controller
     public function removeDetails(Counsellor $counsellor)
     {
         $counsellor->delete();
+        Session::flash('alert-info', 'Counsellor Details Deleted Successfully');
         return redirect()->back();
     }
     public function editDetails(Counsellor $counsellor)

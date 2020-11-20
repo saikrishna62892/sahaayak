@@ -27,13 +27,15 @@
                 <div class="container">
                     <div class="row">
                         <!-- flash messages section begin -->
-                            <div class="flash-message">
+                        <center>
+                            <div class="flash-message" style="display: flex;justify-content: center;align-items: center;">
                               @foreach (['danger', 'warning', 'success', 'info'] as $msg)
                                 @if(Session::has('alert-' . $msg))
                                     <center><p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }}</p></center>
                                 @endif
                               @endforeach
                             </div>
+                        </center>
                         <!-- flash messages section end -->
                         <div class="col-lg-8">
                             <div class="hero__text">

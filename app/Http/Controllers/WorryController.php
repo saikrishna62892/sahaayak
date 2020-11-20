@@ -31,6 +31,7 @@ class WorryController extends Controller
              });
         $user->worries()->createMany($data['worries']);
         //dd($data);
+        Session::flash('alert-success', 'Worries Added!!');
         return redirect()->back();;
     }
 }

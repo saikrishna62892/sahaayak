@@ -54,13 +54,14 @@ class GalleryController extends Controller
 	    }
 	    
 	    $gallery->save();
-	    
-	    return redirect()->back()->with('message', 'Posted Succcesfully');
+	    Session::flash('alert-success', 'Image Posted Succcesfully in About Section');
+	    return redirect()->back();
 	}
 
 	public function deletegallery(Gallery $gallery){
         //Storage::disk('s3')->delete('uploads/playlist/img/'.$playlist->image);
         $gallery->delete();
+        Session::flash('alert-warning', 'Image Deleted Succcesfully');
         return redirect()->back();
     }
 }

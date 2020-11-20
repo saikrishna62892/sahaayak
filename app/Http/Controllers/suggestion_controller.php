@@ -32,6 +32,7 @@ class suggestion_controller extends Controller
          $suggestion->comment=$req->comment;
          $suggestion->timestamp=now();
          $suggestion->save();
-        return redirect()->back()->with('message', 'Posted Succcesfully'); 
+         Session::flash('alert-success', 'Hey '.$user->name.',Thankyou for your suggestion');
+        return redirect()->back(); 
     }
 }

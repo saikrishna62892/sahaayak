@@ -51,13 +51,15 @@ class diary_controller extends Controller
                 $story->category = $req->category;
                 $story->user_id = $user->id;
                 $story->save();
-                return redirect()->back()->with('message', 'Posted Succcesfully');             
+                Session::flash('alert-success', 'Event Added Succcesfully');
+                return redirect()->back();             
             break;
         }
         
     }
     public function deleteevent(Diary $event){
         $event->delete();
+        Session::flash('alert-warning', 'Event Deleted Succcesfully');
         return redirect()->back();
     }
 
@@ -76,6 +78,7 @@ class diary_controller extends Controller
            $data['user_id'] = $user->id;
 
         $event->update($data);
+        Session::flash('alert-info', 'Event Edited Succcesfully');
         return redirect()->route('userDashboard');
     }
 

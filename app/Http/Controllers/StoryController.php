@@ -56,7 +56,8 @@ class StoryController extends Controller
         $story->image=$name;*/
     }
     $story->save();
-    return redirect()->back()->with('message', 'Posted Succcesfully');
+    Session::flash('alert-success', 'Story Added Succesfully');
+    return redirect()->back();
 	}
 
 	public function display()
@@ -84,6 +85,7 @@ class StoryController extends Controller
     public function deletestory(Story $story){
         Storage::disk('s3')->delete('uploads/story/img/'.$story->image);
         $story->delete();
+        Session::flash('alert-warning', 'Story Deleted Succesfully');
         return redirect()->back();
     }
 }

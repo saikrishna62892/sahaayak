@@ -62,7 +62,7 @@ class appointment_controller extends Controller
         $appointment->save();
         $this->sendAppointmentReceivedNotif($appointment->name);
         Session::flash('alert-success', 'Appointment Created Succesfully Please check your Google Calendar'); 
-        return redirect()->back()->with('message', 'Posted Succcesfully'); 
+        return redirect()->back(); 
     }
 
      public function appointmentAccepted(Appointment $appointment)

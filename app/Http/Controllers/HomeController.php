@@ -117,6 +117,7 @@ class HomeController extends Controller
         $video = new Video();
         $playlist = new Playlist();
         $counsellor = new Counsellor();
+        Session::flash('alert-success', 'Welcome '.$admin_name.' to the Dashboard'); 
         return view('admin.dashboard_admin',compact('unapprovedVolunteers','talks','users_count','volunteers_count','badges','shared_news','shared_videos','shared_quotes','shared_playlists','newsarticle','talk','quote','video','playlist','admin_name','suggestions','talks_count','gallery','counsellors_count','gallery_count','counsellors','counsellor'));
     }
 
@@ -145,6 +146,7 @@ class HomeController extends Controller
 
         //should be changed further
         $pending_reports=$interactions;
+        Session::flash('alert-success', 'Welcome '.$user->name.' to the Dashboard'); 
        return view('volunteer.dashboard_volunteer')->with(compact('appointments','completedappointments','volunteer','checkins','requests','interactions','pending_reports'));
 
     }
@@ -165,7 +167,7 @@ class HomeController extends Controller
         $stories_count=$user_stories->count();
         $events_count=$diary->count();
         $worries_count=Worry::where('user_id',$user->id)->get()->count();
-
+        Session::flash('alert-success', 'Welcome '.$user->name.' to the Dashboard'); 
         //session()->put('message','Welcome '.$user->name.' to the Dashboard');
         return view('dashboard_user')->with(compact('user','user_stories','diary','checkins','stories_count','events_count','worries_count'));
     }
