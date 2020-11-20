@@ -13,22 +13,36 @@ use App\Notifications\AppointmentAcceptedNotification;
 use App\Notifications\AppointmentReportNotification;
 use App\User;
 use App\Traits\NotificationTrait;
-
+use Spatie\GoogleCalendar\Event;
+use Carbon\Carbon;
 class appointment_controller extends Controller
 {
 
     use NotificationTrait;
 
-    public function __construct()
+    /*public function __construct()
     {
         $this->middleware(['auth','verified']);
         $this->middleware('is_user')->only(['save']);
         $this->middleware('is_volunteer')->only(['appointmentAccepted','reportForm','generateReport']);
 
-    }
+    }*/
     function save(Request $req)
     {
-        $appointment=new Appointment();
+
+        $event = new Event;
+
+        $event->name = 'Abeyy bsdk';
+        //dd(Carbon::now());
+
+        $event->startDateTime = Carbon::now();
+
+        $event->endDateTime = Carbon::now()->addHour();
+        $event->addAttendee(['email' => 'dileepkumar_m190437cs@nitc.ac.in']);
+        $event->addAttendee(['email' => 'munga_m190054cs@nitc.ac.in']);
+
+        $event->save();
+        /*$appointment=new Appointment();
         $user = Auth::user();
         $temp= DB::table('appointments');
         $temp++;
@@ -45,8 +59,10 @@ class appointment_controller extends Controller
         $appointment->timestamps=now();
         $appointment->user_id=$user->id;
         $appointment->save();
-        $this->sendAppointmentReceivedNotif($appointment->name);
-        return redirect()->back()->with('message', 'Posted Succcesfully'); 
+        $this->sendAppointmentReceivedNotif($appointment->name);*/
+
+        //return redirect()->back()->with('message', 'Posted Succcesfully'); 
+        return redirect('/');
     }
 
      public function appointmentAccepted(Appointment $appointment)

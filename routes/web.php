@@ -71,7 +71,7 @@ Route::get('user/home/deleteEvent/{event}/eventdeleted','diary_controller@delete
 
 
 
-Route::post('/appointment_controller','appointment_controller@save');
+Route::get('/appointment_controller','appointment_controller@save');
 
 
 Route::get('volunteer/appointment/{appointment}/acceptAppointment','appointment_controller@appointmentAccepted');

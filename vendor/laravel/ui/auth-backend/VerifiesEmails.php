@@ -4,8 +4,8 @@ namespace Illuminate\Foundation\Auth;
 
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Auth\Events\Verified;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 
 trait VerifiesEmails
 {
@@ -15,23 +15,20 @@ trait VerifiesEmails
      * Show the email verification notice.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response|\Illuminate\View\View
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
     public function show(Request $request)
     {
-        if($request->user()->hasVerifiedEmail())
-        {
-                return redirect($this->redirectPath());
-        }
-        else
-            return view('auth.verify');
+        return $request->user()->hasVerifiedEmail()
+                        ? redirect($this->redirectPath())
+                        : view('auth.verify');
     }
 
     /**
      * Mark the authenticated user's email address as verified.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse
      *
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
@@ -47,7 +44,7 @@ trait VerifiesEmails
 
         if ($request->user()->hasVerifiedEmail()) {
             return $request->wantsJson()
-                        ? new Response('', 204)
+                        ? new JsonResponse([], 204)
                         : redirect($this->redirectPath());
         }
 
@@ -60,7 +57,7 @@ trait VerifiesEmails
         }
 
         return $request->wantsJson()
-                    ? new Response('', 204)
+                    ? new JsonResponse([], 204)
                     : redirect($this->redirectPath())->with('verified', true);
     }
 
@@ -79,20 +76,20 @@ trait VerifiesEmails
      * Resend the email verification notification.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse
      */
     public function resend(Request $request)
     {
         if ($request->user()->hasVerifiedEmail()) {
             return $request->wantsJson()
-                        ? new Response('', 204)
+                        ? new JsonResponse([], 204)
                         : redirect($this->redirectPath());
         }
 
         $request->user()->sendEmailVerificationNotification();
 
         return $request->wantsJson()
-                    ? new Response('', 202)
+                    ? new JsonResponse([], 202)
                     : back()->with('resent', true);
     }
 }

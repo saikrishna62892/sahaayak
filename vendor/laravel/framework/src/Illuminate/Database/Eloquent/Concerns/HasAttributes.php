@@ -972,14 +972,16 @@ trait HasAttributes
      */
     public function getDates()
     {
+        if (! $this->usesTimestamps()) {
+            return $this->dates;
+        }
+
         $defaults = [
             $this->getCreatedAtColumn(),
             $this->getUpdatedAtColumn(),
         ];
 
-        return $this->usesTimestamps()
-                    ? array_unique(array_merge($this->dates, $defaults))
-                    : $this->dates;
+        return array_unique(array_merge($this->dates, $defaults));
     }
 
     /**
@@ -1411,6 +1413,12 @@ trait HasAttributes
         } elseif ($this->hasCast($key, ['object', 'collection'])) {
             return $this->castAttribute($key, $attribute) ==
                 $this->castAttribute($key, $original);
+        } elseif ($this->hasCast($key, ['real', 'float', 'double'])) {
+            if (($attribute === null && $original !== null) || ($attribute !== null && $original === null)) {
+                return false;
+            }
+
+            return abs($this->castAttribute($key, $attribute) - $this->castAttribute($key, $original)) < PHP_FLOAT_EPSILON * 4;
         } elseif ($this->hasCast($key, static::$primitiveCastTypes)) {
             return $this->castAttribute($key, $attribute) ===
                    $this->castAttribute($key, $original);
@@ -1480,6 +1488,17 @@ trait HasAttributes
         $this->appends = $appends;
 
         return $this;
+    }
+
+    /**
+     * Return whether the accessor attribute has been appended.
+     *
+     * @param  string  $attribute
+     * @return bool
+     */
+    public function hasAppended($attribute)
+    {
+        return in_array($attribute, $this->appends);
     }
 
     /**
