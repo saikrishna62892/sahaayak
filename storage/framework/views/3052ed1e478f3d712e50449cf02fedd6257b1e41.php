@@ -1,10 +1,11 @@
-@extends('layouts.dashboard')
 
-@section('name')
-    {{ $user->name }}
-@endsection
 
-@section('content')
+<?php $__env->startSection('name'); ?>
+    <?php echo e($user->name); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
 <br>    
 <div class="container" id="stats">
     <div class="row">
@@ -13,7 +14,7 @@
                 <div class="card-body">
                     <h5 class="card-title" align="center">Checkins</h5>
                     <p align="center">#Logins</p>
-                    <h1 align="center" align="center">{{ $checkins }}</h1>
+                    <h1 align="center" align="center"><?php echo e($checkins); ?></h1>
                 </div>
             </div>
         </div>
@@ -22,7 +23,7 @@
                 <div class="card-body">
                     <h5 class="card-title" align="center">Posts</h5>
                     <p align="center">#shared Stories</p>
-                    <h1 align="center" align="center">{{ $stories_count }}</h1>
+                    <h1 align="center" align="center"><?php echo e($stories_count); ?></h1>
                 </div>
             </div>
         </div>
@@ -31,7 +32,7 @@
                 <div class="card-body">
                     <h5 class="card-title" align="center">Diary</h5>
                     <p align="center">#events in Diary</p>
-                    <h1 align="center" align="center">{{ $events_count }}</h1>
+                    <h1 align="center" align="center"><?php echo e($events_count); ?></h1>
                 </div>
             </div>
         </div>
@@ -40,7 +41,7 @@
                 <div class="card-body">
                     <h5 class="card-title" align="center">Worries</h5>
                     <p align="center">#number of worries</p>
-                    <h1 align="center" align="center">{{ $worries_count }}</h1>
+                    <h1 align="center" align="center"><?php echo e($worries_count); ?></h1>
                 </div>
             </div>
         </div>
@@ -51,11 +52,11 @@
 
 <!-- flash messages section begin -->
     <div class="flash-message">
-      @foreach (['danger', 'warning', 'success', 'info'] as $msg)
-        @if(Session::has('alert-' . $msg))
-            <center><p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }}</p></center>
-        @endif
-      @endforeach
+      <?php $__currentLoopData = ['danger', 'warning', 'success', 'info']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $msg): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <?php if(Session::has('alert-' . $msg)): ?>
+            <center><p class="alert alert-<?php echo e($msg); ?>"><?php echo e(Session::get('alert-' . $msg)); ?></p></center>
+        <?php endif; ?>
+      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>
 <!-- flash messages section end -->
 
@@ -87,25 +88,25 @@
                 <div class="tab-content" id="myTabContent">
                     <!-- Post a story form begin -->
                     <div class="tab-pane fade show active" id="post" role="tabpanel">
-                        @include('stories.create')
+                        <?php echo $__env->make('stories.create', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     </div>
                     <!-- Post a story form end -->
 
                     <!-- Cognitive Diary -->
                     <div class="tab-pane fade" id="diary" role="tabpanel">
-                        @include('diary.create')
+                        <?php echo $__env->make('diary.create', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     </div>
                     <!-- Cognitive diary end -->
                     
                     <!-- Shared stories form begin -->
                     <div class="tab-pane fade" id="stories" role="tabpanel">
-                        @include('stories.shared_stories')   
+                        <?php echo $__env->make('stories.shared_stories', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>   
                     </div>
                     <!-- Shared stories form end -->
 
                     <!-- Worry tree form begin -->
                     <div class="tab-pane fade" id="worrytree" role="tabpanel">
-                        @include('worrytree')         
+                        <?php echo $__env->make('worrytree', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>         
                     </div>
                     <!-- worry tree form end -->
                 </div>
@@ -116,4 +117,5 @@
 <!-- trading history area end -->
 
 
-@endsection 
+<?php $__env->stopSection(); ?> 
+<?php echo $__env->make('layouts.dashboard', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\Sahayak\sahaayak\resources\views/dashboard_user.blade.php ENDPATH**/ ?>

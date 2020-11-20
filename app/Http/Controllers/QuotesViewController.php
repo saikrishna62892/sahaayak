@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Quote;
 use DB;
+use Session;
+
 class QuotesViewController extends Controller
 {
     public function index(){

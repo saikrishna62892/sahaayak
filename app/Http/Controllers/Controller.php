@@ -8,6 +8,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Auth;
 use DB;
+use Session;
 
 class Controller extends BaseController
 {

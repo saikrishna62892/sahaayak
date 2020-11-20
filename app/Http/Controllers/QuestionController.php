@@ -9,6 +9,8 @@ use App\Survey;
 use App\Question;
 use App\User;
 use Auth;
+use Session;
+
 class QuestionController extends Controller
 {
     public function __construct()
@@ -34,6 +36,7 @@ class QuestionController extends Controller
         $data = $this->getValidatedQuestion();
         $question = $questionnaire->questions()->create($data['question']);
         $question->answers()->createMany($data['answers']);
+        Session::flash('alert-success', 'Questions Created Succesfully');
         return redirect('admin/home/questionnaires/'.$questionnaire->id);
     }
 
@@ -86,12 +89,14 @@ class QuestionController extends Controller
         {
             $answer->update($data['answers'][$i++]);
         }
+        Session::flash('alert-info', 'Questions Edited Succesfully');
         return redirect('admin/home/questionnaires/'.$questionnaire->id.'/editQuestions');
     }
 
     public function destroy(Questionnaire $questionnaire,Question $question)
     {
         $question->delete();
+        Session::flash('alert-warning', 'Questions Edited Succesfully');
         return redirect('admin/home/questionnaires/'.$questionnaire->id.'/editQuestions');
     }
     public function getValidatedQuestion()

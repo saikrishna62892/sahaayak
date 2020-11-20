@@ -26,6 +26,17 @@
             <div class="hero__items set-bg" data-setbg="/img/hero/hero-1.jpg">
                 <div class="container">
                     <div class="row">
+                        <!-- flash messages section begin -->
+                        <center>
+                            <div class="flash-message" style="display: flex;justify-content: center;align-items: center;">
+                              <?php $__currentLoopData = ['danger', 'warning', 'success', 'info']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $msg): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <?php if(Session::has('alert-' . $msg)): ?>
+                                    <center><p class="alert alert-<?php echo e($msg); ?>"><?php echo e(Session::get('alert-' . $msg)); ?></p></center>
+                                <?php endif; ?>
+                              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </div>
+                        </center>
+                        <!-- flash messages section end -->
                         <div class="col-lg-8">
                             <div class="hero__text">
                                 <span>We Share coz We Care</span>
@@ -125,29 +136,28 @@
                         <div class="services__item">
                             <img src="img/services/services-1.png" alt="">
                             <h5>You're not alone</h5>
-                            <p>Talk to us i.e. make an appointment section which connects users
-                             to socially disciplined volunteers.</p>
+                            <p>Talk to us i.e. make an appointment section which connects users to socially disciplined counsellors.</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-md-4 col-sm-6">
                         <div class="services__item">
                             <img src="img/services/services-2.png" alt="">
                             <h5>Information is wealth</h5>
-                            <p>Information,news,articles,stories & expert talks about their various experiences</p>
+                            <p>Information,news,articles,stories & expert talks about their various experiences.</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-md-4 col-sm-6">
                         <div class="services__item">
                             <img src="img/services/services-3.png" alt="">
                             <h5>Personal issues services</h5>
-                            <p>Skill training, Academic support, Mentorship program, Workshops and presentations to classes and groups</p>
+                            <p>Skill training, Academic support, Mentorship program, Workshops and presentations to classes and groups.</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-md-4 col-sm-6">
                         <div class="services__item">
                             <img src="img/services/services-5.png" alt="">
                             <h5>Psycological services</h5>
-                            <p>Confidential counselling, Stress management, Relaxation Training and Supportive Therapy</p>
+                            <p>Confidential counselling, Stress management, Relaxation Training and Supportive Therapy.</p>
                         </div>
                     </div>
                 </div>
@@ -315,7 +325,7 @@
                           students of the institute who stressed on the need to have a facility to counsel and motivate the students.
                            SGC helps the students to function better in all domains of life - academic, social, personal and psychological.</p>
                         <p class="para-2" align="justify">The motive behind SGC stems from the need to facilitate the process of growth and
-                         maintain a positive wellbeing of the students. The counselling services offered by SGC empowers the students to 
+                         maintain a positive well-being of the students. The counselling services offered by SGC empowers the students to 
                          have enhanced ability to solve problems, make decisions as well as make them more efficient in tackling personal problems.
                           In a nut shell, it is aimed at enhancing their ability to utilize the best potential available in them.</p>
                         <a href="<?php echo e(url('about')); ?>" class="primary-btn">MORE ABOUT US</a>

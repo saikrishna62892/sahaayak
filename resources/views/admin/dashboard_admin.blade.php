@@ -17,7 +17,7 @@
 			        <h5 class="card-title" align="center">Users</h5>
 			        <h1 align="center">{{ $users_count }}</h1>
 			        <p class="card-text" align="center">Active Users</p>
-			        <center><a href="https://analytics.google.com/analytics/web/#/report-home/a171070217w237922628p222495327" class="btn btn-primary" target="_blank" style="background-color: #5768ad;">See Analytics</a></center>
+			        <center><a href="#" class="btn btn-primary" onclick="alert('Currently disabled')" style="background-color: #5768ad;">See Analytics</a></center>
 		        </div>
 		    </div>
 		</div>
@@ -27,7 +27,7 @@
 			        <h5 class="card-title" align="center">Counsellors</h5>
 			        <h1 align="center">{{ $counsellors_count }}</h1>
 			        <p class="card-text" align="center">Active Counsellors</p>
-			        <center><a href="https://analytics.google.com/analytics/web/#/report-home/a171070217w237922628p222495327" class="btn btn-primary" target="_blank" style="background-color: #5768ad;">See Analytics</a></center>
+			        <center><a href="#" onclick="alert('Currently disabled')" class="btn btn-primary" style="background-color: #5768ad;">See Analytics</a></center>
 		        </div>
 			</div>
 		</div>
@@ -37,7 +37,7 @@
 			        <h5 class="card-title" align="center">Gallery</h5>
 			        <h1 align="center">{{ $gallery_count }}</h1>
 			        <p class="card-text" align="center">Active Volunteers</p>
-			        <center><a href="https://analytics.google.com/analytics/web/#/report-home/a171070217w237922628p222495327" class="btn btn-primary" target="_blank" style="background-color: #5768ad;">See Analytics</a></center>
+			        <center><a href="#" class="btn btn-primary" onclick="alert('Currently disabled')" style="background-color: #5768ad;">See Analytics</a></center>
 			    </div>
 			</div>
 		</div>
@@ -47,7 +47,7 @@
                     <h5 class="card-title" align="center">Talks</h5>
                     <h1 align="center">{{ $talks_count }}</h1>
                     <p class="card-text" align="center">#expert talks</p>
-                    <center><a href="https://analytics.google.com/analytics/web/#/report-home/a171070217w237922628p222495327" class="btn btn-primary" target="_blank" style="background-color: #5768ad;">See Analytics</a></center>
+                    <center><a href="#" class="btn btn-primary" onclick="alert('Currently disabled')" style="background-color: #5768ad;">See Analytics</a></center>
                 </div>
             </div>
         </div>
@@ -55,12 +55,16 @@
 </div>
 <br>
 
-<!-- flash messages section -->
-<!--<div class="container">
-    @if(session()->has('message'))
-    <center><div class="alert alert-success">{{ session()->get('message')}}</div></center>
-    @endif
-</div>-->
+<!-- flash messages section begin -->
+    <div class="flash-message">
+      @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+        @if(Session::has('alert-' . $msg))
+            <center><p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }}</p></center>
+        @endif
+      @endforeach
+    </div>
+<!-- flash messages section end -->
+
 
 <!-- trading history area start -->
 <div class="col-lg-12 mt-sm-30 mt-xs-30" id="forms">

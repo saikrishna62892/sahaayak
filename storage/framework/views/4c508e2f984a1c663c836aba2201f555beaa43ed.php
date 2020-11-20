@@ -18,7 +18,7 @@
 			        <h5 class="card-title" align="center">Users</h5>
 			        <h1 align="center"><?php echo e($users_count); ?></h1>
 			        <p class="card-text" align="center">Active Users</p>
-			        <center><a href="https://analytics.google.com/analytics/web/#/report-home/a171070217w237922628p222495327" class="btn btn-primary" target="_blank" style="background-color: #5768ad;">See Analytics</a></center>
+			        <center><a href="#" class="btn btn-primary" onclick="alert('Currently disabled')" style="background-color: #5768ad;">See Analytics</a></center>
 		        </div>
 		    </div>
 		</div>
@@ -28,7 +28,7 @@
 			        <h5 class="card-title" align="center">Counsellors</h5>
 			        <h1 align="center"><?php echo e($counsellors_count); ?></h1>
 			        <p class="card-text" align="center">Active Counsellors</p>
-			        <center><a href="https://analytics.google.com/analytics/web/#/report-home/a171070217w237922628p222495327" class="btn btn-primary" target="_blank" style="background-color: #5768ad;">See Analytics</a></center>
+			        <center><a href="#" onclick="alert('Currently disabled')" class="btn btn-primary" style="background-color: #5768ad;">See Analytics</a></center>
 		        </div>
 			</div>
 		</div>
@@ -38,7 +38,7 @@
 			        <h5 class="card-title" align="center">Gallery</h5>
 			        <h1 align="center"><?php echo e($gallery_count); ?></h1>
 			        <p class="card-text" align="center">Active Volunteers</p>
-			        <center><a href="https://analytics.google.com/analytics/web/#/report-home/a171070217w237922628p222495327" class="btn btn-primary" target="_blank" style="background-color: #5768ad;">See Analytics</a></center>
+			        <center><a href="#" class="btn btn-primary" onclick="alert('Currently disabled')" style="background-color: #5768ad;">See Analytics</a></center>
 			    </div>
 			</div>
 		</div>
@@ -48,7 +48,7 @@
                     <h5 class="card-title" align="center">Talks</h5>
                     <h1 align="center"><?php echo e($talks_count); ?></h1>
                     <p class="card-text" align="center">#expert talks</p>
-                    <center><a href="https://analytics.google.com/analytics/web/#/report-home/a171070217w237922628p222495327" class="btn btn-primary" target="_blank" style="background-color: #5768ad;">See Analytics</a></center>
+                    <center><a href="#" class="btn btn-primary" onclick="alert('Currently disabled')" style="background-color: #5768ad;">See Analytics</a></center>
                 </div>
             </div>
         </div>
@@ -56,12 +56,16 @@
 </div>
 <br>
 
-<!-- flash messages section -->
-<!--<div class="container">
-    <?php if(session()->has('message')): ?>
-    <center><div class="alert alert-success"><?php echo e(session()->get('message')); ?></div></center>
-    <?php endif; ?>
-</div>-->
+<!-- flash messages section begin -->
+    <div class="flash-message">
+      <?php $__currentLoopData = ['danger', 'warning', 'success', 'info']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $msg): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <?php if(Session::has('alert-' . $msg)): ?>
+            <center><p class="alert alert-<?php echo e($msg); ?>"><?php echo e(Session::get('alert-' . $msg)); ?></p></center>
+        <?php endif; ?>
+      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    </div>
+<!-- flash messages section end -->
+
 
 <!-- trading history area start -->
 <div class="col-lg-12 mt-sm-30 mt-xs-30" id="forms">

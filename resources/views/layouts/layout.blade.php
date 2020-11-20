@@ -156,7 +156,6 @@
                     <div class="col-lg-7 col-md-7">
                         <div class="header__top__widget">
                             @guest
-                                
                                 <a href="{{ route('login') }}" class="primary-btn">Login</a>
 
                                 @if (Route::has('register'))
@@ -190,13 +189,13 @@
                                     </form>
                                   </div>
                                 </div>
+
                             @endguest
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-2">
                         <img src="/img/nitc1.png" width="280" height="102">
                     </div>
-
                 </div>
                 <div class="canvas__open">
                     <i class="fa fa-bars"></i>
@@ -278,11 +277,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-4 col-sm-6" data-step="10" data-intro="This section provides information and logo of SGC(Student Guidance Cell)." data-position="bottom-middle-aligned">
-                    <img src="/img/sgc.png"  width="250" height="300">
+                    <center><img src="/img/sgc.png"  width="250" height="300"></center>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="footer__about">
-                        <img src="/img/footer-logo.png" alt="Sahaayak" width="240" height="60">
+                        <center><img src="/img/footer-logo.png" alt="Sahaayak" width="240" height="60">
                         <ul class="footer-address">
                             <li><i class="fa fa-envelope"></i> sgc@nitc.ac.in</li>
                             <li><i class="fa fa-phone"></i> 0495-228-6180</li>
@@ -292,6 +291,7 @@
 
 
                         <a href="/home/subscribe" class="btn primary-btn" data-step="9" data-intro="Here you can subscribe for the latest updates of Sahaayak." data-position="right">Subscribe&nbsp;<i class="fa fa-send"></i></a>
+                        </center>
 
 
                     </div>

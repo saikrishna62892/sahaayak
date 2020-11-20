@@ -23,6 +23,7 @@ use App\dialyquotes;
 use Spatie\Analytics\Period;
 use App\Playlist;
 use App\Worry;
+use Session;
 //use Spatie\Analytics\Analytics;
 
 
@@ -51,14 +52,17 @@ class HomeController extends Controller
         $quote->save();
         $dialyquote=$request->quote;
         $featurednews=News::orderBy('created_at','desc')->get();
-        return view('welcome')->with(compact('dialyquote','featurednews'));
+        $counsellors = Counsellor::all();
+        Session::flash('alert-success', 'DialyQuote Added Succesfully'); 
+        return view('welcome')->with(compact('dialyquote','featurednews','counsellors'));
     }
 
      public function welcome(){
         $dialyquote=dialyquotes::all()->last()->quote;
         $featurednews=News::orderBy('created_at','desc')->get();
+        $counsellors=Counsellor::all();
         #dd($featurednews);
-        return view('welcome')->with(compact('dialyquote','featurednews'));
+        return view('welcome')->with(compact('dialyquote','featurednews','counsellors'));
     }
 
 
@@ -113,6 +117,7 @@ class HomeController extends Controller
         $video = new Video();
         $playlist = new Playlist();
         $counsellor = new Counsellor();
+        Session::flash('alert-success', 'Welcome '.$admin_name.' to the Dashboard'); 
         return view('admin.dashboard_admin',compact('unapprovedVolunteers','talks','users_count','volunteers_count','badges','shared_news','shared_videos','shared_quotes','shared_playlists','newsarticle','talk','quote','video','playlist','admin_name','suggestions','talks_count','gallery','counsellors_count','gallery_count','counsellors','counsellor'));
     }
 
@@ -141,6 +146,7 @@ class HomeController extends Controller
 
         //should be changed further
         $pending_reports=$interactions;
+        Session::flash('alert-success', 'Welcome '.$user->name.' to the Dashboard'); 
        return view('volunteer.dashboard_volunteer')->with(compact('appointments','completedappointments','volunteer','checkins','requests','interactions','pending_reports'));
 
     }
@@ -161,7 +167,7 @@ class HomeController extends Controller
         $stories_count=$user_stories->count();
         $events_count=$diary->count();
         $worries_count=Worry::where('user_id',$user->id)->get()->count();
-
+        Session::flash('alert-success', 'Welcome '.$user->name.' to the Dashboard'); 
         //session()->put('message','Welcome '.$user->name.' to the Dashboard');
         return view('dashboard_user')->with(compact('user','user_stories','diary','checkins','stories_count','events_count','worries_count'));
     }

@@ -10,6 +10,13 @@
             <div class="hero__items set-bg" data-setbg="/img/hero/hero-1.jpg">
                 <div class="container">
                     <div class="row">
+                        <div class="flash-message" style="display: flex;justify-content: center;align-items: center;">
+                          @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+                            @if(Session::has('alert-' . $msg))
+                                <center><p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }}</p></center>
+                            @endif
+                          @endforeach
+                        </div>
                         <div class="card mt-4 shadow-lg p-3 mb-5 bg-white rounded" >
                             <div class="card-header" align="center"><h3 style="color: #5768ad;">{{ __('Verify Your Email Address') }}</h3></div>
                             <div class="card-body">
