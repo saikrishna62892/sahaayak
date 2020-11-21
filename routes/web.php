@@ -107,6 +107,8 @@ Route::get('home', 'HomeController@welcome')->name('home');
 
 //user page route
 Route::get('/user/home', 'HomeController@userHome')->name('userDashboard')->middleware('is_user');
+Route::get('/user/edit/{user}', 'HomeController@editUserDetails')->name('editUserDetails');
+Route::patch('/user/home/edit/{user}/updateDetails','HomeController@updateEditDetails');
 
 //admin page route
 Route::get('admin/home', 'HomeController@adminHome')->name('adminDashboard')->middleware('is_admin');
@@ -163,14 +165,14 @@ Route::get('/admin/home/volunteer/{unapprovedVolunteer}/rejectVolunteer','Volunt
 
 //Report Routes
 
-Route::post('/counsellor/report/generateReport','appointment_controller@generateReport');
+Route::post('/counsellor/addCasehistory','appointment_controller@addCasehistory');
 Route::get('/volunteer/appointment/{appointment}/report','appointment_controller@reportForm');
 Route::post('/admin/report/{appointment}/generateReport','appointment_controller@generateReport');
 
 //Get case history routes
 
 Route::get('/counsellor/appointment/{user}/getCaseHistory','CounsellorController@getCaseHistory');
-Route::get('/counsellor/appointment/getCaseHistory','CounsellorController@getHistory');
+Route::get('/counsellor/appointment/downloadReport','CounsellorController@downloadReport');
 
 //learn section routes
 Route::get('home/learn/{learn}/{learnID}','LearnController@show');

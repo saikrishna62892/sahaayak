@@ -1,9 +1,10 @@
-@extends('layouts.dashboard')
 
-@section('name')
-    {{ $volunteer->name }}
-@endsection
-	@section('content')
+
+<?php $__env->startSection('name'); ?>
+    <?php echo e($volunteer->name); ?>
+
+<?php $__env->stopSection(); ?>
+	<?php $__env->startSection('content'); ?>
 	<br>	
 	<div class="container" id="stats">
 		<div class="row">
@@ -12,7 +13,7 @@
 					<div class="card-body">
 						<h5 class="card-title" align="center">Checkins</h5>
 						<p class="card-text" align="center">#Logins</p>
-						<h1 align="center">{{ $checkins }}</h1>
+						<h1 align="center"><?php echo e($checkins); ?></h1>
 					</div>
 				</div>
 			</div>
@@ -21,7 +22,7 @@
 			        <div class="card-body">
 				        <h5 class="card-title" align="center">Sessions</h5>
 				        <p class="card-text" align="center">#Interactions</p>
-				        <h1 align="center">{{ $interactions }}</h1>
+				        <h1 align="center"><?php echo e($interactions); ?></h1>
 			        </div>
 				</div>
 			</div>
@@ -30,7 +31,7 @@
 				    <div class="card-body">
 				        <h5 class="card-title" align="center">Requests</h5>
 				        <p class="card-text" align="center">#Yet to accept</p>
-				        <h1 align="center">{{ $requests }}</h1>
+				        <h1 align="center"><?php echo e($requests); ?></h1>
 				    </div>
 				</div>
 			</div>
@@ -39,7 +40,7 @@
 			        <div class="card-body">
 				        <h5 class="card-title" align="center">Reports</h5>
 				        <p class="card-text" align="center">#Pending reports</p>
-				        <h1 align="center">{{ $pending_reports }}</h1>
+				        <h1 align="center"><?php echo e($pending_reports); ?></h1>
 				        
 			        </div>
 			    </div>
@@ -48,11 +49,11 @@
 	</div>
 	<!-- flash messages section begin -->
     <div class="flash-message">
-      @foreach (['danger', 'warning', 'success', 'info'] as $msg)
-        @if(Session::has('alert-' . $msg))
-            <center><p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }}</p></center>
-        @endif
-      @endforeach
+      <?php $__currentLoopData = ['danger', 'warning', 'success', 'info']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $msg): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <?php if(Session::has('alert-' . $msg)): ?>
+            <center><p class="alert alert-<?php echo e($msg); ?>"><?php echo e(Session::get('alert-' . $msg)); ?></p></center>
+        <?php endif; ?>
+      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>
 	<!-- flash messages section end -->
 
@@ -100,49 +101,49 @@
                                 </thead>
                                 <tbody>
                                     <?php $count=1 ?>
-                                    @forelse($appointments as $item)
+                                    <?php $__empty_1 = true; $__currentLoopData = $appointments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
                                     	<?php $user_email=App\User::find($item->user_id)->email; ?>
                                     <tr>
-                                        <td scope="row">{{ $count++ }}</td>
-                                        <td>{{$item->name}}</td>
-                                        <td colspan="2">{{$item->college_id}}</td>
-                                        <td>{{$item->gender}}</td>
-									    <td colspan="2">{{$user_email}}</td>
-									    <td colspan="2">{{$item->department}}</td>
-									    <td colspan="2">{{$item->faculty_advisor}}</td>
-									    <td colspan="2">{{$item->appointment_type}}</td>
-									    <td>{{$item->date}}</td>
-									    @if($item->slot==1)
+                                        <td scope="row"><?php echo e($count++); ?></td>
+                                        <td><?php echo e($item->name); ?></td>
+                                        <td colspan="2"><?php echo e($item->college_id); ?></td>
+                                        <td><?php echo e($item->gender); ?></td>
+									    <td colspan="2"><?php echo e($user_email); ?></td>
+									    <td colspan="2"><?php echo e($item->department); ?></td>
+									    <td colspan="2"><?php echo e($item->faculty_advisor); ?></td>
+									    <td colspan="2"><?php echo e($item->appointment_type); ?></td>
+									    <td><?php echo e($item->date); ?></td>
+									    <?php if($item->slot==1): ?>
 									    	<td colspan="2">8AM - 9AM</td>
-									    @elseif($item->slot==2)
+									    <?php elseif($item->slot==2): ?>
 									    	<td colspan="2">9AM - 10AM</td>
-									    @elseif($item->slot==3)
+									    <?php elseif($item->slot==3): ?>
 									    	<td colspan="2">10AM - 11AM</td>
-									    @elseif($item->slot==4)
+									    <?php elseif($item->slot==4): ?>
 									    	<td colspan="2">11AM - 12PM</td>
-									    @elseif($item->slot==5)
+									    <?php elseif($item->slot==5): ?>
 									    	<td colspan="2">12PM - 1PM</td>
-									    @elseif($item->slot==6)
+									    <?php elseif($item->slot==6): ?>
 									    	<td colspan="2">1PM - 2PM</td>
-									    @elseif($item->slot==7)
+									    <?php elseif($item->slot==7): ?>
 									    	<td colspan="2">2PM - 3PM</td>
-									    @elseif($item->slot==8)
+									    <?php elseif($item->slot==8): ?>
 									    	<td colspan="2">3PM - 4PM</td>
-									    @elseif($item->slot==9)
+									    <?php elseif($item->slot==9): ?>
 									    	<td colspan="2">4PM - 5PM</td>
-									    @else
+									    <?php else: ?>
 									    	<td> ------ </td>
-									    @endif
-									    <td colspan="3">{{$item->message}}</td>
+									    <?php endif; ?>
+									    <td colspan="3"><?php echo e($item->message); ?></td>
 									    <td>
-									    	<a href="/counsellor/appointment/{{$item->id}}/acceptAppointment" style="color: #5768ad;">Accept?</a>&emsp;
-									    	<a href="/counsellor/appointment/{{$item->id}}/acceptAppointment" style="color: #5768ad;">Reject?</a>&emsp;
-									    	<a href="/counsellor/appointment/{{$item->id}}/acceptAppointment" style="color: #5768ad;">Reschedule!</a>
+									    	<a href="/counsellor/appointment/<?php echo e($item->id); ?>/acceptAppointment" style="color: #5768ad;">Accept?</a>&emsp;
+									    	<a href="/counsellor/appointment/<?php echo e($item->id); ?>/acceptAppointment" style="color: #5768ad;">Reject?</a>&emsp;
+									    	<a href="/counsellor/appointment/<?php echo e($item->id); ?>/acceptAppointment" style="color: #5768ad;">Reschedule!</a>
 									    </td>
                                     </tr>
-                                    @empty
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
                                     <h5>No Requests Made still..</h5>
-                                    @endforelse
+                                    <?php endif; ?>
                                 </tbody>
                             </table>
                         </div>
@@ -172,56 +173,56 @@
 	                                <tbody>
 	                                    <?php $count=1 ?>
 
-	                                     @forelse($completedappointments as $key => $item)
+	                                     <?php $__empty_1 = true; $__currentLoopData = $completedappointments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
 	                                     <?php $user_email=App\User::find($item->user_id)->email; ?>
 	                                    <tr>
-	                                        <td scope="row">{{ $count++ }}</td>
-	                                        <td>{{$item->name}}</td>
-	                                        <td colspan="2">{{$item->college_id}}</td>
-	                                        <td>{{$item->gender}}</td>
-										    <td colspan="2">{{$user_email}}</td>
-										    <td colspan="2">{{$item->department}}</td>
-										    <td colspan="2">{{$item->faculty_advisor}}</td>
-										    <td colspan="2">{{$item->appointment_type}}</td>
-										    <td >{{$item->date}}</td>
-										    @if($item->slot==1)
+	                                        <td scope="row"><?php echo e($count++); ?></td>
+	                                        <td><?php echo e($item->name); ?></td>
+	                                        <td colspan="2"><?php echo e($item->college_id); ?></td>
+	                                        <td><?php echo e($item->gender); ?></td>
+										    <td colspan="2"><?php echo e($user_email); ?></td>
+										    <td colspan="2"><?php echo e($item->department); ?></td>
+										    <td colspan="2"><?php echo e($item->faculty_advisor); ?></td>
+										    <td colspan="2"><?php echo e($item->appointment_type); ?></td>
+										    <td ><?php echo e($item->date); ?></td>
+										    <?php if($item->slot==1): ?>
 										    	<td colspan="2">8AM - 9AM</td>
-										    @elseif($item->slot==2)
+										    <?php elseif($item->slot==2): ?>
 										    	<td colspan="2">9AM - 10AM</td>
-										    @elseif($item->slot==3)
+										    <?php elseif($item->slot==3): ?>
 										    	<td colspan="2">10AM - 11AM</td>
-										    @elseif($item->slot==4)
+										    <?php elseif($item->slot==4): ?>
 										    	<td colspan="2">11AM - 12PM</td>
-										    @elseif($item->slot==5)
+										    <?php elseif($item->slot==5): ?>
 										    	<td colspan="2">12PM - 1PM</td>
-										    @elseif($item->slot==6)
+										    <?php elseif($item->slot==6): ?>
 										    	<td colspan="2">1PM - 2PM</td>
-										    @elseif($item->slot==7)
+										    <?php elseif($item->slot==7): ?>
 										    	<td colspan="2">2PM - 3PM</td>
-										    @elseif($item->slot==8)
+										    <?php elseif($item->slot==8): ?>
 										    	<td colspan="2">3PM - 4PM</td>
-										    @elseif($item->slot==9)
+										    <?php elseif($item->slot==9): ?>
 										    	<td colspan="2">4PM - 5PM</td>
-										    @else
+										    <?php else: ?>
 										    	<td> ------ </td>
-										    @endif
-										    <td colspan="3">{{$item->message}}</td>
+										    <?php endif; ?>
+										    <td colspan="3"><?php echo e($item->message); ?></td>
 										    <?php
 										    	$endslots =   ['00','09','10','11','12','13','14','15','16','17'];
         										$dtB = Carbon\Carbon::parse($item->date.' '.$endslots[$item->slot].':00:00');
 										    	$dtA = Carbon\Carbon::now();
 											?>
-										    @if($dtA > $dtB)
-										    <td><button id="{{ $item->college_id }}#{{ $item->name }}#{{ $user_email }}#{{ $item->id }}" data-toggle="tab" href="#makereport" role="tab" onClick="reply_click(this.id,)" class="btn btn-primary" style="background-color: #5768ad;">Add Case History</button></td>
-										    @else
+										    <?php if($dtA > $dtB): ?>
+										    <td><button id="<?php echo e($item->college_id); ?>#<?php echo e($item->name); ?>#<?php echo e($user_email); ?>#<?php echo e($item->id); ?>" data-toggle="tab" href="#makereport" role="tab" onClick="reply_click(this.id,)" class="btn btn-primary" style="background-color: #5768ad;">Add Case History</button></td>
+										    <?php else: ?>
 										    <td style="color: lightgrey;">Make report will availabe after session completion.</td>
-										    @endif
+										    <?php endif; ?>
 
-										    <td><a target="_blank" href="/counsellor/appointment/{{$item->user_id}}/getCaseHistory" class="btn btn-primary" style="background-color: #5768ad;">Get {{ $item->name }} Report</a></td>
+										    <td><a target="_blank" href="/counsellor/appointment/<?php echo e($item->user_id); ?>/getCaseHistory" class="btn btn-primary" style="background-color: #5768ad;">Get <?php echo e($item->name); ?> Report</a></td>
 	                                    </tr>
-	                                    @empty
+	                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
 	                                    <h5>No Reports to make..</h5>
-	                                    @endforelse
+	                                    <?php endif; ?>
 	                                </tbody>
 	                            </table>
 	                        </div>
@@ -247,19 +248,19 @@
                                 </thead>
                                 <tbody>
                                     <?php $count=1 ?>
-                                    @forelse($appointments as $item)
+                                    <?php $__empty_1 = true; $__currentLoopData = $appointments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
                                     <tr>
-                                        <td scope="row">{{ $count++ }}</td>
-                                        <td>{{$item->name}}</td>
-									    <td>{{$item->email}}</td>
-									    <td>{{$item->phone}}</td>
-									    <td>{{$item->timings}}</td>
-									    <td colspan="3">{{$item->message}}</td>
-									    <td><a href="/volunteer/appointment/{{$item->id}}/acceptAppointment" style="color: #5768ad;">Accept?</a></td>
+                                        <td scope="row"><?php echo e($count++); ?></td>
+                                        <td><?php echo e($item->name); ?></td>
+									    <td><?php echo e($item->email); ?></td>
+									    <td><?php echo e($item->phone); ?></td>
+									    <td><?php echo e($item->timings); ?></td>
+									    <td colspan="3"><?php echo e($item->message); ?></td>
+									    <td><a href="/volunteer/appointment/<?php echo e($item->id); ?>/acceptAppointment" style="color: #5768ad;">Accept?</a></td>
                                     </tr>
-                                    @empty
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
                                     <h5>No Requests Made still..</h5>
-                                    @endforelse
+                                    <?php endif; ?>
                                 </tbody>
                             </table>
                         </div>
@@ -277,13 +278,20 @@
 
 					        <div class="card-body">
         				    <form action="/counsellor/appointment/downloadReport" method="get" target="_blank">
-            				@csrf
+            				<?php echo csrf_field(); ?>
             				<div class="form-group">
 							    <label for="college_id">Please Enter College ID of the User</label>
 							    <input type="text" class="form-control" name="college_id" id="college_id" aria-describedby="college_idDHelp" placeholder="User CollegeID here.."  autocomplete="off" >
-							    @error('college_id')
-							    <small class="text-danger">{{$message}}</small>
-							    @enderror
+							    <?php $__errorArgs = ['college_id'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+							    <small class="text-danger"><?php echo e($message); ?></small>
+							    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
 							</div>
                				  <center><button type="submit" class="btn btn-primary" style="background-color: #5768ad;">Download Repoort</button></center>
                				</form>
@@ -299,7 +307,7 @@
 		</div>
 		<!--reportForm Begin-->
         <div class="tab-pane fade" id="makereport" role="tabpanel">
-        	@include('appointment.reportForm')
+        	<?php echo $__env->make('appointment.reportForm', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         </div>
         <!--reportForm end-->
 	</div>
@@ -321,4 +329,6 @@
 	} 
 </script>
 
-@endsection 
+<?php $__env->stopSection(); ?> 
+
+<?php echo $__env->make('layouts.dashboard', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\Sahayak\sahaayak\resources\views/volunteer/dashboard_volunteer.blade.php ENDPATH**/ ?>

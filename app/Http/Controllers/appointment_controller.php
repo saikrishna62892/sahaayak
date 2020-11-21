@@ -13,10 +13,12 @@ use App\Notifications\AppointmentReceivedNotification;
 use App\Notifications\AppointmentAcceptedNotification;
 use App\Notifications\AppointmentReportNotification;
 use App\User;
+use App\Counsellor;
 use App\Traits\NotificationTrait;
 use Spatie\GoogleCalendar\Event;
 use Carbon\Carbon;
 use Session;
+
 
 class appointment_controller extends Controller
 {
@@ -28,7 +30,7 @@ class appointment_controller extends Controller
         $this->middleware(['auth','verified']);
         $this->middleware('is_user')->only(['save']);
         //$this->middleware('is_volunteer')->only(['appointmentAccepted','reportForm','generateReport']);
-        $this->middleware('is_counsellor')->only(['appointmentAccepted','reportForm','generateReport']);
+        $this->middleware('is_counsellor')->only(['appointmentAccepted','reportForm','addCasehistory']);
 
     }
     function save(Request $req)
@@ -76,7 +78,7 @@ class appointment_controller extends Controller
         $event->endDateTime = $d2;
         //$user->email
         $event->addAttendee(['email' => 'dileepkumar_m190437cs@nitc.ac.in']);
-        $counsellor=Counsellor::find($appointment->counsellor_id);
+        //$counsellor=Counsellor::find($appointment->counsellor_id);
         //$counsellor->email
         $event->addAttendee(['email' => 'saikrishna_m190241cs@nitc.ac.in']);
         $event->description='Appointment has been scheduled successfully and Please be on time.';
@@ -110,7 +112,7 @@ class appointment_controller extends Controller
         return view('appointment.reportForm',compact('appointment'));
     }
 
-    public function generateReport()
+    public function addCasehistory()
     {
         $data = request()->all();
         $appointment = Appointment::find($data['appointment_id']);
@@ -124,9 +126,9 @@ class appointment_controller extends Controller
 
         $appointment->update(['is_Completed' => 1]);
 
-        $pdf = PDF::loadView('appointment.generateReport',compact('data'));
-        $user = User::find($appointment->user_id);
-        $user->notify(new AppointmentReportNotification($pdf));
+        //$pdf = PDF::loadView('appointment.generateReport',compact('data'));
+        //$user = User::find($appointment->user_id);
+        //$user->notify(new AppointmentReportNotification($pdf));
         Session::flash('alert-success', 'CaseHistory Added Succesfully'); 
         return redirect()->back();
     }
