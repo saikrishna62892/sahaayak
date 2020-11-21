@@ -121,7 +121,7 @@ class HomeController extends Controller
         return view('admin.dashboard_admin',compact('unapprovedVolunteers','talks','users_count','volunteers_count','badges','shared_news','shared_videos','shared_quotes','shared_playlists','newsarticle','talk','quote','video','playlist','admin_name','suggestions','talks_count','gallery','counsellors_count','gallery_count','counsellors','counsellor'));
     }
 
-    public function volunteerHome()
+   /* public function volunteerHome()
     {
         $user=Auth::user();
         //user->volunteer->may appointments
@@ -149,7 +149,38 @@ class HomeController extends Controller
         Session::flash('alert-success', 'Welcome '.$user->name.' to the Dashboard'); 
        return view('volunteer.dashboard_volunteer')->with(compact('appointments','completedappointments','volunteer','checkins','requests','interactions','pending_reports'));
 
+    }*/
+
+    public function counsellorHome()
+    {
+        $user=Auth::user();
+        //user->volunteer->may appointments
+        $volunteer = $user->counsellor;
+
+        $appointments = $volunteer->appointments->where('accept',0);  //pending appointments as appointments, section- Allappointments
+
+        //$appointments=Appointment::where('volunteer_id',null)->get();
+        $completedappointments= $volunteer->appointments->where('accept',1)->where('is_Completed',0);  // accepted but not completed as completedappointments, section-myAppointments
+
+        
+        //volunteer stats
+        
+        $checkins=$user->checkins;
+        $checkins=$checkins+1;
+        $user->checkins=$checkins;
+        $user->save();
+
+        $requests=$appointments->count();
+
+        $interactions=$completedappointments->count();
+
+        //should be changed further
+        $pending_reports=$interactions;
+       return view('volunteer.dashboard_volunteer')->with(compact('appointments','completedappointments','volunteer','checkins','requests','interactions','pending_reports'));
+
     }
+
+
 
     public function userHome()
     {
@@ -167,8 +198,8 @@ class HomeController extends Controller
         $stories_count=$user_stories->count();
         $events_count=$diary->count();
         $worries_count=Worry::where('user_id',$user->id)->get()->count();
+
         Session::flash('alert-success', 'Welcome '.$user->name.' to the Dashboard'); 
-        //session()->put('message','Welcome '.$user->name.' to the Dashboard');
-        return view('dashboard_user')->with(compact('user','user_stories','diary','checkins','stories_count','events_count','worries_count'));
+       return view('dashboard_user')->with(compact('user','user_stories','diary','checkins','stories_count','events_count','worries_count'));
     }
 }

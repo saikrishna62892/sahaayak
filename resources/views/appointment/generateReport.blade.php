@@ -1,4 +1,4 @@
-<?php $volunteer= App\Volunteer::find($data['volunteer_id'])?>
+<?php $volunteer= App\Counsellor::find($data['volunteer_id'])?>
 
 <div class="container" style="border-style: solid;border-color: black;">
 	<center><div class="upn"></div></center>

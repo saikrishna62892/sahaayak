@@ -2,7 +2,7 @@
 
     <h4 align="center" id="demo"> </h4>
     <div class="card-body">
-       <form action="/volunteer/report/generateReport" method="post">
+       <form action="/counsellor/report/generateReport" method="post">
         @csrf
         <div class="row">
             <div class="form-group  col-lg-2">

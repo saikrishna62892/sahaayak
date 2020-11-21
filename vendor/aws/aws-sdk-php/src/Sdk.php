@@ -26,6 +26,8 @@ namespace Aws;
  * @method \Aws\MultiRegionClient createMultiRegionAppMesh(array $args = [])
  * @method \Aws\AppSync\AppSyncClient createAppSync(array $args = [])
  * @method \Aws\MultiRegionClient createMultiRegionAppSync(array $args = [])
+ * @method \Aws\Appflow\AppflowClient createAppflow(array $args = [])
+ * @method \Aws\MultiRegionClient createMultiRegionAppflow(array $args = [])
  * @method \Aws\ApplicationAutoScaling\ApplicationAutoScalingClient createApplicationAutoScaling(array $args = [])
  * @method \Aws\MultiRegionClient createMultiRegionApplicationAutoScaling(array $args = [])
  * @method \Aws\ApplicationDiscoveryService\ApplicationDiscoveryServiceClient createApplicationDiscoveryService(array $args = [])
@@ -46,6 +48,8 @@ namespace Aws;
  * @method \Aws\MultiRegionClient createMultiRegionBackup(array $args = [])
  * @method \Aws\Batch\BatchClient createBatch(array $args = [])
  * @method \Aws\MultiRegionClient createMultiRegionBatch(array $args = [])
+ * @method \Aws\Braket\BraketClient createBraket(array $args = [])
+ * @method \Aws\MultiRegionClient createMultiRegionBraket(array $args = [])
  * @method \Aws\Budgets\BudgetsClient createBudgets(array $args = [])
  * @method \Aws\MultiRegionClient createMultiRegionBudgets(array $args = [])
  * @method \Aws\Chime\ChimeClient createChime(array $args = [])
@@ -208,6 +212,8 @@ namespace Aws;
  * @method \Aws\MultiRegionClient createMultiRegionIVS(array $args = [])
  * @method \Aws\Iam\IamClient createIam(array $args = [])
  * @method \Aws\MultiRegionClient createMultiRegionIam(array $args = [])
+ * @method \Aws\IdentityStore\IdentityStoreClient createIdentityStore(array $args = [])
+ * @method \Aws\MultiRegionClient createMultiRegionIdentityStore(array $args = [])
  * @method \Aws\ImportExport\ImportExportClient createImportExport(array $args = [])
  * @method \Aws\MultiRegionClient createMultiRegionImportExport(array $args = [])
  * @method \Aws\Inspector\InspectorClient createInspector(array $args = [])
@@ -350,6 +356,8 @@ namespace Aws;
  * @method \Aws\MultiRegionClient createMultiRegionRds(array $args = [])
  * @method \Aws\Redshift\RedshiftClient createRedshift(array $args = [])
  * @method \Aws\MultiRegionClient createMultiRegionRedshift(array $args = [])
+ * @method \Aws\RedshiftDataAPIService\RedshiftDataAPIServiceClient createRedshiftDataAPIService(array $args = [])
+ * @method \Aws\MultiRegionClient createMultiRegionRedshiftDataAPIService(array $args = [])
  * @method \Aws\Rekognition\RekognitionClient createRekognition(array $args = [])
  * @method \Aws\MultiRegionClient createMultiRegionRekognition(array $args = [])
  * @method \Aws\ResourceGroups\ResourceGroupsClient createResourceGroups(array $args = [])
@@ -368,8 +376,12 @@ namespace Aws;
  * @method \Aws\S3\S3MultiRegionClient createMultiRegionS3(array $args = [])
  * @method \Aws\S3Control\S3ControlClient createS3Control(array $args = [])
  * @method \Aws\MultiRegionClient createMultiRegionS3Control(array $args = [])
+ * @method \Aws\S3Outposts\S3OutpostsClient createS3Outposts(array $args = [])
+ * @method \Aws\MultiRegionClient createMultiRegionS3Outposts(array $args = [])
  * @method \Aws\SSO\SSOClient createSSO(array $args = [])
  * @method \Aws\MultiRegionClient createMultiRegionSSO(array $args = [])
+ * @method \Aws\SSOAdmin\SSOAdminClient createSSOAdmin(array $args = [])
+ * @method \Aws\MultiRegionClient createMultiRegionSSOAdmin(array $args = [])
  * @method \Aws\SSOOIDC\SSOOIDCClient createSSOOIDC(array $args = [])
  * @method \Aws\MultiRegionClient createMultiRegionSSOOIDC(array $args = [])
  * @method \Aws\SageMaker\SageMakerClient createSageMaker(array $args = [])
@@ -422,6 +434,10 @@ namespace Aws;
  * @method \Aws\MultiRegionClient createMultiRegionSynthetics(array $args = [])
  * @method \Aws\Textract\TextractClient createTextract(array $args = [])
  * @method \Aws\MultiRegionClient createMultiRegionTextract(array $args = [])
+ * @method \Aws\TimestreamQuery\TimestreamQueryClient createTimestreamQuery(array $args = [])
+ * @method \Aws\MultiRegionClient createMultiRegionTimestreamQuery(array $args = [])
+ * @method \Aws\TimestreamWrite\TimestreamWriteClient createTimestreamWrite(array $args = [])
+ * @method \Aws\MultiRegionClient createMultiRegionTimestreamWrite(array $args = [])
  * @method \Aws\TranscribeService\TranscribeServiceClient createTranscribeService(array $args = [])
  * @method \Aws\MultiRegionClient createMultiRegionTranscribeService(array $args = [])
  * @method \Aws\Transfer\TransferClient createTransfer(array $args = [])
@@ -455,7 +471,7 @@ namespace Aws;
  */
 class Sdk
 {
-    const VERSION = '3.147.1';
+    const VERSION = '3.159.1';
 
     /** @var array Arguments for creating clients */
     private $args;

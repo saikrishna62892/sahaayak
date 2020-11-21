@@ -43,12 +43,11 @@ abstract class AbstractAdapter implements AdapterInterface, CacheInterface, Logg
             throw new InvalidArgumentException(sprintf('Namespace must be %d chars max, %d given ("%s").', $this->maxIdLength - 24, \strlen($namespace), $namespace));
         }
         $this->createCacheItem = \Closure::bind(
-            static function ($key, $value, $isHit) use ($defaultLifetime) {
+            static function ($key, $value, $isHit) {
                 $item = new CacheItem();
                 $item->key = $key;
                 $item->value = $v = $value;
                 $item->isHit = $isHit;
-                $item->defaultLifetime = $defaultLifetime;
                 // Detect wrapped values that encode for their expiry and creation duration
                 // For compactness, these values are packed in the key of an array using
                 // magic numbers in the form 9D-..-..-..-..-00-..-..-..-5F
@@ -66,7 +65,7 @@ abstract class AbstractAdapter implements AdapterInterface, CacheInterface, Logg
         );
         $getId = \Closure::fromCallable([$this, 'getId']);
         $this->mergeByLifetime = \Closure::bind(
-            static function ($deferred, $namespace, &$expiredIds) use ($getId) {
+            static function ($deferred, $namespace, &$expiredIds) use ($getId, $defaultLifetime) {
                 $byLifetime = [];
                 $now = microtime(true);
                 $expiredIds = [];
@@ -74,7 +73,9 @@ abstract class AbstractAdapter implements AdapterInterface, CacheInterface, Logg
                 foreach ($deferred as $key => $item) {
                     $key = (string) $key;
                     if (null === $item->expiry) {
-                        $ttl = 0 < $item->defaultLifetime ? $item->defaultLifetime : 0;
+                        $ttl = 0 < $defaultLifetime ? $defaultLifetime : 0;
+                    } elseif (0 === $item->expiry) {
+                        $ttl = 0;
                     } elseif (0 >= $ttl = (int) (0.1 + $item->expiry - $now)) {
                         $expiredIds[] = $getId($key);
                         continue;
@@ -111,7 +112,7 @@ abstract class AbstractAdapter implements AdapterInterface, CacheInterface, Logg
             return $opcache;
         }
 
-        if (\in_array(\PHP_SAPI, ['cli', 'phpdbg'], true) && !filter_var(ini_get('apc.enable_cli'), FILTER_VALIDATE_BOOLEAN)) {
+        if (\in_array(\PHP_SAPI, ['cli', 'phpdbg'], true) && !filter_var(ini_get('apc.enable_cli'), \FILTER_VALIDATE_BOOLEAN)) {
             return $opcache;
         }
 

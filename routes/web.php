@@ -78,7 +78,7 @@ Route::get('admin/deleteGallery/{gallery}/gallerydeleted','GalleryController@del
 Route::post('/appointment_controller','appointment_controller@save');
 
 
-Route::get('volunteer/appointment/{appointment}/acceptAppointment','appointment_controller@appointmentAccepted');
+Route::get('counsellor/appointment/{appointment}/acceptAppointment','appointment_controller@appointmentAccepted');
 //Route::post('/volunteer/casehistory/addCasehistory','VolunteerController@addCasehistory')->name('addCaseHistory');
 
 Route::get('/suggestion_controller','suggestion_controller@save');
@@ -113,6 +113,9 @@ Route::get('admin/home', 'HomeController@adminHome')->name('adminDashboard')->mi
 
 //volunteer dashboard route
 Route::get('volunteer/home', 'HomeController@volunteerHome')->name('volunteerDashboard')->middleware('is_volunteer');
+
+//counsellor dashboard route
+Route::get('counsellor/home', 'HomeController@counsellorHome')->name('counsellorDashboard')->middleware('is_counsellor');
 
 //Questionnaire Routes
 Route::get('admin/home/questionnaires/create','QuestionnaireController@create');
@@ -160,14 +163,14 @@ Route::get('/admin/home/volunteer/{unapprovedVolunteer}/rejectVolunteer','Volunt
 
 //Report Routes
 
-Route::post('/volunteer/report/generateReport','appointment_controller@generateReport');
+Route::post('/counsellor/report/generateReport','appointment_controller@generateReport');
 Route::get('/volunteer/appointment/{appointment}/report','appointment_controller@reportForm');
 Route::post('/admin/report/{appointment}/generateReport','appointment_controller@generateReport');
 
 //Get case history routes
 
-Route::get('/volunteer/appointment/{user}/getCaseHistory','VolunteerController@getCaseHistory');
-Route::get('/volunteer/appointment/getCaseHistory','VolunteerController@getHistory');
+Route::get('/counsellor/appointment/{user}/getCaseHistory','CounsellorController@getCaseHistory');
+Route::get('/counsellor/appointment/getCaseHistory','CounsellorController@getHistory');
 
 //learn section routes
 Route::get('home/learn/{learn}/{learnID}','LearnController@show');

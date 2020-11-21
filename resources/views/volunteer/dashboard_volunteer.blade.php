@@ -106,7 +106,7 @@
 									    <td>{{$item->phone}}</td>
 									    <td>{{$item->timings}}</td>
 									    <td colspan="3">{{$item->message}}</td>
-									    <td><a href="/volunteer/appointment/{{$item->id}}/acceptAppointment" style="color: #5768ad;">Accept?</a></td>
+									    <td><a href="/counsellor/appointment/{{$item->id}}/acceptAppointment" style="color: #5768ad;">Accept?</a></td>
                                     </tr>
                                     @empty
                                     <h5>No Requests Made still..</h5>
@@ -153,7 +153,7 @@
 										    <td style="color: lightgrey;">Make report will availabe after session completion.</td>
 										    @endif
 
-										    <td><a target="_blank" href="/volunteer/appointment/{{$item->user_id}}/getCaseHistory" class="btn btn-primary" style="background-color: #5768ad;">Get case history</a></td>
+										    <td><a target="_blank" href="/counsellor/appointment/{{$item->user_id}}/getCaseHistory" class="btn btn-primary" style="background-color: #5768ad;">Get case history</a></td>
 	                                    </tr>
 	                                    @empty
 	                                    <h5>No Reports to make..</h5>
@@ -212,7 +212,7 @@
        					    <div class="card-header">Enter ID to get History</div>
 
 					        <div class="card-body">
-        				    <form action="/volunteer/appointment/getCaseHistory" method="get" target="_blank">
+        				    <form action="/counsellor/appointment/getCaseHistory" method="get" target="_blank">
             @csrf
             				<div class="form-group">
 

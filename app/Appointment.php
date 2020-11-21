@@ -10,9 +10,7 @@ use App\Casehistory;
 class Appointment extends Model
 {
     protected $guarded = [];
-    protected $table='appointments';
-    protected $fillable =   ['name','college_id','department','gender','appointment_type','faculty_advisor','counsellor_name','date','slot','message'];
-
+    
     public function user()
     {
     	return $this->belongsTo(User::class);

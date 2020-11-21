@@ -13,6 +13,7 @@ use Aws\Endpoint\PartitionEndpointProvider;
 use Aws\EndpointDiscovery\ConfigurationInterface;
 use Aws\EndpointDiscovery\ConfigurationProvider;
 use Aws\EndpointDiscovery\EndpointDiscoveryMiddleware;
+use Aws\Exception\InvalidRegionException;
 use Aws\Retry\ConfigurationInterface as RetryConfigInterface;
 use Aws\Retry\ConfigurationProvider as RetryConfigProvider;
 use Aws\Signature\SignatureProvider;
@@ -536,6 +537,13 @@ class ClientResolver
                 ? $args['api']['metadata']['endpointPrefix']
                 : $args['service'];
 
+            // Check region is a valid host label when it is being used to
+            // generate an endpoint
+            if (!self::isValidRegion($args['region'])) {
+                throw new InvalidRegionException('Region must be a valid RFC'
+                    . ' host label.');
+            }
+
             // Invoke the endpoint provider and throw if it does not resolve.
             $result = EndpointProvider::resolve($value, [
                 'service' => $endpointPrefix,
@@ -587,7 +595,11 @@ class ClientResolver
     public static function _apply_debug($value, array &$args, HandlerList $list)
     {
         if ($value !== false) {
-            $list->interpose(new TraceMiddleware($value === true ? [] : $value));
+            $list->interpose(
+                new TraceMiddleware(
+                    $value === true ? [] : $value,
+                    $args['api'])
+            );
         }
     }
 
@@ -856,5 +868,16 @@ EOT;
             }
         }
         return $options;
+    }
+
+    /**
+     * Validates a region to be used for endpoint construction
+     *
+     * @param $region
+     * @return bool
+     */
+    private static function isValidRegion($region)
+    {
+        return is_valid_hostlabel($region);
     }
 }
