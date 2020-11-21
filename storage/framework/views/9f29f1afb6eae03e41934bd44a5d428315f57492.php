@@ -6,6 +6,13 @@
     <?php $__env->startSection('content'); ?>
     <div class="limiter">
         <div class="container-login100">
+            <div class="flash-message" style="display: flex;justify-content: center;align-items: center;">
+              <?php $__currentLoopData = ['danger', 'warning', 'success', 'info']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $msg): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php if(Session::has('alert-' . $msg)): ?>
+                    <center><p class="alert alert-<?php echo e($msg); ?>"><?php echo e(Session::get('alert-' . $msg)); ?></p></center>
+                <?php endif; ?>
+              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </div>
             <div class="wrap-login100 p-l-50 p-r-50 p-t-45 p-b-30">
                 <a style="color: #5768ad;float: right;" href="<?php echo e(url('/')); ?>" class="primary-btn">Home</a>
                 <form class="login100-form validate-form" method="POST" action="<?php echo e(route('login')); ?>">

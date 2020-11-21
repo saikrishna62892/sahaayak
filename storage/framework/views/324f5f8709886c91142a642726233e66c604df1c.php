@@ -40,40 +40,23 @@
             </div>
             <div class="row">
                 <div class="team__slider owl-carousel">
-                    <div class="col-lg-6">
-                        <div class="team__item">
-                            <div class="team__item__pic">
-                                <img src="img/team/aneesh.png" alt="">
-                            </div>
-                            <div class="team__item__text">
-                                <div class="team__item__title">
-                                    <h4>Dr. Aneesh T</h4>
-                                    <span>Clinical Psychologist </span>
+                    <?php $__currentLoopData = $counsellors; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $counsellor): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="col-lg-6">
+                            <div class="team__item">
+                                <div class="team__item__pic">
+                                    <img src="<?php echo e(asset('/img/counsellors/'.$counsellor->image)); ?>" alt="" width="320" height="323">
                                 </div>
-                                <div class="team__item__social">
-                                    <a href="mailto:aneeshtiss@gmail.com" target="_blank"><i class="fa fa-google"></i></a>
-                                    <a href="tel:7045616525" target="_blank"><i class="fa fa-phone"></i></a>                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="team__item">
-                            <div class="team__item__pic">
-                                <img src="img/team/neethu.png" alt="">
-                            </div>
-                            <div class="team__item__text">
-                                <div class="team__item__title">
-                                    <h4>Ms. Neethu NT</h4>
-                                    <span>Consultant Psychologist</span>
-                                </div>
-                                <div class="team__item__social">
-                                    <a href="mailto:neethusgc@gmail.com" target="_blank"><i class="fa fa-google"></i></a>
-                                    <a href="7902274890" target="_blank"><i class="fa fa-phone"></i></a>                                    
+                                <div class="team__item__text">
+                                    <div class="team__item__title">
+                                        <h4><?php echo e($counsellor->name); ?></h4>
+                                        <span><?php echo e($counsellor->profession); ?> </span>
+                                    </div>
+                                    <p><?php echo e($counsellor->bio); ?><br>
+                                        Email: <?php echo e($counsellor->email); ?></p>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
             </div>
         </div>
@@ -242,7 +225,7 @@
                                     <h4>John Benyen Munga</h4>
                                     <span>M.Tech at NIT Calicut</span>
                                 </div>
-                                <p>A Hard-working Team guy <br> Aspires to become SDE.</p>
+                                <p>A Hard-working Team guy <br> Aspiring to become SDE.</p>
                                 <div class="team__item__social">
                                     <a href="https://www.linkedin.com/in/john-benyen/" target="_blank"><i class="fa fa-linkedin"></i></a>
                                     <a href="mailto:johnbenyen162@gmail.com" target="_blank"><i class="fa fa-google"></i></a>
@@ -306,7 +289,7 @@
                                     <h4>Aswathi Mohan</h4>
                                     <span>Project co-ordinator</span>
                                 </div>
-                                <p>Working as project coordinator <br> in NIT Calicut</p>
+                                <p>Working as project coordinator <br> in NIT Calicut.</p>
                                 <div class="team__item__social">
                                     <a href="tel:9497307550" target="_blank"><i class="fa fa-phone"></i></a>
                                     <a href="aswathipranavam@gmail.com<" target="_blank"><i class="fa fa-google"></i></a>

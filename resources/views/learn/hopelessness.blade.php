@@ -12,7 +12,7 @@
 @section('learncontent')
 
 <div class="classes__details__large">
-    <img src="/img/classes-details/cd-hope.jpg" alt="" width="750" height="400">
+    <img src="/img/classes-details/cd-hope1.jpg" alt="" width="750" height="400">
         <span>Understanding Hopelessness</span>
 </div>
 

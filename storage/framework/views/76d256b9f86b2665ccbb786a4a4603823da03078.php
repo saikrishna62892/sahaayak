@@ -1,34 +1,35 @@
-@extends('layouts.learn')
-@section('name')
-    Learn | Fear-of-Loss
-@endsection
-@section('breadcrumb')
 
-<h2>Understanding fear of loss</h2>
-<h5>Thinking will not overcome fear but action will</h5>
 
-@endsection
+<?php $__env->startSection('name'); ?>
+    Learn | Mental-Illness
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('breadcrumb'); ?>
 
-@section('learncontent')
+<h2>Understanding Mental-illness</h2>
+<h5>Having a mental disorder isn't easy, and it's even harder when people assume you can just get over it</h5>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('learncontent'); ?>
 
 <div class="classes__details__large">
-    <img src="/img/classes-details/cd-loss1.jpg" alt="" width="750" height="400">
-        <span>Understanding fear of loss</span>
+    <img src="/img/classes-details/cd-mentalillness1.jpg" alt="" width="750" height="400">
+        <span>Understanding Mental-illness</span>
 </div>
 
-<h2>What is fear of loss?</h2>
+<h2>What is Mental-illness?</h2>
 
-<p>You have something that’s blocking you from your dreams. And that’s fear. While it’s possible there are several fears involved, such as fear of change, fear of loss, or fear of the unknown, what comes through most strongly is the fear of loss.</p>
+<p>Mental illnesses are health conditions involving changes in emotion, thinking or behavior. Mental illnesses are associated with distress and/or problems functioning in social, work or family activities.</p>
 
 <div class="classes__details__item">
     <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/GDjwfFmXwfE" allowfullscreen></iframe>
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/1i9OktVsTWo" allowfullscreen></iframe>
     </div>
 </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('faq')
+<?php $__env->startSection('faq'); ?>
                       <div class="container">
                                     <div class="row d-flex justify-content-center">
                                         <div class="col-lg-12">
@@ -42,13 +43,15 @@
                                                         </div>
                                                         <div id="collapseOne" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>The pain of loss will go away faster if you ignore it is false. 
-                                                                Trying to ignore your pain will only make it worse in the long run.
-                                                                 Finding safe and comfortable settings for the expression of your feelings — 
-                                                                 with trusted friends or family, in a support group, with a counselor, through artistic expression —
-                                                                  is an important part of taking care of yourself at this trying time. 
-                                                                  And sometimes you will need to do or think about other things — there’s nothing wrong with this.</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <p>Mental health problems are very common. About 1 of every 5 people will experience a
+                                                                 mental health issue in a given year. One of every 25 has a serious mental health disorder.
+                                                                  These include anxiety, major depression, bipolar disorder, and schizophrenia.</p>
+                                                                <p>A large majority of mentally ill people are not violent. Only about 7% of violent acts are committed by a person with symptoms of mental illness.
+                                                                 In fact, people with serious mental health issues are 10 times more likely to be a victim of violence.
+                                                                 Mental illness has nothing to do with strength or weakness.
+                                                                  It is a medical disorder that needs treatment.
+                                                                   If you need help with a mental issue, you are not weak.</p>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -60,10 +63,12 @@
                                                         </div>
                                                         <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>People grow attached to the things in their lives. Things like their career, their status, their salary,
-                                                                 their lifestyle, etc. To pursue something different would mean relinquishing all of these things they have
-                                                                  come to associate as part of their lives. Because of this fear of loss, some people choose to put their dreams on hold — perpetually.</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <p>Genetic factors: having a close family member with a mental illness can increase the risk.</p>
+                                                                <p>Drug and alcohol abuse: illicit drug use can trigger a manic episode (bipolar disorder) or an episode of psychosis.</p>
+                                                                <p>Early life environment: negative childhood experiences such as abuse or neglect can increase the risk of some mental illnesses.</p>
+                                                                <p>Trauma and stress: in adulthood, traumatic life events or ongoing stress such as social isolation,
+                                                                 domestic violence, relationship breakdown, financial or work problems can increase the risk of mental illness.</p>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -75,13 +80,14 @@
                                                         </div>
                                                         <div id="collapseThree" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>When there is a fear of loss, it signals an attachment to the item that is at risk of being lost. 
-                                                                However, this attachment is illogical and comes as a byproduct of being too entrenched in our physical world.</p>
-                                                                <p>The reason why it’s illogical is because everything in our lives, except our consciousness, is impermanent.
-                                                                 This includes everything in the physical world: our wealth, our salary, our material possessions, our status,
-                                                                  our careers, our property, and our physical bodies. We were born into this world as ourselves,
-                                                                   with our consciousness.</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <p>Feeling sad or depressed.</p>
+                                                                <p>Trouble concentrating.</p>
+                                                                <p>Extreme feelings (including fear, guilt, sadness, or anger).</p>
+                                                                <p>Withdrawal from friends or activities.</p>
+                                                                <p>Extreme mood changes.</p>
+                                                                <p>Unexplained hostility or violence.</p>
+                                                                <p>Thinking about hurting yourself or others.</p>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -93,15 +99,12 @@
                                                         </div>
                                                         <div id="collapseFour" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>Regularly assess your intentions and motivations. If you’re forcing yourself to do something
-                                                                 and a part of you feels it isn’t right, ask yourself, “Do I actually want this right now?”</p>
-                                                                <p>Use loss aversion as motivation to pursue what you really want.
-                                                                 If you hang a large calendar on your wall, and put a star on every day when you do something positive—like
-                                                                  exercise, practice a new hobby, or send out a resume for a new job—you’ll create a
-                                                                   psychological need to keep that streak going.</p>
-                                                                <p>You could say that this is what makes life beautiful and meaningful—since nothing lasts forever,
-                                                                 each moment presents unique possibilities worth fully appreciating and savoring.</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <p>Value yourself. Take care of your body</p>
+                                                                <p>Surround yourself with good people.</p>
+                                                                <p> Learn how to deal with stress.</p>
+                                                                <p>Quiet your mind. Set realistic goals.</p>
+                                                                <p>Avoid alcohol and other drugs. Get help when you need it.</p>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -113,11 +116,10 @@
                                                         </div>
                                                         <div id="collapseFive" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>The reality is that loss is inevitable.</p>
-                                                                <p>Change how you see the inevitability of loss. We will all lose relationships, situations,
-                                                                 and states of being that we enjoy and love. Even if we practice non-attachment,
-                                                                  on some level we will get comfortable with people and circumstances.</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <p>Mental illness are medical conditions that deserve the same respect, consideration,
+                                                                 and right to treatment as any other illness.</p>
+                                                                <p>There are many resources available to help people with mental illness or disorders.</p>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -131,7 +133,7 @@
                                                             <div class="card-body">
                                                                 <p>You can chat through virtual chat box.</p>
                                                                 <p>You can get a volunteer appointment by clicking below</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -140,13 +142,13 @@
                                         </div>
                                     </div>
                                 </div>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('learnname')
-fear of loss
-@endsection
+<?php $__env->startSection('learnname'); ?>
+Mental-illness
+<?php $__env->stopSection(); ?>
 
-@section('comments')
+<?php $__env->startSection('comments'); ?>
     <div class="classes__sidebar__comment">
                                     <div class="classes__sidebar__comment__pic">
                                         <img src="/img/classes-details/comment-1.png" alt="">
@@ -183,4 +185,5 @@ fear of loss
                                     </div>
                                 </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.learn', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Sahaayak\sahaayak\resources\views/learn/mental-illness.blade.php ENDPATH**/ ?>

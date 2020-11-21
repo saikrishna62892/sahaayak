@@ -7,7 +7,7 @@
     
 
     <!-- Breadcrumb Begin -->
-    <section class="breadcrumb-option set-bg" data-setbg="img/breadcrumb.jpg">
+    <section class="breadcrumb-option set-bg" data-setbg="img/breadcrumb1.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -213,7 +213,7 @@
                 <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
                 <h2>Impact</h2>
             </div>
-            <div class="counter__text set-bg" data-setbg="img/counter/counter-bg11.jpg">
+            <div class="counter__text set-bg" data-setbg="img/counter/counter-bg111.jpg">
                 <div class="counter__item">
                     <div class="counter__item__icon">
                         <img src="img/counter/counter-4.png" alt="">

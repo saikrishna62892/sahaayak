@@ -1,34 +1,35 @@
-@extends('layouts.learn')
-@section('name')
-    Learn | Fear-of-Loss
-@endsection
-@section('breadcrumb')
 
-<h2>Understanding fear of loss</h2>
-<h5>Thinking will not overcome fear but action will</h5>
 
-@endsection
+<?php $__env->startSection('name'); ?>
+    Learn | Suicide
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('breadcrumb'); ?>
 
-@section('learncontent')
+<h2>Understanding Suicide</h2>
+<h5>Suicide doesn’t end the chances of life getting worse, it eliminates the possibility of it ever getting any better.</h5>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('learncontent'); ?>
 
 <div class="classes__details__large">
-    <img src="/img/classes-details/cd-loss1.jpg" alt="" width="750" height="400">
-        <span>Understanding fear of loss</span>
+    <img src="/img/classes-details/cd-suicide1.jpg" alt="" width="750" height="400">
+        <span>Understanding Suicide</span>
 </div>
 
-<h2>What is fear of loss?</h2>
+<h2>What is Suicide?</h2>
 
-<p>You have something that’s blocking you from your dreams. And that’s fear. While it’s possible there are several fears involved, such as fear of change, fear of loss, or fear of the unknown, what comes through most strongly is the fear of loss.</p>
+<p>Suicide is the act of intentionally causing one's own death. Mental disorders—including depression, bipolar disorder, autism, schizophrenia, personality disorders, anxiety disorders, physical disorders such as chronic fatigue syndrome, and substance abuse—including alcoholism are risk factors.</p>
 
 <div class="classes__details__item">
     <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/GDjwfFmXwfE" allowfullscreen></iframe>
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/933rac-TBfA" allowfullscreen></iframe>
     </div>
 </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('faq')
+<?php $__env->startSection('faq'); ?>
                       <div class="container">
                                     <div class="row d-flex justify-content-center">
                                         <div class="col-lg-12">
@@ -42,13 +43,12 @@
                                                         </div>
                                                         <div id="collapseOne" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>The pain of loss will go away faster if you ignore it is false. 
-                                                                Trying to ignore your pain will only make it worse in the long run.
-                                                                 Finding safe and comfortable settings for the expression of your feelings — 
-                                                                 with trusted friends or family, in a support group, with a counselor, through artistic expression —
-                                                                  is an important part of taking care of yourself at this trying time. 
-                                                                  And sometimes you will need to do or think about other things — there’s nothing wrong with this.</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <p>There's a misconception that a suicidal person will find a way to take his or her own life, no matter what.
+                                                                 This fuels the dangerous notion that it's useless to reach out to someone contemplating suicide,
+                                                                  when in fact nothing could be further from the truth.
+                                                                 "When people are suicidal, many times they're highly ambivalent. They're unsure about suicide".</p>
+                                                                <p>"They're torn between a desire to live and a desire to die."</p>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -60,10 +60,11 @@
                                                         </div>
                                                         <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>People grow attached to the things in their lives. Things like their career, their status, their salary,
-                                                                 their lifestyle, etc. To pursue something different would mean relinquishing all of these things they have
-                                                                  come to associate as part of their lives. Because of this fear of loss, some people choose to put their dreams on hold — perpetually.</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <p>1. Feeling depressed.</p>
+                                                                <p>2. Feeling psychotic.</p>
+                                                                <p>3. Feeling impulsive. </p>
+                                                                <p>4. Feel like crying out for help.</p>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -75,13 +76,12 @@
                                                         </div>
                                                         <div id="collapseThree" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>When there is a fear of loss, it signals an attachment to the item that is at risk of being lost. 
-                                                                However, this attachment is illogical and comes as a byproduct of being too entrenched in our physical world.</p>
-                                                                <p>The reason why it’s illogical is because everything in our lives, except our consciousness, is impermanent.
-                                                                 This includes everything in the physical world: our wealth, our salary, our material possessions, our status,
-                                                                  our careers, our property, and our physical bodies. We were born into this world as ourselves,
-                                                                   with our consciousness.</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <p>1. Excessive sadness or moodiness.</p>
+                                                                <p>2. Sudden calmness.</p>
+                                                                <p>3. Changes in personality and/or appearance.</p>
+                                                                <p>4. Dangerous or self-harmful behavior.</p>
+                                                                <p>5. Recent trauma or life crisis.</p>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -93,15 +93,11 @@
                                                         </div>
                                                         <div id="collapseFour" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>Regularly assess your intentions and motivations. If you’re forcing yourself to do something
-                                                                 and a part of you feels it isn’t right, ask yourself, “Do I actually want this right now?”</p>
-                                                                <p>Use loss aversion as motivation to pursue what you really want.
-                                                                 If you hang a large calendar on your wall, and put a star on every day when you do something positive—like
-                                                                  exercise, practice a new hobby, or send out a resume for a new job—you’ll create a
-                                                                   psychological need to keep that streak going.</p>
-                                                                <p>You could say that this is what makes life beautiful and meaningful—since nothing lasts forever,
-                                                                 each moment presents unique possibilities worth fully appreciating and savoring.</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <p>1. Remove yourself from danger or (if safe) stay where you are.</p>
+                                                                <p>2. Re-focus.</p>
+                                                                <p>3. Reach out.</p>
+                                                                <p>4. Remind yourself of recovery.</p>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -113,11 +109,13 @@
                                                         </div>
                                                         <div id="collapseFive" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>The reality is that loss is inevitable.</p>
-                                                                <p>Change how you see the inevitability of loss. We will all lose relationships, situations,
-                                                                 and states of being that we enjoy and love. Even if we practice non-attachment,
-                                                                  on some level we will get comfortable with people and circumstances.</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <p>Suicide is a very crucial topic that should taken very seriously when intervening in a one's life.
+                                                                 Suicide can be triggered my many things and it is important to be able to recognize the warning signs
+                                                                  that can lead to an attempted or successful taking of one's life.</p>
+                                                                <p>There are several ways that you can help someone if you feel that they are at risk at attempting suicide:
+                                                                 call the physician, remove any harmful items from the house, and talk to them openly about their problems.</p>
+                                                                 <p>Together, hopefully, we can save lives.</p>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -131,7 +129,7 @@
                                                             <div class="card-body">
                                                                 <p>You can chat through virtual chat box.</p>
                                                                 <p>You can get a volunteer appointment by clicking below</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -140,13 +138,13 @@
                                         </div>
                                     </div>
                                 </div>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('learnname')
-fear of loss
-@endsection
+<?php $__env->startSection('learnname'); ?>
+Suicide
+<?php $__env->stopSection(); ?>
 
-@section('comments')
+<?php $__env->startSection('comments'); ?>
     <div class="classes__sidebar__comment">
                                     <div class="classes__sidebar__comment__pic">
                                         <img src="/img/classes-details/comment-1.png" alt="">
@@ -164,7 +162,7 @@ fear of loss
                                         <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
                                             adipisci velit,</p>
                                     </div>
-                                </div>
+    </div>
                                 <div class="classes__sidebar__comment">
                                     <div class="classes__sidebar__comment__pic">
                                         <img src="/img/classes-details/comment-2.png" alt="">
@@ -183,4 +181,5 @@ fear of loss
                                     </div>
                                 </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.learn', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Sahaayak\sahaayak\resources\views/learn/suicide.blade.php ENDPATH**/ ?>

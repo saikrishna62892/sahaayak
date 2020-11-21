@@ -1,34 +1,35 @@
-@extends('layouts.learn')
-@section('name')
-    Learn | Fear-of-Loss
-@endsection
-@section('breadcrumb')
 
-<h2>Understanding fear of loss</h2>
-<h5>Thinking will not overcome fear but action will</h5>
 
-@endsection
+<?php $__env->startSection('name'); ?>
+    Learn | Social-Isoloation
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('breadcrumb'); ?>
 
-@section('learncontent')
+<h2>Understanding Social-isolation</h2>
+<h5>A person is a person through other persons, you can't be human in isolation, you are human only in relationships.</h5>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('learncontent'); ?>
 
 <div class="classes__details__large">
-    <img src="/img/classes-details/cd-loss1.jpg" alt="" width="750" height="400">
-        <span>Understanding fear of loss</span>
+    <img src="/img/classes-details/cd-social1.jpg" alt="" width="750" height="400">
+        <span>Understanding Social-isolation</span>
 </div>
 
-<h2>What is fear of loss?</h2>
+<h2>What is Social-isolation?</h2>
 
-<p>You have something that’s blocking you from your dreams. And that’s fear. While it’s possible there are several fears involved, such as fear of change, fear of loss, or fear of the unknown, what comes through most strongly is the fear of loss.</p>
+<p>Social isolation can be defined structurally as the absence of social interactions, contacts, and relationships with family and friends, with neighbors on an individual level, and with “society at large” on a broader level.</p>
 
 <div class="classes__details__item">
     <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/GDjwfFmXwfE" allowfullscreen></iframe>
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/fNyJmYGMhXA" allowfullscreen></iframe>
     </div>
 </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('faq')
+<?php $__env->startSection('faq'); ?>
                       <div class="container">
                                     <div class="row d-flex justify-content-center">
                                         <div class="col-lg-12">
@@ -42,13 +43,12 @@
                                                         </div>
                                                         <div id="collapseOne" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>The pain of loss will go away faster if you ignore it is false. 
-                                                                Trying to ignore your pain will only make it worse in the long run.
-                                                                 Finding safe and comfortable settings for the expression of your feelings — 
-                                                                 with trusted friends or family, in a support group, with a counselor, through artistic expression —
-                                                                  is an important part of taking care of yourself at this trying time. 
-                                                                  And sometimes you will need to do or think about other things — there’s nothing wrong with this.</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <p>Loneliness does not depend on how many friends or relationships you have.
+                                                                 More than 60% of lonely people are married.</p>
+                                                                <p>Studies have found that merely asking people to recall times they felt lonely was sufficient
+                                                                 to make them devalue their relationships. These perceptual distortions often cause lonely people
+                                                                  to withdraw even further from the very people who could alleviate their loneliness. </p>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -60,10 +60,13 @@
                                                         </div>
                                                         <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>People grow attached to the things in their lives. Things like their career, their status, their salary,
-                                                                 their lifestyle, etc. To pursue something different would mean relinquishing all of these things they have
-                                                                  come to associate as part of their lives. Because of this fear of loss, some people choose to put their dreams on hold — perpetually.</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <p>There are several causes of social isolation. Some people voluntarily choose to isolate themselves from others.
+                                                                For example, an eccentric person may choose to have very little contact with other people.
+                                                                 However, in most cases, social isolation is involuntary.</p>
+                                                                <p>Social isolation can be caused by physical disabilities or illnesses,
+                                                                 Advanced age can also lead to social isolation. As we get older, our health and mobility decline,
+                                                                  and our social roles change. Our living arrangements may also change. </p>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -75,13 +78,9 @@
                                                         </div>
                                                         <div id="collapseThree" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>When there is a fear of loss, it signals an attachment to the item that is at risk of being lost. 
-                                                                However, this attachment is illogical and comes as a byproduct of being too entrenched in our physical world.</p>
-                                                                <p>The reason why it’s illogical is because everything in our lives, except our consciousness, is impermanent.
-                                                                 This includes everything in the physical world: our wealth, our salary, our material possessions, our status,
-                                                                  our careers, our property, and our physical bodies. We were born into this world as ourselves,
-                                                                   with our consciousness.</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <p>Living alone, have recently suffered a bereavement.</p>
+                                                                <p>Not leaving the house regularly.</p>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -93,15 +92,9 @@
                                                         </div>
                                                         <div id="collapseFour" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>Regularly assess your intentions and motivations. If you’re forcing yourself to do something
-                                                                 and a part of you feels it isn’t right, ask yourself, “Do I actually want this right now?”</p>
-                                                                <p>Use loss aversion as motivation to pursue what you really want.
-                                                                 If you hang a large calendar on your wall, and put a star on every day when you do something positive—like
-                                                                  exercise, practice a new hobby, or send out a resume for a new job—you’ll create a
-                                                                   psychological need to keep that streak going.</p>
-                                                                <p>You could say that this is what makes life beautiful and meaningful—since nothing lasts forever,
-                                                                 each moment presents unique possibilities worth fully appreciating and savoring.</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <p>Reduce access to the three "A's": Alienation, Anger, and Unfounded Anxiety</p>
+                                                                <p>Seek out healthy activities.  Reach out to family and friends. Sign up for appointments by volunteers</p>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -113,11 +106,8 @@
                                                         </div>
                                                         <div id="collapseFive" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>The reality is that loss is inevitable.</p>
-                                                                <p>Change how you see the inevitability of loss. We will all lose relationships, situations,
-                                                                 and states of being that we enjoy and love. Even if we practice non-attachment,
-                                                                  on some level we will get comfortable with people and circumstances.</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <p>Health of people who are socially isolated is not so good as those who not shows that the health of people can continuously get better when they are controlled by family members or people around them.</p>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -131,7 +121,7 @@
                                                             <div class="card-body">
                                                                 <p>You can chat through virtual chat box.</p>
                                                                 <p>You can get a volunteer appointment by clicking below</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -140,13 +130,13 @@
                                         </div>
                                     </div>
                                 </div>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('learnname')
-fear of loss
-@endsection
+<?php $__env->startSection('learnname'); ?>
+Social-isolation
+<?php $__env->stopSection(); ?>
 
-@section('comments')
+<?php $__env->startSection('comments'); ?>
     <div class="classes__sidebar__comment">
                                     <div class="classes__sidebar__comment__pic">
                                         <img src="/img/classes-details/comment-1.png" alt="">
@@ -183,4 +173,5 @@ fear of loss
                                     </div>
                                 </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.learn', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Sahaayak\sahaayak\resources\views/learn/social-isolation.blade.php ENDPATH**/ ?>

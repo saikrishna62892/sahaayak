@@ -1,34 +1,34 @@
-@extends('layouts.learn')
-@section('name')
-    Learn | Fear-of-Loss
-@endsection
-@section('breadcrumb')
 
-<h2>Understanding fear of loss</h2>
-<h5>Thinking will not overcome fear but action will</h5>
+<?php $__env->startSection('name'); ?>
+    Learn | Hopelessness
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('breadcrumb'); ?>
 
-@endsection
+<h2>Understanding Hopelessness</h2>
+<h5>Whether you think you can, or you think you can’t – you’re right.</h5>
 
-@section('learncontent')
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('learncontent'); ?>
 
 <div class="classes__details__large">
-    <img src="/img/classes-details/cd-loss1.jpg" alt="" width="750" height="400">
-        <span>Understanding fear of loss</span>
+    <img src="/img/classes-details/cd-hope1.jpg" alt="" width="750" height="400">
+        <span>Understanding Hopelessness</span>
 </div>
 
-<h2>What is fear of loss?</h2>
+<h2>What is Hopelessness?</h2>
 
-<p>You have something that’s blocking you from your dreams. And that’s fear. While it’s possible there are several fears involved, such as fear of change, fear of loss, or fear of the unknown, what comes through most strongly is the fear of loss.</p>
+<p>Hopelessness is an emotion characterized by a lack of hope, optimism, and passion. An individual who feels hopeless may often have no expectation of future improvement or success.</p>
 
 <div class="classes__details__item">
     <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/GDjwfFmXwfE" allowfullscreen></iframe>
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/-M9j8wOG2WE" allowfullscreen></iframe>
     </div>
 </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('faq')
+<?php $__env->startSection('faq'); ?>
                       <div class="container">
                                     <div class="row d-flex justify-content-center">
                                         <div class="col-lg-12">
@@ -42,13 +42,10 @@
                                                         </div>
                                                         <div id="collapseOne" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>The pain of loss will go away faster if you ignore it is false. 
-                                                                Trying to ignore your pain will only make it worse in the long run.
-                                                                 Finding safe and comfortable settings for the expression of your feelings — 
-                                                                 with trusted friends or family, in a support group, with a counselor, through artistic expression —
-                                                                  is an important part of taking care of yourself at this trying time. 
-                                                                  And sometimes you will need to do or think about other things — there’s nothing wrong with this.</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <p>Hope Influences our belief system is a myth hope is informed and primed by our beliefs.</p>
+                                                                <p>We are meant to do more than survive—we are meant to thrive.
+                                                                 Hope is the link that moves us toward thriving—and our beliefs are at the very heart of what makes hope work.</p>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -60,10 +57,9 @@
                                                         </div>
                                                         <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>People grow attached to the things in their lives. Things like their career, their status, their salary,
-                                                                 their lifestyle, etc. To pursue something different would mean relinquishing all of these things they have
-                                                                  come to associate as part of their lives. Because of this fear of loss, some people choose to put their dreams on hold — perpetually.</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <p>Hopelessness may be a symptom of a variety of mental health conditions,
+                                                                 or it may occur when an individual is discouraged by dissatisfying, distressing, or negative life events.</p>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -75,13 +71,15 @@
                                                         </div>
                                                         <div id="collapseThree" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>When there is a fear of loss, it signals an attachment to the item that is at risk of being lost. 
-                                                                However, this attachment is illogical and comes as a byproduct of being too entrenched in our physical world.</p>
-                                                                <p>The reason why it’s illogical is because everything in our lives, except our consciousness, is impermanent.
-                                                                 This includes everything in the physical world: our wealth, our salary, our material possessions, our status,
-                                                                  our careers, our property, and our physical bodies. We were born into this world as ourselves,
-                                                                   with our consciousness.</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <p>People experiencing hopelessness may make statements such as:</p>
+                                                                <p>My situation will never get better.</p>
+                                                                <p>I have no future.</p>
+                                                                <p>No one can help me.</p>
+                                                                <p>I feel like giving up.</p>
+                                                                <p>It is too late now.</p>
+                                                                <p>I have no hope.</p>
+                                                                <p>I will never be happy again.</p>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -93,15 +91,12 @@
                                                         </div>
                                                         <div id="collapseFour" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>Regularly assess your intentions and motivations. If you’re forcing yourself to do something
-                                                                 and a part of you feels it isn’t right, ask yourself, “Do I actually want this right now?”</p>
-                                                                <p>Use loss aversion as motivation to pursue what you really want.
-                                                                 If you hang a large calendar on your wall, and put a star on every day when you do something positive—like
-                                                                  exercise, practice a new hobby, or send out a resume for a new job—you’ll create a
-                                                                   psychological need to keep that streak going.</p>
-                                                                <p>You could say that this is what makes life beautiful and meaningful—since nothing lasts forever,
-                                                                 each moment presents unique possibilities worth fully appreciating and savoring.</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <p>Hopelessness will not disappear on its own. However, peer and professional support can help.
+                                                                 Joining a group can also be helpful, as finding people who share similar interests may spur
+                                                                  new friendships and reignite lost passions.</p>
+                                                                <p>Instead of trying to move forward and fix everything at once, you should focus on setting reasonable,
+                                                                 incremental goals. “Break tasks down into small doable chunks”.</p>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -113,11 +108,9 @@
                                                         </div>
                                                         <div id="collapseFive" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <p>The reality is that loss is inevitable.</p>
-                                                                <p>Change how you see the inevitability of loss. We will all lose relationships, situations,
-                                                                 and states of being that we enjoy and love. Even if we practice non-attachment,
-                                                                  on some level we will get comfortable with people and circumstances.</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <p>Numerous studies show that therapy is often able to help those experiencing hopelessness
+                                                                 regain their hope and achieve lasting mental wellness.</p>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -131,7 +124,7 @@
                                                             <div class="card-body">
                                                                 <p>You can chat through virtual chat box.</p>
                                                                 <p>You can get a volunteer appointment by clicking below</p>
-                                                                <h6>Still need help? <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                                                <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -140,13 +133,13 @@
                                         </div>
                                     </div>
                                 </div>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('learnname')
-fear of loss
-@endsection
+<?php $__env->startSection('learnname'); ?>
+Hopelessness
+<?php $__env->stopSection(); ?>
 
-@section('comments')
+<?php $__env->startSection('comments'); ?>
     <div class="classes__sidebar__comment">
                                     <div class="classes__sidebar__comment__pic">
                                         <img src="/img/classes-details/comment-1.png" alt="">
@@ -183,4 +176,5 @@ fear of loss
                                     </div>
                                 </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.learn', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Sahaayak\sahaayak\resources\views/learn/hopelessness.blade.php ENDPATH**/ ?>

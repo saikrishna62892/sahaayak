@@ -277,7 +277,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-4 col-sm-6" data-step="10" data-intro="This section provides information and logo of SGC(Student Guidance Cell)." data-position="bottom-middle-aligned">
-                    <center><img src="/img/sgc.png"  width="250" height="300"></center>
+                    <center><img src="/img/sgc1.jpg"  width="250" height="300"></center>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="footer__about">
