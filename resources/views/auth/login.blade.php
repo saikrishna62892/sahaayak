@@ -7,11 +7,6 @@
     <div class="limiter">
         <div class="container-login100">
             <div class="flash-message" style="display: flex;justify-content: center;align-items: center;">
-              @foreach (['danger', 'warning', 'success', 'info'] as $msg)
-                @if(Session::has('alert-' . $msg))
-                    <center><p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }}</p></center>
-                @endif
-              @endforeach
             </div>
             <div class="wrap-login100 p-l-50 p-r-50 p-t-45 p-b-30">
                 <a style="color: #5768ad;float: right;" href="{{ url('/') }}" class="primary-btn">Home</a>

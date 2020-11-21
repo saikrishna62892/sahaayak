@@ -46,7 +46,12 @@
 	<!-- Recaptcha -->
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
-<body>
+<body style="background-color: #f5f6fa;">
+	@foreach (['danger', 'warning', 'success', 'info'] as $msg)
+        @if(Session::has('alert-' . $msg))
+            <center><p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }}</p></center>
+        @endif
+      @endforeach
 
 	@yield('content')
 

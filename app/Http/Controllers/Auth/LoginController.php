@@ -86,7 +86,7 @@ class LoginController extends Controller
             }
         }
         else{
-            Session::flash('alert-danger', 'Something Went Prong Please try again');
+            Session::flash('alert-danger', 'Something Went Wrong Please try again');
             return redirect()->route('login')->with('error','');
         }
           

@@ -60,6 +60,7 @@ unset($__errorArgs, $__bag); ?>
                         </span>
                     </div>
                     <div class="wrap-input100 validate-input m-b-16" data-validate = "Valid email is required: ex@nitc.ac.in">
+                        <small>Please register through college nitc mail</small>
                         <input class="input100" id="email" type="email" name="email" value="<?php echo e(old('email')); ?>" required autocomplete="email" placeholder="NITC Mail" pattern=".+@nitc.ac.in">
                         <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');

@@ -70,7 +70,10 @@
                 <div class="trd-history-tabs">
                     <ul class="nav" role="tablist">
                         <li>
-                            <a class="active" data-toggle="tab" href="#post" role="tab">Post a story</a>
+                            <a class="active" data-toggle="tab" href="#appointment" role="tab">My Appointments</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#post" role="tab">Post a story</a>
                         </li>
                         <li>
                             <a data-toggle="tab" href="#diary" role="tab">Cognitive Diary</a>
@@ -87,7 +90,13 @@
             <div class="trad-history mt-4">
                 <div class="tab-content" id="myTabContent">
                     <!-- Post a story form begin -->
-                    <div class="tab-pane fade show active" id="post" role="tabpanel">
+                    <div class="tab-pane fade show active" id="appointment" role="tabpanel">
+                        <?php echo $__env->make('appointment.user_appointments', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                    </div>
+                    <!-- Post a story form end -->
+
+                    <!-- Post a story form begin -->
+                    <div class="tab-pane fade show" id="post" role="tabpanel">
                         <?php echo $__env->make('stories.create', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     </div>
                     <!-- Post a story form end -->

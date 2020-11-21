@@ -5,13 +5,6 @@
     @section('content')
     <div class="limiter">
         <div class="container-login100">
-            <div class="flash-message" style="display: flex;justify-content: center;align-items: center;">
-              @foreach (['danger', 'warning', 'success', 'info'] as $msg)
-                @if(Session::has('alert-' . $msg))
-                    <center><p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }}</p></center>
-                @endif
-              @endforeach
-            </div>
             <div class="wrap-login100 p-l-50 p-r-50 p-t-45 p-b-30">
                 <a style="color: #5768ad;float: right;" href="{{ url('/') }}" class="primary-btn">Home</a>
                 <form class="login100-form validate-form" method="POST" action="{{ route('register') }}" >
@@ -46,6 +39,7 @@
                         </span>
                     </div>
                     <div class="wrap-input100 validate-input m-b-16" data-validate = "Valid email is required: ex@nitc.ac.in">
+                        <small>Please register through college nitc mail</small>
                         <input class="input100" id="email" type="email" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="NITC Mail" pattern=".+@nitc.ac.in">
                         @error('email')
                                     <span class="invalid-feedback" role="alert">
