@@ -69,6 +69,8 @@
                         @endif
                     @elseif(auth()->user()->is_admin == 1)
                     <a class="dropdown-item" href="/admin/home" style="color: #5768ad;">Return to Dashboard</a>
+                    @elseif(auth()->user()->is_Counsellor == 1)
+                    <a class="dropdown-item" href="/counsellor/home" style="color: #5768ad;">Return to Dashboard</a>
                     @else
                     <a class="dropdown-item" href="/user/home" style="color: #5768ad;">Return to Dashboard</a>
                     @endif
@@ -175,6 +177,8 @@
                                         @endif
                                     @elseif(auth()->user()->is_admin == 1)
                                     <a class="dropdown-item" href="/admin/home">Return to Dashboard</a>
+                                    @elseif(auth()->user()->is_Counsellor == 1)
+                                    <a class="dropdown-item" href="/counsellor/home" style="color: #5768ad;">Return to Dashboard</a>
                                     @else
                                     <a class="dropdown-item" href="/user/home">Return to Dashboard</a>
                                     @endif

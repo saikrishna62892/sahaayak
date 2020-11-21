@@ -12,7 +12,7 @@ use App\Diary;
 use App\Appointment;
 use App\Comment;
 use App\Worry;
-
+use App\Counsellor;
 use App\Subscription;
 
 class User extends Authenticatable implements MustVerifyEmail
@@ -55,6 +55,11 @@ class User extends Authenticatable implements MustVerifyEmail
     public function volunteer()
     {
         return $this->hasOne(Volunteer::class);
+    }
+
+    public function counsellor()
+    {
+        return $this->hasOne(Counsellor::class);
     }
 
     public function stories()

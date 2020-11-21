@@ -58,6 +58,9 @@ class LoginController extends Controller
                 Session::flash('alert-success', 'Welcome '.auth()->user()->name);
                 return redirect()->route('adminDashboard');
             }
+            else if(auth()->user()->is_Counsellor == 1){
+                return redirect()->route('counsellorDashboard');
+            }
             else if(auth()->user()->is_Volunteer == 1){
                 if(auth()->user()->step2_done == 1)
                 {

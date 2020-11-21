@@ -14,6 +14,8 @@ use App\Notifications\AppointmentAcceptedNotification;
 use App\Notifications\AppointmentReportNotification;
 use App\User;
 use App\Traits\NotificationTrait;
+use Spatie\GoogleCalendar\Event;
+use Carbon\Carbon;
 use Session;
 
 class appointment_controller extends Controller
@@ -25,15 +27,17 @@ class appointment_controller extends Controller
     {
         $this->middleware(['auth','verified']);
         $this->middleware('is_user')->only(['save']);
-        $this->middleware('is_volunteer')->only(['appointmentAccepted','reportForm','generateReport']);
+        //$this->middleware('is_volunteer')->only(['appointmentAccepted','reportForm','generateReport']);
+        $this->middleware('is_counsellor')->only(['appointmentAccepted','reportForm','generateReport']);
 
     }
     function save(Request $req)
     {
+        $startslots = ['00','08','09','10','11','12','13','14','15','16'];
+        $endslots =   ['00','09','10','11','12','13','14','15','16','17'];
+        
         $appointment=new Appointment();
         $user = Auth::user();
-        $temp= DB::table('appointments');
-        $temp++;
         $data = request()->validate([
          'name' => 'required',
          'college_id' => 'required',
@@ -46,7 +50,7 @@ class appointment_controller extends Controller
          'slot' => 'required',
          'message' => 'required',
          ]);
-
+        
         $appointment->name=$req->name;
         $appointment->college_id=$req->college_id;
         $appointment->department=$req->department;
@@ -59,8 +63,26 @@ class appointment_controller extends Controller
         $appointment->message=$req->message;
         $appointment->timestamps=now();
         $appointment->user_id=$user->id;
+        $appointment->counsellor_id=$req->counsellor_name;
         $appointment->save();
         $this->sendAppointmentReceivedNotif($appointment->name);
+
+        $event = new Event;
+        $event->name = 'Sahaayak Appointment';
+        //dd(Carbon::now().'     '.$req->date.' '.$startslots[$req->slot].':00:00');
+        $d1 = Carbon::parse($req->date.' '.$startslots[$req->slot].':00:00');
+        $d2 = Carbon::parse($req->date.' '.$endslots[$req->slot].':00:00');
+        $event->startDateTime = $d1;
+        $event->endDateTime = $d2;
+        //$user->email
+        $event->addAttendee(['email' => 'dileepkumar_m190437cs@nitc.ac.in']);
+        $counsellor=Counsellor::find($appointment->counsellor_id);
+        //$counsellor->email
+        $event->addAttendee(['email' => 'saikrishna_m190241cs@nitc.ac.in']);
+        $event->description='Appointment has been scheduled successfully and Please be on time.';
+        //$event->conferenceDataVersion=1;
+        $event->save(); 
+       
         Session::flash('alert-success', 'Appointment Created Succesfully Please check your Google Calendar'); 
         return redirect()->back(); 
     }
@@ -76,7 +98,9 @@ class appointment_controller extends Controller
         else{
             return redirect()->back()->with('message','Sorry,User already alloted');
         }*/
+
         $appointment->update(['accept' => 1]);
+
         Session::flash('alert-success', 'User Appointment accepted'); 
         return redirect()->back();
     }
@@ -91,8 +115,8 @@ class appointment_controller extends Controller
         $data = request()->all();
         $appointment = Appointment::find($data['appointment_id']);
         $data['user_id'] = $appointment->user_id;
-        $data['volunteer_id'] = $appointment->volunteer_id;
-
+        $data['volunteer_id'] = $appointment->counsellor_id;
+        //Case History
         $casehistory = new Casehistory();
         $casehistory->appointment_id = $data['appointment_id'];
         $casehistory->remarks = $data['remarks'];
@@ -108,4 +132,3 @@ class appointment_controller extends Controller
     }
 
 }
-        
