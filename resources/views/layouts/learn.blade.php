@@ -3,7 +3,7 @@
     @section('content')
 
     <!-- Breadcrumb Begin -->
-    <section class="breadcrumb-option set-bg" data-setbg="/img/breadcrumb.jpg">
+    <section class="breadcrumb-option set-bg" data-setbg="/img/breadcrumb1.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">

@@ -15,7 +15,7 @@
 @section('learncontent')
 
 <div class="classes__details__large">
-    <img src="/img/classes-details/cd-depression.jpg" alt="" width="750" height="400">
+    <img src="/img/classes-details/cd-depression1.jpg" alt="" width="750" height="400">
         <span>Understanding Depression</span>
 </div>
 
