@@ -41,12 +41,24 @@
     {
         var res = clicked_id.split("#");
         document.getElementById("demo").innerHTML = "Add Case history for "+res[1];
-        document.getElementById('appointment_id').value = res[0];
+        document.getElementById('college_id').value = res[0];
         document.getElementById('appointment_name').value = res[1];
         document.getElementById('appointment_email').value = res[2];
+        document.getElementById('appointment_id').value = res[3];
     }
 </script>
 <!--reportForm script end-->
+
+<!--rescheduleForm script begin-->
+<script type="text/javascript">
+    function reply_click(clicked_id)
+    {
+        var res = clicked_id.split("#");
+        document.getElementById("demo1").innerHTML = "Reschedule Appointment for "+res[1];
+        document.getElementById('appointment_id').value = res[0];
+    }
+</script>
+<!--rescheduleForm script end-->
 
 <script type="text/javascript">
     function getUserID()
@@ -56,7 +68,7 @@
         return link;
     }
 </script>
-<body>
+<body style="background-color: #f5f6fa;">
     <!-- preloader area start 
     <div id="preloader">
         <div class="loader"></div>
@@ -220,6 +232,9 @@
                                         <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" >
                                             <?php echo csrf_field(); ?>
                                         </form>
+                                        <?php if( Auth::user()->is_admin==0 && Auth::user()->is_Volunteer==0 && Auth::user()->is_Counsellor==0): ?>
+                                        <a class="dropdown-item" href="/user/edit/<?php echo e(Auth::user()->id); ?>">Edit Details </a>
+                                        <?php endif; ?>
                                     </div>
                                 </li>
                                 <li>

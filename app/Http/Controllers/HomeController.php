@@ -157,7 +157,7 @@ class HomeController extends Controller
         //user->volunteer->may appointments
         $volunteer = $user->counsellor;
 
-        $appointments = $volunteer->appointments->where('accept',0);  //pending appointments as appointments, section- Allappointments
+        $appointments = $volunteer->appointments->where('accept',0)->where('is_Rejected',0);  //pending appointments as appointments, section- Allappointments
 
         //$appointments=Appointment::where('volunteer_id',null)->get();
         $completedappointments= $volunteer->appointments->where('accept',1)->where('is_Completed',0);  // accepted but not completed as completedappointments, section-myAppointments

@@ -37,20 +37,24 @@
 			    <?php elseif($item->slot==9): ?>
 			    	<td colspan="2">4PM - 5PM</td>
 			    <?php else: ?>
-			    	<td> ------ </td>
+			    	<td> ---NA--- </td>
 			    <?php endif; ?>
 			    <?php $counsellor_name = App\Counsellor::find($item->counsellor_id)->name; ?>
 			    <td colspan="2"><?php echo e($counsellor_name); ?></td>
 			    <td colspan="3"><?php echo e($item->message); ?></td>
 			    <td>
-			    	<?php if($item->accept==0): ?>
+			    	<?php if($item->accept==0 && $item->is_Rejected==0): ?>
 			    		<a href="#" class="btn btn-warning"> Pending </a>
-			    	<?php elseif($item->is_Completed==0): ?>
-			    		<a href="#" class="btn btn-info"> Accepted </a>
-			    	<?php elseif($item->is_Completed==1): ?>
-			    		<a href="#" class="btn btn-success">Completed </a>
+			    	<?php elseif($item->accept==0 && $item->is_Rejected==1): ?>
+			    		<a href="#" class="btn btn-danger">Rejected </a>
+			    	<?php elseif($item->is_Rescheduled==1): ?>
+			    		<a href="#" class="btn btn-info"> Rescheduled </a>
+			    	<?php elseif($item->accept==1 && $item->is_Completed==1): ?>
+			    		<a href="#" class="btn btn-success"> Completed </a>
+			    	<?php elseif($item->accept==1): ?>
+			    		<a href="#" class="btn btn-success">Accepted </a>
 			    	<?php else: ?>
-			    		---------
+			    		---NA---
 			    	<?php endif; ?>
 			    </td>
             </tr>

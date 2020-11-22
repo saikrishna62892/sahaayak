@@ -75,10 +75,12 @@ Route::get('admin/deleteGallery/{gallery}/gallerydeleted','GalleryController@del
 
 
 
-Route::get('/appointment_controller','appointment_controller@save');
+Route::post('/appointment_controller','appointment_controller@save');
 
 
 Route::get('counsellor/appointment/{appointment}/acceptAppointment','appointment_controller@appointmentAccepted');
+Route::get('counsellor/appointment/{appointment}/rejectAppointment','appointment_controller@appointmentRejected');
+Route::post('counsellor/rescheduleAppointment','appointment_controller@appointmentEdit');
 //Route::post('/volunteer/casehistory/addCasehistory','VolunteerController@addCasehistory')->name('addCaseHistory');
 
 Route::get('/suggestion_controller','suggestion_controller@save');

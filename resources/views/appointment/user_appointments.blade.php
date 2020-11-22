@@ -43,12 +43,16 @@
 			    <td colspan="2">{{ $counsellor_name }}</td>
 			    <td colspan="3">{{$item->message}}</td>
 			    <td>
-			    	@if($item->accept==0)
+			    	@if($item->accept==0 && $item->is_Rejected==0)
 			    		<a href="#" class="btn btn-warning"> Pending </a>
-			    	@elseif($item->is_Completed==0)
-			    		<a href="#" class="btn btn-info"> Accepted </a>
-			    	@elseif($item->is_Completed==1)
-			    		<a href="#" class="btn btn-success">Completed </a>
+			    	@elseif($item->accept==0 && $item->is_Rejected==1)
+			    		<a href="#" class="btn btn-danger">Rejected </a>
+			    	@elseif($item->is_Rescheduled==1)
+			    		<a href="#" class="btn btn-info"> Rescheduled </a>
+			    	@elseif($item->accept==1 && $item->is_Completed==1)
+			    		<a href="#" class="btn btn-success"> Completed </a>
+			    	@elseif($item->accept==1)
+			    		<a href="#" class="btn btn-success">Accepted </a>
 			    	@else
 			    		---NA---
 			    	@endif

@@ -136,8 +136,8 @@
 									    <td colspan="3">{{$item->message}}</td>
 									    <td>
 									    	<a href="/counsellor/appointment/{{$item->id}}/acceptAppointment" style="color: #5768ad;">Accept?</a>&emsp;
-									    	<a href="/counsellor/appointment/{{$item->id}}/acceptAppointment" style="color: #5768ad;">Reject?</a>&emsp;
-									    	<a href="/counsellor/appointment/{{$item->id}}/acceptAppointment" style="color: #5768ad;">Reschedule!</a>
+									    	<a href="/counsellor/appointment/{{$item->id}}/rejectAppointment" style="color: #5768ad;">Reject?</a>&emsp;
+									    	<a id="{{ $item->id }}#{{ $item->name }}" href="#reschedule" onClick="reply_click(this.id,)" data-toggle="tab" role="tab" style="color: #5768ad;">Reschedule!</a>
 									    </td>
                                     </tr>
                                     @empty
@@ -297,6 +297,14 @@
 		        </div>
 		    </div>
 		</div>
+
+		<!--rescheduleForm Begin-->
+        <div class="tab-pane fade" id="reschedule" role="tabpanel">
+        	@include('appointment.editAppointment')
+        </div>
+        <!--rescheduleForm end-->
+
+
 		<!--reportForm Begin-->
         <div class="tab-pane fade" id="makereport" role="tabpanel">
         	@include('appointment.reportForm')
