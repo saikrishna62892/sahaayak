@@ -35,7 +35,7 @@ class appointment_controller extends Controller
     {
         $startslots = ['00','08','09','10','11','12','13','14','15','16'];
         $endslots =   ['00','09','10','11','12','13','14','15','16','17'];
-        
+        /*
         $appointment=new Appointment();
         $user = Auth::user();
         $data = request()->validate([
@@ -66,7 +66,7 @@ class appointment_controller extends Controller
         $appointment->counsellor_id=$req->counsellor_name;
         $appointment->save();
         $this->sendAppointmentReceivedNotif($appointment->name);
-
+*/
         $event = new Event;
         $event->name = 'Sahaayak Appointment';
         //dd(Carbon::now().'     '.$req->date.' '.$startslots[$req->slot].':00:00');
@@ -75,12 +75,14 @@ class appointment_controller extends Controller
         $event->startDateTime = $d1;
         $event->endDateTime = $d2;
         //$user->email
-        $event->addAttendee(['email' => 'dileepkumar_m190437cs@nitc.ac.in']);
-        $counsellor=Counsellor::find($appointment->counsellor_id);
-        //$counsellor->email
         $event->addAttendee(['email' => 'saikrishna_m190241cs@nitc.ac.in']);
+        //$counsellor=Counsellor::find($appointment->counsellor_id);
+        //$counsellor->calendarid
+
+        $event->addAttendee(['email' => 'dileepkumar_m190437cs@nitc.ac.in']);
         $event->description='Appointment has been scheduled successfully and Please be on time.';
-        //$event->conferenceDataVersion=1;
+        $event->conferenceDataVersion=1;
+        //$event->conferenceData.conferenceSolution.key.type='hangoutsMeet';
         $event->save(); 
        
         Session::flash('alert-success', 'Appointment Created Succesfully Please check your Google Calendar'); 
