@@ -5,23 +5,23 @@
        <form action="/counsellor/rescheduleAppointment" method="post">
         @csrf
             <div class="row">
-                <div class="form-group  col-lg-3">
+                <div class="form-group  col-lg-4">
                     <label for="appointment_id">Appointment ID</label>
                     <input type="text" class="form-control" name="appointment_id" id="appointment_id" aria-describedby="appointment_idHelp" value="" autocomplete="off" readonly>
                     @error('appointment_id')
                     <small class="text-danger">{{$message}}</small>
                     @enderror
                 </div>
-                <div class="form-group  col-lg-3">
+                <div class="form-group  col-lg-4">
                     <label for="date">Date</label>
-                    <input type="text" id="date" name="date" placeholder="Choose Your Date" onfocus="(this.type='date')"autocomplete="off" >
+                    <input type="text" class="form-control" id="date" name="date" aria-describedby="dateHelp" placeholder="Choose Your Date" onfocus="(this.type='date')"autocomplete="off" >
                     @error('date')
                     <small class="text-danger">{{$message}}</small>
                     @enderror
                 </div>
-                <div class="form-group  col-lg-3">
+                <div class="form-group  col-lg-4">
                     <label for="slot">Date</label>
-                    <select  name="slot">
+                    <select  name="slot" class="form-control" aria-describedby="slotHelp">
                         <option value="" selected disabled hidden>Choose Your Slot</option>
                         <option value="1">8AM - 9AM</option>
                         <option value="2">9AM - 10AM</option>

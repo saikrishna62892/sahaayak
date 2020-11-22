@@ -5,7 +5,7 @@
        <form action="/counsellor/rescheduleAppointment" method="post">
         <?php echo csrf_field(); ?>
             <div class="row">
-                <div class="form-group  col-lg-3">
+                <div class="form-group  col-lg-4">
                     <label for="appointment_id">Appointment ID</label>
                     <input type="text" class="form-control" name="appointment_id" id="appointment_id" aria-describedby="appointment_idHelp" value="" autocomplete="off" readonly>
                     <?php $__errorArgs = ['appointment_id'];
@@ -19,9 +19,9 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                 </div>
-                <div class="form-group  col-lg-3">
+                <div class="form-group  col-lg-4">
                     <label for="date">Date</label>
-                    <input type="text" id="date" name="date" placeholder="Choose Your Date" onfocus="(this.type='date')"autocomplete="off" >
+                    <input type="text" class="form-control" id="date" name="date" aria-describedby="dateHelp" placeholder="Choose Your Date" onfocus="(this.type='date')"autocomplete="off" >
                     <?php $__errorArgs = ['date'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -33,9 +33,9 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                 </div>
-                <div class="form-group  col-lg-3">
+                <div class="form-group  col-lg-4">
                     <label for="slot">Date</label>
-                    <select  name="slot">
+                    <select  name="slot" class="form-control" aria-describedby="slotHelp">
                         <option value="" selected disabled hidden>Choose Your Slot</option>
                         <option value="1">8AM - 9AM</option>
                         <option value="2">9AM - 10AM</option>
