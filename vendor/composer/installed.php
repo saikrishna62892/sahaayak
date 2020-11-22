@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '36abd6407d0653526806fc514564ff1399a8fa0a',
+    'reference' => '149deb3cb1a102601079eabcd08847b259348ef3',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -22,12 +22,12 @@
     ),
     'aws/aws-sdk-php' => 
     array (
-      'pretty_version' => '3.159.1',
-      'version' => '3.159.1.0',
+      'pretty_version' => '3.163.2',
+      'version' => '3.163.2.0',
       'aliases' => 
       array (
       ),
-      'reference' => '41d8908c1ac53afc8b5dc68aab7a67765e366e15',
+      'reference' => 'ef46d2daf80f2a21809608ada7ba76dddfd103cd',
     ),
     'barryvdh/laravel-dompdf' => 
     array (
@@ -90,12 +90,12 @@
     ),
     'doctrine/dbal' => 
     array (
-      'pretty_version' => '2.12.0',
-      'version' => '2.12.0.0',
+      'pretty_version' => '2.12.1',
+      'version' => '2.12.1.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'c6d37b4c42aaa3c3ee175f05eca68056f4185646',
+      'reference' => 'adce7a954a1c2f14f85e94aed90c8489af204086',
     ),
     'doctrine/event-manager' => 
     array (
@@ -153,12 +153,12 @@
     ),
     'egulias/email-validator' => 
     array (
-      'pretty_version' => '2.1.23',
-      'version' => '2.1.23.0',
+      'pretty_version' => '2.1.24',
+      'version' => '2.1.24.0',
       'aliases' => 
       array (
       ),
-      'reference' => '5fa792ad1853ae2bc60528dd3e5cbf4542d3c1df',
+      'reference' => 'ca90a3291eee1538cd48ff25163240695bd95448',
     ),
     'facade/flare-client-php' => 
     array (
@@ -171,12 +171,12 @@
     ),
     'facade/ignition' => 
     array (
-      'pretty_version' => '2.5.0',
-      'version' => '2.5.0.0',
+      'pretty_version' => '2.5.2',
+      'version' => '2.5.2.0',
       'aliases' => 
       array (
       ),
-      'reference' => '81698c5e32837c74abf9bb764ff0c1b3e001afb3',
+      'reference' => '08668034beb185fa2ac6f09b1034eaa440952ace',
     ),
     'facade/ignition-contracts' => 
     array (
@@ -234,21 +234,21 @@
     ),
     'google/apiclient' => 
     array (
-      'pretty_version' => 'v2.8.2',
-      'version' => '2.8.2.0',
+      'pretty_version' => 'v2.8.3',
+      'version' => '2.8.3.0',
       'aliases' => 
       array (
       ),
-      'reference' => '24f3ec0c79567a08c31f8271b61d79b050b25b0a',
+      'reference' => '81696e6206322e38c643cfcc96c4494ccfef8a32',
     ),
     'google/apiclient-services' => 
     array (
-      'pretty_version' => 'v0.153',
-      'version' => '0.153.0.0',
+      'pretty_version' => 'v0.154',
+      'version' => '0.154.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'db62bb19f32f81c9551f223c72be0682eb58ebd8',
+      'reference' => '7f44a314836c444b7894d648c1c49f83fb9d37ca',
     ),
     'google/auth' => 
     array (
@@ -530,7 +530,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '36abd6407d0653526806fc514564ff1399a8fa0a',
+      'reference' => '149deb3cb1a102601079eabcd08847b259348ef3',
     ),
     'laravel/socialite' => 
     array (
@@ -633,15 +633,15 @@
     ),
     'myclabs/deep-copy' => 
     array (
-      'pretty_version' => '1.10.1',
-      'version' => '1.10.1.0',
+      'pretty_version' => '1.10.2',
+      'version' => '1.10.2.0',
       'aliases' => 
       array (
       ),
-      'reference' => '969b211f9a51aa1f6c01d1d2aef56d3bd91598e5',
+      'reference' => '776f831124e9c62e1a2c601ecc52e776d8bb7220',
       'replaced' => 
       array (
-        0 => '1.10.1',
+        0 => '1.10.2',
       ),
     ),
     'nesbot/carbon' => 
@@ -1092,12 +1092,12 @@
     ),
     'spatie/laravel-google-calendar' => 
     array (
-      'pretty_version' => '3.1.0',
-      'version' => '3.1.0.0',
+      'pretty_version' => '3.2.0',
+      'version' => '3.2.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '2e62238fbeed348b8a57d9a8b6f3a1adce30ecc1',
+      'reference' => 'c6699c5d9938408da2035454579b44eb635cf83d',
     ),
     'swiftmailer/swiftmailer' => 
     array (
@@ -1428,12 +1428,12 @@
     ),
     'voku/portable-ascii' => 
     array (
-      'pretty_version' => '1.5.4',
-      'version' => '1.5.4.0',
+      'pretty_version' => '1.5.6',
+      'version' => '1.5.6.0',
       'aliases' => 
       array (
       ),
-      'reference' => '87dc337d4200b32717dd3849fea846319e897658',
+      'reference' => '80953678b19901e5165c56752d087fc11526017c',
     ),
     'webmozart/assert' => 
     array (

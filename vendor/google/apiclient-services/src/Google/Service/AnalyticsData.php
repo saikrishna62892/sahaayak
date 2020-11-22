@@ -39,7 +39,7 @@ class Google_Service_AnalyticsData extends Google_Service
 
   public $properties;
   public $v1alpha;
-  
+
   /**
    * Constructs the internal representation of the AnalyticsData service.
    *
@@ -71,6 +71,16 @@ class Google_Service_AnalyticsData extends Google_Service
                   'required' => true,
                 ),
               ),
+            ),'runRealtimeReport' => array(
+              'path' => 'v1alpha/{+property}:runRealtimeReport',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'property' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
             ),
           )
         )
@@ -88,10 +98,6 @@ class Google_Service_AnalyticsData extends Google_Service
             ),'batchRunReports' => array(
               'path' => 'v1alpha:batchRunReports',
               'httpMethod' => 'POST',
-              'parameters' => array(),
-            ),'getUniversalMetadata' => array(
-              'path' => 'v1alpha/universalMetadata',
-              'httpMethod' => 'GET',
               'parameters' => array(),
             ),'runPivotReport' => array(
               'path' => 'v1alpha:runPivotReport',
