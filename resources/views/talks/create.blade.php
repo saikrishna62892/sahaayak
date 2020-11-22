@@ -4,7 +4,7 @@
 			@csrf
 			@include('talks.talk')
 			&emsp;
-				<center><button type="submit" class="btn btn-primary" style="background-color: #5768ad;" onclick="alert('Posted Succesfully')">Post Talk</button></center>
+				<center><button type="submit" class="btn btn-primary" style="background-color: #5768ad;" >Post Talk</button></center>
 		</form>
 	</div>
 </div>

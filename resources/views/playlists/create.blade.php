@@ -4,7 +4,7 @@
         @csrf
         @include('playlists.playlist')
         &emsp;
-        <center><button  type="submit" class="btn btn-primary" style="background-color: #5768ad;" onclick="alert('Posted Succesfully')">Add Playlist</button></center>
+        <center><button  type="submit" class="btn btn-primary" style="background-color: #5768ad;" >Add Playlist</button></center>
        </form>
     </div>
 </div>
