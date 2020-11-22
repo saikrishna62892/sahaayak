@@ -67,15 +67,10 @@
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu">
         <div class="offcanvas__logo">
-<<<<<<< HEAD
-            <a href="{{ url('/') }}"><img src="/img/logo.png" alt="Sahaayak" width="120" height="30"></a>
-            <a href="{{ url('/') }}"><img src="/img/nitc1.png" alt="Sahaayak" width="140" height="51"></a>
-=======
-        <div class="row">
-            <a href="{{ url('/') }}"><img src="/img/logo.png" alt="Sahaayak" width="120" height="30"></a>
-            <a href="http://www.nitc.ac.in/" target="_blank"><img src="/img/nitc1.png" width="140" height="51"></a>
-        </div>
->>>>>>> 565141f63b11a82a78ec3b624bac05258fb56b42
+            <div class="row">
+                <a href="{{ url('/') }}"><img src="/img/logo.png" alt="Sahaayak" width="120" height="30"></a>
+                <a href="http://www.nitc.ac.in/" target="_blank"><img src="/img/nitc1.png" width="140" height="51"></a>
+            </div>
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__widget">
