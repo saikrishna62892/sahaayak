@@ -69,7 +69,7 @@ class appointment_controller extends Controller
         $appointment->save();
         $this->sendAppointmentReceivedNotif($appointment->name);
 
-        $event = new Event;
+        /*$event = new Event;
         $event->name = 'Sahaayak Appointment';
         //dd(Carbon::now().'     '.$req->date.' '.$startslots[$req->slot].':00:00');
         $d1 = Carbon::parse($req->date.' '.$startslots[$req->slot].':00:00');
@@ -83,9 +83,11 @@ class appointment_controller extends Controller
         $event->addAttendee(['email' => 'saikrishna_m190241cs@nitc.ac.in']);
         $event->description='Appointment has been scheduled successfully and Please be on time.';
         //$event->conferenceDataVersion=1;
-        $event->save(); 
+        $event->save(); */
+
+        //send a mail to counsellor@dileep
        
-        Session::flash('alert-success', 'Appointment Created Succesfully Please check your Google Calendar'); 
+        Session::flash('alert-success', 'Appointment Received,Please Wait for Counsellor Acceptance'); 
         return redirect()->back(); 
     }
 
@@ -103,9 +105,28 @@ class appointment_controller extends Controller
 
         $appointment->update(['accept' => 1]);
 
+        //event create @dileep
+
         Session::flash('alert-success', 'User Appointment accepted'); 
         return redirect()->back();
     }
+    public function appointmentRejected(Appointment $appointment){
+
+        $appointment->update(['is_Rejected' => 1]);
+
+        Session::flash('alert-info', 'User Appointment Rejected'); 
+        return redirect()->back();
+    }
+    public function appointmentRescheduled(Appointment $appointment){
+
+        $appointment->update(['accept' => 1]);
+        $appointment->update(['is_Rescheduled' => 1]);
+        //event create @dilep
+        
+        Session::flash('alert-info', 'User Appointment Rescheduled'); 
+        return redirect()->back();
+    }
+
 
     public function reportForm(Appointment $appointment)
     {

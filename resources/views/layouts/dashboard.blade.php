@@ -57,7 +57,7 @@
         return link;
     }
 </script>
-<body>
+<body style="background-color: #f5f6fa;">
     <!-- preloader area start 
     <div id="preloader">
         <div class="loader"></div>

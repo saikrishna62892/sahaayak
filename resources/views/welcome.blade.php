@@ -43,7 +43,11 @@
                         <div class="col-lg-8">
                             <div class="hero__text">
                                 <span>We Share coz We Care</span>
-                                <h2 style="color: #5768ad;">{{ $dialyquote }}</h2>
+                                @if(!is_null($dialyquote))
+                                    <h2 style="color: #5768ad;">{{ $dialyquote }}</h2>
+                                @else
+                                    <h2 style="color: #5768ad;">All is Well!</h2>
+                                @endif
                                 <a style="color: white;" href="javascript:void(0);" onclick="javascript:introJs().setOption('showProgress',true).start();"><u><span>Take a Tour</span></u></a>
                                 <a href="{{ url('about') }}" class="primary-btn">DISCOVER MORE</a>
                             </div>

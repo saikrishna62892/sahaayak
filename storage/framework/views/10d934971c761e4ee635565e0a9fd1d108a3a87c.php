@@ -137,8 +137,8 @@
 									    <td colspan="3"><?php echo e($item->message); ?></td>
 									    <td>
 									    	<a href="/counsellor/appointment/<?php echo e($item->id); ?>/acceptAppointment" style="color: #5768ad;">Accept?</a>&emsp;
-									    	<a href="/counsellor/appointment/<?php echo e($item->id); ?>/acceptAppointment" style="color: #5768ad;">Reject?</a>&emsp;
-									    	<a href="/counsellor/appointment/<?php echo e($item->id); ?>/acceptAppointment" style="color: #5768ad;">Reschedule!</a>
+									    	<a href="/counsellor/appointment/<?php echo e($item->id); ?>/rejectAppointment" style="color: #5768ad;">Reject?</a>&emsp;
+									    	<a href="#reschedule" style="color: #5768ad;">Reschedule!</a>
 									    </td>
                                     </tr>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
@@ -305,6 +305,14 @@ unset($__errorArgs, $__bag); ?>
 		        </div>
 		    </div>
 		</div>
+
+		<!--rescheduleForm Begin-->
+        <div class="tab-pane fade" id="reschedule" role="tabpanel">
+        	<?php echo $__env->make('appointment.reportForm', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        </div>
+        <!--rescheduleForm end-->
+
+
 		<!--reportForm Begin-->
         <div class="tab-pane fade" id="makereport" role="tabpanel">
         	<?php echo $__env->make('appointment.reportForm', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
