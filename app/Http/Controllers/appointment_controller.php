@@ -117,13 +117,20 @@ class appointment_controller extends Controller
         Session::flash('alert-info', 'User Appointment Rejected'); 
         return redirect()->back();
     }
-    public function appointmentRescheduled(Appointment $appointment){
+    public function appointmentEdit(Request $req){
 
+        $data = request()->validate([
+         'date' => 'required',
+         'slot' => 'required'
+         ]);
+        $appointment = Appointment::find($req->appointment_id);
         $appointment->update(['accept' => 1]);
         $appointment->update(['is_Rescheduled' => 1]);
+        $appointment->update(['date' => $req->date]);
+        $appointment->update(['slot' => $req->slot]);
         //event create @dilep
         
-        Session::flash('alert-info', 'User Appointment Rescheduled'); 
+        Session::flash('alert-info', 'User Appointment Accepted & Rescheduled'); 
         return redirect()->back();
     }
 
