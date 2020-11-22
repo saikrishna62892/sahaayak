@@ -54,7 +54,7 @@
     function reply_click(clicked_id)
     {
         var res = clicked_id.split("#");
-        document.getElementById("demo1").innerHTML = "Reschedule Appointment for"+res[1];
+        document.getElementById("demo1").innerHTML = "Reschedule Appointment for "+res[1];
         document.getElementById('appointment_id').value = res[0];
     }
 </script>
