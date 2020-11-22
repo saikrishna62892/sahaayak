@@ -20,6 +20,7 @@ class Google_Service_Apigee_GoogleCloudApigeeV1Query extends Google_Collection
   protected $collection_key = 'metrics';
   public $csvDelimiter;
   public $dimensions;
+  public $envgroupHostname;
   public $filter;
   public $groupByTimeUnit;
   public $limit;
@@ -45,6 +46,14 @@ class Google_Service_Apigee_GoogleCloudApigeeV1Query extends Google_Collection
   public function getDimensions()
   {
     return $this->dimensions;
+  }
+  public function setEnvgroupHostname($envgroupHostname)
+  {
+    $this->envgroupHostname = $envgroupHostname;
+  }
+  public function getEnvgroupHostname()
+  {
+    return $this->envgroupHostname;
   }
   public function setFilter($filter)
   {

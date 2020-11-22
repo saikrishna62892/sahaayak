@@ -15,9 +15,14 @@ use Spatie\GoogleCalendar\Event;
 $event = new Event;
 
 $event->name = 'A new event';
+$event->description = 'Event description';
 $event->startDateTime = Carbon\Carbon::now();
 $event->endDateTime = Carbon\Carbon::now()->addHour();
-$event->addAttendee(['email' => 'youremail@gmail.com']);
+$event->addAttendee([
+    'email' => 'john@example.com'
+    'name' => 'John Doe',
+    'comment' => 'Lorum ipsum',
+]);
 $event->addAttendee(['email' => 'anotherEmail@gmail.com']);
 
 $event->save();
@@ -47,9 +52,7 @@ Spatie is a webdesign agency based in Antwerp, Belgium. You'll find an overview 
 
 ## Support us
 
-Learn how to create a package like this one, by watching our premium video course:
-
-[![Laravel Package training](https://spatie.be/github/package-training.jpg)](https://laravelpackage.training)
+[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-google-calendar.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-google-calendar)
 
 We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
 
@@ -72,10 +75,36 @@ php artisan vendor:publish --provider="Spatie\GoogleCalendar\GoogleCalendarServi
 This will publish a file called `google-calendar.php` in your config-directory with these contents:
 ```
 return [
-    /*
-     * Path to the json file containing the credentials.
-     */
-    'service_account_credentials_json' => storage_path('app/google-calendar/service-account-credentials.json'),
+
+    'default_auth_profile' => env('GOOGLE_CALENDAR_AUTH_PROFILE', 'service_account'),
+
+    'auth_profiles' => [
+
+        /*
+         * Authenticate using a service account.
+         */
+        'service_account' => [
+            /*
+             * Path to the json file containing the credentials.
+             */
+            'credentials_json' => storage_path('app/google-calendar/service-account-credentials.json'),
+        ],
+
+        /*
+         * Authenticate with actual google user account.
+         */
+        'oauth' => [
+            /*
+             * Path to the json file containing the oauth2 credentials.
+             */
+            'credentials_json' => storage_path('app/google-calendar/oauth-credentials.json'),
+
+            /*
+             * Path to the json file containing the oauth2 token.
+             */
+            'token_json' => storage_path('app/google-calendar/oauth-token.json'),
+        ],
+    ],
 
     /*
      *  The id of the Google Calendar that will be used by default.

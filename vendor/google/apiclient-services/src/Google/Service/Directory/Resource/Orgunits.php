@@ -72,10 +72,10 @@ class Google_Service_Directory_Resource_Orgunits extends Google_Service_Resource
    * @param string $customerId Immutable ID of the G Suite account
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string type Whether to return all sub-organizations or just
-   * immediate children
    * @opt_param string orgUnitPath the URL-encoded organizational unit's path or
    * its ID
+   * @opt_param string type Whether to return all sub-organizations or just
+   * immediate children
    * @return Google_Service_Directory_OrgUnits
    */
   public function listOrgunits($customerId, $optParams = array())

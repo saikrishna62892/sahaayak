@@ -61,17 +61,17 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.159.1",
-            "version_normalized": "3.159.1.0",
+            "version": "3.163.2",
+            "version_normalized": "3.163.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "41d8908c1ac53afc8b5dc68aab7a67765e366e15"
+                "reference": "ef46d2daf80f2a21809608ada7ba76dddfd103cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/41d8908c1ac53afc8b5dc68aab7a67765e366e15",
-                "reference": "41d8908c1ac53afc8b5dc68aab7a67765e366e15",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/ef46d2daf80f2a21809608ada7ba76dddfd103cd",
+                "reference": "ef46d2daf80f2a21809608ada7ba76dddfd103cd",
                 "shasum": ""
             },
             "require": {
@@ -107,7 +107,7 @@
                 "ext-openssl": "Allows working with CloudFront private distributions and verifying received SNS messages",
                 "ext-sockets": "To use client-side monitoring"
             },
-            "time": "2020-11-10T19:11:53+00:00",
+            "time": "2020-11-20T19:13:16+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -148,7 +148,7 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.159.1"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.163.2"
             },
             "install-path": "../aws/aws-sdk-php"
         },
@@ -470,17 +470,17 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "2.12.0",
-            "version_normalized": "2.12.0.0",
+            "version": "2.12.1",
+            "version_normalized": "2.12.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "c6d37b4c42aaa3c3ee175f05eca68056f4185646"
+                "reference": "adce7a954a1c2f14f85e94aed90c8489af204086"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/c6d37b4c42aaa3c3ee175f05eca68056f4185646",
-                "reference": "c6d37b4c42aaa3c3ee175f05eca68056f4185646",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/adce7a954a1c2f14f85e94aed90c8489af204086",
+                "reference": "adce7a954a1c2f14f85e94aed90c8489af204086",
                 "shasum": ""
             },
             "require": {
@@ -501,7 +501,7 @@
             "suggest": {
                 "symfony/console": "For helpful console commands such as SQL execution and import of files."
             },
-            "time": "2020-10-22T17:26:24+00:00",
+            "time": "2020-11-14T20:26:58+00:00",
             "bin": [
                 "bin/doctrine-dbal"
             ],
@@ -564,7 +564,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/dbal/issues",
-                "source": "https://github.com/doctrine/dbal/tree/2.12.0"
+                "source": "https://github.com/doctrine/dbal/tree/2.12.1"
             },
             "funding": [
                 {
@@ -1068,17 +1068,17 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "2.1.23",
-            "version_normalized": "2.1.23.0",
+            "version": "2.1.24",
+            "version_normalized": "2.1.24.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egulias/EmailValidator.git",
-                "reference": "5fa792ad1853ae2bc60528dd3e5cbf4542d3c1df"
+                "reference": "ca90a3291eee1538cd48ff25163240695bd95448"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/5fa792ad1853ae2bc60528dd3e5cbf4542d3c1df",
-                "reference": "5fa792ad1853ae2bc60528dd3e5cbf4542d3c1df",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/ca90a3291eee1538cd48ff25163240695bd95448",
+                "reference": "ca90a3291eee1538cd48ff25163240695bd95448",
                 "shasum": ""
             },
             "require": {
@@ -1094,7 +1094,7 @@
             "suggest": {
                 "ext-intl": "PHP Internationalization Libraries are required to use the SpoofChecking validation"
             },
-            "time": "2020-10-31T20:37:35+00:00",
+            "time": "2020-11-14T15:56:27+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1127,8 +1127,14 @@
             ],
             "support": {
                 "issues": "https://github.com/egulias/EmailValidator/issues",
-                "source": "https://github.com/egulias/EmailValidator/tree/2.1.23"
+                "source": "https://github.com/egulias/EmailValidator/tree/2.1.24"
             },
+            "funding": [
+                {
+                    "url": "https://github.com/egulias",
+                    "type": "github"
+                }
+            ],
             "install-path": "../egulias/email-validator"
         },
         {
@@ -1201,17 +1207,17 @@
         },
         {
             "name": "facade/ignition",
-            "version": "2.5.0",
-            "version_normalized": "2.5.0.0",
+            "version": "2.5.2",
+            "version_normalized": "2.5.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/ignition.git",
-                "reference": "81698c5e32837c74abf9bb764ff0c1b3e001afb3"
+                "reference": "08668034beb185fa2ac6f09b1034eaa440952ace"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/81698c5e32837c74abf9bb764ff0c1b3e001afb3",
-                "reference": "81698c5e32837c74abf9bb764ff0c1b3e001afb3",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/08668034beb185fa2ac6f09b1034eaa440952ace",
+                "reference": "08668034beb185fa2ac6f09b1034eaa440952ace",
                 "shasum": ""
             },
             "require": {
@@ -1235,7 +1241,7 @@
             "suggest": {
                 "laravel/telescope": "^3.1"
             },
-            "time": "2020-10-27T13:02:22+00:00",
+            "time": "2020-11-17T09:18:51+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1652,17 +1658,17 @@
         },
         {
             "name": "google/apiclient",
-            "version": "v2.8.2",
-            "version_normalized": "2.8.2.0",
+            "version": "v2.8.3",
+            "version_normalized": "2.8.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client.git",
-                "reference": "24f3ec0c79567a08c31f8271b61d79b050b25b0a"
+                "reference": "81696e6206322e38c643cfcc96c4494ccfef8a32"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client/zipball/24f3ec0c79567a08c31f8271b61d79b050b25b0a",
-                "reference": "24f3ec0c79567a08c31f8271b61d79b050b25b0a",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client/zipball/81696e6206322e38c643cfcc96c4494ccfef8a32",
+                "reference": "81696e6206322e38c643cfcc96c4494ccfef8a32",
                 "shasum": ""
             },
             "require": {
@@ -1688,7 +1694,7 @@
             "suggest": {
                 "cache/filesystem-adapter": "For caching certs and tokens (using Google\\Client::setCache)"
             },
-            "time": "2020-11-11T17:07:53+00:00",
+            "time": "2020-11-17T17:33:35+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1718,23 +1724,23 @@
             ],
             "support": {
                 "issues": "https://github.com/googleapis/google-api-php-client/issues",
-                "source": "https://github.com/googleapis/google-api-php-client/tree/v2.8.2"
+                "source": "https://github.com/googleapis/google-api-php-client/tree/v2.8.3"
             },
             "install-path": "../google/apiclient"
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.153",
-            "version_normalized": "0.153.0.0",
+            "version": "v0.154",
+            "version_normalized": "0.154.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "db62bb19f32f81c9551f223c72be0682eb58ebd8"
+                "reference": "7f44a314836c444b7894d648c1c49f83fb9d37ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/db62bb19f32f81c9551f223c72be0682eb58ebd8",
-                "reference": "db62bb19f32f81c9551f223c72be0682eb58ebd8",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/7f44a314836c444b7894d648c1c49f83fb9d37ca",
+                "reference": "7f44a314836c444b7894d648c1c49f83fb9d37ca",
                 "shasum": ""
             },
             "require": {
@@ -1743,7 +1749,7 @@
             "require-dev": {
                 "phpunit/phpunit": "^4.8|^5"
             },
-            "time": "2020-11-01T00:25:23+00:00",
+            "time": "2020-11-19T19:01:11+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -1762,7 +1768,7 @@
             ],
             "support": {
                 "issues": "https://github.com/googleapis/google-api-php-client-services/issues",
-                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.153"
+                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.154"
             },
             "install-path": "../google/apiclient-services"
         },
@@ -3129,17 +3135,17 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.10.1",
-            "version_normalized": "1.10.1.0",
+            "version": "1.10.2",
+            "version_normalized": "1.10.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "969b211f9a51aa1f6c01d1d2aef56d3bd91598e5"
+                "reference": "776f831124e9c62e1a2c601ecc52e776d8bb7220"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/969b211f9a51aa1f6c01d1d2aef56d3bd91598e5",
-                "reference": "969b211f9a51aa1f6c01d1d2aef56d3bd91598e5",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/776f831124e9c62e1a2c601ecc52e776d8bb7220",
+                "reference": "776f831124e9c62e1a2c601ecc52e776d8bb7220",
                 "shasum": ""
             },
             "require": {
@@ -3153,7 +3159,7 @@
                 "doctrine/common": "^2.6",
                 "phpunit/phpunit": "^7.1"
             },
-            "time": "2020-06-29T13:22:24+00:00",
+            "time": "2020-11-13T09:40:50+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -3178,7 +3184,7 @@
             ],
             "support": {
                 "issues": "https://github.com/myclabs/DeepCopy/issues",
-                "source": "https://github.com/myclabs/DeepCopy/tree/1.x"
+                "source": "https://github.com/myclabs/DeepCopy/tree/1.10.2"
             },
             "funding": [
                 {
@@ -5851,17 +5857,17 @@
         },
         {
             "name": "spatie/laravel-google-calendar",
-            "version": "3.1.0",
-            "version_normalized": "3.1.0.0",
+            "version": "3.2.0",
+            "version_normalized": "3.2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-google-calendar.git",
-                "reference": "2e62238fbeed348b8a57d9a8b6f3a1adce30ecc1"
+                "reference": "c6699c5d9938408da2035454579b44eb635cf83d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-google-calendar/zipball/2e62238fbeed348b8a57d9a8b6f3a1adce30ecc1",
-                "reference": "2e62238fbeed348b8a57d9a8b6f3a1adce30ecc1",
+                "url": "https://api.github.com/repos/spatie/laravel-google-calendar/zipball/c6699c5d9938408da2035454579b44eb635cf83d",
+                "reference": "c6699c5d9938408da2035454579b44eb635cf83d",
                 "shasum": ""
             },
             "require": {
@@ -5875,7 +5881,7 @@
                 "orchestra/testbench": "^4.0|^5.0|^6.0",
                 "phpunit/phpunit": "^8.4|^9.0|^9.3"
             },
-            "time": "2020-09-09T08:15:16+00:00",
+            "time": "2020-11-19T16:28:15+00:00",
             "type": "library",
             "extra": {
                 "laravel": {
@@ -5917,7 +5923,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-google-calendar/issues",
-                "source": "https://github.com/spatie/laravel-google-calendar/tree/3.1.0"
+                "source": "https://github.com/spatie/laravel-google-calendar/tree/3.2.0"
             },
             "funding": [
                 {
@@ -8674,17 +8680,17 @@
         },
         {
             "name": "voku/portable-ascii",
-            "version": "1.5.4",
-            "version_normalized": "1.5.4.0",
+            "version": "1.5.6",
+            "version_normalized": "1.5.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/portable-ascii.git",
-                "reference": "87dc337d4200b32717dd3849fea846319e897658"
+                "reference": "80953678b19901e5165c56752d087fc11526017c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/portable-ascii/zipball/87dc337d4200b32717dd3849fea846319e897658",
-                "reference": "87dc337d4200b32717dd3849fea846319e897658",
+                "url": "https://api.github.com/repos/voku/portable-ascii/zipball/80953678b19901e5165c56752d087fc11526017c",
+                "reference": "80953678b19901e5165c56752d087fc11526017c",
                 "shasum": ""
             },
             "require": {
@@ -8696,7 +8702,7 @@
             "suggest": {
                 "ext-intl": "Use Intl for transliterator_transliterate() support"
             },
-            "time": "2020-11-08T21:15:15+00:00",
+            "time": "2020-11-12T00:07:28+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -8723,7 +8729,7 @@
             ],
             "support": {
                 "issues": "https://github.com/voku/portable-ascii/issues",
-                "source": "https://github.com/voku/portable-ascii/tree/1.5.4"
+                "source": "https://github.com/voku/portable-ascii/tree/1.5.6"
             },
             "funding": [
                 {

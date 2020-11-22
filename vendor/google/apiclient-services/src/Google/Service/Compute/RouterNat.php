@@ -19,6 +19,7 @@ class Google_Service_Compute_RouterNat extends Google_Collection
 {
   protected $collection_key = 'subnetworks';
   public $drainNatIps;
+  public $enableEndpointIndependentMapping;
   public $icmpIdleTimeoutSec;
   protected $logConfigType = 'Google_Service_Compute_RouterNatLogConfig';
   protected $logConfigDataType = '';
@@ -40,6 +41,14 @@ class Google_Service_Compute_RouterNat extends Google_Collection
   public function getDrainNatIps()
   {
     return $this->drainNatIps;
+  }
+  public function setEnableEndpointIndependentMapping($enableEndpointIndependentMapping)
+  {
+    $this->enableEndpointIndependentMapping = $enableEndpointIndependentMapping;
+  }
+  public function getEnableEndpointIndependentMapping()
+  {
+    return $this->enableEndpointIndependentMapping;
   }
   public function setIcmpIdleTimeoutSec($icmpIdleTimeoutSec)
   {

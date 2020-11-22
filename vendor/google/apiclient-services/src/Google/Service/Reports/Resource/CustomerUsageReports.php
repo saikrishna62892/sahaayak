@@ -37,6 +37,8 @@ class Google_Service_Reports_Resource_CustomerUsageReports extends Google_Servic
    * zone for this.
    * @param array $optParams Optional parameters.
    *
+   * @opt_param string customerId The unique ID of the customer to retrieve data
+   * for.
    * @opt_param string pageToken Token to specify next page. A report with
    * multiple pages has a nextPageToken property in the response. For your follow-
    * on requests getting all of the report's pages, enter the nextPageToken value
@@ -55,8 +57,6 @@ class Google_Service_Reports_Resource_CustomerUsageReports extends Google_Servic
    * the remaining valid request parameters. An example of an invalid request
    * parameter is one that does not belong to the application. If no parameters
    * are requested, all parameters are returned.
-   * @opt_param string customerId The unique ID of the customer to retrieve data
-   * for.
    * @return Google_Service_Reports_UsageReports
    */
   public function get($date, $optParams = array())
