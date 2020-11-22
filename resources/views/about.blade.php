@@ -7,7 +7,7 @@
     
 
     <!-- Breadcrumb Begin -->
-    <section class="breadcrumb-option set-bg" data-setbg="img/breadcrumb.jpg">
+    <section class="breadcrumb-option set-bg" data-setbg="img/breadcrumb1.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -213,7 +213,7 @@
                 <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
                 <h2>Impact</h2>
             </div>
-            <div class="counter__text set-bg" data-setbg="img/counter/counter-bg11.jpg">
+            <div class="counter__text set-bg" data-setbg="img/counter/counter-bg111.jpg">
                 <div class="counter__item">
                     <div class="counter__item__icon">
                         <img src="img/counter/counter-4.png" alt="">
@@ -565,6 +565,24 @@
                                         <p>2) Login into Sahaayak.</p>
                                         <p>3) In the footer section there is a subscribe button available.</p>
                                         <p>4) Click on it and you will keep on hearing from us.</p>
+                                        <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-heading">
+                                    <a data-toggle="collapse" data-target="#collapseThirteen">
+                                        <span>Help Line numbers</span>
+                                    </a>
+                                </div>
+                                <div id="collapseThirteen" class="collapse" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p>Delhi : 011-4076 9002</p>
+                                        <p>Andhra Pradesh : 78930-78930</p>
+                                        <p>Karnataka : 104</p>
+                                        <p>Kerala : 0471-2552056</p>
+                                        <p>Kochi : 0484-2361160</p>
+                                        <p><a href="https://www.thehindu.com/news/national/suicide-prevention-helplines/article25612310.ece" style="color:#5768AD;" target="_blank">More</a></p>
                                         <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
                                     </div>
                                 </div>

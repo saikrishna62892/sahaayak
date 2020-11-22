@@ -41,9 +41,10 @@
     {
         var res = clicked_id.split("#");
         document.getElementById("demo").innerHTML = "Add Case history for "+res[1];
-        document.getElementById('appointment_id').value = res[0];
+        document.getElementById('college_id').value = res[0];
         document.getElementById('appointment_name').value = res[1];
         document.getElementById('appointment_email').value = res[2];
+        document.getElementById('appointment_id').value = res[3];
     }
 </script>
 <!--reportForm script end-->
@@ -219,6 +220,9 @@
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" >
                                             @csrf
                                         </form>
+                                        @if( Auth::user()->is_admin==0 && Auth::user()->is_Volunteer==0 && Auth::user()->is_Counsellor==0)
+                                        <a class="dropdown-item" href="/user/edit/{{ Auth::user()->id }}">Edit Details </a>
+                                        @endif
                                     </div>
                                 </li>
                                 <li>

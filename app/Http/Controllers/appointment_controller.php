@@ -13,10 +13,12 @@ use App\Notifications\AppointmentReceivedNotification;
 use App\Notifications\AppointmentAcceptedNotification;
 use App\Notifications\AppointmentReportNotification;
 use App\User;
+use App\Counsellor;
 use App\Traits\NotificationTrait;
 use Spatie\GoogleCalendar\Event;
 use Carbon\Carbon;
 use Session;
+
 
 class appointment_controller extends Controller
 {
@@ -28,7 +30,7 @@ class appointment_controller extends Controller
         $this->middleware(['auth','verified']);
         $this->middleware('is_user')->only(['save']);
         //$this->middleware('is_volunteer')->only(['appointmentAccepted','reportForm','generateReport']);
-        $this->middleware('is_counsellor')->only(['appointmentAccepted','reportForm','generateReport']);
+        $this->middleware('is_counsellor')->only(['appointmentAccepted','reportForm','addCasehistory']);
 
     }
     function save(Request $req)
@@ -68,22 +70,63 @@ class appointment_controller extends Controller
         $this->sendAppointmentReceivedNotif($appointment->name);
 */
         $event = new Event;
-        $event->name = 'Sahaayak Appointment';
+        //$event->name = 'Sahaayak Appointment';
         //dd(Carbon::now().'     '.$req->date.' '.$startslots[$req->slot].':00:00');
-        $d1 = Carbon::parse($req->date.' '.$startslots[$req->slot].':00:00');
-        $d2 = Carbon::parse($req->date.' '.$endslots[$req->slot].':00:00');
-        $event->startDateTime = $d1;
-        $event->endDateTime = $d2;
+        //$d1 = Carbon::parse($req->date.' '.$startslots[$req->slot].':00:00');
+        //$d2 = Carbon::parse($req->date.' '.$endslots[$req->slot].':00:00');
+        //$event->startDateTime = $d1;
+        //$event->endDateTime = $d2;
         //$user->email
-        $event->addAttendee(['email' => 'saikrishna_m190241cs@nitc.ac.in']);
+
+        //$event->addAttendee(['email' => 'dileepkumar_m190437cs@nitc.ac.in']);
+        //$counsellor=Counsellor::find($appointment->counsellor_id);
+        //$counsellor->email
+        //$event->addAttendee(['email' => 'saikrishna_m190241cs@nitc.ac.in']);
         //$counsellor=Counsellor::find($appointment->counsellor_id);
         //$counsellor->calendarid
+        //$event->description='Appointment has been scheduled successfully and Please be on time.';
+        //$event->conferenceDataVersion=1;
+        //$event->conferenceData='hangoutsMeet';
+        //->conferenceSolution->key->type
+        //$event->save(); 
 
-        $event->addAttendee(['email' => 'dileepkumar_m190437cs@nitc.ac.in']);
-        $event->description='Appointment has been scheduled successfully and Please be on time.';
-        $event->conferenceDataVersion=1;
-        //$event->conferenceData.conferenceSolution.key.type='hangoutsMeet';
-        $event->save(); 
+
+
+        //trail
+        $event->create(array(
+  'summary' => 'Appointment', //'Google Calendar summary',
+  'location' => 'India', //'USA',
+  'description' => 'appointment', //'Book Room',
+  'start' => array(
+    'dateTime' => '2020-11-28T09:00:00-02:00',//'2018-08-16T14:30:00-00:00',
+    'timeZone' => 'America/Los_Angeles',
+  ),
+  'end' => array(
+    'dateTime' => '2020-11-28T09:00:00-03:00',//'2018-08-16T14:30:00-01:00',
+    'timeZone' => 'America/Los_Angeles',
+  ),
+  'attendees' => array(
+    array('email' => 'dileepkumar_m190437cs@nitc.ac.in','resource' => true),
+    array('email' => 'saikrishna_m190241cs@nitc.ac.in','resource' => true),
+  ),
+  'reminders' => array(
+    'useDefault' => FALSE,
+    'overrides' => array(
+      array('method' => 'popup', 'minutes' => 10),
+    ),
+  ),
+
+"conferenceData" => array(
+        "createRequest" => array(
+          "conferenceSolutionKey" => array(
+            "type" => "hangoutsMeet"
+          ),
+          "requestId" => "123"
+        ),
+      ),
+
+
+),'dileepkumar_m190437cs@nitc.ac.in',['conferenceDataVersion' => 1]);
        
         Session::flash('alert-success', 'Appointment Created Succesfully Please check your Google Calendar'); 
         return redirect()->back(); 
@@ -112,7 +155,7 @@ class appointment_controller extends Controller
         return view('appointment.reportForm',compact('appointment'));
     }
 
-    public function generateReport()
+    public function addCasehistory()
     {
         $data = request()->all();
         $appointment = Appointment::find($data['appointment_id']);
@@ -126,9 +169,9 @@ class appointment_controller extends Controller
 
         $appointment->update(['is_Completed' => 1]);
 
-        $pdf = PDF::loadView('appointment.generateReport',compact('data'));
-        $user = User::find($appointment->user_id);
-        $user->notify(new AppointmentReportNotification($pdf));
+        //$pdf = PDF::loadView('appointment.generateReport',compact('data'));
+        //$user = User::find($appointment->user_id);
+        //$user->notify(new AppointmentReportNotification($pdf));
         Session::flash('alert-success', 'CaseHistory Added Succesfully'); 
         return redirect()->back();
     }

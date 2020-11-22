@@ -11,6 +11,8 @@ use Auth;
 use Session;
 use Carbon\Carbon;
 use App\User;
+use PDF;
+
 class CounsellorController extends Controller
 {
     public function __construct()
@@ -121,16 +123,28 @@ class CounsellorController extends Controller
     public function getCaseHistory(User $user)
     {
         //user->appointments->casehistories
+        $counsellor=Auth::user();
         $user->load('appointments.casehistory');
-        $pdf = PDF::loadView('volunteer.casehistory',compact('user'));
-        return $pdf->stream('casehistory'.$user->id.'pdf');
+        $pdf = PDF::loadView('volunteer.casehistory',compact('user','counsellor'));
+        Session::flash('alert-success', 'Downloaded Successfully');  
+        return $pdf->stream('casehistory'.'_'.$user->name.'_'.$req->college_id.'.'.'pdf');
     }
 
-    public function getHistory(Request $req)
+    public function downloadReport(Request $req)
     {
-        $user = User::find($req->userID);
-        $user->load('appointments.casehistory');
-        $pdf = PDF::loadView('volunteer.casehistory',compact('user'));
-        return $pdf->stream('casehistory'.$user->id.'pdf');
+        
+        $roll=strtoupper($req->college_id);
+        $counsellor=Auth::user();
+        $user = User::where('rollnum',$roll)->first();
+        if(!is_null($user)){
+            $user->load('appointments.casehistory');
+            $pdf = PDF::loadView('volunteer.casehistory',compact('user','counsellor'));
+            Session::flash('alert-success', 'Downloaded Successfully'); 
+            return $pdf->stream('casehistory'.'_'.$user->name.'_'.$req->college_id.'.'.'pdf');
+        }
+        else{
+            Session::flash('alert-danger', 'User Details Not found!'); 
+            return redirect()->back();
+        }
     }
 }
