@@ -43,14 +43,15 @@ class CounsellorController extends Controller
         $newuser->email_verified_at=Carbon::now();
         $newuser->is_Counsellor=1;
         $newuser->save();  
+        
         #for image upload
-        if ($request->hasFile('image')) {
+        /*if ($request->hasFile('image')) {
             $image = $request->file('image');
             $name = Carbon::now()->timestamp.'_'.request()->college_id.'_'.request()->name.'.'.$image->getClientOriginalExtension();
             $destinationPath = public_path('/img/counsellors/');
             $image->move($destinationPath, $name);
             $counsellor->image=$name;
-        }
+        }*/
         $counsellor->user_id=$newuser->id;
         $counsellor->name=$request->name;
         $counsellor->college_id=$request->college_id;
@@ -59,6 +60,9 @@ class CounsellorController extends Controller
         $counsellor->profession=$request->profession;
         $counsellor->bio=$request->bio;
         $counsellor->achievements=$request->achievements;  
+        $counsellor->update([
+            'file1' => $request->file('image')->store('uploads/counsellors','s3')
+        ]);
         $newuser->save();      
         $counsellor->save();
         Session::flash('alert-success', 'Counsellor Details Added Successfully');
