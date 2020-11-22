@@ -46,7 +46,8 @@
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu">
         <div class="offcanvas__logo">
-            <a href="{{ url('/') }}"><img src="/img/logo.png" alt="Sahaayak" width="240" height="60"></a>
+            <a href="{{ url('/') }}"><img src="/img/logo.png" alt="Sahaayak" width="120" height="30"></a>
+            <a href="{{ url('/') }}"><img src="/img/nitc1.png" alt="Sahaayak" width="140" height="51"></a>
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__widget">
