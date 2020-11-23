@@ -26,8 +26,9 @@ class NewsController extends Controller
 
 	function index()
 	{
-		$data = DB::table('users')->paginate(2);
-		return view('news',['newsdata'=>$data]);
+        $news = DB::table('users')->paginate(6);
+        return view('/news/show')->with(compact('news'));
+		//return view('news/show',['newsdata'=>$data]);
 	}
 	 public function create()
     {

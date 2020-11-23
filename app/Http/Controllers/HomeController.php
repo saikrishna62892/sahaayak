@@ -54,7 +54,7 @@ class HomeController extends Controller
         $featurednews=News::orderBy('created_at','desc')->get();
         $counsellors = Counsellor::all();
         Session::flash('alert-success', 'DialyQuote Added Succesfully'); 
-        return view('welcome')->with(compact('dialyquote','featurednews','counsellors'));
+        return redirect()->back();
     }
 
      public function welcome(){
