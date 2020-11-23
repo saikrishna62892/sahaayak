@@ -17,7 +17,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
      	</div>
       &emsp;
-          <center><button type="submit" class="btn btn-primary" style="background-color: #5768ad;" onclick="alert('Posted Succesfully')">Post Quote</button></center>
+          <center><button type="submit" class="btn btn-primary" style="background-color: #5768ad;" >Post Quote</button></center>
     </form>
   </div>
 </div><?php /**PATH D:\Sahaayak\sahaayak\resources\views/quotes/dialyquote.blade.php ENDPATH**/ ?>

@@ -39,11 +39,11 @@ class CounsellorController extends Controller
         $newuser->name=$request->name;
         $newuser->email=$request->email;
         $newuser->rollnum=$request->college_id;
-        $newuser->save();
-        $newuser->update(['password'=>bcrypt('12345678'),
-            'email_verified_at'=>Carbon::now(),
-            'is_Counsellor'=>1]);
-
+        $newuser->password=bcrypt('12345678');
+        $newuser->email_verified_at=Carbon::now();
+        $newuser->is_Counsellor=1;
+        $newuser->save();  
+        
         $counsellor->user_id=$newuser->id;
         $counsellor->name=$request->name;
         $counsellor->college_id=$request->college_id;
@@ -53,10 +53,14 @@ class CounsellorController extends Controller
         $counsellor->bio=$request->bio;
         $counsellor->achievements=$request->achievements;  
         $counsellor->save();
+        $counsellor->update([
+            'file1' => $request->file('image')->store('uploads/counsellors','s3')
+        ]);
 
         $counsellor->update([
             'file1' => $data['image']->store('uploads/counsellors','s3')
         ]);
+
         Session::flash('alert-success', 'Counsellor Details Added Successfully');
         return redirect()->back();
     }

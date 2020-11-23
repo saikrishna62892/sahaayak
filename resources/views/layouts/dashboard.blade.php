@@ -133,7 +133,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="{{ url('news') }}" aria-expanded="true"><i class="ti-world"></i><span>News</span></a>
+                                <a href="{{ url('displayNews') }}" aria-expanded="true"><i class="ti-world"></i><span>News</span></a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-heart"></i><span>Hope Box</span></a>

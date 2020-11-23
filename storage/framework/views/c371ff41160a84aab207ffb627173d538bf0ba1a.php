@@ -299,7 +299,7 @@
             <?php if(is_null($gal->image)): ?>
                 <img class="d-block w-100" src="<?php echo e(asset('/img/galleries/default.jpg')); ?>" alt="Gallery-Image" height="550">
             <?php else: ?>
-                <img class="d-block w-100" src="<?php echo e(asset('/img/galleries/'.$gal->image)); ?>" alt="Gallery-Image" height="550">
+                <img class="d-block w-100" src="<?php echo e(\Storage::disk('s3')->url($gal->image)); ?>" alt="Gallery-Image" height="550">
             <?php endif; ?>
               <div class="carousel-caption d-none d-md-block">
                 <strong><h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;"><?php echo e($gal->caption); ?></h5></strong>
