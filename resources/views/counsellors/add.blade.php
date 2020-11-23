@@ -49,7 +49,7 @@
                     </div>   
                     <small>Please use <a href="https://www.remove.bg/upload" target="_blank" style="color: #5768ad;">removebg</a> website to remove background from an image for smoother appearance</small>             
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="customFile" name="image" value="{{ old('image') ?? asset('/img/counsellors/'.$counsellor->image) }}"  autocomplete="off" >
+                        <input type="file" class="custom-file-input" id="customFile" name="image"   autocomplete="off" >
                         <label class="custom-file-label" for="customFile">Please choose profile picture</label>
                         @error('image')
                             <small class="text-danger">{{$message}}</small>

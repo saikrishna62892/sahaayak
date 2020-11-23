@@ -43,8 +43,8 @@ class AppointmentReceivedNotification extends Notification
         return (new MailMessage)
                     ->greeting('Hello  '.$this->appointment)
                     ->subject('Regarding Appointment Request')
-                    ->line('Your Appointment request is being processed you will recieve a mail as on when a volunteer is assigned')
-                    ->line('Thank you for using our application!');
+                    ->line('Your Appointment request is being processed. You will recieve a Google Calendar notification on your scheduled date and time with Google Meet Link as soon as your requested counsellor accepts your application.')
+                    ->line('Thank you for using Sahaayak!');
     }
 
     /**
