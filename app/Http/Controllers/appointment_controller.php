@@ -82,7 +82,6 @@ class appointment_controller extends Controller
             return redirect()->back()->with('message','Sorry,User already alloted');
         }*/
         $user=User::find($appointment->user_id);
-
         $startslots = ['00','08','09','10','11','12','13','14','15','16'];
         $endslots =   ['00','09','10','11','12','13','14','15','16','17'];
         $d1=(string)$appointment->date.'T'.$startslots[$appointment->slot].':00:00';
@@ -97,39 +96,38 @@ class appointment_controller extends Controller
         //2018-08-16T14:30:00-00:00
         $event = new Event;
         $event->create(array(
-  'summary' => 'Sahaayak Appointment', //'Google Calendar summary',
-  'location' => 'India', //'USA',
-  'description' => 'Appointment has been scheduled successfully and Please be on time.', //'Book Room',
-  'start' => array(
-    'dateTime' => $d1,//'2018-08-16T14:30:00-00:00',
-    'timeZone' => 'America/Los_Angeles',
-  ),
-  'end' => array(
-    'dateTime' => $d2,//'2018-08-16T14:30:00-01:00',
-    'timeZone' => 'America/Los_Angeles',
-  ),
-  'attendees' => array(
-    array('email' => Auth::user()->email,'resource' => true),
-    array('email' => $user->email,'resource' => true),
-  ),
-  'reminders' => array(
-    'useDefault' => FALSE,
-    'overrides' => array(
-      array('method' => 'popup', 'minutes' => 10),
-    ),
-  ),
-
-"conferenceData" => array(
-        "createRequest" => array(
-          "conferenceSolutionKey" => array(
-            "type" => "hangoutsMeet"
+          'summary' => 'Sahaayak Appointment', //'Google Calendar summary',
+          'location' => 'India', //'USA',
+          'description' => 'Appointment has been scheduled successfully and Please be on time.', //'Book Room',
+          'start' => array(
+            'dateTime' => $d1,//'2018-08-16T14:30:00-00:00',
+            'timeZone' => 'America/Los_Angeles',
           ),
-          "requestId" => "123"
-        ),
-      ),
+          'end' => array(
+            'dateTime' => $d2,//'2018-08-16T14:30:00-01:00',
+            'timeZone' => 'America/Los_Angeles',
+          ),
+          'attendees' => array(
+            array('email' => Auth::user()->email,'resource' => true),
+            array('email' => $user->email,'resource' => true),
+          ),
+          'reminders' => array(
+            'useDefault' => FALSE,
+            'overrides' => array(
+              array('method' => 'popup', 'minutes' => 10),
+            ),
+          ),
+        "conferenceData" => array(
+                "createRequest" => array(
+                  "conferenceSolutionKey" => array(
+                    "type" => "hangoutsMeet"
+                  ),
+                  "requestId" => "123"
+                ),
+              ),
 
 
-),'dileepkumar_m190437cs@nitc.ac.in',['conferenceDataVersion' => 1]);
+        ),'dileepkumar_m190437cs@nitc.ac.in',['conferenceDataVersion' => 1]);
         $event->save(); 
        $appointment->update(['accept' => 1]);
         Session::flash('alert-success', 'User Appointment accepted'); 
