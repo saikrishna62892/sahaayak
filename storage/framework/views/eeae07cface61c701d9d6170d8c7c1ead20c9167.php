@@ -98,7 +98,7 @@ unset($__errorArgs, $__bag); ?>
                     </div>   
                     <small>Please use <a href="https://www.remove.bg/upload" target="_blank" style="color: #5768ad;">removebg</a> website to remove background from an image for smoother appearance</small>             
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="customFile" name="image" value="<?php echo e(old('image') ?? asset('/img/counsellors/'.$counsellor->image)); ?>"  autocomplete="off" >
+                        <input type="file" class="custom-file-input" id="customFile" name="image"   autocomplete="off" >
                         <label class="custom-file-label" for="customFile">Please choose profile picture</label>
                         <?php $__errorArgs = ['image'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');

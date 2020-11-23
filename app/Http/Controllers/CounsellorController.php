@@ -19,7 +19,7 @@ class CounsellorController extends Controller
     {
         $this->middleware(['auth','verified']);
         $this->middleware('is_counsellor')->only(['appointmentAccepted','getCaseHistory','getHistory']);
-        //$this->middleware('is_admin')->only(['getDetails','approveVolunteer']);
+        $this->middleware('is_admin')->only(['getDetails']);
     }
 
     public function store(Request $request)
@@ -28,7 +28,7 @@ class CounsellorController extends Controller
     	$counsellor= new Counsellor();
     	$data=request()->validate(
             [
-                'image' => 'file|image|max:3000',
+                'image' => 'required|file|image|max:3000',
                 'name'=>'required',
                 'college_id'=>'required',
                 'email'=>'required',
@@ -39,18 +39,11 @@ class CounsellorController extends Controller
         $newuser->name=$request->name;
         $newuser->email=$request->email;
         $newuser->rollnum=$request->college_id;
-        $newuser->password=bcrypt('12345678');
-        $newuser->email_verified_at=Carbon::now();
-        $newuser->is_Counsellor=1;
-        $newuser->save();  
-        #for image upload
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $name = Carbon::now()->timestamp.'_'.request()->college_id.'_'.request()->name.'.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('/img/counsellors/');
-            $image->move($destinationPath, $name);
-            $counsellor->image=$name;
-        }
+        $newuser->save();
+        $newuser->update(['password'=>bcrypt('12345678'),
+            'email_verified_at'=>Carbon::now(),
+            'is_Counsellor'=>1]);
+
         $counsellor->user_id=$newuser->id;
         $counsellor->name=$request->name;
         $counsellor->college_id=$request->college_id;
@@ -59,8 +52,11 @@ class CounsellorController extends Controller
         $counsellor->profession=$request->profession;
         $counsellor->bio=$request->bio;
         $counsellor->achievements=$request->achievements;  
-        $newuser->save();      
         $counsellor->save();
+
+        $counsellor->update([
+            'file1' => $data['image']->store('uploads/counsellors','s3'),
+        ]);
         Session::flash('alert-success', 'Counsellor Details Added Successfully');
         return redirect()->back();
     }
@@ -70,7 +66,9 @@ class CounsellorController extends Controller
     }
     public function removeDetails(Counsellor $counsellor)
     {
-        $counsellor->delete();
+        $user = User::find($counsellor->user_id)
+        Storage::disk('s3')->delete([$counsellor->file1]);
+        $user->delete();
         Session::flash('alert-info', 'Counsellor Details Deleted Successfully');
         return redirect()->back();
     }
@@ -82,8 +80,6 @@ class CounsellorController extends Controller
     public function updateDetails(Counsellor $counsellor)
     {
 
-        $user = Auth::user();
-
         $data=request()->validate(
             [
                 'image' => 'file|image|max:3000',
@@ -94,20 +90,6 @@ class CounsellorController extends Controller
                 'calendar_url' => 'required'
             ]);
 
-        #for image upload
-        if (request()->hasFile('image')) {
-
-            $destinationPath = public_path('/img/counsellors/');
-            //code for remove old file
-            if($counsellor->image != ''  && $counsellor->image != null){
-                $image_old = $destinationPath.$counsellor->image;
-                unlink($image_old);
-            }
-            $image = request()->image;
-            $name = Carbon::now()->timestamp.'_'.request()->college_id.'_'.request()->name.'.'.$image->getClientOriginalExtension();
-            $image->move($destinationPath, $name);
-            $counsellor->image=$name;
-        }
         $counsellor->name =  request()->name;
         $counsellor->college_id =  request()->college_id;
         $counsellor->email =  request()->email;
@@ -116,6 +98,9 @@ class CounsellorController extends Controller
         $counsellor->achievements =  request()->achievements;
         $counsellor->calendar_url =  request()->calendar_url;
         $counsellor->save();
+        $counsellor->update([
+            'file1' => $data['image']->store('uploads/counsellors','s3'),
+        ]);
         Session::flash('alert-success', 'Counsellor Details Edited Successfully'); 
         return redirect()->route('adminDashboard');
     }

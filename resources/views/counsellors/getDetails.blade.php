@@ -47,7 +47,7 @@
                 </div>
                 <br>
                 <div class="form-group">
-                    <img style="float: right;" src="{{ asset('/img/counsellors/'.$counsellor->image) }}" width="100" height="100">
+                    <img style="float: right;" src="{{\Storage::disk('s3')->url($counsellor->file1)}}" width="100" height="100">
                 </div>
             </div>
         </div>
