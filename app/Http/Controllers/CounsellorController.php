@@ -55,7 +55,7 @@ class CounsellorController extends Controller
         $counsellor->save();
 
         $counsellor->update([
-            'file1' => $data['image']->store('uploads/counsellors','s3'),
+            'file1' => $data['image']->store('uploads/counsellors','s3')
         ]);
         Session::flash('alert-success', 'Counsellor Details Added Successfully');
         return redirect()->back();
@@ -99,7 +99,7 @@ class CounsellorController extends Controller
         $counsellor->calendar_url =  request()->calendar_url;
         $counsellor->save();
         $counsellor->update([
-            'file1' => $data['image']->store('uploads/counsellors','s3'),
+            'file1' => $data['image']->store('uploads/counsellors','s3')
         ]);
         Session::flash('alert-success', 'Counsellor Details Edited Successfully'); 
         return redirect()->route('adminDashboard');
