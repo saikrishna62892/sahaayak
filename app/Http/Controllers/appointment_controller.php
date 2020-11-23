@@ -35,9 +35,6 @@ class appointment_controller extends Controller
     }
     function save(Request $req)
     {
-        $startslots = ['00','08','09','10','11','12','13','14','15','16'];
-        $endslots =   ['00','09','10','11','12','13','14','15','16','17'];
-        
         $appointment=new Appointment();
         $user = Auth::user();
         $data = request()->validate([
@@ -69,24 +66,6 @@ class appointment_controller extends Controller
         $appointment->save();
         $this->sendAppointmentReceivedNotif($appointment->name);
 
-        /*$event = new Event;
-        $event->name = 'Sahaayak Appointment';
-        //dd(Carbon::now().'     '.$req->date.' '.$startslots[$req->slot].':00:00');
-        $d1 = Carbon::parse($req->date.' '.$startslots[$req->slot].':00:00');
-        $d2 = Carbon::parse($req->date.' '.$endslots[$req->slot].':00:00');
-        $event->startDateTime = $d1;
-        $event->endDateTime = $d2;
-        //$user->email
-        $event->addAttendee(['email' => 'dileepkumar_m190437cs@nitc.ac.in']);
-        //$counsellor=Counsellor::find($appointment->counsellor_id);
-        //$counsellor->email
-        $event->addAttendee(['email' => 'saikrishna_m190241cs@nitc.ac.in']);
-        $event->description='Appointment has been scheduled successfully and Please be on time.';
-        //$event->conferenceDataVersion=1;
-        $event->save(); */
-
-        //send a mail to counsellor@dileep
-       
         Session::flash('alert-success', 'Appointment Received,Please Wait for Counsellor Acceptance'); 
         return redirect()->back(); 
     }
@@ -102,11 +81,57 @@ class appointment_controller extends Controller
         else{
             return redirect()->back()->with('message','Sorry,User already alloted');
         }*/
+        $user=User::find($appointment->user_id);
 
-        $appointment->update(['accept' => 1]);
+        $startslots = ['00','08','09','10','11','12','13','14','15','16'];
+        $endslots =   ['00','09','10','11','12','13','14','15','16','17'];
+        $d1=(string)$appointment->date.'T'.$startslots[$appointment->slot].':00:00';
+        $d2=(string)$appointment->date.'T'.$endslots[$appointment->slot].':00:00';
+        //dd($d1.'     '.$d2);
+ 
 
-        //event create @dileep
+        //$d1 = Carbon::parse($appointment->date.'T'.$startslots[$appointment->slot].':00:00-00:00');
+        //$d2 = Carbon::parse($appointment->date.'T'.$startslots[$appointment->slot].':00:00-01:00');
 
+        
+        //2018-08-16T14:30:00-00:00
+        $event = new Event;
+        $event->create(array(
+  'summary' => 'Sahaayak Appointment', //'Google Calendar summary',
+  'location' => 'India', //'USA',
+  'description' => 'Appointment has been scheduled successfully and Please be on time.', //'Book Room',
+  'start' => array(
+    'dateTime' => $d1,//'2018-08-16T14:30:00-00:00',
+    'timeZone' => 'America/Los_Angeles',
+  ),
+  'end' => array(
+    'dateTime' => $d2,//'2018-08-16T14:30:00-01:00',
+    'timeZone' => 'America/Los_Angeles',
+  ),
+  'attendees' => array(
+    array('email' => Auth::user()->email,'resource' => true),
+    array('email' => $user->email,'resource' => true),
+  ),
+  'reminders' => array(
+    'useDefault' => FALSE,
+    'overrides' => array(
+      array('method' => 'popup', 'minutes' => 10),
+    ),
+  ),
+
+"conferenceData" => array(
+        "createRequest" => array(
+          "conferenceSolutionKey" => array(
+            "type" => "hangoutsMeet"
+          ),
+          "requestId" => "123"
+        ),
+      ),
+
+
+),'dileepkumar_m190437cs@nitc.ac.in',['conferenceDataVersion' => 1]);
+        $event->save(); 
+       $appointment->update(['accept' => 1]);
         Session::flash('alert-success', 'User Appointment accepted'); 
         return redirect()->back();
     }
