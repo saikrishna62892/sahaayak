@@ -120,7 +120,8 @@ class CounsellorController extends Controller
         
         $roll=strtoupper($req->college_id);
         $counsellor=Auth::user();
-        $user = User::where('rollnum',$roll)->first();
+        $user = User::where('rollnum',$roll)->where('is_Completed',1)->first();
+
         if(!is_null($user)){
             $user->load('appointments.casehistory');
             $pdf = PDF::loadView('volunteer.casehistory',compact('user','counsellor'));
