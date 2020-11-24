@@ -211,15 +211,17 @@ class HomeController extends Controller
         return view('auth.edit',compact('user'));
         return redirect()->back();
     }
-    public function updateEditDetails(User $user){
+    public function updateEditDetails(User $user){        
         $data=request()->validate(
-            [
+            [                
                 'name'=>'required',
                 'rollnum'=>'required',
                 'email'=>'required',
             ]);
+        $data['rollnum'] = strtoupper($data['rollnum']);
         $user->update($data);
-        Session::flash('alert-success', 'Counsellor Details Edited Successfully'); 
+        
+        Session::flash('alert-success', 'User Details Edited Successfully'); 
         return redirect()->route('userDashboard');
     }
 }

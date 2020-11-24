@@ -30,7 +30,7 @@ class CounsellorController extends Controller
             [
                 'image' => 'required|file|image|max:3000',
                 'name'=>'required',
-                'college_id'=>'required',
+                'college_id'=>'required|unique:users,rollnum',
                 'email'=>'required',
                 'calendar_url' => 'required',
                 'profession'=>'required'
@@ -38,7 +38,7 @@ class CounsellorController extends Controller
 
         $newuser->name=$request->name;
         $newuser->email=$request->email;
-        $newuser->rollnum=$request->college_id;
+        $newuser->rollnum=strtoupper($request->college_id);
         $newuser->password=bcrypt('12345678');
         $newuser->email_verified_at=Carbon::now();
         $newuser->is_Counsellor=1;
@@ -66,7 +66,7 @@ class CounsellorController extends Controller
     }
     public function removeDetails(Counsellor $counsellor)
     {
-        $user = User::find($counsellor->user_id)
+        $user = User::find($counsellor->user_id);
         Storage::disk('s3')->delete([$counsellor->file1]);
         $user->delete();
         Session::flash('alert-info', 'Counsellor Details Deleted Successfully');
@@ -84,14 +84,14 @@ class CounsellorController extends Controller
             [
                 'image' => 'file|image|max:3000',
                 'name'=>'required',
-                'college_id'=>'required',
+                'college_id'=>'required|unique:users,rollnum',
                 'email'=>'required',
                 'profession'=>'required',
                 'calendar_url' => 'required'
             ]);
 
         $counsellor->name =  request()->name;
-        $counsellor->college_id =  request()->college_id;
+        $counsellor->college_id =  strtoupper(request()->college_id);
         $counsellor->email =  request()->email;
         $counsellor->profession =  request()->profession;
         $counsellor->bio =  request()->bio;
@@ -121,6 +121,8 @@ class CounsellorController extends Controller
         $roll=strtoupper($req->college_id);
         $counsellor=Auth::user();
         $user = User::where('rollnum',$roll)->first();
+        //$user = User::where('rollnum',$roll)->where('is_Completed',1)->first();
+        dd($user->appointments);
         if(!is_null($user)){
             $user->load('appointments.casehistory');
             $pdf = PDF::loadView('volunteer.casehistory',compact('user','counsellor'));

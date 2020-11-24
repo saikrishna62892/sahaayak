@@ -44,7 +44,7 @@
                         <div class="col-lg-6">
                             <div class="team__item">
                                 <div class="team__item__pic">
-                                    <img src="{{ asset('/img/counsellors/'.$counsellor->image) }}" alt="" width="320" height="323">
+                                    <img src="{{\Storage::disk('s3')->url($counsellor->file1)}}" alt="" width="320" height="323">
                                 </div>
                                 <div class="team__item__text">
                                     <div class="team__item__title">

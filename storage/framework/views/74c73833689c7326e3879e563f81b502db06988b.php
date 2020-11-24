@@ -60,7 +60,7 @@
                                                                     <?php if(is_null($story->image)): ?>
                                                                         <img src="<?php echo e(asset('/img/stories/default1.jpg')); ?>" alt="" width="700" height="350">
                                                                     <?php else: ?>
-                                                                        <img src="<?php echo e(asset('/img/stories/'.$story->image)); ?>" alt="" width="700" height="350">
+                                                                        <img src="<?php echo e(\Storage::disk('s3')->url($story->image)); ?>" alt="" width="700" height="350">
                                                                     <?php endif; ?>
                                                                     <span><?php echo e($story->category); ?></span>
                                                                 </div>

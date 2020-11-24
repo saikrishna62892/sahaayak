@@ -41,9 +41,10 @@ class StoryController extends Controller
     	$story->content = $request->content;
     	$story->category = $request->category;
     	$story->user_id = $user->id;
-    	
+        
+        
     	#for image upload
-    if ($request->hasFile('image')) {
+    /*if ($request->hasFile('image')) {
         $image = $request->image;
         $destinationPath = $image->store('uploads/story/img','s3');
         $story->image = basename($destinationPath);
@@ -53,9 +54,12 @@ class StoryController extends Controller
         $name = $user->id.'_'.$temp.'.'.$image->getClientOriginalExtension();
         $destinationPath = public_path('/img/stories/');
         $image->move($destinationPath, $name);
-        $story->image=$name;*/
-    }
+        $story->image=$name;
+    }*/
     $story->save();
+    $story->update([
+        'image'=>$data['image']->store('uploads/story/img','s3')
+    ]);
     Session::flash('alert-success', 'Story Added Succesfully');
     return redirect()->back();
 	}

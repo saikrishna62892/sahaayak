@@ -55,7 +55,7 @@ unset($__errorArgs, $__bag); ?>
 
         <div class="form-group">
             <label for="remarks">Enter Remarks/Findings </label>
-            <textarea type="textarea" class="form-control" name="remarks" id="remarks" placeholder="Your remarks about the session" rows="5"></textarea>
+            <textarea type="textarea" class="form-control" name="remarks" id="remarks" placeholder="Your remarks about the session" rows="5" required></textarea>
             <small>Note: Enter Your Remarks about the session separated by newline</small>
             <?php $__errorArgs = ['remarks'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');

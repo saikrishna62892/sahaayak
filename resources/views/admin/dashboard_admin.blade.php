@@ -264,7 +264,7 @@
 
                      <!-- assessments form begin -->
                     <div class="tab-pane fade" id="suggestions" role="tabpanel">
-                        <h4 align="center">All Assessments</h4>
+                        <h4 align="center">Suggestions</h4>
                         @include('suggestions')
                     <!-- assessments form end -->
                     </div>
