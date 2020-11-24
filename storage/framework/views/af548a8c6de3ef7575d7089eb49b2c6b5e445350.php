@@ -1,9 +1,9 @@
-@extends('layouts.layout')
 
-    @section('name')
+
+    <?php $__env->startSection('name'); ?>
        About
-    @endsection
-    @section('content')
+    <?php $__env->stopSection(); ?>
+    <?php $__env->startSection('content'); ?>
     
 
     <!-- Breadcrumb Begin -->
@@ -14,7 +14,7 @@
                     <div class="breadcrumb__text">
                         <h2>About Us</h2>
                         <div class="breadcrumb__widget">
-                            <a href="{{ url('/') }}">Home</a>
+                            <a href="<?php echo e(url('/')); ?>">Home</a>
                             <span>About Us</span>
                         </div>
                     </div>
@@ -219,7 +219,7 @@
                         <img src="img/counter/counter-4.png" alt="">
                     </div>
                     <div class="counter__item__text">
-                        <h2>{{ $user_count }}</h2>
+                        <h2><?php echo e($user_count); ?></h2>
                         <p>Users</p>
                     </div>
                 </div>
@@ -228,7 +228,7 @@
                         <img src="img/counter/counter-4.png" alt="">
                     </div>
                     <div class="counter__item__text">
-                        <h2>{{ $counsellors_count }}</h2>
+                        <h2><?php echo e($counsellors_count); ?></h2>
                         <p>Counsellors</p>
                     </div>
                 </div>
@@ -237,7 +237,7 @@
                         <img src="img/counter/counter-4.png" alt="">
                     </div>
                     <div class="counter__item__text">
-                        <h2>{{ $appointments_count }}</h2>
+                        <h2><?php echo e($appointments_count); ?></h2>
                         <p>Interactions</p>
                     </div>
                 </div>
@@ -246,7 +246,7 @@
                         <img src="img/counter/counter-4.png" alt="">
                     </div>
                     <div class="counter__item__text">
-                        <h2>{{ $stories_count }}</h2>
+                        <h2><?php echo e($stories_count); ?></h2>
                         <p>Stories</p>
                     </div>
                 </div>
@@ -255,20 +255,20 @@
     </div>
     <!-- Counter End -->
     <!--
-         @foreach($gallery as $gal)
+         <?php $__currentLoopData = $gallery; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $gal): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
       <div class="carousel-inner">
         <div class="carousel-item active" style="height: 550px;">
-            @if(is_null($gal->image))
-                <img src="{{ asset('/img/galleries/default.jpg') }}" alt="">
-            @else
-                <img src="{{ asset('/img/galleries/'.$gal->image) }}" alt="">
-            @endif
+            <?php if(is_null($gal->image)): ?>
+                <img src="<?php echo e(asset('/img/galleries/default.jpg')); ?>" alt="">
+            <?php else: ?>
+                <img src="<?php echo e(asset('/img/galleries/'.$gal->image)); ?>" alt="">
+            <?php endif; ?>
           <div class="carousel-caption d-none d-md-block">
-            <strong><h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">{{ $gal->caption }}</h5></strong>
-            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">{{ $gal->paragraph }}</p>
+            <strong><h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;"><?php echo e($gal->caption); ?></h5></strong>
+            <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;"><?php echo e($gal->paragraph); ?></p>
           </div>
         </div>
-        @endforeach
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     -->
     <div  class="section-title">
         <img src="img/icon.png" alt="Sahaayak" width="58" height="38">
@@ -278,36 +278,36 @@
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <?php $count=0; ?>
-        @foreach($gallery as $gal)
-            @if($count==0)
-                <li data-target="#carouselExampleIndicators" data-slide-to="{{ $count }}" class="active"></li>
-            @else
-                <li data-target="#carouselExampleIndicators" data-slide-to="{{ $count }}"></li>
-            @endif
+        <?php $__currentLoopData = $gallery; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $gal): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php if($count==0): ?>
+                <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo e($count); ?>" class="active"></li>
+            <?php else: ?>
+                <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo e($count); ?>"></li>
+            <?php endif; ?>
             <?php $count++; ?>
-        @endforeach
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
       </ol>
       <div class="carousel-inner">
         <?php $count=0; ?>
-        @foreach($gallery as $gal)
-            @if($count==0)
+        <?php $__currentLoopData = $gallery; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $gal): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php if($count==0): ?>
                 <div class="carousel-item active" style="height: 550px;">
 
-            @else
+            <?php else: ?>
                 <div class="carousel-item" style="height: 550px;">
-            @endif
-            @if(is_null($gal->image))
-                <img class="d-block w-100" src="{{ asset('/img/galleries/default.jpg') }}" alt="Gallery-Image" height="550">
-            @else
-                <img class="d-block w-100" src="{{\Storage::disk('s3')->url($gal->image)}}" alt="Gallery-Image" height="550">
-            @endif
+            <?php endif; ?>
+            <?php if(is_null($gal->image)): ?>
+                <img class="d-block w-100" src="<?php echo e(asset('/img/galleries/default.jpg')); ?>" alt="Gallery-Image" height="550">
+            <?php else: ?>
+                <img class="d-block w-100" src="<?php echo e(\Storage::disk('s3')->url($gal->image)); ?>" alt="Gallery-Image" height="550">
+            <?php endif; ?>
               <div class="carousel-caption d-none d-md-block">
-                <strong><h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">{{ $gal->caption }}</h5></strong>
-                <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;">{{ $gal->paragraph }}</p>
+                <strong><h5 style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;"><?php echo e($gal->caption); ?></h5></strong>
+                <p style="color: white;text-shadow: 0 0 3px #FFF, 0 0 5px #FFF;"><?php echo e($gal->paragraph); ?></p>
               </div>
             </div>
             <?php $count++; ?>
-        @endforeach
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
       </div>
 
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -410,7 +410,7 @@
                                     <div class="card-body">
                                         <p>Sahaayak is a friend, well-wisher, helper ready to walk along to help you in fighting your mental battles.</p>
                                         <p>It is a one stop solution for all the help you need regarding your mental health.</p>
-                                        <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                        <h6>Need help? -> <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
                             </div>
@@ -433,7 +433,7 @@
                                         <p>8) Supportive Therapy.</p>
                                         <p>10) Different assesements parameters to access your status.</p>
                                         <p>11) Interactive drawing feature for you to have some me time and get relaxed.</p>
-                                        <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                        <h6>Need help? -> <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
                             </div>
@@ -453,7 +453,7 @@
                                         <p>3) Email to <a href="mailto:sgc@nitc.ac.in" target="_blank" style="color:#5768AD;" > sgc@nitc.ac.in </a> </p>
                                         <p>4) Direct walk-in</p>
                                         <p>5) Referrals through Department/ Faculty members</p>
-                                        <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                        <h6>Need help? -> <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
                             </div>
@@ -472,7 +472,7 @@
                                         <p>CSE: Ms. Anu Mary Chacko, Assistant Professor.</p>
                                         <p>CH: Dr.Lity Alen Varghese , Associate Professor</p>
                                         <p>ECE: Dr.Rama Subrahmanyam Komaragiri, Associate Professor</p>                                        
-                                        <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                        <h6>Need help? -> <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
                             </div>
@@ -492,7 +492,7 @@
                                         <p>Faculty Advisors</p>
                                         <p>Student Cousellors</p>    
                                         <p>Student Co-ordinators</p>                                      
-                                        <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                        <h6>Need help? -> <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
                             </div>
@@ -508,7 +508,7 @@
                                         <p>2) Inter Personal Issues: Adjustment Problems, Communication Skills, Relationship Issues.</p>
                                         <p>3) Psychological Issues: Eating disorder, Anxiety, Depression, Addiction .</p>
                                         <p>4) Crisis Intervention services: Acute Stress, Death of Family member/Friends.</p>
-                                        <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                        <h6>Need help? -> <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
                             </div>
@@ -521,7 +521,7 @@
                                 <div id="collapseFour" class="collapse" data-parent="#accordionExample">
                                     <div class="card-body">
                                         <p>It is a feature which lets you draw random things, It helps you to relax and have some alone time whenever you want.</p>
-                                        <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                        <h6>Need help? -> <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
                             </div>
@@ -536,7 +536,7 @@
                                         <p>Professional counselors in the campus will be available for counseling purposes at any time of need as per the student.</p>
                                         <p>Student-faculty meetings will be organized to improve the relationship between them.</p>
                                         <p>Students and parents should keep in touch with their respective faculty advisors continuously.</p>                                                                            
-                                        <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                        <h6>Need help? -> <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
                             </div>
@@ -549,7 +549,7 @@
                                 <div id="collapseFive" class="collapse" data-parent="#accordionExample">
                                     <div class="card-body">
                                         <p>Worry tree is a built in sophisticated feature of sahaayak which lets you to add your worries and once if you are able to overcome it you can strikeoff your worries so that the worry tree will grow and have a handy experience to make you feel better.</p>
-                                        <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                        <h6>Need help? -> <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
                             </div>
@@ -565,7 +565,7 @@
                                         <p>2) Login into Sahaayak.</p>
                                         <p>3) In the footer section there is a subscribe button available.</p>
                                         <p>4) Click on it and you will keep on hearing from us.</p>
-                                        <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                        <h6>Need help? -> <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
                             </div>
@@ -583,7 +583,7 @@
                                         <p>Kerala : 0471-2552056</p>
                                         <p>Kochi : 0484-2361160</p>
                                         <p><a href="https://www.thehindu.com/news/national/suicide-prevention-helplines/article25612310.ece" style="color:#5768AD;" target="_blank">More</a></p>
-                                        <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
+                                        <h6>Need help? -> <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                     </div>
                                 </div>
                             </div>
@@ -595,7 +595,7 @@
                                 </div>
                                 <div id="collapseSeven" class="collapse" data-parent="#accordionExample">
                                     <div class="card-body">
-                                        @include('auth.privacy_policy')
+                                        <?php echo $__env->make('auth.privacy_policy', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                     </div>
                                 </div>
                             </div>
@@ -607,7 +607,7 @@
                                 </div>
                                 <div id="collapseEight" class="collapse" data-parent="#accordionExample">
                                     <div class="card-body">
-                                        @include('auth.termsandconditions')
+                                        <?php echo $__env->make('auth.termsandconditions', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                     </div>
                                 </div>
                             </div>
@@ -619,4 +619,5 @@
     </div>
     <!-- Faq End -->
 
-    @endsection
+    <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\Sahayak\sahaayak\resources\views/about.blade.php ENDPATH**/ ?>

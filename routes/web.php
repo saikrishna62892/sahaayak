@@ -30,11 +30,12 @@ Route::get('/',function(){
 
 Route::get('about', function () {
     $user_count=App\User::all()->count();
-    $volunteers_count=App\Volunteer::all()->count();
+    //$volunteers_count=App\Volunteer::all()->count();
+    $counsellors_count=App\Counsellor::all()->count();
     $appointments_count=App\Appointment::all()->count();
     $stories_count=App\Story::all()->count();
     $gallery=App\Gallery::all();
-    return view('about',compact('user_count','volunteers_count','appointments_count','stories_count','gallery'));
+    return view('about',compact('user_count','counsellors_count','appointments_count','stories_count','gallery'));
 });
 
 Route::get('expert_story', function () {
