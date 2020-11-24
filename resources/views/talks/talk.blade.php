@@ -1,13 +1,13 @@
 <div class="form-group">
 		    	<label for="formGroupExampleInput">Please enter title</label>
-		    	<input type="text" class="form-control" name="title" id="formGroupExampleInput" placeholder="Your title here..." value="{{ old('title') ?? $talk->title }}" autocomplete="off" >
+		    	<input type="text" class="form-control" name="title" id="formGroupExampleInput" placeholder="Your title here..." value="{{ old('title') ?? $talk->title }}" required autocomplete="off" >
 		    	@error('title')
 		        	<small class="text-danger">{{$message}}</small>
 		        @enderror
 		   	</div>
 		   	<div class="form-group">
 			    <label for="exampleFormControlTextarea1">Please enter content</label>
-			    <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="10" placeholder="Your content here..." autocomplete="off" >{{ old('content') ?? $talk->content }}</textarea>
+			    <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="10" placeholder="Your content here..." required autocomplete="off" >{{ old('content') ?? $talk->content }}</textarea>
 			    @error('content')
 		        	<small class="text-danger">{{$message}}</small>
 		        @enderror
@@ -30,7 +30,7 @@
 		        @enderror
 			</div>
 		    <div class="custom-file">
-  				<input type="file" class="custom-file-input" id="customFile" name="image" value="{{ old('image') ?? \Storage::disk('s3')->url('uploads/talk/img/'.$talk->image)}}" autocomplete="off" >
+  				<input type="file" class="custom-file-input" id="customFile" name="image" value="{{ old('image') ?? \Storage::disk('s3')->url('uploads/talk/img/'.$talk->image)}}" required autocomplete="off" >
   				<label class="custom-file-label" for="customFile">Please choose image...</label>
 			    @error('image')
 		        	<small class="text-danger">{{$message}}</small>

@@ -378,14 +378,14 @@
                             @csrf
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
-                                        <input type="text" placeholder="Name" name="name"  autocomplete="off" >
+                                        <input type="text" placeholder="Name" name="name" required autocomplete="off" >
                                     </div>
                                     <div class="col-lg-6 col-md-6">
-                                        <input type="text" placeholder="Email" name="email" autocomplete="off" >
+                                        <input type="text" placeholder="Email" name="email" required autocomplete="off" >
                                     </div>
                                     <div class="col-lg-12 text-center">
-                                    <input type="text" placeholder="Comment" name="comment" autocomplete="off" >
-                                        <button type="submit" class="site-btn" onclick="alert('Your suggestion was recorded and we will act accordingly')">Submit</button>
+                                    <input type="text" placeholder="Comment" name="comment" required autocomplete="off" >
+                                        <button type="submit" class="site-btn" >Submit</button>
                                     </div>
                                 </div>
                             </form>
