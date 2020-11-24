@@ -1,35 +1,13 @@
-
-
-
-<?php $__env->startSection('name'); ?>
-    Edit details
-<?php $__env->stopSection(); ?>
-
-<?php $__env->startSection('content'); ?>
 <div class="card shadow p-4 mb-5 bg-white rounded">
 
-    <h4 align="center">Reschedule Appointment for <?php echo e($appointment->name); ?></h4>
+    <h4 align="center" id="demo2"></h4>
     <div class="card-body">
        <form action="/counsellor/rescheduleAppointment" method="post">
         <?php echo csrf_field(); ?>
             <div class="row">
-                <div class="form-group  col-lg-4" style="display: none;">
-                    <label for="appointment_id">Which Form</label>
-                    <input type="text" class="form-control" name="which_form" id="which_form" aria-describedby="which_formHelp" value="<?php echo e($which_form); ?>" autocomplete="off" readonly>
-                    <?php $__errorArgs = ['appointment_id'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                    <small class="text-danger"><?php echo e($message); ?></small>
-                    <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                </div>
                 <div class="form-group  col-lg-4">
                     <label for="appointment_id">Appointment ID</label>
-                    <input type="text" class="form-control" name="appointment_id" id="appointment_id" aria-describedby="appointment_idHelp" value="<?php echo e($appointment->id); ?>" autocomplete="off" readonly>
+                    <input type="text" class="form-control" name="appointment_id" id="appointment_id" aria-describedby="appointment_idHelp" value="" autocomplete="off" readonly>
                     <?php $__errorArgs = ['appointment_id'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -43,7 +21,7 @@ unset($__errorArgs, $__bag); ?>
                 </div>
                 <div class="form-group  col-lg-4">
                     <label for="date">Date</label>
-                    <input type="text" class="form-control" id="date" name="date" aria-describedby="dateHelp" placeholder="Choose Your Date" onfocus="(this.type='date')"autocomplete="off" required>
+                    <input type="text" class="form-control" id="date" name="date" aria-describedby="dateHelp" placeholder="Choose Your Date" onfocus="(this.type='date')"autocomplete="off" >
                     <?php $__errorArgs = ['date'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -57,7 +35,7 @@ unset($__errorArgs, $__bag); ?>
                 </div>
                 <div class="form-group  col-lg-4">
                     <label for="slot">Slot</label>
-                    <select  name="slot" class="form-control" aria-describedby="slotHelp" required>
+                    <select  name="slot" class="form-control" aria-describedby="slotHelp">
                         <option value="" selected disabled hidden>Choose Your Slot</option>
                         <option value="1">8AM - 9AM</option>
                         <option value="2">9AM - 10AM</option>
@@ -74,6 +52,4 @@ unset($__errorArgs, $__bag); ?>
             <center><button  type="submit" class="btn btn-primary" style="background-color: #5768ad;">Submit</button></center>
        </form>
     </div>
-</div>
-<?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.dashboard', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\Sahayak\sahaayak\resources\views/appointment/editAppointment.blade.php ENDPATH**/ ?>
+</div><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\Sahayak\sahaayak\resources\views/appointment/rescheduleAppointment.blade.php ENDPATH**/ ?>

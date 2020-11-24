@@ -54,10 +54,6 @@ class CounsellorController extends Controller
         $counsellor->achievements=$request->achievements;  
         $counsellor->save();
         $counsellor->update([
-            'file1' => $request->file('image')->store('uploads/counsellors','s3')
-        ]);
-
-        $counsellor->update([
             'file1' => $data['image']->store('uploads/counsellors','s3')
         ]);
 
@@ -79,7 +75,7 @@ class CounsellorController extends Controller
     public function editDetails(Counsellor $counsellor)
     {
         return view('counsellors.edit',compact('counsellor'));
-        return redirect()->back();
+        //return redirect()->back();
     }
     public function updateDetails(Counsellor $counsellor)
     {

@@ -49,17 +49,6 @@
 </script>
 <!--reportForm script end-->
 
-<!--rescheduleForm script begin-->
-<script type="text/javascript">
-    function reply_click(clicked_id)
-    {
-        var res = clicked_id.split("#");
-        document.getElementById("demo1").innerHTML = "Reschedule Appointment for "+res[1];
-        document.getElementById('appointment_id').value = res[0];
-    }
-</script>
-<!--rescheduleForm script end-->
-
 <script type="text/javascript">
     function getUserID()
     {

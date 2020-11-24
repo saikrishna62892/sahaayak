@@ -86,15 +86,15 @@
                                     <tr>
                                         <th scope="col">S.No</th>
                                         <th scope="col">Name</th>
-                                        <th scope="col" colspan="2">College ID</th>
+                                        <th scope="col">College ID</th>
                                         <th scope="col">Gender</th>
-                                        <th scope="col" colspan="2">Email</th>
-                                        <th scope="col" colspan="2">Department</th>
-                                        <th scope="col" colspan="2">Faculty Advisor</th>
-                                        <th scope="col" colspan="2">Appointment Type</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Department</th>
+                                        <th scope="col">Faculty Advisor</th>
+                                        <th scope="col">Appointment Type</th>
                                         <th scope="col" >Date</th>
-                                        <th scope="col" colspan="2">Slot</th>
-                                        <th scope="col" colspan="3">Message</th>
+                                        <th scope="col">Slot</th>
+                                        <th scope="col">Message</th>
                                         <th scope="col" colspan="3">Options</th>
                                     </tr>
                                 </thead>
@@ -105,39 +105,43 @@
                                     <tr>
                                         <td scope="row">{{ $count++ }}</td>
                                         <td>{{$item->name}}</td>
-                                        <td colspan="2">{{$item->college_id}}</td>
+                                        <td>{{$item->college_id}}</td>
                                         <td>{{$item->gender}}</td>
-									    <td colspan="2">{{$user_email}}</td>
-									    <td colspan="2">{{$item->department}}</td>
-									    <td colspan="2">{{$item->faculty_advisor}}</td>
-									    <td colspan="2">{{$item->appointment_type}}</td>
+									    <td>{{$user_email}}</td>
+									    <td>{{$item->department}}</td>
+									    <td>{{$item->faculty_advisor}}</td>
+									    <td>{{$item->appointment_type}}</td>
 									    <td>{{$item->date}}</td>
 									    @if($item->slot==1)
-									    	<td colspan="2">8AM - 9AM</td>
+									    	<td>8AM - 9AM</td>
 									    @elseif($item->slot==2)
-									    	<td colspan="2">9AM - 10AM</td>
+									    	<td>9AM - 10AM</td>
 									    @elseif($item->slot==3)
-									    	<td colspan="2">10AM - 11AM</td>
+									    	<td>10AM - 11AM</td>
 									    @elseif($item->slot==4)
-									    	<td colspan="2">11AM - 12PM</td>
+									    	<td>11AM - 12PM</td>
 									    @elseif($item->slot==5)
-									    	<td colspan="2">12PM - 1PM</td>
+									    	<td>12PM - 1PM</td>
 									    @elseif($item->slot==6)
-									    	<td colspan="2">1PM - 2PM</td>
+									    	<td>1PM - 2PM</td>
 									    @elseif($item->slot==7)
-									    	<td colspan="2">2PM - 3PM</td>
+									    	<td>2PM - 3PM</td>
 									    @elseif($item->slot==8)
-									    	<td colspan="2">3PM - 4PM</td>
+									    	<td>3PM - 4PM</td>
 									    @elseif($item->slot==9)
-									    	<td colspan="2">4PM - 5PM</td>
+									    	<td>4PM - 5PM</td>
 									    @else
 									    	<td> ------ </td>
 									    @endif
-									    <td colspan="3">{{$item->message}}</td>
-									    <td>
-									    	<a href="/counsellor/appointment/{{$item->id}}/acceptAppointment" style="color: #5768ad;">Accept?</a>&emsp;
-									    	<a href="/counsellor/appointment/{{$item->id}}/rejectAppointment" style="color: #5768ad;">Reject?</a>&emsp;
-									    	<a id="{{ $item->id }}#{{ $item->name }}" href="#reschedule" onClick="reply_click(this.id,)" data-toggle="tab" role="tab" style="color: #5768ad;">Reschedule!</a>
+									    <td>{{$item->message}}</td>
+									    <td align="center">
+									    	<a class="btn btn-success" href="/counsellor/appointment/{{$item->id}}/acceptAppointment">Accept Appointment?</a>&emsp;
+									    </td>
+									    <td align="center">
+									    	<a class="btn btn-danger" href="/counsellor/appointment/{{$item->id}}/rejectAppointment">Reject Appointment?</a>&emsp;
+									    </td>
+									    <td align="center">
+									    	<a class="btn btn-warning" href="/counsellor/appointment/{{$item->id}}/1/rescheduleAppointment" style="color: #fff;">Reschedule & Accept!</a>
 									    </td>
                                     </tr>
                                     @empty
@@ -157,15 +161,15 @@
 	                                    <tr>
 	                                        <th scope="col">S.No</th>
 	                                        <th scope="col">Name</th>
-	                                        <th scope="col" colspan="2">College ID</th>
+	                                        <th scope="col">College ID</th>
 	                                        <th scope="col">Gender</th>
-	                                        <th scope="col" colspan="2">Email</th>
-	                                        <th scope="col" colspan="2">Department</th>
-	                                        <th scope="col" colspan="2">Faculty Advisor</th>
-	                                        <th scope="col" colspan="2">Appointment Type</th>
+	                                        <th scope="col">Email</th>
+	                                        <th scope="col">Department</th>
+	                                        <th scope="col">Faculty Advisor</th>
+	                                        <th scope="col">Appointment Type</th>
 	                                        <th scope="col" >Date</th>
-	                                        <th scope="col" colspan="2">Slot</th>
-	                                        <th scope="col" colspan="3">Message</th>
+	                                        <th scope="col">Slot</th>
+	                                        <th scope="col">Message</th>
 	                                        <th scope="col" colspan="3">Options</th>
 	                                    </tr>
 	                                </thead>
@@ -177,35 +181,35 @@
 	                                    <tr>
 	                                        <td scope="row">{{ $count++ }}</td>
 	                                        <td>{{$item->name}}</td>
-	                                        <td colspan="2">{{$item->college_id}}</td>
+	                                        <td>{{$item->college_id}}</td>
 	                                        <td>{{$item->gender}}</td>
-										    <td colspan="2">{{$user_email}}</td>
-										    <td colspan="2">{{$item->department}}</td>
-										    <td colspan="2">{{$item->faculty_advisor}}</td>
-										    <td colspan="2">{{$item->appointment_type}}</td>
+										    <td>{{$user_email}}</td>
+										    <td>{{$item->department}}</td>
+										    <td>{{$item->faculty_advisor}}</td>
+										    <td>{{$item->appointment_type}}</td>
 										    <td >{{$item->date}}</td>
 										    @if($item->slot==1)
-										    	<td colspan="2">8AM - 9AM</td>
+										    	<td>8AM - 9AM</td>
 										    @elseif($item->slot==2)
-										    	<td colspan="2">9AM - 10AM</td>
+										    	<td>9AM - 10AM</td>
 										    @elseif($item->slot==3)
-										    	<td colspan="2">10AM - 11AM</td>
+										    	<td>10AM - 11AM</td>
 										    @elseif($item->slot==4)
-										    	<td colspan="2">11AM - 12PM</td>
+										    	<td>11AM - 12PM</td>
 										    @elseif($item->slot==5)
-										    	<td colspan="2">12PM - 1PM</td>
+										    	<td>12PM - 1PM</td>
 										    @elseif($item->slot==6)
-										    	<td colspan="2">1PM - 2PM</td>
+										    	<td>1PM - 2PM</td>
 										    @elseif($item->slot==7)
-										    	<td colspan="2">2PM - 3PM</td>
+										    	<td>2PM - 3PM</td>
 										    @elseif($item->slot==8)
-										    	<td colspan="2">3PM - 4PM</td>
+										    	<td>3PM - 4PM</td>
 										    @elseif($item->slot==9)
-										    	<td colspan="2">4PM - 5PM</td>
+										    	<td>4PM - 5PM</td>
 										    @else
 										    	<td> ------ </td>
 										    @endif
-										    <td colspan="3">{{$item->message}}</td>
+										    <td>{{$item->message}}</td>
 										    <?php
 										    	$endslots =   ['00','09','10','11','12','13','14','15','16','17'];
         										$dtB = Carbon\Carbon::parse($item->date.' '.$endslots[$item->slot].':00:00');
@@ -218,6 +222,12 @@
 										    @endif
 
 										    <td><a target="_blank" href="/counsellor/appointment/{{$item->user_id}}/getCaseHistory" class="btn btn-primary" style="background-color: #5768ad;">Get {{ $item->name }} Report</a></td>
+										   	<!-- href="/counsellor/appointment/{{$item->id}}/rescheduleAppointment" -->
+										   	<!--@if($dtA < $dtB)
+										    <td><a class="btn btn-primary" href="/counsellor/appointment/{{$item->id}}/2/rescheduleAppointment" style="background-color: #5768ad;">Reschedule {{ $item->name }} Appointment!</a></td>
+										    @else
+										    <td style="color: lightgrey;">Can't Reschedule Now</td>
+										    @endif-->
 	                                    </tr>
 	                                    @empty
 	                                    <h5>No Reports to make..</h5>
@@ -241,7 +251,7 @@
                                         <th scope="col">Email</th>
                                         <th scope="col">Phone</th>
                                         <th scope="col">Timings</th>
-                                        <th scope="col" colspan="3">Message</th>
+                                        <th scope="col">Message</th>
                                         <th scope="col">Options</th>
                                     </tr>
                                 </thead>
@@ -254,7 +264,7 @@
 									    <td>{{$item->email}}</td>
 									    <td>{{$item->phone}}</td>
 									    <td>{{$item->timings}}</td>
-									    <td colspan="3">{{$item->message}}</td>
+									    <td>{{$item->message}}</td>
 									    <td><a href="/volunteer/appointment/{{$item->id}}/acceptAppointment" style="color: #5768ad;">Accept?</a></td>
                                     </tr>
                                     @empty
@@ -297,12 +307,6 @@
 		        </div>
 		    </div>
 		</div>
-
-		<!--rescheduleForm Begin-->
-        <div class="tab-pane fade" id="reschedule" role="tabpanel">
-        	@include('appointment.editAppointment')
-        </div>
-        <!--rescheduleForm end-->
 
 
 		<!--reportForm Begin-->

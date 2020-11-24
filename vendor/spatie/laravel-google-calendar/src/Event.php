@@ -22,7 +22,7 @@ class Event
     protected $calendarId;
 
     /** @var array */
-    protected $attendees;
+    //protected $attendees;
 
     public function __construct()
     {
@@ -61,7 +61,7 @@ class Event
         foreach ($properties as $name => $value) {
             $event->$name = $value;
         }
-
+        //dd($eventId);
         return $event->save('insertEvent', $optParams);
     }
 
