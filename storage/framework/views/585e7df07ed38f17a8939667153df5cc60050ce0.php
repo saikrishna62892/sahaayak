@@ -3,7 +3,7 @@
 		<?php echo csrf_field(); ?>
 	   	<div class="form-group">
 	    	<label for="formGroupExampleInput">Please enter title of the story</label>
-	    	<input type="text" class="form-control" name="title" id="formGroupExampleInput" placeholder="Your title here..." autocomplete="off" >
+	    	<input type="text" class="form-control" name="title" id="formGroupExampleInput" placeholder="Your title here..." required autocomplete="off" >
 	    	<?php $__errorArgs = ['title'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -17,7 +17,7 @@ unset($__errorArgs, $__bag); ?>
 	   	</div>
 	   	<div class="form-group">
 		    <label for="exampleFormControlTextarea1">Please enter content</label>
-		    <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="10" placeholder="Your content here..." autocomplete="off" ></textarea>
+		    <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="10" placeholder="Your content here..." required autocomplete="off" ></textarea>
 		    <?php $__errorArgs = ['content'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -54,7 +54,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
 		</div>
 		<div class="custom-file">
-		    <input type="file" class="custom-file-input" name="image" id="file-upload" autocomplete="off">
+		    <input type="file" class="custom-file-input" name="image" id="file-upload" required autocomplete="off">
 		    <label class="custom-file-label" for="validatedCustomFile">Choose Image...</label>
 		    <div id="file-upload-filename"></div>
 		    <?php $__errorArgs = ['image'];
@@ -69,6 +69,6 @@ endif;
 unset($__errorArgs, $__bag); ?>
 		</div>
 		&emsp;
-		<center><button type="submit" class="btn btn-primary" style="background-color: #5768ad;" onclick="alert('Posted Succesfully')">Submit</button></center>
+		<center><button type="submit" class="btn btn-primary" style="background-color: #5768ad;" >Submit</button></center>
 	</form>
 </div><?php /**PATH D:\Sahaayak\sahaayak\resources\views/stories/create.blade.php ENDPATH**/ ?>

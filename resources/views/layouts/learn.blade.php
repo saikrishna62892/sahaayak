@@ -78,11 +78,11 @@
                         </div>
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <h5>Drop Your Comment Here</h5>
+                                    <h5>Drop Your Comment Here (Note: Comments can't be deleted)</h5>
                                 </div>
                                 <div class="col-lg-12 text-center">
                                     <form action="/home/learn/{{$learn}}/comment/{{$learnID}}" method="post">
-                                    <textarea placeholder="Your Comment" name="comment" rows="3" autocomplete="off"></textarea>
+                                    <textarea placeholder="Your Comment" name="comment" rows="3" required autocomplete="off"></textarea>
                                     @error('comment')
                                     <small class="text-danger">{{$message}}</small>
                                     @enderror

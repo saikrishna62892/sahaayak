@@ -290,7 +290,7 @@
             				@csrf
             				<div class="form-group">
 							    <label for="college_id">Please Enter College ID of the User</label>
-							    <input type="text" class="form-control" name="college_id" id="college_id" aria-describedby="college_idDHelp" placeholder="User CollegeID here.."  autocomplete="off" >
+							    <input type="text" class="form-control" name="college_id" id="college_id" aria-describedby="college_idDHelp" placeholder="User CollegeID here.." required autocomplete="off" >
 							    @error('college_id')
 							    <small class="text-danger">{{$message}}</small>
 							    @enderror
