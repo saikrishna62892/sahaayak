@@ -15,7 +15,7 @@ class GoogleCalendar
     protected $calendarService;
 
     /** @var string */
-    protected $calendarId;
+    //protected $calendarId;
 
     public function __construct(Google_Service_Calendar $calendarService, string $calendarId)
     {
@@ -71,7 +71,7 @@ class GoogleCalendar
         if ($event instanceof Event) {
             $event = $event->googleEvent;
         }
-
+        //dd($event);
         return $this->calendarService->events->insert($this->calendarId, $event, $optParams);
     }
 

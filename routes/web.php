@@ -80,6 +80,7 @@ Route::post('/appointment_controller','appointment_controller@save');
 
 Route::get('counsellor/appointment/{appointment}/acceptAppointment','appointment_controller@appointmentAccepted');
 Route::get('counsellor/appointment/{appointment}/rejectAppointment','appointment_controller@appointmentRejected');
+Route::get('counsellor/appointment/{appointment}/{which_form}/rescheduleAppointment','appointment_controller@appointmentRescheduled');
 Route::post('counsellor/rescheduleAppointment','appointment_controller@appointmentEdit');
 //Route::post('/volunteer/casehistory/addCasehistory','VolunteerController@addCasehistory')->name('addCaseHistory');
 

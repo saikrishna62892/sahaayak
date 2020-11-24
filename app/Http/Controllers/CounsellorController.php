@@ -44,14 +44,6 @@ class CounsellorController extends Controller
         $newuser->is_Counsellor=1;
         $newuser->save();  
         
-        #for image upload
-        /*if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $name = Carbon::now()->timestamp.'_'.request()->college_id.'_'.request()->name.'.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('/img/counsellors/');
-            $image->move($destinationPath, $name);
-            $counsellor->image=$name;
-        }*/
         $counsellor->user_id=$newuser->id;
         $counsellor->name=$request->name;
         $counsellor->college_id=$request->college_id;
@@ -60,15 +52,11 @@ class CounsellorController extends Controller
         $counsellor->profession=$request->profession;
         $counsellor->bio=$request->bio;
         $counsellor->achievements=$request->achievements;  
-        $counsellor->update([
-            'file1' => $request->file('image')->store('uploads/counsellors','s3')
-        ]);
-       // $newuser->save();      
         $counsellor->save();
+        $counsellor->update([
+            'file1' => $data['image']->store('uploads/counsellors','s3')
+        ]);
 
-        /*$counsellor->update([
-            'file1' => $data['image']->store('uploads/counsellors','s3'),
-        ]);*/
         Session::flash('alert-success', 'Counsellor Details Added Successfully');
         return redirect()->back();
     }
@@ -87,7 +75,7 @@ class CounsellorController extends Controller
     public function editDetails(Counsellor $counsellor)
     {
         return view('counsellors.edit',compact('counsellor'));
-        return redirect()->back();
+        //return redirect()->back();
     }
     public function updateDetails(Counsellor $counsellor)
     {
@@ -111,7 +99,7 @@ class CounsellorController extends Controller
         $counsellor->calendar_url =  request()->calendar_url;
         $counsellor->save();
         $counsellor->update([
-            'file1' => $data['image']->store('uploads/counsellors','s3'),
+            'file1' => $data['image']->store('uploads/counsellors','s3')
         ]);
         Session::flash('alert-success', 'Counsellor Details Edited Successfully'); 
         return redirect()->route('adminDashboard');

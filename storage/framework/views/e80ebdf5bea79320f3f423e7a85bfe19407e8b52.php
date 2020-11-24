@@ -2,6 +2,27 @@
 <html lang="zxx">
 
 <head>
+    <style type="text/css">
+    .mobileShow {display: none;}
+
+    /* Smartphone Portrait and Landscape */
+    @media  only screen
+        and (min-device-width : 320px)
+        and (max-device-width : 480px){ 
+        .mobileShow {display: inline;}
+    }
+    </style>
+
+    <style type="text/css">
+    .mobileHide { display: inline; }
+
+    /* Smartphone Portrait and Landscape */
+    @media  only screen
+        and (min-device-width : 320px)
+        and (max-device-width : 480px){
+        .mobileHide { display: none;}
+    }
+    </style>
     <meta charset="UTF-8">
     <meta name="description" content="Directing Template">
     <meta name="keywords" content="Directing, unica, creative, html">
@@ -46,8 +67,10 @@
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu">
         <div class="offcanvas__logo">
-            <a href="<?php echo e(url('/')); ?>"><img src="/img/logo.png" alt="Sahaayak" width="120" height="30"></a>
-            <a href="<?php echo e(url('/')); ?>"><img src="/img/nitc1.png" alt="Sahaayak" width="140" height="51"></a>
+        <div class="row">
+            <a href="<?php echo e(url('/')); ?>"><img src="/img/logo.png" alt="Sahaayak" width="160" height="40"></a>
+            <a href="http://www.nitc.ac.in/" target="_blank"><img src="/img/nitc1.png" width="100" height="40"></a>
+        </div>
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__widget">
@@ -138,10 +161,10 @@
             </ul>
         </nav>
         <div class="offcanvas__social">
-            <a href="#"><i class="fa fa-facebook"></i></a>&emsp;
-            <a href="#"><i class="fa fa-twitter"></i></a>&emsp;
-            <a href="#"><i class="fa fa-instagram"></i></a>&emsp;
-            <a href="#"><i class="fa fa-linkedin"></i></a>&emsp;
+            <a href="https://www.facebook.com/NIT.Calicut.Kerala" target="_blank"><i class="fa fa-facebook"></i></a>&emsp;
+            <a href="https://twitter.com/nitcofficial?lang=en" target="_blank"><i class="fa fa-twitter"></i></a>&emsp;
+            <a href="https://www.instagram.com/nitcofficial/?hl=en" target="_blank"><i class="fa fa-instagram"></i></a>&emsp;
+            <a href="tel:0495-228-6180" target="_blank"><i class="fa fa-phone"></i></a>
         </div>
     </div>
     <!-- Offcanvas Menu End -->
@@ -154,8 +177,16 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-3">
                         <div class="header__logo">
-                            <a href="<?php echo e(url('/')); ?>"><img data-step="1" data-intro="Our Brand new logo and motto which describes how we care about you." data-position="right" src="/img/logo.png" alt="Sahaayak" width="240" height="60"></a>
+                            <div class="mobileHide">
+                                <a href="<?php echo e(url('/')); ?>"><img data-step="1" data-intro="Our Brand new logo and motto which describes how we care about you." data-position="right" src="/img/logo.png" alt="Sahaayak" width="240" height="60"></a>
+                            </div>
                         </div>
+                    </div>
+                    <div class="row">
+                    <div class="mobileShow">
+                        &emsp;<a href="<?php echo e(url('/')); ?>"><img data-step="1" data-intro="Our Brand new logo and motto which describes how we care about you." data-position="right" src="/img/logo.png" alt="Sahaayak" width="240" height="60"></a>
+                        <a href="http://www.nitc.ac.in/" target="_blank"><img src="/img/nitc1.png" width="140" height="51"></a>
+                    </div>
                     </div>
                     <div class="col-lg-7 col-md-7">
                         <div class="header__top__widget">
@@ -201,7 +232,9 @@
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-2">
-                        <img src="/img/nitc1.png" width="280" height="102">
+                        <div class="mobileHide">
+                            <a href="http://www.nitc.ac.in/" target="_blank"><img src="/img/nitc1.png" width="280" height="102"></a>
+                        </div>
                     </div>
                 </div>
                 <div class="canvas__open">
