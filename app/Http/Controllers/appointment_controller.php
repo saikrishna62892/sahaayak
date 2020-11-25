@@ -51,7 +51,7 @@ class appointment_controller extends Controller
          ]);
         
         $appointment->name=$req->name;
-        $appointment->college_id=$req->college_id;
+        $appointment->college_id=strtoupper($req->college_id);
         $appointment->department=$req->department;
         $appointment->gender=$req->gender;
         $appointment->appointment_type=$req->appointment_type;
