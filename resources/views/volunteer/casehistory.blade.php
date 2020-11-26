@@ -87,7 +87,7 @@ table {
                         <td>{{ $appointment->message }}</td>
                         <?php $casehistory = App\Casehistory::where('appointment_id',$appointment->id)->first(); ?>
                         @if(!is_null($casehistory))
-                        <td>{{ $casehistory->remarks }}</td>
+                        <td align="justify" style="padding: 5px 10px 5px 10px;">{{ $casehistory->remarks }}</td>
                         @else
                         <td>-- Not Yet Made --</td>
                         @endif

@@ -85,7 +85,12 @@ table {
                         <?php $counsellor_details = App\Counsellor::find($appointment->counsellor_name); ?>
                         <td><?php echo e($counsellor_details->name); ?></td>
                         <td><?php echo e($appointment->message); ?></td>
-                        <td><?php echo e($appointment->casehistory->remarks); ?></td>
+                        <?php $casehistory = App\Casehistory::where('appointment_id',$appointment->id)->first(); ?>
+                        <?php if(!is_null($casehistory)): ?>
+                        <td align="justify" style="padding: 5px 10px 5px 10px;"><?php echo e($casehistory->remarks); ?></td>
+                        <?php else: ?>
+                        <td>-- Not Yet Made --</td>
+                        <?php endif; ?>
                     </tr>
                     <?php endif; ?>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>

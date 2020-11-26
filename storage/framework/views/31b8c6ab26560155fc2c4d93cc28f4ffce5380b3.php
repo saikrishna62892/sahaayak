@@ -38,9 +38,9 @@
 			<div class="col-sm-3">
 			    <div class="card shadow p-4 mb-5 bg-white rounded">
 			        <div class="card-body">
-				        <h5 class="card-title" align="center">Reports</h5>
-				        <p class="card-text" align="center">#Pending reports</p>
-				        <h1 align="center"><?php echo e($pending_reports); ?></h1>
+				        <h5 class="card-title" align="center">Case Histories</h5>
+				        <p class="card-text" align="center">#Case histories</p>
+				        <h1 align="center"><?php echo e($casehistory_count); ?></h1>
 				        
 			        </div>
 			    </div>
