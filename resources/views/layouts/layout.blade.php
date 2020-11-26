@@ -286,7 +286,7 @@
                                     </ul>
                                 </li>
                                 <li><a href="{{ url('team') }}">Team</a>
-                                    <ul class="dropdown">
+                                    <ul class="dropdown" style="max-width: 175px;">
                                         <li><a href="{{ url('team#counsellors') }}">Counsellors</a></li>
                                         <li><a href="{{ url('team#sgc') }}">SGC</a></li>
                                         <li><a href="{{ url('team#team') }}">Team</a></li>
