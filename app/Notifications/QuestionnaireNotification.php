@@ -48,7 +48,7 @@ class QuestionnaireNotification extends Notification
                     ->subject('A new Questionnaire '.$this->questionnaire->questionnaireTitle)
                     ->line('A new questionnaire has been added for the purpose of '.$this->questionnaire->questionnairePurpose.'. Check it out if you think it will help you')
                     ->action('Questionnaire', url('/'))
-                    ->line('Thank you for using our application!');
+                    ->line('Thank you for using Sahaayak!');
     }
 
     /**

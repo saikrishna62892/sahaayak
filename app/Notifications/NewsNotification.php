@@ -48,7 +48,7 @@ class NewsNotification extends Notification
                     ->subject(''.$this->news)
                     ->line('A new news article for you')
                     ->action('Check it out', url('displayNews'))
-                    ->line('Thank you for using our application!');
+                    ->line('Thank you for using Sahaayak!');
     }
 
     /**

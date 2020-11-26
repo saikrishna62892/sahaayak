@@ -48,7 +48,7 @@ class TalksNotification extends Notification
                     ->subject(''.$this->talk)
                     ->line('A new article for you to read and get inspired.')
                     ->action('Expert Talk', url('/displayTalks'))
-                    ->line('Thank you for using our application!');
+                    ->line('Thank you for using Sahaayak!');
     }
 
     /**

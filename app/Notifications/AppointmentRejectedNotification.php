@@ -6,11 +6,8 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
-use App\Notifications\InspiremeNotification;
-use App\User;
-use Carbon\Carbon;
 
-class InspiremeNotification extends Notification
+class AppointmentRejectedNotification extends Notification
 {
     use Queueable;
 
@@ -19,9 +16,9 @@ class InspiremeNotification extends Notification
      *
      * @return void
      */
-    public function __construct($inspireme)
+    public function __construct($appointment)
     {
-        $this->inspireme = $inspireme;
+        $this->appointment = $appointment;
     }
 
     /**
@@ -44,10 +41,9 @@ class InspiremeNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->greeting('Hello')
-                    ->subject('A quote by '.$this->inspireme)
-                    ->line('Hey checkout the latest quote and keep yourself motivated')
-                    ->action('Quote', url('/inspire_me'))
+                    ->greeting('Hello  '.$this->appointment)
+                    ->subject('Regarding Sahaayak Appointment')
+                    ->line('Your Appointment has been rejected.Sorry for the inconvinience')
                     ->line('Thank you for using Sahaayak!');
     }
 
@@ -60,7 +56,7 @@ class InspiremeNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            'data'=>'A new quote by '.$this->inspireme,
+            'data'=>'Appointment Rejected '.$this->appointment,
             'refrence'=>'userDashboard' 
         ];
     }
