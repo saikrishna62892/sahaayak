@@ -40,11 +40,14 @@ class AppointmentAcceptedNotification extends Notification
      */
     public function toMail($notifiable)
     {
+        $startslots = ['00','08AM - 09AM','09AM - 10AM','10AM - 11AM','11AM - 12PM','12PM - 01PM','01PM - 02PM','02PM - 03PM','03PM - 04PM','04PM - 05PM'];
+        $s=$this->appointment->slot;
+
         return (new MailMessage)
                     ->greeting('Hello  '.$this->appointment->name)
-                    ->subject('Regarding Appointment Request')
-                    ->line('Your Appointment has been accepted and our volunteer will contact you as per your request on  '.$this->appointment->timings)
-                    ->line('Thank you for using our application!');
+                    ->subject('Regarding Sahaayak Appointment')
+                    ->line('Your Appointment has been accepted and our Counsellor will contact you as per your request on  Dated :'.$this->appointment->date.' Slot : '.$startslots[$s].'.')
+                    ->line('Thank you for using Sahaayak!');
     }
 
     /**

@@ -48,7 +48,7 @@ class PlaylistNotification extends Notification
                     ->subject('Hey check out the latest playlist')
                     ->line('A playlist for you to checkout by '.$this->playlist)
                     ->action('Playlist', url('/playlists'))
-                    ->line('Thank you for using our application!');
+                    ->line('Thank you for using Sahaayak!');
     }
 
     /**

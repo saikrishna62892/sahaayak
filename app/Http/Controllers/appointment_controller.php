@@ -11,6 +11,8 @@ use DB;
 use PDF;
 use App\Notifications\AppointmentReceivedNotification;
 use App\Notifications\AppointmentAcceptedNotification;
+use App\Notifications\AppointmentRejectedNotification;
+use App\Notifications\AppointmentRescheduledNotification;
 use App\Notifications\AppointmentReportNotification;
 use App\User;
 use App\Counsellor;
@@ -130,13 +132,14 @@ class appointment_controller extends Controller
 
         ),'dileepkumar_m190437cs@nitc.ac.in',['conferenceDataVersion' => 1]);
         $appointment->update(['accept' => 1]);
+        $this->sendAppointmentAcceptedNotif($appointment,$appointment->user_id);
         Session::flash('alert-success', 'User Appointment accepted'); 
         return redirect()->back();
     }
     public function appointmentRejected(Appointment $appointment){
 
         $appointment->update(['is_Rejected' => 1]);
-
+        $this->sendAppointmentRejectedNotif($appointment->name,$appointment->user_id);
         Session::flash('alert-info', 'User Appointment Rejected'); 
         return redirect()->back();
     }
@@ -197,7 +200,7 @@ class appointment_controller extends Controller
 
 
             ),'dileepkumar_m190437cs@nitc.ac.in',['conferenceDataVersion' => 1]);
-        }
+        }        
         elseif ($req->which_form == 2) {
             /*// First retrieve the event from the API.
             $event=new Event;
@@ -210,7 +213,7 @@ class appointment_controller extends Controller
 
             $updatedEvent = $service->events->update('primary', $event->getId(), $event);*/
         }
-        
+        $this->sendAppointmentRescheduledNotif($appointment,$appointment->user_id);
         Session::flash('alert-info', 'User Appointment Accepted & Rescheduled'); 
         return redirect()->route('counsellorDashboard');
     }

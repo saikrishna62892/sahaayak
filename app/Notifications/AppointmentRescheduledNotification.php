@@ -6,11 +6,8 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
-use App\Notifications\InspiremeNotification;
-use App\User;
-use Carbon\Carbon;
 
-class InspiremeNotification extends Notification
+class AppointmentRescheduledNotification extends Notification
 {
     use Queueable;
 
@@ -19,9 +16,9 @@ class InspiremeNotification extends Notification
      *
      * @return void
      */
-    public function __construct($inspireme)
+    public function __construct($appointment)
     {
-        $this->inspireme = $inspireme;
+        $this->appointment = $appointment;
     }
 
     /**
@@ -43,11 +40,13 @@ class InspiremeNotification extends Notification
      */
     public function toMail($notifiable)
     {
+        $startslots = ['00','08AM - 09AM','09AM - 10AM','10AM - 11AM','11AM - 12PM','12PM - 01PM','01PM - 02PM','02PM - 03PM','03PM - 04PM','04PM - 05PM'];
+        $s=$this->appointment->slot;
+
         return (new MailMessage)
-                    ->greeting('Hello')
-                    ->subject('A quote by '.$this->inspireme)
-                    ->line('Hey checkout the latest quote and keep yourself motivated')
-                    ->action('Quote', url('/inspire_me'))
+                    ->greeting('Hello  '.$this->appointment->name)
+                    ->subject('Regarding Sahaayak Appointment')
+                    ->line('Your Appointment has been Rescheduled by our Counsellor to Date :'.$this->appointment->date.' Slot : '.$startslots[$s].'.')
                     ->line('Thank you for using Sahaayak!');
     }
 
@@ -60,7 +59,7 @@ class InspiremeNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            'data'=>'A new quote by '.$this->inspireme,
+            'data'=>'Appointment Rescheduled '.$this->appointment->name,
             'refrence'=>'userDashboard' 
         ];
     }
