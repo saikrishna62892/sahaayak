@@ -1,6 +1,6 @@
                     <div class="form-group">
                         <label for="name">Counsellor Name</label>
-                        <input type="text" class="form-control" name="name" id="name" aria-describedby="nameHelp" placeholder="Please enter Counsellor name" value="<?php echo e(old('name') ?? $counsellor->name); ?>" autocomplete="off" >
+                        <input type="text" class="form-control" name="name" id="name" aria-describedby="nameHelp" placeholder="Please enter Counsellor name" value="<?php echo e(old('name') ?? $counsellor->name); ?>" required autocomplete="off" >
                         <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -14,7 +14,7 @@ unset($__errorArgs, $__bag); ?>
                     </div>
                     <div class="form-group">
                         <label for="college_id">College ID</label>
-                        <input type="text" class="form-control" name="college_id" id="college_id" aria-describedby="college_idHelp" placeholder="Please enter College ID" value="<?php echo e(old('college_id') ?? $counsellor->college_id); ?>" autocomplete="off" >
+                        <input type="text" class="form-control" name="college_id" id="college_id" aria-describedby="college_idHelp" placeholder="Please enter College ID" value="<?php echo e(old('college_id') ?? $counsellor->college_id); ?>" required autocomplete="off" >
                         <?php $__errorArgs = ['college_id'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -28,7 +28,7 @@ unset($__errorArgs, $__bag); ?>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="text" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Please enter Counsellor email" value="<?php echo e(old('email') ?? $counsellor->email); ?>" autocomplete="off" >
+                        <input type="text" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Please enter Counsellor email" value="<?php echo e(old('email') ?? $counsellor->email); ?>" required autocomplete="off" >
                         <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -42,7 +42,7 @@ unset($__errorArgs, $__bag); ?>
                     </div>
                     <div class="form-group">
                         <label for="calendar_url">Google Calendar URL</label>
-                        <input type="text" class="form-control" name="calendar_url" id="calendar_url" aria-describedby="calendar_urlHelp" placeholder="Please enter Google Calendar URL" value="<?php echo e(old('calendar_url') ?? $counsellor->calendar_url); ?>" autocomplete="off" >
+                        <input type="text" class="form-control" name="calendar_url" id="calendar_url" aria-describedby="calendar_urlHelp" placeholder="Please enter Google Calendar URL" value="<?php echo e(old('calendar_url') ?? $counsellor->calendar_url); ?>" required autocomplete="off" >
                         <?php $__errorArgs = ['calendar_url'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -56,7 +56,7 @@ unset($__errorArgs, $__bag); ?>
                     </div>
                     <div class="form-group">
                         <label for="profession">Profession</label>
-                        <input type="text" class="form-control" name="profession" id="profession" aria-describedby="professionHelp" placeholder="Please enter Counsellor profession" value="<?php echo e(old('profession') ?? $counsellor->profession); ?>" autocomplete="off" >
+                        <input type="text" class="form-control" name="profession" id="profession" aria-describedby="professionHelp" placeholder="Please enter Counsellor profession" value="<?php echo e(old('profession') ?? $counsellor->profession); ?>" required autocomplete="off" >
                         <?php $__errorArgs = ['profession'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -98,7 +98,7 @@ unset($__errorArgs, $__bag); ?>
                     </div>   
                     <small>Please use <a href="https://www.remove.bg/upload" target="_blank" style="color: #5768ad;">removebg</a> website to remove background from an image for smoother appearance</small>             
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="customFile" name="image"   autocomplete="off" >
+                        <input type="file" class="custom-file-input" id="customFile" name="image" required autocomplete="off" >
                         <label class="custom-file-label" for="customFile">Please choose profile picture</label>
                         <?php $__errorArgs = ['image'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');

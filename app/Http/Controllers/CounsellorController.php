@@ -112,7 +112,7 @@ class CounsellorController extends Controller
         $user->load('appointments.casehistory');
         $pdf = PDF::loadView('volunteer.casehistory',compact('user','counsellor'));
         Session::flash('alert-success', 'Downloaded Successfully');  
-        return $pdf->stream('casehistory'.'_'.$user->name.'_'.$req->college_id.'.'.'pdf');
+        return $pdf->stream('casehistory'.'_'.$user->name.'_'.$user->rollnum.'.'.'pdf');
     }
 
     public function downloadReport(Request $req)
@@ -121,8 +121,6 @@ class CounsellorController extends Controller
         $roll=strtoupper($req->college_id);
         $counsellor=Auth::user();
         $user = User::where('rollnum',$roll)->first();
-        //$user = User::where('rollnum',$roll)->where('is_Completed',1)->first();
-        dd($user->appointments);
         if(!is_null($user)){
             $user->load('appointments.casehistory');
             $pdf = PDF::loadView('volunteer.casehistory',compact('user','counsellor'));

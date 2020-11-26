@@ -82,6 +82,8 @@
                                     <a href="/home" aria-expanded="false"><i class="ti-settings"></i><span>Dashboard</span></a>
                                 @elseif(auth()->user()->is_admin == 1)
                                     <a href="/admin/home" aria-expanded="false"><i class="ti-settings"></i><span>Dashboard</span></a>
+                                @elseif(auth()->user()->is_Counsellor == 1)
+                                    <a href="/counsellor/home" aria-expanded="false"><i class="ti-settings"></i><span>Dashboard</span></a>
                                 @else
                                     <a href="/home" aria-expanded="false"><i class="ti-settings"></i><span>Dashboard</span></a>
                                 @endif                                

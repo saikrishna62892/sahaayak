@@ -85,7 +85,12 @@ table {
                         <?php $counsellor_details = App\Counsellor::find($appointment->counsellor_name); ?>
                         <td>{{ $counsellor_details->name }}</td>
                         <td>{{ $appointment->message }}</td>
-                        <td>{{ $appointment->casehistory->remarks }}</td>
+                        <?php $casehistory = App\Casehistory::where('appointment_id',$appointment->id)->first(); ?>
+                        @if(!is_null($casehistory))
+                        <td>{{ $casehistory->remarks }}</td>
+                        @else
+                        <td>-- Not Yet Made --</td>
+                        @endif
                     </tr>
                     @endif
                 @empty

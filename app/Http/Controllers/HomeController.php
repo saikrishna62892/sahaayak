@@ -20,9 +20,11 @@ use Analytics;
 use App\Quote;
 use Carbon\Carbon;
 use App\dialyquotes;
+use App\Casehistory;
 use Spatie\Analytics\Period;
 use App\Playlist;
 use App\Worry;
+use App\Comment;
 use Session;
 //use Spatie\Analytics\Analytics;
 
@@ -107,6 +109,7 @@ class HomeController extends Controller
         $suggestions = DB::table('suggestion')->orderBy("id","desc")->paginate(5);
         $gallery = Gallery::all();
         $counsellors = Counsellor::all();
+        $comments=Comment::all();
 
         //dd($analyticsData);
         //dd($analyticsData[0]);
@@ -118,7 +121,7 @@ class HomeController extends Controller
         $playlist = new Playlist();
         $counsellor = new Counsellor();
         //Session::flash('alert-success', 'Welcome '.$admin_name.' to the Dashboard'); 
-        return view('admin.dashboard_admin',compact('unapprovedVolunteers','talks','users_count','volunteers_count','badges','shared_news','shared_videos','shared_quotes','shared_playlists','newsarticle','talk','quote','video','playlist','admin_name','suggestions','talks_count','gallery','counsellors_count','gallery_count','counsellors','counsellor'));
+        return view('admin.dashboard_admin',compact('unapprovedVolunteers','talks','users_count','volunteers_count','badges','shared_news','shared_videos','shared_quotes','shared_playlists','newsarticle','talk','quote','video','playlist','admin_name','suggestions','talks_count','gallery','counsellors_count','gallery_count','counsellors','counsellor','comments'));
     }
 
    /* public function volunteerHome()
@@ -172,14 +175,13 @@ class HomeController extends Controller
 
         $requests=$appointments->count();
 
-        $interactions=$completedappointments->count();
+        $interactions=$volunteer->appointments->where('accept',1)->where('is_Completed',1)->count();
 
         //should be changed further
-        $pending_reports=$interactions;
-
+        $casehistory_count=Casehistory::all()->count();
         
 
-       return view('volunteer.dashboard_volunteer')->with(compact('appointments','completedappointments','volunteer','checkins','requests','interactions','pending_reports'));
+       return view('volunteer.dashboard_volunteer')->with(compact('appointments','completedappointments','volunteer','checkins','requests','interactions','casehistory_count'));
 
     }
 

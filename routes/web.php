@@ -73,6 +73,7 @@ Route::get('admin/deletePlaylists/{playlist}/playlistdeleted','PlaylistControlle
 Route::get('user/home/deleteStory/{story}/storydeleted','StoryController@deletestory');
 Route::get('user/home/deleteEvent/{event}/eventdeleted','diary_controller@deleteevent');
 Route::get('admin/deleteGallery/{gallery}/gallerydeleted','GalleryController@deletegallery');
+Route::get('admin/deleteComment/{comment}/commentdeleted','CommentController@deletecomment');
 
 
 
