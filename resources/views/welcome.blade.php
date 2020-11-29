@@ -247,11 +247,24 @@
                             <option value="9">4PM - 5PM</option>
                           </select>
                         </div>
+                        <div class="form-group  col-lg-6">
+                            <?php $questionnaires = App\Questionnaire::all(); ?>
+                            <select  class="form-control" name="assessment_name">
+                                <option value="" selected disabled hidden>Choose Assessment(If Taken)</option>
+                                @foreach($questionnaires as $questionnaire)
+                                    <option value="{{$questionnaire->questionnaireTitle}}">{{$questionnaire->questionnaireTitle}}</option>
+                                @endforeach
+                                
+                            </select>
+                        </div>
+                        <div class="form-group  col-lg-6">
+                            <input type="text" name="assessment_marks" id="assessment_marks" placeholder="Enter Assessment Marks(If Taken)" autocomplete="off">
+                        </div>
                         <div class="col-lg-12 text-center">
                             <textarea placeholder="What do you want to talk about in 100 words" name="message" autocomplete="off" ></textarea>
                         <button type="submit">Submit</button>
                         </div>
-                    </div>
+                    </div> 
                 </form>
             </div>
         </div>

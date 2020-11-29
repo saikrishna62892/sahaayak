@@ -265,7 +265,7 @@
                                     </ul>
                                 </li>
                                 <li><a href="#">Assessment</a>
-                                    <ul class="dropdown" style="max-width: 240px;">
+                                    <ul class="dropdown">
                                     <?php $__currentLoopData = $questionnaires; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $questionnaire): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <li><a href="/home/questionnaires/<?php echo e($questionnaire->id); ?>/questions"><?php echo e($questionnaire->questionnaireTitle); ?></a></li>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

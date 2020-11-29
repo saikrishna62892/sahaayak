@@ -65,6 +65,8 @@ class appointment_controller extends Controller
         $appointment->timestamps=now();
         $appointment->user_id=$user->id;
         $appointment->counsellor_id=$req->counsellor_name;
+        $appointment->assessment_name = $req->assessment_name;
+        $appointment->assessment_marks = $req->assessment_marks;
         $appointment->save();
         $this->sendAppointmentReceivedNotif($appointment->name);
 
