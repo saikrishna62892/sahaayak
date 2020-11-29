@@ -6,15 +6,23 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Counsellor;
+use App\Appointment;
 use Storage;
 use Auth;
 use Session;
 use Carbon\Carbon;
 use App\User;
 use PDF;
+use App\Traits\NotificationTrait;
+use App\Notifications\MailToFANotification;
+
+
 
 class CounsellorController extends Controller
 {
+
+    use NotificationTrait;
+
     public function __construct()
     {
         $this->middleware(['auth','verified']);
@@ -24,6 +32,7 @@ class CounsellorController extends Controller
 
     public function store(Request $request)
     {
+        dd($request);
         $newuser = new User();
     	$counsellor= new Counsellor();
     	$data=request()->validate(
@@ -131,5 +140,16 @@ class CounsellorController extends Controller
             Session::flash('alert-danger', 'User Details Not found!'); 
             return redirect()->back();
         }
+    }
+    public function mailToFA(Appointment $appointment)
+    {
+        return view('counsellors.mailtofacultyadvisor',compact('appointment'));
+    }
+    public function mailToFAForm(Request $request)
+    {
+        $this->sendMailToFANotif($request);
+        
+        Session::flash('alert-success', 'Mail Posted Successfully to '.$request->fa_email.'.');
+        return redirect()->route('counsellorDashboard');
     }
 }

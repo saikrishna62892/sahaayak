@@ -219,6 +219,7 @@ class HomeController extends Controller
                 'name'=>'required',
                 'rollnum'=>'required',
                 'email'=>'required',
+                'phone'=>'required',
             ]);
         $data['rollnum'] = strtoupper($data['rollnum']);
         $user->update($data);

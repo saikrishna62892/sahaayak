@@ -178,6 +178,8 @@ Route::post('/admin/report/{appointment}/generateReport','appointment_controller
 
 Route::get('/counsellor/appointment/{user}/getCaseHistory','CounsellorController@getCaseHistory');
 Route::get('/counsellor/appointment/downloadReport','CounsellorController@downloadReport');
+Route::get('/counsellor/appointment/{appointment}/mailToFA','CounsellorController@mailToFA');
+Route::post('/counsellor/mailToFA','CounsellorController@mailToFAForm');
 
 //learn section routes
 Route::get('home/learn/{learn}/{learnID}','LearnController@show');

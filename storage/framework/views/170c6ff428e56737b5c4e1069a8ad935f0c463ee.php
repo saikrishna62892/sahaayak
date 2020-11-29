@@ -73,6 +73,26 @@ unset($__errorArgs, $__bag); ?>
                         </span>
                     </div>
 
+                    <div class="wrap-input100 validate-input m-b-16" data-validate = "Valid phone number is required: ex@nitc.ac.in">
+                        <input class="input100" type="tel" id="phone" name="phone" value="<?php echo e(old('phone')); ?>" placeholder="Phone" autocomplete="phone" required>
+                        <?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                            <span class="invalid-feedback" role="alert">
+                                <strong><?php echo e($message); ?></strong>
+                            </span>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <span class="lnr lnr-phone"></span>
+                        </span>
+                    </div>
+
                     <div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
                         <input class="input100" id="password" type="password" name="password" required autocomplete="new-password" placeholder="Password" minlength="8" maxlength="15">
                         <span class="focus-input100"></span>

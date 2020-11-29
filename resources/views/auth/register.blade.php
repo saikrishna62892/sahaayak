@@ -52,6 +52,19 @@
                         </span>
                     </div>
 
+                    <div class="wrap-input100 validate-input m-b-16" data-validate = "Valid phone number is required">
+                        <input class="input100" type="tel" id="phone" name="phone" value="{{ old('phone') }}" placeholder="Phone" autocomplete="phone" required>
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <span class="lnr lnr-phone"></span>
+                        </span>
+                    </div>
+
                     <div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
                         <input class="input100" id="password" type="password" name="password" required autocomplete="new-password" placeholder="Password" minlength="8" maxlength="15">
                         <span class="focus-input100"></span>

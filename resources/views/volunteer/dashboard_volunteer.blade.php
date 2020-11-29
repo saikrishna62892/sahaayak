@@ -89,6 +89,7 @@
                                         <th scope="col">College ID</th>
                                         <th scope="col">Gender</th>
                                         <th scope="col">Email</th>
+                                        <th scope="col">Phone</th>
                                         <th scope="col">Department</th>
                                         <th scope="col">Faculty Advisor</th>
                                         <th scope="col">Appointment Type</th>
@@ -102,12 +103,14 @@
                                     <?php $count=1 ?>
                                     @forelse($appointments as $item)
                                     	<?php $user_email=App\User::find($item->user_id)->email; ?>
+                                    	<?php $user_phone=App\User::find($item->user_id)->phone; ?>
                                     <tr>
                                         <td scope="row">{{ $count++ }}</td>
                                         <td>{{$item->name}}</td>
                                         <td>{{$item->college_id}}</td>
                                         <td>{{$item->gender}}</td>
 									    <td>{{$user_email}}</td>
+									    <td>{{$user_phone}}</td>
 									    <td>{{$item->department}}</td>
 									    <td>{{$item->faculty_advisor}}</td>
 									    <td>{{$item->appointment_type}}</td>
@@ -164,6 +167,7 @@
 	                                        <th scope="col">College ID</th>
 	                                        <th scope="col">Gender</th>
 	                                        <th scope="col">Email</th>
+	                                        <th scope="col">Phone</th>
 	                                        <th scope="col">Department</th>
 	                                        <th scope="col">Faculty Advisor</th>
 	                                        <th scope="col">Appointment Type</th>
@@ -178,12 +182,14 @@
 
 	                                     @forelse($completedappointments as $key => $item)
 	                                     <?php $user_email=App\User::find($item->user_id)->email; ?>
+	                                     <?php $user_phone=App\User::find($item->user_id)->phone; ?>
 	                                    <tr>
 	                                        <td scope="row">{{ $count++ }}</td>
 	                                        <td>{{$item->name}}</td>
 	                                        <td>{{$item->college_id}}</td>
 	                                        <td>{{$item->gender}}</td>
 										    <td>{{$user_email}}</td>
+										    <td>{{$user_phone}}</td>
 										    <td>{{$item->department}}</td>
 										    <td>{{$item->faculty_advisor}}</td>
 										    <td>{{$item->appointment_type}}</td>
@@ -222,6 +228,11 @@
 										    @endif
 
 										    <td><a target="_blank" href="/counsellor/appointment/{{$item->user_id}}/getCaseHistory" class="btn btn-primary" style="background-color: #5768ad;">Get {{ $item->name }} Report</a></td>
+										    @if($dtA > $dtB)
+										    <td><a class="btn btn-primary" href="/counsellor/appointment/{{$item->id}}/mailToFA" style="background-color: #5768ad;">Mail to Faculty Advisor</button></td>
+										    @else
+										    <td style="color: lightgrey;">Mailing to FA will availabe after session completion.</td>
+										    @endif
 										   	<!-- href="/counsellor/appointment/{{$item->id}}/rescheduleAppointment" -->
 										   	<!--@if($dtA < $dtB)
 										    <td><a class="btn btn-primary" href="/counsellor/appointment/{{$item->id}}/2/rescheduleAppointment" style="background-color: #5768ad;">Reschedule {{ $item->name }} Appointment!</a></td>

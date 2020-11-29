@@ -90,6 +90,7 @@
                                         <th scope="col">College ID</th>
                                         <th scope="col">Gender</th>
                                         <th scope="col">Email</th>
+                                        <th scope="col">Phone</th>
                                         <th scope="col">Department</th>
                                         <th scope="col">Faculty Advisor</th>
                                         <th scope="col">Appointment Type</th>
@@ -103,12 +104,14 @@
                                     <?php $count=1 ?>
                                     <?php $__empty_1 = true; $__currentLoopData = $appointments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
                                     	<?php $user_email=App\User::find($item->user_id)->email; ?>
+                                    	<?php $user_phone=App\User::find($item->user_id)->phone; ?>
                                     <tr>
                                         <td scope="row"><?php echo e($count++); ?></td>
                                         <td><?php echo e($item->name); ?></td>
                                         <td><?php echo e($item->college_id); ?></td>
                                         <td><?php echo e($item->gender); ?></td>
 									    <td><?php echo e($user_email); ?></td>
+									    <td><?php echo e($user_phone); ?></td>
 									    <td><?php echo e($item->department); ?></td>
 									    <td><?php echo e($item->faculty_advisor); ?></td>
 									    <td><?php echo e($item->appointment_type); ?></td>
@@ -165,6 +168,7 @@
 	                                        <th scope="col">College ID</th>
 	                                        <th scope="col">Gender</th>
 	                                        <th scope="col">Email</th>
+	                                        <th scope="col">Phone</th>
 	                                        <th scope="col">Department</th>
 	                                        <th scope="col">Faculty Advisor</th>
 	                                        <th scope="col">Appointment Type</th>
@@ -179,12 +183,14 @@
 
 	                                     <?php $__empty_1 = true; $__currentLoopData = $completedappointments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
 	                                     <?php $user_email=App\User::find($item->user_id)->email; ?>
+	                                     <?php $user_phone=App\User::find($item->user_id)->phone; ?>
 	                                    <tr>
 	                                        <td scope="row"><?php echo e($count++); ?></td>
 	                                        <td><?php echo e($item->name); ?></td>
 	                                        <td><?php echo e($item->college_id); ?></td>
 	                                        <td><?php echo e($item->gender); ?></td>
 										    <td><?php echo e($user_email); ?></td>
+										    <td><?php echo e($user_phone); ?></td>
 										    <td><?php echo e($item->department); ?></td>
 										    <td><?php echo e($item->faculty_advisor); ?></td>
 										    <td><?php echo e($item->appointment_type); ?></td>
@@ -223,6 +229,11 @@
 										    <?php endif; ?>
 
 										    <td><a target="_blank" href="/counsellor/appointment/<?php echo e($item->user_id); ?>/getCaseHistory" class="btn btn-primary" style="background-color: #5768ad;">Get <?php echo e($item->name); ?> Report</a></td>
+										    <?php if($dtA > $dtB): ?>
+										    <td><a class="btn btn-primary" href="/counsellor/appointment/<?php echo e($item->id); ?>/mailToFA" style="background-color: #5768ad;">Mail to Faculty Advisor</button></td>
+										    <?php else: ?>
+										    <td style="color: lightgrey;">Mailing to FA will availabe after session completion.</td>
+										    <?php endif; ?>
 										   	<!-- href="/counsellor/appointment/<?php echo e($item->id); ?>/rescheduleAppointment" -->
 										   	<!--<?php if($dtA < $dtB): ?>
 										    <td><a class="btn btn-primary" href="/counsellor/appointment/<?php echo e($item->id); ?>/2/rescheduleAppointment" style="background-color: #5768ad;">Reschedule <?php echo e($item->name); ?> Appointment!</a></td>

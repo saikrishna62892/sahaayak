@@ -13,6 +13,7 @@ use App\Notifications\AppointmentReceivedNotification;
 use App\Notifications\AppointmentAcceptedNotification;
 use App\Notifications\AppointmentRejectedNotification;
 use App\Notifications\AppointmentRescheduledNotification;
+use App\Notifications\MailToFANotification;
 use App\User;
 use App\Subscription;
 
@@ -59,6 +60,11 @@ trait NotificationTrait{
 	public function sendAppointmentRescheduledNotif($notif1,$notif2){
 		$user = User::find($notif2);
 		$user->notify(new AppointmentRescheduledNotification($notif1));
+	}
+	public function sendMailToFANotif($notif){
+		(new User)->forceFill([
+    	'email' => $notif->fa_email,
+		])->notify(new MailToFANotification($notif));
 	}
 
 	public function sendNotification($a){

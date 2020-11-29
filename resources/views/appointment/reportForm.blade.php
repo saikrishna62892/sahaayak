@@ -28,10 +28,6 @@
                 @enderror
             </div>
         </div>
-        
-
-
-
         <div class="form-group">
             <label for="remarks">Enter Remarks/Findings </label>
             <textarea type="textarea" class="form-control" name="remarks" id="remarks" placeholder="Your remarks about the session" rows="5" required></textarea>
