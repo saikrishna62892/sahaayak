@@ -288,7 +288,7 @@
                                     </ul>
                                 </li>
                                 <li><a href="<?php echo e(url('team')); ?>">Team</a>
-                                    <ul class="dropdown">
+                                    <ul class="dropdown" style="max-width: 175px;">
                                         <li><a href="<?php echo e(url('team#counsellors')); ?>">Counsellors</a></li>
                                         <li><a href="<?php echo e(url('team#sgc')); ?>">SGC</a></li>
                                         <li><a href="<?php echo e(url('team#team')); ?>">Team</a></li>
