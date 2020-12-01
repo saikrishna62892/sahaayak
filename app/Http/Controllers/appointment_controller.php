@@ -81,41 +81,43 @@ class appointment_controller extends Controller
         else{
             return redirect()->back()->with('message','Sorry,User already alloted');
         }*/
-        $user=User::find($appointment->user_id);
+        //$user=User::find($appointment->user_id);
 
         $startslots = ['00','08','09','10','11','12','13','14','15','16'];
         $endslots =   ['00','09','10','11','12','13','14','15','16','17'];
-        $d1=(string)$appointment->date.'T'.$startslots[$appointment->slot].':00:00';
-        $d2=(string)$appointment->date.'T'.$endslots[$appointment->slot].':00:00';
+        //$d1=(string)$appointment->date.'T'.$startslots[$appointment->slot].':00:00';
+        //$d2=(string)$appointment->date.'T'.$endslots[$appointment->slot].':00:00';
         //dd($d1.'     '.$d2);
  
 
-        //$d1 = Carbon::parse($appointment->date.'T'.$startslots[$appointment->slot].':00:00-00:00');
-        //$d2 = Carbon::parse($appointment->date.'T'.$startslots[$appointment->slot].':00:00-01:00');
+        //$d1 = $appointment->date.'T'.$startslots[$appointment->slot].':00:00+05:30';
+        //$d2 = $appointment->date.'T'.$endslots[$appointment->slot].':00:00+05:30';
 
         
         //2018-08-16T14:30:00-00:00
-        $event = new Event;
-        $event->create(array(
-  'summary' => 'Sahaayak Appointment', //'Google Calendar summary',
-  'location' => 'India', //'USA',
-  'description' => 'Appointment has been scheduled successfully and Please be on time.', //'Book Room',
+        //$event = new Event;
+
+        $event=Event::create(array(
+  "summary" => "Sahaayak Appointment", //'Google Calendar summary',
+  "location" => "India", //'USA',
+  "description" => "Appointment has been scheduled successfully and Please be on time.bye",
+  
   'start' => array(
-    'dateTime' => $d1,//'2018-08-16T14:30:00-00:00',
-    'timeZone' => 'America/Los_Angeles',
+    'dateTime' => "2020-11-02T14:30:00+05:30",
+    'timeZone' => 'Asia/Kolkata',
   ),
   'end' => array(
-    'dateTime' => $d2,//'2018-08-16T14:30:00-01:00',
-    'timeZone' => 'America/Los_Angeles',
+    'dateTime' => "2020-11-02T15:30:00+05:30",
+    'timeZone' => 'Asia/Kolkata',
   ),
   'attendees' => array(
-    array('email' => Auth::user()->email,'resource' => true),
-    array('email' => $user->email,'resource' => true),
+    array('email' => 'dileepkumar.nandi9441@gmail.com','resource' => true),
+    array('email' => 'saikrishna_m190241cs@nitc.ac.in','resource' => true),
   ),
   'reminders' => array(
     'useDefault' => FALSE,
     'overrides' => array(
-      array('method' => 'popup', 'minutes' => 10),
+      array('method' => 'popup', 'minutes' => 30),
     ),
   ),
 
@@ -124,14 +126,22 @@ class appointment_controller extends Controller
           "conferenceSolutionKey" => array(
             "type" => "hangoutsMeet"
           ),
-          "requestId" => "123"
+          "requestId" => "1234"
         ),
       ),
 
 
 ),'dileepkumar_m190437cs@nitc.ac.in',['conferenceDataVersion' => 1]);
-        $event->save(); 
-       $appointment->update(['accept' => 1]);
+        
+        //$event->addAttendee('saikrishna_m190241cs@nitc.ac.in');
+//$event->name="app";
+
+        //$event->startDateTime = Carbon::now();
+        //dd("hi");
+        //$event->endDateTime = Carbon::now()->addHour();
+        $event->addAttendee(['email'=>'dileepkumar.nandi9441@gmail.com']);
+        //$event->save(); 
+       //$appointment->update(['accept' => 1]);
         Session::flash('alert-success', 'User Appointment accepted'); 
         return redirect()->back();
     }

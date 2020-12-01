@@ -67,10 +67,10 @@
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu">
         <div class="offcanvas__logo">
-            <div class="row">
-                <a href="<?php echo e(url('/')); ?>"><img src="/img/logo.png" alt="Sahaayak" width="120" height="30"></a>
-                <a href="http://www.nitc.ac.in/" target="_blank"><img src="/img/nitc1.png" width="140" height="51"></a>
-            </div>
+        <div class="row">
+            <a href="<?php echo e(url('/')); ?>"><img src="/img/logo.png" alt="Sahaayak" width="160" height="40"></a>
+            <a href="http://www.nitc.ac.in/" target="_blank"><img src="/img/nitc1.png" width="100" height="40"></a>
+        </div>
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__widget">
@@ -182,8 +182,11 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
                     <div class="mobileShow">
-                        <a href="<?php echo e(url('/')); ?>"><img data-step="1" data-intro="Our Brand new logo and motto which describes how we care about you." data-position="right" src="/img/logo.png" alt="Sahaayak" width="240" height="60"></a>
+                        &emsp;<a href="<?php echo e(url('/')); ?>"><img data-step="1" data-intro="Our Brand new logo and motto which describes how we care about you." data-position="right" src="/img/logo.png" alt="Sahaayak" width="240" height="60"></a>
+                        <a href="http://www.nitc.ac.in/" target="_blank"><img src="/img/nitc1.png" width="140" height="51"></a>
+                    </div>
                     </div>
                     <div class="col-lg-7 col-md-7">
                         <div class="header__top__widget">
@@ -232,9 +235,6 @@
                         <div class="mobileHide">
                             <a href="http://www.nitc.ac.in/" target="_blank"><img src="/img/nitc1.png" width="280" height="102"></a>
                         </div>
-                    </div>
-                    <div class="mobileShow">
-                        <a href="http://www.nitc.ac.in/" target="_blank"><img src="/img/nitc1.png" width="280" height="102"></a>
                     </div>
                 </div>
                 <div class="canvas__open">
