@@ -75,7 +75,7 @@
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__widget">
             <ul>
-                <li>WRITE US: <a href="mailto:sgc@nitc.ac.in" target="_blank" style="color: #5768ad;">sgc@nitc.ac.in</li>
+                <li>WRITE US: <a href="mailto:sahayak@nitc.ac.in" target="_blank" style="color: #5768ad;">sahayak@nitc.ac.in</li>
             </ul>
             @guest
             <a href="{{ route('login') }}" class="primary-btn">Login</a>
@@ -321,7 +321,7 @@
                     <div class="footer__about">
                         <center><img src="/img/footer-logo.png" alt="Sahaayak" width="240" height="60">
                         <ul class="footer-address">
-                            <li><i class="fa fa-envelope"></i> sgc@nitc.ac.in</li>
+                            <li><i class="fa fa-envelope"></i> sahayak@nitc.ac.in</li>
                             <li><i class="fa fa-phone"></i> 0495-228-6180</li>
                             <li><i class="fa fa-location-arrow"></i> NIT Calicut</li>
                         </ul>
@@ -365,7 +365,7 @@
                         <h5>Connect Us</h5>
                         <div class="footer__copyright__social" align="left" data-step="11" data-intro="Social Network handles for our website" data-position="left">
                             <a href="https://www.facebook.com/NIT.Calicut.Kerala" target="_blank"><i class="fa fa-facebook"></i></a>
-                            <a href="mailto:sgc@nitc.ac.in" target="_blank"><i class="fa fa-google"></i></a>
+                            <a href="mailto:sahayak@nitc.ac.in" target="_blank"><i class="fa fa-google"></i></a>
                             <a href="https://www.instagram.com/nitcofficial/?hl=en" target="_blank"><i class="fa fa-instagram"></i></a>
                             <a href="https://twitter.com/nitcofficial?lang=en" target="_blank"><i class="fa fa-twitter"></i></a>
                             <a href="tel:0495-228-6180" target="_blank"><i class="fa fa-phone"></i></a>
