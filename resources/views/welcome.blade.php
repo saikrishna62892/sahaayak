@@ -364,9 +364,9 @@
                     <div class="row d-flex justify-content-center">
                         <div class="col-lg-10">
                             <div class="testimonial__text">
-                                <p>Testimonial about our website which includes user experience of our website,thoughts and reviews about our website.</p>
-                                <img src="img/testimonial/default.PNG" alt="">
-                                <h5>person name<span>- profession</span></h5>
+                                <p>Being a counsellor at SGC I am thrilled by the quality of support providing to the NITC family through the Sahayak website. It is reliable, and fast and no complications. Sahayak is a great service and finally helping us to live in Mental health in better and beautiful way...</p>
+                                <img src="img/team/aneesh.PNG" alt="">
+                                <h5>Dr Aneesh T<span>- psychologist</span></h5>
                             </div>
                         </div>
                     </div>
@@ -375,9 +375,9 @@
                     <div class="row d-flex justify-content-center">
                         <div class="col-lg-10">
                             <div class="testimonial__text">
-                                <p>Testimonial about our website which includes user experience of our website,thoughts and reviews about our website.</p>
-                                <img src="img/testimonial/default.PNG" alt="">
-                                <h5>person name<span>- profession</span></h5>
+                                <p>As a Counsellor at SGC, I used to help and support people to manage their lives. But Covid 19 outbreak changed everything and we are compelled to provide online Psychological services. We have now taken a new step through Sahaayak Website.  It is going to be a major milestone in SGC's development. Sahaayak is really an user friendly, easy to handle platform which assures 100% confidentiality.</p>                                
+                                <img src="img/team/neethu.PNG" alt="">
+                                <h5>Neethu A T<span>- Psychologist</span></h5>
                             </div>
                         </div>
                     </div>
@@ -386,9 +386,9 @@
                     <div class="row d-flex justify-content-center">
                         <div class="col-lg-10">
                             <div class="testimonial__text">
-                                <p>Testimonial about our website which includes user experience of our website,thoughts and reviews about our website.</p>
+                                <p>I am beyond impressed with the help we received here,and continue to receive. Counsellors are professional, open minded, accessible and knowledgeable. I am happy.</p>
                                 <img src="img/testimonial/default.PNG" alt="">
-                                <h5>person name<span>- profession</span></h5>
+                                <h5>Anonymous<span>- Student</span></h5>
                             </div>
                         </div>
                     </div>
@@ -397,14 +397,14 @@
                     <div class="row d-flex justify-content-center">
                         <div class="col-lg-10">
                             <div class="testimonial__text">
-                                <p>Testimonial about our website which includes user experience of our website,thoughts and reviews about our website.</p>
+                                <p>The SGC Teams are extremely well-trained and provide a welcoming safe space for all of the students! I would highly highly recommend the SGC to anyone and everyone!</p>
                                 <img src="img/testimonial/default.PNG" alt="">
-                                <h5>person name<span>- profession</span></h5>
+                                <h5>Anonymous<span>- Student</span></h5>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div> 
+             </div>
         </div>
     </section>
     <!-- Testimonial Section End -->
