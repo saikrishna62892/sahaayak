@@ -450,7 +450,7 @@
                                         <p>&emsp;Click on Talk To Us in the dashboard.</p>
                                         <p>&emsp;Fill the required details and our team will contact you.</p>
                                         <p>2) Call 0495-2286180 to fix appointment</p>
-                                        <p>3) Email to <a href="mailto:sgc@nitc.ac.in" target="_blank" style="color:#5768AD;" > sgc@nitc.ac.in </a> </p>
+                                        <p>3) Email to <a href="mailto:sahayak@nitc.ac.in" target="_blank" style="color:#5768AD;" > sahayak@nitc.ac.in </a> </p>
                                         <p>4) Direct walk-in</p>
                                         <p>5) Referrals through Department/ Faculty members</p>
                                         <h6>Need help? -> <a href="{{ url('/#talk_to_us') }}">Get in touch with us.</a></h6>
