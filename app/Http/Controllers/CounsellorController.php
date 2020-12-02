@@ -32,7 +32,6 @@ class CounsellorController extends Controller
 
     public function store(Request $request)
     {
-        dd($request);
         $newuser = new User();
     	$counsellor= new Counsellor();
     	$data=request()->validate(

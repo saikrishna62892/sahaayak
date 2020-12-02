@@ -11,6 +11,7 @@ use App\Talk;
 use App\Story;
 use App\Gallery;
 use DB;
+use PDF;
 use App\Diary;
 use Auth;
 use App\News;
@@ -77,7 +78,7 @@ class HomeController extends Controller
     public function adminHome()
     {
         //stats
-        $users_count = User::all()->count();
+        $users_count = User::where('is_admin',0)->where('is_Volunteer',0)->where('is_Counsellor',0)->count();
         $volunteers_count = Volunteer::all()->count();
         $counsellors_count = Counsellor::all()->count();
         $gallery_count = Gallery::all()->count();
@@ -123,6 +124,36 @@ class HomeController extends Controller
         //Session::flash('alert-success', 'Welcome '.$admin_name.' to the Dashboard'); 
         return view('admin.dashboard_admin',compact('unapprovedVolunteers','talks','users_count','volunteers_count','badges','shared_news','shared_videos','shared_quotes','shared_playlists','newsarticle','talk','quote','video','playlist','admin_name','suggestions','talks_count','gallery','counsellors_count','gallery_count','counsellors','counsellor','comments'));
     }
+    public function getMonthlyReport(Request $request)
+    {
+        $counsellors = Counsellor::all();
+        $req_month = $request->month;
+        $req_year = $request->year;
+        $month=["XXX","January","Febuary","March","April","May","June","July","August","September","October","November","December"]; 
+        $appointments = Appointment::whereYear('created_at', $req_year)->whereMonth('created_at', $req_month)->get();
+        $pdf = PDF::loadView('admin.getMonthlyreport',compact('appointments','month','counsellors','req_month','req_year'));
+        Session::flash('alert-success', 'Downloaded Successfully'); 
+        return $pdf->stream('Sahaayak_'.$month[$req_month].'_'.$req_year.'_Report.pdf');
+    }
+    public function getCurrentMonthReport()
+    {
+        $counsellors = Counsellor::all();
+        $req_month = Carbon::now()->month;
+        $req_year = Carbon::now()->year;
+        $month=["XXX","January","Febuary","March","April","May","June","July","August","September","October","November","December"]; 
+        $appointments = Appointment::whereYear('created_at', $req_year)->whereMonth('created_at', $req_month)->get();
+        $pdf = PDF::loadView('admin.getMonthlyreport',compact('appointments','month','counsellors','req_month','req_year'));
+        Session::flash('alert-success', 'Downloaded Successfully'); 
+        return $pdf->stream('Sahaayak_'.$month[$req_month].'_'.$req_year.'_Report.pdf');
+    }
+    public function getOverallReport()
+    {
+        $counsellors = Counsellor::all();
+        $pdf = PDF::loadView('admin.getOverallreport',compact('counsellors'));
+        Session::flash('alert-success', 'Downloaded Successfully'); 
+        return $pdf->stream('Sahaayak_Overall_Report.pdf');
+    }
+
 
    /* public function volunteerHome()
     {

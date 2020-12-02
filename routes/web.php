@@ -117,6 +117,9 @@ Route::patch('/user/home/edit/{user}/updateDetails','HomeController@updateEditDe
 
 //admin page route
 Route::get('admin/home', 'HomeController@adminHome')->name('adminDashboard')->middleware('is_admin');
+Route::post('/admin/getMonthlyReport','HomeController@getMonthlyReport');
+Route::get('/admin/getCurrentMonthReport','HomeController@getCurrentMonthReport');
+Route::get('/admin/getOverallReport','HomeController@getOverallReport');
 
 //volunteer dashboard route
 Route::get('volunteer/home', 'HomeController@volunteerHome')->name('volunteerDashboard')->middleware('is_volunteer');

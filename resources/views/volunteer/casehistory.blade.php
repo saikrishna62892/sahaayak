@@ -106,7 +106,7 @@ table {
 
                 </table>
                 <br>
-                <small><center><a href="https://sahaayak.co.in/login" target="_blank">Click here to login</a></center></small>
+                <small><center><a href="{{ env('APP_URL') }}/login" target="_blank">Click here to login</a></center></small>
                 <p align="center" style="white-space: pre-line;color: grey;">&#169; copyright to sahaayak,All rights reserved</p>
               </div>
             </div>

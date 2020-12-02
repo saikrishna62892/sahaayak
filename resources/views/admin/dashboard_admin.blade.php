@@ -16,41 +16,57 @@
 		        <div class="card-body">
 			        <h5 class="card-title" align="center">Users</h5>
 			        <h1 align="center">{{ $users_count }}</h1>
-			        <p class="card-text" align="center">Active Users</p>
+			        <p class="card-text" align="center">Active Users in Sahaayak</p>
 			        <center><a href="#" class="btn btn-primary" onclick="alert('Currently disabled')" style="background-color: #5768ad;">See Analytics</a></center>
 		        </div>
 		    </div>
 		</div>
+        <div class="col-sm-6">
+            <div class="card shadow p-0 mb-5 bg-white rounded">
+                <div class="card-body">
+                    <?php $curr_date = \Carbon\Carbon::now(); ?>
+                    <p class="card-text" align="center" style="padding: 0px 0px 0px 0px;"><b>{{ $curr_date->format('F') }} Appointments</b></p>
+                    <table class="table table-hover progress-table text-center">
+                        <thead class="text-uppercase">
+                            <tr>
+                                <th scope="col">S.No</th>
+                                <th scope="col">Counsellor Name</th>
+                                <th scope="col">#Appointments</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php $count=1; ?>
+                            @forelse($counsellors as $counsellor)
+                            <tr>    
+                                <td>{{ $count++ }}</td>                       
+                                <td>{{ $counsellor->name }}</td>
+                                <?php $app_count = App\Appointment::where('counsellor_id',$counsellor->id)->whereYear('created_at', Carbon\Carbon::now()->year)->whereMonth('created_at', Carbon\Carbon::now()->month)->count(); ?>
+
+                                <td>{{ $app_count }}</td>
+                            </tr>
+                            @empty
+                            <h1 align="center">-NA-</h1>
+                            <p class="card-text" align="center">No Appointments Available</p>
+                            @endforelse
+                         </tbody>
+                    </table>
+                    <center>
+                        
+                        <a href="/admin/getCurrentMonthReport" target="_blank" class="btn btn-primary" style="background-color: #5768ad;">Download {{ $curr_date->format('F') }} Report</a>
+                    </center>
+                </div>
+            </div>
+        </div>
 		<div class="col-sm-3">
 		    <div class="card shadow p-4 mb-5 bg-white rounded">
 		        <div class="card-body">
 			        <h5 class="card-title" align="center">Counsellors</h5>
 			        <h1 align="center">{{ $counsellors_count }}</h1>
-			        <p class="card-text" align="center">Active Counsellors</p>
+			        <p class="card-text" align="center">Active Counsellors in Sahaayak</p>
 			        <center><a href="#" onclick="alert('Currently disabled')" class="btn btn-primary" style="background-color: #5768ad;">See Analytics</a></center>
 		        </div>
 			</div>
 		</div>
-		<div class="col-sm-3">
-			<div class="card shadow p-4 mb-5 bg-white rounded">
-			    <div class="card-body">
-			        <h5 class="card-title" align="center">Gallery</h5>
-			        <h1 align="center">{{ $gallery_count }}</h1>
-			        <p class="card-text" align="center">Active Volunteers</p>
-			        <center><a href="#" class="btn btn-primary" onclick="alert('Currently disabled')" style="background-color: #5768ad;">See Analytics</a></center>
-			    </div>
-			</div>
-		</div>
-        <div class="col-sm-3">
-            <div class="card shadow p-4 mb-5 bg-white rounded">
-                <div class="card-body">
-                    <h5 class="card-title" align="center">Talks</h5>
-                    <h1 align="center">{{ $talks_count }}</h1>
-                    <p class="card-text" align="center">#expert talks</p>
-                    <center><a href="#" class="btn btn-primary" onclick="alert('Currently disabled')" style="background-color: #5768ad;">See Analytics</a></center>
-                </div>
-            </div>
-        </div>
 	</div>
 </div>
 <br>
@@ -82,7 +98,7 @@
                             <a data-toggle="tab" href="#dialyquote" role="tab">Dialy Quote</a>
                         </li>
                         <li>
-                            <a data-toggle="tab" href="#expert_talks" role="tab">Expert Talks</a>
+                            <a data-toggle="tab" href="#expert_talks" role="tab">Talks</a>
                         </li>
                         <li>
                             <a data-toggle="tab" href="#news" role="tab">News</a>
@@ -101,6 +117,9 @@
                         </li>
                         <li>
                             <a data-toggle="tab" href="#assessments" role="tab">Assessments</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#reports" role="tab">Reports</a>
                         </li>
                     </ul>
                 </div>
@@ -161,6 +180,11 @@
                     <!-- assessments form begin -->
                     <div class="tab-pane fade" id="assessments" role="tabpanel">
                         @include('questionnaire.allquestionnaires')
+                    </div>
+                    <!-- assessments form end -->
+                    <!-- assessments form begin -->
+                    <div class="tab-pane fade" id="reports" role="tabpanel">
+                        @include('admin.reportForm')
                     </div>
                     <!-- assessments form end -->
                 </div>
