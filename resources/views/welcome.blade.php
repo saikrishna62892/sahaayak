@@ -362,7 +362,7 @@
             <div class="testimonial__slider owl-carousel">
                 <div class="testimonial__item">
                     <div class="row d-flex justify-content-center">
-                        <div class="col-lg-10">
+                        <div class="col-lg-12">
                             <div class="testimonial__text">
                                 <p>Being a counsellor at SGC I am thrilled by the quality of support providing to the NITC family through the Sahayak website. It is reliable, and fast and no complications. Sahayak is a great service and finally helping us to live in Mental health in better and beautiful way...</p>
                                 <img src="img/team/aneesh.PNG" alt="">
@@ -373,7 +373,7 @@
                 </div>
                 <div class="testimonial__item">
                     <div class="row d-flex justify-content-center">
-                        <div class="col-lg-10">
+                        <div class="col-lg-12">
                             <div class="testimonial__text">
                                 <p>As a Counsellor at SGC, I used to help and support people to manage their lives. But Covid 19 outbreak changed everything and we are compelled to provide online Psychological services. We have now taken a new step through Sahaayak Website.  It is going to be a major milestone in SGC's development. Sahaayak is really an user friendly, easy to handle platform which assures 100% confidentiality.</p>                                
                                 <img src="img/team/neethu.PNG" alt="">

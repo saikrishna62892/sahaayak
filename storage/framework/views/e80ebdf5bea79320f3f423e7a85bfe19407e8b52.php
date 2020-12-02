@@ -421,10 +421,10 @@
     <script src="/js/jquery.slicknav.min.js"></script>
 
     <!-- ManyChat Plugin -->
-    <script src="//widget.manychat.com/101206188315883.js" async="async"></script>
+    <!-- <script src="//widget.manychat.com/101206188315883.js" async="async"></script>-->
     <!-- Load Facebook SDK for JavaScript -->
-    <div id="fb-root"></div>
-    <script>
+    <!--<div id="fb-root"></div>-->
+    <!--<script>
         window.fbAsyncInit = function() {
           FB.init({
             xfbml            : true,
@@ -439,16 +439,16 @@
         js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
-    </script>
+    </script>-->
 
     <!-- Your Chat Plugin code -->
-    <div class="fb-customerchat"
+    <!--<div class="fb-customerchat"
         attribution=setup_tool
         page_id="100529798384686"
         theme_color="#5768ad"
         logged_in_greeting="Hi buddy we are there to talk with you?"
         logged_out_greeting="Hi buddy we are there to talk with you?">
-    </div>
+    </div>-->
 
 </body>
 
