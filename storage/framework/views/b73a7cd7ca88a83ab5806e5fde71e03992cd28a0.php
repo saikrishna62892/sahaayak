@@ -196,16 +196,16 @@
                 <?php echo csrf_field(); ?>
                     <div class="row">
                         <div class="col-lg-4">
-                            <input type="text" placeholder="Name" name="name" autocomplete="off" >
+                            <input type="text" placeholder="Name" name="name" autocomplete="off" required>
                         </div>
                         <div class="col-lg-4">
-                            <input type="text" placeholder="College ID" name="college_id" autocomplete="off" >
+                            <input type="text" placeholder="College ID" name="college_id" autocomplete="off" required>
                         </div>
                         <div class="col-lg-4">
-                            <input type="text" placeholder="Department" name="department" autocomplete="off" >
+                            <input type="text" placeholder="Department" name="department" autocomplete="off" required>
                         </div>
                         <div class="col-lg-4">
-                          <select name="gender">
+                          <select name="gender" required>
                             <option value="" selected disabled hidden>Your Gender</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
@@ -213,17 +213,17 @@
                           </select>
                         </div>
                         <div class="col-lg-4">
-                          <select  name="appointment_type">
+                          <select  name="appointment_type" required>
                             <option value="" selected disabled hidden>Appointment Type</option>
                             <option value="Initial Appointment">Initial Appointment</option>
                             <option value="Follow-up Appointment">Follow-up Appointment</option>
                           </select>
                         </div>
                         <div class="col-lg-4">
-                            <input type="text" placeholder="Your Faculty Advisor" name="faculty_advisor" autocomplete="off" >
+                            <input type="text" placeholder="Your Faculty Advisor" name="faculty_advisor" autocomplete="off" required>
                         </div>
                         <div class="col-lg-6">
-                          <select  name="counsellor_name">
+                          <select  name="counsellor_name" required>
                             <option value="" selected disabled hidden>Choose Your Counsellor</option>
                             <?php $__currentLoopData = $counsellors; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $counsellor): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <option value="<?php echo e($counsellor->id); ?>"><?php echo e($counsellor->name); ?>-<?php echo e($counsellor->profession); ?></option>
@@ -231,10 +231,10 @@
                           </select>
                         </div>
                         <div class="col-lg-3">
-                          <input type="text" id="date" name="date" placeholder="Choose Your Date" onfocus="(this.type='date')"autocomplete="off" >
+                          <input type="text" id="date" name="date" placeholder="Choose Your Date" onfocus="(this.type='date')"autocomplete="off" required>
                         </div>
                         <div class="col-lg-3">
-                          <select  name="slot">
+                          <select  name="slot" required>
                             <option value="" selected disabled hidden>Choose Your Slot</option>
                             <option value="1">8AM - 9AM</option>
                             <option value="2">9AM - 10AM</option>
@@ -249,7 +249,7 @@
                         </div>
                         <div class="form-group  col-lg-6">
                             <?php $questionnaires = App\Questionnaire::all(); ?>
-                            <select  class="form-control" name="assessment_name">
+                            <select name="assessment_name">
                                 <option value="" selected disabled hidden>Choose Assessment(If Taken)</option>
                                 <?php $__currentLoopData = $questionnaires; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $questionnaire): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <option value="<?php echo e($questionnaire->questionnaireTitle); ?>"><?php echo e($questionnaire->questionnaireTitle); ?></option>
