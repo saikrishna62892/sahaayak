@@ -9,7 +9,7 @@
     
 
     <!-- Breadcrumb Begin -->
-    <section class="breadcrumb-option set-bg" data-setbg="img/breadcrumb.jpg">
+    <section class="breadcrumb-option set-bg" data-setbg="img/breadcrumb1.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -44,7 +44,7 @@
                         <div class="col-lg-6">
                             <div class="team__item">
                                 <div class="team__item__pic">
-                                    <img src="<?php echo e(asset('/img/counsellors/'.$counsellor->image)); ?>" alt="" width="320" height="323">
+                                    <img src="<?php echo e(\Storage::disk('s3')->url($counsellor->file1)); ?>" alt="" width="320" height="323">
                                 </div>
                                 <div class="team__item__text">
                                     <div class="team__item__title">

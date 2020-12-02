@@ -228,8 +228,8 @@
                         <img src="img/counter/counter-4.png" alt="">
                     </div>
                     <div class="counter__item__text">
-                        <h2>{{ $volunteers_count }}</h2>
-                        <p>Volunteers</p>
+                        <h2>{{ $counsellors_count }}</h2>
+                        <p>Counsellors</p>
                     </div>
                 </div>
                 <div class="counter__item">

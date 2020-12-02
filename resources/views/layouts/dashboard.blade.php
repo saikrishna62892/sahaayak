@@ -49,17 +49,6 @@
 </script>
 <!--reportForm script end-->
 
-<!--rescheduleForm script begin-->
-<script type="text/javascript">
-    function reply_click(clicked_id)
-    {
-        var res = clicked_id.split("#");
-        document.getElementById("demo1").innerHTML = "Reschedule Appointment for "+res[1];
-        document.getElementById('appointment_id').value = res[0];
-    }
-</script>
-<!--rescheduleForm script end-->
-
 <script type="text/javascript">
     function getUserID()
     {
@@ -93,6 +82,8 @@
                                     <a href="/home" aria-expanded="false"><i class="ti-settings"></i><span>Dashboard</span></a>
                                 @elseif(auth()->user()->is_admin == 1)
                                     <a href="/admin/home" aria-expanded="false"><i class="ti-settings"></i><span>Dashboard</span></a>
+                                @elseif(auth()->user()->is_Counsellor == 1)
+                                    <a href="/counsellor/home" aria-expanded="false"><i class="ti-settings"></i><span>Dashboard</span></a>
                                 @else
                                     <a href="/home" aria-expanded="false"><i class="ti-settings"></i><span>Dashboard</span></a>
                                 @endif                                

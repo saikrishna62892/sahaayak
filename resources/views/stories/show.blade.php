@@ -60,7 +60,7 @@
                                                                     @if(is_null($story->image))
                                                                         <img src="{{ asset('/img/stories/default1.jpg') }}" alt="" width="700" height="350">
                                                                     @else
-                                                                        <img src="{{ asset('/img/stories/'.$story->image) }}" alt="" width="700" height="350">
+                                                                        <img src="{{\Storage::disk('s3')->url($story->image)}}" alt="" width="700" height="350">
                                                                     @endif
                                                                     <span>{{ $story->category }}</span>
                                                                 </div>

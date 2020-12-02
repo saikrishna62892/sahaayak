@@ -49,17 +49,6 @@
 </script>
 <!--reportForm script end-->
 
-<!--rescheduleForm script begin-->
-<script type="text/javascript">
-    function reply_click(clicked_id)
-    {
-        var res = clicked_id.split("#");
-        document.getElementById("demo1").innerHTML = "Reschedule Appointment for "+res[1];
-        document.getElementById('appointment_id').value = res[0];
-    }
-</script>
-<!--rescheduleForm script end-->
-
 <script type="text/javascript">
     function getUserID()
     {
@@ -93,6 +82,8 @@
                                     <a href="/home" aria-expanded="false"><i class="ti-settings"></i><span>Dashboard</span></a>
                                 <?php elseif(auth()->user()->is_admin == 1): ?>
                                     <a href="/admin/home" aria-expanded="false"><i class="ti-settings"></i><span>Dashboard</span></a>
+                                <?php elseif(auth()->user()->is_Counsellor == 1): ?>
+                                    <a href="/counsellor/home" aria-expanded="false"><i class="ti-settings"></i><span>Dashboard</span></a>
                                 <?php else: ?>
                                     <a href="/home" aria-expanded="false"><i class="ti-settings"></i><span>Dashboard</span></a>
                                 <?php endif; ?>                                
@@ -133,7 +124,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="<?php echo e(url('news')); ?>" aria-expanded="true"><i class="ti-world"></i><span>News</span></a>
+                                <a href="<?php echo e(url('displayNews')); ?>" aria-expanded="true"><i class="ti-world"></i><span>News</span></a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-heart"></i><span>Hope Box</span></a>

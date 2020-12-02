@@ -56,6 +56,7 @@ table {
                     <th>Counsellor Name</th>
                     <th>About</th>
                     <th>Remarks from Counsellor</th>
+                    <th>Assessments Details</th>
                 </tr>
                 <?php $__empty_1 = true; $__currentLoopData = $user->appointments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $appointment): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
                     <?php if(!is_null($appointment)): ?>
@@ -85,7 +86,18 @@ table {
                         <?php $counsellor_details = App\Counsellor::find($appointment->counsellor_name); ?>
                         <td><?php echo e($counsellor_details->name); ?></td>
                         <td><?php echo e($appointment->message); ?></td>
-                        <td><?php echo e($appointment->casehistory->remarks); ?></td>
+                        <?php $casehistory = App\Casehistory::where('appointment_id',$appointment->id)->first(); ?>
+                        <?php if(!is_null($casehistory)): ?>
+                            <td align="justify" style="padding: 5px 10px 5px 10px;"><?php echo e($casehistory->remarks); ?></td>
+                            <?php if($casehistory->assessment_name != "--NA--"): ?>
+                            <td align="justify" style="padding: 5px 10px 5px 10px;"><?php echo e($appointment->assessment_name); ?> -- <?php echo e($appointment->assessment_marks); ?></td>
+                            <?php else: ?>
+                            <td align="center">-- NA --</td>
+                            <?php endif; ?>
+                        <?php else: ?>
+                        <td>-- Not Yet Made --</td>
+                        <td>-- NA --</td>
+                        <?php endif; ?>
                     </tr>
                     <?php endif; ?>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>

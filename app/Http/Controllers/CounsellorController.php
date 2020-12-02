@@ -6,15 +6,23 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Counsellor;
+use App\Appointment;
 use Storage;
 use Auth;
 use Session;
 use Carbon\Carbon;
 use App\User;
 use PDF;
+use App\Traits\NotificationTrait;
+use App\Notifications\MailToFANotification;
+
+
 
 class CounsellorController extends Controller
 {
+
+    use NotificationTrait;
+
     public function __construct()
     {
         $this->middleware(['auth','verified']);
@@ -24,13 +32,14 @@ class CounsellorController extends Controller
 
     public function store(Request $request)
     {
+        dd($request);
         $newuser = new User();
     	$counsellor= new Counsellor();
     	$data=request()->validate(
             [
                 'image' => 'required|file|image|max:3000',
                 'name'=>'required',
-                'college_id'=>'required',
+                'college_id'=>'required|unique:users,rollnum',
                 'email'=>'required',
                 'calendar_url' => 'required',
                 'profession'=>'required'
@@ -38,7 +47,7 @@ class CounsellorController extends Controller
 
         $newuser->name=$request->name;
         $newuser->email=$request->email;
-        $newuser->rollnum=$request->college_id;
+        $newuser->rollnum=strtoupper($request->college_id);
         $newuser->password=bcrypt('12345678');
         $newuser->email_verified_at=Carbon::now();
         $newuser->is_Counsellor=1;
@@ -66,7 +75,7 @@ class CounsellorController extends Controller
     }
     public function removeDetails(Counsellor $counsellor)
     {
-        $user = User::find($counsellor->user_id)
+        $user = User::find($counsellor->user_id);
         Storage::disk('s3')->delete([$counsellor->file1]);
         $user->delete();
         Session::flash('alert-info', 'Counsellor Details Deleted Successfully');
@@ -75,7 +84,7 @@ class CounsellorController extends Controller
     public function editDetails(Counsellor $counsellor)
     {
         return view('counsellors.edit',compact('counsellor'));
-        return redirect()->back();
+        //return redirect()->back();
     }
     public function updateDetails(Counsellor $counsellor)
     {
@@ -84,14 +93,14 @@ class CounsellorController extends Controller
             [
                 'image' => 'file|image|max:3000',
                 'name'=>'required',
-                'college_id'=>'required',
+                'college_id'=>'required|unique:users,rollnum',
                 'email'=>'required',
                 'profession'=>'required',
                 'calendar_url' => 'required'
             ]);
 
         $counsellor->name =  request()->name;
-        $counsellor->college_id =  request()->college_id;
+        $counsellor->college_id =  strtoupper(request()->college_id);
         $counsellor->email =  request()->email;
         $counsellor->profession =  request()->profession;
         $counsellor->bio =  request()->bio;
@@ -112,7 +121,7 @@ class CounsellorController extends Controller
         $user->load('appointments.casehistory');
         $pdf = PDF::loadView('volunteer.casehistory',compact('user','counsellor'));
         Session::flash('alert-success', 'Downloaded Successfully');  
-        return $pdf->stream('casehistory'.'_'.$user->name.'_'.$req->college_id.'.'.'pdf');
+        return $pdf->stream('casehistory'.'_'.$user->name.'_'.$user->rollnum.'.'.'pdf');
     }
 
     public function downloadReport(Request $req)
@@ -131,5 +140,16 @@ class CounsellorController extends Controller
             Session::flash('alert-danger', 'User Details Not found!'); 
             return redirect()->back();
         }
+    }
+    public function mailToFA(Appointment $appointment)
+    {
+        return view('counsellors.mailtofacultyadvisor',compact('appointment'));
+    }
+    public function mailToFAForm(Request $request)
+    {
+        $this->sendMailToFANotif($request);
+        
+        Session::flash('alert-success', 'Mail Posted Successfully to '.$request->fa_email.'.');
+        return redirect()->route('counsellorDashboard');
     }
 }

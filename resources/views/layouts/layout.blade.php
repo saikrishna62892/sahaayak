@@ -286,7 +286,7 @@
                                     </ul>
                                 </li>
                                 <li><a href="{{ url('team') }}">Team</a>
-                                    <ul class="dropdown">
+                                    <ul class="dropdown" style="max-width: 175px;">
                                         <li><a href="{{ url('team#counsellors') }}">Counsellors</a></li>
                                         <li><a href="{{ url('team#sgc') }}">SGC</a></li>
                                         <li><a href="{{ url('team#team') }}">Team</a></li>
@@ -378,14 +378,14 @@
                             @csrf
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
-                                        <input type="text" placeholder="Name" name="name"  autocomplete="off" >
+                                        <input type="text" placeholder="Name" name="name" required autocomplete="off" >
                                     </div>
                                     <div class="col-lg-6 col-md-6">
-                                        <input type="text" placeholder="Email" name="email" autocomplete="off" >
+                                        <input type="text" placeholder="Email" name="email" required autocomplete="off" >
                                     </div>
                                     <div class="col-lg-12 text-center">
-                                    <input type="text" placeholder="Comment" name="comment" autocomplete="off" >
-                                        <button type="submit" class="site-btn" onclick="alert('Your suggestion was recorded and we will act accordingly')">Submit</button>
+                                    <input type="text" placeholder="Comment" name="comment" required autocomplete="off" >
+                                        <button type="submit" class="site-btn" >Submit</button>
                                     </div>
                                 </div>
                             </form>
@@ -421,7 +421,7 @@
     <!-- ManyChat Plugin -->
     <script src="//widget.manychat.com/101206188315883.js" async="async"></script>
     <!-- Load Facebook SDK for JavaScript -->
-    <div id="fb-root"></div>
+    <!--<div id="fb-root"></div>-->
     <script>
         window.fbAsyncInit = function() {
           FB.init({

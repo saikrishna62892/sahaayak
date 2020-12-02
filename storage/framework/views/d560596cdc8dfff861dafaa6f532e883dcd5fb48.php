@@ -205,6 +205,9 @@
                             <a data-toggle="tab" href="#shared_gallery" role="tab">Gallery</a>
                         </li>
                         <li>
+                            <a data-toggle="tab" href="#comments" role="tab">Comments</a>
+                        </li>
+                        <li>
                             <a data-toggle="tab" href="#suggestions" role="tab">Suggestions</a>
                         </li>
                     </ul>
@@ -257,6 +260,13 @@
                     <!-- shared_playlists form end -->
 
                     <!-- shared_talks form begin -->
+                    <div class="tab-pane fade" id="comments" role="tabpanel">
+                        <h4 align="center">User Comments</h4>
+                        <?php echo $__env->make('admin.show_comments', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                    </div>
+                    <!-- shared_talks form end --> 
+
+                    <!-- shared_talks form begin -->
                     <div class="tab-pane fade" id="shared_gallery" role="tabpanel">
                         <h4 align="center">Shared Gallery</h4>
                         <?php echo $__env->make('gallery.shared_gallery', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -265,7 +275,7 @@
 
                      <!-- assessments form begin -->
                     <div class="tab-pane fade" id="suggestions" role="tabpanel">
-                        <h4 align="center">All Assessments</h4>
+                        <h4 align="center">Suggestions</h4>
                         <?php echo $__env->make('suggestions', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     <!-- assessments form end -->
                     </div>

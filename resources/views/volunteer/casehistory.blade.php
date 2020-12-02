@@ -56,6 +56,7 @@ table {
                     <th>Counsellor Name</th>
                     <th>About</th>
                     <th>Remarks from Counsellor</th>
+                    <th>Assessments Details</th>
                 </tr>
                 @forelse($user->appointments as $key => $appointment)
                     @if(!is_null($appointment))
@@ -85,7 +86,18 @@ table {
                         <?php $counsellor_details = App\Counsellor::find($appointment->counsellor_name); ?>
                         <td>{{ $counsellor_details->name }}</td>
                         <td>{{ $appointment->message }}</td>
-                        <td>{{ $appointment->casehistory->remarks }}</td>
+                        <?php $casehistory = App\Casehistory::where('appointment_id',$appointment->id)->first(); ?>
+                        @if(!is_null($casehistory))
+                            <td align="justify" style="padding: 5px 10px 5px 10px;">{{ $casehistory->remarks }}</td>
+                            @if($casehistory->assessment_name != "--NA--")
+                            <td align="justify" style="padding: 5px 10px 5px 10px;">{{ $appointment->assessment_name }} -- {{ $appointment->assessment_marks }}</td>
+                            @else
+                            <td align="center">-- NA --</td>
+                            @endif
+                        @else
+                        <td>-- Not Yet Made --</td>
+                        <td>-- NA --</td>
+                        @endif
                     </tr>
                     @endif
                 @empty

@@ -60,6 +60,7 @@ class RegisterController extends Controller
             'rollnum' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'phone' => ['required', 'regex:/[0-9]{10}/'],
             //'is_Volunteer' =>['required'],
             'terms'=>['required'],
             'g-captcha-response' => new Captcha()
@@ -76,8 +77,9 @@ class RegisterController extends Controller
     {
         $user=User::create([
             'name' => $data['name'],
-            'rollnum' => $data['rollnum'],
+            'rollnum' => strtoupper($data['rollnum']),
             'email' => $data['email'],
+            'phone' => $data['phone'],
             'password' => Hash::make($data['password']),
             //'is_Volunteer' => $data['is_Volunteer']
         ]);

@@ -28,8 +28,8 @@
 
 
             <div class="form-group">
-                <label for="formGroupExampleInput">Please enter event title</label>
-                <input type="text" class="form-control" name="title" id="formGroupExampleInput" placeholder="Your title here..."  value="<?php echo e(old('title')); ?>" autocomplete="off" >
+                <label for="formGroupExampleInput" >Please enter event title</label>
+                <input type="text" class="form-control" name="title" id="formGroupExampleInput" placeholder="Your title here..."  value="<?php echo e(old('title')); ?>" required autocomplete="off" >
                 <?php echo csrf_field(); ?>
                 <?php $__errorArgs = ['title'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -44,7 +44,7 @@ unset($__errorArgs, $__bag); ?>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Please enter event content</label>
-                <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="10" placeholder="Your content here..."  autocomplete="off" ><?php echo e(old('content')); ?></textarea>
+                <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="10" placeholder="Your content here..." required autocomplete="off" ><?php echo e(old('content')); ?></textarea>
                 <?php $__errorArgs = ['content'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -86,8 +86,8 @@ unset($__errorArgs, $__bag); ?>
 
 
             &emsp;
-            <center><button type="submit" name="action" value="add_to_diary" class="btn btn-primary" style="background-color: #5768ad;" onclick="alert('Event added Succesfully')">Add to diary</button><br><br>
-            <button type="submit" name="action" value="add_to_story" class="btn btn-primary" style="background-color: #5768ad;" onclick="alert('Posted Succesfully')">Add to story</button></center>
+            <center><button type="submit" name="action" value="add_to_diary" class="btn btn-primary" style="background-color: #5768ad;" >Add to diary</button><br><br>
+            <button type="submit" name="action" value="add_to_story" class="btn btn-primary" style="background-color: #5768ad;" >Add to story</button></center>
         </form>
     </div>
 </div>

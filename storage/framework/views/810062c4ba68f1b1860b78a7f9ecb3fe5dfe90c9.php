@@ -4,7 +4,7 @@
     	<?php echo csrf_field(); ?>
       <div class="form-group">
         <label for="formGroupExampleInput">Enter Dialy Quote</label>
-        <input type="text" class="form-control" name="quote" id="formGroupExampleInput" placeholder="Your dialy quote here...">
+        <input type="text" class="form-control" name="quote" id="formGroupExampleInput" required placeholder="Your dialy quote here...">
         <?php $__errorArgs = ['author'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -17,7 +17,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
      	</div>
       &emsp;
-          <center><button type="submit" class="btn btn-primary" style="background-color: #5768ad;" onclick="alert('Posted Succesfully')">Post Quote</button></center>
+          <center><button type="submit" class="btn btn-primary" style="background-color: #5768ad;" >Post Quote</button></center>
     </form>
   </div>
 </div><?php /**PATH C:\Users\G.SAI KRISHNA\Desktop\Sahayak\sahaayak\resources\views/quotes/dialyquote.blade.php ENDPATH**/ ?>

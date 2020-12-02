@@ -48,7 +48,7 @@ class InspiremeNotification extends Notification
                     ->subject('A quote by '.$this->inspireme)
                     ->line('Hey checkout the latest quote and keep yourself motivated')
                     ->action('Quote', url('/inspire_me'))
-                    ->line('Thank you for using our application!');
+                    ->line('Thank you for using Sahaayak!');
     }
 
     /**

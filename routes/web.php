@@ -30,11 +30,12 @@ Route::get('/',function(){
 
 Route::get('about', function () {
     $user_count=App\User::all()->count();
-    $volunteers_count=App\Volunteer::all()->count();
+    //$volunteers_count=App\Volunteer::all()->count();
+    $counsellors_count=App\Counsellor::all()->count();
     $appointments_count=App\Appointment::all()->count();
     $stories_count=App\Story::all()->count();
     $gallery=App\Gallery::all();
-    return view('about',compact('user_count','volunteers_count','appointments_count','stories_count','gallery'));
+    return view('about',compact('user_count','counsellors_count','appointments_count','stories_count','gallery'));
 });
 
 Route::get('expert_story', function () {
@@ -72,6 +73,7 @@ Route::get('admin/deletePlaylists/{playlist}/playlistdeleted','PlaylistControlle
 Route::get('user/home/deleteStory/{story}/storydeleted','StoryController@deletestory');
 Route::get('user/home/deleteEvent/{event}/eventdeleted','diary_controller@deleteevent');
 Route::get('admin/deleteGallery/{gallery}/gallerydeleted','GalleryController@deletegallery');
+Route::get('admin/deleteComment/{comment}/commentdeleted','CommentController@deletecomment');
 
 
 
@@ -80,6 +82,7 @@ Route::post('/appointment_controller','appointment_controller@save');
 
 Route::get('counsellor/appointment/{appointment}/acceptAppointment','appointment_controller@appointmentAccepted');
 Route::get('counsellor/appointment/{appointment}/rejectAppointment','appointment_controller@appointmentRejected');
+Route::get('counsellor/appointment/{appointment}/{which_form}/rescheduleAppointment','appointment_controller@appointmentRescheduled');
 Route::post('counsellor/rescheduleAppointment','appointment_controller@appointmentEdit');
 //Route::post('/volunteer/casehistory/addCasehistory','VolunteerController@addCasehistory')->name('addCaseHistory');
 
@@ -175,6 +178,8 @@ Route::post('/admin/report/{appointment}/generateReport','appointment_controller
 
 Route::get('/counsellor/appointment/{user}/getCaseHistory','CounsellorController@getCaseHistory');
 Route::get('/counsellor/appointment/downloadReport','CounsellorController@downloadReport');
+Route::get('/counsellor/appointment/{appointment}/mailToFA','CounsellorController@mailToFA');
+Route::post('/counsellor/mailToFA','CounsellorController@mailToFAForm');
 
 //learn section routes
 Route::get('home/learn/{learn}/{learnID}','LearnController@show');

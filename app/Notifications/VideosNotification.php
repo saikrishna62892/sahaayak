@@ -48,7 +48,7 @@ class VideosNotification extends Notification
                     ->subject('A video on '.$this->video)
                     ->line('A new video has been added for you to check it out.')
                     ->action('Watch Video', url('/videos'))
-                    ->line('Thank you for using our application!');
+                    ->line('Thank you for using Sahaayak!');
     }
 
     /**

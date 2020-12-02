@@ -5,13 +5,6 @@
     <?php $__env->startSection('content'); ?>
     <div class="limiter">
         <div class="container-login100">
-            <div class="flash-message" style="display: flex;justify-content: center;align-items: center;">
-              <?php $__currentLoopData = ['danger', 'warning', 'success', 'info']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $msg): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <?php if(Session::has('alert-' . $msg)): ?>
-                    <center><p class="alert alert-<?php echo e($msg); ?>"><?php echo e(Session::get('alert-' . $msg)); ?></p></center>
-                <?php endif; ?>
-              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-            </div>
             <div class="wrap-login100 p-l-50 p-r-50 p-t-45 p-b-30">
                 <a style="color: #5768ad;float: right;" href="<?php echo e(url('/')); ?>" class="primary-btn">Home</a>
                 <form class="login100-form validate-form" method="POST" action="<?php echo e(route('register')); ?>" >
@@ -77,6 +70,26 @@ unset($__errorArgs, $__bag); ?>
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <span class="lnr lnr-envelope"></span>
+                        </span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input m-b-16" data-validate = "Valid phone number is required: ex@nitc.ac.in">
+                        <input class="input100" type="tel" id="phone" name="phone" value="<?php echo e(old('phone')); ?>" placeholder="Phone" autocomplete="phone" required>
+                        <?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                            <span class="invalid-feedback" role="alert">
+                                <strong><?php echo e($message); ?></strong>
+                            </span>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <span class="lnr lnr-phone"></span>
                         </span>
                     </div>
 

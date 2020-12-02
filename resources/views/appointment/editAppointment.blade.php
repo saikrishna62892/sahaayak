@@ -1,27 +1,42 @@
+@extends('layouts.dashboard')
+
+
+@section('name')
+    Edit details
+@endsection
+
+@section('content')
 <div class="card shadow p-4 mb-5 bg-white rounded">
 
-    <h4 align="center" id="demo1"></h4>
+    <h4 align="center">Reschedule Appointment for {{ $appointment->name }}</h4>
     <div class="card-body">
        <form action="/counsellor/rescheduleAppointment" method="post">
         @csrf
             <div class="row">
+                <div class="form-group  col-lg-4" style="display: none;">
+                    <label for="appointment_id">Which Form</label>
+                    <input type="text" class="form-control" name="which_form" id="which_form" aria-describedby="which_formHelp" value="{{ $which_form }}" autocomplete="off" readonly>
+                    @error('appointment_id')
+                    <small class="text-danger">{{$message}}</small>
+                    @enderror
+                </div>
                 <div class="form-group  col-lg-4">
                     <label for="appointment_id">Appointment ID</label>
-                    <input type="text" class="form-control" name="appointment_id" id="appointment_id" aria-describedby="appointment_idHelp" value="" autocomplete="off" readonly>
+                    <input type="text" class="form-control" name="appointment_id" id="appointment_id" aria-describedby="appointment_idHelp" value="{{ $appointment->id }}" autocomplete="off" readonly>
                     @error('appointment_id')
                     <small class="text-danger">{{$message}}</small>
                     @enderror
                 </div>
                 <div class="form-group  col-lg-4">
                     <label for="date">Date</label>
-                    <input type="text" class="form-control" id="date" name="date" aria-describedby="dateHelp" placeholder="Choose Your Date" onfocus="(this.type='date')"autocomplete="off" >
+                    <input type="text" class="form-control" id="date" name="date" aria-describedby="dateHelp" placeholder="Choose Your Date" onfocus="(this.type='date')"autocomplete="off" required>
                     @error('date')
                     <small class="text-danger">{{$message}}</small>
                     @enderror
                 </div>
                 <div class="form-group  col-lg-4">
-                    <label for="slot">Date</label>
-                    <select  name="slot" class="form-control" aria-describedby="slotHelp">
+                    <label for="slot">Slot</label>
+                    <select  name="slot" class="form-control" aria-describedby="slotHelp" required>
                         <option value="" selected disabled hidden>Choose Your Slot</option>
                         <option value="1">8AM - 9AM</option>
                         <option value="2">9AM - 10AM</option>
@@ -39,3 +54,4 @@
        </form>
     </div>
 </div>
+@endsection

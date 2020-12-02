@@ -11,6 +11,8 @@ use DB;
 use PDF;
 use App\Notifications\AppointmentReceivedNotification;
 use App\Notifications\AppointmentAcceptedNotification;
+use App\Notifications\AppointmentRejectedNotification;
+use App\Notifications\AppointmentRescheduledNotification;
 use App\Notifications\AppointmentReportNotification;
 use App\User;
 use App\Counsellor;
@@ -51,7 +53,7 @@ class appointment_controller extends Controller
          ]);
         
         $appointment->name=$req->name;
-        $appointment->college_id=$req->college_id;
+        $appointment->college_id=strtoupper($req->college_id);
         $appointment->department=$req->department;
         $appointment->gender=$req->gender;
         $appointment->appointment_type=$req->appointment_type;
@@ -63,6 +65,8 @@ class appointment_controller extends Controller
         $appointment->timestamps=now();
         $appointment->user_id=$user->id;
         $appointment->counsellor_id=$req->counsellor_name;
+        $appointment->assessment_name = $req->assessment_name;
+        $appointment->assessment_marks = $req->assessment_marks;
         $appointment->save();
         $this->sendAppointmentReceivedNotif($appointment->name);
 
@@ -81,12 +85,12 @@ class appointment_controller extends Controller
         else{
             return redirect()->back()->with('message','Sorry,User already alloted');
         }*/
-        //$user=User::find($appointment->user_id);
 
+        $user=User::find($appointment->user_id);
         $startslots = ['00','08','09','10','11','12','13','14','15','16'];
         $endslots =   ['00','09','10','11','12','13','14','15','16','17'];
-        //$d1=(string)$appointment->date.'T'.$startslots[$appointment->slot].':00:00';
-        //$d2=(string)$appointment->date.'T'.$endslots[$appointment->slot].':00:00';
+        $d1=$appointment->date.'T'.$startslots[$appointment->slot].':00:00+05:30';
+        $d2=$appointment->date.'T'.$endslots[$appointment->slot].':00:00+05:30';
         //dd($d1.'     '.$d2);
  
 
@@ -95,78 +99,126 @@ class appointment_controller extends Controller
 
         
         //2018-08-16T14:30:00-00:00
-        //$event = new Event;
 
-        $event=Event::create(array(
-  "summary" => "Sahaayak Appointment", //'Google Calendar summary',
-  "location" => "India", //'USA',
-  "description" => "Appointment has been scheduled successfully and Please be on time.bye",
-  
-  'start' => array(
-    'dateTime' => "2020-11-02T14:30:00+05:30",
-    'timeZone' => 'Asia/Kolkata',
-  ),
-  'end' => array(
-    'dateTime' => "2020-11-02T15:30:00+05:30",
-    'timeZone' => 'Asia/Kolkata',
-  ),
-  'attendees' => array(
-    array('email' => 'dileepkumar.nandi9441@gmail.com','resource' => true),
-    array('email' => 'saikrishna_m190241cs@nitc.ac.in','resource' => true),
-  ),
-  'reminders' => array(
-    'useDefault' => FALSE,
-    'overrides' => array(
-      array('method' => 'popup', 'minutes' => 30),
-    ),
-  ),
-
-"conferenceData" => array(
-        "createRequest" => array(
-          "conferenceSolutionKey" => array(
-            "type" => "hangoutsMeet"
+        $event = new Event;
+        $event->create(array(
+          'summary' => 'Sahaayak Appointment', //'Google Calendar summary',
+          'location' => 'India', //'USA',
+          'description' => 'Appointment has been scheduled successfully and Please be on time.', //'Book Room',
+          'start' => array(
+            'dateTime' => $d1,//'2018-08-16T14:30:00-00:00',
+            'timeZone' => 'Asia/Kolkata',
           ),
-          "requestId" => "1234"
-        ),
-      ),
+          'end' => array(
+            'dateTime' => $d2,//'2018-08-16T14:30:00-01:00',
+            'timeZone' => 'Asia/Kolkata',
+          ),
+          'attendees' => array(
+            array('email' => $user->email,'resource' => true),
+            array('email' => Auth::user()->email,'resource' => true),
+          ),
+          'reminders' => array(
+            'useDefault' => FALSE,
+            'overrides' => array(
+              array('method' => 'popup', 'minutes' => 15),
+            ),
+          ),
+        'conferenceData' => array(
+                'createRequest' => array(
+                  'conferenceSolutionKey' => array(
+                    'type' => 'hangoutsMeet'
+                  ),
+                  'requestId' => '123'
+                ),
+              ),
 
 
-),'dileepkumar_m190437cs@nitc.ac.in',['conferenceDataVersion' => 1]);
-        
-        //$event->addAttendee('saikrishna_m190241cs@nitc.ac.in');
-//$event->name="app";
-
-        //$event->startDateTime = Carbon::now();
-        //dd("hi");
-        //$event->endDateTime = Carbon::now()->addHour();
-        $event->addAttendee(['email'=>'dileepkumar.nandi9441@gmail.com']);
-        //$event->save(); 
-       //$appointment->update(['accept' => 1]);
+        ),'sahayak@nitc.ac.in',['conferenceDataVersion' => 1]);
+        $appointment->update(['accept' => 1]);
+        $this->sendAppointmentAcceptedNotif($appointment,$appointment->user_id);
         Session::flash('alert-success', 'User Appointment accepted'); 
         return redirect()->back();
     }
     public function appointmentRejected(Appointment $appointment){
 
         $appointment->update(['is_Rejected' => 1]);
-
+        $this->sendAppointmentRejectedNotif($appointment->name,$appointment->user_id);
         Session::flash('alert-info', 'User Appointment Rejected'); 
         return redirect()->back();
     }
-    public function appointmentEdit(Request $req){
+    public function appointmentRescheduled(Appointment $appointment, int $which_form){
 
+
+        Session::flash('alert-info', 'Reschedule Your Appointment now !'); 
+        return view('appointment.editAppointment',compact('appointment','which_form'));
+    }
+    public function appointmentEdit(Request $req){
         $data = request()->validate([
          'date' => 'required',
          'slot' => 'required'
-         ]);
+        ]);
         $appointment = Appointment::find($req->appointment_id);
         $appointment->update(['accept' => 1]);
         $appointment->update(['is_Rescheduled' => 1]);
         $appointment->update(['date' => $req->date]);
         $appointment->update(['slot' => $req->slot]);
-        //event create @dilep
-        
+        $user=User::find($appointment->user_id);
+        $startslots = ['00','08','09','10','11','12','13','14','15','16'];
+        $endslots =   ['00','09','10','11','12','13','14','15','16','17'];
+        $d1=$appointment->date.'T'.$startslots[$appointment->slot].':00:00+05:30';
+        $d2=$appointment->date.'T'.$endslots[$appointment->slot].':00:00+05:30';
+
+        if($req->which_form == 1){
+            $event = new Event;
+            $event->create(array(
+              'summary' => 'Sahaayak Appointment', //'Google Calendar summary',
+              'location' => 'India', //'USA',
+              'description' => 'Appointment has been rescheduled as per counsellor convenience and Please be on time.', //'Book Room',
+              'start' => array(
+                'dateTime' => $d1,//'2018-08-16T14:30:00-00:00',
+                'timeZone' => 'Asia/Kolkata',
+              ),
+              'end' => array(
+                'dateTime' => $d2,//'2018-08-16T14:30:00-01:00',
+                'timeZone' => 'Asia/Kolkata',
+              ),
+              'attendees' => array(
+                array('email' => $user->email,'resource' => true),
+                array('email' => Auth::user()->email,'resource' => true),
+              ),
+              'reminders' => array(
+                'useDefault' => FALSE,
+                'overrides' => array(
+                  array('method' => 'popup', 'minutes' => 15),
+                ),
+              ),
+            'conferenceData' => array(
+                    'createRequest' => array(
+                      'conferenceSolutionKey' => array(
+                        'type' => 'hangoutsMeet'
+                      ),
+                      'requestId' => '123'
+                    ),
+                  ),
+
+
+            ),'sahayak@nitc.ac.in',['conferenceDataVersion' => 1]);
+        }        
+        elseif ($req->which_form == 2) {
+            /*// First retrieve the event from the API.
+            $event=new Event;
+            $cal = $event->getGoogleCalendar("dileepkumar_m190437cs@nitc.ac.in");
+            dd($cal);
+            
+            $events = $service->events->get('primary', 'eventId');
+
+            $event->setSummary('Appointment at Somewhere');
+
+            $updatedEvent = $service->events->update('primary', $event->getId(), $event);*/
+        }
+        $this->sendAppointmentRescheduledNotif($appointment,$appointment->user_id);
         Session::flash('alert-info', 'User Appointment Accepted & Rescheduled'); 
-        return redirect()->back();
+        return redirect()->route('counsellorDashboard');
     }
 
 

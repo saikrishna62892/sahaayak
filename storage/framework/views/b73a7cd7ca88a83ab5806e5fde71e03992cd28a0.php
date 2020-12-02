@@ -139,28 +139,28 @@
         <div class="container-fluid">
             <div class="services__list">
                 <div class="row">
-                    <div class="col-xl-3 col-md-4 col-sm-6">
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
                         <div class="services__item">
                             <img src="img/services/services-1.png" alt="">
                             <h5>You're not alone</h5>
                             <p>Talk to us i.e. make an appointment section which connects users to socially disciplined counsellors.</p>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6">
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
                         <div class="services__item">
                             <img src="img/services/services-2.png" alt="">
                             <h5>Information is wealth</h5>
                             <p>Information,news,articles,stories & expert talks about their various experiences.</p>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6">
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
                         <div class="services__item">
                             <img src="img/services/services-3.png" alt="">
                             <h5>Personal issues services</h5>
                             <p>Skill training, Academic support, Mentorship program, Workshops and presentations to classes and groups.</p>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6">
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
                         <div class="services__item">
                             <img src="img/services/services-5.png" alt="">
                             <h5>Psycological services</h5>
@@ -247,11 +247,24 @@
                             <option value="9">4PM - 5PM</option>
                           </select>
                         </div>
+                        <div class="form-group  col-lg-6">
+                            <?php $questionnaires = App\Questionnaire::all(); ?>
+                            <select  class="form-control" name="assessment_name">
+                                <option value="" selected disabled hidden>Choose Assessment(If Taken)</option>
+                                <?php $__currentLoopData = $questionnaires; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $questionnaire): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <option value="<?php echo e($questionnaire->questionnaireTitle); ?>"><?php echo e($questionnaire->questionnaireTitle); ?></option>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                
+                            </select>
+                        </div>
+                        <div class="form-group  col-lg-6">
+                            <input type="text" name="assessment_marks" id="assessment_marks" placeholder="Enter Assessment Marks(If Taken)" autocomplete="off">
+                        </div>
                         <div class="col-lg-12 text-center">
                             <textarea placeholder="What do you want to talk about in 100 words" name="message" autocomplete="off" ></textarea>
                         <button type="submit">Submit</button>
                         </div>
-                    </div>
+                    </div> 
                 </form>
             </div>
         </div>

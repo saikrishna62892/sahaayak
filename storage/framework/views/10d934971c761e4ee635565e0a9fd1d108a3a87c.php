@@ -38,9 +38,9 @@
 			<div class="col-sm-3">
 			    <div class="card shadow p-4 mb-5 bg-white rounded">
 			        <div class="card-body">
-				        <h5 class="card-title" align="center">Reports</h5>
-				        <p class="card-text" align="center">#Pending reports</p>
-				        <h1 align="center"><?php echo e($pending_reports); ?></h1>
+				        <h5 class="card-title" align="center">Case Histories</h5>
+				        <p class="card-text" align="center">#Case histories</p>
+				        <h1 align="center"><?php echo e($casehistory_count); ?></h1>
 				        
 			        </div>
 			    </div>
@@ -87,15 +87,16 @@
                                     <tr>
                                         <th scope="col">S.No</th>
                                         <th scope="col">Name</th>
-                                        <th scope="col" colspan="2">College ID</th>
+                                        <th scope="col">College ID</th>
                                         <th scope="col">Gender</th>
-                                        <th scope="col" colspan="2">Email</th>
-                                        <th scope="col" colspan="2">Department</th>
-                                        <th scope="col" colspan="2">Faculty Advisor</th>
-                                        <th scope="col" colspan="2">Appointment Type</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Phone</th>
+                                        <th scope="col">Department</th>
+                                        <th scope="col">Faculty Advisor</th>
+                                        <th scope="col">Appointment Type</th>
                                         <th scope="col" >Date</th>
-                                        <th scope="col" colspan="2">Slot</th>
-                                        <th scope="col" colspan="3">Message</th>
+                                        <th scope="col">Slot</th>
+                                        <th scope="col">Message</th>
                                         <th scope="col" colspan="3">Options</th>
                                     </tr>
                                 </thead>
@@ -103,42 +104,48 @@
                                     <?php $count=1 ?>
                                     <?php $__empty_1 = true; $__currentLoopData = $appointments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
                                     	<?php $user_email=App\User::find($item->user_id)->email; ?>
+                                    	<?php $user_phone=App\User::find($item->user_id)->phone; ?>
                                     <tr>
                                         <td scope="row"><?php echo e($count++); ?></td>
                                         <td><?php echo e($item->name); ?></td>
-                                        <td colspan="2"><?php echo e($item->college_id); ?></td>
+                                        <td><?php echo e($item->college_id); ?></td>
                                         <td><?php echo e($item->gender); ?></td>
-									    <td colspan="2"><?php echo e($user_email); ?></td>
-									    <td colspan="2"><?php echo e($item->department); ?></td>
-									    <td colspan="2"><?php echo e($item->faculty_advisor); ?></td>
-									    <td colspan="2"><?php echo e($item->appointment_type); ?></td>
+									    <td><?php echo e($user_email); ?></td>
+									    <td><?php echo e($user_phone); ?></td>
+									    <td><?php echo e($item->department); ?></td>
+									    <td><?php echo e($item->faculty_advisor); ?></td>
+									    <td><?php echo e($item->appointment_type); ?></td>
 									    <td><?php echo e($item->date); ?></td>
 									    <?php if($item->slot==1): ?>
-									    	<td colspan="2">8AM - 9AM</td>
+									    	<td>8AM - 9AM</td>
 									    <?php elseif($item->slot==2): ?>
-									    	<td colspan="2">9AM - 10AM</td>
+									    	<td>9AM - 10AM</td>
 									    <?php elseif($item->slot==3): ?>
-									    	<td colspan="2">10AM - 11AM</td>
+									    	<td>10AM - 11AM</td>
 									    <?php elseif($item->slot==4): ?>
-									    	<td colspan="2">11AM - 12PM</td>
+									    	<td>11AM - 12PM</td>
 									    <?php elseif($item->slot==5): ?>
-									    	<td colspan="2">12PM - 1PM</td>
+									    	<td>12PM - 1PM</td>
 									    <?php elseif($item->slot==6): ?>
-									    	<td colspan="2">1PM - 2PM</td>
+									    	<td>1PM - 2PM</td>
 									    <?php elseif($item->slot==7): ?>
-									    	<td colspan="2">2PM - 3PM</td>
+									    	<td>2PM - 3PM</td>
 									    <?php elseif($item->slot==8): ?>
-									    	<td colspan="2">3PM - 4PM</td>
+									    	<td>3PM - 4PM</td>
 									    <?php elseif($item->slot==9): ?>
-									    	<td colspan="2">4PM - 5PM</td>
+									    	<td>4PM - 5PM</td>
 									    <?php else: ?>
 									    	<td> ------ </td>
 									    <?php endif; ?>
-									    <td colspan="3"><?php echo e($item->message); ?></td>
-									    <td>
-									    	<a href="/counsellor/appointment/<?php echo e($item->id); ?>/acceptAppointment" style="color: #5768ad;">Accept?</a>&emsp;
-									    	<a href="/counsellor/appointment/<?php echo e($item->id); ?>/rejectAppointment" style="color: #5768ad;">Reject?</a>&emsp;
-									    	<a id="<?php echo e($item->id); ?>#<?php echo e($item->name); ?>" href="#reschedule" onClick="reply_click(this.id,)" data-toggle="tab" role="tab" style="color: #5768ad;">Reschedule!</a>
+									    <td><?php echo e($item->message); ?></td>
+									    <td align="center">
+									    	<a class="btn btn-success" href="/counsellor/appointment/<?php echo e($item->id); ?>/acceptAppointment">Accept Appointment?</a>&emsp;
+									    </td>
+									    <td align="center">
+									    	<a class="btn btn-danger" href="/counsellor/appointment/<?php echo e($item->id); ?>/rejectAppointment">Reject Appointment?</a>&emsp;
+									    </td>
+									    <td align="center">
+									    	<a class="btn btn-warning" href="/counsellor/appointment/<?php echo e($item->id); ?>/1/rescheduleAppointment" style="color: #fff;">Reschedule & Accept!</a>
 									    </td>
                                     </tr>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
@@ -158,15 +165,16 @@
 	                                    <tr>
 	                                        <th scope="col">S.No</th>
 	                                        <th scope="col">Name</th>
-	                                        <th scope="col" colspan="2">College ID</th>
+	                                        <th scope="col">College ID</th>
 	                                        <th scope="col">Gender</th>
-	                                        <th scope="col" colspan="2">Email</th>
-	                                        <th scope="col" colspan="2">Department</th>
-	                                        <th scope="col" colspan="2">Faculty Advisor</th>
-	                                        <th scope="col" colspan="2">Appointment Type</th>
+	                                        <th scope="col">Email</th>
+	                                        <th scope="col">Phone</th>
+	                                        <th scope="col">Department</th>
+	                                        <th scope="col">Faculty Advisor</th>
+	                                        <th scope="col">Appointment Type</th>
 	                                        <th scope="col" >Date</th>
-	                                        <th scope="col" colspan="2">Slot</th>
-	                                        <th scope="col" colspan="3">Message</th>
+	                                        <th scope="col">Slot</th>
+	                                        <th scope="col">Message</th>
 	                                        <th scope="col" colspan="3">Options</th>
 	                                    </tr>
 	                                </thead>
@@ -175,38 +183,40 @@
 
 	                                     <?php $__empty_1 = true; $__currentLoopData = $completedappointments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
 	                                     <?php $user_email=App\User::find($item->user_id)->email; ?>
+	                                     <?php $user_phone=App\User::find($item->user_id)->phone; ?>
 	                                    <tr>
 	                                        <td scope="row"><?php echo e($count++); ?></td>
 	                                        <td><?php echo e($item->name); ?></td>
-	                                        <td colspan="2"><?php echo e($item->college_id); ?></td>
+	                                        <td><?php echo e($item->college_id); ?></td>
 	                                        <td><?php echo e($item->gender); ?></td>
-										    <td colspan="2"><?php echo e($user_email); ?></td>
-										    <td colspan="2"><?php echo e($item->department); ?></td>
-										    <td colspan="2"><?php echo e($item->faculty_advisor); ?></td>
-										    <td colspan="2"><?php echo e($item->appointment_type); ?></td>
+										    <td><?php echo e($user_email); ?></td>
+										    <td><?php echo e($user_phone); ?></td>
+										    <td><?php echo e($item->department); ?></td>
+										    <td><?php echo e($item->faculty_advisor); ?></td>
+										    <td><?php echo e($item->appointment_type); ?></td>
 										    <td ><?php echo e($item->date); ?></td>
 										    <?php if($item->slot==1): ?>
-										    	<td colspan="2">8AM - 9AM</td>
+										    	<td>8AM - 9AM</td>
 										    <?php elseif($item->slot==2): ?>
-										    	<td colspan="2">9AM - 10AM</td>
+										    	<td>9AM - 10AM</td>
 										    <?php elseif($item->slot==3): ?>
-										    	<td colspan="2">10AM - 11AM</td>
+										    	<td>10AM - 11AM</td>
 										    <?php elseif($item->slot==4): ?>
-										    	<td colspan="2">11AM - 12PM</td>
+										    	<td>11AM - 12PM</td>
 										    <?php elseif($item->slot==5): ?>
-										    	<td colspan="2">12PM - 1PM</td>
+										    	<td>12PM - 1PM</td>
 										    <?php elseif($item->slot==6): ?>
-										    	<td colspan="2">1PM - 2PM</td>
+										    	<td>1PM - 2PM</td>
 										    <?php elseif($item->slot==7): ?>
-										    	<td colspan="2">2PM - 3PM</td>
+										    	<td>2PM - 3PM</td>
 										    <?php elseif($item->slot==8): ?>
-										    	<td colspan="2">3PM - 4PM</td>
+										    	<td>3PM - 4PM</td>
 										    <?php elseif($item->slot==9): ?>
-										    	<td colspan="2">4PM - 5PM</td>
+										    	<td>4PM - 5PM</td>
 										    <?php else: ?>
 										    	<td> ------ </td>
 										    <?php endif; ?>
-										    <td colspan="3"><?php echo e($item->message); ?></td>
+										    <td><?php echo e($item->message); ?></td>
 										    <?php
 										    	$endslots =   ['00','09','10','11','12','13','14','15','16','17'];
         										$dtB = Carbon\Carbon::parse($item->date.' '.$endslots[$item->slot].':00:00');
@@ -219,6 +229,17 @@
 										    <?php endif; ?>
 
 										    <td><a target="_blank" href="/counsellor/appointment/<?php echo e($item->user_id); ?>/getCaseHistory" class="btn btn-primary" style="background-color: #5768ad;">Get <?php echo e($item->name); ?> Report</a></td>
+										    <?php if($dtA > $dtB): ?>
+										    <td><a class="btn btn-primary" href="/counsellor/appointment/<?php echo e($item->id); ?>/mailToFA" style="background-color: #5768ad;">Mail to Faculty Advisor</button></td>
+										    <?php else: ?>
+										    <td style="color: lightgrey;">Mailing to FA will availabe after session completion.</td>
+										    <?php endif; ?>
+										   	<!-- href="/counsellor/appointment/<?php echo e($item->id); ?>/rescheduleAppointment" -->
+										   	<!--<?php if($dtA < $dtB): ?>
+										    <td><a class="btn btn-primary" href="/counsellor/appointment/<?php echo e($item->id); ?>/2/rescheduleAppointment" style="background-color: #5768ad;">Reschedule <?php echo e($item->name); ?> Appointment!</a></td>
+										    <?php else: ?>
+										    <td style="color: lightgrey;">Can't Reschedule Now</td>
+										    <?php endif; ?>-->
 	                                    </tr>
 	                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
 	                                    <h5>No Reports to make..</h5>
@@ -242,7 +263,7 @@
                                         <th scope="col">Email</th>
                                         <th scope="col">Phone</th>
                                         <th scope="col">Timings</th>
-                                        <th scope="col" colspan="3">Message</th>
+                                        <th scope="col">Message</th>
                                         <th scope="col">Options</th>
                                     </tr>
                                 </thead>
@@ -255,7 +276,7 @@
 									    <td><?php echo e($item->email); ?></td>
 									    <td><?php echo e($item->phone); ?></td>
 									    <td><?php echo e($item->timings); ?></td>
-									    <td colspan="3"><?php echo e($item->message); ?></td>
+									    <td><?php echo e($item->message); ?></td>
 									    <td><a href="/volunteer/appointment/<?php echo e($item->id); ?>/acceptAppointment" style="color: #5768ad;">Accept?</a></td>
                                     </tr>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
@@ -281,7 +302,7 @@
             				<?php echo csrf_field(); ?>
             				<div class="form-group">
 							    <label for="college_id">Please Enter College ID of the User</label>
-							    <input type="text" class="form-control" name="college_id" id="college_id" aria-describedby="college_idDHelp" placeholder="User CollegeID here.."  autocomplete="off" >
+							    <input type="text" class="form-control" name="college_id" id="college_id" aria-describedby="college_idDHelp" placeholder="User CollegeID here.." required autocomplete="off" >
 							    <?php $__errorArgs = ['college_id'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -305,12 +326,6 @@ unset($__errorArgs, $__bag); ?>
 		        </div>
 		    </div>
 		</div>
-
-		<!--rescheduleForm Begin-->
-        <div class="tab-pane fade" id="reschedule" role="tabpanel">
-        	<?php echo $__env->make('appointment.editAppointment', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-        </div>
-        <!--rescheduleForm end-->
 
 
 		<!--reportForm Begin-->

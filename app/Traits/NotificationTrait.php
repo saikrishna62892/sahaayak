@@ -11,6 +11,9 @@ use App\Notifications\TalksNotification;
 use App\Notifications\VideosNotification;
 use App\Notifications\AppointmentReceivedNotification;
 use App\Notifications\AppointmentAcceptedNotification;
+use App\Notifications\AppointmentRejectedNotification;
+use App\Notifications\AppointmentRescheduledNotification;
+use App\Notifications\MailToFANotification;
 use App\User;
 use App\Subscription;
 
@@ -47,8 +50,21 @@ trait NotificationTrait{
 		auth()->user()->notify(new AppointmentReceivedNotification($notif));
 	}
 	public function sendAppointmentAcceptedNotif($notif1,$notif2){
-		$user = User::find($notif1);
-		$user->notify(new AppointmentAcceptedNotification($notif2));
+		$user = User::find($notif2);
+		$user->notify(new AppointmentAcceptedNotification($notif1));
+	}
+	public function sendAppointmentRejectedNotif($notif1,$notif2){
+		$user = User::find($notif2);
+		$user->notify(new AppointmentRejectedNotification($notif1));
+	}
+	public function sendAppointmentRescheduledNotif($notif1,$notif2){
+		$user = User::find($notif2);
+		$user->notify(new AppointmentRescheduledNotification($notif1));
+	}
+	public function sendMailToFANotif($notif){
+		(new User)->forceFill([
+    	'email' => $notif->fa_email,
+		])->notify(new MailToFANotification($notif));
 	}
 
 	public function sendNotification($a){
