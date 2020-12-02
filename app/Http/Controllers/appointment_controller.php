@@ -85,6 +85,7 @@ class appointment_controller extends Controller
         else{
             return redirect()->back()->with('message','Sorry,User already alloted');
         }*/
+
         $user=User::find($appointment->user_id);
         $startslots = ['00','08','09','10','11','12','13','14','15','16'];
         $endslots =   ['00','09','10','11','12','13','14','15','16','17'];
@@ -93,8 +94,8 @@ class appointment_controller extends Controller
         //dd($d1.'     '.$d2);
  
 
-        //$d1 = Carbon::parse($appointment->date.'T'.$startslots[$appointment->slot].':00:00-00:00');
-        //$d2 = Carbon::parse($appointment->date.'T'.$startslots[$appointment->slot].':00:00-01:00');
+        //$d1 = $appointment->date.'T'.$startslots[$appointment->slot].':00:00+05:30';
+        //$d2 = $appointment->date.'T'.$endslots[$appointment->slot].':00:00+05:30';
 
         
         //2018-08-16T14:30:00-00:00
@@ -119,7 +120,7 @@ class appointment_controller extends Controller
           'reminders' => array(
             'useDefault' => FALSE,
             'overrides' => array(
-              array('method' => 'popup', 'minutes' => 10),
+              array('method' => 'popup', 'minutes' => 15),
             ),
           ),
         'conferenceData' => array(
@@ -132,7 +133,7 @@ class appointment_controller extends Controller
               ),
 
 
-        ),'dileepkumar_m190437cs@nitc.ac.in',['conferenceDataVersion' => 1]);
+        ),'sahayak@nitc.ac.in',['conferenceDataVersion' => 1]);
         $appointment->update(['accept' => 1]);
         $this->sendAppointmentAcceptedNotif($appointment,$appointment->user_id);
         Session::flash('alert-success', 'User Appointment accepted'); 
@@ -188,7 +189,7 @@ class appointment_controller extends Controller
               'reminders' => array(
                 'useDefault' => FALSE,
                 'overrides' => array(
-                  array('method' => 'popup', 'minutes' => 10),
+                  array('method' => 'popup', 'minutes' => 15),
                 ),
               ),
             'conferenceData' => array(
@@ -201,7 +202,7 @@ class appointment_controller extends Controller
                   ),
 
 
-            ),'dileepkumar_m190437cs@nitc.ac.in',['conferenceDataVersion' => 1]);
+            ),'sahayak@nitc.ac.in',['conferenceDataVersion' => 1]);
         }        
         elseif ($req->which_form == 2) {
             /*// First retrieve the event from the API.

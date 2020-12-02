@@ -12,7 +12,7 @@ if (php_sapi_name() != 'cli') {
 function getClient()
 {
     $client = new Google_Client();
-    $redirect_uri = 'https://www.youtube.com';
+    $redirect_uri = 'http://www.nitc.ac.in';
     $client->setRedirectUri($redirect_uri);
     //$client->setRedirectUri('https://www.youtube.com/');
     $client->setApplicationName('Google Calendar API PHP Quickstart');
