@@ -41,6 +41,7 @@ table {
 		                <tr>
 			                <th scope="col">S.No</th>
 			                <th scope="col">User Name</th>
+			                <th scope="col">Gender</th>
 			                <th scope="col">College ID</th>
 			                <th scope="col">Appointment Type</th>
 			                <th scope="col" >Date</th>
@@ -48,14 +49,27 @@ table {
 			                <th scope="col">Status</th>
 		                </tr>
 		                <?php $count=1; ?>
-		                <?php $monthly_appointments_count = 0; ?>
+		                <?php 
+		                	$monthly_appointments_count = 0;
+		                	$male_count = 0;
+		                	$female_count = 0;
+		                	$not_specified_count = 0; 
+		                ?>
 		                @forelse($appointments as $appointment)
 	                		@if($appointment->counsellor_id == $counsellor->id)
 	                			<?php $monthly_appointments_count++; ?>
+	                			@if($appointment->gender == "male")
+	                				<?php $male_count++; ?>
+	                			@elseif($appointment->gender == "female")
+	                				<?php $female_count++; ?>
+	                			@else
+	                				<?php $not_specified_count++; ?>
+	                			@endif
 		                		<tr>
 		                			<td align="center">{{ $count++ }}</td>
 		                			<?php $user=App\User::find($appointment->user_id); ?>
 		                			<td align="center">{{ $user->name }}</td>
+		                			<td align="center">{{ $appointment->gender }}</td>
 		                			<td align="center">{{ $user->rollnum }}</td>
 		                			<td align="center">{{ $appointment->appointment_type }}</td>
 		                			<td align="center">{{ $appointment->date }}</td>
@@ -78,13 +92,14 @@ table {
 		                		</tr>
 		                	@endif
 		                @empty
-		                	<td colspan="7" align="center">No Appointments made</td>
+		    
 		                @endforelse
 		                @if($monthly_appointments_count == 0)
-		                <td colspan="7" align="center">No Appointments made</td>
+		                <td colspan="8" align="center">No Appointments made</td>
 		                @endif
 		            </table>
 		        	<h5 align="center">Monthly Appointments Count : {{ $monthly_appointments_count }}</h5>
+		        	<h5 align="center">Male Count : {{ $male_count }} ; Female Count : {{ $female_count }} ; Not Specified Count : {{ $not_specified_count }}</h5>
                 @empty
                 	<h3 align="center" style="color: #5768ad;">No Counsellors Data Available</h3>  
                 @endforelse

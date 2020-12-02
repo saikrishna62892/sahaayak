@@ -1,7 +1,7 @@
 <style>
     .column {
   float: left;
-  width: 50%;
+  width: 33%;
 }
 
 /* Clear floats after the columns */
@@ -30,8 +30,32 @@ table {
                 <h1 align="center">NITC-Sahaayak</h1>
                 <h5 align="center">we share bcoz we care</h5>
             </div>
+            <p style="float:right;">Issued on: <?php echo e(Carbon\Carbon::now()->format('d-M-Y g:h:i A')); ?></p><br>
             <div class="card-body">
                 <h2 align="center">Sahaayak Overall Statistic Reports</h2>
+                <div class="row">
+                    <div class="column">
+                    <center>
+                        <h3 style="color: #5768ad;">Users Details</h3>
+                        <?php $user_count = App\User::where('is_admin',0)->where('is_Volunteer',0)->where('is_Counsellor',0)->count(); ?>
+                        <p>Users Count: <?php echo e($user_count); ?></p>
+                    </center>
+                    </div>
+                    <div class="column">
+                    <center>
+                        <h3 style="color: #5768ad;">Appointments Details</h3>
+                        <?php $appointments_count = App\Appointment::all()->count(); ?>
+                        <p>Appointments Count: <?php echo e($appointments_count); ?></p>
+                    </center>
+                    </div>
+                    <div class="column">
+                    <center>
+                        <h3 style="color: #5768ad;">Counsellors Details</h3>
+                        <?php $counsellors_count = App\Counsellor::all()->count(); ?>
+                        <p>Counsellors Count: <?php echo e($counsellors_count); ?></p>
+                    </center>
+                    </div>
+                </div>
                 <?php $startslots = ['00','08AM - 09AM','09AM - 10AM','10AM - 11AM','11AM - 12PM','12PM - 01PM','01PM - 02PM','02PM - 03PM','03PM - 04PM','04PM - 05PM']; ?>
                 <?php $sno=1; ?>
                 <?php $__empty_1 = true; $__currentLoopData = $counsellors; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $counsellor): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
@@ -41,6 +65,7 @@ table {
 		                <tr>
 			                <th scope="col">S.No</th>
 			                <th scope="col">User Name</th>
+			                <th scope="col">Gender</th>
 			                <th scope="col">College ID</th>
 			                <th scope="col">Appointment Type</th>
 			                <th scope="col" >Date</th>
@@ -48,14 +73,27 @@ table {
 			                <th scope="col">Status</th>
 		                </tr>
 		                <?php $count=1; ?>
-		                <?php $monthly_appointments_count = 0; ?>
+		                <?php 
+		                	$monthly_appointments_count = 0;
+		                	$male_count = 0;
+		                	$female_count = 0;
+		                	$not_specified_count = 0; 
+		                ?>
 		                <?php $__empty_2 = true; $__currentLoopData = $counsellor->appointments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $appointment): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_2 = false; ?>
 	                		<?php if($appointment->counsellor_id == $counsellor->id): ?>
 	                			<?php $monthly_appointments_count++; ?>
+	                			<?php if($appointment->gender == "male"): ?>
+	                				<?php $male_count++; ?>
+	                			<?php elseif($appointment->gender == "female"): ?>
+	                				<?php $female_count++; ?>
+	                			<?php else: ?>
+	                				<?php $not_specified_count++; ?>
+	                			<?php endif; ?>
 		                		<tr>
 		                			<td align="center"><?php echo e($count++); ?></td>
 		                			<?php $user=App\User::find($appointment->user_id); ?>
 		                			<td align="center"><?php echo e($user->name); ?></td>
+		                			<td align="center"><?php echo e($appointment->gender); ?></td>
 		                			<td align="center"><?php echo e($user->rollnum); ?></td>
 		                			<td align="center"><?php echo e($appointment->appointment_type); ?></td>
 		                			<td align="center"><?php echo e($appointment->date); ?></td>
@@ -78,10 +116,11 @@ table {
 		                		</tr>
 		                	<?php endif; ?>
 		                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_2): ?>
-		                	<td colspan="7" align="center">No Appointments made</td>
+		                	<td colspan="8" align="center">No Appointments made</td>
 		                <?php endif; ?>
 		            </table>
 		        	<h5 align="center">Appointments Count : <?php echo e($monthly_appointments_count); ?></h5>
+		        	<h5 align="center">Male Count : <?php echo e($male_count); ?> ; Female Count : <?php echo e($female_count); ?> ; Not Specified Count : <?php echo e($not_specified_count); ?></h5>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
                 	<h3 align="center" style="color: #5768ad;">No Counsellors Data Available</h3>  
                 <?php endif; ?>

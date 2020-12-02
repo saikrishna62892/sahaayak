@@ -18,7 +18,7 @@
 			        <h5 class="card-title" align="center">Users</h5>
 			        <h1 align="center"><?php echo e($users_count); ?></h1>
 			        <p class="card-text" align="center">Active Users in Sahaayak</p>
-			        <center><a href="#" class="btn btn-primary" onclick="alert('Currently disabled')" style="background-color: #5768ad;">See Analytics</a></center>
+			        <center><a href="/admin/getOverallReport" class="btn btn-primary" target="_blank" style="background-color: #5768ad;">See Analytics</a></center>
 		        </div>
 		    </div>
 		</div>
@@ -64,7 +64,7 @@
 			        <h5 class="card-title" align="center">Counsellors</h5>
 			        <h1 align="center"><?php echo e($counsellors_count); ?></h1>
 			        <p class="card-text" align="center">Active Counsellors in Sahaayak</p>
-			        <center><a href="#" onclick="alert('Currently disabled')" class="btn btn-primary" style="background-color: #5768ad;">See Analytics</a></center>
+			        <center><a href="/admin/getOverallReport" target="_blank" class="btn btn-primary" style="background-color: #5768ad;">See Analytics</a></center>
 		        </div>
 			</div>
 		</div>
