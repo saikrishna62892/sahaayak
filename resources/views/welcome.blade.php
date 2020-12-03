@@ -49,7 +49,7 @@
                                     <h2 style="color: #5768ad;">All is Well!</h2>
                                 @endif
                                 <a style="color: white;" href="javascript:void(0);" onclick="javascript:introJs().setOption('showProgress',true).start();"><u><span>Take a Tour</span></u></a>
-                                <a href="{{ url('about') }}" class="primary-btn">DISCOVER MORE</a>
+                                <a style="text-decoration: none" href="{{ url('about') }}" class="primary-btn">DISCOVER MORE</a>
                             </div>
                         </div>
                     </div>
@@ -299,7 +299,7 @@
                                     <p>{{ $news->source }} </p>
                                     <h4>{{ $news->headline }}</h4>
                                     <p align="justify" style="overflow: hidden;display: -webkit-box;-webkit-line-clamp: 7;-webkit-box-orient: vertical;">{{ $news->content }}</p>
-                                    <a href="{{ $news->newsurl }}" class="class-btn" target="_blank">Know More</a>
+                                    <a style="text-decoration: none" href="{{ $news->newsurl }}" class="class-btn" target="_blank">Know More</a>
                                 </div>
                             </div>
                         </div>
@@ -307,7 +307,7 @@
 
                 </div>
             </div>
-            <center><a href="{{ url('displayNews') }}" class="primary-btn">View All News & Announcements</a></center>
+            <center><a style="text-decoration: none" href="{{ url('displayNews') }}" class="primary-btn">View All News & Announcements</a></center>
     </section>
 
     <!-- Classes Section End -->
@@ -348,7 +348,7 @@
                          maintain a positive well-being of the students. The counselling services offered by SGC empowers the students to 
                          have enhanced ability to solve problems, make decisions as well as make them more efficient in tackling personal problems.
                           In a nut shell, it is aimed at enhancing their ability to utilize the best potential available in them.</p>
-                        <a href="{{ url('about') }}" class="primary-btn">MORE ABOUT US</a>
+                        <a style="text-decoration: none" href="{{ url('about') }}" class="primary-btn">MORE ABOUT US</a>
                     </div>
                 </div>
             </div>

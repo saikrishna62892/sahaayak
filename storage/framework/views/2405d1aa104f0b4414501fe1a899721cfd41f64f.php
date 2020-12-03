@@ -49,7 +49,7 @@
                                     <h2 style="color: #5768ad;">All is Well!</h2>
                                 <?php endif; ?>
                                 <a style="color: white;" href="javascript:void(0);" onclick="javascript:introJs().setOption('showProgress',true).start();"><u><span>Take a Tour</span></u></a>
-                                <a href="<?php echo e(url('about')); ?>" class="primary-btn">DISCOVER MORE</a>
+                                <a style="text-decoration: none" href="<?php echo e(url('about')); ?>" class="primary-btn">DISCOVER MORE</a>
                             </div>
                         </div>
                     </div>
@@ -196,16 +196,16 @@
                 <?php echo csrf_field(); ?>
                     <div class="row">
                         <div class="col-lg-4">
-                            <input type="text" placeholder="Name" name="name" autocomplete="off" >
+                            <input type="text" placeholder="Name" name="name" autocomplete="off" required>
                         </div>
                         <div class="col-lg-4">
-                            <input type="text" placeholder="College ID" name="college_id" autocomplete="off" >
+                            <input type="text" placeholder="College ID" name="college_id" autocomplete="off" required>
                         </div>
                         <div class="col-lg-4">
-                            <input type="text" placeholder="Department" name="department" autocomplete="off" >
+                            <input type="text" placeholder="Department" name="department" autocomplete="off" required>
                         </div>
                         <div class="col-lg-4">
-                          <select name="gender">
+                          <select name="gender" required>
                             <option value="" selected disabled hidden>Your Gender</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
@@ -213,17 +213,17 @@
                           </select>
                         </div>
                         <div class="col-lg-4">
-                          <select  name="appointment_type">
+                          <select  name="appointment_type" required>
                             <option value="" selected disabled hidden>Appointment Type</option>
                             <option value="Initial Appointment">Initial Appointment</option>
                             <option value="Follow-up Appointment">Follow-up Appointment</option>
                           </select>
                         </div>
                         <div class="col-lg-4">
-                            <input type="text" placeholder="Your Faculty Advisor" name="faculty_advisor" autocomplete="off" >
+                            <input type="text" placeholder="Your Faculty Advisor" name="faculty_advisor" autocomplete="off" required>
                         </div>
                         <div class="col-lg-6">
-                          <select  name="counsellor_name">
+                          <select  name="counsellor_name" required>
                             <option value="" selected disabled hidden>Choose Your Counsellor</option>
                             <?php $__currentLoopData = $counsellors; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $counsellor): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <option value="<?php echo e($counsellor->id); ?>"><?php echo e($counsellor->name); ?>-<?php echo e($counsellor->profession); ?></option>
@@ -231,10 +231,10 @@
                           </select>
                         </div>
                         <div class="col-lg-3">
-                          <input type="text" id="date" name="date" placeholder="Choose Your Date" onfocus="(this.type='date')"autocomplete="off" >
+                          <input type="text" id="date" name="date" placeholder="Choose Your Date" onfocus="(this.type='date')"autocomplete="off" required>
                         </div>
                         <div class="col-lg-3">
-                          <select  name="slot">
+                          <select  name="slot" required>
                             <option value="" selected disabled hidden>Choose Your Slot</option>
                             <option value="1">8AM - 9AM</option>
                             <option value="2">9AM - 10AM</option>
@@ -249,7 +249,7 @@
                         </div>
                         <div class="form-group  col-lg-6">
                             <?php $questionnaires = App\Questionnaire::all(); ?>
-                            <select  class="form-control" name="assessment_name">
+                            <select name="assessment_name">
                                 <option value="" selected disabled hidden>Choose Assessment(If Taken)</option>
                                 <?php $__currentLoopData = $questionnaires; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $questionnaire): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <option value="<?php echo e($questionnaire->questionnaireTitle); ?>"><?php echo e($questionnaire->questionnaireTitle); ?></option>
@@ -299,7 +299,7 @@
                                     <p><?php echo e($news->source); ?> </p>
                                     <h4><?php echo e($news->headline); ?></h4>
                                     <p align="justify" style="overflow: hidden;display: -webkit-box;-webkit-line-clamp: 7;-webkit-box-orient: vertical;"><?php echo e($news->content); ?></p>
-                                    <a href="<?php echo e($news->newsurl); ?>" class="class-btn" target="_blank">Know More</a>
+                                    <a style="text-decoration: none" href="<?php echo e($news->newsurl); ?>" class="class-btn" target="_blank">Know More</a>
                                 </div>
                             </div>
                         </div>
@@ -307,7 +307,7 @@
 
                 </div>
             </div>
-            <center><a href="<?php echo e(url('displayNews')); ?>" class="primary-btn">View All News & Announcements</a></center>
+            <center><a style="text-decoration: none" href="<?php echo e(url('displayNews')); ?>" class="primary-btn">View All News & Announcements</a></center>
     </section>
 
     <!-- Classes Section End -->
@@ -348,7 +348,7 @@
                          maintain a positive well-being of the students. The counselling services offered by SGC empowers the students to 
                          have enhanced ability to solve problems, make decisions as well as make them more efficient in tackling personal problems.
                           In a nut shell, it is aimed at enhancing their ability to utilize the best potential available in them.</p>
-                        <a href="<?php echo e(url('about')); ?>" class="primary-btn">MORE ABOUT US</a>
+                        <a style="text-decoration: none" href="<?php echo e(url('about')); ?>" class="primary-btn">MORE ABOUT US</a>
                     </div>
                 </div>
             </div>
@@ -362,7 +362,7 @@
             <div class="testimonial__slider owl-carousel">
                 <div class="testimonial__item">
                     <div class="row d-flex justify-content-center">
-                        <div class="col-lg-10">
+                        <div class="col-lg-12">
                             <div class="testimonial__text">
                                 <p>Being a counsellor at SGC I am thrilled by the quality of support providing to the NITC family through the Sahayak website. It is reliable, and fast and no complications. Sahayak is a great service and finally helping us to live in Mental health in better and beautiful way...</p>
                                 <img src="img/team/aneesh.PNG" alt="">
@@ -373,7 +373,7 @@
                 </div>
                 <div class="testimonial__item">
                     <div class="row d-flex justify-content-center">
-                        <div class="col-lg-10">
+                        <div class="col-lg-12">
                             <div class="testimonial__text">
                                 <p>As a Counsellor at SGC, I used to help and support people to manage their lives. But Covid 19 outbreak changed everything and we are compelled to provide online Psychological services. We have now taken a new step through Sahaayak Website.  It is going to be a major milestone in SGC's development. Sahaayak is really an user friendly, easy to handle platform which assures 100% confidentiality.</p>                                
                                 <img src="img/team/neethu.PNG" alt="">
