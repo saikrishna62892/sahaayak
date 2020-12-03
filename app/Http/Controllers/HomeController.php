@@ -131,7 +131,7 @@ class HomeController extends Controller
         $req_year = $request->year;
         $month=["XXX","January","Febuary","March","April","May","June","July","August","September","October","November","December"]; 
         $appointments = Appointment::whereYear('created_at', $req_year)->whereMonth('created_at', $req_month)->get();
-        $pdf = PDF::loadView('admin.getMonthlyreport',compact('appointments','month','counsellors','req_month','req_year'));
+        $pdf = PDF::loadView('admin.getMonthlyReport',compact('appointments','month','counsellors','req_month','req_year'));
         Session::flash('alert-success', 'Downloaded Successfully'); 
         return $pdf->stream('Sahaayak_'.$month[$req_month].'_'.$req_year.'_Report.pdf');
     }
@@ -142,14 +142,14 @@ class HomeController extends Controller
         $req_year = Carbon::now()->year;
         $month=["XXX","January","Febuary","March","April","May","June","July","August","September","October","November","December"]; 
         $appointments = Appointment::whereYear('created_at', $req_year)->whereMonth('created_at', $req_month)->get();
-        $pdf = PDF::loadView('admin.getMonthlyreport',compact('appointments','month','counsellors','req_month','req_year'));
+        $pdf = PDF::loadView('admin.getMonthlyReport',compact('appointments','month','counsellors','req_month','req_year'));
         Session::flash('alert-success', 'Downloaded Successfully'); 
         return $pdf->stream('Sahaayak_'.$month[$req_month].'_'.$req_year.'_Report.pdf');
     }
     public function getOverallReport()
     {
         $counsellors = Counsellor::all();
-        $pdf = PDF::loadView('admin.getOverallreport',compact('counsellors'));
+        $pdf = PDF::loadView('admin.getOverallReport',compact('counsellors'));
         Session::flash('alert-success', 'Downloaded Successfully'); 
         return $pdf->stream('Sahaayak_Overall_Report.pdf');
     }

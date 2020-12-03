@@ -318,7 +318,7 @@
                     <div class="contact__widget__item">
                         <span class="icon_mail_alt"></span>
                         <h4>Mail to</h4>
-                        <a href="mailto:sgc@nitc.ac.in" style="color:black;">Mail Handle</a>
+                        <a href="mailto:sahayak@nitc.ac.in" style="color:black;">Mail Handle</a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
