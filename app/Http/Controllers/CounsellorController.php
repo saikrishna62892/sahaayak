@@ -61,9 +61,11 @@ class CounsellorController extends Controller
         $counsellor->bio=$request->bio;
         $counsellor->achievements=$request->achievements;  
         $counsellor->save();
-        $counsellor->update([
-            'file1' => $data['image']->store('uploads/counsellors','s3')
-        ]);
+        if($request->hasFile('image')){
+            $counsellor->update([
+                'file1' => $data['image']->store('uploads/counsellors','s3')
+            ]);
+        }
 
         Session::flash('alert-success', 'Counsellor Details Added Successfully');
         return redirect()->back();
@@ -87,12 +89,11 @@ class CounsellorController extends Controller
     }
     public function updateDetails(Counsellor $counsellor)
     {
-
         $data=request()->validate(
             [
                 'image' => 'file|image|max:3000',
                 'name'=>'required',
-                'college_id'=>'required|unique:users,rollnum',
+                'college_id'=>'required',
                 'email'=>'required',
                 'profession'=>'required',
                 'calendar_url' => 'required'
@@ -106,9 +107,11 @@ class CounsellorController extends Controller
         $counsellor->achievements =  request()->achievements;
         $counsellor->calendar_url =  request()->calendar_url;
         $counsellor->save();
-        $counsellor->update([
-            'file1' => $data['image']->store('uploads/counsellors','s3')
-        ]);
+        if(request()->hasFile('image')){
+            $counsellor->update([
+                'file1' => $data['image']->store('uploads/counsellors','s3')
+            ]);
+        }
         Session::flash('alert-success', 'Counsellor Details Edited Successfully'); 
         return redirect()->route('adminDashboard');
     }
