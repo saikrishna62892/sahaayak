@@ -125,7 +125,7 @@
                                                         <div id="collapseSix" class="collapse" data-parent="#accordionExample">
                                                             <div class="card-body">
                                                                 <p>You can chat through virtual chat box.</p>
-                                                                <p>You can get a volunteer appointment by clicking below</p>
+                                                                <p>You can get a consellor appointment by clicking below</p>
                                                                 <h6>Still need help? <a href="<?php echo e(url('/#talk_to_us')); ?>">Get in touch with us.</a></h6>
                                                             </div>
                                                         </div>
