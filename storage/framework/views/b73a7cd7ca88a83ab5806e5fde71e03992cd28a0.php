@@ -49,7 +49,7 @@
                                     <h2 style="color: #5768ad;">All is Well!</h2>
                                 <?php endif; ?>
                                 <a style="color: white;" href="javascript:void(0);" onclick="javascript:introJs().setOption('showProgress',true).start();"><u><span>Take a Tour</span></u></a>
-                                <a href="<?php echo e(url('about')); ?>" class="primary-btn">DISCOVER MORE</a>
+                                <a style="text-decoration: none" href="<?php echo e(url('about')); ?>" class="primary-btn">DISCOVER MORE</a>
                             </div>
                         </div>
                     </div>
@@ -299,7 +299,7 @@
                                     <p><?php echo e($news->source); ?> </p>
                                     <h4><?php echo e($news->headline); ?></h4>
                                     <p align="justify" style="overflow: hidden;display: -webkit-box;-webkit-line-clamp: 7;-webkit-box-orient: vertical;"><?php echo e($news->content); ?></p>
-                                    <a href="<?php echo e($news->newsurl); ?>" class="class-btn" target="_blank">Know More</a>
+                                    <a style="text-decoration: none" href="<?php echo e($news->newsurl); ?>" class="class-btn" target="_blank">Know More</a>
                                 </div>
                             </div>
                         </div>
@@ -307,7 +307,7 @@
 
                 </div>
             </div>
-            <center><a href="<?php echo e(url('displayNews')); ?>" class="primary-btn">View All News & Announcements</a></center>
+            <center><a style="text-decoration: none" href="<?php echo e(url('displayNews')); ?>" class="primary-btn">View All News & Announcements</a></center>
     </section>
 
     <!-- Classes Section End -->
@@ -348,7 +348,7 @@
                          maintain a positive well-being of the students. The counselling services offered by SGC empowers the students to 
                          have enhanced ability to solve problems, make decisions as well as make them more efficient in tackling personal problems.
                           In a nut shell, it is aimed at enhancing their ability to utilize the best potential available in them.</p>
-                        <a href="<?php echo e(url('about')); ?>" class="primary-btn">MORE ABOUT US</a>
+                        <a style="text-decoration: none" href="<?php echo e(url('about')); ?>" class="primary-btn">MORE ABOUT US</a>
                     </div>
                 </div>
             </div>
@@ -365,7 +365,7 @@
                         <div class="col-lg-12">
                             <div class="testimonial__text">
                                 <p>Being a counsellor at SGC I am thrilled by the quality of support providing to the NITC family through the Sahayak website. It is reliable, and fast and no complications. Sahayak is a great service and finally helping us to live in Mental health in better and beautiful way...</p>
-                                <img src="img/team/aneesh.PNG" alt="">
+                                <img src="<?php echo e(asset('/img/team/aneesh.PNG')); ?>" alt="">
                                 <h5>Dr Aneesh T<span>- psychologist</span></h5>
                             </div>
                         </div>
@@ -376,7 +376,7 @@
                         <div class="col-lg-12">
                             <div class="testimonial__text">
                                 <p>As a Counsellor at SGC, I used to help and support people to manage their lives. But Covid 19 outbreak changed everything and we are compelled to provide online Psychological services. We have now taken a new step through Sahaayak Website.  It is going to be a major milestone in SGC's development. Sahaayak is really an user friendly, easy to handle platform which assures 100% confidentiality.</p>                                
-                                <img src="img/team/neethu.PNG" alt="">
+                                <img src="<?php echo e(asset('/img/team/neethu.PNG')); ?>" alt="">
                                 <h5>Neethu A T<span>- Psychologist</span></h5>
                             </div>
                         </div>
