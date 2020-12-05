@@ -190,10 +190,10 @@
                     <div class="col-lg-7 col-md-7">
                         <div class="header__top__widget">
                             @guest
-                                <a href="{{ route('login') }}" class="primary-btn">Login</a>
+                                <a style="text-decoration: none" href="{{ route('login') }}" class="primary-btn">Login</a>
 
                                 @if (Route::has('register'))
-                                    <a href="{{ route('register') }}" class="primary-btn">Join us</a>
+                                    <a style="text-decoration: none" href="{{ route('register') }}" class="primary-btn">Join us</a>
                                 @endif
                                 @else
                                 <div class="dropdown">
@@ -247,9 +247,9 @@
                     <div class="col-lg-12 col-md-9">
                         <nav class="header__menu">
                             <ul>
-                                <li><a href="{{ url('/') }}">Home</a></li>
-                                <li><a href="{{ url('about') }}">About</a></li>
-                                <li><a href="#">Learn</a>
+                                <li><a style="text-decoration: none" href="{{ url('/') }}">Home</a></li>
+                                <li><a style="text-decoration: none" href="{{ url('about') }}">About</a></li>
+                                <li><a style="text-decoration: none" href="#">Learn</a>
                                     <ul class="dropdown">
                                         <li><a href="/home/learn/depression/1">Depression</a></li>
                                         <li><a href="/home/learn/suicide/2">Suicide</a></li>
@@ -262,21 +262,21 @@
                                         <li><a href="/home/learn/social-isolation/9">Social Isolation</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Assessment</a>
+                                <li><a style="text-decoration: none" href="#">Assessment</a>
                                     <ul class="dropdown">
                                     @foreach($questionnaires as $questionnaire)
                                         <li><a href="/home/questionnaires/{{$questionnaire->id}}/questions">{{$questionnaire->questionnaireTitle}}</a></li>
                                     @endforeach
                                     </ul>
                                 </li>
-                                <li><a href="{{ url('/#talk_to_us') }}">Talk to Us</a></li>
-                                <li><a href="#">Blog</a>
+                                <li><a style="text-decoration: none" href="{{ url('/#talk_to_us') }}">Talk to Us</a></li>
+                                <li><a style="text-decoration: none" href="#">Blog</a>
                                     <ul class="dropdown">
                                         <li><a href="{{ url('displayStories') }}">Discover Stories</a></li>
                                         <li><a href="{{ url('displayTalks') }}">Expert Talks</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="{{ route('displayNews') }}">News</a></li>
+                                <li><a style="text-decoration: none" href="{{ route('displayNews') }}">News</a></li>
                                 <li><a href="#">Hope Box</a>
                                     <ul class="dropdown">
                                         <li><a href="{{ url('interactiveDrawing') }}">Interactive Drawing</a></li>
@@ -285,7 +285,7 @@
                                         <li><a href="{{ url('playlists') }}">Playlists</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="{{ url('team') }}">Team</a>
+                                <li><a style="text-decoration: none" href="{{ url('team') }}">Team</a>
                                     <ul class="dropdown" style="max-width: 175px;">
                                         <li><a href="{{ url('team#counsellors') }}">Counsellors</a></li>
                                         <li><a href="{{ url('team#sgc') }}">SGC</a></li>

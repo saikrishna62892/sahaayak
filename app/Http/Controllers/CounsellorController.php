@@ -89,6 +89,7 @@ class CounsellorController extends Controller
     }
     public function updateDetails(Counsellor $counsellor)
     {
+        $user=User::find($counsellor->user_id);
         $data=request()->validate(
             [
                 'image' => 'file|image|max:3000',
@@ -100,13 +101,17 @@ class CounsellorController extends Controller
             ]);
 
         $counsellor->name =  request()->name;
+        $user->name = request()->name;
         $counsellor->college_id =  strtoupper(request()->college_id);
+        $user->rollnum =  strtoupper(request()->college_id);
         $counsellor->email =  request()->email;
+        $user->email =  request()->email;
         $counsellor->profession =  request()->profession;
         $counsellor->bio =  request()->bio;
         $counsellor->achievements =  request()->achievements;
         $counsellor->calendar_url =  request()->calendar_url;
         $counsellor->save();
+        $user->save();
         if(request()->hasFile('image')){
             $counsellor->update([
                 'file1' => $data['image']->store('uploads/counsellors','s3')

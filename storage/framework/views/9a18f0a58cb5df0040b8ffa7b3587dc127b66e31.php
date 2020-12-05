@@ -191,10 +191,10 @@
                     <div class="col-lg-7 col-md-7">
                         <div class="header__top__widget">
                             <?php if(auth()->guard()->guest()): ?>
-                                <a href="<?php echo e(route('login')); ?>" class="primary-btn">Login</a>
+                                <a style="text-decoration: none" href="<?php echo e(route('login')); ?>" class="primary-btn">Login</a>
 
                                 <?php if(Route::has('register')): ?>
-                                    <a href="<?php echo e(route('register')); ?>" class="primary-btn">Join us</a>
+                                    <a style="text-decoration: none" href="<?php echo e(route('register')); ?>" class="primary-btn">Join us</a>
                                 <?php endif; ?>
                                 <?php else: ?>
                                 <div class="dropdown">
@@ -249,9 +249,9 @@
                     <div class="col-lg-12 col-md-9">
                         <nav class="header__menu">
                             <ul>
-                                <li><a href="<?php echo e(url('/')); ?>">Home</a></li>
-                                <li><a href="<?php echo e(url('about')); ?>">About</a></li>
-                                <li><a href="#">Learn</a>
+                                <li><a style="text-decoration: none" href="<?php echo e(url('/')); ?>">Home</a></li>
+                                <li><a style="text-decoration: none" href="<?php echo e(url('about')); ?>">About</a></li>
+                                <li><a style="text-decoration: none" href="#">Learn</a>
                                     <ul class="dropdown">
                                         <li><a href="/home/learn/depression/1">Depression</a></li>
                                         <li><a href="/home/learn/suicide/2">Suicide</a></li>
@@ -264,21 +264,21 @@
                                         <li><a href="/home/learn/social-isolation/9">Social Isolation</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Assessment</a>
+                                <li><a style="text-decoration: none" href="#">Assessment</a>
                                     <ul class="dropdown">
                                     <?php $__currentLoopData = $questionnaires; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $questionnaire): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <li><a href="/home/questionnaires/<?php echo e($questionnaire->id); ?>/questions"><?php echo e($questionnaire->questionnaireTitle); ?></a></li>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </ul>
                                 </li>
-                                <li><a href="<?php echo e(url('/#talk_to_us')); ?>">Talk to Us</a></li>
-                                <li><a href="#">Blog</a>
+                                <li><a style="text-decoration: none" href="<?php echo e(url('/#talk_to_us')); ?>">Talk to Us</a></li>
+                                <li><a style="text-decoration: none" href="#">Blog</a>
                                     <ul class="dropdown">
                                         <li><a href="<?php echo e(url('displayStories')); ?>">Discover Stories</a></li>
                                         <li><a href="<?php echo e(url('displayTalks')); ?>">Expert Talks</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="<?php echo e(route('displayNews')); ?>">News</a></li>
+                                <li><a style="text-decoration: none" href="<?php echo e(route('displayNews')); ?>">News</a></li>
                                 <li><a href="#">Hope Box</a>
                                     <ul class="dropdown">
                                         <li><a href="<?php echo e(url('interactiveDrawing')); ?>">Interactive Drawing</a></li>
@@ -287,7 +287,7 @@
                                         <li><a href="<?php echo e(url('playlists')); ?>">Playlists</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="<?php echo e(url('team')); ?>">Team</a>
+                                <li><a style="text-decoration: none" href="<?php echo e(url('team')); ?>">Team</a>
                                     <ul class="dropdown" style="max-width: 175px;">
                                         <li><a href="<?php echo e(url('team#counsellors')); ?>">Counsellors</a></li>
                                         <li><a href="<?php echo e(url('team#sgc')); ?>">SGC</a></li>
@@ -421,10 +421,10 @@
     <script src="/js/jquery.slicknav.min.js"></script>
 
     <!-- ManyChat Plugin -->
-    <script src="//widget.manychat.com/101206188315883.js" async="async"></script>
+    <!-- <script src="//widget.manychat.com/101206188315883.js" async="async"></script>-->
     <!-- Load Facebook SDK for JavaScript -->
     <!--<div id="fb-root"></div>-->
-    <script>
+    <!--<script>
         window.fbAsyncInit = function() {
           FB.init({
             xfbml            : true,
@@ -439,16 +439,16 @@
         js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
-    </script>
+    </script>-->
 
     <!-- Your Chat Plugin code -->
-    <div class="fb-customerchat"
+    <!--<div class="fb-customerchat"
         attribution=setup_tool
         page_id="100529798384686"
         theme_color="#5768ad"
         logged_in_greeting="Hi buddy we are there to talk with you?"
         logged_out_greeting="Hi buddy we are there to talk with you?">
-    </div>
+    </div>-->
 
 </body>
 
