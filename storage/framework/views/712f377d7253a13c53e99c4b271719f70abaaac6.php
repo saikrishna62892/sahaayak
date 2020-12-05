@@ -23,7 +23,7 @@
                             <?php if(is_null($gal->image)): ?>
                                 <center><img class="d-block" src="<?php echo e(asset('/img/galleries/default.jpg')); ?>" alt="Gallery-Image" height="50" width="75"></center>
                             <?php else: ?>
-                                <center><img class="d-block" src="<?php echo e(asset('/img/galleries/'.$gal->image)); ?>" alt="Gallery-Image" height="50" width="75"></center>
+                                <center><img class="d-block" src="<?php echo e(\Storage::disk('s3')->url($gal->image)); ?>" alt="Gallery-Image" height="50" width="75"></center>
                             <?php endif; ?>
                         </td>
                         <td><a href="deleteGallery/<?php echo e($gal->id); ?>/gallerydeleted" style="color: #5768ad;">Delete</a></td>

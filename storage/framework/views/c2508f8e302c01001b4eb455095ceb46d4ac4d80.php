@@ -78,15 +78,7 @@
                     <nav>
                         <ul class="metismenu" id="menu">
                             <li>
-                                <?php if(auth()->user()->is_Volunteer == 1): ?>
-                                    <a href="/home" aria-expanded="false"><i class="ti-settings"></i><span>Dashboard</span></a>
-                                <?php elseif(auth()->user()->is_admin == 1): ?>
-                                    <a href="/admin/home" aria-expanded="false"><i class="ti-settings"></i><span>Dashboard</span></a>
-                                <?php elseif(auth()->user()->is_Counsellor == 1): ?>
-                                    <a href="/counsellor/home" aria-expanded="false"><i class="ti-settings"></i><span>Dashboard</span></a>
-                                <?php else: ?>
-                                    <a href="/home" aria-expanded="false"><i class="ti-settings"></i><span>Dashboard</span></a>
-                                <?php endif; ?>                                
+                                <a href="#" aria-expanded="false"><i class="ti-settings"></i><span>Dashboard</span></a>
                             </li>
                             <li>
                                 <a href="<?php echo e(url('about')); ?>" aria-expanded="true"><i class="ti-dashboard"></i><span>About</span></a>

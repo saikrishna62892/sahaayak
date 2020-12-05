@@ -23,7 +23,7 @@
                             @if(is_null($gal->image))
                                 <center><img class="d-block" src="{{ asset('/img/galleries/default.jpg') }}" alt="Gallery-Image" height="50" width="75"></center>
                             @else
-                                <center><img class="d-block" src="{{ asset('/img/galleries/'.$gal->image) }}" alt="Gallery-Image" height="50" width="75"></center>
+                                <center><img class="d-block" src="{{\Storage::disk('s3')->url($gal->image)}}" alt="Gallery-Image" height="50" width="75"></center>
                             @endif
                         </td>
                         <td><a href="deleteGallery/{{$gal->id}}/gallerydeleted" style="color: #5768ad;">Delete</a></td>
