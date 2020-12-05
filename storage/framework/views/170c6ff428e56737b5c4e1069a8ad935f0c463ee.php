@@ -33,7 +33,7 @@ unset($__errorArgs, $__bag); ?>
                         </span>
                     </div>
                     <div class="wrap-input100 validate-input m-b-16">
-                        <input class="input100" type="text" id="rollnum" name="rollnum" value="<?php echo e(old('rollnum')); ?>" required autocomplete="rollnum" autofocus placeholder="Roll Number/Employee ID">
+                        <input class="input100" type="text" id="rollnum" name="rollnum" value="<?php echo e(old('rollnum')); ?>" required autocomplete="rollnum" autofocus placeholder="Roll Number/College ID">
                         <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -132,14 +132,14 @@ unset($__errorArgs, $__bag); ?>
                                 </label>
                     </div>-->
 
-                    <div class="wrap-input100 validate-input m-b-16" align="center">
+                    <!--<div class="wrap-input100 validate-input m-b-16" align="center">
                         <div class="g-recaptcha" data-sitekey="<?php echo e(env('CAPTCHA_KEY')); ?>"></div>
                         <?php if($errors->has('g-recaptcha-response')): ?>
                             <span class="invalid-feedback" style="display: block;">
                                 <strong><?php echo e($errors->first('g-recaptcha-response')); ?></strong>
                             </span>
                         <?php endif; ?>
-                    </div>
+                    </div>-->
 
 
                     

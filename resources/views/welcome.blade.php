@@ -250,7 +250,7 @@
                         <div class="form-group  col-lg-6">
                             <?php $questionnaires = App\Questionnaire::all(); ?>
                             <select name="assessment_name">
-                                <option value="" selected disabled hidden>Choose Assessment(If Taken)</option>
+                                <option value="--NA--" selected="selected" disabled hidden>Choose Assessment(If Taken)</option>
                                 @foreach($questionnaires as $questionnaire)
                                     <option value="{{$questionnaire->questionnaireTitle}}">{{$questionnaire->questionnaireTitle}}</option>
                                 @endforeach
@@ -261,7 +261,7 @@
                             <input type="text" name="assessment_marks" id="assessment_marks" placeholder="Enter Assessment Marks(If Taken)" autocomplete="off">
                         </div>
                         <div class="col-lg-12 text-center">
-                            <textarea placeholder="What do you want to talk about in 100 words" name="message" autocomplete="off" ></textarea>
+                            <textarea placeholder="What do you want to talk about in 100 words" name="message" autocomplete="off" required></textarea>
                         <button type="submit">Submit</button>
                         </div>
                     </div> 

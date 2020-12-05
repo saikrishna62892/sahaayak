@@ -26,7 +26,7 @@
                         </span>
                     </div>
                     <div class="wrap-input100 validate-input m-b-16">
-                        <input class="input100" type="text" id="rollnum" name="rollnum" value="{{ old('rollnum') }}" required autocomplete="rollnum" autofocus placeholder="Roll Number/Employee ID">
+                        <input class="input100" type="text" id="rollnum" name="rollnum" value="{{ old('rollnum') }}" required autocomplete="rollnum" autofocus placeholder="Roll Number/College ID">
                         @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
